@@ -2,8 +2,8 @@
 //  Die.swift
 //  EngineYard
 //
-//  Created by Amarjit on 27/10/2017.
-//  Copyright © 2017 Amarjit. All rights reserved.
+//  Created by Amarjit on 13/04/2018.
+//  Copyright © 2018 Amarjit. All rights reserved.
 //
 
 import Foundation
