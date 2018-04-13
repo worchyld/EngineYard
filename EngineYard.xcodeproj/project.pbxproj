@@ -13,6 +13,13 @@
 		4DA3487E20812A8B006DA164 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA3487620812A8B006DA164 /* LaunchScreen.storyboard */; };
 		4DA3487F20812A8B006DA164 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA3487820812A8B006DA164 /* Main.storyboard */; };
 		4DA3488020812A8B006DA164 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3487A20812A8B006DA164 /* AppDelegate.swift */; };
+		4DCCF54620812C3F0085C6A9 /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCF54520812C3F0085C6A9 /* GameBoard.swift */; };
+		4DCCF54820812D170085C6A9 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCF54720812D170085C6A9 /* Deck.swift */; };
+		4DCCF54A20812D5B0085C6A9 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCF54920812D5B0085C6A9 /* Enums.swift */; };
+		4DCCF54C20812D9C0085C6A9 /* Die.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCF54B20812D9C0085C6A9 /* Die.swift */; };
+		4DCCF54E20812DCB0085C6A9 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCF54D20812DCB0085C6A9 /* Card.swift */; };
+		4DCCF558208138050085C6A9 /* GameBoardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCF557208138050085C6A9 /* GameBoardProtocol.swift */; };
+		4DCCF55A208138D90085C6A9 /* Ext+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCF559208138D90085C6A9 /* Ext+Array.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +43,13 @@
 		4DA3487920812A8B006DA164 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4DA3487A20812A8B006DA164 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DA3487B20812A8B006DA164 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DCCF54520812C3F0085C6A9 /* GameBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
+		4DCCF54720812D170085C6A9 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		4DCCF54920812D5B0085C6A9 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		4DCCF54B20812D9C0085C6A9 /* Die.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Die.swift; sourceTree = "<group>"; };
+		4DCCF54D20812DCB0085C6A9 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		4DCCF557208138050085C6A9 /* GameBoardProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardProtocol.swift; sourceTree = "<group>"; };
+		4DCCF559208138D90085C6A9 /* Ext+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+Array.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +114,13 @@
 		4DA3488220812B08006DA164 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				4DCCF54520812C3F0085C6A9 /* GameBoard.swift */,
+				4DCCF557208138050085C6A9 /* GameBoardProtocol.swift */,
+				4DCCF54720812D170085C6A9 /* Deck.swift */,
+				4DCCF54D20812DCB0085C6A9 /* Card.swift */,
+				4DCCF54920812D5B0085C6A9 /* Enums.swift */,
+				4DCCF54B20812D9C0085C6A9 /* Die.swift */,
+				4DCCF559208138D90085C6A9 /* Ext+Array.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -205,7 +226,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DCCF54820812D170085C6A9 /* Deck.swift in Sources */,
 				4DA3488020812A8B006DA164 /* AppDelegate.swift in Sources */,
+				4DCCF55A208138D90085C6A9 /* Ext+Array.swift in Sources */,
+				4DCCF54E20812DCB0085C6A9 /* Card.swift in Sources */,
+				4DCCF54C20812D9C0085C6A9 /* Die.swift in Sources */,
+				4DCCF54A20812D5B0085C6A9 /* Enums.swift in Sources */,
+				4DCCF54620812C3F0085C6A9 /* GameBoard.swift in Sources */,
+				4DCCF558208138050085C6A9 /* GameBoardProtocol.swift in Sources */,
 				4DA3487C20812A8B006DA164 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
