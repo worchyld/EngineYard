@@ -19,6 +19,7 @@
 		4DA5236C208158C8000FFAAB /* EY+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5236B208158C8000FFAAB /* EY+Array.swift */; };
 		4DA5236E20815960000FFAAB /* Tax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5236D20815960000FFAAB /* Tax.swift */; };
 		4DA52370208159D2000FFAAB /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5236F208159D2000FFAAB /* Wallet.swift */; };
+		4DA5237220815C06000FFAAB /* TaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5237120815C06000FFAAB /* TaxTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		4DA5236B208158C8000FFAAB /* EY+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Array.swift"; sourceTree = "<group>"; };
 		4DA5236D20815960000FFAAB /* Tax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tax.swift; sourceTree = "<group>"; };
 		4DA5236F208159D2000FFAAB /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
+		4DA5237120815C06000FFAAB /* TaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				4DA3486820812972006DA164 /* EngineYardTests.swift */,
+				4DA5237120815C06000FFAAB /* TaxTests.swift */,
 				4DA3486A20812972006DA164 /* Info.plist */,
 			);
 			path = EngineYardTests;
@@ -247,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */,
+				4DA5237220815C06000FFAAB /* TaxTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
