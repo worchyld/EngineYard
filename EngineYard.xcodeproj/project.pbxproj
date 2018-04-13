@@ -17,6 +17,8 @@
 		4DA5236720815885000FFAAB /* Die.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5236620815885000FFAAB /* Die.swift */; };
 		4DA52369208158A8000FFAAB /* EY+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA52368208158A8000FFAAB /* EY+Colors.swift */; };
 		4DA5236C208158C8000FFAAB /* EY+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5236B208158C8000FFAAB /* EY+Array.swift */; };
+		4DA5236E20815960000FFAAB /* Tax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5236D20815960000FFAAB /* Tax.swift */; };
+		4DA52370208159D2000FFAAB /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5236F208159D2000FFAAB /* Wallet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		4DA5236620815885000FFAAB /* Die.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Die.swift; sourceTree = "<group>"; };
 		4DA52368208158A8000FFAAB /* EY+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Colors.swift"; sourceTree = "<group>"; };
 		4DA5236B208158C8000FFAAB /* EY+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Array.swift"; sourceTree = "<group>"; };
+		4DA5236D20815960000FFAAB /* Tax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tax.swift; sourceTree = "<group>"; };
+		4DA5236F208159D2000FFAAB /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,8 @@
 				4DA5236A208158B5000FFAAB /* Extensions */,
 				4DA523642081582B000FFAAB /* Enums.swift */,
 				4DA5236620815885000FFAAB /* Die.swift */,
+				4DA5236D20815960000FFAAB /* Tax.swift */,
+				4DA5236F208159D2000FFAAB /* Wallet.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -225,10 +231,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DA52370208159D2000FFAAB /* Wallet.swift in Sources */,
 				4DA3488020812A8B006DA164 /* AppDelegate.swift in Sources */,
 				4DA5236C208158C8000FFAAB /* EY+Array.swift in Sources */,
 				4DA523652081582B000FFAAB /* Enums.swift in Sources */,
 				4DA5236720815885000FFAAB /* Die.swift in Sources */,
+				4DA5236E20815960000FFAAB /* Tax.swift in Sources */,
 				4DA52369208158A8000FFAAB /* EY+Colors.swift in Sources */,
 				4DA3487C20812A8B006DA164 /* ViewController.swift in Sources */,
 			);
