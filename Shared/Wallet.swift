@@ -10,32 +10,53 @@ import Foundation
 
 protocol WalletProtocol {
     var balance: Int { get }
-    func credit(amount: Int) -> Bool
-    func debit(amount: Int) -> Bool
+    func credit(amount: Int)
+    func debit(amount: Int)
     func canCredit(amount: Int) -> Bool
     func canDebit(amount: Int) -> Bool
 }
 
-// #TODO - Needs work
-
 // Credits and debits coins to a player's wallet
 
 class Wallet: WalletProtocol {
-    var balance: Int = 0
+    public private (set) var balance: Int = 0
 
-    func credit(amount: Int) -> Bool {
-        return false
+    init(balance: Int = 0) {
+        self.balance = balance
     }
 
-    func debit(amount: Int) -> Bool {
-        return false
+    func credit(amount: Int) {
+        if (self.canCredit(amount: amount)) {
+            self.balance += amount
+        }
     }
 
+    func debit(amount: Int) {
+        if (self.canDebit(amount: amount)) {
+            self.balance -= amount
+        }
+    }
+}
+
+extension Wallet {
     func canCredit(amount: Int) -> Bool {
-        return false
+        guard amount > 0 else {
+            return false
+        }
+        return true
     }
 
     func canDebit(amount: Int) -> Bool {
-        return false
+        guard amount > 0 else {
+            return false
+        }
+        guard self.balance >= amount else {
+            return false
+        }
+        guard (self.balance - amount >= 0) else {
+            return false
+        }
+        return true
     }
+
 }

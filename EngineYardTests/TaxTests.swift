@@ -10,7 +10,6 @@ import XCTest
 
 @testable import EngineYard
 
-
 class TaxTests: EngineYardTests {
     
     override func setUp() {
