@@ -42,5 +42,15 @@ class WalletTests: EngineYardTests {
         wallet.debit(amount: 100)
         XCTAssert(wallet.balance == 0)
     }
+
+    func testTax() {
+        // when cash is 20, expect tax to be 2
+        let wallet = Wallet(balance: 20)
+        let taxDue = Tax.calculateTaxDue(onBalance: wallet.balance)
+        wallet.debit(amount: taxDue)
+
+        XCTAssertTrue(taxDue == 2, "Expected: 2. Returned \(taxDue)")
+        XCTAssertTrue(wallet.balance == 18, "Expected: 18. Returned \(wallet.balance)")
+    }
     
 }
