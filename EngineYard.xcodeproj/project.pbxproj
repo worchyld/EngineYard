@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4D617D542081ED530036BB00 /* WalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D617D532081ED530036BB00 /* WalletTests.swift */; };
+		4D617D562081EE110036BB00 /* DieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D617D552081EE110036BB00 /* DieTests.swift */; };
 		4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3486820812972006DA164 /* EngineYardTests.swift */; };
 		4DA3487C20812A8B006DA164 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3487420812A8B006DA164 /* ViewController.swift */; };
 		4DA3487D20812A8B006DA164 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DA3487520812A8B006DA164 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		4D617D532081ED530036BB00 /* WalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTests.swift; sourceTree = "<group>"; };
+		4D617D552081EE110036BB00 /* DieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DieTests.swift; sourceTree = "<group>"; };
 		4DA3485020812970006DA164 /* EngineYard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EngineYard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA3486420812972006DA164 /* EngineYardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EngineYardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA3486820812972006DA164 /* EngineYardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineYardTests.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				4DA3486820812972006DA164 /* EngineYardTests.swift */,
 				4DA5237120815C06000FFAAB /* TaxTests.swift */,
 				4D617D532081ED530036BB00 /* WalletTests.swift */,
+				4D617D552081EE110036BB00 /* DieTests.swift */,
 				4DA3486A20812972006DA164 /* Info.plist */,
 			);
 			path = EngineYardTests;
@@ -254,6 +257,7 @@
 			files = (
 				4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */,
 				4D617D542081ED530036BB00 /* WalletTests.swift in Sources */,
+				4D617D562081EE110036BB00 /* DieTests.swift in Sources */,
 				4DA5237220815C06000FFAAB /* TaxTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
