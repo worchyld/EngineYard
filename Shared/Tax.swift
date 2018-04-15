@@ -8,8 +8,7 @@
 
 import Foundation
 
-struct Tax
-{
+struct Tax {
     private static let rate : Float = 0.10
 
     // Subtract tax from a given balance
