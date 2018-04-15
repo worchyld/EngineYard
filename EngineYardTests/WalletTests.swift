@@ -45,11 +45,7 @@ class WalletTests: EngineYardTests {
             XCTAssertEqual(error as? WalletError, WalletError.notEnoughFunds)
         }
 
-        do {
-            try w.credit(amount: 100)
-        } catch let error {
-            XCTFail(error.localizedDescription)
-        }
+        XCTAssertNoThrow(try w.credit(amount: 100))
 
         // debit 0 should throw error
         XCTAssertThrowsError(try w.debit(amount: 0)) { error in
