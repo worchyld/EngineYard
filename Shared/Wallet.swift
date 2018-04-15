@@ -2,61 +2,63 @@
 //  Wallet.swift
 //  EngineYard
 //
-//  Created by Amarjit on 13/04/2018.
+//  Created by Amarjit on 15/04/2018.
 //  Copyright © 2018 Amarjit. All rights reserved.
 //
 
 import Foundation
 
-protocol WalletProtocol {
-    var balance: Int { get }
-    func credit(amount: Int)
-    func debit(amount: Int)
-    func canCredit(amount: Int) -> Bool
-    func canDebit(amount: Int) -> Bool
+enum WalletError : Error {
+    case mustBePositive
+    case notEnoughFunds
 }
 
-// Credits and debits coins to a player's wallet
+protocol WalletDelegate {
+    var balance : Int { get }
+    func credit(amount: Int) throws
+    func debit(amount: Int) throws
+}
 
-class Wallet: WalletProtocol {
-    public private (set) var balance: Int = 0
+class Wallet : CustomStringConvertible, WalletDelegate {
+    public private(set) var balance: Int = 0
 
-    init(balance: Int = 0) {
-        self.balance = balance
+    init(amount: Int = 0) {
+        self.balance = amount
     }
 
-    func credit(amount: Int) {
-        if (self.canCredit(amount: amount)) {
-            self.balance += amount
+    func credit(amount: Int) throws {
+        guard amount > 0 else {
+            throw WalletError.mustBePositive
         }
+        handleCredit(amount: amount)
     }
 
-    func debit(amount: Int) {
-        if (self.canDebit(amount: amount)) {
-            self.balance -= amount
+    func debit(amount: Int) throws {
+        guard amount > 0 else {
+            throw WalletError.mustBePositive
         }
+        guard balance >= amount else {
+            throw WalletError.notEnoughFunds
+        }
+        guard (self.balance - amount >= 0) else {
+            throw WalletError.notEnoughFunds
+        }
+        handleDebit(amount: amount)
+    }
+
+    // MARK: (Private)
+
+    private func handleCredit(amount: Int) {
+        self.balance += amount
+    }
+
+    private func handleDebit(amount: Int) {
+        self.balance -= amount
     }
 }
 
 extension Wallet {
-    func canCredit(amount: Int) -> Bool {
-        guard amount > 0 else {
-            return false
-        }
-        return true
+    var description: String {
+        return ("Balance: $\(self.balance)")
     }
-
-    func canDebit(amount: Int) -> Bool {
-        guard amount > 0 else {
-            return false
-        }
-        guard self.balance >= amount else {
-            return false
-        }
-        guard (self.balance - amount >= 0) else {
-            return false
-        }
-        return true
-    }
-
 }

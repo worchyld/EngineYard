@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D617D542081ED530036BB00 /* WalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D617D532081ED530036BB00 /* WalletTests.swift */; };
+		4D3DF4B320834587000DF88E /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3DF4B220834587000DF88E /* Wallet.swift */; };
+		4D3DF4B520834592000DF88E /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3DF4B420834592000DF88E /* Player.swift */; };
+		4D3DF4B720834679000DF88E /* WalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3DF4B620834679000DF88E /* WalletTests.swift */; };
 		4D617D562081EE110036BB00 /* DieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D617D552081EE110036BB00 /* DieTests.swift */; };
 		4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3486820812972006DA164 /* EngineYardTests.swift */; };
 		4DA3487C20812A8B006DA164 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3487420812A8B006DA164 /* ViewController.swift */; };
@@ -20,7 +22,6 @@
 		4DA52369208158A8000FFAAB /* EY+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA52368208158A8000FFAAB /* EY+Colors.swift */; };
 		4DA5236C208158C8000FFAAB /* EY+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5236B208158C8000FFAAB /* EY+Array.swift */; };
 		4DA5236E20815960000FFAAB /* Tax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5236D20815960000FFAAB /* Tax.swift */; };
-		4DA52370208159D2000FFAAB /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5236F208159D2000FFAAB /* Wallet.swift */; };
 		4DA5237220815C06000FFAAB /* TaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5237120815C06000FFAAB /* TaxTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,7 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4D617D532081ED530036BB00 /* WalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTests.swift; sourceTree = "<group>"; };
+		4D3DF4B220834587000DF88E /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
+		4D3DF4B420834592000DF88E /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		4D3DF4B620834679000DF88E /* WalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTests.swift; sourceTree = "<group>"; };
 		4D617D552081EE110036BB00 /* DieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DieTests.swift; sourceTree = "<group>"; };
 		4DA3485020812970006DA164 /* EngineYard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EngineYard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA3486420812972006DA164 /* EngineYardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EngineYardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,7 +55,6 @@
 		4DA52368208158A8000FFAAB /* EY+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Colors.swift"; sourceTree = "<group>"; };
 		4DA5236B208158C8000FFAAB /* EY+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Array.swift"; sourceTree = "<group>"; };
 		4DA5236D20815960000FFAAB /* Tax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tax.swift; sourceTree = "<group>"; };
-		4DA5236F208159D2000FFAAB /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		4DA5237120815C06000FFAAB /* TaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,9 +100,9 @@
 			children = (
 				4DA3486820812972006DA164 /* EngineYardTests.swift */,
 				4DA5237120815C06000FFAAB /* TaxTests.swift */,
-				4D617D532081ED530036BB00 /* WalletTests.swift */,
 				4D617D552081EE110036BB00 /* DieTests.swift */,
 				4DA3486A20812972006DA164 /* Info.plist */,
+				4D3DF4B620834679000DF88E /* WalletTests.swift */,
 			);
 			path = EngineYardTests;
 			sourceTree = "<group>";
@@ -125,7 +127,8 @@
 				4DA523642081582B000FFAAB /* Enums.swift */,
 				4DA5236620815885000FFAAB /* Die.swift */,
 				4DA5236D20815960000FFAAB /* Tax.swift */,
-				4DA5236F208159D2000FFAAB /* Wallet.swift */,
+				4D3DF4B220834587000DF88E /* Wallet.swift */,
+				4D3DF4B420834592000DF88E /* Player.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -240,13 +243,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DA52370208159D2000FFAAB /* Wallet.swift in Sources */,
+				4D3DF4B320834587000DF88E /* Wallet.swift in Sources */,
 				4DA3488020812A8B006DA164 /* AppDelegate.swift in Sources */,
 				4DA5236C208158C8000FFAAB /* EY+Array.swift in Sources */,
 				4DA523652081582B000FFAAB /* Enums.swift in Sources */,
 				4DA5236720815885000FFAAB /* Die.swift in Sources */,
 				4DA5236E20815960000FFAAB /* Tax.swift in Sources */,
 				4DA52369208158A8000FFAAB /* EY+Colors.swift in Sources */,
+				4D3DF4B520834592000DF88E /* Player.swift in Sources */,
 				4DA3487C20812A8B006DA164 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,8 +259,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D3DF4B720834679000DF88E /* WalletTests.swift in Sources */,
 				4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */,
-				4D617D542081ED530036BB00 /* WalletTests.swift in Sources */,
 				4D617D562081EE110036BB00 /* DieTests.swift in Sources */,
 				4DA5237220815C06000FFAAB /* TaxTests.swift in Sources */,
 			);

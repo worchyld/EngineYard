@@ -2,7 +2,7 @@
 //  WalletTests.swift
 //  EngineYardTests
 //
-//  Created by Amarjit on 14/04/2018.
+//  Created by Amarjit on 15/04/2018.
 //  Copyright © 2018 Amarjit. All rights reserved.
 //
 
@@ -23,34 +23,14 @@ class WalletTests: EngineYardTests {
     }
 
     func testCredit() {
-        let wallet = Wallet.init(balance: 100)
-        XCTAssertTrue(wallet.canDebit(amount: 100))
-        XCTAssertFalse(wallet.canDebit(amount: 101))
-        XCTAssertFalse(wallet.canDebit(amount: -99))
-        XCTAssertFalse(wallet.canDebit(amount: -101))
+        let w: Wallet = Wallet()
 
-        wallet.credit(amount: 100)
-        XCTAssert(wallet.balance == 200)
+        XCTAssertThrowsError(try w.credit(amount: -100)) { error in
+            XCTAssertEqual(error as? WalletError, WalletError.mustBePositive)
+        }
+
+        XCTAssertTrue(w.balance == 0)
     }
 
-    func testDebit() {
-        let wallet = Wallet.init(balance: 100)
-        XCTAssertTrue(wallet.canCredit(amount: 99))
-        XCTAssertFalse(wallet.canCredit(amount: -100))
-        XCTAssertFalse(wallet.canCredit(amount: -1))
-
-        wallet.debit(amount: 100)
-        XCTAssert(wallet.balance == 0)
-    }
-
-    func testTax() {
-        // when cash is 20, expect tax to be 2
-        let wallet = Wallet(balance: 20)
-        let taxDue = Tax.calculateTaxDue(onBalance: wallet.balance)
-        wallet.debit(amount: taxDue)
-
-        XCTAssertTrue(taxDue == 2, "Expected: 2. Returned \(taxDue)")
-        XCTAssertTrue(wallet.balance == 18, "Expected: 18. Returned \(wallet.balance)")
-    }
     
 }
