@@ -8,7 +8,11 @@
 
 import Foundation
 
-class GameBoard : NSObject {
+protocol GameBoardDelegate {
+    func unlockNextDeck( _ deck: Deck )
+}
+
+class GameBoard : NSObject, GameBoardDelegate {
     static let sharedInstance = GameBoard()
 
     private var _decks: [Deck] = [Deck]()
@@ -23,6 +27,7 @@ class GameBoard : NSObject {
         super.init()
         self._decks = prepare()
     }
+
 
     override var description: String {
         return "GameBoard. Decks: \(self.decks.count)"
@@ -47,6 +52,25 @@ class GameBoard : NSObject {
             , Deck.init(name: "Green.5", cost: 56, generation: .fifth, color: .green, capacity: 5, numberOfChildren: 4)
         ]
 
+        // add deck subscriber
+        let _ = decks.map({
+            $0.addSubscriber(self)
+        })
+
         return decks
+    }
+}
+
+extension GameBoard {
+    internal func unlockNextDeck(_ deck: Deck) {
+        guard let nextDeck = self.decks.after(deck) else {
+            return
+        }
+
+        guard (nextDeck.active == false) else {
+            return
+        }
+
+        nextDeck.unlock()
     }
 }

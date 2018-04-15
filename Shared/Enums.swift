@@ -29,3 +29,15 @@ enum EngineColor: Int {
     static let allRawValues = EngineColor.green.rawValue...EngineColor.blue.rawValue
     static let allValues = Array(allRawValues.map{ EngineColor(rawValue: $0)! })
 }
+
+
+// Obsolescence state
+enum RustedState : Int {
+    case normal // Default
+    case old
+    case obsolete
+
+    static let allRawValues = RustedState.normal.rawValue...RustedState.obsolete.rawValue
+    static let allValues = Array(allRawValues.map{ RustedState(rawValue: $0)! })
+}
+

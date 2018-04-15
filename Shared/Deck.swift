@@ -22,12 +22,9 @@ protocol DeckDelegate {
     var capacity : Int { get } // maximum dice capacity
 }
 
-enum DeckStatus : Int {
-    case locked = 0
-    case unlocked
-}
 
 class Deck : NSObject, DeckDelegate {
+    public fileprivate (set) var subscribers: [GameBoardDelegate] = []
 
     // Each deck has a series of cards
     public private (set) var cards : [Card] = [Card]()
@@ -40,8 +37,9 @@ class Deck : NSObject, DeckDelegate {
     public private (set) var color: EngineColor = .green
     public private (set) var capacity: Int = 0
     public private (set) var numberOfChildren: Int = 0
+    public private (set) var rustedState: RustedState = .normal
+    public private (set) var active: Bool = false
 
-    public private (set) var status: DeckStatus = .locked
 
     // Deck.init(name: "Green.1", cost: 4, generation: .first, color: .green, capacity: 3, numberOfChildren: 4)
     init(name: String, cost: Int, generation: Generation, color: EngineColor, capacity: Int, numberOfChildren: Int) {
@@ -63,5 +61,35 @@ class Deck : NSObject, DeckDelegate {
 
         // Functional code to map the cards to children
         self.cards += (1...numberOfChildren).map{ _ in Card.init(parent: self) }
+    }
+}
+
+extension Deck {
+    public static func ==(lhs: Deck, rhs: Deck) -> Bool {
+        return (lhs.name == rhs.name)
+    }
+}
+
+extension Deck {
+    func unlock() {
+        print ("Unlock: \(self.name)")
+        self.active = true
+    }
+}
+
+// MARK: - Subscription methods
+extension Deck {
+    func addSubscriber(_ subscriber: GameBoardDelegate) {
+        self.subscribers.append(subscriber)
+    }
+
+    func notifySubscribers() {
+        let _ = self.subscribers.map({
+            $0.unlockNextDeck(self)
+        })
+    }
+
+    func removeSubscribers() {
+        self.subscribers.removeAll()
     }
 }
