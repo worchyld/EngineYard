@@ -10,10 +10,17 @@ import Foundation
 
 enum RulesError : Error {
     case invalidNumberOfPlayers
+    case invalidDeckSetup
+    case invalidCardSetup
 }
 
 struct Rules {
     public static let goal: Int = 330
+    public static let taxRate: Float = 0.10
+
+    public static func GameGoalReached(cash: Int) -> Bool {
+        return (cash >= Rules.goal)
+    }
 
     struct NumberOfPlayers {
         static let min: Int = 3
@@ -27,7 +34,7 @@ struct Rules {
         }
     }
 
-    static func SeedCash(playerCount: Int) -> Int {
+    static func SetSeedCash(playerCount: Int) -> Int {
         switch playerCount {
         case Rules.NumberOfPlayers.min:
             return 12

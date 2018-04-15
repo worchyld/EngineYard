@@ -9,7 +9,9 @@
 import Foundation
 
 struct Tax {
-    private static let rate : Float = 0.10
+    private static var rate : Float {
+        return Rules.taxRate
+    }
 
     // Subtract tax from a given balance
     public static func pay(onBalance: Int) -> Int {

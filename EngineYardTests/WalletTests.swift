@@ -63,6 +63,16 @@ class WalletTests: EngineYardTests {
         // balance should be 100-1 = $99
         XCTAssertTrue(w.balance == 99)
     }
+
+    func testGameGoalAchieved() {
+        let cash = [0,299,300,329,330,331]
+
+        let reachedGoal = cash.filter({
+            return (Rules.GameGoalReached(cash: $0))
+        })
+
+        XCTAssertTrue(reachedGoal.count == 2)
+    }
  
     
 }
