@@ -14,19 +14,19 @@ struct Tax
 
     // Subtract tax from a given balance
     public static func pay(onBalance: Int) -> Int {
-        return Int(onBalance - self.calculateTaxDue(onBalance: onBalance))
+        return Int(onBalance - self.due(onBalance: onBalance))
     }
 
     // Tax is always rounded down (as per game rules)
-    public static func calculateTaxDue(onBalance: Int) -> Int {
+    public static func due(onBalance: Int) -> Int {
         return Int(floor(Float(onBalance) * Tax.rate))
     }
 
-    // MARK: (Private) functions
+    // MARK: (Private)
 
     // Add tax to a given balance
     public static func add(toBalance: Int) -> Int {
-        let taxDue: Int = self.calculateTaxDue(onBalance: toBalance)
+        let taxDue: Int = self.due(onBalance: toBalance)
         return Int(toBalance + taxDue)
     }
 

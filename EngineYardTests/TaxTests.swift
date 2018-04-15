@@ -29,6 +29,13 @@ class TaxTests: EngineYardTests {
         XCTAssertTrue(sum == expected, "\(sum). Expected: \(expected)")
     }
 
+    func testTaxDue() {
+        XCTAssertTrue(Tax.due(onBalance: 9) == 0)
+        XCTAssertTrue(Tax.due(onBalance: 10) == 1)
+        XCTAssertTrue(Tax.due(onBalance: 14) == 1)
+        XCTAssertTrue(Tax.due(onBalance: 20) == 2)
+    }
+
     func testAddTax() {
         let balance = 300
         let expected = 330
