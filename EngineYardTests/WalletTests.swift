@@ -23,13 +23,49 @@ class WalletTests: EngineYardTests {
     }
 
     func testCredit() {
-        let w: Wallet = Wallet()
+        let w = Wallet()
 
         XCTAssertThrowsError(try w.credit(amount: -100)) { error in
             XCTAssertEqual(error as? WalletError, WalletError.mustBePositive)
         }
 
         XCTAssertTrue(w.balance == 0)
+    }
+
+    func testDebit() {
+        let w = Wallet()
+
+        XCTAssertTrue(w.balance == 0)
+
+        XCTAssertThrowsError(try w.debit(amount: -100)) { error in
+            XCTAssertEqual(error as? WalletError, WalletError.mustBePositive)
+        }
+
+        XCTAssertThrowsError(try w.debit(amount: 100)) { error in
+            XCTAssertEqual(error as? WalletError, WalletError.notEnoughFunds)
+        }
+
+        do {
+            try w.credit(amount: 100)
+        } catch let error {
+            XCTFail(error.localizedDescription)
+        }
+
+        // debit 0 should throw error
+        XCTAssertThrowsError(try w.debit(amount: 0)) { error in
+            XCTAssertEqual(error as? WalletError, WalletError.mustBePositive)
+        }
+
+        // debit > balance should throw error
+        XCTAssertThrowsError(try w.debit(amount: 101)) { error in
+            XCTAssertEqual(error as? WalletError, WalletError.notEnoughFunds)
+        }
+
+        // debit $1 should not throw error
+        XCTAssertNoThrow(try w.debit(amount: 1))
+
+        // balance should be 100-1 = $99
+        XCTAssertTrue(w.balance == 99)
     }
 
     
