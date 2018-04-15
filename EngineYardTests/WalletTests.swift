@@ -24,13 +24,13 @@ class WalletTests: EngineYardTests {
 
     func testCredit() {
         let w = Wallet()
-
         XCTAssertThrowsError(try w.credit(amount: -100)) { error in
             XCTAssertEqual(error as? WalletError, WalletError.mustBePositive)
         }
 
         XCTAssertTrue(w.balance == 0)
     }
+
 
     func testDebit() {
         let w = Wallet()
@@ -63,6 +63,6 @@ class WalletTests: EngineYardTests {
         // balance should be 100-1 = $99
         XCTAssertTrue(w.balance == 99)
     }
-
+ 
     
 }

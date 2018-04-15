@@ -27,13 +27,24 @@ class Wallet : CustomStringConvertible, WalletDelegate {
     }
 
     func credit(amount: Int) throws {
-        guard amount > 0 else {
-            throw WalletError.mustBePositive
-        }
+        try canCredit(amount: amount)
         handleCredit(amount: amount)
     }
 
     func debit(amount: Int) throws {
+        try canDebit(amount: amount)
+        handleDebit(amount: amount)
+    }
+
+    // MARK: (Private)
+
+    private func canCredit(amount: Int) throws {
+        guard amount > 0 else {
+            throw WalletError.mustBePositive
+        }
+    }
+
+    private func canDebit(amount: Int) throws {
         guard amount > 0 else {
             throw WalletError.mustBePositive
         }
@@ -43,10 +54,7 @@ class Wallet : CustomStringConvertible, WalletDelegate {
         guard (self.balance - amount >= 0) else {
             throw WalletError.notEnoughFunds
         }
-        handleDebit(amount: amount)
     }
-
-    // MARK: (Private)
 
     private func handleCredit(amount: Int) {
         self.balance += amount
