@@ -57,6 +57,7 @@ class GameBoard : NSObject, GameBoardDelegate {
             $0.addSubscriber(self)
         })
 
+        
         return decks
     }
 }

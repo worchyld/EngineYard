@@ -60,6 +60,8 @@ class GameBoardTests: EngineYardTests {
     }
 
     func testValidateDeckSetup() {
+        print ("testValidateDeckSetup")
+
         let board = GameBoard()
 
         // validate decks
@@ -69,8 +71,6 @@ class GameBoardTests: EngineYardTests {
             XCTAssert(deck.cost % 4 == 0)
             XCTAssert(deck.productionCost == (deck.cost / 2))
             XCTAssert(deck.income == (deck.productionCost / 2))
-
-            print ("deck = \(deck.description)")
 
             for _ in deck.cards {
                 switch deck.color {
@@ -97,29 +97,47 @@ class GameBoardTests: EngineYardTests {
         XCTAssert(mockCards.total == Mock.Cards.Expected.total, "Not enough cards, total = \(mockCards.total), Expected: \(Mock.Cards.Expected.total)")
     }
 
-    func testSubscription() {
+    func testSubscriptionUnlocksNextDeck() {
         let board = GameBoard()
 
+        // When first running board, expect inactive decks to be all decks
         var inactiveDecks = board.decks.filter { (d:Deck) -> Bool in
             return !d.active
         }.count
 
-        var activeDecks = board.decks.filter { (d:Deck) -> Bool in
+        var activeDecks = board.decks.filter { (d: Deck) -> Bool in
+            return d.active
+        }.count
+
+        XCTAssertTrue(inactiveDecks == 14)
+        XCTAssertTrue(activeDecks == 0)
+
+        // Force unlock the first deck
+        guard let firstDeck = board.decks.first else {
+            XCTFail("No first deck found")
+            return
+        }
+
+        // Expect add order to be in the orderBook
+        XCTAssert(firstDeck.orderBook.existingOrders.count == 0)
+        firstDeck.orderBook.add(.existingOrder)
+        XCTAssert(firstDeck.orderBook.existingOrders.count == 1)
+
+        // Force unlock all decks after the first deck
+        for d in board.decks {
+            d.notifySubscribers()
+        }
+
+        inactiveDecks = board.decks.filter { (d:Deck) -> Bool in
+            return !d.active
+            }.count
+
+        activeDecks = board.decks.filter { (d: Deck) -> Bool in
             return d.active
             }.count
 
-        XCTAssertTrue(inactiveDecks == (Rules.Board.decks-1), "\(inactiveDecks)")
-
-
-        // Unlock all decks
-        let _ = board.decks.map{
-            $0.notifySubscribers()
-            print ("notified")
-        }
-
-        print ("inactiveDecks: \(inactiveDecks)")
-        print ("activeDecks: \(activeDecks)")
-
+        XCTAssertTrue(inactiveDecks == 0)
+        XCTAssertTrue(activeDecks == Rules.Board.decks)
 
     }
     

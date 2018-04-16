@@ -38,10 +38,27 @@ class Deck : NSObject, DeckDelegate {
     public private (set) var capacity: Int = 0
     public private (set) var numberOfChildren: Int = 0
     public private (set) var rustedState: RustedState = .normal
-    public private (set) var active: Bool = false
 
+    var active: Bool {
+        return ((self.existingOrderValues.count > 0) || (self.customerBaseValues.count > 0))
+    }
 
-    // Deck.init(name: "Green.1", cost: 4, generation: .first, color: .green, capacity: 3, numberOfChildren: 4)
+    // OrderBook
+    lazy var orderBook: OrderBook = OrderBook(parent: self)
+    var existingOrderValues: [Int] {
+        return orderBook.existingOrders.compactMap({ (o:Order) -> Int in
+            return o.value
+        })
+
+    }
+    var customerBaseValues: [Int] {
+        return orderBook.customerBase.compactMap({ (o:Order) -> Int in
+            return o.value
+        })
+    }
+
+    // Init
+
     init(name: String, cost: Int, generation: Generation, color: EngineColor, capacity: Int, numberOfChildren: Int) {
         assert(cost % 4 == 0, "Cost must be a modulus of 4")
         assert(capacity > 0, "Capacity must be > 0")
@@ -62,9 +79,17 @@ class Deck : NSObject, DeckDelegate {
         // Functional code to map the cards to children
         self.cards += (1...numberOfChildren).map{ _ in Card.init(parent: self) }
     }
+
+    deinit {
+        
+    }
 }
 
 extension Deck {
+    override var description: String {
+        return "\(self.name), cards: \(cards.count), existingOrders: \(self.existingOrderValues), customerBase: \(self.customerBaseValues)"
+    }
+
     public static func ==(lhs: Deck, rhs: Deck) -> Bool {
         return (lhs.name == rhs.name)
     }
@@ -72,8 +97,9 @@ extension Deck {
 
 extension Deck {
     func unlock() {
-        print ("Unlock: \(self.name)")
-        self.active = true
+        print ("Unlocking: \(self.name)")
+        self.orderBook.add(.existingOrder)
+        print ("Post unlock: \(self.orderBook.description)")
     }
 }
 
