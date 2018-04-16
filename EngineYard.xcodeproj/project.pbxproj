@@ -18,6 +18,7 @@
 		4D3DF4B720834679000DF88E /* WalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3DF4B620834679000DF88E /* WalletTests.swift */; };
 		4D3DF4B920835DB7000DF88E /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3DF4B820835DB7000DF88E /* Rules.swift */; };
 		4D617D562081EE110036BB00 /* DieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D617D552081EE110036BB00 /* DieTests.swift */; };
+		4D74BA482084A6D000ADC00C /* Tableau.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74BA472084A6D000ADC00C /* Tableau.swift */; };
 		4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3486820812972006DA164 /* EngineYardTests.swift */; };
 		4DA3487C20812A8B006DA164 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3487420812A8B006DA164 /* ViewController.swift */; };
 		4DA3487D20812A8B006DA164 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DA3487520812A8B006DA164 /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		4D3DF4B620834679000DF88E /* WalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTests.swift; sourceTree = "<group>"; };
 		4D3DF4B820835DB7000DF88E /* Rules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rules.swift; sourceTree = "<group>"; };
 		4D617D552081EE110036BB00 /* DieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DieTests.swift; sourceTree = "<group>"; };
+		4D74BA472084A6D000ADC00C /* Tableau.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tableau.swift; sourceTree = "<group>"; };
 		4DA3485020812970006DA164 /* EngineYard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EngineYard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA3486420812972006DA164 /* EngineYardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EngineYardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA3486820812972006DA164 /* EngineYardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineYardTests.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				4D1BD48A2083846500051FD9 /* Card.swift */,
 				4D1BD48C208384ED00051FD9 /* Production.swift */,
 				4D1BD48E2083864B00051FD9 /* GameBoard.swift */,
+				4D74BA472084A6D000ADC00C /* Tableau.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				4D1BD48D208384ED00051FD9 /* Production.swift in Sources */,
 				4DA5236C208158C8000FFAAB /* EY+Array.swift in Sources */,
 				4DA523652081582B000FFAAB /* Enums.swift in Sources */,
+				4D74BA482084A6D000ADC00C /* Tableau.swift in Sources */,
 				4DA5236720815885000FFAAB /* Die.swift in Sources */,
 				4D3DF4B920835DB7000DF88E /* Rules.swift in Sources */,
 				4DA5236E20815960000FFAAB /* Tax.swift in Sources */,

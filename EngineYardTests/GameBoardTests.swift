@@ -98,8 +98,6 @@ class GameBoardTests: EngineYardTests {
     }
 
     func testSubscription() {
-        //notifySubscribers
-
         let board = GameBoard()
 
         var inactiveDecks = board.decks.filter { (d:Deck) -> Bool in
@@ -110,7 +108,8 @@ class GameBoardTests: EngineYardTests {
             return d.active
             }.count
 
-        XCTAssertTrue(inactiveDecks == Rules.Board.decks, "\(inactiveDecks)")
+        XCTAssertTrue(inactiveDecks == (Rules.Board.decks-1), "\(inactiveDecks)")
+
 
         // Unlock all decks
         let _ = board.decks.map{
@@ -118,57 +117,10 @@ class GameBoardTests: EngineYardTests {
             print ("notified")
         }
 
-        inactiveDecks = board.decks.filter { (d:Deck) -> Bool in
-            return d.active == false
-            }.count
-
-        activeDecks = board.decks.filter { (d:Deck) -> Bool in
-            return d.active == true
-            }.count
+        print ("inactiveDecks: \(inactiveDecks)")
+        print ("activeDecks: \(activeDecks)")
 
 
-        var count = 0
-        for d in board.decks {
-            if (d.active == true) {
-                count += 1
-            }
-        }
-        print ("\(count)")
-
-        XCTAssertTrue(inactiveDecks == 0, "\(inactiveDecks)")
-        XCTAssertTrue(activeDecks == 14, "\(activeDecks)")
-        XCTAssertTrue(count == 14, "\(count)")
-
-        /*
-        // validate in-active decks
-        var countInactiveDecks = self.board.decks.filter { (d:Deck) -> Bool in
-            return d.active == false
-            }.count
-
-        var countActiveDecks = self.board.decks.filter { (d:Deck) -> Bool in
-            return d.active
-            }.count
-
-        // expect all decks to be in-active
-        XCTAssert(countInactiveDecks == Constants.Board.decks)
-
-        // Unlock all decks
-        let _ = self.board.decks.map{
-            $0.notifySubscribers()
-        }
-
-        countInactiveDecks = self.board.decks.filter { (d:Deck) -> Bool in
-            return !d.active
-            }.count
-
-        countActiveDecks = self.board.decks.filter { (d:Deck) -> Bool in
-            return d.active
-            }.count
-
-        // function only unlocks the next deck, thus the first deck is not directly unlocked
-        XCTAssert(countInactiveDecks == 1, "\(countInactiveDecks)")
-        XCTAssert(countActiveDecks == Constants.Board.decks - 1, "\(countActiveDecks)")
-         */
     }
     
 }
