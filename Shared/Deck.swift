@@ -40,22 +40,12 @@ class Deck : NSObject, DeckDelegate {
     public private (set) var rustedState: RustedState = .normal
 
     var active: Bool {
-        return ((self.existingOrderValues.count > 0) || (self.customerBaseValues.count > 0))
+        return ((self.orderBook.existingOrderValues.count > 0) || (self.orderBook.customerBaseValues.count > 0))
     }
 
     // OrderBook
     lazy var orderBook: OrderBook = OrderBook(parent: self)
-    var existingOrderValues: [Int] {
-        return orderBook.existingOrders.compactMap({ (o:Order) -> Int in
-            return o.value
-        })
-
-    }
-    var customerBaseValues: [Int] {
-        return orderBook.customerBase.compactMap({ (o:Order) -> Int in
-            return o.value
-        })
-    }
+    
 
     // Init
 
@@ -87,7 +77,7 @@ class Deck : NSObject, DeckDelegate {
 
 extension Deck {
     override var description: String {
-        return "\(self.name), cards: \(cards.count), existingOrders: \(self.existingOrderValues), customerBase: \(self.customerBaseValues)"
+        return "\(self.name), cards: \(cards.count), existingOrders: \(self.orderBook.existingOrderValues), customerBase: \(self.orderBook.customerBaseValues)"
     }
 
     public static func ==(lhs: Deck, rhs: Deck) -> Bool {
@@ -97,9 +87,12 @@ extension Deck {
 
 extension Deck {
     func unlock() {
-        print ("Unlocking: \(self.name)")
-        self.orderBook.add(.existingOrder)
-        print ("Post unlock: \(self.orderBook.description)")
+//        self.orderBook.add(.existingOrder)
+//        guard let hasParent = self.orderBook.parent else {
+//            return
+//        }
+
+        print ("\(String(describing: self.orderBook.parent?.name)) - Post Unlock: \(self.orderBook.description)")
     }
 }
 

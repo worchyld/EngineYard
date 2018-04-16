@@ -28,6 +28,17 @@ class OrderBook : NSObject {
             return ($0.orderType == .customerBase)
         })
     }
+    var existingOrderValues: [Int] {
+        return self.existingOrders.compactMap({ (o:Order) -> Int in
+            return o.value
+        })
+
+    }
+    var customerBaseValues: [Int] {
+        return self.customerBase.compactMap({ (o:Order) -> Int in
+            return o.value
+        })
+    }
 
     // Init
     init(parent: Deck) {
@@ -41,7 +52,7 @@ class OrderBook : NSObject {
 
 extension OrderBook {
     override var description: String {
-        return "existing: \(existingOrders), customerBase: \(customerBase)\n"
+        return ("OrderBook.existing = \(self.existingOrderValues), OrderBook.customerBase = \(self.customerBaseValues)")
     }
 }
 

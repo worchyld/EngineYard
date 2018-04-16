@@ -139,6 +139,11 @@ class GameBoardTests: EngineYardTests {
         XCTAssertTrue(inactiveDecks == 0)
         XCTAssertTrue(activeDecks == Rules.Board.decks)
 
+        print ("testSubscription - Output")
+        for d in board.decks {
+            print (d.description)
+        }
+
     }
     
 }
