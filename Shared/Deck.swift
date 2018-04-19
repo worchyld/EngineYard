@@ -87,12 +87,14 @@ extension Deck {
 
 extension Deck {
     func unlock() {
-//        self.orderBook.add(.existingOrder)
-//        guard let hasParent = self.orderBook.parent else {
-//            return
-//        }
+        self.orderBook.add(.existingOrder)
 
-        print ("\(String(describing: self.orderBook.parent?.name)) - Post Unlock: \(self.orderBook.description)")
+        var parentName: String = "[No Parent]"
+        if let hasParent = self.orderBook.parent {
+            parentName = hasParent.name
+        }
+
+        print ("\(String(describing: parentName)) - Post Unlock: \(self.orderBook.description)")
     }
 }
 
