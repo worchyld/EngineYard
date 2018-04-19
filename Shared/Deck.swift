@@ -88,13 +88,6 @@ extension Deck {
 extension Deck {
     func unlock() {
         self.orderBook.add(.existingOrder)
-
-        var parentName: String = "[No Parent]"
-        if let hasParent = self.orderBook.parent {
-            parentName = hasParent.name
-        }
-
-        print ("\(String(describing: parentName)) - Post Unlock: \(self.orderBook.description)")
     }
 }
 
