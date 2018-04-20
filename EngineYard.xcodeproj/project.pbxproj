@@ -153,11 +153,11 @@
 				4D3DF4B420834592000DF88E /* Player.swift */,
 				4D1BD4862083829900051FD9 /* Deck.swift */,
 				4D1BD48A2083846500051FD9 /* Card.swift */,
+				4D74BA4B2084AC5000ADC00C /* OrderBook.swift */,
 				4D1BD48C208384ED00051FD9 /* Production.swift */,
 				4DCE7B432089E49E0089BDDC /* Game.swift */,
 				4D1BD48E2083864B00051FD9 /* GameBoard.swift */,
 				4D74BA472084A6D000ADC00C /* Tableau.swift */,
-				4D74BA4B2084AC5000ADC00C /* OrderBook.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";

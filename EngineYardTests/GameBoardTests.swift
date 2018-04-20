@@ -118,6 +118,21 @@ class GameBoardTests: EngineYardTests {
         XCTAssertTrue(activeDecks == 1)
     }
 
+    func testOrderCapacity() {
+        let game = Game()
+        guard let board = game.board else {
+            XCTFail("No board created")
+            return
+        }
+        guard let firstDeck = board.decks.first else {
+            XCTFail("No first deck")
+            return
+        }
+
+        // #TODO - Need to test order capacity against rules
+
+    }
+
 
     func testSubscriptionUnlocksNextDeck() {
         let game = Game()
