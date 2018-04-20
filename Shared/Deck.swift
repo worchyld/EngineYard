@@ -45,10 +45,14 @@ class Deck : NSObject, DeckDelegate {
 
     // OrderBook
     lazy var orderBook: OrderBook = OrderBook(parent: self)
-    
+    var existingOrders : [Int] {
+        return orderBook.existingOrderValues
+    }
+    var customerBase : [Int] {
+        return orderBook.customerBaseValues
+    }
 
-    // Init
-
+    // [- Init -]
     init(name: String, cost: Int, generation: Generation, color: EngineColor, capacity: Int, numberOfChildren: Int) {
         assert(cost % 4 == 0, "Cost must be a modulus of 4")
         assert(capacity > 0, "Capacity must be > 0")

@@ -81,7 +81,6 @@ class Order : NSObject {
         self.parent = parent
         self.orderType = orderType
         self.value = Die.roll()
-        print ("Order generated: \(self.value)")
     }
 
 }

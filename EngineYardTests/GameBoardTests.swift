@@ -60,9 +60,11 @@ class GameBoardTests: EngineYardTests {
     }
 
     func testValidateDeckSetup() {
-        print ("testValidateDeckSetup")
-
-        let board = GameBoard()
+        let game = Game()
+        guard let board = game.board else {
+            XCTFail("No board created")
+            return
+        }
 
         // validate decks
         var mockCards = Mock.Cards()
@@ -95,55 +97,51 @@ class GameBoardTests: EngineYardTests {
         XCTAssert(mockCards.yellow == Mock.Cards.Expected.yellow, "Not enough yellow cards. Found: \(mockCards.yellow), Expected: \(Mock.Cards.Expected.yellow)")
         XCTAssert(mockCards.blue == Mock.Cards.Expected.blue, "Not enough blue cards. Found: \(mockCards.blue), Expected: \(Mock.Cards.Expected.blue)")
         XCTAssert(mockCards.total == Mock.Cards.Expected.total, "Not enough cards, total = \(mockCards.total), Expected: \(Mock.Cards.Expected.total)")
-    }
 
-    func testSubscriptionUnlocksNextDeck() {
-        let board = GameBoard()
-
-        // When first running board, expect inactive decks to be all decks
-        var inactiveDecks = board.decks.filter { (d:Deck) -> Bool in
-            return !d.active
-        }.count
-
-        var activeDecks = board.decks.filter { (d: Deck) -> Bool in
-            return d.active
-        }.count
-
-        XCTAssertTrue(inactiveDecks == 14)
-        XCTAssertTrue(activeDecks == 0)
-
-        // Force unlock the first deck
+        // Expect that the first order to be generated
         guard let firstDeck = board.decks.first else {
             XCTFail("No first deck found")
             return
         }
+        XCTAssertTrue(firstDeck.orderBook.existingOrders.count == 1)
 
-        // Expect add order to be in the orderBook
-        XCTAssert(firstDeck.orderBook.existingOrders.count == 0)
-        firstDeck.orderBook.add(.existingOrder)
-        XCTAssert(firstDeck.orderBook.existingOrders.count == 1)
+        // Test inactive and active decks
+        let inactiveDecks = board.decks.filter { (d:Deck) -> Bool in
+            return !d.active
+            }.count
+
+        let activeDecks = board.decks.filter { (d:Deck) -> Bool in
+            return d.active
+            }.count
+
+        XCTAssertTrue(inactiveDecks == 13)
+        XCTAssertTrue(activeDecks == 1)
+    }
+
+
+    func testSubscriptionUnlocksNextDeck() {
+        let game = Game()
+        guard let board = game.board else {
+            XCTFail("No board created")
+            return
+        }
 
         // Force unlock all decks after the first deck
         for d in board.decks {
             d.notifySubscribers()
         }
 
-        inactiveDecks = board.decks.filter { (d:Deck) -> Bool in
+        // Test inactive and active decks
+        let inactiveDecks = board.decks.filter { (d:Deck) -> Bool in
             return !d.active
             }.count
 
-        activeDecks = board.decks.filter { (d: Deck) -> Bool in
+        let activeDecks = board.decks.filter { (d:Deck) -> Bool in
             return d.active
             }.count
 
         XCTAssertTrue(inactiveDecks == 0)
         XCTAssertTrue(activeDecks == Rules.Board.decks)
-
-        print ("testSubscription - Output")
-        for d in board.decks {
-            print (d.description)
-        }
-
     }
-    
+
 }

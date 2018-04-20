@@ -32,6 +32,7 @@
 		4DA5236C208158C8000FFAAB /* EY+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5236B208158C8000FFAAB /* EY+Array.swift */; };
 		4DA5236E20815960000FFAAB /* Tax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5236D20815960000FFAAB /* Tax.swift */; };
 		4DA5237220815C06000FFAAB /* TaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5237120815C06000FFAAB /* TaxTests.swift */; };
+		4DCE7B442089E49E0089BDDC /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCE7B432089E49E0089BDDC /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		4DA5236B208158C8000FFAAB /* EY+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Array.swift"; sourceTree = "<group>"; };
 		4DA5236D20815960000FFAAB /* Tax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tax.swift; sourceTree = "<group>"; };
 		4DA5237120815C06000FFAAB /* TaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTests.swift; sourceTree = "<group>"; };
+		4DCE7B432089E49E0089BDDC /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				4D1BD4862083829900051FD9 /* Deck.swift */,
 				4D1BD48A2083846500051FD9 /* Card.swift */,
 				4D1BD48C208384ED00051FD9 /* Production.swift */,
+				4DCE7B432089E49E0089BDDC /* Game.swift */,
 				4D1BD48E2083864B00051FD9 /* GameBoard.swift */,
 				4D74BA472084A6D000ADC00C /* Tableau.swift */,
 				4D74BA4B2084AC5000ADC00C /* OrderBook.swift */,
@@ -271,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D3DF4B320834587000DF88E /* Wallet.swift in Sources */,
+				4DCE7B442089E49E0089BDDC /* Game.swift in Sources */,
 				4D74BA4C2084AC5000ADC00C /* OrderBook.swift in Sources */,
 				4DA3488020812A8B006DA164 /* AppDelegate.swift in Sources */,
 				4D01469B208393AF00AE54B1 /* Card+Colors.swift in Sources */,
