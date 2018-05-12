@@ -66,6 +66,7 @@ extension OrderBook {
 
     internal func canAdd(orderType: OrderType) -> Bool {
         guard let hasParent = self.parent else {
+            NSLog("No space")
             return false
         }
         return (self.orders.count < hasParent.capacity)

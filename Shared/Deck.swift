@@ -51,6 +51,9 @@ class Deck : NSObject, DeckDelegate {
     var customerBase : [Int] {
         return orderBook.customerBaseValues
     }
+    var currentNumberOfDice: Int {
+        return (self.existingOrders.count + self.customerBase.count)
+    }
 
     // [- Init -]
     init(name: String, cost: Int, generation: Generation, color: EngineColor, capacity: Int, numberOfChildren: Int) {
@@ -75,7 +78,7 @@ class Deck : NSObject, DeckDelegate {
     }
 
     deinit {
-        
+        self.removeSubscribers()
     }
 }
 
