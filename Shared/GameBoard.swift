@@ -57,7 +57,9 @@ class GameBoard : NSObject, GameBoardDelegate {
             $0.addSubscriber(self)
         })
 
-        
+        // Add 1 order to the firstDeck
+        self.addFirstOrder()
+
         return decks
     }
 }
@@ -73,5 +75,12 @@ extension GameBoard {
         }
 
         nextDeck.unlock()
+    }
+
+    internal func addFirstOrder() {
+        guard let firstDeck = self.decks.first else {
+            return
+        }
+        firstDeck.orderBook.add(.existingOrder)
     }
 }

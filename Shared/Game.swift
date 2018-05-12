@@ -26,12 +26,6 @@ extension Game {
     func setup() {
         self.board = GameBoard()
 
-        // Add order to the firstDeck
-        guard let firstDeck = self.board?.decks.first else {
-            print ("No first deck found")
-            return
-        }
-        firstDeck.orderBook.add(.existingOrder)
     }
 
 }
