@@ -13,4 +13,5 @@ class Player : NSObject {
         return self.wallet.balance
     }
     var wallet : Wallet = Wallet()
+    lazy var hand : Hand = Hand(owner: self) // Hand of cards / Tableau
 }

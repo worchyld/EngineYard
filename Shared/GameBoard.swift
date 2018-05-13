@@ -17,6 +17,10 @@ class GameBoard : NSObject, GameBoardDelegate {
 
     private var _decks: [Deck] = [Deck]()
 
+    public var countUnlocked : Int {
+        return (self.decks.reduce(0) { $0 + ($1.active ? 1 : 0) })
+    }
+
     public var decks: [Deck] {
         return self._decks.sorted(by: { (t1: Deck, t2: Deck) -> Bool in
             return (t1.cost < t2.cost)
@@ -57,9 +61,6 @@ class GameBoard : NSObject, GameBoardDelegate {
             $0.addSubscriber(self)
         })
 
-        // Add 1 order to the firstDeck
-        self.addFirstOrder()
-
         return decks
     }
 }
@@ -75,12 +76,5 @@ extension GameBoard {
         }
 
         nextDeck.unlock()
-    }
-
-    internal func addFirstOrder() {
-        guard let firstDeck = self.decks.first else {
-            return
-        }
-        firstDeck.orderBook.add(.existingOrder)
     }
 }

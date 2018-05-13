@@ -8,25 +8,24 @@
 
 import Foundation
 
-typealias Hand = Tableau
+typealias Tableau = Hand
 
-enum TableauError: Error {
+enum HandError: Error {
     case alreadyOwnThisTypeOfCard
     case cannotFindCard
 }
 
-class Tableau : NSObject {
+class Hand : CustomStringConvertible {
     public private (set) weak var owner: Player?
     public private (set) var cards: [Card] = [Card]()
 
     init(owner: Player) {
-        super.init()
         self.owner = owner
     }
 }
 
-extension Tableau {
-    override var description: String {
+extension Hand {
+    var description: String {
         guard let ownership = self.owner else {
             return "No owner"
         }
@@ -37,10 +36,12 @@ extension Tableau {
 extension Tableau {
 
     func add(card: Card) -> Bool {
+        self.cards.append(card)
         return true
     }
 
     func remove(card: Card) -> Bool {
+        
         return true
     }
 

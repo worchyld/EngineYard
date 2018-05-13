@@ -26,7 +26,7 @@ struct Rules {
         static let min: Int = 3
         static let max: Int = 5
 
-        static func isValid(count:Int) throws -> Bool {
+        static func isValid(count: Int) throws -> Bool {
             guard ((Rules.NumberOfPlayers.min ... Rules.NumberOfPlayers.max).contains(count)) else {
                 throw RulesError.invalidNumberOfPlayers
             }
@@ -34,14 +34,11 @@ struct Rules {
         }
     }
 
-    static func SetSeedCash(playerCount: Int) -> Int {
-        switch playerCount {
-        case Rules.NumberOfPlayers.min:
-            return 12
-        default:
-            return 14
-        }
+    struct SeedCash {
+        static let threePlayer: Int = 12
+        static let fivePlayer: Int = 14
     }
+
 
     struct Board {
         static let decks: Int = 14 // total number of train decks
