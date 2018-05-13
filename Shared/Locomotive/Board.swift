@@ -12,7 +12,7 @@ protocol GameBoardDelegate {
     func unlockNextDeck( _ deck: Deck )
 }
 
-class Board : NSObject, GameBoardDelegate {
+final class Board : NSObject, GameBoardDelegate {
     static let sharedInstance = Board()
 
     private var _decks: [Deck] = [Deck]()

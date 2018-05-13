@@ -23,7 +23,7 @@ protocol DeckDelegate {
 }
 
 
-class Deck : NSObject, DeckDelegate {
+final class Deck : NSObject, DeckDelegate {
     public fileprivate (set) var subscribers: [GameBoardDelegate] = []
 
     // Each deck has a series of cards

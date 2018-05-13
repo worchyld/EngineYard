@@ -10,7 +10,7 @@ import Foundation
 
 // Game
 
-class Game : NSObject {
+final class Game : NSObject {
     static var instance = Game()
     var board: Board!
     var players: [Player] = [Player]()

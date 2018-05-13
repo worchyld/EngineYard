@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Production : NSObject {
+final class Production : NSObject {
     public private (set) weak var parent: Card?
     public private (set) var units: Int = 0
     public private (set) var spentUnits: Int = 0

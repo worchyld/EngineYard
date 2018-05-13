@@ -19,7 +19,7 @@ protocol WalletDelegate {
     func debit(amount: Int) throws
 }
 
-class Wallet : CustomStringConvertible, WalletDelegate {
+final class Wallet : CustomStringConvertible, WalletDelegate {
     public private(set) var balance: Int = 0
 
     init(amount: Int = 0) {

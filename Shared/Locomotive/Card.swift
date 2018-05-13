@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Card : NSObject  {
+final class Card : NSObject  {
     private let uuid: String = UUID().uuidString
     public fileprivate(set) weak var parent : Deck?
     public private (set) var production: Production = Production()

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Player : NSObject {
+final class Player : NSObject {
     var cash : Int {
         return self.wallet.balance
     }

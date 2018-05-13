@@ -15,7 +15,7 @@ enum HandError: Error {
     case cannotFindCard
 }
 
-class Hand : CustomStringConvertible {
+final class Hand : CustomStringConvertible {
     public private (set) weak var owner: Player?
     public private (set) var cards: [Card] = [Card]()
 

@@ -13,7 +13,7 @@ enum OrderType: Int {
     case customerBase  // completedOrder
 }
 
-class OrderBook : NSObject {
+final class OrderBook : NSObject {
     public private (set) weak var parent: Deck?
     public private (set) var orders: [Order] = [Order]()
 
