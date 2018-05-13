@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4D00A42720A8C5FF00A2E88E /* GameSetupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D00A42620A8C5FF00A2E88E /* GameSetupManager.swift */; };
+		4D00A42920A8C77500A2E88E /* ProductionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D00A42820A8C77500A2E88E /* ProductionTests.swift */; };
 		4D01469B208393AF00AE54B1 /* Card+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01469A208393AF00AE54B1 /* Card+Colors.swift */; };
 		4D1BD4872083829900051FD9 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1BD4862083829900051FD9 /* Deck.swift */; };
 		4D1BD48B2083846500051FD9 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1BD48A2083846500051FD9 /* Card.swift */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		4D00A42620A8C5FF00A2E88E /* GameSetupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetupManager.swift; sourceTree = "<group>"; };
+		4D00A42820A8C77500A2E88E /* ProductionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionTests.swift; sourceTree = "<group>"; };
 		4D01469A208393AF00AE54B1 /* Card+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Colors.swift"; sourceTree = "<group>"; };
 		4D1BD4862083829900051FD9 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		4D1BD48A2083846500051FD9 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				4DA5237120815C06000FFAAB /* TaxTests.swift */,
 				4D617D552081EE110036BB00 /* DieTests.swift */,
 				4D3DF4B620834679000DF88E /* WalletTests.swift */,
+				4D00A42820A8C77500A2E88E /* ProductionTests.swift */,
 				4DA3486A20812972006DA164 /* Info.plist */,
 			);
 			path = EngineYardTests;
@@ -326,6 +329,7 @@
 				4D3DF4B720834679000DF88E /* WalletTests.swift in Sources */,
 				4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */,
 				4D617D562081EE110036BB00 /* DieTests.swift in Sources */,
+				4D00A42920A8C77500A2E88E /* ProductionTests.swift in Sources */,
 				4DA5237220815C06000FFAAB /* TaxTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
