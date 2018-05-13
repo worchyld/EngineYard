@@ -61,15 +61,15 @@ class ProductionTests: EngineYardTests {
     func testComplexProductionSpend() {
         let p = Production()
         p.setInitialProduction()
-        p.add(amount: 1)
-        XCTAssertTrue(p.units == 2)
+        p.add(amount: 59)
+        XCTAssertTrue(p.units == 60)
 
         p.spend(amount: 1)
-        XCTAssertTrue(p.units == 1)
+        XCTAssertTrue(p.units == 59)
         XCTAssertTrue(p.spentUnits == 1)
 
         p.reset()
-        XCTAssertTrue(p.units == 2)
+        XCTAssertTrue(p.units == 60)
         XCTAssertTrue(p.spentUnits == 0)
     }
     
