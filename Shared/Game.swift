@@ -12,16 +12,17 @@ import Foundation
 
 class Game : NSObject {
     static var instance = Game()
-    var board: GameBoard!
+    var board: Board!
     var players: [Player] = [Player]()
     var dateCreated: Date?
 
     override init() {
         super.init()
-        self.board = GameBoard()
+        self.board = Board()
     }
 }
 
+/*
 extension Game {
 
     func setup(players: [Player]) {
@@ -102,5 +103,5 @@ extension Game {
 
         firstDeck.orderBook.add(.customerBase)
     }
-
 }
+*/

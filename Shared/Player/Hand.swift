@@ -29,11 +29,11 @@ extension Hand {
         guard let ownership = self.owner else {
             return "No owner"
         }
-        return ("Tableau owner: \(ownership) - Cards: \(self.cards.count)")
+        return ("Hand owner: \(ownership) - Cards: \(self.cards.count)")
     }
 }
 
-extension Tableau {
+extension Hand {
 
     func add(card: Card) -> Bool {
         self.cards.append(card)

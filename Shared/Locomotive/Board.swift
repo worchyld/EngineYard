@@ -12,8 +12,8 @@ protocol GameBoardDelegate {
     func unlockNextDeck( _ deck: Deck )
 }
 
-class GameBoard : NSObject, GameBoardDelegate {
-    static let sharedInstance = GameBoard()
+class Board : NSObject, GameBoardDelegate {
+    static let sharedInstance = Board()
 
     private var _decks: [Deck] = [Deck]()
 
@@ -34,7 +34,7 @@ class GameBoard : NSObject, GameBoardDelegate {
 
 
     override var description: String {
-        return "GameBoard. Decks: \(self.decks.count)"
+        return "Board. Decks: \(self.decks.count)"
     }
 
     // Prepare game decks
@@ -65,7 +65,7 @@ class GameBoard : NSObject, GameBoardDelegate {
     }
 }
 
-extension GameBoard {
+extension Board {
     internal func unlockNextDeck(_ deck: Deck) {
         guard let nextDeck = self.decks.after(deck) else {
             return

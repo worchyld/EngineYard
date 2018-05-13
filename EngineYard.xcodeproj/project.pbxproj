@@ -106,6 +106,16 @@
 			path = Locomotive;
 			sourceTree = "<group>";
 		};
+		4D00A42420A8C59E00A2E88E /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				4D3DF4B420834592000DF88E /* Player.swift */,
+				4D74BA472084A6D000ADC00C /* Hand.swift */,
+				4D3DF4B220834587000DF88E /* Wallet.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
 		4DA3484720812970006DA164 = {
 			isa = PBXGroup;
 			children = (
@@ -158,11 +168,9 @@
 				4DA5236620815885000FFAAB /* Die.swift */,
 				4D3DF4B820835DB7000DF88E /* Rules.swift */,
 				4DA5236D20815960000FFAAB /* Tax.swift */,
-				4D3DF4B220834587000DF88E /* Wallet.swift */,
-				4D00A42320A8C4F400A2E88E /* Locomotive */,
 				4DCE7B432089E49E0089BDDC /* Game.swift */,
-				4D3DF4B420834592000DF88E /* Player.swift */,
-				4D74BA472084A6D000ADC00C /* Hand.swift */,
+				4D00A42320A8C4F400A2E88E /* Locomotive */,
+				4D00A42420A8C59E00A2E88E /* Player */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
