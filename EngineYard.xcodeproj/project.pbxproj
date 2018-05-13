@@ -94,6 +94,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D00A42320A8C4F400A2E88E /* Locomotive */ = {
+			isa = PBXGroup;
+			children = (
+				4D1BD48E2083864B00051FD9 /* GameBoard.swift */,
+				4D1BD4862083829900051FD9 /* Deck.swift */,
+				4D1BD48A2083846500051FD9 /* Card.swift */,
+				4D1BD48C208384ED00051FD9 /* Production.swift */,
+				4D74BA4B2084AC5000ADC00C /* OrderBook.swift */,
+			);
+			path = Locomotive;
+			sourceTree = "<group>";
+		};
 		4DA3484720812970006DA164 = {
 			isa = PBXGroup;
 			children = (
@@ -147,13 +159,9 @@
 				4D3DF4B820835DB7000DF88E /* Rules.swift */,
 				4DA5236D20815960000FFAAB /* Tax.swift */,
 				4D3DF4B220834587000DF88E /* Wallet.swift */,
-				4D3DF4B420834592000DF88E /* Player.swift */,
-				4D1BD4862083829900051FD9 /* Deck.swift */,
-				4D1BD48A2083846500051FD9 /* Card.swift */,
-				4D1BD48C208384ED00051FD9 /* Production.swift */,
-				4D74BA4B2084AC5000ADC00C /* OrderBook.swift */,
+				4D00A42320A8C4F400A2E88E /* Locomotive */,
 				4DCE7B432089E49E0089BDDC /* Game.swift */,
-				4D1BD48E2083864B00051FD9 /* GameBoard.swift */,
+				4D3DF4B420834592000DF88E /* Player.swift */,
 				4D74BA472084A6D000ADC00C /* Hand.swift */,
 			);
 			path = Shared;
