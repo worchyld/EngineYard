@@ -116,6 +116,17 @@
 			path = Player;
 			sourceTree = "<group>";
 		};
+		4D00A42520A8C5C700A2E88E /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				4DA523642081582B000FFAAB /* Enums.swift */,
+				4DA5236620815885000FFAAB /* Die.swift */,
+				4D3DF4B820835DB7000DF88E /* Rules.swift */,
+				4DA5236D20815960000FFAAB /* Tax.swift */,
+			);
+			path = Functions;
+			sourceTree = "<group>";
+		};
 		4DA3484720812970006DA164 = {
 			isa = PBXGroup;
 			children = (
@@ -164,10 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				4DA5236A208158B5000FFAAB /* Extensions */,
-				4DA523642081582B000FFAAB /* Enums.swift */,
-				4DA5236620815885000FFAAB /* Die.swift */,
-				4D3DF4B820835DB7000DF88E /* Rules.swift */,
-				4DA5236D20815960000FFAAB /* Tax.swift */,
+				4D00A42520A8C5C700A2E88E /* Functions */,
 				4DCE7B432089E49E0089BDDC /* Game.swift */,
 				4D00A42320A8C4F400A2E88E /* Locomotive */,
 				4D00A42420A8C59E00A2E88E /* Player */,
