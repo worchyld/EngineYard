@@ -119,8 +119,8 @@
 				4DA3486820812972006DA164 /* EngineYardTests.swift */,
 				4DA5237120815C06000FFAAB /* TaxTests.swift */,
 				4D617D552081EE110036BB00 /* DieTests.swift */,
-				4DA3486A20812972006DA164 /* Info.plist */,
 				4D3DF4B620834679000DF88E /* WalletTests.swift */,
+				4DA3486A20812972006DA164 /* Info.plist */,
 			);
 			path = EngineYardTests;
 			sourceTree = "<group>";
