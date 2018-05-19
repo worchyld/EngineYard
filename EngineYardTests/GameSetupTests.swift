@@ -30,6 +30,14 @@ class GameSetupTests: EngineYardTests {
             XCTAssert($0.wallet.balance == Rules.NumberOfPlayers.threePlayerSeedCash)
             //XCTAssert($0.hand.cards.count == 1)
         })
+
+
+        for deck: Deck in game.board.decks {
+            for card: Card in deck.cards {
+                XCTAssertNil(card.owner)
+            }
+        }
+
     }
 
     
