@@ -10,7 +10,8 @@ import Foundation
 
 final class Card : NSObject  {
     private let uuid: String = UUID().uuidString
-    public fileprivate(set) weak var parent : Deck?
+    public private(set) weak var parent : Deck?
+    public private(set) weak var owner : Player?
     public private (set) var production: Production = Production()
 
     init(parent: Deck) {
@@ -32,5 +33,13 @@ extension Card {
 extension Card {
     public static func ==(lhs: Card, rhs: Card) -> Bool {
         return (lhs.uuid == rhs.uuid)
+    }
+
+    func setOwner(owner: Player) {
+        self.owner = owner
+    }
+
+    func isOwned(by player: Player?) -> Bool {
+        return self.owner === player
     }
 }

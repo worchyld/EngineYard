@@ -79,9 +79,11 @@ extension Game {
             firstDeck.orderBook.add(.customerBase)
         }
         lastDeck.orderBook.add(.customerBase)
+
+        // Add first deck cards to players
     }
 
-
+    // ---------------------------------------------
 
     //  # Setup for 5 players:
     //  + Give each player 14 coins.

@@ -96,6 +96,18 @@ extension Deck {
     func unlock() {
         self.orderBook.add(.existingOrder)
     }
+
+    public static func giveCardsFrom(deck:Deck, to players:[Player]) {
+        for player in players {
+            guard let card: Card = deck.cards.filter({ (c: Card) -> Bool in
+                return (c.owner == nil)
+            }).first else {
+                return
+            }
+
+            let _ = player.hand.add(card: card)
+        }
+    }
 }
 
 // MARK: - Subscription methods

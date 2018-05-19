@@ -36,17 +36,30 @@ extension Hand {
 extension Hand {
 
     func add(card: Card) -> Bool {
+        if let _ = find(card: card) {
+            return false
+        }
         self.cards.append(card)
         return true
     }
 
+    // #TODO - Remove card
     func remove(card: Card) -> Bool {
-        
-        return true
+        if let _ = find(card: card) {
+            // remove card
+            return true
+        }
+        return false
     }
 
-    private func find(card: Card) -> Card? {
-        return nil
+    // A player cannot own a card from the same parent
+    func find(card: Card) -> Card? {
+        guard let needle : Card = self.cards.filter({ (c: Card) -> Bool in
+            return c.parent == card.parent
+        }).first else {
+            return nil
+        }
+        return needle
     }
 }
 

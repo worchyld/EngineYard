@@ -22,7 +22,7 @@ class GameSetupTests: EngineYardTests {
         super.tearDown()
     }
 
-    func gameSetupTests() {
+    func threePlayerGameSetupTests() {
         let game : Game = Game(players: Mock.players(howMany: 3))
         XCTAssertTrue(game.players.count == Rules.NumberOfPlayers.min)
 
