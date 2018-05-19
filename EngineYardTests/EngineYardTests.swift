@@ -33,6 +33,24 @@ struct Mock {
 
         return players
     }
+
+    struct Cards {
+        var green: Int = 0
+        var red: Int = 0
+        var blue: Int = 0
+        var yellow: Int = 0
+        var total : Int {
+            return (self.green + self.red + self.blue + self.yellow)
+        }
+
+        struct Expected {
+            static let green = Rules.Board.numberOfCardsForColor(engineColor: .green)
+            static let red = Rules.Board.numberOfCardsForColor(engineColor: .red)
+            static let blue = Rules.Board.numberOfCardsForColor(engineColor: .blue)
+            static let yellow = Rules.Board.numberOfCardsForColor(engineColor: .yellow)
+            static let total = Rules.Board.cards
+        }
+    }
 }
 
 class EngineYardTests: XCTestCase {
