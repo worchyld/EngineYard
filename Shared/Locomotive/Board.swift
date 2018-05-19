@@ -32,7 +32,6 @@ final class Board : NSObject, GameBoardDelegate {
         self._decks = prepare()
     }
 
-
     override var description: String {
         return "Board. Decks: \(self.decks.count)"
     }

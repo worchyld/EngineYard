@@ -35,7 +35,9 @@ final class Wallet : CustomStringConvertible, WalletDelegate {
         try canDebit(amount: amount)
         handleDebit(amount: amount)
     }
+}
 
+extension Wallet {
     // MARK: (Private)
 
     private func canCredit(amount: Int) throws {
