@@ -55,6 +55,15 @@ final class Deck : NSObject, DeckDelegate {
         return (self.existingOrders.count + self.customerBase.count)
     }
 
+    // Ownership
+    var owners: [Player]? {
+        return self.cards
+            .lazy
+            .flatMap { card in card.owner.map{ (card: card, owner: $0) } }
+            //.sorted { $0.owner.turnOrder < $1.owner.turnOrder }
+            .map { $0.owner }
+    }
+
     // [- Init -]
     init(name: String, cost: Int, generation: Generation, color: EngineColor, capacity: Int, numberOfChildren: Int) {
         assert(cost % 4 == 0, "Cost must be a modulus of 4")

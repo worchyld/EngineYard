@@ -81,6 +81,7 @@ extension Game {
         lastDeck.orderBook.add(.customerBase)
 
         // Add first deck cards to players
+        Deck.giveCardsFrom(deck: firstDeck, to: players)
     }
 
     // ---------------------------------------------
