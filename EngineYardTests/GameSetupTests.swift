@@ -22,22 +22,44 @@ class GameSetupTests: EngineYardTests {
         super.tearDown()
     }
 
-    func threePlayerGameSetupTests() {
+    func testThreePlayerSetup() {
         let game : Game = Game(players: Mock.players(howMany: 3))
         XCTAssertTrue(game.players.count == Rules.NumberOfPlayers.min)
 
         let _ = game.players.map({
             XCTAssert($0.wallet.balance == Rules.NumberOfPlayers.threePlayerSeedCash)
-            //XCTAssert($0.hand.cards.count == 1)
+            XCTAssert($0.hand.cards.count == 1)
+
+            guard let firstCard = $0.hand.cards.first else {
+                XCTFail("First card does not exist for \($0.name), \($0.hand.description)")
+                return
+            }
+
+            XCTAssertTrue(firstCard.parent?.generation == .first)
+            XCTAssertTrue(firstCard.parent?.color == .green)
         })
 
-        /*
-        for deck: Deck in game.board.decks {
-            for card: Card in deck.cards {
-                XCTAssertNil(card.owner)
+        NSLog("[Card ownership]")
+
+        var index = 0
+        for deck in game.board.decks {
+            for card in deck.cards {
+                var parentName = "No parent"
+                if let parentObj = card.parent {
+                    parentName = parentObj.name
+                }
+                var cardOwnerName = "No owner"
+                if let cardObj = card.owner {
+                    cardOwnerName = cardObj.name
+                }
+
+                print ("\(parentName) owner >> \(cardOwnerName)")
             }
+            index += 1
         }
-        */
+
+
+
     }
 
     
