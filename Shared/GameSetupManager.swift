@@ -1,58 +1,49 @@
 //
-//  Game.swift
+//  GameSetupManager.swift
 //  EngineYard
 //
-//  Created by Amarjit on 20/04/2018.
+//  Created by Amarjit on 29/05/2018.
 //  Copyright © 2018 Amarjit. All rights reserved.
 //
 
 import Foundation
 
-// Game
-final class Game : NSObject {
-    var board: Board!
+class GameSetupManager {
+
     var players: [Player] = [Player]()
-    var dateCreated: Date?
 
-    init(players: [Player]) {
-        super.init()
-        setup(with: players)
-    }
-}
 
-extension Game {
+        func setup(with players: [Player]) {
+            do {
+                if try (Rules.NumberOfPlayers.isValid(count: players.count)) {
+                    self.players = players
+                    let game: Game = Game(players: players)
 
-    func setup(with players: [Player]) {
-        do {
-            if try (Rules.NumberOfPlayers.isValid(count: players.count)) {
-                self.board = Board()
-                self.players = players
+                    // setup players
+                    switch game.players.count {
+                    case 3...4:
+                        setupThreePlayer()
+                        break
+                    case 5:
+                        setupFivePlayer()
+                        break
 
-                // Setup players
-                switch self.players.count {
-                case 3...4:
-                    setupThreePlayer()
-                    break
-                case 5:
-                    setupFivePlayer()
-                    break
-
-                default:
-                    assertionFailure("Error -- Invalid number of players")
-                    break
+                    default:
+                        assertionFailure("Error -- Invalid number of players")
+                        break
+                    }
                 }
+            } catch let error {
+                print (error.localizedDescription)
             }
-        } catch let error {
-            assertionFailure(error.localizedDescription)
         }
+
     }
 
-}
+
+    // MARK: - (Private) functions
 
 
-// MARK: - (Private) functions
-
-extension Game {
     //  # Setup for 3-4 players:
     //  Give each player 12 coins and
     //  one unowned First Generation Green locomotive card.
