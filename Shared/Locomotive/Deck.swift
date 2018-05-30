@@ -111,6 +111,7 @@ extension Deck {
             guard let card: Card = deck.cards.filter({ (c: Card) -> Bool in
                 return (c.owner == nil)
             }).first else {
+                assertionFailure("No card found in deck")
                 return
             }
 

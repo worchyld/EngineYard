@@ -40,9 +40,16 @@ class GameSetupTests: EngineYardTests {
         })
 
         NSLog("[Card ownership]")
+        NSLog("----------------\n")
 
         var index = 0
         for deck in game.board.decks {
+            if (index == 0) {
+                XCTAssertTrue(deck.owners?.count == 3)
+            }
+
+            // -----------------------
+
             for card in deck.cards {
                 var parentName = "No parent"
                 if let parentObj = card.parent {
@@ -55,11 +62,9 @@ class GameSetupTests: EngineYardTests {
 
                 print ("\(parentName) owner >> \(cardOwnerName)")
             }
+
             index += 1
         }
-
-
-
     }
 
     
