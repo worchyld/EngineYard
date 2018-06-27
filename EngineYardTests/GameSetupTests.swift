@@ -26,15 +26,20 @@ class GameSetupTests: EngineYardTests {
     // Expect:
     // 3 players
     // Each player has $12 seed cash
-    // Each player has 1 card -> Green.1
+    // Each player owns exactly 1 card -> Green.1
+    // The first deck has 3 existingOrders
+    // The second deck has 1 existingOrders
+    // All decks should have 0 completedOrders
     // The first 3 cards in Green.1 deck has 3 owners, all other decks have no owners
+    // The first 2 decks are unlocked.
+
     func testThreePlayerSetup() {
         let game : Game = Game(players: Mock.players(howMany: 3))
         XCTAssertTrue(game.players.count == Rules.NumberOfPlayers.min)
 
         let _ = game.players.map({
-            XCTAssert($0.wallet.balance == Rules.NumberOfPlayers.threePlayerSeedCash)
-            XCTAssert($0.hand.cards.count == 1)
+            XCTAssertTrue($0.wallet.balance == Rules.NumberOfPlayers.threePlayerSeedCash)
+            XCTAssertTrue($0.hand.cards.count == 1)
 
             guard let firstCard = $0.hand.cards.first else {
                 XCTFail("First card does not exist for \($0.name), \($0.hand.description)")
@@ -75,6 +80,30 @@ class GameSetupTests: EngineYardTests {
 
             index += 1
         }
+    }
+
+    // Expectations:
+    // 5-players
+    // Each player has $14 seed cash
+    // No player has any cards
+    // Only the first deck is unlocked
+
+    func testFivePlayerSetup() {
+        let game : Game = Game(players: Mock.players(howMany: 5))
+        XCTAssertTrue(game.players.count == Rules.NumberOfPlayers.max)
+
+        let _ = game.players.map({
+            XCTAssertTrue($0.wallet.balance == Rules.NumberOfPlayers.fivePlayerSeedCash)
+            XCTAssertTrue($0.hand.cards.count == 0)
+        })
+
+        let _ = game.board.decks.map({
+            XCTAssertTrue($0.owners?.count == 0)
+            XCTAssertTrue($0.customerBase.count == 1)
+        })
+
+
+
     }
 
     
