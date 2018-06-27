@@ -24,14 +24,14 @@ class GameSetupTests: EngineYardTests {
 
 
     // Expect:
-    // 3 players
-    // Each player has $12 seed cash
-    // Each player owns exactly 1 card -> Green.1
-    // The first deck has 3 existingOrders
-    // The second deck has 1 existingOrders
-    // All decks should have 0 completedOrders
-    // The first 3 cards in Green.1 deck has 3 owners, all other decks have no owners
-    // The first 2 decks are unlocked.
+    // 3 players [Done]
+    // Each player has $12 seed cash [Done]
+    // Each player owns exactly 1 card -> Green.1 [Done]
+    // The first deck has 3 `existingOrders` [#TODO]
+    // The second deck has 1 `existingOrders` [#TODO]
+    // All decks should have 0 `completedOrders` [#TODO]
+    // The first 3 cards in Green.1 deck has 3 owners, all other decks have no owners [Done]
+    // The first 2 decks are unlocked. [#TODO]
 
     func testThreePlayerSetup() {
         let game : Game = Game(players: Mock.players(howMany: 3))
@@ -83,10 +83,11 @@ class GameSetupTests: EngineYardTests {
     }
 
     // Expectations:
-    // 5-players
-    // Each player has $14 seed cash
-    // No player has any cards
-    // Only the first deck is unlocked
+    // 5-players [Done]
+    // Each player has $14 seed cash [Done]
+    // No player has any cards [Done]
+    // Only the first deck is unlocked [#TODO]
+    // No decks should have any `completedOrders` [Done]
 
     func testFivePlayerSetup() {
         let game : Game = Game(players: Mock.players(howMany: 5))
@@ -97,10 +98,8 @@ class GameSetupTests: EngineYardTests {
             XCTAssertTrue($0.hand.cards.count == 0)
         })
 
-        let _ = game.board.decks.map({
-            XCTAssertTrue($0.owners?.count == 0)
-            XCTAssertTrue($0.customerBase.count == 1)
-        })
+        
+
 
 
 
