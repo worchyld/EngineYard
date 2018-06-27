@@ -22,6 +22,12 @@ class GameSetupTests: EngineYardTests {
         super.tearDown()
     }
 
+
+    // Expect:
+    // 3 players
+    // Each player has $12 seed cash
+    // Each player has 1 card -> Green.1
+    // The first 3 cards in Green.1 deck has 3 owners, all other decks have no owners
     func testThreePlayerSetup() {
         let game : Game = Game(players: Mock.players(howMany: 3))
         XCTAssertTrue(game.players.count == Rules.NumberOfPlayers.min)
