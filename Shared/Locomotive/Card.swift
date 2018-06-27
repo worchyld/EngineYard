@@ -23,10 +23,16 @@ final class Card : NSObject  {
 
 extension Card {
     override var description: String {
-        guard let hasParent = self.parent else {
-            return "No parent"
+        var parentName = "No parent"
+        if let parentObj = self.parent {
+            parentName = parentObj.name
         }
-        return hasParent.name
+        var cardOwnerName = "No owner"
+        if let cardObj = self.owner {
+            cardOwnerName = cardObj.name
+        }
+
+        return ("Card: \(parentName), owner >> \(cardOwnerName)")
     }
 }
 
