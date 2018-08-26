@@ -9,7 +9,7 @@
 import Foundation
 
 final class Player : NSObject {
-    private let uuid: String = UUID().uuidString
+    private let playerId: String = UUID().uuidString
     var name : String!
     var cash : Int {
         return self.wallet.balance
@@ -25,6 +25,6 @@ final class Player : NSObject {
 
 extension Player {
     public static func ==(lhs: Player, rhs: Player) -> Bool {
-        return (lhs.uuid == rhs.uuid)
+        return (lhs.playerId == rhs.playerId)
     }
 }
