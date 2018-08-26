@@ -13,7 +13,12 @@ enum WalletError : Error {
     case notEnoughFunds
 }
 
-protocol WalletDelegate {
+fileprivate enum Transaction {
+    case credit(amount: Int)
+    case debit(amount: Int)
+}
+
+fileprivate protocol WalletDelegate {
     var balance : Int { get }
     func credit(amount: Int) throws
     func debit(amount: Int) throws
@@ -23,23 +28,38 @@ final class Wallet : CustomStringConvertible, WalletDelegate {
     public private(set) var balance: Int = 0
 
     init(amount: Int = 0) {
-        self.balance = amount
+        do {
+            try credit(amount: amount)
+        } catch let error {
+            assertionFailure(error.localizedDescription)
+        }
     }
 
-    func credit(amount: Int) throws {
+    func credit(amount: Int = 0) throws {
         try canCredit(amount: amount)
-        handleCredit(amount: amount)
+        handleTransaction(Transaction.credit(amount: amount))
     }
 
-    func debit(amount: Int) throws {
+    func debit(amount: Int = 0) throws {
         try canDebit(amount: amount)
-        handleDebit(amount: amount)
+        handleTransaction(Transaction.debit(amount: amount))
     }
 }
 
 extension Wallet {
-    // MARK: (Private)
+    private func handleTransaction(_ t: Transaction) {
+        switch t {
+        case let .credit(amount):
+            self.balance += amount
+            break
+        case let .debit(amount):
+            self.balance -= amount
+            break
+        }
+    }
+}
 
+extension Wallet {
     private func canCredit(amount: Int) throws {
         guard amount > 0 else {
             throw WalletError.mustBePositive
@@ -50,20 +70,13 @@ extension Wallet {
         guard amount > 0 else {
             throw WalletError.mustBePositive
         }
-        guard balance >= amount else {
+
+        guard self.balance >= amount else {
             throw WalletError.notEnoughFunds
         }
         guard (self.balance - amount >= 0) else {
             throw WalletError.notEnoughFunds
         }
-    }
-
-    private func handleCredit(amount: Int) {
-        self.balance += amount
-    }
-
-    private func handleDebit(amount: Int) {
-        self.balance -= amount
     }
 }
 
@@ -72,3 +85,4 @@ extension Wallet {
         return ("Balance: $\(self.balance)")
     }
 }
+

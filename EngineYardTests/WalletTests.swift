@@ -29,6 +29,10 @@ class WalletTests: EngineYardTests {
         }
 
         XCTAssertTrue(w.balance == 0)
+
+        XCTAssertNoThrow(try w.credit(amount: 100), "Balance: \(w.description)")
+
+        XCTAssertTrue(w.balance == 100)
     }
 
 
