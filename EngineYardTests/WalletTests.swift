@@ -51,11 +51,7 @@ class WalletTests: EngineYardTests {
 
         XCTAssertNoThrow(try w.credit(amount: 100))
 
-        // debit 0 should throw error
-        XCTAssertThrowsError(try w.debit(amount: 0)) { error in
-            XCTAssertEqual(error as? WalletError, WalletError.mustBePositive)
-        }
-
+        
         // debit > balance should throw error
         XCTAssertThrowsError(try w.debit(amount: 101)) { error in
             XCTAssertEqual(error as? WalletError, WalletError.notEnoughFunds)

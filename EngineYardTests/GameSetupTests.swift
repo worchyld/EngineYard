@@ -34,6 +34,7 @@ class GameSetupTests: EngineYardTests {
     // The first 2 decks are unlocked. [#TODO]
 
     func testThreePlayerSetup() {
+        NSLog("[THREE PLAYER SETUP]")
         let game : Game = Game(players: Mock.players(howMany: 3))
         XCTAssertTrue(game.players.count == Rules.NumberOfPlayers.min)
 
@@ -90,6 +91,7 @@ class GameSetupTests: EngineYardTests {
     // No decks should have any `completedOrders` [Done]
 
     func testFivePlayerSetup() {
+        NSLog("[FIVE PLAYER SETUP]")
         let game : Game = Game(players: Mock.players(howMany: 5))
         XCTAssertTrue(game.players.count == Rules.NumberOfPlayers.max)
 

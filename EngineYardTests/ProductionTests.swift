@@ -22,55 +22,63 @@ class ProductionTests: EngineYardTests {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
+
+    func testThreePlayerProduction() {
+        // In a three-player game;
+        let game : Game = Game(players: Mock.players(howMany: 3))
+
+        let decks = game.board.decks.flatMap({
+            $0.cards.filter({ (c:Card) -> Bool in
+                return (c.production.units == 1)
+            })
+        })
+
+        // Expect the first card in the game to have production.units
+        // Expect this to 3 first-gen green cards only
+        XCTAssertTrue(decks.count == 3)
+        XCTAssertTrue(decks.first?.parent?.generation == .first && decks.first?.parent?.color == .green)
+
+        let expectedColors = decks.map { (c:Card) -> Bool in
+            return c.parent?.generation == .first && c.parent?.color == .green
+        }
+        XCTAssertTrue(expectedColors.count == 3)
+
+
+        // Expect 3 cards to have production units == 1
+        let total = game.board.decks.map ({
+            $0.cards.filter({ (c: Card) -> Bool in
+                return (c.production.units == 1)
+            })
+        }).reduce(0) {
+            $0  + $1.count
+        }
+
+        XCTAssertTrue(total == 3, "Cards with production: \(total)")
+    }
+
+
+    func testFivePlayerProduction() {
+        // In a five-player game;
+        // Expect: No card should have any production.units
+        let game : Game = Game(players: Mock.players(howMany: 5))
+
+        let total = game.board.decks.map({
+            $0.cards
+                .filter({ (c:Card) -> Bool in
+                    return c.production.units == 1
+                })
+        }).reduce(0) {
+            $0  + $1.count
+        }
+
+        XCTAssertTrue(total == 0)
+    }
     
     func testAddProduction() {
-        let p = Production()
-        p.setInitialProduction()
-        p.add(amount: 1)
 
-        XCTAssertTrue(p.units == 2)
-    }
 
-    func testSpendProduction() {
-        let p = Production()
-        p.setInitialProduction()
-        p.add(amount: 1)
-        XCTAssertTrue(p.units == 2)
 
-        p.spend(amount: 2)
-
-        XCTAssertTrue(p.units == 0)
-        XCTAssertTrue(p.spentUnits == 2)
-    }
-
-    func testResetProduction() {
-        let p = Production()
-        p.setInitialProduction()
-        p.add(amount: 1)
-        XCTAssertTrue(p.units == 2)
-
-        p.spend(amount: 2)
-        XCTAssertTrue(p.units == 0)
-        XCTAssertTrue(p.spentUnits == 2)
-
-        p.reset()
-        XCTAssertTrue(p.units == 2)
-        XCTAssertTrue(p.spentUnits == 0)
-    }
-
-    func testComplexProductionSpend() {
-        let p = Production()
-        p.setInitialProduction()
-        p.add(amount: 59)
-        XCTAssertTrue(p.units == 60)
-
-        p.spend(amount: 1)
-        XCTAssertTrue(p.units == 59)
-        XCTAssertTrue(p.spentUnits == 1)
-
-        p.reset()
-        XCTAssertTrue(p.units == 60)
-        XCTAssertTrue(p.spentUnits == 0)
+        
     }
     
 }

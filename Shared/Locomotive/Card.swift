@@ -31,7 +31,7 @@ extension Card {
             cardOwnerName = cardObj.name
         }
 
-        return ("Card: \(parentName), owner >> \(cardOwnerName)")
+        return ("Card: \(parentName), owner >> \(cardOwnerName), units: \(production.units)")
     }
 }
 

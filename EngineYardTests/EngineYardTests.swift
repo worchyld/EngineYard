@@ -17,7 +17,7 @@ struct Mock {
             if try Rules.NumberOfPlayers.isValid(count: howMany)
             {
                 for index in stride(from:0, to: howMany, by: 1) {
-                    let playerObj = Player.init(name: "Player #\(index)")
+                    let playerObj = Player(name: "Player #\(index)")
                     players.append(playerObj)
                 }
 

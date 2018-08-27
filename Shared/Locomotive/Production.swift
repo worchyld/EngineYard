@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class Production : NSObject {
+final class Production {
     public private (set) weak var parent: Card?
     public private (set) var units: Int = 0 {
         didSet {
@@ -24,20 +24,16 @@ final class Production : NSObject {
             }
         }
     }
-    // production cost (getter)
     var cost : Int {
         guard let hasParent = self.parent?.parent else {
             return 0
         }
         return hasParent.productionCost
     }
-}
 
-extension Production {
-
-    func setInitialProduction() {
-        self.units = 1
-        self.spentUnits = 0
+    // In the rules, when a player buys a card, it gets 1 production unit
+    func setup() {
+        self.add(amount: 1)
     }
 
     func add(amount: Int = 0) {
@@ -48,7 +44,7 @@ extension Production {
     }
 
     func spend(amount: Int = 0) {
-        if (canSpend(unitsToSpend: amount)) {
+        if (canSpend(spending: amount)) {
             self.spentUnits += amount
             self.units -= amount
         }
@@ -59,12 +55,10 @@ extension Production {
         self.spentUnits = 0
     }
 
-    func canSpend(unitsToSpend:Int) -> Bool {
-        guard unitsToSpend > 0 else {
+    func canSpend(spending: Int) -> Bool {
+        guard spending > 0 else {
             return false
         }
-        return ( (self.units - unitsToSpend) >= 0 )
+        return ( (self.units - spending) >= 0 )
     }
-
-    
 }

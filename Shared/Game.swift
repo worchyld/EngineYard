@@ -75,7 +75,7 @@ extension Game {
         for _ in 1...3 {
             firstDeck.orderBook.add(.customerBase)
         }
-        lastDeck.orderBook.add(.customerBase)
+        lastDeck.orderBook.add(.customerBase)        
 
         // Add first deck cards to players
         Deck.giveCardsFrom(deck: firstDeck, to: players)
