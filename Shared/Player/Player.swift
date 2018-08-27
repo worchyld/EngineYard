@@ -7,18 +7,19 @@
 //
 
 import Foundation
+import GameplayKit
 
-final class Player : NSObject {
-    private let playerId: String = UUID().uuidString
+class Player : NSObject, GKGameModelPlayer {
+    var playerId: Int = 0
+
     var name : String!
     var cash : Int {
         return self.wallet.balance
     }
     var wallet : Wallet = Wallet()
-    lazy var hand : Hand = Hand(owner: self) // Hand of cards / Tableau
+    lazy var hand : Hand = Hand(owner: self) // Hand of cards
 
     init(name: String) {
-        super.init()
         self.name = name
     }
 }
@@ -28,3 +29,4 @@ extension Player {
         return (lhs.playerId == rhs.playerId)
     }
 }
+
