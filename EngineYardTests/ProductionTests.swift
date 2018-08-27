@@ -43,7 +43,6 @@ class ProductionTests: EngineYardTests {
         }
         XCTAssertTrue(expectedColors.count == 3)
 
-
         // Expect 3 cards to have production units == 1
         let total = game.board.decks.map ({
             $0.cards.filter({ (c: Card) -> Bool in
@@ -75,10 +74,25 @@ class ProductionTests: EngineYardTests {
     }
     
     func testAddProduction() {
-
-
-
-        
+        let p:Production = Production()
+        p.add(amount: 20)
+        XCTAssertTrue(p.units == 20)
     }
-    
+
+    func testSpendProduction() {
+        let p:Production = Production()
+        p.add(amount: 20)
+        p.spend(amount: 2)
+        XCTAssertTrue(p.units == 18)
+        XCTAssertTrue(p.spentUnits == 2)
+    }
+
+    func testResetProduction() {
+        let p:Production = Production()
+        p.add(amount: 20)
+        p.spend(amount: 2)
+        p.reset()
+        XCTAssertTrue(p.units == 20)
+        XCTAssertTrue(p.spentUnits == 0)
+    }
 }
