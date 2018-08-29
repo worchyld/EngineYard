@@ -48,6 +48,10 @@ class GameBoardSetupTests: EngineYardTests {
         // In a three-player game, I expect:
         // (1) Each player to have $12
         // (2) Expect 3 owners of Green.1
+        // (3) Expect only 3 cards to be owned
+        // (4) Expect Green.1 to have 3 orders
+        // (5) Expect Red.1 to have 1 order
+        // (6) Expect all others to have 0 orders
         // ----------------------------------
         
         // (1) Expect cash == $12
@@ -55,7 +59,6 @@ class GameBoardSetupTests: EngineYardTests {
             XCTAssertTrue( $0.cash == Rules.NumberOfPlayers.threePlayerSeedCash )
         })
 
-        // Get first 2 decks
         let decks = board.decks[0...1]
 
         guard let firstDeck = decks.first else {
@@ -80,23 +83,31 @@ class GameBoardSetupTests: EngineYardTests {
             }
         }
 
-        // (3) Expect Green.1 to have 3 orders
-        XCTAssertTrue(firstDeck.orderBook.existingOrderValues.count == 3, "\(firstDeck.orderBook.existingOrderValues.count)")
+        // (3) Expect only 3 cards to be owned
+        var totalOwned = 0
+        for d in board.decks {
+            totalOwned += d.owners?.count ?? 0
+        }
+        XCTAssertTrue(totalOwned == 3, "Expected: 3 owners. Actual: \(totalOwned)")
 
+
+        // (6) Expect all decks to have 0 sales
         let _ = board.decks.map {
             XCTAssertTrue($0.orderBook.completedOrderValues.count == 0, "Invalid completed orders: \(firstDeck.orderBook.completedOrderValues.count)")
         }
-
 
         for (index, deck) in board.decks.enumerated() {
             for _ in deck.cards {
                 let orders = deck.orderBook.existingOrderValues
                 switch (index) {
                 case 0:
+                    // (4) Expect Green.1 to have 3 orders
                     XCTAssertTrue(orders.count == 3, "Deck: \(deck.name) has \(orders.count) orders")
                 case 1:
+                    // (5) Expect Red.1 to have 1 order
                     XCTAssertTrue(orders.count == 1, "Deck: \(deck.name) has \(orders.count) orders")
                 default:
+                    // (6) Expect all others to have 0 orders
                     XCTAssertTrue(orders.count == 0, "Deck: \(deck.name) has \(orders.count) orders")
                 }
             }
