@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D00A42920A8C77500A2E88E /* ProductionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D00A42820A8C77500A2E88E /* ProductionTests.swift */; };
 		4D01469B208393AF00AE54B1 /* Card+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01469A208393AF00AE54B1 /* Card+Colors.swift */; };
-		4D0D8C6120B06B9300A13F18 /* GameSetupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0D8C6020B06B9300A13F18 /* GameSetupTests.swift */; };
 		4D1BD4872083829900051FD9 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1BD4862083829900051FD9 /* Deck.swift */; };
 		4D1BD48B2083846500051FD9 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1BD48A2083846500051FD9 /* Card.swift */; };
 		4D1BD48D208384ED00051FD9 /* Production.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1BD48C208384ED00051FD9 /* Production.swift */; };
@@ -33,6 +31,8 @@
 		4DA5236C208158C8000FFAAB /* EY+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5236B208158C8000FFAAB /* EY+Array.swift */; };
 		4DA5236E20815960000FFAAB /* Tax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5236D20815960000FFAAB /* Tax.swift */; };
 		4DA5237220815C06000FFAAB /* TaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5237120815C06000FFAAB /* TaxTests.swift */; };
+		4DA8396B2136AE7900F7CAB9 /* GameBoardSetupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8396A2136AE7900F7CAB9 /* GameBoardSetupTests.swift */; };
+		4DA8396D2136B0ED00F7CAB9 /* GameSetupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8396C2136B0ED00F7CAB9 /* GameSetupManager.swift */; };
 		4DCE7B442089E49E0089BDDC /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCE7B432089E49E0089BDDC /* Game.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,9 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4D00A42820A8C77500A2E88E /* ProductionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionTests.swift; sourceTree = "<group>"; };
 		4D01469A208393AF00AE54B1 /* Card+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Colors.swift"; sourceTree = "<group>"; };
-		4D0D8C6020B06B9300A13F18 /* GameSetupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetupTests.swift; sourceTree = "<group>"; };
 		4D1BD4862083829900051FD9 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		4D1BD48A2083846500051FD9 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		4D1BD48C208384ED00051FD9 /* Production.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Production.swift; sourceTree = "<group>"; };
@@ -77,6 +75,8 @@
 		4DA5236B208158C8000FFAAB /* EY+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Array.swift"; sourceTree = "<group>"; };
 		4DA5236D20815960000FFAAB /* Tax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tax.swift; sourceTree = "<group>"; };
 		4DA5237120815C06000FFAAB /* TaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTests.swift; sourceTree = "<group>"; };
+		4DA8396A2136AE7900F7CAB9 /* GameBoardSetupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardSetupTests.swift; sourceTree = "<group>"; };
+		4DA8396C2136B0ED00F7CAB9 /* GameSetupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetupManager.swift; sourceTree = "<group>"; };
 		4DCE7B432089E49E0089BDDC /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,9 +157,8 @@
 				4DA5237120815C06000FFAAB /* TaxTests.swift */,
 				4D617D552081EE110036BB00 /* DieTests.swift */,
 				4D3DF4B620834679000DF88E /* WalletTests.swift */,
-				4D00A42820A8C77500A2E88E /* ProductionTests.swift */,
 				4DA3486A20812972006DA164 /* Info.plist */,
-				4D0D8C6020B06B9300A13F18 /* GameSetupTests.swift */,
+				4DA8396A2136AE7900F7CAB9 /* GameBoardSetupTests.swift */,
 			);
 			path = EngineYardTests;
 			sourceTree = "<group>";
@@ -183,6 +182,7 @@
 				4DA5236A208158B5000FFAAB /* Extensions */,
 				4D00A42520A8C5C700A2E88E /* Functions */,
 				4DCE7B432089E49E0089BDDC /* Game.swift */,
+				4DA8396E2136B0F300F7CAB9 /* Managers */,
 				4D00A42320A8C4F400A2E88E /* Locomotive */,
 				4D00A42420A8C59E00A2E88E /* Player */,
 			);
@@ -197,6 +197,14 @@
 				4D01469A208393AF00AE54B1 /* Card+Colors.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4DA8396E2136B0F300F7CAB9 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				4DA8396C2136B0ED00F7CAB9 /* GameSetupManager.swift */,
+			);
+			name = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +317,7 @@
 				4DA5236C208158C8000FFAAB /* EY+Array.swift in Sources */,
 				4DA523652081582B000FFAAB /* Enums.swift in Sources */,
 				4D74BA482084A6D000ADC00C /* Hand.swift in Sources */,
+				4DA8396D2136B0ED00F7CAB9 /* GameSetupManager.swift in Sources */,
 				4DA5236720815885000FFAAB /* Die.swift in Sources */,
 				4D3DF4B920835DB7000DF88E /* Rules.swift in Sources */,
 				4DA5236E20815960000FFAAB /* Tax.swift in Sources */,
@@ -326,11 +335,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D3DF4B720834679000DF88E /* WalletTests.swift in Sources */,
-				4D0D8C6120B06B9300A13F18 /* GameSetupTests.swift in Sources */,
 				4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */,
 				4D617D562081EE110036BB00 /* DieTests.swift in Sources */,
-				4D00A42920A8C77500A2E88E /* ProductionTests.swift in Sources */,
 				4DA5237220815C06000FFAAB /* TaxTests.swift in Sources */,
+				4DA8396B2136AE7900F7CAB9 /* GameBoardSetupTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

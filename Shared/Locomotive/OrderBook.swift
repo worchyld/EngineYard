@@ -9,8 +9,8 @@
 import Foundation
 
 enum OrderType: Int {
-    case existingOrder
-    case customerBase  // completedOrder
+    case existingOrder  // orders
+    case completedOrder // customerBase
 }
 
 final class OrderBook : NSObject {
@@ -23,9 +23,9 @@ final class OrderBook : NSObject {
             return ($0.orderType == .existingOrder)
         })
     }
-    var customerBase: [Order] {
+    var completedOrder: [Order] {
         return self.orders.filter({
-            return ($0.orderType == .customerBase)
+            return ($0.orderType == .completedOrder)
         })
     }
     var existingOrderValues: [Int] {
@@ -34,8 +34,8 @@ final class OrderBook : NSObject {
         })
 
     }
-    var customerBaseValues: [Int] {
-        return self.customerBase.compactMap({ (o:Order) -> Int in
+    var completedOrderValues: [Int] {
+        return self.completedOrder.compactMap({ (o:Order) -> Int in
             return o.value
         })
     }
@@ -52,7 +52,7 @@ final class OrderBook : NSObject {
 
 extension OrderBook {
     override var description: String {
-        return ("OrderBook.existing = \(self.existingOrderValues), OrderBook.customerBase = \(self.customerBaseValues)")
+        return ("OrderBook.existing = \(self.existingOrderValues), OrderBook.completedOrders = \(self.completedOrderValues)")
     }
 }
 

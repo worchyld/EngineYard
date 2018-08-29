@@ -1,24 +1,33 @@
 //
-//  GameBoard.swift
+//  Board.swift
 //  EngineYard
 //
-//  Created by Amarjit on 15/04/2018.
+//  Created by Amarjit on 29/08/2018.
 //  Copyright © 2018 Amarjit. All rights reserved.
 //
 
 import Foundation
 
-protocol GameBoardDelegate {
-    func unlockNextDeck( _ deck: Deck )
-}
-
-// Board model
-final class Board : NSObject, GameBoardDelegate {
+final class Board : NSObject {
     // Create a static, constant instance of
     // the enclosing class (itself) and initialize.
     static let instance = Board()
+}
 
-    private var _decks = [Deck]()
+/*
+
+ protocol GameBoardDelegate {
+ func unlockNextDeck( _ deck: Deck )
+ }
+
+final class Board : NSObject, GameBoardDelegate {
+    static let sharedInstance = Board()
+
+    private var _decks: [Deck] = [Deck]()
+
+    public var countUnlocked : Int {
+        return (self.decks.reduce(0) { $0 + ($1.active ? 1 : 0) })
+    }
 
     public var decks: [Deck] {
         return self._decks.sorted(by: { (t1: Deck, t2: Deck) -> Bool in
@@ -26,18 +35,17 @@ final class Board : NSObject, GameBoardDelegate {
         })
     }
 
-    public var countUnlocked : Int {
-        return (self.decks.reduce(0) { $0 + ($1.active ? 1 : 0) })
-    }
-
     override init() {
         super.init()
         self._decks = prepare()
     }
 
+    override var description: String {
+        return "Board. Decks: \(self.decks.count)"
+    }
 
     // Prepare game decks
-    private func prepare() -> [Deck] {
+    func prepare() -> [Deck] {
         let decks = [
             Deck.init(name: "Green.1", cost: 4, generation: .first, color: .green, capacity: 3, numberOfChildren: 4)
             , Deck.init(name: "Red.1", cost: 8, generation: .first, color: .red, capacity: 3, numberOfChildren: 3)
@@ -62,10 +70,6 @@ final class Board : NSObject, GameBoardDelegate {
 
         return decks
     }
-
-    override var description: String {
-        return "[Board]. Decks: \(self.decks.count)"
-    }
 }
 
 extension Board {
@@ -81,3 +85,4 @@ extension Board {
         nextDeck.unlock()
     }
 }
+*/

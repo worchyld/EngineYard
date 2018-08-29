@@ -18,7 +18,7 @@ struct Rules {
     public static let goal: Int = 330
     public static let taxRate: Float = 0.10
 
-    public static func GameGoalReached(cash: Int) -> Bool {
+    public static func isGameEndConditionMet(_ cash: Int) -> Bool {
         return (cash >= Rules.goal)
     }
 
@@ -35,7 +35,7 @@ struct Rules {
             return true
         }
 
-        static func getSeedCash(players: Int) -> Int {
+        static func getSeedCash(forNumberOfPlayers players: Int) -> Int {
             switch players {
             case Rules.NumberOfPlayers.min:
                 return Rules.NumberOfPlayers.threePlayerSeedCash

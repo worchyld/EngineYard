@@ -10,7 +10,7 @@ import Foundation
 import GameplayKit
 
 class Player : NSObject, GKGameModelPlayer {
-    var playerId: Int = 0
+    public private(set) var playerId: Int = 0
 
     var name : String!
     var cash : Int {

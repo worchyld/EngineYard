@@ -40,7 +40,7 @@ final class Deck : NSObject, DeckDelegate {
     public private (set) var rustedState: RustedState = .normal
 
     var active: Bool {
-        return ((self.orderBook.existingOrderValues.count > 0) || (self.orderBook.customerBaseValues.count > 0))
+        return ((self.orderBook.existingOrderValues.count > 0) || (self.orderBook.completedOrderValues.count > 0))
     }
 
     // OrderBook
@@ -48,11 +48,11 @@ final class Deck : NSObject, DeckDelegate {
     var existingOrders : [Int] {
         return orderBook.existingOrderValues
     }
-    var customerBase : [Int] {
-        return orderBook.customerBaseValues
+    var completedOrders : [Int] {
+        return orderBook.completedOrderValues
     }
     var currentNumberOfDice: Int {
-        return (self.existingOrders.count + self.customerBase.count)
+        return (self.existingOrders.count + self.completedOrders.count)
     }
 
     // Ownership
@@ -93,7 +93,7 @@ final class Deck : NSObject, DeckDelegate {
 
 extension Deck {
     override var description: String {
-        return "\(self.name), cards: \(cards.count), existingOrders: \(self.orderBook.existingOrderValues), customerBase: \(self.orderBook.customerBaseValues)"
+        return "\(self.name), cards: \(cards.count), existingOrders: \(self.orderBook.existingOrderValues), completedOrders: \(self.orderBook.completedOrderValues)"
     }
 
     public static func ==(lhs: Deck, rhs: Deck) -> Bool {
