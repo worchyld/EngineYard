@@ -28,6 +28,59 @@ class GameBoardSetupTests: EngineYardTests {
         XCTAssertTrue(board.countUnlocked == 0)
     }
 
+    func testFivePlayerSetup() {
+        let players = Mock.players(howMany: 5)
+
+        guard let game:Game = Game.setup(with: players) else {
+            XCTFail("Game object did not initialise")
+            return
+        }
+
+        guard let board = game.board else {
+            XCTFail("Board object not initialised")
+            return
+        }
+
+        XCTAssertTrue(game.players.count == 5, "Invalid player count: \(game.players.count)")
+        XCTAssertTrue(board.countUnlocked == 1, "Invalid board unlocks \(board.countUnlocked)")
+
+        // ----------------------------------
+        // In a 5-player game, I expect:
+        // (1) Each player to have $14
+        // (2) No player has any cards
+        // (3) Expect no owners
+        // (4) Green.1 has 1 order & unlocked
+        // (5) All other locomotives are locked, with no orders
+        // ----------------------------------
+
+
+        // (1) Expect cash == $14
+        // (2) Expect no player to have any cards
+        _ = players.map({
+            XCTAssertTrue( $0.cash == Rules.NumberOfPlayers.fivePlayerSeedCash )
+            XCTAssertTrue( $0.hand.cards.count == 0, "\($0) has cards \($0.hand.description)")
+        })
+
+        for (index, d) in board.decks.enumerated() {
+
+            // (3) Expect no owners
+            XCTAssertTrue(d.owners?.count == 0, "\(d.name) has \(String(describing: d.owners?.count)) owners")
+
+            if (index == 0) {
+                // (4) Green.1 has 1 order
+                XCTAssertTrue(d.color == .green && d.generation == .first)
+                XCTAssertTrue(d.orderBook.existingOrderValues.count == 1, "Orders: \(d.orderBook.existingOrderValues.count)")
+                XCTAssertTrue(d.active, "Deck \(d.name) is inactive")
+            }
+            else {
+                // (5) All other locomotives are locked, with no orders
+                XCTAssertFalse(d.active, "Deck \(d.name) is active")
+                XCTAssertTrue(d.orderBook.existingOrderValues.count == 0, "Orders: \(d.orderBook.existingOrderValues.count)")
+                XCTAssertTrue(d.orderBook.completedOrderValues.count == 0, "Orders: \(d.orderBook.completedOrderValues.count)")
+            }
+        }
+    }
+
     func testThreePlayerSetup() {
         let players = Mock.players(howMany: 3)
 
@@ -45,7 +98,7 @@ class GameBoardSetupTests: EngineYardTests {
         XCTAssertTrue(board.countUnlocked == 2, "Invalid board unlocks \(board.countUnlocked)")
 
         // ----------------------------------
-        // In a three-player game, I expect:
+        // In a 3-player game, I expect:
         // (1) Each player to have $12
         // (2) Expect 3 owners of Green.1
         // (3) Expect only 3 cards to be owned

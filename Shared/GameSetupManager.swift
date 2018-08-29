@@ -121,16 +121,13 @@ extension GameSetupManager {
             return
         }
 
-        
-        /*
-        self.applySeedCash(to: players)
+        self.applySeedCash(for: players)
 
-        guard let firstDeck = self.board.decks.first else {
+        guard let firstDeck = board.decks.first else {
             return
         }
 
-        firstDeck.orderBook.add(.customerBase)
-         */
+        firstDeck.orderBook.add(.existingOrder)
     }
 }
 
