@@ -108,7 +108,20 @@ extension GameSetupManager {
     //  area of the First Generation of the green Passenger locomotive.
     //
     fileprivate func setupFivePlayer(_ players: [Player]) {
+        guard let gameObj = self.game else {
+            assertionFailure("Temp Game object could not be initialised")
+            return
+        }
+        guard let board = gameObj.board else {
+            assertionFailure("Temp GameBoard object could not be initialised")
+            return
+        }
+        guard (board.decks.count == Rules.Board.decks) else {
+            assertionFailure("Temp GameBoard object has incorrect decks initialised")
+            return
+        }
 
+        
         /*
         self.applySeedCash(to: players)
 
