@@ -35,21 +35,20 @@ extension Hand {
 
 extension Hand {
 
-    func add(card: Card) -> Bool {
+    func add(card: Card) {
         guard let handOwnership = self.owner else {
             assertionFailure("Hand ownership is nil")
-            return false
+            return
         }
 
         if let _ = find(card: card) {
-            return false
+            return
         }
 
+        
         card.setOwner(owner: handOwnership)
 
         self.cards.append(card)
-
-        return true
     }
 
     // #TODO - Remove card

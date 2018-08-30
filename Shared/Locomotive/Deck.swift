@@ -102,12 +102,7 @@ extension Deck {
 }
 
 extension Deck {
-
-    /*
-    func didUnlock() {
-        self.orderBook.add(.existingOrder)
-    }*/
-
+    
     public static func didUnlock(deck: Deck) {
         deck.orderBook.add(.existingOrder)
     }
@@ -124,6 +119,21 @@ extension Deck {
             let _ = player.hand.add(card: card)
         }
     }
+}
+
+extension Deck {
+
+    func findFirstUnownedCard() -> Card? {
+        guard let card = (cards
+            .filter({ (c: Card) -> Bool in
+                return (c.owner == nil)
+            }).first)
+            else {
+                return nil
+        }
+        return card
+    }
+
 }
 
 // MARK: - Subscription methods

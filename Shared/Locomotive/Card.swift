@@ -9,14 +9,19 @@
 import Foundation
 
 final class Card : NSObject  {
+
+
     public private(set) weak var parent : Deck?
     public private(set) weak var owner : Player?
     public private (set) var production: Production = Production()
 
     init(parent: Deck) {
         super.init()
-
         self.parent = parent
+    }
+
+    deinit {
+
     }
 }
 
@@ -48,3 +53,5 @@ extension Card {
         return self.owner === player
     }
 }
+
+
