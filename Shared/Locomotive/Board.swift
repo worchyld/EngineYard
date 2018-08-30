@@ -78,6 +78,7 @@ extension Board {
             return
         }
 
-        nextDeck.unlock()
+        //nextDeck.didUnlock()
+        Deck.didUnlock(deck: nextDeck)
     }
 }

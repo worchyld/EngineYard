@@ -102,8 +102,14 @@ extension Deck {
 }
 
 extension Deck {
-    func unlock() {
+
+    /*
+    func didUnlock() {
         self.orderBook.add(.existingOrder)
+    }*/
+
+    public static func didUnlock(deck: Deck) {
+        deck.orderBook.add(.existingOrder)
     }
 
     public static func giveCardsFrom(deck:Deck, to players:[Player]) {

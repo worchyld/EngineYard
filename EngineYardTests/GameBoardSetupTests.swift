@@ -167,16 +167,7 @@ class GameBoardSetupTests: EngineYardTests {
         }
 
 
-        // LOGGER
-        print ("/n---------------")
-        for (index, deck) in board.decks.enumerated() {
-            print ("index: \(index), \(deck.description)")
 
-            for (idx, card) in deck.cards.enumerated() {
-                print ("..idx: \(idx), \(card.description)")
-
-            }
-        }
 
     }
 

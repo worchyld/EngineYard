@@ -12,6 +12,7 @@
 		4D1BD48B2083846500051FD9 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1BD48A2083846500051FD9 /* Card.swift */; };
 		4D1BD48D208384ED00051FD9 /* Production.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1BD48C208384ED00051FD9 /* Production.swift */; };
 		4D1BD48F2083864B00051FD9 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1BD48E2083864B00051FD9 /* Board.swift */; };
+		4D2847902137FC3500C81B5C /* BoardUnlockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D28478F2137FC3500C81B5C /* BoardUnlockTests.swift */; };
 		4D3DF4B320834587000DF88E /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3DF4B220834587000DF88E /* Wallet.swift */; };
 		4D3DF4B520834592000DF88E /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3DF4B420834592000DF88E /* Player.swift */; };
 		4D3DF4B720834679000DF88E /* WalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3DF4B620834679000DF88E /* WalletTests.swift */; };
@@ -52,6 +53,7 @@
 		4D1BD48A2083846500051FD9 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		4D1BD48C208384ED00051FD9 /* Production.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Production.swift; sourceTree = "<group>"; };
 		4D1BD48E2083864B00051FD9 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		4D28478F2137FC3500C81B5C /* BoardUnlockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardUnlockTests.swift; sourceTree = "<group>"; };
 		4D3DF4B220834587000DF88E /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		4D3DF4B420834592000DF88E /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		4D3DF4B620834679000DF88E /* WalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTests.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				4D3DF4B620834679000DF88E /* WalletTests.swift */,
 				4DA3486A20812972006DA164 /* Info.plist */,
 				4DA8396A2136AE7900F7CAB9 /* GameBoardSetupTests.swift */,
+				4D28478F2137FC3500C81B5C /* BoardUnlockTests.swift */,
 			);
 			path = EngineYardTests;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 			files = (
 				4D3DF4B720834679000DF88E /* WalletTests.swift in Sources */,
 				4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */,
+				4D2847902137FC3500C81B5C /* BoardUnlockTests.swift in Sources */,
 				4D617D562081EE110036BB00 /* DieTests.swift in Sources */,
 				4DA5237220815C06000FFAAB /* TaxTests.swift in Sources */,
 				4DA8396B2136AE7900F7CAB9 /* GameBoardSetupTests.swift in Sources */,
