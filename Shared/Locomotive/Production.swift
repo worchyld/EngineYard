@@ -8,6 +8,11 @@
 
 import Foundation
 
+enum ProductionError : Error {
+    case mustBePositive
+    case notEnoughUnits
+}
+
 final class Production {
     public private (set) weak var parent: Card?
     public private (set) var units: Int = 0 {
@@ -43,11 +48,10 @@ final class Production {
         self.units += amount
     }
 
-    func spend(amount: Int = 0) {
-        if (canSpend(spending: amount)) {
-            self.spentUnits += amount
-            self.units -= amount
-        }
+    func spend(amount: Int = 0) throws {
+        try canSpend(amount: amount)
+        self.spentUnits += amount
+        self.units -= amount
     }
 
     func reset() {
@@ -55,10 +59,15 @@ final class Production {
         self.spentUnits = 0
     }
 
-    func canSpend(spending: Int) -> Bool {
-        guard spending > 0 else {
-            return false
+    private func canSpend(amount: Int) throws {
+        guard amount > 0 else {
+            throw ProductionError.mustBePositive
         }
-        return ( (self.units - spending) >= 0 )
+        guard self.units >= amount else {
+            throw ProductionError.notEnoughUnits
+        }
+        guard (self.units - amount >= 0) else {
+            throw ProductionError.notEnoughUnits
+        }
     }
 }
