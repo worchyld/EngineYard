@@ -59,7 +59,7 @@ class PlayerHandTests: EngineYardTests {
 
         XCTAssertNil(firstCard.owner, "This card is owned by \(firstCard.owner?.description ?? "N/A")")
 
-        let _ = firstPlayer.hand.add(card: firstCard)
+        let _ = firstPlayer.hand.add(firstCard)
 
         XCTAssertTrue(firstCard.owner == firstPlayer)
         XCTAssertTrue(firstPlayer.hand.cards.count == 1)

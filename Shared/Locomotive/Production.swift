@@ -38,19 +38,14 @@ final class Production {
         return hasParent.productionCost
     }
 
-    // In the rules, when a player buys a card, it gets 1 production unit
-    func setup() {
-        self.add(amount: 1)
-    }
-
-    func add(amount: Int = 0) {
+    func add(_ amount: Int = 0) {
         guard amount > 0 else {
             return
         }
         self.units += amount
     }
 
-    func spend(amount: Int = 0) throws {
+    func spend(_ amount: Int = 0) throws {
         try canSpend(amount: amount)
         self.spentUnits += amount
         self.units -= amount

@@ -24,16 +24,16 @@ class ProductionTests: EngineYardTests {
     
     func testAddProduction() {
         let p = Production()
-        p.add(amount: 1)
+        p.add(1)
         XCTAssertTrue(p.units == 1, "Units: \(p.units)")
         XCTAssertTrue(p.spentUnits == 0)
     }
 
     func testSpendProduction() {
         let p = Production()
-        p.add(amount: 1)
+        p.add(1)
 
-        XCTAssertNoThrow(try p.spend(amount: 1))
+        XCTAssertNoThrow(try p.spend(1))
         XCTAssertTrue(p.units == 0, "Units: \(p.units)")
         XCTAssertTrue(p.spentUnits == 1, "Units \(p.spentUnits)")
 
@@ -45,9 +45,9 @@ class ProductionTests: EngineYardTests {
 
     func testInvalidSpend() {
         let p = Production()
-        p.add(amount: 1)
+        p.add(1)
 
-        XCTAssertThrowsError(try p.spend(amount: 3)) { error in
+        XCTAssertThrowsError(try p.spend(3)) { error in
             XCTAssertEqual(error as? ProductionError, ProductionError.notEnoughUnits)
         }
 
@@ -59,13 +59,13 @@ class ProductionTests: EngineYardTests {
         let p = Production()
 
         // expect units = 2, spend = 0
-        p.add(amount: 2)
-        XCTAssertNoThrow(try p.spend(amount: 1))
+        p.add(2)
+        XCTAssertNoThrow(try p.spend(1))
         XCTAssertTrue(p.spentUnits == 1, "spent: \(p.spentUnits)")
 
         // expect units = 1, spend = 2
-        p.add(amount: 1)
-        XCTAssertNoThrow(try p.spend(amount: 1))
+        p.add(1)
+        XCTAssertNoThrow(try p.spend(1))
         XCTAssertTrue(p.units == 1, "\(p.units)")
         XCTAssertTrue(p.spentUnits == 2, "\(p.spentUnits)")
 

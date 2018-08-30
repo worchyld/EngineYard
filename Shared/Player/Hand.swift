@@ -15,12 +15,29 @@ enum HandError: Error {
     case cannotFindCard
 }
 
-final class Hand : CustomStringConvertible {
+protocol HandObserver : class {
+    func didAdd(card: Card)
+}
+
+extension HandObserver {
+    func didAdd(card: Card) {
+        card.production.add(1)
+    }
+}
+
+final class Hand : CustomStringConvertible, HandObserver {
+    private var observerArray = [HandObserver]()
+
     public private (set) weak var owner: Player?
     public private (set) var cards: [Card] = [Card]()
 
     init(owner: Player) {
         self.owner = owner
+        self.attachObserver(observer: self as HandObserver)
+    }
+
+    deinit {
+        self.removeSubscribers()
     }
 }
 
@@ -35,7 +52,17 @@ extension Hand {
 
 extension Hand {
 
-    func add(card: Card) {
+    /*
+     When a player adds a valid card to their hand;
+     it should automatically give it 1 production unit
+
+     ie.
+     After a player has developed a locomotive, he takes
+     the corresponding locomotive card, then
+     takes one Production Unit counter and places
+     it on the locomotive card, with side “1” face up.
+     */
+    func add(_ card: Card) {
         guard let handOwnership = self.owner else {
             assertionFailure("Hand ownership is nil")
             return
@@ -45,8 +72,8 @@ extension Hand {
             return
         }
 
-        
         card.setOwner(owner: handOwnership)
+        notifyObservers(card: card)
 
         self.cards.append(card)
     }
@@ -71,4 +98,19 @@ extension Hand {
     }
 }
 
+extension Hand {
+    func attachObserver(observer: HandObserver) {
+        observerArray.append(observer)
+    }
+    fileprivate func notifyObservers(card: Card) {
+        for observer in observerArray {
+            observer.didAdd(card: card)
+        }
+    }
+
+    fileprivate func removeSubscribers() {
+        self.observerArray.removeAll()
+    }
+
+}
 

@@ -115,8 +115,7 @@ extension Deck {
                 assertionFailure("No card found in deck")
                 return
             }
-            card.production.setup()
-            let _ = player.hand.add(card: card)
+            let _ = player.hand.add(card)
         }
     }
 }
