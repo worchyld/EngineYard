@@ -22,7 +22,7 @@ class PlayerHandTests: EngineYardTests {
         super.tearDown()
     }
 
-    func testAddToPlayersHand() {
+    func testAddCardToPlayersHand() {
         let players = Mock.players(howMany: 5)
 
         guard let game:Game = Game.setup(with: players) else {
@@ -59,18 +59,27 @@ class PlayerHandTests: EngineYardTests {
 
         XCTAssertNil(firstCard.owner, "This card is owned by \(firstCard.owner?.description ?? "N/A")")
 
+        firstDeck.notifySubscribers() // unlock the next deck
         let _ = firstPlayer.hand.add(firstCard)
 
         XCTAssertTrue(firstCard.owner == firstPlayer)
         XCTAssertTrue(firstPlayer.hand.cards.count == 1)
         XCTAssertTrue(firstCard.production.units == 1)
         XCTAssertTrue(firstCard.production.spentUnits == 0)
+        XCTAssertTrue(firstDeck.owners?.count == 1)
 
-        let _ = firstDeck.cards.map({
-            print ($0.description)
-        })
+        // Expect the first 2 decks to have orders
+        for (index, d) in board.decks.enumerated() {
+            print (index, d.description, d.orderBook.description)
+            if (index < 2) {
+                XCTAssertTrue(d.existingOrders.count > 0)
+            }
+            else {
+                XCTAssertTrue(d.existingOrders.count == 0)
+            }
+        }
 
-        
+
     }
 
 }

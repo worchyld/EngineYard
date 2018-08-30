@@ -40,7 +40,11 @@ final class Deck : NSObject, DeckDelegate {
     public private (set) var rustedState: RustedState = .normal
 
     var active: Bool {
-        return ((self.orderBook.existingOrderValues.count > 0) || (self.orderBook.completedOrderValues.count > 0))
+        return (
+            (self.orderBook.existingOrderValues.count > 0) ||
+            (self.orderBook.completedOrderValues.count > 0) ||
+            (self.owners!.count > 0)
+        )
     }
 
     // OrderBook

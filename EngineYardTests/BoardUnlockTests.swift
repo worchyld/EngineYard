@@ -94,6 +94,32 @@ class BoardUnlockTests: EngineYardTests {
         })
     }
 
+    func testConstantUnlocking() {
+        let players = Mock.players(howMany: 5)
+
+        guard let game:Game = Game.setup(with: players) else {
+            XCTFail("Game object did not initialise")
+            return
+        }
+        guard let board = game.board else {
+            XCTFail("Board object not initialised")
+            return
+        }
+        guard let firstDeck: Deck = board.decks.first else {
+            XCTFail("No first deck found")
+            return
+        }
+
+        XCTAssertTrue(board.countUnlocked == 1, "\(board.countUnlocked)")
+
+        for _ in 1...14 {
+            firstDeck.notifySubscribers()
+        }
+
+        XCTAssertTrue(board.countUnlocked == 2, "\(board.countUnlocked)" )
+
+    }
+
     private func logger() {
         /**
         // LOGGER
