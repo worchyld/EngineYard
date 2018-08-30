@@ -9,6 +9,53 @@
 import XCTest
 @testable import EngineYard
 
+
+struct Mock {
+    public static func players(howMany: Int) -> [Player] {
+        var players: [Player] = [Player]()
+
+        do {
+            if try Rules.NumberOfPlayers.isValid(count: howMany)
+            {
+                for index in stride(from:0, to: howMany, by: 1) {
+                    let playerObj = Player(name: "Player #\(index)")
+                    players.append(playerObj)
+                }
+
+                return players
+            }
+            else {
+                assertionFailure("number of players is invalid: \(howMany)")
+            }
+
+        } catch let error {
+            print ("Player setup error: \(error.localizedDescription as Any)")
+        }
+
+        return players
+    }
+
+    struct Cards {
+        var green: Int = 0
+        var red: Int = 0
+        var blue: Int = 0
+        var yellow: Int = 0
+        var total : Int {
+            return (self.green + self.red + self.blue + self.yellow)
+        }
+
+        struct Expected {
+            static let green = Rules.Board.numberOfCardsForColor(engineColor: .green)
+            static let red = Rules.Board.numberOfCardsForColor(engineColor: .red)
+            static let blue = Rules.Board.numberOfCardsForColor(engineColor: .blue)
+            static let yellow = Rules.Board.numberOfCardsForColor(engineColor: .yellow)
+            static let total = Rules.Board.cards
+        }
+    }
+}
+
+
+
 class EngineYardTests: XCTestCase {
     
     override func setUp() {
@@ -20,17 +67,4 @@ class EngineYardTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }
