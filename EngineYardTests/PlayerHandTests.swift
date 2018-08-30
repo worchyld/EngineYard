@@ -68,6 +68,7 @@ class PlayerHandTests: EngineYardTests {
         XCTAssertTrue(firstCard.production.spentUnits == 0)
         XCTAssertTrue(firstDeck.owners?.count == 1)
 
+
         // Expect the first 2 decks to have orders
         for (index, d) in board.decks.enumerated() {
             print (index, d.description, d.orderBook.description)
@@ -78,6 +79,52 @@ class PlayerHandTests: EngineYardTests {
                 XCTAssertTrue(d.existingOrders.count == 0)
             }
         }
+    }
+
+    func testCannotAddFromSameDeck() {
+        let players = Mock.players(howMany: 5)
+
+        guard let game:Game = Game.setup(with: players) else {
+            XCTFail("Game object did not initialise")
+            return
+        }
+        guard let board = game.board else {
+            XCTFail("Board object not initialised")
+            return
+        }
+        guard let firstPlayer = players.first else {
+            XCTFail("No first player found")
+            return
+        }
+        guard let firstDeck = board.decks.first else {
+            XCTFail("No first deck found")
+            return
+        }
+        guard let firstCard = firstDeck.findFirstUnownedCard() else {
+            XCTFail("No unowned card found")
+            return
+        }
+
+        XCTAssertTrue(firstDeck.owners?.count == 0)
+        XCTAssertTrue(firstPlayer.hand.cards.count == 0)
+
+        firstDeck.notifySubscribers() // unlock the next deck
+        let _ = firstPlayer.hand.add(firstCard)
+        XCTAssertTrue(firstPlayer.hand.cards.count == 1)
+
+        // try adding another card from the same deck
+        guard let anotherCard = firstDeck.findFirstUnownedCard() else {
+            XCTFail("No unowned card found")
+            return
+        }
+
+        // probably needs some sort of throw?
+        XCTAssertTrue((firstPlayer.hand.find(card: anotherCard) != nil))
+
+        firstPlayer.hand.add(anotherCard)
+        XCTAssertTrue(firstPlayer.hand.cards.count == 1)
+        print (firstPlayer.hand.description)
+
 
 
     }
