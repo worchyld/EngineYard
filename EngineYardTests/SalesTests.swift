@@ -30,6 +30,7 @@ class SalesTests: EngineYardTests {
 
         if let perfectMatch = rule.perfectMatch(units) {
             print("Found perfect match for: \(units) in orders \(rule.orders) at index: \(perfectMatch.0) which is the value \(perfectMatch.1)")
+            XCTFail("Expected lower, got perfect match")
         }
         else {
             if let lowerMatch = rule.lowerMatch(units) {
@@ -38,12 +39,15 @@ class SalesTests: EngineYardTests {
             else {
                 if let higherMatch = rule.higherMatch(units) {
                     print("Found higher match for: \(units) in orders \(rule.orders) at index: \(higherMatch.0)  which is the value \(higherMatch.1)")
+                    XCTFail("Expected lower, got higher match")
                 }
                 else {
                     print ("No match found")
+                    XCTFail("Expected lower, Got no match")
                 }
             }
         } // end-if
     }
 
+    
 }
