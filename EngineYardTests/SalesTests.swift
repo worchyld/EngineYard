@@ -49,5 +49,58 @@ class SalesTests: EngineYardTests {
         } // end-if
     }
 
-    
+    func testHigher() {
+        let orders = [1]
+        let units = 6
+
+        let rule = SalesRules(orders)
+
+        if let perfectMatch = rule.perfectMatch(units) {
+            print("Found perfect match for: \(units) in orders \(rule.orders) at index: \(perfectMatch.0) which is the value \(perfectMatch.1)")
+            XCTFail("Expected higher, got perfect match")
+        }
+        else {
+            if let lowerMatch = rule.lowerMatch(units) {
+                print("Found lower match for: \(units) in orders \(rule.orders) at index: \(lowerMatch.0) which is the value \(lowerMatch.1)")
+                XCTFail("Expected higher, got lower match")
+            }
+            else {
+                if let higherMatch = rule.higherMatch(units) {
+                    print("Found higher match for: \(units) in orders \(rule.orders) at index: \(higherMatch.0)  which is the value \(higherMatch.1)")
+                }
+                else {
+                    print ("No match found")
+                    XCTFail("Expected higher, Got no match")
+                }
+            }
+        } // end-if
+    }
+
+    func testSameNumber() {
+        let orders = [6]
+        let units = 6
+
+        let rule = SalesRules(orders)
+
+        if let perfectMatch = rule.perfectMatch(units) {
+            print("Found perfect match for: \(units) in orders \(rule.orders) at index: \(perfectMatch.0) which is the value \(perfectMatch.1)")
+        }
+        else {
+            if let lowerMatch = rule.lowerMatch(units) {
+                print("Found lower match for: \(units) in orders \(rule.orders) at index: \(lowerMatch.0) which is the value \(lowerMatch.1)")
+                XCTFail("Expected perfectMatch, got lower match")
+            }
+            else {
+                if let higherMatch = rule.higherMatch(units) {
+                    print("Found higher match for: \(units) in orders \(rule.orders) at index: \(higherMatch.0)  which is the value \(higherMatch.1)")
+                }
+                else {
+                    print ("No match found")
+                    XCTFail("Expected perfectMatch, Got no match")
+                }
+            }
+        } // end-if
+    }
+
+
 }
