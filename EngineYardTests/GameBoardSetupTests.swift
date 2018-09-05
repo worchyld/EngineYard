@@ -125,7 +125,7 @@ class GameBoardSetupTests: EngineYardTests {
         XCTAssertTrue(lastDeck.color == .red && lastDeck.generation == .first)
 
         // (2) Expect 3 owners of Green.1
-        XCTAssertTrue(firstDeck.owners?.count == 3, "Invalid owners: \(String(describing: firstDeck.owners?.count))")
+        XCTAssertTrue(firstDeck.owners?.count == 3, "Invalid owners: \(String(describing: firstDeck.owners!.count))")
 
         for (index, c) in firstDeck.cards.enumerated() {
             if (index < 3) {

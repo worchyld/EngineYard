@@ -11,8 +11,11 @@ import Foundation
 typealias Tableau = Hand
 
 enum HandError: Error {
-    case alreadyOwnThisTypeOfCard
-    case cannotFindCard
+    case handAlreadyHasCard(Card)
+    case cannotFindCard(Card)
+    case handIsEmpty
+    case noOwnership
+    case noParent
 }
 
 protocol HandObserver : class {
@@ -51,17 +54,90 @@ extension Hand {
 }
 
 extension Hand {
+    func add(_ card: Card) throws {
+        try checkCardHasParent(card: card)
+        try checkOccurance(card)
+
+        do {
+            try willAdd(card: card)
+        } catch let error {
+            throw error
+        }
+    }
+
+    func remove(_ card: Card) throws {
+        try canRemove(card)
+        //didRemove(card: Card)
+    }
+
+    private func willAdd(card: Card) throws {
+        let cardOwner = try checkHandHasOwner()
+        print ("Set owner to: \(cardOwner.description)")
+        card.setOwner(owner: cardOwner)
+        notifyObservers(card: card)
+        self.cards.append(card)
+    }
+
+    private func didRemove(card: Card) {
+        print ("REMOVE CARD CODE GOES HERE")
+    }
+}
+
+
+extension Hand {
+
+    private func canRemove(_ card: Card) throws {
+        try checkCardHasParent(card: card)
+        let _ = try checkHandHasOwner()
+        try checkHandIsNotEmpty()
+        if let result = try find(card) {
+            print ("result: \(result)")
+        }
+    }
+
+    private func checkHandHasOwner() throws -> Player {
+        guard let owner = self.owner else {
+            throw HandError.noOwnership
+        }
+        return owner
+    }
+
+    private func checkCardHasParent(card: Card) throws {
+        guard card.parent != nil else {
+            throw HandError.noParent
+        }
+    }
+
+    private func checkHandIsNotEmpty() throws {
+        guard self.cards.count > 0 else {
+            throw HandError.handIsEmpty
+        }
+    }
+
+    private func checkOccurance(_ card: Card) throws {
+        let results = self.cards.filter{$0.parent == card.parent}.count
+        guard results == 0 else {
+            throw HandError.handAlreadyHasCard(card)
+        }
+    }
+
+    private func find(_ card:Card) throws -> (Int, Card)? {
+        guard let needle = (self.cards.enumerated().filter {
+            (offset, element) -> Bool
+            in
+            return (index, element).1.parent == card.parent
+            }).first
+        else {
+                return nil
+        }
+        return needle
+    }
+
+
+//     When a player adds a valid card to their hand;
+//     it should automatically give it 1 production unit
 
     /*
-     When a player adds a valid card to their hand;
-     it should automatically give it 1 production unit
-
-     ie.
-     After a player has developed a locomotive, he takes
-     the corresponding locomotive card, then
-     takes one Production Unit counter and places
-     it on the locomotive card, with side “1” face up.
-     */
     func add(_ card: Card) {
         guard let handOwnership = self.owner else {
             assertionFailure("Hand ownership is nil")
@@ -96,8 +172,11 @@ extension Hand {
         }
         return needle
     }
+ */
 }
 
+
+// MARK: Observers
 extension Hand {
     func attachObserver(observer: HandObserver) {
         observerArray.append(observer)

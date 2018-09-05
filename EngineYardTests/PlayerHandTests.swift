@@ -22,6 +22,45 @@ class PlayerHandTests: EngineYardTests {
         super.tearDown()
     }
 
+    func testAddCard() {
+        let players = Mock.players(howMany: 5)
+
+        guard let game:Game = Game.setup(with: players) else {
+            XCTFail("Game object did not initialise")
+            return
+        }
+        guard let board = game.board else {
+            XCTFail("Board object not initialised")
+            return
+        }
+        guard let firstPlayer = players.first else {
+            XCTFail("No first player found")
+            return
+        }
+        guard let firstDeck = board.decks.first else {
+            XCTFail("No first deck found")
+            return
+        }
+        XCTAssertTrue(firstDeck.owners?.count == 0)
+        XCTAssertTrue(firstPlayer.hand.cards.count == 0)
+
+        // Find the first unowned card in the deck?
+        guard let firstCard = firstDeck.findFirstUnownedCard() else {
+            XCTFail("No unowned card found")
+            return
+        }
+
+        do {
+            try firstPlayer.hand.add(firstCard)
+        } catch let error {
+            XCTFail(error.localizedDescription as String)
+        }
+
+        XCTAssertTrue(firstPlayer.hand.cards.count == 1)
+        XCTAssertTrue(firstCard.owner == firstPlayer)
+    }
+
+    /**
     func testAddCardToPlayersHand() {
         let players = Mock.players(howMany: 5)
 
@@ -124,9 +163,6 @@ class PlayerHandTests: EngineYardTests {
         firstPlayer.hand.add(anotherCard)
         XCTAssertTrue(firstPlayer.hand.cards.count == 1)
         print (firstPlayer.hand.description)
-
-
-
-    }
+    }**/
 
 }

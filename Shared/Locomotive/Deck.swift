@@ -112,14 +112,19 @@ extension Deck {
     }
 
     public static func giveCardsFrom(deck:Deck, to players:[Player]) {
+
         for player in players {
-            guard let card: Card = deck.cards.filter({ (c: Card) -> Bool in
+            guard let cardObj: Card = deck.cards.filter({ (c: Card) -> Bool in
                 return (c.owner == nil)
             }).first else {
                 assertionFailure("No card found in deck")
                 return
             }
-            let _ = player.hand.add(card)
+            do {
+                try player.hand.add(cardObj)
+            } catch let error {
+                assertionFailure(error.localizedDescription as String)
+            }
         }
     }
 }
