@@ -36,6 +36,8 @@
 		4DA5237220815C06000FFAAB /* TaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5237120815C06000FFAAB /* TaxTests.swift */; };
 		4DA8396B2136AE7900F7CAB9 /* GameBoardSetupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8396A2136AE7900F7CAB9 /* GameBoardSetupTests.swift */; };
 		4DA8396D2136B0ED00F7CAB9 /* GameSetupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8396C2136B0ED00F7CAB9 /* GameSetupManager.swift */; };
+		4DB344B221403B3C00B42E78 /* SalesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB344B121403B3C00B42E78 /* SalesTests.swift */; };
+		4DB344B421403B8900B42E78 /* SalesRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB344B321403B8900B42E78 /* SalesRules.swift */; };
 		4DCE7B442089E49E0089BDDC /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCE7B432089E49E0089BDDC /* Game.swift */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +85,8 @@
 		4DA5237120815C06000FFAAB /* TaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTests.swift; sourceTree = "<group>"; };
 		4DA8396A2136AE7900F7CAB9 /* GameBoardSetupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardSetupTests.swift; sourceTree = "<group>"; };
 		4DA8396C2136B0ED00F7CAB9 /* GameSetupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetupManager.swift; sourceTree = "<group>"; };
+		4DB344B121403B3C00B42E78 /* SalesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesTests.swift; sourceTree = "<group>"; };
+		4DB344B321403B8900B42E78 /* SalesRules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesRules.swift; sourceTree = "<group>"; };
 		4DCE7B432089E49E0089BDDC /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +116,7 @@
 				4D1BD48A2083846500051FD9 /* Card.swift */,
 				4D1BD48C208384ED00051FD9 /* Production.swift */,
 				4D74BA4B2084AC5000ADC00C /* OrderBook.swift */,
+				4DB344B321403B8900B42E78 /* SalesRules.swift */,
 			);
 			path = Locomotive;
 			sourceTree = "<group>";
@@ -168,6 +173,7 @@
 				4D28478F2137FC3500C81B5C /* BoardUnlockTests.swift */,
 				4D2847912138147200C81B5C /* ProductionTests.swift */,
 				4D28479321381F4500C81B5C /* PlayerHandTests.swift */,
+				4DB344B121403B3C00B42E78 /* SalesTests.swift */,
 			);
 			path = EngineYardTests;
 			sourceTree = "<group>";
@@ -327,6 +333,7 @@
 				4DA523652081582B000FFAAB /* Enums.swift in Sources */,
 				4D74BA482084A6D000ADC00C /* Hand.swift in Sources */,
 				4DA8396D2136B0ED00F7CAB9 /* GameSetupManager.swift in Sources */,
+				4DB344B421403B8900B42E78 /* SalesRules.swift in Sources */,
 				4DA5236720815885000FFAAB /* Die.swift in Sources */,
 				4D3DF4B920835DB7000DF88E /* Rules.swift in Sources */,
 				4DA5236E20815960000FFAAB /* Tax.swift in Sources */,
@@ -345,6 +352,7 @@
 			files = (
 				4D3DF4B720834679000DF88E /* WalletTests.swift in Sources */,
 				4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */,
+				4DB344B221403B3C00B42E78 /* SalesTests.swift in Sources */,
 				4D2847902137FC3500C81B5C /* BoardUnlockTests.swift in Sources */,
 				4D28479421381F4500C81B5C /* PlayerHandTests.swift in Sources */,
 				4D617D562081EE110036BB00 /* DieTests.swift in Sources */,
