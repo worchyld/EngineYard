@@ -212,14 +212,12 @@ class PlayerHandTests: EngineYardTests {
         XCTAssertTrue(firstPlayer.hand.cards.count == 1)
         XCTAssertTrue(firstDeck.owners?.count == 1)
 
-        print ("\n")
-        print (firstPlayer.hand.description)
-
         XCTAssertThrowsError(try firstPlayer.hand.remove(lastCard)) { error in
             XCTAssertEqual(error as? HandError, HandError.cannotFindCard)
         }
 
-
+        XCTAssertTrue(firstPlayer.hand.cards.count == 1)
+        XCTAssertTrue(firstDeck.owners?.count == 1)
     }
 
 }
