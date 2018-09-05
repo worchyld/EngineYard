@@ -10,12 +10,31 @@ import Foundation
 
 typealias Tableau = Hand
 
-enum HandError: Error {
-    case handAlreadyHasCard(Card)
-    case cannotFindCard(Card)
+enum HandError: Error, Equatable {
+    case handAlreadyHasCard
+    case cannotFindCard
     case handIsEmpty
     case noOwnership
     case noParent
+}
+
+extension HandError {
+    static func == (lhs: HandError, rhs: HandError) -> Bool {
+        switch (lhs, rhs) {
+        case (.handAlreadyHasCard, .handAlreadyHasCard):
+            return true
+        case (.cannotFindCard, .cannotFindCard):
+            return true
+        case (.handIsEmpty, .handIsEmpty):
+            return true
+        case (.noOwnership, .noOwnership):
+            return true
+        case (.noParent, .noParent):
+            return true
+        default:
+            return false
+        }
+    }
 }
 
 protocol HandObserver : class {
@@ -72,7 +91,7 @@ extension Hand {
 
     private func willAdd(card: Card) throws {
         let cardOwner = try checkHandHasOwner()
-        print ("Set owner to: \(cardOwner.description)")
+
         card.setOwner(owner: cardOwner)
         notifyObservers(card: card)
         self.cards.append(card)
@@ -116,8 +135,8 @@ extension Hand {
 
     private func checkOccurance(_ card: Card) throws {
         let results = self.cards.filter{$0.parent == card.parent}.count
-        guard results == 0 else {
-            throw HandError.handAlreadyHasCard(card)
+        guard results == 0 else {            
+            throw HandError.handAlreadyHasCard
         }
     }
 

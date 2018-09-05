@@ -58,7 +58,100 @@ class PlayerHandTests: EngineYardTests {
 
         XCTAssertTrue(firstPlayer.hand.cards.count == 1)
         XCTAssertTrue(firstCard.owner == firstPlayer)
+        XCTAssertTrue(firstDeck.owners?.count == 1)
     }
+
+    func testAddSameCard() {
+        let players = Mock.players(howMany: 5)
+
+        guard let game:Game = Game.setup(with: players) else {
+            XCTFail("Game object did not initialise")
+            return
+        }
+        guard let board = game.board else {
+            XCTFail("Board object not initialised")
+            return
+        }
+        guard let firstPlayer = players.first else {
+            XCTFail("No first player found")
+            return
+        }
+        guard let firstDeck = board.decks.first else {
+            XCTFail("No first deck found")
+            return
+        }
+        XCTAssertTrue(firstDeck.owners?.count == 0)
+        XCTAssertTrue(firstPlayer.hand.cards.count == 0)
+
+        // Find the first unowned card in the deck?
+        guard let firstCard = firstDeck.findFirstUnownedCard() else {
+            XCTFail("No unowned card found")
+            return
+        }
+
+        do {
+            try firstPlayer.hand.add(firstCard)
+        } catch let error {
+            XCTFail(error.localizedDescription as String)
+        }
+
+        XCTAssertTrue(firstPlayer.hand.cards.count == 1)
+        XCTAssertTrue(firstCard.owner == firstPlayer)
+        XCTAssertTrue(firstDeck.owners?.count == 1)
+
+        // try to add the same card
+        // expect it to throw an error (Already have this card)
+        XCTAssertThrowsError(try firstPlayer.hand.add(firstCard)) { error in
+            XCTAssertEqual(error as? HandError, HandError.handAlreadyHasCard)
+        }
+    }
+
+    func testAddCardFromSameDeck() {
+        let players = Mock.players(howMany: 5)
+
+        guard let game:Game = Game.setup(with: players) else {
+            XCTFail("Game object did not initialise")
+            return
+        }
+        guard let board = game.board else {
+            XCTFail("Board object not initialised")
+            return
+        }
+        guard let firstPlayer = players.first else {
+            XCTFail("No first player found")
+            return
+        }
+        guard let firstDeck = board.decks.first else {
+            XCTFail("No first deck found")
+            return
+        }
+        XCTAssertTrue(firstDeck.owners?.count == 0)
+        XCTAssertTrue(firstPlayer.hand.cards.count == 0)
+
+        // get first 2 cards from deck
+        let cards = firstDeck.cards[0...1]
+
+        guard let firstCard = cards.first else {
+            XCTFail("No first card found")
+            return
+        }
+        guard let lastCard = cards.last else {
+            XCTFail("No last card found")
+            return
+        }
+
+        XCTAssertNoThrow(try firstPlayer.hand.add(firstCard), "Error")
+
+        // try to add a card from the same deck
+        // expect it to throw an error (Already have this card)
+        XCTAssertThrowsError(try firstPlayer.hand.add(lastCard)) { error in
+            XCTAssertEqual(error as? HandError, HandError.handAlreadyHasCard)
+        }
+
+        XCTAssertTrue(firstPlayer.hand.cards.count == 1)
+        XCTAssertTrue(firstDeck.owners!.count == 1)
+    }
+
 
     /**
     func testAddCardToPlayersHand() {

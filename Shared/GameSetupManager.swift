@@ -95,9 +95,6 @@ extension GameSetupManager {
 
         // Add first deck cards to players
         Deck.giveCardsFrom(deck: firstDeck, to: players)
-
-        print (firstDeck.cards.description)
-
     }
 }
 
