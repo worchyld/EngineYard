@@ -85,33 +85,44 @@ extension Hand {
     }
 
     func remove(_ card: Card) throws {
-        try canRemove(card)
-        //didRemove(card: Card)
-    }
-
-    private func willAdd(card: Card) throws {
-        let cardOwner = try checkHandHasOwner()
-
-        card.setOwner(owner: cardOwner)
-        notifyObservers(card: card)
-        self.cards.append(card)
-    }
-
-    private func didRemove(card: Card) {
-        print ("REMOVE CARD CODE GOES HERE")
+        guard let result = try canRemove(card) else {
+            throw HandError.cannotFindCard
+        }
+        guard let _ = self.cards.first(where: { (c: Card) -> Bool in
+            return (c == result.1)
+        }) else {
+            throw HandError.cannotFindCard
+        }
+        willRemove(card: result.1, atIndex: result.0)
     }
 }
 
 
 extension Hand {
+    private func willAdd(card: Card) throws {
+        let cardOwner = try checkHandHasOwner()
+        card.setOwner(owner: cardOwner)
+        notifyObservers(card: card)
+        self.cards.append(card)
+    }
 
-    private func canRemove(_ card: Card) throws {
+    private func willRemove(card: Card, atIndex: Int) {
+        print ("Will remove card: \(card.description) at index: \(atIndex)")
+        card.removeOwner()
+        self.cards.remove(at: atIndex)
+    }
+
+
+    private func canRemove(_ card: Card) throws -> (Int, Card)? {
         try checkCardHasParent(card: card)
         let _ = try checkHandHasOwner()
         try checkHandIsNotEmpty()
+
+        // Find card in hand
         if let result = try find(card) {
-            print ("result: \(result)")
+            return result
         }
+        return nil
     }
 
     private func checkHandHasOwner() throws -> Player {
@@ -135,7 +146,7 @@ extension Hand {
 
     private func checkOccurance(_ card: Card) throws {
         let results = self.cards.filter{$0.parent == card.parent}.count
-        guard results == 0 else {            
+        guard results == 0 else {
             throw HandError.handAlreadyHasCard
         }
     }
@@ -144,54 +155,14 @@ extension Hand {
         guard let needle = (self.cards.enumerated().filter {
             (offset, element) -> Bool
             in
-            return (index, element).1.parent == card.parent
+            //return (index, element).1.name == card.name
+            return (index, element).1 == card
             }).first
         else {
-                return nil
-        }
-        return needle
-    }
-
-
-//     When a player adds a valid card to their hand;
-//     it should automatically give it 1 production unit
-
-    /*
-    func add(_ card: Card) {
-        guard let handOwnership = self.owner else {
-            assertionFailure("Hand ownership is nil")
-            return
-        }
-
-        if let _ = find(card: card) {
-            return
-        }
-
-        card.setOwner(owner: handOwnership)
-        notifyObservers(card: card)
-
-        self.cards.append(card)
-    }
-
-    // #TODO - Remove card
-    func remove(card: Card) -> Bool {
-        if let _ = find(card: card) {
-            // remove card
-            return true
-        }
-        return false
-    }
-
-    // A player cannot own a card from the same parent
-    func find(card: Card) -> Card? {
-        guard let needle : Card = self.cards.filter({ (c: Card) -> Bool in
-            return c.parent == card.parent
-        }).first else {
             return nil
         }
         return needle
     }
- */
 }
 
 

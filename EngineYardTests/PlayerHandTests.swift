@@ -152,9 +152,11 @@ class PlayerHandTests: EngineYardTests {
         XCTAssertTrue(firstDeck.owners!.count == 1)
     }
 
-
-    /**
-    func testAddCardToPlayersHand() {
+    // Try to remove a card from the player's hand
+    // Test #1 - Remove a card when hand is empty
+    // Test #2 - Add then Remove a card from hand
+    // Test #3 - Remove a card that doesn't exist in player's hand
+    func testRemoveCard() {
         let players = Mock.players(howMany: 5)
 
         guard let game:Game = Game.setup(with: players) else {
@@ -173,89 +175,51 @@ class PlayerHandTests: EngineYardTests {
             XCTFail("No first deck found")
             return
         }
-
         XCTAssertTrue(firstDeck.owners?.count == 0)
         XCTAssertTrue(firstPlayer.hand.cards.count == 0)
 
-        let result = firstDeck.owners?.filter({ (p: Player) -> Bool in
-            return (p == firstPlayer)
-        }).count
+        // get first 2 cards from deck
+        let cards = firstDeck.cards[0...1]
 
-        XCTAssertTrue(result == 0, "\(firstPlayer.name) is an owner of a card in \(firstDeck.name), \(result?.description ?? "N/A")")
-
-        // Find the first unowned card in the deck?
-        guard let firstCard = firstDeck.findFirstUnownedCard() else {
-            XCTFail("No unowned card found")
+        guard let firstCard = cards.first else {
+            XCTFail("No first card")
             return
         }
 
-        XCTAssertNil(firstCard.owner, "This card is owned by \(firstCard.owner?.description ?? "N/A")")
+        guard let lastCard = cards.last else {
+            XCTFail("No last card")
+            return
+        }
 
-        firstDeck.notifySubscribers() // unlock the next deck
-        let _ = firstPlayer.hand.add(firstCard)
+        // Test #1 - Remove a card when hand is empty
+        // Expect: Throw an error (Hand is empty)
+        XCTAssertThrowsError(try firstPlayer.hand.remove(firstCard)) { error in
+            XCTAssertEqual(error as? HandError, HandError.handIsEmpty)
+        }
 
-        XCTAssertTrue(firstCard.owner == firstPlayer)
+        // Test #2 - Add then Remove a card from hand
+        XCTAssertNoThrow(try firstPlayer.hand.add(firstCard))
         XCTAssertTrue(firstPlayer.hand.cards.count == 1)
-        XCTAssertTrue(firstCard.production.units == 1)
-        XCTAssertTrue(firstCard.production.spentUnits == 0)
         XCTAssertTrue(firstDeck.owners?.count == 1)
 
+        XCTAssertNoThrow(try firstPlayer.hand.remove(firstCard))
 
-        // Expect the first 2 decks to have orders
-        for (index, d) in board.decks.enumerated() {
-            print (index, d.description, d.orderBook.description)
-            if (index < 2) {
-                XCTAssertTrue(d.existingOrders.count > 0)
-            }
-            else {
-                XCTAssertTrue(d.existingOrders.count == 0)
-            }
-        }
-    }
+        XCTAssertTrue(firstPlayer.hand.cards.count == 0, "Cards: \(firstPlayer.hand.cards.count)")
+        XCTAssertTrue(firstDeck.owners?.count == 0, "\(firstDeck.owners!.count)")
 
-    func testCannotAddFromSameDeck() {
-        let players = Mock.players(howMany: 5)
-
-        guard let game:Game = Game.setup(with: players) else {
-            XCTFail("Game object did not initialise")
-            return
-        }
-        guard let board = game.board else {
-            XCTFail("Board object not initialised")
-            return
-        }
-        guard let firstPlayer = players.first else {
-            XCTFail("No first player found")
-            return
-        }
-        guard let firstDeck = board.decks.first else {
-            XCTFail("No first deck found")
-            return
-        }
-        guard let firstCard = firstDeck.findFirstUnownedCard() else {
-            XCTFail("No unowned card found")
-            return
-        }
-
-        XCTAssertTrue(firstDeck.owners?.count == 0)
-        XCTAssertTrue(firstPlayer.hand.cards.count == 0)
-
-        firstDeck.notifySubscribers() // unlock the next deck
-        let _ = firstPlayer.hand.add(firstCard)
+        // Test #3 - Remove a card that doesn't exist in player's hand
+        XCTAssertNoThrow(try firstPlayer.hand.add(firstCard))
         XCTAssertTrue(firstPlayer.hand.cards.count == 1)
+        XCTAssertTrue(firstDeck.owners?.count == 1)
 
-        // try adding another card from the same deck
-        guard let anotherCard = firstDeck.findFirstUnownedCard() else {
-            XCTFail("No unowned card found")
-            return
-        }
-
-        // probably needs some sort of throw?
-        XCTAssertTrue((firstPlayer.hand.find(card: anotherCard) != nil))
-
-        firstPlayer.hand.add(anotherCard)
-        XCTAssertTrue(firstPlayer.hand.cards.count == 1)
+        print ("\n")
         print (firstPlayer.hand.description)
-    }**/
+
+        XCTAssertThrowsError(try firstPlayer.hand.remove(lastCard)) { error in
+            XCTAssertEqual(error as? HandError, HandError.cannotFindCard)
+        }
+
+
+    }
 
 }
