@@ -22,6 +22,7 @@
 		4D617D562081EE110036BB00 /* DieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D617D552081EE110036BB00 /* DieTests.swift */; };
 		4D74BA482084A6D000ADC00C /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74BA472084A6D000ADC00C /* Hand.swift */; };
 		4D74BA4C2084AC5000ADC00C /* OrderBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74BA4B2084AC5000ADC00C /* OrderBook.swift */; };
+		4D83F586214132B80036FE28 /* SalesRuleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D83F585214132B80036FE28 /* SalesRuleHandler.swift */; };
 		4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3486820812972006DA164 /* EngineYardTests.swift */; };
 		4DA3487C20812A8B006DA164 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3487420812A8B006DA164 /* ViewController.swift */; };
 		4DA3487D20812A8B006DA164 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DA3487520812A8B006DA164 /* Assets.xcassets */; };
@@ -37,9 +38,8 @@
 		4DA8396B2136AE7900F7CAB9 /* GameBoardSetupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8396A2136AE7900F7CAB9 /* GameBoardSetupTests.swift */; };
 		4DA8396D2136B0ED00F7CAB9 /* GameSetupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8396C2136B0ED00F7CAB9 /* GameSetupManager.swift */; };
 		4DB344B221403B3C00B42E78 /* SalesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB344B121403B3C00B42E78 /* SalesTests.swift */; };
-		4DB344B421403B8900B42E78 /* SalesRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB344B321403B8900B42E78 /* SalesRules.swift */; };
+		4DB344B421403B8900B42E78 /* SalesRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB344B321403B8900B42E78 /* SalesRule.swift */; };
 		4DCE7B442089E49E0089BDDC /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCE7B432089E49E0089BDDC /* Game.swift */; };
-		4DD090412140EA61003EB4CC /* SalesRuleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD090402140EA61003EB4CC /* SalesRuleHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +68,7 @@
 		4D617D552081EE110036BB00 /* DieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DieTests.swift; sourceTree = "<group>"; };
 		4D74BA472084A6D000ADC00C /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
 		4D74BA4B2084AC5000ADC00C /* OrderBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBook.swift; sourceTree = "<group>"; };
+		4D83F585214132B80036FE28 /* SalesRuleHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesRuleHandler.swift; sourceTree = "<group>"; };
 		4DA3485020812970006DA164 /* EngineYard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EngineYard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA3486420812972006DA164 /* EngineYardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EngineYardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA3486820812972006DA164 /* EngineYardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineYardTests.swift; sourceTree = "<group>"; };
@@ -87,9 +88,8 @@
 		4DA8396A2136AE7900F7CAB9 /* GameBoardSetupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardSetupTests.swift; sourceTree = "<group>"; };
 		4DA8396C2136B0ED00F7CAB9 /* GameSetupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetupManager.swift; sourceTree = "<group>"; };
 		4DB344B121403B3C00B42E78 /* SalesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesTests.swift; sourceTree = "<group>"; };
-		4DB344B321403B8900B42E78 /* SalesRules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesRules.swift; sourceTree = "<group>"; };
+		4DB344B321403B8900B42E78 /* SalesRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesRule.swift; sourceTree = "<group>"; };
 		4DCE7B432089E49E0089BDDC /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		4DD090402140EA61003EB4CC /* SalesRuleHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesRuleHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,8 +118,8 @@
 				4D1BD48A2083846500051FD9 /* Card.swift */,
 				4D1BD48C208384ED00051FD9 /* Production.swift */,
 				4D74BA4B2084AC5000ADC00C /* OrderBook.swift */,
-				4DB344B321403B8900B42E78 /* SalesRules.swift */,
-				4DD090402140EA61003EB4CC /* SalesRuleHandler.swift */,
+				4DB344B321403B8900B42E78 /* SalesRule.swift */,
+				4D83F585214132B80036FE28 /* SalesRuleHandler.swift */,
 			);
 			path = Locomotive;
 			sourceTree = "<group>";
@@ -326,7 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DD090412140EA61003EB4CC /* SalesRuleHandler.swift in Sources */,
+				4D83F586214132B80036FE28 /* SalesRuleHandler.swift in Sources */,
 				4D3DF4B320834587000DF88E /* Wallet.swift in Sources */,
 				4DCE7B442089E49E0089BDDC /* Game.swift in Sources */,
 				4D74BA4C2084AC5000ADC00C /* OrderBook.swift in Sources */,
@@ -337,7 +337,7 @@
 				4DA523652081582B000FFAAB /* Enums.swift in Sources */,
 				4D74BA482084A6D000ADC00C /* Hand.swift in Sources */,
 				4DA8396D2136B0ED00F7CAB9 /* GameSetupManager.swift in Sources */,
-				4DB344B421403B8900B42E78 /* SalesRules.swift in Sources */,
+				4DB344B421403B8900B42E78 /* SalesRule.swift in Sources */,
 				4DA5236720815885000FFAAB /* Die.swift in Sources */,
 				4D3DF4B920835DB7000DF88E /* Rules.swift in Sources */,
 				4DA5236E20815960000FFAAB /* Tax.swift in Sources */,

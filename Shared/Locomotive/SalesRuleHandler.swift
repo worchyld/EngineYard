@@ -8,57 +8,61 @@
 
 import Foundation
 
-enum MatchType : Equatable {
-    case perfectMatch(Int, Int)
-    case lowerMatch(Int, Int)
-    case higherMatch(Int, Int)
+enum SalesMatchType: Int {
+    case perfectMatch
+    case lowerMatch
+    case higherMatch
 }
 
-extension MatchType {
-    static func == (lhs: MatchType, rhs: MatchType) -> Bool {
-        switch (lhs, rhs) {
-        case (.perfectMatch, .perfectMatch):
-            return true
-        case (.lowerMatch, .lowerMatch):
-            return true
-        case (.higherMatch, .higherMatch):
-            return true
-        default:
-            return false
-        }
+class SalesMatch {
+    var type: SalesMatchType? // perfectMatch, etc
+    var tuple: (Int, Int)?
+
+    init(type: SalesMatchType, tuple: (Int, Int)) {
+        self.type = type
+        self.tuple = tuple
     }
 }
-
 
 class SalesRuleHandler {
-
-    public private(set) var matchType: MatchType?
-
-    init(orders: [Int], units: Int) {
-        self.matchType = self.handler(orders: orders, units: units)
+    var orders: [Int]
+    var units: Int
+    private var _matchObj: SalesMatch?
+    var matchObj: SalesMatch? {
+        return self._matchObj
     }
 
-    private func handler(orders: [Int], units: Int) -> MatchType? {
-        let rule = SalesRules(orders)
+    init(orders: [Int], units: Int) {
+        self.orders = orders
+        self.units = units
+        self._matchObj = self.handler()
+    }
 
-        if let match = rule.perfectMatch(units) {
+    private func handler() -> SalesMatch? {
+
+        let rule = SalesRule(self.orders)
+
+        if let match = rule.perfectMatch(self.units) {
             print("Found perfect match for: \(units) in orders \(rule.orders) at index: \(match.0) which is the value \(match.1)")
-            return MatchType.perfectMatch(match.0, match.1)
+
+            return SalesMatch(type: .perfectMatch, tuple: match)
         }
         else {
             if let match = rule.lowerMatch(units) {
                 print("Found lower match for: \(units) in orders \(rule.orders) at index: \(match.0) which is the value \(match.1)")
-                return MatchType.lowerMatch(match.0, match.1)
+
+                return SalesMatch(type: .lowerMatch, tuple: match)
             }
             else {
                 if let match = rule.higherMatch(units) {
                     print("Found higher match for: \(units) in orders \(rule.orders) at index: \(match.0) which is the value \(match.1)")
-                    return MatchType.higherMatch(match.0, match.1)
+
+                    return SalesMatch(type: .higherMatch, tuple: match)
                 }
             }
         }
+
         return nil
     }
-
-
 }
+

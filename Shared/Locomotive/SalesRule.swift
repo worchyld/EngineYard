@@ -1,5 +1,5 @@
 //
-//  Sales.swift
+//  SalesRule.swift
 //  EngineYard
 //
 //  Created by Amarjit on 05/09/2018.
@@ -15,7 +15,7 @@ import Foundation
 // (b) Lower number
 // (c) Higher number
 
-struct SalesRules {
+struct SalesRule {
     private var _orders: [Int]
     var orders: [Int] {
         return _orders
