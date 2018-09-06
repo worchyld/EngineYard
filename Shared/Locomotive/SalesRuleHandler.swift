@@ -32,17 +32,13 @@ extension MatchType {
 
 class SalesRuleHandler {
 
-    private var orders: [Int]
-    private var units: Int
-    var matchType: MatchType?
+    public private(set) var matchType: MatchType?
 
     init(orders: [Int], units: Int) {
-        self.orders = orders
-        self.units = units
-        self.matchType = self.handler()
+        self.matchType = self.handler(orders: orders, units: units)
     }
 
-    private func handler() -> MatchType? {
+    private func handler(orders: [Int], units: Int) -> MatchType? {
         let rule = SalesRules(orders)
 
         if let match = rule.perfectMatch(units) {
@@ -56,11 +52,13 @@ class SalesRuleHandler {
             }
             else {
                 if let match = rule.higherMatch(units) {
+                    print("Found higher match for: \(units) in orders \(rule.orders) at index: \(match.0) which is the value \(match.1)")
                     return MatchType.higherMatch(match.0, match.1)
                 }
             }
         }
         return nil
     }
+
 
 }
