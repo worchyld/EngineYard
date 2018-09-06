@@ -80,6 +80,12 @@ class SalesTests: EngineYardTests {
         let orders = [6]
         let units = 6
 
+        let handler = SalesRuleHandler(orders: orders, units: units)
+
+        XCTAssertEqual(handler.matchType, MatchType.perfectMatch(0, 0), "MatchType: \(handler.matchType!)")
+        
+
+        /*
         let rule = SalesRules(orders)
 
         if let perfectMatch = rule.perfectMatch(units) {
@@ -100,6 +106,7 @@ class SalesTests: EngineYardTests {
                 }
             }
         } // end-if
+         */
     }
 
 

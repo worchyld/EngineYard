@@ -13,8 +13,6 @@ enum ProductionError : Error {
     case notEnoughUnits
 }
 
-
-
 final class Production {
     public private (set) weak var parent: Card?
     public private (set) var units: Int = 0 {
