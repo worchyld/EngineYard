@@ -8,10 +8,10 @@
 
 import Foundation
 
-enum MatchType: Equatable {
-    case perfectMatch(Int, Int)
-    case lowerMatch(Int, Int)
-    case higherMatch(Int, Int)
+enum MatchType : Equatable {
+    case perfectMatch
+    case lowerMatch
+    case higherMatch
 }
 
 extension MatchType {
@@ -30,39 +30,41 @@ extension MatchType {
 }
 
 
-struct SalesRuleHandler {
+class SalesRuleHandler {
 
     private var orders: [Int]
     private var units: Int
     public private(set) var matchType: MatchType?
+    public private(set) var matchTuple: (Int, Int)?
 
     init(orders: [Int], units: Int) {
         self.orders = orders
         self.units = units
-        self.matchType = self.handler()
+        self.handler()
     }
 
-    private func handler() -> MatchType? {
+    private func handler() {
         let rule = SalesRules(orders)
 
         if let match = rule.perfectMatch(units) {
             print("Found perfect match for: \(units) in orders \(rule.orders) at index: \(match.0) which is the value \(match.1)")
-            return MatchType.perfectMatch(match.0, match.1)
+            self.matchType = MatchType.perfectMatch
+            self.matchTuple = match
         }
         else {
             if let match = rule.lowerMatch(units) {
                 print("Found lower match for: \(units) in orders \(rule.orders) at index: \(match.0) which is the value \(match.1)")
-                return MatchType.lowerMatch(match.0, match.1)
+                self.matchType = MatchType.lowerMatch
+                self.matchTuple = match
             }
             else {
                 if let match = rule.higherMatch(units) {
                     print("Found higher match for: \(units) in orders \(rule.orders) at index: \(match.0)  which is the value \(match.1)")
-                    return MatchType.higherMatch(match.0, match.1)
+                    self.matchType = MatchType.higherMatch
+                    self.matchTuple = match
                 }
             }
         } // end-if
-
-        return nil
     }
 
 }
