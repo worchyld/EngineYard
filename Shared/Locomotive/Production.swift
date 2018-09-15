@@ -98,9 +98,13 @@ extension Production {
         guard from.parent != to.parent else {
             throw ProductionError.cannotSelectCardFromSameParent
         }
-        // Example: Green.1 to Red.1
-        guard ((from.parent?.generation.rawValue)! >= (to.parent?.generation.rawValue)!) else {
+        // Shifting production can only go upstream
+        guard (from.parent!.deckIndex < to.parent!.deckIndex) else {
             throw ProductionError.cannotUpgradeDownstream
         }
+        /*
+        guard ((from.parent?.generation.rawValue)! >= (to.parent?.generation.rawValue)!) else {
+            throw ProductionError.cannotUpgradeDownstream
+        }*/
     }
 }
