@@ -76,14 +76,8 @@ class ProductionTests: EngineYardTests {
     }
 
     func testShiftProduction() {
-        let players = Mock.players(howMany: 5)
-
-        guard let game:Game = Game.setup(with: players) else {
-            XCTFail("Game object did not initialise")
-            return
-        }
-        guard let board = game.board else {
-            XCTFail("Board object not initialised")
+        guard let board = self.prepare() else {
+            XCTFail("Board object did not initialise")
             return
         }
         let firstTwoDecks = board.decks[0...1]
@@ -95,11 +89,19 @@ class ProductionTests: EngineYardTests {
             XCTFail("No last deck found")
             return
         }
+        guard let firstGreenCard = firstDeck.cards.first else {
+            return
+        }
+        guard let firstRedCard = lastDeck.cards.first else {
+            return
+        }
+        XCTAssertTrue(firstGreenCard.parent?.color == EngineColor.green)
+        XCTAssertTrue(firstRedCard.parent?.color == EngineColor.red)
 
         XCTAssertTrue(firstDeck.productionCost == 2, "\(firstDeck.productionCost)")
         XCTAssertTrue(lastDeck.productionCost == 4, "\(lastDeck.productionCost)")
-        let costToShift: Int = Production.costToShift(amount: 2, from: firstDeck.cards.first!, to: lastDeck.cards.first!)
-        XCTAssertTrue( costToShift == 2, "\(costToShift)")
+
+        XCTAssertNoThrow(try Production.costToShift(amount: 1, from: firstGreenCard, to: firstRedCard), "error")
     }
 
 }

@@ -13,6 +13,7 @@ enum ProductionError : Error {
     case notEnoughUnits
     case cannotSelectSameCard
     case cannotSelectCardFromSameParent
+    case cannotUpgradeToOlderTech
 }
 
 final class Production {
@@ -76,11 +77,18 @@ final class Production {
 
 // Shift methods
 extension Production {
-    public static func costToShift(amount: Int, from: Card, to: Card) -> Int {
+    public static func costToShift(amount: Int, from: Card, to: Card) throws -> Int {
+
+        do {
+            try canShift(amount: amount, from: from, to: to)
+        } catch let error as ProductionError {
+            throw error
+        }
+
         return ((to.production.cost - from.production.cost) * amount)
     }
     
-    public static func shift(amount: Int, from: Card, to: Card) throws {
+    private static func canShift(amount: Int, from: Card, to: Card) throws {
         guard amount > 0 else {
             throw ProductionError.mustBePositive
         }
@@ -90,5 +98,10 @@ extension Production {
         guard from.parent != to.parent else {
             throw ProductionError.cannotSelectCardFromSameParent
         }
+        /*
+        guard ((from.parent?.generation.rawValue)! < (to.parent?.generation.rawValue)!) else {
+            //print (ProductionError.cannotUpgradeToOlderTech.localizedDescription)
+            throw ProductionError.cannotUpgradeToOlderTech
+        }*/
     }
 }

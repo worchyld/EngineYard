@@ -67,4 +67,19 @@ class EngineYardTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
+
+    func prepare() -> Board? {
+        let players = Mock.players(howMany: 5)
+
+        guard let game:Game = Game.setup(with: players) else {
+            XCTFail("Game object did not initialise")
+            return nil
+        }
+        guard let board = game.board else {
+            XCTFail("Board object not initialised")
+            return nil
+        }
+        return board
+    }
+
 }
