@@ -79,12 +79,8 @@ extension Production {
     public static func costToShift(amount: Int, from: Card, to: Card) -> Int {
         return ((to.production.cost - from.production.cost) * amount)
     }
-    /*
-    func costToShift(amount: Int, from: Card, to: Card) -> Int {
-        return ((to.production.cost - from.production.cost) * amount)
-    }
-
-    func shift(amount: Int, from: Card, to: Card) throws {
+    
+    public static func shift(amount: Int, from: Card, to: Card) throws {
         guard amount > 0 else {
             throw ProductionError.mustBePositive
         }
@@ -94,5 +90,5 @@ extension Production {
         guard from.parent != to.parent else {
             throw ProductionError.cannotSelectCardFromSameParent
         }
-    }*/
+    }
 }
