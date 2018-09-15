@@ -13,7 +13,7 @@ enum ProductionError : Error {
     case notEnoughUnits
     case cannotSelectSameCard
     case cannotSelectCardFromSameParent
-    case cannotUpgradeToOlderTech
+    case cannotUpgradeDownstream
 }
 
 final class Production {
@@ -98,10 +98,9 @@ extension Production {
         guard from.parent != to.parent else {
             throw ProductionError.cannotSelectCardFromSameParent
         }
-        /*
-        guard ((from.parent?.generation.rawValue)! < (to.parent?.generation.rawValue)!) else {
-            //print (ProductionError.cannotUpgradeToOlderTech.localizedDescription)
-            throw ProductionError.cannotUpgradeToOlderTech
-        }*/
+        // Example: Green.1 to Red.1
+        guard ((from.parent?.generation.rawValue)! >= (to.parent?.generation.rawValue)!) else {
+            throw ProductionError.cannotUpgradeDownstream
+        }
     }
 }

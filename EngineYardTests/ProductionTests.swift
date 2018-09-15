@@ -75,7 +75,7 @@ class ProductionTests: EngineYardTests {
         XCTAssertTrue(p.spentUnits == 0)
     }
 
-    func testShiftProduction() {
+    func testCanShiftProduction() {
         guard let board = self.prepare() else {
             XCTFail("Board object did not initialise")
             return
@@ -102,6 +102,38 @@ class ProductionTests: EngineYardTests {
         XCTAssertTrue(lastDeck.productionCost == 4, "\(lastDeck.productionCost)")
 
         XCTAssertNoThrow(try Production.costToShift(amount: 1, from: firstGreenCard, to: firstRedCard), "error")
+    }
+
+    // Cannot shift production from a new tech to older tech
+    func testCannotUpgradeDownstream() {
+        guard let board = self.prepare() else {
+            XCTFail("Board object did not initialise")
+            return
+        }
+        let firstTwoDecks = board.decks[0...1]
+        guard let firstDeck = firstTwoDecks.first else {
+            XCTFail("No first deck found")
+            return
+        }
+        guard let lastDeck = firstTwoDecks.last else {
+            XCTFail("No last deck found")
+            return
+        }
+        guard let firstGreenCard = firstDeck.cards.first else {
+            return
+        }
+        guard let firstRedCard = lastDeck.cards.first else {
+            return
+        }
+        XCTAssertTrue(firstGreenCard.parent?.color == EngineColor.green)
+        XCTAssertTrue(firstRedCard.parent?.color == EngineColor.red)
+
+        XCTAssertTrue(firstDeck.productionCost == 2, "\(firstDeck.productionCost)")
+        XCTAssertTrue(lastDeck.productionCost == 4, "\(lastDeck.productionCost)")
+
+        XCTAssertThrowsError(try Production.costToShift(amount: 1, from: firstRedCard, to: firstGreenCard)) { error in
+            XCTAssertEqual(error as? ProductionError, ProductionError.cannotUpgradeDownstream)
+        }
     }
 
 }
