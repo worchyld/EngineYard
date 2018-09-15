@@ -41,7 +41,6 @@ class SalesTests: EngineYardTests {
 
         XCTAssertNotNil(handler.matchObj)
         XCTAssertEqual(handler.matchObj?.type, SalesMatchType.perfectMatch)
-        XCTAssertEqual(handler.matchObj?.type, <#T##expression2: Equatable##Equatable#>)
     }
 
     func testLowerMatch() {

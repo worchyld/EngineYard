@@ -13,7 +13,11 @@ final class Card : NSObject  {
 
     public private(set) weak var parent : Deck?
     public private(set) weak var owner : Player?
-    public private (set) var production: Production = Production()
+    public private (set) lazy var production: Production = {
+        let production = Production()
+        production.setParent(card: self)
+        return production
+    }()
 
     init(parent: Deck) {
         super.init()

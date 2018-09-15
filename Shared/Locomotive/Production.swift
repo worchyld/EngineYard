@@ -11,6 +11,8 @@ import Foundation
 enum ProductionError : Error {
     case mustBePositive
     case notEnoughUnits
+    case cannotSelectSameCard
+    case cannotSelectCardFromSameParent
 }
 
 final class Production {
@@ -31,9 +33,14 @@ final class Production {
     }
     var cost : Int {
         guard let hasParent = self.parent?.parent else {
+            print ("card has no deck parent")
             return 0
         }
         return hasParent.productionCost
+    }
+
+    func setParent(card: Card) {
+        self.parent = card
     }
 
     func add(_ amount: Int = 0) {
@@ -67,4 +74,25 @@ final class Production {
     }
 }
 
+// Shift methods
+extension Production {
+    public static func costToShift(amount: Int, from: Card, to: Card) -> Int {
+        return ((to.production.cost - from.production.cost) * amount)
+    }
+    /*
+    func costToShift(amount: Int, from: Card, to: Card) -> Int {
+        return ((to.production.cost - from.production.cost) * amount)
+    }
 
+    func shift(amount: Int, from: Card, to: Card) throws {
+        guard amount > 0 else {
+            throw ProductionError.mustBePositive
+        }
+        guard from != to else {
+            throw ProductionError.cannotSelectSameCard
+        }
+        guard from.parent != to.parent else {
+            throw ProductionError.cannotSelectCardFromSameParent
+        }
+    }*/
+}
