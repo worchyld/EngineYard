@@ -29,6 +29,7 @@ final class Deck : NSObject, DeckDelegate {
     // Each deck has a series of cards
     public private (set) var cards : [Card] = [Card]()
 
+    public private (set) var deckIndex: Int = 0
     public private (set) var name: String = ""
     public private (set) var cost: Int = 0
     public private (set) var productionCost: Int = 0
@@ -127,10 +128,13 @@ extension Deck {
             }
         }
     }
+
+    func setDeckIndex(_ value: Int) {
+        self.deckIndex = value
+    }
 }
 
 extension Deck {
-
     func findFirstUnownedCard() -> Card? {
         guard let card = (cards
             .filter({ (c: Card) -> Bool in
