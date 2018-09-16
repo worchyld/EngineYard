@@ -82,6 +82,11 @@ extension OrderBook {
         return (self.orders.count < hasParent.capacity)
     }
 }
+extension OrderBook {
+    func rerollAndTransferCompletedOrders() {
+        
+    }
+}
 
 class Order : NSObject {
     weak var parent: OrderBook?
@@ -93,5 +98,4 @@ class Order : NSObject {
         self.orderType = orderType
         self.value = Die.roll()
     }
-
 }
