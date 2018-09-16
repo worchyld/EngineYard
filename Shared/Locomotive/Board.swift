@@ -56,14 +56,9 @@ final class Board : NSObject, GameBoardDelegate {
         ]
 
         // add deck subscriber
-        let _ = decks.enumerated().map { (offset, element) -> Void in
-            element.setDeckIndex(offset)
-            element.addSubscriber(self)
-        }
-
-//        let _ = decks.map({
-//            $0.addSubscriber(self)
-//        })
+        let _ = decks.map({
+            $0.addSubscriber(self)
+        })
 
         return decks
     }

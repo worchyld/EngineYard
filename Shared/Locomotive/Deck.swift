@@ -29,7 +29,6 @@ final class Deck : NSObject, DeckDelegate {
     // Each deck has a series of cards
     public private (set) var cards : [Card] = [Card]()
 
-    public private (set) var deckIndex: Int = 0
     public private (set) var name: String = ""
     public private (set) var cost: Int = 0
     public private (set) var productionCost: Int = 0
@@ -127,10 +126,6 @@ extension Deck {
                 assertionFailure(error.localizedDescription as String)
             }
         }
-    }
-
-    func setDeckIndex(_ value: Int) {
-        self.deckIndex = value
     }
 }
 

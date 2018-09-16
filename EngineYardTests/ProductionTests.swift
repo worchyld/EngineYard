@@ -131,10 +131,10 @@ class ProductionTests: EngineYardTests {
         XCTAssertTrue(firstDeck.productionCost == 2, "\(firstDeck.productionCost)")
         XCTAssertTrue(lastDeck.productionCost == 4, "\(lastDeck.productionCost)")
 
-        /*
+
         XCTAssertThrowsError(try Production.costToShift(amount: 1, from: firstRedCard, to: firstGreenCard)) { error in
             XCTAssertEqual(error as? ProductionError, ProductionError.cannotUpgradeDownstream)
-        }*/
+        }
     }
 
 }

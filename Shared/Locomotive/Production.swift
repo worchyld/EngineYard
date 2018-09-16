@@ -99,12 +99,8 @@ extension Production {
             throw ProductionError.cannotSelectCardFromSameParent
         }
         // Shifting production can only go upstream
-        guard (from.parent!.deckIndex < to.parent!.deckIndex) else {
+        guard ((from.parent?.cost)! < (to.parent?.cost)!) else {
             throw ProductionError.cannotUpgradeDownstream
         }
-        /*
-        guard ((from.parent?.generation.rawValue)! >= (to.parent?.generation.rawValue)!) else {
-            throw ProductionError.cannotUpgradeDownstream
-        }*/
     }
 }
