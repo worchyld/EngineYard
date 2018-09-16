@@ -64,5 +64,72 @@ class MarketDemandsTests: EngineYardTests {
         XCTAssertTrue(firstDeck.existingOrders.count == firstDeck.capacity)
         XCTAssertTrue(firstDeck.orderBook.hasMaximumDice)
     }
-    
+
+    func testNoGenerations() {
+        guard let board = self.prepare() else {
+            XCTFail("Board object did not initialise")
+            return
+        }
+        guard let redDecks = Board.findActiveGenerations(in: board.decks, color: .red) else {
+            XCTFail("No decks found")
+            return
+        }
+        XCTAssertTrue(redDecks.count == 0)
+    }
+
+    func testOneGeneration() {
+        guard let board = self.prepare() else {
+            XCTFail("Board object did not initialise")
+            return
+        }
+        guard let greenDecks = Board.findActiveGenerations(in: board.decks, color: .green) else {
+            XCTFail("No decks found")
+            return
+        }
+        XCTAssertTrue(greenDecks.count == 1)
+    }
+
+    func testTwoGenerations() {
+        guard let board = self.prepare() else {
+            XCTFail("Board object did not initialise")
+            return
+        }
+        let greenDecks = board.decks.filter { (d:Deck) -> Bool in
+            return (d.color == .green)
+        }
+        XCTAssertTrue(greenDecks.count == 5)
+
+        let firstTwoGens = greenDecks[0...1]
+        for d:Deck in firstTwoGens {
+            d.orderBook.add(.existingOrder)
+        }
+        guard let results = Board.findActiveGenerations(in: board.decks, color: .green) else {
+            XCTFail("No decks found")
+            return
+        }
+        XCTAssertTrue(results.count == 2)
+    }
+
+
+    func testThreeGenerationsExist() {
+        guard let board = self.prepare() else {
+            XCTFail("Board object did not initialise")
+            return
+        }
+        let greenDecks = board.decks.filter { (d:Deck) -> Bool in
+            return (d.color == .green)
+        }
+        XCTAssertTrue(greenDecks.count == 5)
+
+        let firstTwoGens = greenDecks[0...2]
+        for d:Deck in firstTwoGens {
+            d.orderBook.add(.existingOrder)
+        }
+        guard let results = Board.findActiveGenerations(in: board.decks, color: .green) else {
+            XCTFail("No decks found")
+            return
+        }
+        XCTAssertTrue(results.count == 3)
+    }
+
 }

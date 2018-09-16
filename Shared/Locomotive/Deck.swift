@@ -140,7 +140,6 @@ extension Deck {
         }
         return card
     }
-
 }
 
 // MARK: - Subscription methods

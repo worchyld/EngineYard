@@ -40,6 +40,7 @@
 		4DB344B221403B3C00B42E78 /* SalesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB344B121403B3C00B42E78 /* SalesTests.swift */; };
 		4DB344B421403B8900B42E78 /* SalesRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB344B321403B8900B42E78 /* SalesRule.swift */; };
 		4DC5AEE6214E7A1500D2841D /* MarketDemandsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC5AEE5214E7A1500D2841D /* MarketDemandsTests.swift */; };
+		4DC5AEE8214ED9E500D2841D /* ObsolescenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC5AEE7214ED9E500D2841D /* ObsolescenceManager.swift */; };
 		4DCE7B442089E49E0089BDDC /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCE7B432089E49E0089BDDC /* Game.swift */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,7 @@
 		4DB344B121403B3C00B42E78 /* SalesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesTests.swift; sourceTree = "<group>"; };
 		4DB344B321403B8900B42E78 /* SalesRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesRule.swift; sourceTree = "<group>"; };
 		4DC5AEE5214E7A1500D2841D /* MarketDemandsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDemandsTests.swift; sourceTree = "<group>"; };
+		4DC5AEE7214ED9E500D2841D /* ObsolescenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObsolescenceManager.swift; sourceTree = "<group>"; };
 		4DCE7B432089E49E0089BDDC /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +124,7 @@
 				4D74BA4B2084AC5000ADC00C /* OrderBook.swift */,
 				4DB344B321403B8900B42E78 /* SalesRule.swift */,
 				4D83F585214132B80036FE28 /* SalesRuleHandler.swift */,
+				4DC5AEE7214ED9E500D2841D /* ObsolescenceManager.swift */,
 			);
 			path = Locomotive;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				4D3DF4B920835DB7000DF88E /* Rules.swift in Sources */,
 				4DA5236E20815960000FFAAB /* Tax.swift in Sources */,
 				4D1BD48B2083846500051FD9 /* Card.swift in Sources */,
+				4DC5AEE8214ED9E500D2841D /* ObsolescenceManager.swift in Sources */,
 				4DA52369208158A8000FFAAB /* EY+Colors.swift in Sources */,
 				4D1BD48F2083864B00051FD9 /* Board.swift in Sources */,
 				4D3DF4B520834592000DF88E /* Player.swift in Sources */,

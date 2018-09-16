@@ -81,3 +81,26 @@ extension Board {
         Deck.didUnlock(deck: nextDeck)
     }
 }
+
+extension Board {
+
+    public static func findGenerations(in decks: [Deck], color: EngineColor) -> [Deck]? {
+        let filtered = decks.filter { (d:Deck) -> Bool in
+                return (d.color == color)
+            }.sorted { (d1:Deck, d2:Deck) -> Bool in
+                return (d1.cost < d2.cost)
+        }
+        return filtered
+    }
+
+    public static func findActiveGenerations(in decks: [Deck], color: EngineColor) -> [Deck]? {
+        guard let filtered = self.findGenerations(in: decks, color: color) else {
+            return nil
+        }
+        let results = (filtered.filter { (d: Deck) -> Bool in
+                return (d.active)
+            })
+        return results
+    }
+
+}
