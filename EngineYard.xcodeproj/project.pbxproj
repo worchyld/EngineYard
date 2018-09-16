@@ -39,6 +39,7 @@
 		4DA8396D2136B0ED00F7CAB9 /* GameSetupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8396C2136B0ED00F7CAB9 /* GameSetupManager.swift */; };
 		4DB344B221403B3C00B42E78 /* SalesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB344B121403B3C00B42E78 /* SalesTests.swift */; };
 		4DB344B421403B8900B42E78 /* SalesRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB344B321403B8900B42E78 /* SalesRule.swift */; };
+		4DC5AEE6214E7A1500D2841D /* MarketDemandsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC5AEE5214E7A1500D2841D /* MarketDemandsTests.swift */; };
 		4DCE7B442089E49E0089BDDC /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCE7B432089E49E0089BDDC /* Game.swift */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,7 @@
 		4DA8396C2136B0ED00F7CAB9 /* GameSetupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetupManager.swift; sourceTree = "<group>"; };
 		4DB344B121403B3C00B42E78 /* SalesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesTests.swift; sourceTree = "<group>"; };
 		4DB344B321403B8900B42E78 /* SalesRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesRule.swift; sourceTree = "<group>"; };
+		4DC5AEE5214E7A1500D2841D /* MarketDemandsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDemandsTests.swift; sourceTree = "<group>"; };
 		4DCE7B432089E49E0089BDDC /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -177,6 +179,7 @@
 				4D2847912138147200C81B5C /* ProductionTests.swift */,
 				4D28479321381F4500C81B5C /* PlayerHandTests.swift */,
 				4DB344B121403B3C00B42E78 /* SalesTests.swift */,
+				4DC5AEE5214E7A1500D2841D /* MarketDemandsTests.swift */,
 			);
 			path = EngineYardTests;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				4D2847902137FC3500C81B5C /* BoardUnlockTests.swift in Sources */,
 				4D28479421381F4500C81B5C /* PlayerHandTests.swift in Sources */,
 				4D617D562081EE110036BB00 /* DieTests.swift in Sources */,
+				4DC5AEE6214E7A1500D2841D /* MarketDemandsTests.swift in Sources */,
 				4D2847922138147200C81B5C /* ProductionTests.swift in Sources */,
 				4DA5237220815C06000FFAAB /* TaxTests.swift in Sources */,
 				4DA8396B2136AE7900F7CAB9 /* GameBoardSetupTests.swift in Sources */,

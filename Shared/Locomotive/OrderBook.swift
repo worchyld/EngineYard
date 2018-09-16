@@ -17,13 +17,23 @@ final class OrderBook : NSObject {
     public private (set) weak var parent: Deck?
     public private (set) var orders: [Order] = [Order]()
 
+    var hasMaximumDice: Bool {
+        guard let hasParent: Deck = self.parent else {
+            return false
+        }
+        let orderCount = self.existingOrders.count
+        let salesCount = self.completedOrders.count
+        let sum = (orderCount + salesCount)
+        return (sum >= hasParent.capacity)
+    }
+
     // Getters
     var existingOrders: [Order] {
         return self.orders.filter({
             return ($0.orderType == .existingOrder)
         })
     }
-    var completedOrder: [Order] {
+    var completedOrders: [Order] {
         return self.orders.filter({
             return ($0.orderType == .completedOrder)
         })
@@ -35,7 +45,7 @@ final class OrderBook : NSObject {
 
     }
     var completedOrderValues: [Int] {
-        return self.completedOrder.compactMap({ (o:Order) -> Int in
+        return self.completedOrders.compactMap({ (o:Order) -> Int in
             return o.value
         })
     }
