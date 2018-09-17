@@ -214,6 +214,29 @@ class MarketDemandsTests: EngineYardTests {
         XCTAssertTrue(firstDeck.orderBook.existingOrders.count == 2)
     }
 
+    func testOneGensAtMaxCompletedOrders() {
+        guard let board = self.prepare() else {
+            XCTFail("Board object did not initialise")
+            return
+        }
+        let greenDecks = board.decks.filter { (d:Deck) -> Bool in
+            return (d.color == .green)
+        }
+        guard let firstDeck = greenDecks.first else {
+            print ("No first deck found")
+            return
+        }
+        for _ in 0...firstDeck.capacity {
+            firstDeck.orderBook.add(.completedOrder)
+        }
+        let ob = MarketDemandsManager.init(decks: board.decks)
+        let gens = ob.getGenerations(for: .green)
+        XCTAssertTrue(gens?.count == 1)
+        ob.handleGenerations(for: .green)
+        XCTAssertTrue(firstDeck.orderBook.completedOrders.count == 0)
+        XCTAssertTrue(firstDeck.orderBook.existingOrders.count == firstDeck.capacity)
+    }
+
     func testTwoGens() {
         guard let board = self.prepare() else {
             XCTFail("Board object did not initialise")
