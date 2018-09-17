@@ -66,7 +66,7 @@ final class OrderBook : NSObject {
 
 extension OrderBook {
     override var description: String {
-        return ("OrderBook.existing = \(self.existingOrderValues), OrderBook.completedOrders = \(self.completedOrderValues)")
+        return ("OrderBook: existing = \(self.existingOrderValues), completedOrders = \(self.completedOrderValues)")
     }
 }
 
@@ -121,7 +121,6 @@ extension OrderBook {
                 return
             }
 
-            print ("Found: \(unsortedElementsAndIndices)")
             self.orders.remove(at: unsortedElementsAndIndices.offset)
         }
         else {
@@ -136,11 +135,9 @@ extension OrderBook {
                 }
                 ).first)
             else {
-                print ("sortedElementsAndIndices not found")
                 return
             }
 
-            print ("Found: \(sortedElementsAndIndices)")
             self.orders.remove(at: sortedElementsAndIndices.offset)
         }
     }

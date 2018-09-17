@@ -140,6 +140,14 @@ extension Deck {
         }
         return card
     }
+
+    func markAsOld() {
+        self.rustedState = .old
+    }
+
+    func markAsObsolete() {
+        self.rustedState = .obsolete
+    }
 }
 
 // MARK: - Subscription methods

@@ -10,7 +10,7 @@ import XCTest
 
 @testable import EngineYard
 
-//ObsolescenceTests
+// Obsolescence and MarketDemands Tests
 class MarketDemandsTests: EngineYardTests {
     
     override func setUp() {
@@ -193,4 +193,51 @@ class MarketDemandsTests: EngineYardTests {
         XCTAssertTrue(firstDeck.orderBook.completedOrderValues.count == 0)
     }
 
+    func testOneGens() {
+        guard let board = self.prepare() else {
+            XCTFail("Board object did not initialise")
+            return
+        }
+        let greenDecks = board.decks.filter { (d:Deck) -> Bool in
+            return (d.color == .green)
+        }
+        guard let firstDeck = greenDecks.first else {
+            print ("No first deck found")
+            return
+        }
+        let ob = MarketDemandsManager.init(decks: board.decks)
+        let gens = ob.getGenerations(for: .green)
+        XCTAssertTrue(gens?.count == 1)
+        ob.handleGenerations(for: .green)
+
+        XCTAssertTrue(firstDeck.orderBook.completedOrders.count == 0)
+        XCTAssertTrue(firstDeck.orderBook.existingOrders.count == 2)
+    }
+
+    func testTwoGens() {
+        guard let board = self.prepare() else {
+            XCTFail("Board object did not initialise")
+            return
+        }
+        let greenDecks = board.decks.filter { (d:Deck) -> Bool in
+            return (d.color == .green)
+        }
+        let firstTwoGens = greenDecks[0...1]
+        for item in firstTwoGens {
+            item.orderBook.add(.existingOrder)
+        }
+        let ob = MarketDemandsManager.init(decks: board.decks)
+        let gens = ob.getGenerations(for: .green)
+        XCTAssertTrue(gens?.count == 2)
+
+        ob.handleGenerations(for: .green)
+
+        for (index, deck) in firstTwoGens.enumerated() {
+            if (index == 0) {
+                XCTAssertTrue(deck.rustedState == .old)
+            }
+            else {
+            }
+        }
+    }
 }
