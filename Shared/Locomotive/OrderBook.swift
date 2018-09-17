@@ -13,6 +13,10 @@ enum OrderType: Int {
     case completedOrder // customerBase
 }
 
+protocol EntryProtocol {
+    var value: Int { get set }
+}
+
 final class OrderBook : NSObject {
     public private (set) weak var parent: Deck?
     public private (set) var orders: [Order] = [Order]()
@@ -84,18 +88,50 @@ extension OrderBook {
 }
 extension OrderBook {
     func rerollAndTransferCompletedOrders() {
-        
+        guard self.completedOrders.count > 0 else {
+            return
+        }
+        for (_, item) in self.completedOrders.enumerated().reversed() {
+            item.generate()
+            item.transfer()
+        }
+    }
+
+    //func transfer<C1: Any>(order: C1, index: Int) where C1: EntryProtocol {
+    func transfer<C1: Any>(order: C1) where C1: EntryProtocol {
+        if let orderObj = order as? Order {
+            orderObj.transfer()
+        }
     }
 }
 
-class Order : NSObject {
+class Order : NSObject, EntryProtocol {
     weak var parent: OrderBook?
     public private (set) var orderType: OrderType?
-    public private (set) var value: Int = 0
+    public internal (set) var value: Int = 0
 
     init(parent: OrderBook, orderType: OrderType) {
+        super.init()
         self.parent = parent
         self.orderType = orderType
-        self.value = Die.roll()
+        self.generate()
+    }
+
+    func generate() {
+        value = Die.roll()
+    }
+
+    func transfer() {
+        guard let hasOrderType = self.orderType else {
+            return
+        }
+        switch hasOrderType {
+        case .existingOrder:
+            self.orderType = OrderType.completedOrder
+            break
+        case .completedOrder:
+            self.orderType = OrderType.existingOrder
+            break
+        }
     }
 }

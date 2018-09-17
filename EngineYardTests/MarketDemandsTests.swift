@@ -132,4 +132,31 @@ class MarketDemandsTests: EngineYardTests {
         XCTAssertTrue(results.count == 3)
     }
 
+    func testBasicTransfer() {
+        guard let board = self.prepare() else {
+            XCTFail("Board object did not initialise")
+            return
+        }
+        guard let firstDeck = board.decks.first else {
+            return
+        }
+        XCTAssertTrue(firstDeck.existingOrders.count == 1)
+
+        guard let firstExistingOrder = firstDeck.orderBook.existingOrders.first else {
+            XCTFail("No first order found")
+            return
+        }
+
+        firstDeck.orderBook.transfer(order: firstExistingOrder)
+
+        guard let firstCompletedOrder = firstDeck.orderBook.completedOrders.first else {
+            XCTFail("No completed orders")
+            return
+        }
+
+        XCTAssertTrue(firstExistingOrder.value == firstCompletedOrder.value)
+        XCTAssertTrue(firstDeck.orderBook.existingOrderValues.count == 0)
+        XCTAssertTrue(firstDeck.orderBook.completedOrderValues.count == 1)
+    }
+
 }
