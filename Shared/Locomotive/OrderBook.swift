@@ -87,6 +87,7 @@ extension OrderBook {
     }
 }
 extension OrderBook {
+
     func rerollAndTransferCompletedOrders() {
         guard self.completedOrders.count > 0 else {
             return
@@ -103,12 +104,58 @@ extension OrderBook {
             orderObj.transfer()
         }
     }
+
+    // Remove first value from `completedOrder`
+    // If no value is found; remove the lowest numbered value in orders
+    // Handles: Transfer one of the dice from the Customer Base to the dice pool.
+    // If no dice were in the `completedOrders`, the lowest numbered die in the `existingOrders` boxes is returned to the dice pool.
+    func removeFirstCompletedOrder() {
+        if (self.completedOrders.count > 0) {
+
+            guard let unsortedElementsAndIndices = (self.orders
+                .enumerated()
+                .filter { (offset, element) -> Bool in
+                    return (element.orderType == OrderType.existingOrder)
+            }).first else {
+                print ("no completed orders found")
+                return
+            }
+
+            print ("Found: \(unsortedElementsAndIndices)")
+            self.orders.remove(at: unsortedElementsAndIndices.offset)
+        }
+        else {
+
+            guard let sortedElementsAndIndices = (self.existingOrders
+                .enumerated()
+                .filter { (offset, element) -> Bool in
+                    return (element.orderType == OrderType.existingOrder)
+                }
+                .sorted(by: {
+                    $0.element.value < $1.element.value
+                }
+                ).first)
+            else {
+                print ("sortedElementsAndIndices not found")
+                return
+            }
+
+            print ("Found: \(sortedElementsAndIndices)")
+            self.orders.remove(at: sortedElementsAndIndices.offset)
+        }
+    }
 }
 
 class Order : NSObject, EntryProtocol {
     weak var parent: OrderBook?
     public private (set) var orderType: OrderType?
-    public internal (set) var value: Int = 0
+    public internal (set) var value: Int = 0 {
+        didSet {
+            if (self.value < 0) {
+                self.value = 0
+            }
+        }
+    }
 
     init(parent: OrderBook, orderType: OrderType) {
         super.init()
@@ -119,6 +166,7 @@ class Order : NSObject, EntryProtocol {
 
     func generate() {
         value = Die.roll()
+        print ("Generated value: \(value)")
     }
 
     func transfer() {
@@ -133,5 +181,15 @@ class Order : NSObject, EntryProtocol {
             self.orderType = OrderType.existingOrder
             break
         }
+    }
+
+    func reduce(by amount: Int) {
+        guard amount > 0 else {
+            return
+        }
+        guard amount <= self.value else {
+            return
+        }
+        self.value -= amount
     }
 }

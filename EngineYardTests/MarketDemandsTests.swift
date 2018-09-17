@@ -147,6 +147,7 @@ class MarketDemandsTests: EngineYardTests {
             return
         }
 
+        // Move an `existingOrder` -> `completed`
         firstDeck.orderBook.transfer(order: firstExistingOrder)
 
         guard let firstCompletedOrder = firstDeck.orderBook.completedOrders.first else {
@@ -157,6 +158,39 @@ class MarketDemandsTests: EngineYardTests {
         XCTAssertTrue(firstExistingOrder.value == firstCompletedOrder.value)
         XCTAssertTrue(firstDeck.orderBook.existingOrderValues.count == 0)
         XCTAssertTrue(firstDeck.orderBook.completedOrderValues.count == 1)
+
+        // Move a `completedOrder` -> `existing`
+        firstDeck.orderBook.transfer(order: firstCompletedOrder)
+        XCTAssertTrue(firstDeck.orderBook.existingOrderValues.count == 1)
+        XCTAssertTrue(firstDeck.orderBook.completedOrderValues.count == 0)
+    }
+
+    func testRerollAndTransfer() {
+        guard let board = self.prepare() else {
+            XCTFail("Board object did not initialise")
+            return
+        }
+        guard let firstDeck = board.decks.first else {
+            return
+        }
+        XCTAssertTrue(firstDeck.existingOrders.count == 1)
+
+        guard let firstExistingOrder = firstDeck.orderBook.existingOrders.first else {
+            XCTFail("No first order found")
+            return
+        }
+
+        // Move an `existingOrder` -> `completed`
+        firstDeck.orderBook.transfer(order: firstExistingOrder)
+
+        XCTAssertTrue(firstDeck.orderBook.existingOrderValues.count == 0)
+        XCTAssertTrue(firstDeck.orderBook.completedOrderValues.count == 1)
+
+        // Reroll and Transfer
+        firstDeck.orderBook.rerollAndTransferCompletedOrders()
+
+        XCTAssertTrue(firstDeck.orderBook.existingOrderValues.count == 1)
+        XCTAssertTrue(firstDeck.orderBook.completedOrderValues.count == 0)
     }
 
 }

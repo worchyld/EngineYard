@@ -26,6 +26,13 @@ class DieTests: EngineYardTests {
         let result = Die.roll()
         XCTAssertTrue(result > 0 && result < 7)
     }
-    
+
+    func testMultipleRolls() {
+        var results: [Int] = [Int]()
+        for _ in 1...7 {
+            results.append( Die.roll() )
+        }
+        print (results)
+    }
     
 }
