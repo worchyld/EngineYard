@@ -223,9 +223,24 @@ class MarketDemandsTests: EngineYardTests {
             return (d.color == .green)
         }
         let firstTwoGens = greenDecks[0...1]
-        for item in firstTwoGens {
+        for (index, item) in firstTwoGens.enumerated() {
+            if (index == 0) {
+                for _ in 0...1 {
+                    item.orderBook.add(.completedOrder)
+                }
+            }
             item.orderBook.add(.existingOrder)
         }
+
+        guard let firstDeck = firstTwoGens.first else {
+            return
+        }
+
+        XCTAssertTrue(firstDeck.completedOrders.count == 2)
+
+        print (">> \(firstDeck.orderBook.description)")
+
+        // MarketDemandsManager
         let ob = MarketDemandsManager.init(decks: board.decks)
         let gens = ob.getGenerations(for: .green)
         XCTAssertTrue(gens?.count == 2)
