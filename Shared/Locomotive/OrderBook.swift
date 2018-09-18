@@ -25,9 +25,7 @@ final class OrderBook : NSObject {
         guard let hasParent: Deck = self.parent else {
             return false
         }
-        let orderCount = self.existingOrders.count
-        let salesCount = self.completedOrders.count
-        let sum = (orderCount + salesCount)
+        let sum = self.totalOrders()
         return (sum >= hasParent.capacity)
     }
 
@@ -85,6 +83,19 @@ extension OrderBook {
         }
         return (self.orders.count < hasParent.capacity)
     }
+
+    func fill(_ orderType: OrderType) {
+        guard let hasParent = self.parent else {
+            return
+        }
+        let total = totalOrders()
+        if ((total < hasParent.capacity) && (!self.hasMaximumDice)) {
+            let sum = hasParent.capacity - total
+            for _ in 0...sum {
+                self.add(orderType)
+            }
+        }
+    }
 }
 extension OrderBook {
 
@@ -96,6 +107,16 @@ extension OrderBook {
             item.generate()
             item.transfer()
         }
+    }
+
+    func removeAll() {
+        self.orders.removeAll()
+    }
+
+    private func totalOrders() -> Int {
+        let orderCount = self.existingOrders.count
+        let salesCount = self.completedOrders.count
+        return (orderCount + salesCount)
     }
 
     //func transfer<C1: Any>(order: C1, index: Int) where C1: EntryProtocol {

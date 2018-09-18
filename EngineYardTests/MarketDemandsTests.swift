@@ -23,6 +23,23 @@ class MarketDemandsTests: EngineYardTests {
         super.tearDown()
     }
 
+    func testFill() {
+        guard let board = self.prepare() else {
+            XCTFail("Board object did not initialise")
+            return
+        }
+        guard let firstDeck = board.decks.first else {
+            return
+        }
+        XCTAssertFalse(firstDeck.orderBook.hasMaximumDice)
+        firstDeck.orderBook.fill(.existingOrder)
+        XCTAssertTrue(firstDeck.orderBook.hasMaximumDice)
+        XCTAssertFalse(firstDeck.orderBook.canAdd(orderType: .existingOrder))
+        XCTAssertFalse(firstDeck.orderBook.canAdd(orderType: .completedOrder))
+        firstDeck.orderBook.fill(.completedOrder)
+        XCTAssertTrue(firstDeck.orderBook.completedOrders.count == 0)
+    }
+
     /*
     There are 4 cases of existing generations:
     (a) No generation exists:
@@ -296,7 +313,7 @@ class MarketDemandsTests: EngineYardTests {
         // MarketDemandsManager
         let ob = MarketDemandsManager.init(decks: board.decks)
         let gens = ob.getGenerations(for: .green)
-        XCTAssertTrue(gens?.count == 2)
+        XCTAssertTrue(gens?.count == 3)
 
         ob.handleGenerations(for: .green)
 

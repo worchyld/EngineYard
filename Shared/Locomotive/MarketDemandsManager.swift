@@ -85,6 +85,36 @@ struct MarketDemandsManager {
         }
     }
 
+    /**
+    (1) On first gen: with the oldest (lowest generation number) locomotive.
+        (a) Place all dice from the Custo- mer Base and Existing Orders areas back in the dice pool.
+        (b) This locomotive is obsolete
+    (2) On middle gen:
+        (a) If needed, add enough dice from the dice pool to the Customer Base to match the maximum number of dice for that locomotive.
+        (b) Then roll all dice in the Customer Base and place them in the empty Existing Order boxes for that locomotive.
+    (3) On third gen:
+        (a)  If this locomotive does not have the maximum number of dice, add 1 die to the Cus- tomer Base from the dice pool.
+        (b) Then all dice in the Customer Base are rolled and are placed in the empty Existing Order boxes for that locomotive type.
+    **/
+
     private func handleThreeGenerations(decks:[Deck]) {
+        for (index, element) in decks.enumerated() {
+
+            switch index {
+            case 0:
+                element.orderBook.removeAll()
+                element.markAsObsolete()
+                break
+            case 1:
+                element.orderBook.fill(.completedOrder)
+                break
+            case 2:
+                break
+            default:
+                break
+            }
+
+            print ("\(#function) \(element.name) = \(element.orderBook.description)")
+        }
     }
 }
