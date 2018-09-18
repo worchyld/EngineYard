@@ -30,26 +30,44 @@ class SalesTests: EngineYardTests {
         let handler = SalesCaseHandler(units, orders)
         handler.analyse()
 
-        print (handler.units)
-        print (handler.orders)
+        XCTAssertTrue(handler.unitsSold == units)
+        XCTAssertTrue(handler.orders.first! == 0)
+        XCTAssertTrue(handler.units == 0)
+    }
 
-        /*
-        let rule = SalesRule(orders)
+    func testLowerMatch() {
+        let units = 1
+        let orders = [6]
 
-        if let match = rule.perfectMatch(units) {
-            print("Found perfect match for: \(units) in orders \(rule.orders) at index: \(match.0) which is the value \(match.1)")
-        }
-        else {
-            if let match = rule.lowerMatch(units) {
-                print("Found lower match for: \(units) in orders \(rule.orders) at index: \(match.0) which is the value \(match.1)")
-            }
-            else {
-                if let match = rule.higherMatch(units) {
-                    print("Found higher match for: \(units) in orders \(rule.orders) at index: \(match.0) which is the value \(match.1)")
-                }
-            }
-        }
-         */
+        let handler = SalesCaseHandler(units, orders)
+        handler.analyse()
+
+        let remainingUnits = (orders.first! - units)
+
+        XCTAssertTrue(handler.unitsSold == units)
+        XCTAssertTrue(handler.units == 0)
+        XCTAssertTrue(handler.orders.first! == remainingUnits)
+    }
+
+    func testHigherMatch() {
+        let units: Int = 5
+        let orders: [Int] = [4]
+
+        let unitsSold: Int = {
+            return orders.first! as Int
+        }()
+
+        let handler = SalesCaseHandler(units, orders)
+        handler.analyse()
+
+        let expectedOrders : Int = {
+            var order:Int = orders.first! as Int
+            order -= order
+            return order
+        }()
+
+        XCTAssertTrue(handler.unitsSold == unitsSold, "\(handler.unitsSold) vs \(unitsSold)")
+        XCTAssertTrue(handler.orders.first! == expectedOrders, "\(handler.orders.first!) vs \(expectedOrders)")
     }
 
 

@@ -9,6 +9,7 @@
 import Foundation
 
 class SalesCaseHandler {
+    var unitsSold: Int = 0
     var units: Int
     var orders: [Int]
 
@@ -44,14 +45,30 @@ class SalesCaseHandler {
      counters above the locomotive card in question.
      */
     private func handlePerfectMatch(tuple: (Int, Int)) {
-        self.orders[tuple.0] -= units
+        let unitsSold = self.orders[tuple.0]
+        self.orders[tuple.0] -= unitsSold
+        self.units -= unitsSold
+        self.unitsSold = unitsSold
     }
 
     private func handleLowerMatch(tuple: (Int, Int)) {
-
+        let unitsSold = self.units
+        self.orders[tuple.0] -= unitsSold
+        self.units -= unitsSold
+        self.unitsSold = unitsSold
     }
 
+    /* The player sells a number of produced units equal to the highest die */
     private func handleHigherMatch(tuple: (Int, Int)) {
+        let unitsSold: Int = {
+            return orders.first! as Int
+        }()
+        let orderValue: Int = orders[tuple.0] as Int
+        var remainingUnits: Int = orderValue
+        remainingUnits -= unitsSold
+        self.orders[tuple.0] -= unitsSold
+        self.units -= unitsSold
+        self.unitsSold = unitsSold
 
     }
 
