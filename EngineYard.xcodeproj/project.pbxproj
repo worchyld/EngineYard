@@ -42,6 +42,7 @@
 		4DC5AEE8214ED9E500D2841D /* MarketDemandsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC5AEE7214ED9E500D2841D /* MarketDemandsManager.swift */; };
 		4DEE870F21511D790038F0CF /* SalesCaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE870E21511D790038F0CF /* SalesCaseHandler.swift */; };
 		4DEE871321518ABE0038F0CF /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE871221518ABE0038F0CF /* Game.swift */; };
+		4DEE87152151904C0038F0CF /* TurnOrderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE87142151904C0038F0CF /* TurnOrderManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		4DC5AEE7214ED9E500D2841D /* MarketDemandsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDemandsManager.swift; sourceTree = "<group>"; };
 		4DEE870E21511D790038F0CF /* SalesCaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesCaseHandler.swift; sourceTree = "<group>"; };
 		4DEE871221518ABE0038F0CF /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		4DEE87142151904C0038F0CF /* TurnOrderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnOrderManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				4DA8396C2136B0ED00F7CAB9 /* GameSetupManager.swift */,
+				4DEE87142151904C0038F0CF /* TurnOrderManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				4DA52369208158A8000FFAAB /* EY+Colors.swift in Sources */,
 				4D1BD48F2083864B00051FD9 /* Board.swift in Sources */,
 				4D3DF4B520834592000DF88E /* Player.swift in Sources */,
+				4DEE87152151904C0038F0CF /* TurnOrderManager.swift in Sources */,
 				4D1BD4872083829900051FD9 /* Deck.swift in Sources */,
 				4DA3487C20812A8B006DA164 /* ViewController.swift in Sources */,
 				4DEE871321518ABE0038F0CF /* Game.swift in Sources */,
