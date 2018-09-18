@@ -13,7 +13,9 @@ import GameplayKit
 
 class Game : NSObject, GKGameModel {
     var board: Board!
+    var turnOrderIndex = 0
 
+    // -- GKGameModel code follows --
     var players: [GKGameModelPlayer]?
     var activePlayer: GKGameModelPlayer?
 
@@ -34,6 +36,7 @@ class Game : NSObject, GKGameModel {
             self.board = inputModel.board
             self.players = inputModel.players
             self.activePlayer = inputModel.activePlayer
+            self.turnOrderIndex = inputModel.turnOrderIndex
         }
     }
 
@@ -63,3 +66,24 @@ extension Game {
     }
 }
 
+extension Game {
+    func shuffleTurnOrder() {
+        guard let hasPlayers = self.players else {
+            return
+        }
+        self.players = hasPlayers.shuffled()
+    }
+    
+    func nextOnTurn() {
+        guard let hasPlayers = self.players else {
+            return
+        }
+        if (turnOrderIndex < (hasPlayers.count - 1)) {
+            turnOrderIndex += 1
+        }
+        else {
+            turnOrderIndex = 0
+        }
+        self.activePlayer = hasPlayers[turnOrderIndex]
+    }
+}
