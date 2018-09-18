@@ -317,10 +317,8 @@ class MarketDemandsTests: EngineYardTests {
 
         ob.handleGenerations(for: .green)
 
-        print ("\(#function)")
-
         for (index, deck) in greenDecks.enumerated() {
-            print ("index: \(index), \(deck.description)\n")
+            print ("\(deck.description)\n")
 
             if (index == 0) {
                 XCTAssertTrue(deck.rustedState == .obsolete)

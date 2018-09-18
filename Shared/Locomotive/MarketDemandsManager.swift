@@ -118,7 +118,7 @@ struct MarketDemandsManager {
                 break
             }
 
-            print ("\(#function) \(element.name) = \(element.orderBook.description)")
+            print ("\(#function) \(element.description)")
         }
     }
 }
