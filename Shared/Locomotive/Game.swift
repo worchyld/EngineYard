@@ -30,8 +30,10 @@ class Game : NSObject, GKGameModel {
     }
 
     func setGameModel(_ gameModel: GKGameModel) {
-        if let model = gameModel as? Game {
-            activePlayer = model.activePlayer
+        if let inputModel = gameModel as? Game {
+            self.board = inputModel.board
+            self.players = inputModel.players
+            self.activePlayer = inputModel.activePlayer
         }
     }
 

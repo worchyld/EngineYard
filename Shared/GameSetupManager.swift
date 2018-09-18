@@ -45,6 +45,12 @@ class GameSetupManager {
                 }
 
                 gameObj.players = players
+
+                let _ = gameObj.players?.enumerated().map({ (offset, element) -> Void in
+                    let playerObj: Player = element as! Player
+                    playerObj.setPlayerId(offset)
+                })
+
                 print (gameObj.description)
 
                 return gameObj
