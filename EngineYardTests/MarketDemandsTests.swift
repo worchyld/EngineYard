@@ -245,8 +245,8 @@ class MarketDemandsTests: EngineYardTests {
         let greenDecks = board.decks.filter { (d:Deck) -> Bool in
             return (d.color == .green)
         }
-        let firstTwoGens = greenDecks[0...1]
-        for (index, item) in firstTwoGens.enumerated() {
+        let twoDecks = greenDecks[0...1]
+        for (index, item) in twoDecks.enumerated() {
             if (index == 0) {
                 for _ in 0...1 {
                     item.orderBook.add(.completedOrder)
@@ -255,13 +255,43 @@ class MarketDemandsTests: EngineYardTests {
             item.orderBook.add(.existingOrder)
         }
 
-        guard let firstDeck = firstTwoGens.first else {
+        // MarketDemandsManager
+        let ob = MarketDemandsManager.init(decks: board.decks)
+        let gens = ob.getGenerations(for: .green)
+        XCTAssertTrue(gens?.count == 2)
+
+        ob.handleGenerations(for: .green)
+
+        for (index, deck) in twoDecks.enumerated() {
+            if (index == 0) {
+                XCTAssertTrue(deck.rustedState == .old)
+            }
+            else {
+                XCTAssertTrue(deck.completedOrders.count == 0)
+                XCTAssertTrue(deck.existingOrders.count == 2)
+                XCTAssertTrue(deck.rustedState == .normal)
+            }
+        }
+    }
+
+    func testThreeGens() {
+        guard let board = self.prepare() else {
+            XCTFail("Board object did not initialise")
             return
         }
+        let greenDecks = board.decks.filter { (d:Deck) -> Bool in
+            return (d.color == .green)
+        }
+        let threeDecks = greenDecks[0...2]
 
-        XCTAssertTrue(firstDeck.completedOrders.count == 2)
-
-        print (">> \(firstDeck.orderBook.description)")
+        for (index, item) in threeDecks.enumerated() {
+            if (index == 0) {
+                for _ in 0...1 {
+                    item.orderBook.add(.completedOrder)
+                }
+            }
+            item.orderBook.add(.existingOrder)
+        }
 
         // MarketDemandsManager
         let ob = MarketDemandsManager.init(decks: board.decks)
@@ -270,12 +300,5 @@ class MarketDemandsTests: EngineYardTests {
 
         ob.handleGenerations(for: .green)
 
-        for (index, deck) in firstTwoGens.enumerated() {
-            if (index == 0) {
-                XCTAssertTrue(deck.rustedState == .old)
-            }
-            else {
-            }
-        }
     }
 }

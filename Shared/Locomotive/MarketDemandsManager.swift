@@ -28,7 +28,6 @@ struct MarketDemandsManager {
         guard let generations = getGenerations(for: color) else {
             return
         }
-        print ("Checking \(color):")
         switch generations.count {
         case 0:
             break
@@ -41,6 +40,7 @@ struct MarketDemandsManager {
             break
 
         case 3:
+            self.handleThreeGenerations(decks: generations)
             break
 
         default:
@@ -71,11 +71,8 @@ struct MarketDemandsManager {
     private func handleTwoGenerations(decks:[Deck]) {
         for (index, element) in decks.enumerated() {
             if (index == 0) {
-                print ("remove first completed order")
                 element.orderBook.removeFirstCompletedOrder()
-                print ("reroll and transfer")
                 element.orderBook.rerollAndTransferCompletedOrders()
-                print ("mark as old")
                 element.markAsOld()
             }
             else {

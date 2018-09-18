@@ -97,7 +97,7 @@ final class Deck : NSObject, DeckDelegate {
 
 extension Deck {
     override var description: String {
-        return "\(self.name), cards: \(cards.count), existingOrders: \(self.orderBook.existingOrderValues), completedOrders: \(self.orderBook.completedOrderValues)"
+        return "\(self.name), cards: \(cards.count), rusted: \(rustedState)\n\texistingOrders: \(self.orderBook.existingOrderValues),\n\t completedOrders: \(self.orderBook.completedOrderValues)"
     }
 
     public static func ==(lhs: Deck, rhs: Deck) -> Bool {
