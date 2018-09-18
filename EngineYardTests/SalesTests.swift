@@ -70,5 +70,59 @@ class SalesTests: EngineYardTests {
         XCTAssertTrue(handler.orders.first! == expectedOrders, "\(handler.orders.first!) vs \(expectedOrders)")
     }
 
+    func testMixedSaleLower() {
+        let units: Int = 4
+        let orders: [Int] = [3,5,2]
+
+        let handler = SalesCaseHandler(units, orders)
+        handler.analyse()
+
+        XCTAssertTrue(handler.ruleMatched == SalesCaseType.lowerMatch)
+
+        XCTAssertTrue(handler.orders == [3,1,2])
+        XCTAssertTrue(handler.unitsSold == 4)
+        XCTAssertTrue(handler.units == 0)
+    }
+
+    func testMixedPerfect() {
+        let units: Int = 6
+        let orders: [Int] = [3,6,2]
+
+        let handler = SalesCaseHandler(units, orders)
+        handler.analyse()
+
+        XCTAssertTrue(handler.ruleMatched == SalesCaseType.perfectMatch)
+        XCTAssertTrue(handler.orders == [3,0,2], "\(handler.orders)")
+        XCTAssertTrue(handler.unitsSold == 6, "\(handler.unitsSold)")
+        XCTAssertTrue(handler.units == 0, "\(handler.units)")
+    }
+
+    func testMixedSaleHigher() {
+        let units: Int = 6
+        let orders: [Int] = [3,5,2]
+
+        let handler = SalesCaseHandler(units, orders)
+        handler.analyse()
+
+        XCTAssertTrue(handler.ruleMatched == SalesCaseType.higherMatch)
+
+        XCTAssertTrue(handler.orders == [3,0,2], "\(handler.orders)")
+        XCTAssertTrue(handler.unitsSold == 5, "\(handler.unitsSold)")
+        XCTAssertTrue(handler.units == 1, "\(handler.units)")
+    }
+
+    func testMixedSaleReallyHigh() {
+        let units: Int = 9
+        let orders: [Int] = [3,5,2]
+
+        let handler = SalesCaseHandler(units, orders)
+        handler.analyse()
+
+        XCTAssertTrue(handler.ruleMatched == SalesCaseType.higherMatch)
+        XCTAssertTrue(handler.orders == [3,0,2], "\(handler.orders)")
+        XCTAssertTrue(handler.unitsSold == 5, "\(handler.unitsSold)")
+        XCTAssertTrue(handler.units == (9-5), "\(handler.units)")
+
+    }
 
 }

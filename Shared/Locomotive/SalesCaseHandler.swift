@@ -8,10 +8,17 @@
 
 import Foundation
 
+enum SalesCaseType: Int {
+    case perfectMatch
+    case higherMatch
+    case lowerMatch
+}
+
 class SalesCaseHandler {
-    var unitsSold: Int = 0
-    var units: Int
-    var orders: [Int]
+    public private (set) var unitsSold: Int = 0
+    public private (set) var units: Int
+    public private (set) var orders: [Int]
+    public private (set) var ruleMatched: SalesCaseType?
 
     init(_ units: Int, _ orders: [Int]) {
         self.units = units
@@ -45,30 +52,33 @@ class SalesCaseHandler {
      counters above the locomotive card in question.
      */
     private func handlePerfectMatch(tuple: (Int, Int)) {
+        self.ruleMatched = SalesCaseType.perfectMatch
         let unitsSold = self.orders[tuple.0]
         self.orders[tuple.0] -= unitsSold
         self.units -= unitsSold
-        self.unitsSold = unitsSold
+        self.unitsSold += unitsSold
     }
 
     private func handleLowerMatch(tuple: (Int, Int)) {
+        self.ruleMatched = SalesCaseType.lowerMatch
         let unitsSold = self.units
         self.orders[tuple.0] -= unitsSold
         self.units -= unitsSold
-        self.unitsSold = unitsSold
+        self.unitsSold += unitsSold
     }
 
     /* The player sells a number of produced units equal to the highest die */
     private func handleHigherMatch(tuple: (Int, Int)) {
+        self.ruleMatched = SalesCaseType.higherMatch
         let unitsSold: Int = {
-            return orders.first! as Int
+            return orders[tuple.0] as Int
         }()
         let orderValue: Int = orders[tuple.0] as Int
         var remainingUnits: Int = orderValue
         remainingUnits -= unitsSold
         self.orders[tuple.0] -= unitsSold
         self.units -= unitsSold
-        self.unitsSold = unitsSold
+        self.unitsSold += unitsSold
 
     }
 
