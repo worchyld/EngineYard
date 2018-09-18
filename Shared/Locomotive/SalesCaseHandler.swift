@@ -46,6 +46,28 @@ class SalesCaseHandler {
         }
     }
 
+    func salesLoop() {
+        var condition = false
+
+        while (units != 0 && (condition == false)) {
+            if (condition == false) {
+                //let handler = SalesCaseHandler(units, orders)
+                self.analyse()
+
+                let summarised = orders.reduce(0, +)
+
+                if (summarised == 0) {
+                    condition = true
+                }
+            }
+            print ("units: \(units)")
+            print ("orders: \(orders)")
+            print ("condition: \(condition)")
+        }
+    }
+
+    // MARK: (Private) functions
+
     /*
      The player sells all the produced units and moves that die from the Existing Orders box to
      a Customer Base box for that type of locomotive. Then, he places the Production Unit

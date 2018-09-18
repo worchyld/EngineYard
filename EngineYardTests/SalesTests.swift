@@ -122,7 +122,22 @@ class SalesTests: EngineYardTests {
         XCTAssertTrue(handler.orders == [3,0,2], "\(handler.orders)")
         XCTAssertTrue(handler.unitsSold == 5, "\(handler.unitsSold)")
         XCTAssertTrue(handler.units == (9-5), "\(handler.units)")
+    }
 
+    func testSalesLoop() {
+        var units: Int = 1
+        var orders: [Int] = [12,1,1]
+
+        let handler = SalesCaseHandler(units, orders)
+        handler.salesLoop()
+        units = handler.units
+        orders = handler.orders
+
+        XCTAssertTrue(units == 0)
+        XCTAssertTrue(orders == [12,0,1])
+
+        print ("units: \(units)")
+        print ("orders: \(orders)")
     }
 
 }
