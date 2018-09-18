@@ -28,5 +28,9 @@ extension Player {
     public static func ==(lhs: Player, rhs: Player) -> Bool {
         return (lhs.playerId == rhs.playerId)
     }
+
+    override var description: String {
+        return ("\(playerId) - \(self.name!), $\(self.cash), \(self.hand.description)\n")
+    }
 }
 
