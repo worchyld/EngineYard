@@ -78,7 +78,12 @@ extension OrderBook {
 
     internal func canAdd(orderType: OrderType) -> Bool {
         guard let hasParent = self.parent else {
-            NSLog("No space")
+            return false
+        }
+        guard (hasParent.rustedState != .obsolete) else {
+            return false
+        }
+        guard (!self.hasMaximumDice) else {
             return false
         }
         return (self.orders.count < hasParent.capacity)
@@ -183,8 +188,7 @@ class Order : NSObject, EntryProtocol {
     }
 
     func generate() {
-        value = Die.roll()
-        print ("Generated value: \(value)")
+        self.value = Die.roll()
     }
 
     func transfer() {

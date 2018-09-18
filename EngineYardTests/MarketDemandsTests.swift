@@ -317,5 +317,27 @@ class MarketDemandsTests: EngineYardTests {
 
         ob.handleGenerations(for: .green)
 
+        print ("\(#function)")
+
+        for (index, deck) in greenDecks.enumerated() {
+            print ("index: \(index), \(deck.description)\n")
+
+            if (index == 0) {
+                XCTAssertTrue(deck.rustedState == .obsolete)
+                XCTAssertTrue(deck.orderBook.completedOrders.count == 0)
+                XCTAssertTrue(deck.orderBook.existingOrders.count == 0)
+                XCTAssertTrue(deck.orderBook.orders.count == 0)
+                XCTAssertFalse(deck.orderBook.canAdd(orderType: .existingOrder))
+                XCTAssertFalse(deck.orderBook.canAdd(orderType: .completedOrder))
+            }
+            else if (index == 1) {
+                XCTAssertTrue(deck.orderBook.existingOrders.count == deck.capacity)
+            }
+            else if (index == 2) {
+                XCTAssertTrue(deck.orderBook.existingOrders.count == 2, "\(deck.orderBook.existingOrders.count)")
+            }
+
+        }
+
     }
 }

@@ -98,8 +98,9 @@ struct MarketDemandsManager {
     **/
 
     private func handleThreeGenerations(decks:[Deck]) {
-        for (index, element) in decks.enumerated() {
+        assert(decks.count == 3, "\(#function) found \(decks.count)")
 
+        for (index, element) in decks.enumerated() {
             switch index {
             case 0:
                 element.orderBook.removeAll()
@@ -107,8 +108,11 @@ struct MarketDemandsManager {
                 break
             case 1:
                 element.orderBook.fill(.completedOrder)
+                element.orderBook.rerollAndTransferCompletedOrders()
                 break
             case 2:
+                element.orderBook.add(.completedOrder)
+                element.orderBook.rerollAndTransferCompletedOrders()
                 break
             default:
                 break
