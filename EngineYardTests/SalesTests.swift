@@ -10,15 +10,6 @@ import XCTest
 
 @testable import EngineYard
 
-fileprivate class MockOrder {
-    var orders: [Int]
-    var units: Int
-
-    init(orders: [Int], units: Int) {
-        self.orders = orders
-        self.units = units
-    }
-}
 
 class SalesTests: EngineYardTests {
     
@@ -33,32 +24,33 @@ class SalesTests: EngineYardTests {
     }
 
     func testPerfectMatch() {
-        let orders = [6]
-        let units = 6
-
-
-        let handler = SalesRuleHandler(orders: orders, units: units)
-
-        XCTAssertNotNil(handler.matchObj)
-        XCTAssertEqual(handler.matchObj?.type, SalesMatchType.perfectMatch)
-    }
-
-    func testLowerMatch() {
-        let orders = [6]
         let units = 3
+        let orders = [3]
 
-        //let handler = SalesRuleHandler(orders: orders, units: units)
-        //XCTAssertEqual(handler.matchType!, MatchType.lowerMatch(0, 0))
+        let handler = SalesCaseHandler(units, orders)
+        handler.analyse()
+
+        print (handler.units)
+        print (handler.orders)
+
+        /*
+        let rule = SalesRule(orders)
+
+        if let match = rule.perfectMatch(units) {
+            print("Found perfect match for: \(units) in orders \(rule.orders) at index: \(match.0) which is the value \(match.1)")
+        }
+        else {
+            if let match = rule.lowerMatch(units) {
+                print("Found lower match for: \(units) in orders \(rule.orders) at index: \(match.0) which is the value \(match.1)")
+            }
+            else {
+                if let match = rule.higherMatch(units) {
+                    print("Found higher match for: \(units) in orders \(rule.orders) at index: \(match.0) which is the value \(match.1)")
+                }
+            }
+        }
+         */
     }
-
-    func testHigherMatch() {
-        let orders = [1]
-        let units = 3
-
-        //let handler = SalesRuleHandler(orders: orders, units: units)
-        //XCTAssertEqual(handler.matchType!, MatchType.higherMatch(0, 0))
-    }
-
 
 
 }

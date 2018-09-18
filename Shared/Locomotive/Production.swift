@@ -78,7 +78,6 @@ final class Production {
 // Shift methods
 extension Production {
     public static func costToShift(amount: Int, from: Card, to: Card) throws -> Int {
-
         do {
             try canShift(amount: amount, from: from, to: to)
         } catch let error as ProductionError {
