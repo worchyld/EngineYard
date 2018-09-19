@@ -27,13 +27,16 @@ class GameStateTests: EngineYardTests {
         let machine : GKStateMachine = StateMachine.prepare()
 
         // Try entering various states...
-        if machine.canEnterState(PhaseOne.self) {
-            if machine.enter(PhaseOne.self) == false {
-                print("failed to move to phase one")
+        if machine.canEnterState(LocomotivePurchasePhase.self) {
+            if machine.enter(LocomotivePurchasePhase.self) == false {
+                print("failed to move to `LocomotivePurchasePhase`")
             }
         }
-        XCTAssertTrue(machine.canEnterState(PhaseTwo.self))
-        XCTAssertFalse(machine.canEnterState(PhaseThree.self))        
+        XCTAssertTrue(machine.canEnterState(ProductionPurchasePhase.self))
+        XCTAssertFalse(machine.canEnterState(SellingPhase.self))
+        XCTAssertFalse(machine.canEnterState(TaxesPhase.self))
+        XCTAssertFalse(machine.canEnterState(MarketDemandsPhase.self))
+        XCTAssertFalse(machine.canEnterState(WinnerDeclaredPhase.self))
 
         print ("state: \(String(describing: machine.currentState))")
 

@@ -40,10 +40,10 @@
 		4DB344B421403B8900B42E78 /* SalesRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB344B321403B8900B42E78 /* SalesRule.swift */; };
 		4DC5AEE6214E7A1500D2841D /* MarketDemandsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC5AEE5214E7A1500D2841D /* MarketDemandsTests.swift */; };
 		4DC5AEE8214ED9E500D2841D /* MarketDemandsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC5AEE7214ED9E500D2841D /* MarketDemandsManager.swift */; };
+		4DE3872521527B4300BFF9DB /* PhaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3872421527B4300BFF9DB /* PhaseManager.swift */; };
 		4DEE870F21511D790038F0CF /* SalesCaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE870E21511D790038F0CF /* SalesCaseHandler.swift */; };
 		4DEE871321518ABE0038F0CF /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE871221518ABE0038F0CF /* Game.swift */; };
 		4DEE87172151B6130038F0CF /* TurnOrderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE87162151B6130038F0CF /* TurnOrderTests.swift */; };
-		4DEE87192151C5400038F0CF /* PhaseCompletionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE87182151C5400038F0CF /* PhaseCompletionTests.swift */; };
 		4DEE8725215224430038F0CF /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE8724215224430038F0CF /* StateMachine.swift */; };
 		4DEE87272152244B0038F0CF /* GameStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE87262152244B0038F0CF /* GameStateTests.swift */; };
 /* End PBXBuildFile section */
@@ -96,10 +96,10 @@
 		4DB344B321403B8900B42E78 /* SalesRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesRule.swift; sourceTree = "<group>"; };
 		4DC5AEE5214E7A1500D2841D /* MarketDemandsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDemandsTests.swift; sourceTree = "<group>"; };
 		4DC5AEE7214ED9E500D2841D /* MarketDemandsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDemandsManager.swift; sourceTree = "<group>"; };
+		4DE3872421527B4300BFF9DB /* PhaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhaseManager.swift; sourceTree = "<group>"; };
 		4DEE870E21511D790038F0CF /* SalesCaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesCaseHandler.swift; sourceTree = "<group>"; };
 		4DEE871221518ABE0038F0CF /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		4DEE87162151B6130038F0CF /* TurnOrderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnOrderTests.swift; sourceTree = "<group>"; };
-		4DEE87182151C5400038F0CF /* PhaseCompletionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhaseCompletionTests.swift; sourceTree = "<group>"; };
 		4DEE8724215224430038F0CF /* StateMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
 		4DEE87262152244B0038F0CF /* GameStateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameStateTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -192,7 +192,6 @@
 				4D28479321381F4500C81B5C /* PlayerHandTests.swift */,
 				4DB344B121403B3C00B42E78 /* SalesTests.swift */,
 				4DEE87162151B6130038F0CF /* TurnOrderTests.swift */,
-				4DEE87182151C5400038F0CF /* PhaseCompletionTests.swift */,
 				4DC5AEE5214E7A1500D2841D /* MarketDemandsTests.swift */,
 				4DEE87262152244B0038F0CF /* GameStateTests.swift */,
 			);
@@ -239,6 +238,7 @@
 			children = (
 				4DA8396C2136B0ED00F7CAB9 /* GameSetupManager.swift */,
 				4DEE8724215224430038F0CF /* StateMachine.swift */,
+				4DE3872421527B4300BFF9DB /* PhaseManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -353,6 +353,7 @@
 				4DA523652081582B000FFAAB /* Enums.swift in Sources */,
 				4D74BA482084A6D000ADC00C /* Hand.swift in Sources */,
 				4DA8396D2136B0ED00F7CAB9 /* GameSetupManager.swift in Sources */,
+				4DE3872521527B4300BFF9DB /* PhaseManager.swift in Sources */,
 				4DB344B421403B8900B42E78 /* SalesRule.swift in Sources */,
 				4DA5236720815885000FFAAB /* Die.swift in Sources */,
 				4D3DF4B920835DB7000DF88E /* Rules.swift in Sources */,
@@ -382,7 +383,6 @@
 				4D28479421381F4500C81B5C /* PlayerHandTests.swift in Sources */,
 				4D617D562081EE110036BB00 /* DieTests.swift in Sources */,
 				4DC5AEE6214E7A1500D2841D /* MarketDemandsTests.swift in Sources */,
-				4DEE87192151C5400038F0CF /* PhaseCompletionTests.swift in Sources */,
 				4D2847922138147200C81B5C /* ProductionTests.swift in Sources */,
 				4DA5237220815C06000FFAAB /* TaxTests.swift in Sources */,
 				4DEE87172151B6130038F0CF /* TurnOrderTests.swift in Sources */,

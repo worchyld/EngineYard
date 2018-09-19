@@ -16,52 +16,90 @@ class StateMachine : GKStateMachine {
 
     public static func prepare() -> StateMachine {
         let states: [GKState] = [
-            PhaseOne(),
-            PhaseTwo(),
-            PhaseThree()
+            LocomotivePurchasePhase(),
+            ProductionPurchasePhase(),
+            SellingPhase(),
+            TaxesPhase(),
+            MarketDemandsPhase(),
+            WinnerDeclaredPhase()
         ]
         return StateMachine.init(states: states)
     }
 }
 
-class PhaseOne : GKState {
+class LocomotivePurchasePhase : GKState {
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
-        return stateClass is PhaseTwo.Type
+        return stateClass is ProductionPurchasePhase.Type
     }
 
     override func didEnter(from previousState: GKState?) {
-        print("PhaseOne")
     }
 
     override func willExit(to nextState: GKState) {
-        print ("Exiting to \(nextState)")
     }
 }
 
-class PhaseTwo : GKState {
+class ProductionPurchasePhase : GKState {
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
-        return stateClass is PhaseThree.Type
+        return stateClass is SellingPhase.Type
     }
 
     override func didEnter(from previousState: GKState?) {
-        print("PhaseTwo")
     }
 
     override func willExit(to nextState: GKState) {
-        print ("Exiting to \(nextState)")
     }
 }
 
-class PhaseThree : GKState {
+class SellingPhase : GKState {
+    override func isValidNextState(_ stateClass: AnyClass) -> Bool {
+        return stateClass is TaxesPhase.Type
+    }
+
+    override func didEnter(from previousState: GKState?) {
+    }
+
+    override func willExit(to nextState: GKState) {
+    }
+}
+
+class TaxesPhase : GKState {
+    override func isValidNextState(_ stateClass: AnyClass) -> Bool {
+        return (
+            (stateClass is MarketDemandsPhase.Type) ||
+                (stateClass is WinnerDeclaredPhase.Type)
+        )
+    }
+
+    override func didEnter(from previousState: GKState?) {
+    }
+
+    override func willExit(to nextState: GKState) {
+    }
+}
+
+class MarketDemandsPhase : GKState {
+    override func isValidNextState(_ stateClass: AnyClass) -> Bool {
+        return stateClass is LocomotivePurchasePhase.Type
+    }
+
+    override func didEnter(from previousState: GKState?) {
+    }
+
+    override func willExit(to nextState: GKState) {
+    }
+}
+
+class WinnerDeclaredPhase : GKState {
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
         return false
     }
 
     override func didEnter(from previousState: GKState?) {
-        print("PhaseThree")
     }
 
     override func willExit(to nextState: GKState) {
-        print ("Exiting to \(nextState)")
     }
 }
+
+
