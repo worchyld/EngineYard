@@ -44,6 +44,8 @@
 		4DEE871321518ABE0038F0CF /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE871221518ABE0038F0CF /* Game.swift */; };
 		4DEE87172151B6130038F0CF /* TurnOrderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE87162151B6130038F0CF /* TurnOrderTests.swift */; };
 		4DEE87192151C5400038F0CF /* PhaseCompletionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE87182151C5400038F0CF /* PhaseCompletionTests.swift */; };
+		4DEE8725215224430038F0CF /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE8724215224430038F0CF /* StateMachine.swift */; };
+		4DEE87272152244B0038F0CF /* GameStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE87262152244B0038F0CF /* GameStateTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,8 @@
 		4DEE871221518ABE0038F0CF /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		4DEE87162151B6130038F0CF /* TurnOrderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnOrderTests.swift; sourceTree = "<group>"; };
 		4DEE87182151C5400038F0CF /* PhaseCompletionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhaseCompletionTests.swift; sourceTree = "<group>"; };
+		4DEE8724215224430038F0CF /* StateMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
+		4DEE87262152244B0038F0CF /* GameStateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameStateTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +194,7 @@
 				4DEE87162151B6130038F0CF /* TurnOrderTests.swift */,
 				4DEE87182151C5400038F0CF /* PhaseCompletionTests.swift */,
 				4DC5AEE5214E7A1500D2841D /* MarketDemandsTests.swift */,
+				4DEE87262152244B0038F0CF /* GameStateTests.swift */,
 			);
 			path = EngineYardTests;
 			sourceTree = "<group>";
@@ -233,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				4DA8396C2136B0ED00F7CAB9 /* GameSetupManager.swift */,
+				4DEE8724215224430038F0CF /* StateMachine.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -353,6 +359,7 @@
 				4DEE870F21511D790038F0CF /* SalesCaseHandler.swift in Sources */,
 				4DA5236E20815960000FFAAB /* Tax.swift in Sources */,
 				4D1BD48B2083846500051FD9 /* Card.swift in Sources */,
+				4DEE8725215224430038F0CF /* StateMachine.swift in Sources */,
 				4DC5AEE8214ED9E500D2841D /* MarketDemandsManager.swift in Sources */,
 				4DA52369208158A8000FFAAB /* EY+Colors.swift in Sources */,
 				4D1BD48F2083864B00051FD9 /* Board.swift in Sources */,
@@ -369,6 +376,7 @@
 			files = (
 				4D3DF4B720834679000DF88E /* WalletTests.swift in Sources */,
 				4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */,
+				4DEE87272152244B0038F0CF /* GameStateTests.swift in Sources */,
 				4DB344B221403B3C00B42E78 /* SalesTests.swift in Sources */,
 				4D2847902137FC3500C81B5C /* BoardUnlockTests.swift in Sources */,
 				4D28479421381F4500C81B5C /* PlayerHandTests.swift in Sources */,
