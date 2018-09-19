@@ -16,47 +16,68 @@ class StateMachine : GKStateMachine {
 
     public static func prepare() -> StateMachine {
         let states: [GKState] = [
-            PhaseOne()
-            , PhaseTwo()
+            PhaseOne(),
+            PhaseTwo()
+            /*
+            GreenState(),
+            YellowState(),
+            RedState()*/
         ]
-        //let machine = StateMachine.init(states: states)
-        //machine.enter(PhaseOne.self)
         return StateMachine.init(states: states)
     }
 }
 
-
-// `BuyLocomotive` state
 class PhaseOne : GKState {
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
-        return (stateClass is PhaseTwo.Type)
+        return stateClass is PhaseTwo.Type
     }
 
     override func didEnter(from previousState: GKState?) {
-        let name = String(describing: PhaseOne.self)
-        print ("Entered \(name) \(#function)")
-    }
-
-    override func willExit(to nextState: GKState) {
-        print ("Exited \(#function)")
+        print("PhaseOne")
     }
 }
 
-// `BuyProduction` state
 class PhaseTwo : GKState {
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
-        //return (stateClass is PhaseTwo.Type)
-        return false
+        return stateClass is PhaseTwo.Type
     }
 
     override func didEnter(from previousState: GKState?) {
-        let name = String(describing: PhaseTwo.self)
-        print ("Entered \(name) \(#function)")
-    }
-
-    override func willExit(to nextState: GKState) {
-        print ("Exited \(#function)")
+        print("PhaseTwo")
     }
 }
 
 
+/*
+class GreenState: GKState {
+
+    override func isValidNextState(_ stateClass: AnyClass) -> Bool {
+        return stateClass is YellowState.Type
+    }
+
+    override func didEnter(from previousState: GKState?) {
+        print("Traffic light is green")
+    }
+}
+
+class YellowState: GKState {
+    override func isValidNextState(_ stateClass: AnyClass) -> Bool {
+        return stateClass is RedState.Type
+    }
+
+    override func didEnter(from previousState: GKState?) {
+        print("Traffic light is yellow")
+    }
+
+}
+
+class RedState: GKState {
+    override func isValidNextState(_ stateClass: AnyClass) -> Bool {
+        return stateClass is GreenState.Type
+    }
+
+    override func didEnter(from previousState: GKState?) {
+        print("Traffic light is red")
+    }
+}
+*/
