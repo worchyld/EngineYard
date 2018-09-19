@@ -22,6 +22,8 @@
 		4D617D562081EE110036BB00 /* DieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D617D552081EE110036BB00 /* DieTests.swift */; };
 		4D74BA482084A6D000ADC00C /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74BA472084A6D000ADC00C /* Hand.swift */; };
 		4D74BA4C2084AC5000ADC00C /* OrderBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74BA4B2084AC5000ADC00C /* OrderBook.swift */; };
+		4D7D430F21529136003CCF89 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7D430E21529136003CCF89 /* Mock.swift */; };
+		4D7D43102152914B003CCF89 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7D430E21529136003CCF89 /* Mock.swift */; };
 		4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3486820812972006DA164 /* EngineYardTests.swift */; };
 		4DA3487C20812A8B006DA164 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3487420812A8B006DA164 /* ViewController.swift */; };
 		4DA3487D20812A8B006DA164 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DA3487520812A8B006DA164 /* Assets.xcassets */; };
@@ -75,6 +77,7 @@
 		4D617D552081EE110036BB00 /* DieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DieTests.swift; sourceTree = "<group>"; };
 		4D74BA472084A6D000ADC00C /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
 		4D74BA4B2084AC5000ADC00C /* OrderBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBook.swift; sourceTree = "<group>"; };
+		4D7D430E21529136003CCF89 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
 		4DA3485020812970006DA164 /* EngineYard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EngineYard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA3486420812972006DA164 /* EngineYardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EngineYardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA3486820812972006DA164 /* EngineYardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineYardTests.swift; sourceTree = "<group>"; };
@@ -143,6 +146,7 @@
 		4D00A42420A8C59E00A2E88E /* Player */ = {
 			isa = PBXGroup;
 			children = (
+				4D7D430E21529136003CCF89 /* Mock.swift */,
 				4D3DF4B420834592000DF88E /* Player.swift */,
 				4D74BA472084A6D000ADC00C /* Hand.swift */,
 				4D3DF4B220834587000DF88E /* Wallet.swift */,
@@ -354,6 +358,7 @@
 				4D01469B208393AF00AE54B1 /* Card+Colors.swift in Sources */,
 				4D1BD48D208384ED00051FD9 /* Production.swift in Sources */,
 				4DA5236C208158C8000FFAAB /* EY+Array.swift in Sources */,
+				4D7D430F21529136003CCF89 /* Mock.swift in Sources */,
 				4DA523652081582B000FFAAB /* Enums.swift in Sources */,
 				4D74BA482084A6D000ADC00C /* Hand.swift in Sources */,
 				4DA8396D2136B0ED00F7CAB9 /* GameSetupManager.swift in Sources */,
@@ -390,6 +395,7 @@
 				4D2847922138147200C81B5C /* ProductionTests.swift in Sources */,
 				4DA5237220815C06000FFAAB /* TaxTests.swift in Sources */,
 				4DEE87172151B6130038F0CF /* TurnOrderTests.swift in Sources */,
+				4D7D43102152914B003CCF89 /* Mock.swift in Sources */,
 				4DA8396B2136AE7900F7CAB9 /* GameBoardSetupTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
