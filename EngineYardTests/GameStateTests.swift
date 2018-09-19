@@ -32,7 +32,6 @@ class GameStateTests: EngineYardTests {
                 print("failed to move to phase one")
             }
         }
-        XCTAssertTrue(machine.canEnterState(PhaseOne.self))
         XCTAssertTrue(machine.canEnterState(PhaseTwo.self))
         XCTAssertFalse(machine.canEnterState(PhaseThree.self))        
 
