@@ -41,7 +41,13 @@ class GameBoardSetupTests: EngineYardTests {
             return
         }
 
-        XCTAssertTrue(game.players.count == 5, "Invalid player count: \(game.players.count)")
+        guard let _ = game.players else {
+            XCTFail("No players initialised")
+            return
+        }
+
+
+        XCTAssertTrue(players.count == 5, "Invalid player count: \(players.count)")
         XCTAssertTrue(board.countUnlocked == 1, "Invalid board unlocks \(board.countUnlocked)")
 
         // ----------------------------------
@@ -94,7 +100,12 @@ class GameBoardSetupTests: EngineYardTests {
             return
         }
 
-        XCTAssertTrue(game.players.count == 3, "Invalid player count: \(game.players.count)")
+        guard let _ = game.players else {
+            XCTFail("No players initialised")
+            return
+        }
+
+        XCTAssertTrue(players.count == 3, "Invalid player count: \(players.count)")
         XCTAssertTrue(board.countUnlocked == 2, "Invalid board unlocks \(board.countUnlocked)")
 
         // ----------------------------------
@@ -125,7 +136,7 @@ class GameBoardSetupTests: EngineYardTests {
         XCTAssertTrue(lastDeck.color == .red && lastDeck.generation == .first)
 
         // (2) Expect 3 owners of Green.1
-        XCTAssertTrue(firstDeck.owners?.count == 3, "Invalid owners: \(String(describing: firstDeck.owners?.count))")
+        XCTAssertTrue(firstDeck.owners?.count == 3, "Invalid owners: \(String(describing: firstDeck.owners!.count))")
 
         for (index, c) in firstDeck.cards.enumerated() {
             if (index < 3) {

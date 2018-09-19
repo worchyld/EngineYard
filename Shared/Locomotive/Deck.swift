@@ -97,7 +97,7 @@ final class Deck : NSObject, DeckDelegate {
 
 extension Deck {
     override var description: String {
-        return "\(self.name), cards: \(cards.count), existingOrders: \(self.orderBook.existingOrderValues), completedOrders: \(self.orderBook.completedOrderValues)"
+        return "\(self.name), cards: \(cards.count), rusted: \(rustedState)\n\texistingOrders: \(self.orderBook.existingOrderValues),\n\t completedOrders: \(self.orderBook.completedOrderValues)"
     }
 
     public static func ==(lhs: Deck, rhs: Deck) -> Bool {
@@ -112,20 +112,24 @@ extension Deck {
     }
 
     public static func giveCardsFrom(deck:Deck, to players:[Player]) {
+
         for player in players {
-            guard let card: Card = deck.cards.filter({ (c: Card) -> Bool in
+            guard let cardObj: Card = deck.cards.filter({ (c: Card) -> Bool in
                 return (c.owner == nil)
             }).first else {
                 assertionFailure("No card found in deck")
                 return
             }
-            let _ = player.hand.add(card)
+            do {
+                try player.hand.add(cardObj)
+            } catch let error {
+                assertionFailure(error.localizedDescription as String)
+            }
         }
     }
 }
 
 extension Deck {
-
     func findFirstUnownedCard() -> Card? {
         guard let card = (cards
             .filter({ (c: Card) -> Bool in
@@ -137,6 +141,13 @@ extension Deck {
         return card
     }
 
+    func markAsOld() {
+        self.rustedState = .old
+    }
+
+    func markAsObsolete() {
+        self.rustedState = .obsolete
+    }
 }
 
 // MARK: - Subscription methods

@@ -10,7 +10,11 @@ import Foundation
 import GameplayKit
 
 class Player : NSObject, GKGameModelPlayer {
-    public private(set) var playerId: Int = 0
+    internal var playerId: Int = 0 {
+        didSet {
+            print ("Set playerId = \(self.playerId)")
+        }
+    }
 
     var name : String!
     var cash : Int {
@@ -27,6 +31,14 @@ class Player : NSObject, GKGameModelPlayer {
 extension Player {
     public static func ==(lhs: Player, rhs: Player) -> Bool {
         return (lhs.playerId == rhs.playerId)
+    }
+
+    override var description: String {
+        return ("\(playerId) - \(self.name!), $\(self.cash), \(self.hand.description)\n")
+    }
+
+    func setPlayerId(_ playerId: Int) {
+        self.playerId = playerId
     }
 }
 

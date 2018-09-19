@@ -2,7 +2,7 @@
 //  TurnOrderTests.swift
 //  EngineYardTests
 //
-//  Created by Amarjit on 29/08/2018.
+//  Created by Amarjit on 18/09/2018.
 //  Copyright © 2018 Amarjit. All rights reserved.
 //
 
@@ -21,19 +21,77 @@ class TurnOrderTests: EngineYardTests {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
-    func testTurnOrder() {
+
+    func testShuffle() {
+        var numbers = [1,2,3,4,5]
+        numbers.shuffle()
+        print (numbers)
+    }
+
+    func testShuffled() {
+        var numbers = [1,2,3,4,5]
+        numbers = numbers.shuffled()
+        print (numbers)
+    }
+
+    func testShufflePlayers() {
         let players = Mock.players(howMany: 5)
-        TurnOrderManager.instance.turnOrder = players
 
-        XCTAssertTrue(TurnOrderManager.instance.turnOrder.count == 5)
+        guard let game:Game = Game.setup(with: players) else {
+            XCTFail("Game object did not initialise")
+            return
+        }
 
-        print (TurnOrderManager.instance.currentPlayer)
+        game.shuffleTurnOrder()
+        print (game.players!)
+    }
 
-        TurnOrderManager.instance.next()
+    func testTurnOrderDidChange() {
+        guard let game:Game = Game.setup(with: Mock.players(howMany: 5)) else {
+            XCTFail("Game object did not initialise")
+            return
+        }
 
-        print (TurnOrderManager.currentPlayer)
+        game.shuffleTurnOrder()
+        game.activePlayer = game.players?.first
+        game.nextOnTurn()
 
+        guard let activePlayer = game.activePlayer else {
+            XCTFail("No active player")
+            return
+        }
+        guard let players = game.players else {
+            XCTFail("No players")
+            return
+        }
 
+        XCTAssertTrue(game.turnOrderIndex == 1)
+        XCTAssertTrue(activePlayer.playerId == players[game.turnOrderIndex].playerId)
+    }
+
+    func testTurnOrderDidWrapAround() {
+        guard let game:Game = Game.setup(with: Mock.players(howMany: 5)) else {
+            XCTFail("Game object did not initialise")
+            return
+        }
+
+        game.shuffleTurnOrder()
+        game.activePlayer = game.players?.first
+
+        guard let players = game.players else {
+            XCTFail("No players")
+            return
+        }
+        guard let activePlayer = game.activePlayer else {
+            XCTFail("No active player")
+            return
+        }
+
+        let _ = players.map { _ in  
+            game.nextOnTurn()
+        }
+
+        XCTAssertTrue(game.turnOrderIndex == 0, "\(game.turnOrderIndex)")
+        XCTAssertTrue(activePlayer.playerId == players[game.turnOrderIndex].playerId, "\(activePlayer.playerId)")
     }
 }

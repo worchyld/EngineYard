@@ -22,7 +22,13 @@ class GameSetupManager {
             if try (Rules.NumberOfPlayers.isValid(count: players.count)) {
 
                 self.game = Game()
-                self.game?.board = Board()
+
+                guard let gameObj = self.game else {
+                    assertionFailure("No game object initialised")
+                    return nil
+                }
+
+                gameObj.board = Board()
 
                 // Setup players
                 switch players.count {
@@ -38,9 +44,16 @@ class GameSetupManager {
                     return nil
                 }
 
-                game?.players = players
+                gameObj.players = players
 
-                return self.game
+                let _ = gameObj.players?.enumerated().map({ (offset, element) -> Void in
+                    let playerObj: Player = element as! Player
+                    playerObj.setPlayerId(offset)
+                })
+
+                print (gameObj.description)
+
+                return gameObj
             }
         } catch let error {
             assertionFailure(error.localizedDescription)
