@@ -45,7 +45,7 @@ private struct ViewModel {
             return
         }
         let deck = decks[atIndex.row]
-        cellLabel.text = deck.description
+        cellLabel.text = "\(deck.name), \(deck.color) \(deck.generation) Cost: $\(deck.cost) Production: $\(deck.productionCost) Income: $\(deck.income)"
     }
 }
 
@@ -63,7 +63,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Locos"
+        self.title = "Trains"
         self.view.addSubview(tableView)
     }
 
