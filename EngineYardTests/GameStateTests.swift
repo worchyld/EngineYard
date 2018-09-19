@@ -23,21 +23,18 @@ class GameStateTests: EngineYardTests {
         super.tearDown()
     }
     
-    func testGameStateDidChange() {
+    func testGameStateInitialised() {
         let machine : GKStateMachine = StateMachine.prepare()
 
         // Try entering various states...
-        if machine.enter(PhaseOne.self) == false {
-            print("failed to move to phase one")
-        }
-        /*
-        if machine.canEnterState(PhaseTwo.self) {
-            if machine.enter(PhaseTwo.self) == false  {
-                print("failed to move to phase two")
+        if machine.canEnterState(PhaseOne.self) {
+            if machine.enter(PhaseOne.self) == false {
+                print("failed to move to phase one")
             }
         }
-        */
-        
+        XCTAssertTrue(machine.canEnterState(PhaseOne.self))
+        XCTAssertTrue(machine.canEnterState(PhaseTwo.self))
+        XCTAssertFalse(machine.canEnterState(PhaseThree.self))        
 
         print ("state: \(String(describing: machine.currentState))")
 

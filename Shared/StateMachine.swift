@@ -17,11 +17,8 @@ class StateMachine : GKStateMachine {
     public static func prepare() -> StateMachine {
         let states: [GKState] = [
             PhaseOne(),
-            PhaseTwo()
-            /*
-            GreenState(),
-            YellowState(),
-            RedState()*/
+            PhaseTwo(),
+            PhaseThree()
         ]
         return StateMachine.init(states: states)
     }
@@ -35,49 +32,36 @@ class PhaseOne : GKState {
     override func didEnter(from previousState: GKState?) {
         print("PhaseOne")
     }
+
+    override func willExit(to nextState: GKState) {
+        print ("Exiting to \(nextState)")
+    }
 }
 
 class PhaseTwo : GKState {
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
-        return stateClass is PhaseTwo.Type
+        return stateClass is PhaseThree.Type
     }
 
     override func didEnter(from previousState: GKState?) {
         print("PhaseTwo")
     }
+
+    override func willExit(to nextState: GKState) {
+        print ("Exiting to \(nextState)")
+    }
 }
 
-
-/*
-class GreenState: GKState {
-
+class PhaseThree : GKState {
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
-        return stateClass is YellowState.Type
+        return false
     }
 
     override func didEnter(from previousState: GKState?) {
-        print("Traffic light is green")
+        print("PhaseThree")
+    }
+
+    override func willExit(to nextState: GKState) {
+        print ("Exiting to \(nextState)")
     }
 }
-
-class YellowState: GKState {
-    override func isValidNextState(_ stateClass: AnyClass) -> Bool {
-        return stateClass is RedState.Type
-    }
-
-    override func didEnter(from previousState: GKState?) {
-        print("Traffic light is yellow")
-    }
-
-}
-
-class RedState: GKState {
-    override func isValidNextState(_ stateClass: AnyClass) -> Bool {
-        return stateClass is GreenState.Type
-    }
-
-    override func didEnter(from previousState: GKState?) {
-        print("Traffic light is red")
-    }
-}
-*/
