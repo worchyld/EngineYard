@@ -15,7 +15,7 @@ enum SalesCaseType: Int {
 }
 
 struct Sale {
-    var units : Int
+    var units : Int // unitsSold
     var price : Int
     var income : Int {
         guard units > 0 else {
@@ -89,7 +89,6 @@ class SalesCaseHandler : SalesBookProtocol {
 
         while (units != 0 && (condition == false)) {
             if (condition == false) {
-                //let handler = SalesCaseHandler(units, orders)
                 self.analyse()
 
                 let summarised = orders.reduce(0, +)
