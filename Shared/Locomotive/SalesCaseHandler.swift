@@ -101,7 +101,12 @@ class SalesCaseHandler {
         self.orders[tuple.0] -= unitsSold
         self.units -= unitsSold
         self.unitsSold += unitsSold
-
     }
-
 }
+
+extension SalesCaseHandler : CustomStringConvertible {
+    var description: String {
+        return ("SalesCaseHandler: units: \(self.units), orders: \(self.orders), unitsSold: \(self.unitsSold)")
+    }
+}
+

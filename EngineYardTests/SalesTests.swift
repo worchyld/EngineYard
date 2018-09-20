@@ -179,7 +179,16 @@ class SalesTests: EngineYardTests {
         XCTAssertTrue(firstCard.owner == firstPlayer)
         XCTAssertTrue(firstDeck.owners?.count == 1)
         XCTAssertTrue(firstDeck.owners?.first == firstPlayer)
-        
+
+        let orders: [Int] = firstDeck.orderBook.existingOrderValues
+        let units: Int = firstCard.production.units
+
+        let handler = SalesCaseHandler(units, orders)
+        handler.salesLoop()
+
+        print(handler.description)
+        print(firstDeck.description)
+        print(firstCard.description)
 
     }
 
