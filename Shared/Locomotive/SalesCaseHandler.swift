@@ -14,15 +14,53 @@ enum SalesCaseType: Int {
     case lowerMatch
 }
 
-class SalesCaseHandler {
-    public private (set) var unitsSold: Int = 0
+struct Sale {
+    var units : Int
+    var price : Int
+    var income : Int {
+        guard units > 0 else {
+            return 0
+        }
+        guard price > 0 else {
+            return 0
+        }
+        return (units * price)
+    }
+
+    init(units: Int, price: Int) {
+        self.units = units
+        self.price = price
+    }
+}
+
+class SalesBook : CustomStringConvertible {
+    weak var player: Player?
+    var sales: [Sale] = [Sale]()
+
+    func add(sale: Sale) {
+        self.sales.append(sale)
+    }
+
+    var description: String {
+        return "SalesBook: \(self.sales)"
+    }
+}
+
+protocol SalesBookProtocol {
+    func add(sale: Sale)
+}
+
+class SalesCaseHandler : SalesBookProtocol {
+    var salesBook : SalesBook = SalesBook()
     public private (set) var units: Int
     public private (set) var orders: [Int]
     public private (set) var ruleMatched: SalesCaseType?
+    var delegate: SalesBookProtocol!
 
     init(_ units: Int, _ orders: [Int]) {
         self.units = units
         self.orders = orders
+        self.delegate = self
     }
 
     func analyse() {
@@ -78,7 +116,8 @@ class SalesCaseHandler {
         let unitsSold = self.orders[tuple.0]
         self.orders[tuple.0] -= unitsSold
         self.units -= unitsSold
-        self.unitsSold += unitsSold
+
+        delegate.add(sale: Sale(units: unitsSold, price: 1))
     }
 
     private func handleLowerMatch(tuple: (Int, Int)) {
@@ -86,7 +125,8 @@ class SalesCaseHandler {
         let unitsSold = self.units
         self.orders[tuple.0] -= unitsSold
         self.units -= unitsSold
-        self.unitsSold += unitsSold
+
+        delegate.add(sale: Sale(units: unitsSold, price: 1))
     }
 
     /* The player sells a number of produced units equal to the highest die */
@@ -100,13 +140,19 @@ class SalesCaseHandler {
         remainingUnits -= unitsSold
         self.orders[tuple.0] -= unitsSold
         self.units -= unitsSold
-        self.unitsSold += unitsSold
+
+        delegate.add(sale: Sale(units: unitsSold, price: 1))
     }
 }
 
 extension SalesCaseHandler : CustomStringConvertible {
     var description: String {
-        return ("SalesCaseHandler: units: \(self.units), orders: \(self.orders), unitsSold: \(self.unitsSold)")
+        return ("SalesCaseHandler: units: \(self.units), orders: \(self.orders)")
     }
 }
 
+extension SalesCaseHandler {
+    func add(sale: Sale) {
+        self.salesBook.add(sale: sale)
+    }
+}

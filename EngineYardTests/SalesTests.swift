@@ -29,7 +29,6 @@ class SalesTests: EngineYardTests {
         let handler = SalesCaseHandler(units, orders)
         handler.analyse()
 
-        XCTAssertTrue(handler.unitsSold == units)
         XCTAssertTrue(handler.orders.first! == 0)
         XCTAssertTrue(handler.units == 0)
     }
@@ -43,7 +42,6 @@ class SalesTests: EngineYardTests {
 
         let remainingUnits = (orders.first! - units)
 
-        XCTAssertTrue(handler.unitsSold == units)
         XCTAssertTrue(handler.units == 0)
         XCTAssertTrue(handler.orders.first! == remainingUnits)
     }
@@ -52,9 +50,10 @@ class SalesTests: EngineYardTests {
         let units: Int = 5
         let orders: [Int] = [4]
 
+        /*
         let unitsSold: Int = {
             return orders.first! as Int
-        }()
+        }()*/
 
         let handler = SalesCaseHandler(units, orders)
         handler.analyse()
@@ -65,7 +64,6 @@ class SalesTests: EngineYardTests {
             return order
         }()
 
-        XCTAssertTrue(handler.unitsSold == unitsSold, "\(handler.unitsSold) vs \(unitsSold)")
         XCTAssertTrue(handler.orders.first! == expectedOrders, "\(handler.orders.first!) vs \(expectedOrders)")
     }
 
@@ -79,7 +77,7 @@ class SalesTests: EngineYardTests {
         XCTAssertTrue(handler.ruleMatched == SalesCaseType.lowerMatch)
 
         XCTAssertTrue(handler.orders == [3,1,2])
-        XCTAssertTrue(handler.unitsSold == 4)
+        //XCTAssertTrue(handler.unitsSold == 4)
         XCTAssertTrue(handler.units == 0)
     }
 
@@ -92,7 +90,7 @@ class SalesTests: EngineYardTests {
 
         XCTAssertTrue(handler.ruleMatched == SalesCaseType.perfectMatch)
         XCTAssertTrue(handler.orders == [3,0,2], "\(handler.orders)")
-        XCTAssertTrue(handler.unitsSold == 6, "\(handler.unitsSold)")
+        //XCTAssertTrue(handler.unitsSold == 6, "\(handler.unitsSold)")
         XCTAssertTrue(handler.units == 0, "\(handler.units)")
     }
 
@@ -106,7 +104,7 @@ class SalesTests: EngineYardTests {
         XCTAssertTrue(handler.ruleMatched == SalesCaseType.higherMatch)
 
         XCTAssertTrue(handler.orders == [3,0,2], "\(handler.orders)")
-        XCTAssertTrue(handler.unitsSold == 5, "\(handler.unitsSold)")
+        //XCTAssertTrue(handler.unitsSold == 5, "\(handler.unitsSold)")
         XCTAssertTrue(handler.units == 1, "\(handler.units)")
     }
 
@@ -119,7 +117,7 @@ class SalesTests: EngineYardTests {
 
         XCTAssertTrue(handler.ruleMatched == SalesCaseType.higherMatch)
         XCTAssertTrue(handler.orders == [3,0,2], "\(handler.orders)")
-        XCTAssertTrue(handler.unitsSold == 5, "\(handler.unitsSold)")
+        //XCTAssertTrue(handler.unitsSold == 5, "\(handler.unitsSold)")
         XCTAssertTrue(handler.units == (9-5), "\(handler.units)")
     }
 
