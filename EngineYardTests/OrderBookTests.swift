@@ -162,4 +162,38 @@ class OrderBookTests: EngineYardTests {
         XCTAssertTrue(firstDeck.orderBook.existingOrderValues == [3,5,2])
     }
 
+    func testDidTransferOrder() {
+        let players = Mock.players(howMany: 5)
+
+        guard let game:Game = Game.setup(with: players) else {
+            XCTFail("Game object did not initialise")
+            return
+        }
+        guard let board = game.board else {
+            XCTFail("Board object not initialised")
+            return
+        }
+        guard let firstDeck = board.decks.first else {
+            XCTFail("No first deck found")
+            return
+        }
+
+        firstDeck.orderBook.removeAll() // force removing to test single value
+        firstDeck.orderBook.add(.existingOrder, values: [3,5,2])
+
+        guard let order = firstDeck.orderBook.existingOrders.first else {
+            XCTFail("No first order found")
+            return
+        }
+
+        firstDeck.orderBook.transfer(order: order)
+
+        XCTAssertTrue(firstDeck.orderBook.existingOrders.count == 2)
+        XCTAssertTrue(firstDeck.orderBook.completedOrders.count == 1)
+        XCTAssertTrue(firstDeck.orderBook.hasMaximumDice)
+
+        XCTAssertTrue(firstDeck.orderBook.existingOrderValues == [5,2])
+        XCTAssertTrue(firstDeck.orderBook.completedOrderValues == [3])
+    }
+
 }
