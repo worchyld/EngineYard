@@ -51,6 +51,9 @@ final class OrderBook : NSObject, NSCopying {
             return o.value
         })
     }
+    var totalExistingOrders: Int {
+        return (self.existingOrderValues.reduce(0, +))
+    }
 
     // Init
     init(parent: Deck) {
@@ -189,6 +192,7 @@ extension OrderBook {
             self.orders.remove(at: sortedElementsAndIndices.offset)
         }
     }
+
 }
 
 class Order : NSObject, NSCopying, EntryProtocol {

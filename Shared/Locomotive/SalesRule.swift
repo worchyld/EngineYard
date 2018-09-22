@@ -2,15 +2,14 @@
 //  SalesRule.swift
 //  EngineYard
 //
-//  Created by Amarjit on 05/09/2018.
+//  Created by Amarjit on 22/09/2018.
 //  Copyright © 2018 Amarjit. All rights reserved.
 //
 
 import Foundation
 
-// Handles sales of orders
-// Per dice in the order array, there are 3 different
-// cases of locomotive sales are possible:
+// There are 3 different cases of sales
+// that are possible:
 // (a) Same number
 // (b) Lower number
 // (c) Higher number
@@ -78,3 +77,4 @@ struct SalesRule {
         }
     }
 }
+

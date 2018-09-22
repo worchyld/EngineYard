@@ -110,7 +110,7 @@ final class Deck : NSObject, NSCopying, DeckDelegate {
 
 extension Deck {
     override var description: String {
-        return "\(self.name), cards: \(cards.count), rusted: \(rustedState)\n\texistingOrders: \(self.orderBook.existingOrderValues),\n\t completedOrders: \(self.orderBook.completedOrderValues)"
+        return "\(self.name), cards: \(cards.count), rusted: \(rustedState)\n\texistingOrders: \(self.orderBook.existingOrderValues),\n\t completedOrders: \(self.orderBook.completedOrderValues)\n\t #owners: \(String(describing: self.owners?.count))"
     }
 
     public static func ==(lhs: Deck, rhs: Deck) -> Bool {
