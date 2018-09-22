@@ -19,7 +19,7 @@ protocol EntryProtocol {
 
 final class OrderBook : NSObject, NSCopying {
     public private (set) weak var parent: Deck?
-    public private (set) var orders: [Order] = [Order]()
+    private var orders: [Order] = [Order]()
 
     var hasMaximumDice: Bool {
         guard let hasParent: Deck = self.parent else {

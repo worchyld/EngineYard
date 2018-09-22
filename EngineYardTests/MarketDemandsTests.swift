@@ -324,7 +324,6 @@ class MarketDemandsTests: EngineYardTests {
                 XCTAssertTrue(deck.rustedState == .obsolete)
                 XCTAssertTrue(deck.orderBook.completedOrders.count == 0)
                 XCTAssertTrue(deck.orderBook.existingOrders.count == 0)
-                XCTAssertTrue(deck.orderBook.orders.count == 0)
                 XCTAssertFalse(deck.orderBook.canAdd(orderType: .existingOrder))
                 XCTAssertFalse(deck.orderBook.canAdd(orderType: .completedOrder))
             }
