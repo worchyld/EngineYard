@@ -51,6 +51,9 @@ final class OrderBook : NSObject {
             return o.value
         })
     }
+    var totalExistingOrders: Int {
+        return (self.existingOrderValues.reduce(0, +))
+    }
 
     // Init
     init(parent: Deck) {
