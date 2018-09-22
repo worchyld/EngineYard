@@ -36,18 +36,28 @@ class CopyTests: EngineYardTests {
             return
         }
 
-        XCTAssertTrue(d1.orderBook.existingOrders.count == 1)
+        d1.orderBook.clear()
+        d1.orderBook.add(.existingOrder, values: [3,5,2])
+        XCTAssertTrue(d1.orderBook.existingOrders.count == 3)
 
         let d2 : Deck = d1.copy() as! Deck
-
-        XCTAssertTrue(d2.cards.count == d1.cards.count)
-        
-
-        d2.orderBook.clear()
-
-        XCTAssertTrue(d1.orderBook.existingOrders.count == 1)
-        XCTAssertTrue(d2.orderBook.existingOrders.count == 0)
+        XCTAssertTrue(d1.cards.count == d2.cards.count, "\(d1.cards.count) vs \(d2.cards.count)")
+        let lhs = d1.orderBook.existingOrderValues
+        let rhs = d2.orderBook.existingOrderValues
+        XCTAssertTrue( lhs == rhs , "\(lhs), \(rhs), \(d2.orderBook.description)")
 
 
+        guard let d2Order = d2.orderBook.existingOrders.first else {
+            XCTFail("No order found")
+            return
+        }
+
+        d2Order.reduce(by: 3)
+
+        XCTAssertTrue(lhs == [3,5,2], "\(lhs)")
+        XCTAssertTrue(rhs == [0,5,2], "\(rhs)")
+
+        print ("d1: \(d1.orderBook.description)")
+        print ("d2: \(d2.orderBook.description)")
     }
 }

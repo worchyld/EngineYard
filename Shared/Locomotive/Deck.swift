@@ -85,9 +85,6 @@ final class Deck : NSObject, NSCopying, DeckDelegate {
 
         self.capacity = capacity
         self.numberOfChildren = numberOfChildren
-
-        // Functional code to map the cards to children
-        //self.cards += (1...numberOfChildren).map{ _ in Card.init(parent: self) }
     }
 
     func addChildCards() {
@@ -104,7 +101,9 @@ final class Deck : NSObject, NSCopying, DeckDelegate {
 
     func copy(with zone: NSZone? = nil) -> Any {
         let copy = Deck.init(name: self.name, cost: self.cost, generation: self.generation, color: self.color, capacity: self.capacity, numberOfChildren: self.numberOfChildren)
-        //copy.cards = self.cards
+        copy.cards = self.cards
+        copy.orderBook = self.orderBook
+
         return copy
     }
 }

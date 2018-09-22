@@ -62,7 +62,7 @@ final class OrderBook : NSObject, NSCopying {
     }
 
     func copy(with zone: NSZone? = nil) -> Any {
-        let copy = OrderBook.init(parent: self.parent!)
+        let copy = OrderBook(parent: self.parent!)
         return copy
     }
 }
@@ -190,7 +190,7 @@ extension OrderBook {
     }
 }
 
-class Order : NSObject, EntryProtocol {
+class Order : NSObject, NSCopying, EntryProtocol {
     weak var parent: OrderBook?
     public private (set) var orderType: OrderType?
     public internal (set) var value: Int = 0 {
@@ -239,5 +239,10 @@ class Order : NSObject, EntryProtocol {
             return
         }
         self.value -= amount
+    }
+
+    func copy(with zone: NSZone? = nil) -> Any {
+        let copy = Order(parent: self.parent!, orderType: self.orderType!, value: self.value)
+        return copy
     }
 }
