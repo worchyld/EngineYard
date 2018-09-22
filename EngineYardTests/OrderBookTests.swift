@@ -62,16 +62,29 @@ class OrderBookTests: EngineYardTests {
             XCTAssertTrue(order == idx)
             idx += 1
         }
+    }
 
-        // empty all and test fill() function
-        firstDeck.orderBook.removeAll()
+    func testFill() {
+        let players = Mock.players(howMany: 5)
+
+        guard let game:Game = Game.setup(with: players) else {
+            XCTFail("Game object did not initialise")
+            return
+        }
+        guard let board = game.board else {
+            XCTFail("Board object not initialised")
+            return
+        }
+        guard let firstDeck = board.decks.first else {
+            XCTFail("No first deck found")
+            return
+        }
 
         firstDeck.orderBook.fill(.existingOrder)
         XCTAssertTrue(firstDeck.orderBook.existingOrders.count == firstDeck.capacity)
         XCTAssertTrue(firstDeck.orderBook.hasMaximumDice)
         XCTAssertFalse(firstDeck.orderBook.canAdd(orderType: .existingOrder)) // I should not be allowed to add existing orders
         XCTAssertFalse(firstDeck.orderBook.canAdd(orderType: .completedOrder)) // I should not be allowed to add completed orders
-
     }
 
     func testDidAddRandomValue() {
@@ -123,7 +136,30 @@ class OrderBookTests: EngineYardTests {
     }
 
     func testDidAddMultipleValues() {
+        let players = Mock.players(howMany: 5)
 
+        guard let game:Game = Game.setup(with: players) else {
+            XCTFail("Game object did not initialise")
+            return
+        }
+        guard let board = game.board else {
+            XCTFail("Board object not initialised")
+            return
+        }
+        guard let firstDeck = board.decks.first else {
+            XCTFail("No first deck found")
+            return
+        }
+
+        firstDeck.orderBook.removeAll() // force removing to test single value
+        firstDeck.orderBook.add(.existingOrder, values: [3,5,2])
+
+        XCTAssertTrue(firstDeck.orderBook.existingOrders.count == firstDeck.capacity)
+        XCTAssertTrue(firstDeck.orderBook.hasMaximumDice)
+        XCTAssertFalse(firstDeck.orderBook.canAdd(orderType: .existingOrder)) // I should not be allowed to add existing orders
+        XCTAssertFalse(firstDeck.orderBook.canAdd(orderType: .completedOrder)) // I should not be allowed to add completed orders
+
+        XCTAssertTrue(firstDeck.orderBook.existingOrderValues == [3,5,2])
     }
 
 }
