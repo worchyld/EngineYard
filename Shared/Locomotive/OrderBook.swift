@@ -63,7 +63,7 @@ final class OrderBook : NSObject, NSCopying {
 
     func copy(with zone: NSZone? = nil) -> Any {
         let copy = OrderBook(parent: self.parent!)
-        copy.orders = self.orders
+        copy.orders = self.orders.map { $0.copy() as! Order }
         return copy
     }
 }
@@ -202,6 +202,11 @@ class Order : NSObject, NSCopying, EntryProtocol {
         }
     }
 
+    func copy(with zone: NSZone? = nil) -> Any {
+        let copy = Order(parent: self.parent!, orderType: self.orderType!, value: self.value)
+        return copy
+    }
+
     init(parent: OrderBook, orderType: OrderType, value: Int? = nil) {
         super.init()
         self.parent = parent
@@ -242,8 +247,5 @@ class Order : NSObject, NSCopying, EntryProtocol {
         self.value -= amount
     }
 
-    func copy(with zone: NSZone? = nil) -> Any {
-        let copy = Order(parent: self.parent!, orderType: self.orderType!, value: self.value)
-        return copy
-    }
+
 }

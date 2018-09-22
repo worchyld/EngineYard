@@ -102,7 +102,7 @@ final class Deck : NSObject, NSCopying, DeckDelegate {
     func copy(with zone: NSZone? = nil) -> Any {
         let copy = Deck.init(name: self.name, cost: self.cost, generation: self.generation, color: self.color, capacity: self.capacity, numberOfChildren: self.numberOfChildren)
         copy.cards = self.cards
-        copy.orderBook = self.orderBook
+        copy.orderBook = self.orderBook.copy(with: zone) as! OrderBook
 
         return copy
     }
