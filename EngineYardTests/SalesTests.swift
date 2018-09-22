@@ -26,7 +26,7 @@ class SalesTests: EngineYardTests {
         let units = 3
         let orders = [3]
 
-        let handler = SalesCaseHandler(units, orders)
+        let handler = SalesCaseHandler(card: nil, units, orders)
         handler.analyse()
 
         XCTAssertTrue(handler.orders.first! == 0)
@@ -37,7 +37,7 @@ class SalesTests: EngineYardTests {
         let units = 1
         let orders = [6]
 
-        let handler = SalesCaseHandler(units, orders)
+        let handler = SalesCaseHandler(card: nil, units, orders)
         handler.analyse()
 
         let remainingUnits = (orders.first! - units)
@@ -55,7 +55,7 @@ class SalesTests: EngineYardTests {
             return orders.first! as Int
         }()*/
 
-        let handler = SalesCaseHandler(units, orders)
+        let handler = SalesCaseHandler(card: nil, units, orders)
         handler.analyse()
 
         let expectedOrders : Int = {
@@ -71,7 +71,7 @@ class SalesTests: EngineYardTests {
         let units: Int = 4
         let orders: [Int] = [3,5,2]
 
-        let handler = SalesCaseHandler(units, orders)
+        let handler = SalesCaseHandler(card: nil, units, orders)
         handler.analyse()
 
         XCTAssertTrue(handler.ruleMatched == SalesCaseType.lowerMatch)
@@ -85,7 +85,7 @@ class SalesTests: EngineYardTests {
         let units: Int = 6
         let orders: [Int] = [3,6,2]
 
-        let handler = SalesCaseHandler(units, orders)
+        let handler = SalesCaseHandler(card: nil, units, orders)
         handler.analyse()
 
         XCTAssertTrue(handler.ruleMatched == SalesCaseType.perfectMatch)
@@ -98,7 +98,7 @@ class SalesTests: EngineYardTests {
         let units: Int = 6
         let orders: [Int] = [3,5,2]
 
-        let handler = SalesCaseHandler(units, orders)
+        let handler = SalesCaseHandler(card: nil, units, orders)
         handler.analyse()
 
         XCTAssertTrue(handler.ruleMatched == SalesCaseType.higherMatch)
@@ -112,7 +112,7 @@ class SalesTests: EngineYardTests {
         let units: Int = 9
         let orders: [Int] = [3,5,2]
 
-        let handler = SalesCaseHandler(units, orders)
+        let handler = SalesCaseHandler(card: nil, units, orders)
         handler.analyse()
 
         XCTAssertTrue(handler.ruleMatched == SalesCaseType.higherMatch)
@@ -125,7 +125,7 @@ class SalesTests: EngineYardTests {
         var units: Int = 1
         var orders: [Int] = [12,1,1]
 
-        let handler = SalesCaseHandler(units, orders)
+        let handler = SalesCaseHandler(card: nil, units, orders)
         handler.salesLoop()
         units = handler.units
         orders = handler.orders
@@ -178,15 +178,16 @@ class SalesTests: EngineYardTests {
         XCTAssertTrue(firstDeck.owners?.count == 1)
         XCTAssertTrue(firstDeck.owners?.first == firstPlayer)
 
+
         let orders: [Int] = firstDeck.orderBook.existingOrderValues
         let units: Int = firstCard.production.units
 
-        let handler = SalesCaseHandler(units, orders)
+        let handler = SalesCaseHandler(card: firstCard, units, orders)
         handler.salesLoop()
 
-        print(handler.description)
-        print(firstDeck.description)
-        print(firstCard.description)
+        XCTAssertTrue(handler.salesBook.total > 0)
+        print (handler.salesBook.total)
+
 
     }
 

@@ -69,11 +69,27 @@ extension OrderBook {
 }
 
 extension OrderBook {
-    func add(_ orderType: OrderType) {
-        if (canAdd(orderType: orderType)) {
-            let newOrder = Order.init(parent: self, orderType: orderType)
-            self.orders.append(newOrder)
+    func add(_ orderType: OrderType, values: [Int]? =  nil) {
+        if let values = values {
+            // walk through each value
+            let _ = values.map { (value: Int) -> Void in
+                guard value > 0 else {
+                    return
+                }
+                if (canAdd(orderType: orderType)) {
+                    let order: Order = Order(parent: self, orderType: orderType, value: value)
+                    self.orders.append( order )
+                }
+            }
         }
+        else {
+            // add a random value
+            if (canAdd(orderType: orderType)) {
+                let order: Order = Order(parent: self, orderType: orderType)
+                self.orders.append( order )
+            }
+        }
+
     }
 
     internal func canAdd(orderType: OrderType) -> Bool {
@@ -124,7 +140,6 @@ extension OrderBook {
         return (orderCount + salesCount)
     }
 
-    //func transfer<C1: Any>(order: C1, index: Int) where C1: EntryProtocol {
     func transfer<C1: Any>(order: C1) where C1: EntryProtocol {
         if let orderObj = order as? Order {
             orderObj.transfer()
@@ -180,11 +195,16 @@ class Order : NSObject, EntryProtocol {
         }
     }
 
-    init(parent: OrderBook, orderType: OrderType) {
+    init(parent: OrderBook, orderType: OrderType, value: Int? = nil) {
         super.init()
         self.parent = parent
         self.orderType = orderType
-        self.generate()
+        if let value = value {
+            self.value = value
+        }
+        else {
+            self.generate()
+        }
     }
 
     func generate() {

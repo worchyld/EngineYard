@@ -15,6 +15,7 @@ enum SalesCaseType: Int {
 }
 
 struct Sale {
+    weak var product: Card?
     var units : Int // unitsSold
     var price : Int
     var income : Int {
@@ -27,7 +28,10 @@ struct Sale {
         return (units * price)
     }
 
-    init(units: Int, price: Int) {
+    init(card: Card? = nil, units: Int, price: Int) {
+        if let card = card {
+            self.product = card
+        }
         self.units = units
         self.price = price
     }
@@ -36,6 +40,11 @@ struct Sale {
 class SalesBook : CustomStringConvertible {
     weak var player: Player?
     var sales: [Sale] = [Sale]()
+
+    var total : Int {
+        return sales.reduce(0) { $0 + $1.income }
+    }
+
 
     func add(sale: Sale) {
         self.sales.append(sale)
@@ -48,16 +57,21 @@ class SalesBook : CustomStringConvertible {
 
 protocol SalesBookProtocol {
     func add(sale: Sale)
+    func record(unitsSold: Int)
 }
 
 class SalesCaseHandler : SalesBookProtocol {
     var salesBook : SalesBook = SalesBook()
+    private var card: Card?
     public private (set) var units: Int
     public private (set) var orders: [Int]
     public private (set) var ruleMatched: SalesCaseType?
     var delegate: SalesBookProtocol!
 
-    init(_ units: Int, _ orders: [Int]) {
+    init(card: Card?, _ units: Int, _ orders: [Int]) {
+        if let card = card {
+            self.card = card
+        }
         self.units = units
         self.orders = orders
         self.delegate = self
@@ -116,7 +130,7 @@ class SalesCaseHandler : SalesBookProtocol {
         self.orders[tuple.0] -= unitsSold
         self.units -= unitsSold
 
-        delegate.add(sale: Sale(units: unitsSold, price: 1))
+        self.delegate.record(unitsSold: unitsSold)
     }
 
     private func handleLowerMatch(tuple: (Int, Int)) {
@@ -125,7 +139,7 @@ class SalesCaseHandler : SalesBookProtocol {
         self.orders[tuple.0] -= unitsSold
         self.units -= unitsSold
 
-        delegate.add(sale: Sale(units: unitsSold, price: 1))
+        self.delegate.record(unitsSold: unitsSold)
     }
 
     /* The player sells a number of produced units equal to the highest die */
@@ -140,7 +154,7 @@ class SalesCaseHandler : SalesBookProtocol {
         self.orders[tuple.0] -= unitsSold
         self.units -= unitsSold
 
-        delegate.add(sale: Sale(units: unitsSold, price: 1))
+        self.delegate.record(unitsSold: unitsSold)
     }
 }
 
@@ -153,5 +167,17 @@ extension SalesCaseHandler : CustomStringConvertible {
 extension SalesCaseHandler {
     func add(sale: Sale) {
         self.salesBook.add(sale: sale)
+    }
+
+    func record(unitsSold: Int) {
+        if let card = self.card {
+            guard let parent = card.parent else {
+                return
+            }
+            delegate.add(sale: Sale(card: card, units: unitsSold, price: parent.income))
+        }
+        else {
+            delegate.add(sale: Sale(units: unitsSold, price: 1))
+        }
     }
 }
