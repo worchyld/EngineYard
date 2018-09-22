@@ -38,6 +38,7 @@
 		4DA8396B2136AE7900F7CAB9 /* GameBoardSetupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8396A2136AE7900F7CAB9 /* GameBoardSetupTests.swift */; };
 		4DA8396D2136B0ED00F7CAB9 /* GameSetupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8396C2136B0ED00F7CAB9 /* GameSetupManager.swift */; };
 		4DA92C0F2156186400AD19B7 /* OrderBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA92C0E2156186400AD19B7 /* OrderBookTests.swift */; };
+		4DA92C212156874500AD19B7 /* CopyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA92C202156874500AD19B7 /* CopyTests.swift */; };
 		4DB344B221403B3C00B42E78 /* SalesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB344B121403B3C00B42E78 /* SalesTests.swift */; };
 		4DB344B421403B8900B42E78 /* SalesRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB344B321403B8900B42E78 /* SalesRule.swift */; };
 		4DC5AEE6214E7A1500D2841D /* MarketDemandsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC5AEE5214E7A1500D2841D /* MarketDemandsTests.swift */; };
@@ -97,6 +98,7 @@
 		4DA8396A2136AE7900F7CAB9 /* GameBoardSetupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardSetupTests.swift; sourceTree = "<group>"; };
 		4DA8396C2136B0ED00F7CAB9 /* GameSetupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetupManager.swift; sourceTree = "<group>"; };
 		4DA92C0E2156186400AD19B7 /* OrderBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookTests.swift; sourceTree = "<group>"; };
+		4DA92C202156874500AD19B7 /* CopyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyTests.swift; sourceTree = "<group>"; };
 		4DB344B121403B3C00B42E78 /* SalesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesTests.swift; sourceTree = "<group>"; };
 		4DB344B321403B8900B42E78 /* SalesRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesRule.swift; sourceTree = "<group>"; };
 		4DC5AEE5214E7A1500D2841D /* MarketDemandsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDemandsTests.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				4D617D552081EE110036BB00 /* DieTests.swift */,
 				4D3DF4B620834679000DF88E /* WalletTests.swift */,
 				4DA3486A20812972006DA164 /* Info.plist */,
+				4DEE87262152244B0038F0CF /* GameStateTests.swift */,
 				4DA8396A2136AE7900F7CAB9 /* GameBoardSetupTests.swift */,
 				4D28478F2137FC3500C81B5C /* BoardUnlockTests.swift */,
 				4D2847912138147200C81B5C /* ProductionTests.swift */,
@@ -201,7 +204,7 @@
 				4DA92C0E2156186400AD19B7 /* OrderBookTests.swift */,
 				4DEE87162151B6130038F0CF /* TurnOrderTests.swift */,
 				4DC5AEE5214E7A1500D2841D /* MarketDemandsTests.swift */,
-				4DEE87262152244B0038F0CF /* GameStateTests.swift */,
+				4DA92C202156874500AD19B7 /* CopyTests.swift */,
 			);
 			path = EngineYardTests;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 			files = (
 				4D3DF4B720834679000DF88E /* WalletTests.swift in Sources */,
 				4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */,
+				4DA92C212156874500AD19B7 /* CopyTests.swift in Sources */,
 				4DA92C0F2156186400AD19B7 /* OrderBookTests.swift in Sources */,
 				4DEE87272152244B0038F0CF /* GameStateTests.swift in Sources */,
 				4DB344B221403B3C00B42E78 /* SalesTests.swift in Sources */,

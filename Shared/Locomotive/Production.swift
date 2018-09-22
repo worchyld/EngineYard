@@ -16,7 +16,7 @@ enum ProductionError : Error {
     case cannotUpgradeDownstream
 }
 
-final class Production {
+final class Production : NSObject, NSCopying {
     public private (set) weak var parent: Card?
     public private (set) var units: Int = 0 {
         didSet {
@@ -72,6 +72,11 @@ final class Production {
         guard (self.units - amount >= 0) else {
             throw ProductionError.notEnoughUnits
         }
+    }
+
+    func copy(with zone: NSZone? = nil) -> Any {
+        let copy = Production.init()
+        return copy
     }
 }
 

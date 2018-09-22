@@ -23,7 +23,7 @@ protocol DeckDelegate {
 }
 
 
-final class Deck : NSObject, DeckDelegate {
+final class Deck : NSObject, NSCopying, DeckDelegate {
     public fileprivate (set) var subscribers: [GameBoardDelegate] = []
 
     // Each deck has a series of cards
@@ -87,11 +87,25 @@ final class Deck : NSObject, DeckDelegate {
         self.numberOfChildren = numberOfChildren
 
         // Functional code to map the cards to children
+        //self.cards += (1...numberOfChildren).map{ _ in Card.init(parent: self) }
+    }
+
+    func addChildCards() {
+        guard self.cards.count == 0 else {
+            return
+        }
+        // Functional code to add child cards
         self.cards += (1...numberOfChildren).map{ _ in Card.init(parent: self) }
     }
 
     deinit {
         self.removeSubscribers()
+    }
+
+    func copy(with zone: NSZone? = nil) -> Any {
+        let copy = Deck.init(name: self.name, cost: self.cost, generation: self.generation, color: self.color, capacity: self.capacity, numberOfChildren: self.numberOfChildren)
+        //copy.cards = self.cards
+        return copy
     }
 }
 

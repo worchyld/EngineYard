@@ -17,7 +17,7 @@ protocol EntryProtocol {
     var value: Int { get set }
 }
 
-final class OrderBook : NSObject {
+final class OrderBook : NSObject, NSCopying {
     public private (set) weak var parent: Deck?
     public private (set) var orders: [Order] = [Order]()
 
@@ -59,6 +59,11 @@ final class OrderBook : NSObject {
 
     deinit {
         self.orders.removeAll()
+    }
+
+    func copy(with zone: NSZone? = nil) -> Any {
+        let copy = OrderBook.init(parent: self.parent!)
+        return copy
     }
 }
 
@@ -130,7 +135,8 @@ extension OrderBook {
         }
     }
 
-    func removeAll() {
+    // formely `removeAll`
+    func clear() {
         self.orders.removeAll()
     }
 

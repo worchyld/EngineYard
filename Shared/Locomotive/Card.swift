@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class Card : NSObject  {
+final class Card : NSObject, NSCopying {
     public let name: String = UUID().uuidString
 
     public private(set) weak var parent : Deck?
@@ -27,6 +27,11 @@ final class Card : NSObject  {
     deinit {
         self.owner = nil
         self.parent = nil
+    }
+
+    func copy(with zone: NSZone? = nil) -> Any {
+        let copy = Card.init(parent: self.parent!)
+        return copy
     }
 }
 

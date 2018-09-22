@@ -57,6 +57,7 @@ final class Board : NSObject, GameBoardDelegate {
 
         // add deck subscriber
         let _ = decks.map({
+            $0.addChildCards()
             $0.addSubscriber(self)
         })
 
