@@ -47,7 +47,7 @@ class OrderBookTests: EngineYardTests {
         XCTAssertFalse(firstDeck.orderBook.canAdd(orderType: .completedOrder)) // I should not be allowed to add completed orders
 
         // empty all and try with specific values
-        firstDeck.orderBook.removeAll()
+        firstDeck.orderBook.clear()
 
         let overfill = [1,2,3,4,5,6,7,8,9,10]
         firstDeck.orderBook.add(.existingOrder, values: overfill)
@@ -125,7 +125,7 @@ class OrderBookTests: EngineYardTests {
             return
         }
 
-        firstDeck.orderBook.removeAll() // force removing to test single value
+        firstDeck.orderBook.clear() // force removing to test single value
         firstDeck.orderBook.add(.existingOrder, values: [1])
 
         XCTAssertTrue(firstDeck.capacity == 3)
@@ -151,7 +151,7 @@ class OrderBookTests: EngineYardTests {
             return
         }
 
-        firstDeck.orderBook.removeAll() // force removing to test single value
+        firstDeck.orderBook.clear() // force removing to test single value
         firstDeck.orderBook.add(.existingOrder, values: [3,5,2])
 
         XCTAssertTrue(firstDeck.orderBook.existingOrders.count == firstDeck.capacity)
@@ -178,7 +178,7 @@ class OrderBookTests: EngineYardTests {
             return
         }
 
-        firstDeck.orderBook.removeAll() // force removing to test single value
+        firstDeck.orderBook.clear() // force removing to test single value
         firstDeck.orderBook.add(.existingOrder, values: [3,5,2])
 
         guard let order = firstDeck.orderBook.existingOrders.first else {

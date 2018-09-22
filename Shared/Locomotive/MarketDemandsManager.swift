@@ -103,7 +103,7 @@ struct MarketDemandsManager {
         for (index, element) in decks.enumerated() {
             switch index {
             case 0:
-                element.orderBook.removeAll()
+                element.orderBook.clear()
                 element.markAsObsolete()
                 break
             case 1:
