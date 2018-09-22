@@ -52,7 +52,7 @@ private struct ViewModel {
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     private lazy var tableView: UITableView = {
-        let tv = UITableView(frame: self.view.frame, style: UITableViewStyle.plain)
+        let tv = UITableView(frame: self.view.frame, style: UITableView.Style.plain)
         tv.delegate = self
         tv.dataSource = self
         tv.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)

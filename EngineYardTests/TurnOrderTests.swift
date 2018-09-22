@@ -29,9 +29,9 @@ class TurnOrderTests: EngineYardTests {
     }
 
     func testShuffled() {
-        var numbers = [1,2,3,4,5]
-        numbers = numbers.shuffled()
-        print (numbers)
+        let numbers = [1,2,3,4,5]
+        let result = numbers.shuffled()
+        print (result)
     }
 
     func testShufflePlayers() {

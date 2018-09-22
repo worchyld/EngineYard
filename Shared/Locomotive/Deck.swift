@@ -63,7 +63,7 @@ final class Deck : NSObject, DeckDelegate {
     var owners: [Player]? {
         return self.cards
             .lazy
-            .flatMap { card in card.owner.map{ (card: card, owner: $0) } }
+            .compactMap { card in card.owner.map{ (card: card, owner: $0) } }
             //.sorted { $0.owner.turnOrder < $1.owner.turnOrder }
             .map { $0.owner }
     }

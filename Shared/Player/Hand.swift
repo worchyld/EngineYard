@@ -68,7 +68,7 @@ extension Hand {
         guard let ownership = self.owner else {
             return "No owner"
         }
-        return ("Hand owner: \(ownership.name) - # Cards: \(self.cards.count)")
+        return ("Hand owner: \(String(describing: ownership.name)) - # Cards: \(self.cards.count)")
     }
 }
 
