@@ -113,6 +113,7 @@ class SalesTests: EngineYardTests {
         XCTAssertTrue(player.salesBook.total == ((3 + 5 + 2) * firstDeck.income) )
     }
 
+    /*
     func testSellFromDeck() {
         guard let game:Game = (Game.setup(with: Mock.players(howMany: 5))) else {
             XCTFail("Game object did not initialise")
@@ -143,6 +144,6 @@ class SalesTests: EngineYardTests {
 
         // #warning: incomplete tests
     }
-
+    */
  
 }
