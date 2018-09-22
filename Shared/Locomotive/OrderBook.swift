@@ -19,7 +19,7 @@ protocol EntryProtocol {
 
 final class OrderBook : NSObject {
     public private (set) weak var parent: Deck?
-    public private (set) var orders: [Order] = [Order]()
+    private var orders: [Order] = [Order]()
 
     var hasMaximumDice: Bool {
         guard let hasParent: Deck = self.parent else {
@@ -50,6 +50,9 @@ final class OrderBook : NSObject {
         return self.completedOrders.compactMap({ (o:Order) -> Int in
             return o.value
         })
+    }
+    var totalExistingOrders: Int {
+        return (self.existingOrderValues.reduce(0, +))
     }
 
     // Init
@@ -182,6 +185,7 @@ extension OrderBook {
             self.orders.remove(at: sortedElementsAndIndices.offset)
         }
     }
+
 }
 
 class Order : NSObject, EntryProtocol {
