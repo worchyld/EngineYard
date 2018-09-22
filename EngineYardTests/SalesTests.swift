@@ -141,6 +141,6 @@ class SalesTests: EngineYardTests {
         XCTAssertTrue(firstDeck.owners?.count == 1)
         XCTAssertTrue(firstDeck.cards.first == firstUnownedCard)
 
-        firstDeck.sell()
+        
     }
 }
