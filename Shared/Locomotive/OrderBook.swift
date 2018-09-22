@@ -63,6 +63,7 @@ final class OrderBook : NSObject, NSCopying {
 
     func copy(with zone: NSZone? = nil) -> Any {
         let copy = OrderBook(parent: self.parent!)
+        copy.orders = self.orders
         return copy
     }
 }
