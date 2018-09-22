@@ -40,6 +40,7 @@
 		4DA92C0F2156186400AD19B7 /* OrderBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA92C0E2156186400AD19B7 /* OrderBookTests.swift */; };
 		4DA92C112156496700AD19B7 /* SalesBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA92C102156496700AD19B7 /* SalesBook.swift */; };
 		4DA92C1321564A0500AD19B7 /* Sale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA92C1221564A0500AD19B7 /* Sale.swift */; };
+		4DA92C1521564C0E00AD19B7 /* SalesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA92C1421564C0E00AD19B7 /* SalesTests.swift */; };
 		4DC5AEE6214E7A1500D2841D /* MarketDemandsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC5AEE5214E7A1500D2841D /* MarketDemandsTests.swift */; };
 		4DC5AEE8214ED9E500D2841D /* MarketDemandsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC5AEE7214ED9E500D2841D /* MarketDemandsManager.swift */; };
 		4DE3872521527B4300BFF9DB /* PhaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3872421527B4300BFF9DB /* PhaseManager.swift */; };
@@ -98,6 +99,7 @@
 		4DA92C0E2156186400AD19B7 /* OrderBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookTests.swift; sourceTree = "<group>"; };
 		4DA92C102156496700AD19B7 /* SalesBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesBook.swift; sourceTree = "<group>"; };
 		4DA92C1221564A0500AD19B7 /* Sale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sale.swift; sourceTree = "<group>"; };
+		4DA92C1421564C0E00AD19B7 /* SalesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesTests.swift; sourceTree = "<group>"; };
 		4DC5AEE5214E7A1500D2841D /* MarketDemandsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDemandsTests.swift; sourceTree = "<group>"; };
 		4DC5AEE7214ED9E500D2841D /* MarketDemandsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDemandsManager.swift; sourceTree = "<group>"; };
 		4DE3872421527B4300BFF9DB /* PhaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhaseManager.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				4DEE87162151B6130038F0CF /* TurnOrderTests.swift */,
 				4DC5AEE5214E7A1500D2841D /* MarketDemandsTests.swift */,
 				4DEE87262152244B0038F0CF /* GameStateTests.swift */,
+				4DA92C1421564C0E00AD19B7 /* SalesTests.swift */,
 			);
 			path = EngineYardTests;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D3DF4B720834679000DF88E /* WalletTests.swift in Sources */,
+				4DA92C1521564C0E00AD19B7 /* SalesTests.swift in Sources */,
 				4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */,
 				4DA92C0F2156186400AD19B7 /* OrderBookTests.swift in Sources */,
 				4DEE87272152244B0038F0CF /* GameStateTests.swift in Sources */,
