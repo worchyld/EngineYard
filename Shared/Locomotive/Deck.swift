@@ -49,15 +49,6 @@ final class Deck : NSObject, NSCopying, DeckDelegate {
 
     // OrderBook
     lazy var orderBook: OrderBook = OrderBook(parent: self)
-    var existingOrders : [Int] {
-        return orderBook.existingOrderValues
-    }
-    var completedOrders : [Int] {
-        return orderBook.completedOrderValues
-    }
-    var currentNumberOfDice: Int {
-        return (self.existingOrders.count + self.completedOrders.count)
-    }
 
     // Ownership
     var owners: [Player]? {

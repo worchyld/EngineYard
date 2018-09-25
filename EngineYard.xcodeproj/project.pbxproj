@@ -50,6 +50,7 @@
 		4DEE87172151B6130038F0CF /* TurnOrderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE87162151B6130038F0CF /* TurnOrderTests.swift */; };
 		4DEE8725215224430038F0CF /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE8724215224430038F0CF /* StateMachine.swift */; };
 		4DEE87272152244B0038F0CF /* GameStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE87262152244B0038F0CF /* GameStateTests.swift */; };
+		4DFB8217215A042C0036F9FD /* SalesRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA92C1621565E5200AD19B7 /* SalesRule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,8 +144,8 @@
 				4DA92C102156496700AD19B7 /* SalesBook.swift */,
 				4DA92C1221564A0500AD19B7 /* Sale.swift */,
 				4DA92C1621565E5200AD19B7 /* SalesRule.swift */,
-				4DC5AEE7214ED9E500D2841D /* MarketDemandsManager.swift */,
 				4D50C4F021569DA000E43C77 /* Selling.swift */,
+				4DC5AEE7214ED9E500D2841D /* MarketDemandsManager.swift */,
 			);
 			path = Locomotive;
 			sourceTree = "<group>";
@@ -378,6 +379,7 @@
 				4D3DF4B920835DB7000DF88E /* Rules.swift in Sources */,
 				4D95B5A221569C5500DF91E5 /* SalesBook.swift in Sources */,
 				4DA5236E20815960000FFAAB /* Tax.swift in Sources */,
+				4DFB8217215A042C0036F9FD /* SalesRule.swift in Sources */,
 				4D1BD48B2083846500051FD9 /* Card.swift in Sources */,
 				4DEE8725215224430038F0CF /* StateMachine.swift in Sources */,
 				4DC5AEE8214ED9E500D2841D /* MarketDemandsManager.swift in Sources */,
