@@ -58,7 +58,7 @@ final class Deck : NSObject, NSCopying, DeckDelegate {
         return self.cards
             .lazy
             .compactMap { card in card.owner.map{ (card: card, owner: $0) } }
-            //.sorted { $0.owner.turnOrder < $1.owner.turnOrder }
+            .sorted { $0.owner.turnOrder < $1.owner.turnOrder }
             .map { $0.owner }
     }
 

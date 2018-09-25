@@ -94,4 +94,61 @@ class TurnOrderTests: EngineYardTests {
         XCTAssertTrue(game.turnOrderIndex == 0, "\(game.turnOrderIndex)")
         XCTAssertTrue(activePlayer.playerId == players[game.turnOrderIndex].playerId, "\(activePlayer.playerId)")
     }
+
+    func testSalesTurnOrder() {
+        guard let game:Game = Game.setup(with: Mock.players(howMany: 5)) else {
+            XCTFail("Game object did not initialise")
+            return
+        }
+        guard let board = game.board else {
+            XCTFail("Board object not initialised")
+            return
+        }
+        guard let firstDeck = board.decks.first else {
+            XCTFail("No first deck found")
+            return
+        }
+
+        game.shuffleTurnOrder()
+        game.activePlayer = game.players?.first
+
+        guard let players = game.players as? [Player] else {
+            XCTFail("No players")
+            return
+        }
+
+        for player in players {
+            guard let card = firstDeck.findFirstUnownedCard() else {
+                break
+            }
+            XCTAssertNoThrow(try player.hand.add(card))
+        }
+
+        for (index, player) in players.enumerated() {
+            if (index < firstDeck.cards.count) {
+                XCTAssertTrue(player.hand.cards.count == 1)
+            }
+            else {
+                XCTAssertTrue(player.hand.cards.count == 0)
+            }
+        }
+
+        // test sales turn order
+        for (index, player) in players.enumerated() {
+            print ("index: \(index), \(player.description)")
+        }
+
+        print ("----")
+
+        guard let owners = firstDeck.owners else {
+            return
+        }
+        for (index, owner) in owners.enumerated() {
+            print ("index: \(index), \(owner.description)")
+        }
+
+    }
+
+
+
 }

@@ -20,7 +20,7 @@ class SalesTests: EngineYardTests {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-
+    // Test on shadow copy
     func testSalesLoop() {
         guard let game:Game = (Game.setup(with: Mock.players(howMany: 5))) else {
             XCTFail("Game object did not initialise")
@@ -71,13 +71,6 @@ class SalesTests: EngineYardTests {
                 }
             }
         }
-
-
-        /*
-        let sell = Selling(decks: board.decks)
-        sell.salesLoop()
-        print (">> \(sell.description) <<")
-        */
 
     }
 

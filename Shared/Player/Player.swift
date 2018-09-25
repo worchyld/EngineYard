@@ -15,6 +15,7 @@ class Player : NSObject, NSCopying, GKGameModelPlayer {
             print ("Set playerId = \(self.playerId)")
         }
     }
+    public private (set) var turnOrder: Int = 0
 
     var name : String!
     var cash : Int {
@@ -46,6 +47,10 @@ extension Player {
 
     func setPlayerId(_ playerId: Int) {
         self.playerId = playerId
+    }
+
+    func setTurnOrderIndex(_ value: Int) {
+        self.turnOrder = value
     }
 }
 
