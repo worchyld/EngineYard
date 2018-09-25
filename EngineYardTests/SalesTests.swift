@@ -113,4 +113,31 @@ class SalesTests: EngineYardTests {
         XCTAssertTrue(player.salesBook.total == ((3 + 5 + 2) * firstDeck.income) )
     }
 
+    func testSalesLoop() {
+        guard let game:Game = (Game.setup(with: Mock.players(howMany: 5))) else {
+            XCTFail("Game object did not initialise")
+            return
+        }
+        guard let board = game.board else {
+            XCTFail("Board object not initialised")
+            return
+        }
+        guard let firstDeck = board.decks.first else {
+            XCTFail("No first deck found")
+            return
+        }
+        guard let player = game.players?.first as? Player else {
+            print ("No player found")
+            return
+        }
+        guard let unownedCard = firstDeck.findFirstUnownedCard() else {
+            return
+        }
+        XCTAssertNoThrow(try player.hand.add(unownedCard))
+
+        let sell = Selling(decks: board.decks)
+        sell.salesLoop()
+
+    }
+
 }

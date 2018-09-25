@@ -13,6 +13,7 @@ import Foundation
 class Selling : NSObject {
 
     private var _decks: [Deck] = [Deck]()
+    private var makeCopy: Bool = true
 
     lazy var filtered = self._decks
         .filter { (d: Deck) -> Bool in
@@ -26,14 +27,22 @@ class Selling : NSObject {
         }
     )
 
-    init(decks: [Deck]) {
+    init(decks: [Deck], makeCopy: Bool = true) {
         self._decks = decks
+        self.makeCopy = makeCopy
         super.init()
     }
 
 
     func salesLoop() {
-        let decks = self.filtered.map{ $0.copy() as! Deck }
+        var decks: [Deck]
+
+        if (self.makeCopy) {
+            decks = self.filtered.map{ $0.copy() as! Deck }
+        }
+        else {
+            decks = self.filtered
+        }
 
         for deck in decks {
             var condition = true
@@ -49,30 +58,30 @@ class Selling : NSObject {
 
                     if let match = rule.perfectMatch(units) {
                         print("Found perfect match for: \(units) in orders \(rule.orders) at index: \(match.0) which is the value \(match.1)")
-                        self.handlePerfectMatch(tuple: match)
+                        self.handlePerfectMatch(deck: deck, card: card, tuple: match)
                     }
                     else {
                         if let match = rule.lowerMatch(units) {
                             print("Found lower match for: \(units) in orders \(rule.orders) at index: \(match.0) which is the value \(match.1)")
-                            self.handleLowerMatch(tuple: match)
+                            self.handleLowerMatch(deck: deck, card: card, tuple: match)
                         }
                         else {
                             if let match = rule.higherMatch(units) {
                                 print("Found higher match for: \(units) in orders \(rule.orders) at index: \(match.0) which is the value \(match.1)")
-                                self.handleHigherMatch(tuple: match)
+                                self.handleHigherMatch(deck: deck, card: card, tuple: match)
                             }
                         }
                     }
-
-                    condition = true // #todo
                 } // next
 
+                condition = false // #todo
 
                 // update condition
+                /*
                 condition = (
                     (cardsWithProduction(deck: deck).count > 0) &&
                     (deck.orderBook.existingOrders.count > 0)
-                )
+                )*/
             }
         }
     }
@@ -88,13 +97,14 @@ class Selling : NSObject {
         return results
     }
 
-    private func handlePerfectMatch(tuple: (Int, Int)) {
+    private func handlePerfectMatch(deck: Deck, card: Card, tuple: (Int, Int)) {
+        
     }
 
-    private func handleLowerMatch(tuple: (Int, Int)) {
+    private func handleLowerMatch(deck: Deck, card: Card, tuple: (Int, Int)) {
     }
 
-    private func handleHigherMatch(tuple: (Int, Int)) {
+    private func handleHigherMatch(deck: Deck, card: Card, tuple: (Int, Int)) {
     }
 
 
