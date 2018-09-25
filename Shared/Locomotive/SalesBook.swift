@@ -9,26 +9,26 @@
 import Foundation
 
 class SalesBook : NSObject, NSCopying {
-    weak var parent : Deck?
+    weak var owner: Player?
     var sales: [Sale] = [Sale]()
-    var totalUnits : Int {
+    var totalUnitsSold : Int {
         return self.sales.reduce(0, { $0 + $1.units } )
     }
-    var total : Int {
+    var totalDollarValue : Int {
         return self.sales.reduce(0, { $0 + $1.total } )
     }
 
     override var description: String {
-        return ("SalesBook: #items: \(self.sales.count)  #units: \(self.totalUnits), Total $\(self.total)")
+        return ("SalesBook: #items: \(self.sales.count)  #units: \(self.totalUnitsSold), Total $\(self.totalDollarValue)")
     }
 
-    init(parent: Deck) {
-        self.parent = parent
+    init(owner: Player) {
         super.init()
+        self.owner = owner
     }
 
     func copy(with zone: NSZone? = nil) -> Any {
-        let copy = SalesBook.init(parent: self.parent!)
+        let copy = SalesBook(owner: self.owner!)
         return copy
     }
 

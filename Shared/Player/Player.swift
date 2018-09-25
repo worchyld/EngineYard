@@ -22,7 +22,12 @@ class Player : NSObject, NSCopying, GKGameModelPlayer {
         return self.wallet.balance
     }
     var wallet : Wallet = Wallet()
-    lazy var hand : Hand = Hand(owner: self) // Hand of cards
+
+    // Hand of cards
+    lazy var hand : Hand = Hand(owner: self)
+
+    // SalesBook
+    lazy var salesBook : SalesBook = SalesBook(owner: self)
 
     init(name: String) {
         self.name = name

@@ -124,4 +124,18 @@ extension Board {
         return filtered
     }
 
+    public static func findCard(productId: String, in decks:[Deck]) -> Card? {
+        let results = decks.flatMap {
+            $0.cards
+                .filter({ (c: Card) -> Bool in
+                    return (c.name == productId)
+                })
+        }
+        
+        guard let filtered = results.first else {
+            return nil
+        }
+        return filtered
+    }
+
 }
