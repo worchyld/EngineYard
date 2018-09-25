@@ -109,4 +109,19 @@ extension Board {
         return results
     }
 
+    public static func filterDecksWithExistingOrders(decks: [Deck]) -> [Deck] {
+        let filtered = decks
+            .filter { (d: Deck) -> Bool in
+                return ((d.orderBook.existingOrders.count > 0) &&
+                    (d.orderBook.totalExistingOrders > 0) &&
+                    (d.owners?.count ?? 0 > 0) &&
+                    (d.active)
+                )}
+            .sorted(by: { (t1: Deck, t2: Deck) -> Bool in
+                return (t1.cost < t2.cost)
+            }
+        )
+        return filtered
+    }
+
 }

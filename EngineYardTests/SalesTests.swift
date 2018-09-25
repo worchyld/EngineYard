@@ -54,20 +54,10 @@ class SalesTests: EngineYardTests {
         playerCard.production.add(9)
         XCTAssertTrue(playerCard.production.units == 10)
 
+        // COPY THE BOARD FIRST!!
+        let copyBoard = board.copy() as! Board
 
-        let filtered = board.decks
-            .filter { (d: Deck) -> Bool in
-                return ((d.orderBook.existingOrders.count > 0) &&
-                    (d.orderBook.totalExistingOrders > 0) &&
-                    (d.owners?.count ?? 0 > 0) &&
-                    (d.active)
-                )}
-            .sorted(by: { (t1: Deck, t2: Deck) -> Bool in
-                return (t1.cost < t2.cost)
-            }
-        )
-
-        let decks = filtered.map{ $0.copy() as! Deck }
+        let decks: [Deck] = Board.filterDecksWithExistingOrders(decks: copyBoard.decks)
 
         for deck in decks {
             for card in deck.cards {

@@ -117,6 +117,53 @@ class CopyTests: EngineYardTests {
         XCTAssertTrue(totalUnits == 0)
     }
 
+    func testMockSale() {
+        guard let firstPlayer = game.players?.first as? Player else {
+            return
+        }
+        guard let firstDeck = board.decks.first else {
+            return
+        }
+        guard let card = firstDeck.findFirstUnownedCard() else {
+            return
+        }
+
+        XCTAssertNoThrow(try firstPlayer.hand.add(card))
+        firstDeck.orderBook.clear()
+        firstDeck.orderBook.add(.existingOrder, values: [3,5,2])
+        card.production.add(9)
+
+        XCTAssertTrue(card.production.units == 10)
+
+        let copyBoard = board.copy() as! Board
+
+        let filtered : [Deck] = Board.filterDecksWithExistingOrders(decks: copyBoard.decks)
+
+        for deck in filtered {
+            for card in deck.cards {
+
+                do {
+                    let unitsSold = card.production.units
+                    try card.production.spend(unitsSold)
+                    deck.orderBook.reduceValueAt(index: 0, byValue: unitsSold)
+                } catch let err {
+                    print (err.localizedDescription)
+                }
+            }
+        }
+
+        print ("-----")
+
+        print ("firstDeck = \(firstDeck)")
+        print ("player = \(firstPlayer)")
+        print ("card = \(card)")
+
+        // I expect the original state not to have changed, and that all affects are on the copy
+        XCTAssertTrue(firstPlayer.hand.cards.first?.production.units == 10)
+        XCTAssertTrue(card.production.units == 10)
+        XCTAssertTrue(firstDeck.orderBook.existingOrderValues == [3,5,2])
+    }
+
     func testCopyDeck() {
         let players = Mock.players(howMany: 5)
 
