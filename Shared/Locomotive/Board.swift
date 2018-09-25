@@ -30,21 +30,6 @@ final class Board : NSObject, GameBoardDelegate {
         return (self.decks.reduce(0) { $0 + ($1.active ? 1 : 0) })
     }
 
-    public var filtered: [Deck] {
-        let filtered = self.decks
-            .filter { (d: Deck) -> Bool in
-            return ((d.orderBook.existingOrders.count > 0) &&
-                (d.orderBook.totalExistingOrders > 0) &&
-                (d.owners?.count ?? 0 > 0) &&
-                (d.active)
-            )}
-            .sorted(by: { (t1: Deck, t2: Deck) -> Bool in
-                return (t1.cost < t2.cost)
-            }
-        )
-        return filtered
-    }
-
     override init() {
         super.init()
         self._decks = prepare()
