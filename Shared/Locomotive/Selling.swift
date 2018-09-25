@@ -8,12 +8,15 @@
 
 import Foundation
 
-// handles selling?
+protocol SalesRecordDelegate {
+    func addSalesRecord(card: Card, units: Int, price: Int)
+}
 
-class Selling : CustomStringConvertible {
+class Selling : CustomStringConvertible, SalesRecordDelegate {
 
     private var _decks: [Deck] = [Deck]()
     private var makeCopy: Bool = true
+    lazy var delegate: SalesRecordDelegate = self
 
     var description: String {
         return ""
@@ -49,12 +52,10 @@ class Selling : CustomStringConvertible {
 
         for deck in decks {
 
-
             var condition = true
             while (condition == true) {
 
                 for card in cardsWithProduction(deck: deck) {
-
 
                     let orders = deck.orderBook.existingOrderValues
                     let rule = SalesRule.init(orders)
@@ -106,11 +107,12 @@ class Selling : CustomStringConvertible {
         return results
     }
 
-
     func handlePerfectMatch(deck: Deck, card: Card, tuple: (Int, Int)) {
         let unitsSold = card.production.units
         do {
             try card.production.spend(unitsSold)
+
+            delegate.addSalesRecord(card: card, units: unitsSold, price: card.income)
 
             deck.orderBook.reduceValueAt(index: tuple.0, byValue: unitsSold)
             print ("sold @ perfect match: \(unitsSold)")
@@ -124,6 +126,8 @@ class Selling : CustomStringConvertible {
 
         do {
             try card.production.spend(unitsSold)
+
+            delegate.addSalesRecord(card: card, units: unitsSold, price: card.income)
 
             deck.orderBook.reduceValueAt(index: tuple.0, byValue: unitsSold)
             print ("sold @ lower match: \(unitsSold)")
@@ -144,10 +148,22 @@ class Selling : CustomStringConvertible {
             remainingUnits -= unitsSold
             deck.orderBook.reduceValueAt(index: tuple.0, byValue: unitsSold)
 
+            delegate.addSalesRecord(card: card, units: unitsSold, price: card.income)
+
             print ("sold @ higher match: \(unitsSold)")
         } catch let err {
             print (err.localizedDescription)
         }
+    }
+
+    // MARK: SalesRecordDelegate method
+
+    func addSalesRecord(card: Card, units: Int, price: Int) {
+        guard let hasOwner = card.owner else {
+            return
+        }
+        let sale = Sale.init(productId: card.name, units: units, price: price)
+        hasOwner.salesBook.add(sale: sale)
     }
     
 }

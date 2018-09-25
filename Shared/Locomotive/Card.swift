@@ -18,6 +18,12 @@ final class Card : NSObject, NSCopying {
         production.setParent(card: self)
         return production
     }()
+    var income: Int {
+        guard let hasParent = self.parent else {
+            return 0
+        }
+        return hasParent.income
+    }
 
     init(parent: Deck) {
         super.init()

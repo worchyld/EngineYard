@@ -35,4 +35,8 @@ class SalesBook : NSObject, NSCopying {
     func add(sale: Sale) {
         self.sales.append(sale)
     }
+
+    func clear() {
+        self.sales.removeAll()
+    }
 }
