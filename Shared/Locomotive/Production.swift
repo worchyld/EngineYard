@@ -80,6 +80,9 @@ final class Production : NSObject, NSCopying {
 
     func copy(with zone: NSZone? = nil) -> Any {
         let copy = Production.init()
+        copy.parent = self.parent
+        copy.units = self.units
+        copy.spentUnits = self.spentUnits
         return copy
     }
 }

@@ -96,23 +96,21 @@ class Selling : CustomStringConvertible {
     }
 
     //
-    // MARK: (Private) functions
+    // MARK: Functions
     //
 
-    private func cardsWithProduction(deck: Deck) -> [Card] {
+    func cardsWithProduction(deck: Deck) -> [Card] {
         let results = deck.cards.filter({ (c: Card) -> Bool in
             return (c.production.units > 0)
         })
         return results
     }
 
-    private func handlePerfectMatch(deck: Deck, card: Card, tuple: (Int, Int)) {
+
+    func handlePerfectMatch(deck: Deck, card: Card, tuple: (Int, Int)) {
         let unitsSold = card.production.units
         do {
             try card.production.spend(unitsSold)
-
-//            let saleObj = Sale(productId: card.name, units: unitsSold, price: deck.income)
-//            deck.salesBook.add(sale: saleObj)
 
             deck.orderBook.reduceValueAt(index: tuple.0, byValue: unitsSold)
             print ("sold @ perfect match: \(unitsSold)")
@@ -121,14 +119,11 @@ class Selling : CustomStringConvertible {
         }
     }
 
-    private func handleLowerMatch(deck: Deck, card: Card, tuple: (Int, Int)) {
+    func handleLowerMatch(deck: Deck, card: Card, tuple: (Int, Int)) {
         let unitsSold = card.production.units
 
         do {
             try card.production.spend(unitsSold)
-
-//            let saleObj = Sale(productId: card.name, units: unitsSold, price: deck.income)
-//            deck.salesBook.add(sale: saleObj)
 
             deck.orderBook.reduceValueAt(index: tuple.0, byValue: unitsSold)
             print ("sold @ lower match: \(unitsSold)")
@@ -137,7 +132,7 @@ class Selling : CustomStringConvertible {
         }
     }
 
-    private func handleHigherMatch(deck: Deck, card: Card, tuple: (Int, Int)) {
+    func handleHigherMatch(deck: Deck, card: Card, tuple: (Int, Int)) {
         let unitsSold: Int = {
             return deck.orderBook.existingOrderValues[tuple.0] as Int
         }()
@@ -148,9 +143,6 @@ class Selling : CustomStringConvertible {
             var remainingUnits: Int = unitsSold
             remainingUnits -= unitsSold
             deck.orderBook.reduceValueAt(index: tuple.0, byValue: unitsSold)
-
-//            let saleObj = Sale(productId: card.name, units: unitsSold, price: deck.income)
-//            deck.salesBook.add(sale: saleObj)
 
             print ("sold @ higher match: \(unitsSold)")
         } catch let err {

@@ -31,6 +31,9 @@ final class Card : NSObject, NSCopying {
 
     func copy(with zone: NSZone? = nil) -> Any {
         let copy = Card.init(parent: self.parent!)
+        copy.parent = self.parent
+        copy.owner = self.owner
+        copy.production = self.production
         return copy
     }
 }

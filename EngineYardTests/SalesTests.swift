@@ -53,13 +53,42 @@ class SalesTests: EngineYardTests {
         firstDeck.orderBook.add(.existingOrder, values: [3,5,2])
         playerCard.production.add(9)
         XCTAssertTrue(playerCard.production.units == 10)
-        //let expectedDollarValue = (playerCard.production.units * firstDeck.income)
 
+
+        let filtered = board.decks
+            .filter { (d: Deck) -> Bool in
+                return ((d.orderBook.existingOrders.count > 0) &&
+                    (d.orderBook.totalExistingOrders > 0) &&
+                    (d.owners?.count ?? 0 > 0) &&
+                    (d.active)
+                )}
+            .sorted(by: { (t1: Deck, t2: Deck) -> Bool in
+                return (t1.cost < t2.cost)
+            }
+        )
+
+        let decks = filtered.map{ $0.copy() as! Deck }
+
+        for deck in decks {
+            for card in deck.cards {
+
+                do {
+                    let unitsSold = card.production.units
+                    try card.production.spend(unitsSold)
+                    deck.orderBook.reduceValueAt(index: 0, byValue: unitsSold)
+                } catch let err {
+                    print (err.localizedDescription)
+                }
+            }
+        }
+
+
+        /*
         let sell = Selling(decks: board.decks)
         sell.salesLoop()
         print (">> \(sell.description) <<")
+        */
 
-        //XCTAssertTrue(firstDeck.salesBook.total == expectedDollarValue, "Expected: \(expectedDollarValue). Actual: \(firstDeck.salesBook.total)")
     }
 
 }
