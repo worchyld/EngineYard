@@ -89,6 +89,34 @@ class CopyTests: EngineYardTests {
         XCTAssertTrue(firstPlayer.wallet.balance == originalCash, "\(firstPlayer.cash)")
     }
 
+    func testCopyAndSpendProduction() {
+        guard let firstPlayer = game.players?.first as? Player else {
+            return
+        }
+        guard let firstDeck = board.decks.first else {
+            return
+        }
+        guard let card = firstDeck.findFirstUnownedCard() else {
+            return
+        }
+        XCTAssertNoThrow(try firstPlayer.hand.add(card))
+        XCTAssertTrue(card.production.units == 1)
+
+        let copiedPlayer = firstPlayer.copy() as! Player
+        guard let copiedCard = copiedPlayer.hand.cards.first else {
+            return
+        }
+        let units = copiedCard.production.units
+        XCTAssertTrue(units == 1)
+        XCTAssertNoThrow(try copiedCard.production.spend(units))
+
+        XCTAssertTrue(card.production.units == 1)
+        XCTAssertTrue(copiedCard.production.units == 0)
+
+        let totalUnits = copiedPlayer.hand.cards.reduce(0, { $0 + $1.production.units } )
+        XCTAssertTrue(totalUnits == 0)
+    }
+
     func testCopyDeck() {
         let players = Mock.players(howMany: 5)
 
