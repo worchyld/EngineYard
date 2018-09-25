@@ -72,6 +72,8 @@ class SalesTests: EngineYardTests {
             }
         }
 
+        // Test amount of items sold
+
     }
 
 }

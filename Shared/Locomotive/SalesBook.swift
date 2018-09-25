@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SalesBook : NSObject {
+class SalesBook : NSObject, NSCopying {
     weak var parent : Deck?
     var sales: [Sale] = [Sale]()
     var totalUnits : Int {
@@ -25,6 +25,11 @@ class SalesBook : NSObject {
     init(parent: Deck) {
         self.parent = parent
         super.init()
+    }
+
+    func copy(with zone: NSZone? = nil) -> Any {
+        let copy = SalesBook.init(parent: self.parent!)
+        return copy
     }
 
     func add(sale: Sale) {
