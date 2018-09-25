@@ -19,7 +19,7 @@ fileprivate protocol WalletDelegate {
     func debit(amount: Int) throws
 }
 
-class Wallet : CustomStringConvertible, WalletDelegate {
+class Wallet : NSCopying, CustomStringConvertible, WalletDelegate {
     public private(set) var balance: Int = 0
 
     func credit(amount: Int = 0) throws {
@@ -30,6 +30,12 @@ class Wallet : CustomStringConvertible, WalletDelegate {
     func debit(amount: Int = 0) throws {
         try canDebit(amount: amount)
         self.balance -= amount
+    }
+
+    func copy(with zone: NSZone? = nil) -> Any {
+        let copy = Wallet()
+        copy.balance = self.balance
+        return copy
     }
 }
 

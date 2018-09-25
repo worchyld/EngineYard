@@ -13,7 +13,7 @@ protocol GameBoardDelegate {
 }
 
 // Board model
-final class Board : NSObject, GameBoardDelegate {
+final class Board : NSObject, NSCopying, GameBoardDelegate {
     // Create a static, constant instance of
     // the enclosing class (itself) and initialize.
     static let instance = Board()
@@ -67,6 +67,11 @@ final class Board : NSObject, GameBoardDelegate {
     override var description: String {
         return "[Board]. Decks: \(self.decks.count)"
     }
+
+    func copy(with zone: NSZone? = nil) -> Any {
+        let copy = Board.instance
+        return copy
+    }
 }
 
 extension Board {
@@ -102,6 +107,21 @@ extension Board {
                 return (d.active)
             })
         return results
+    }
+
+    public static func filterDecksWithExistingOrders(decks: [Deck]) -> [Deck] {
+        let filtered = decks
+            .filter { (d: Deck) -> Bool in
+                return ((d.orderBook.existingOrders.count > 0) &&
+                    (d.orderBook.totalExistingOrders > 0) &&
+                    (d.owners?.count ?? 0 > 0) &&
+                    (d.active)
+                )}
+            .sorted(by: { (t1: Deck, t2: Deck) -> Bool in
+                return (t1.cost < t2.cost)
+            }
+        )
+        return filtered
     }
 
 }
