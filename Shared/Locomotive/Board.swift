@@ -13,7 +13,7 @@ protocol GameBoardDelegate {
 }
 
 // Board model
-final class Board : NSObject, GameBoardDelegate {
+final class Board : NSObject, NSCopying, GameBoardDelegate {
     // Create a static, constant instance of
     // the enclosing class (itself) and initialize.
     static let instance = Board()
@@ -66,6 +66,11 @@ final class Board : NSObject, GameBoardDelegate {
 
     override var description: String {
         return "[Board]. Decks: \(self.decks.count)"
+    }
+
+    func copy(with zone: NSZone? = nil) -> Any {
+        let copy = Board.instance
+        return copy
     }
 }
 

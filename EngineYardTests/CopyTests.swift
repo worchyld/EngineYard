@@ -12,12 +12,81 @@ import XCTest
 
 class CopyTests: EngineYardTests {
 
+    var game: Game!
+    var board: Board!
+
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        let players = Mock.players(howMany: 5)
+
+        guard let game:Game = Game.setup(with: players) else {
+            XCTFail("Game object did not initialise")
+            return
+        }
+        guard let board = game.board else {
+            XCTFail("Board object not initialised")
+            return
+        }
+        self.game = game
+        self.board = board
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        self.board = nil
+    }
+
+    func testCopyBoard() {
+        let copied = board.copy() as! Board
+
+        XCTAssertTrue(board.decks.count == Rules.Board.decks)
+
+        guard let originalDeck = board.decks.first else {
+            return
+        }
+
+        guard let firstDeck = copied.decks.first else {
+            return
+        }
+        firstDeck.orderBook.clear()
+
+        XCTAssertTrue(firstDeck.orderBook.existingOrders.count == 0)
+        XCTAssertTrue(firstDeck.orderBook.completedOrders.count == 0)
+        XCTAssertTrue(originalDeck.orderBook.existingOrders.count == 1)
+        XCTAssertTrue(originalDeck.orderBook.completedOrders.count == 0)
+    }
+
+    func testCopyPlayersHand() {
+        guard let firstDeck = board.decks.first else {
+            return
+        }
+        guard let firstPlayer = game.players?.first as? Player else {
+            return
+        }
+        guard let card = firstDeck.findFirstUnownedCard() else {
+            return
+        }
+
+        XCTAssertNoThrow(try firstPlayer.hand.add(card))
+
+        let copiedPlayer = firstPlayer.copy() as! Player
+
+        copiedPlayer.hand.empty()
+
+        XCTAssertTrue(copiedPlayer.hand.cards.count == 0, "\(copiedPlayer.hand.cards.count)")
+        XCTAssertTrue(firstPlayer.hand.cards.count == 1, "\(firstPlayer.hand.cards.count)")
+    }
+
+    func testCopyWallet() {
+        guard let firstPlayer = game.players?.first as? Player else {
+            return
+        }
+        let originalCash: Int = firstPlayer.cash
+
+        let copiedPlayer = firstPlayer.copy() as! Player
+
+        XCTAssertNoThrow(try copiedPlayer.wallet.debit(amount: copiedPlayer.cash))
+        XCTAssertNoThrow(try copiedPlayer.wallet.credit(amount: 100))
+        XCTAssertTrue(copiedPlayer.wallet.balance == 100, "\(copiedPlayer.cash)")
+        XCTAssertTrue(firstPlayer.wallet.balance == originalCash, "\(firstPlayer.cash)")
     }
 
     func testCopyDeck() {

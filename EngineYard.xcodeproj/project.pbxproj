@@ -52,6 +52,7 @@
 		4DFB8217215A042C0036F9FD /* SalesRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA92C1621565E5200AD19B7 /* SalesRule.swift */; };
 		4DFB8218215A08AB0036F9FD /* SalesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA92C1421564C0E00AD19B7 /* SalesTests.swift */; };
 		4DFB821A215A71DF0036F9FD /* SalesBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFB8219215A71DF0036F9FD /* SalesBook.swift */; };
+		4DFB821E215A7F070036F9FD /* CopyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFB821D215A7F070036F9FD /* CopyTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		4DEE8724215224430038F0CF /* StateMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
 		4DEE87262152244B0038F0CF /* GameStateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameStateTests.swift; sourceTree = "<group>"; };
 		4DFB8219215A71DF0036F9FD /* SalesBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesBook.swift; sourceTree = "<group>"; };
+		4DFB821D215A7F070036F9FD /* CopyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CopyTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 		4DA3486720812972006DA164 /* EngineYardTests */ = {
 			isa = PBXGroup;
 			children = (
+				4DFB821D215A7F070036F9FD /* CopyTests.swift */,
 				4DA3486820812972006DA164 /* EngineYardTests.swift */,
 				4DA5237120815C06000FFAAB /* TaxTests.swift */,
 				4D617D552081EE110036BB00 /* DieTests.swift */,
@@ -408,6 +411,7 @@
 				4DC5AEE6214E7A1500D2841D /* MarketDemandsTests.swift in Sources */,
 				4D2847922138147200C81B5C /* ProductionTests.swift in Sources */,
 				4DFB8218215A08AB0036F9FD /* SalesTests.swift in Sources */,
+				4DFB821E215A7F070036F9FD /* CopyTests.swift in Sources */,
 				4DA5237220815C06000FFAAB /* TaxTests.swift in Sources */,
 				4DEE87172151B6130038F0CF /* TurnOrderTests.swift in Sources */,
 				4DA8396B2136AE7900F7CAB9 /* GameBoardSetupTests.swift in Sources */,

@@ -47,13 +47,14 @@ extension HandObserver {
     }
 }
 
-final class Hand : CustomStringConvertible, HandObserver {
+final class Hand : NSObject, NSCopying, HandObserver {
     private var observerArray = [HandObserver]()
 
     public private (set) weak var owner: Player?
     public private (set) var cards: [Card] = [Card]()
 
     init(owner: Player) {
+        super.init()
         self.owner = owner
         self.attachObserver(observer: self as HandObserver)
     }
@@ -61,10 +62,15 @@ final class Hand : CustomStringConvertible, HandObserver {
     deinit {
         self.removeSubscribers()
     }
+
+    func copy(with zone: NSZone? = nil) -> Any {
+        let copy = Hand(owner: self.owner!)
+        return copy
+    }
 }
 
 extension Hand {
-    var description: String {
+    override var description: String {
         guard let ownership = self.owner else {
             return "No owner"
         }
@@ -94,6 +100,10 @@ extension Hand {
             throw HandError.cannotFindCard
         }
         willRemove(card: result.1, atIndex: result.0)
+    }
+
+    func empty() {
+        self.cards.removeAll()
     }
 }
 
