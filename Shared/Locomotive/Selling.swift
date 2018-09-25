@@ -31,28 +31,41 @@ class Selling : NSObject {
         super.init()
     }
 
-    private func cardsWithProduction(deck: Deck) -> [Card] {
-        let results = deck.cards.filter({ (c: Card) -> Bool in
-            return (c.production.units > 0)
-        })
-        return results
-    }
 
     func salesLoop() {
-
         let decks = self.filtered.map{ $0.copy() as! Deck }
 
         for deck in decks {
             var condition = true
             while (condition == true) {
 
-                print (deck.description)
-
                 for card in cardsWithProduction(deck: deck) {
-                    print (card.description)
-                }
 
-                let salesRuleObj = SalesRule.init(deck.orderBook.existingOrderValues)
+                    let orders = deck.orderBook.existingOrderValues
+                    let rule = SalesRule.init(orders)
+                    let units = card.production.units
+
+                    print (">> orders: \(orders), units: \(units)")
+
+                    if let match = rule.perfectMatch(units) {
+                        print("Found perfect match for: \(units) in orders \(rule.orders) at index: \(match.0) which is the value \(match.1)")
+                        self.handlePerfectMatch(tuple: match)
+                    }
+                    else {
+                        if let match = rule.lowerMatch(units) {
+                            print("Found lower match for: \(units) in orders \(rule.orders) at index: \(match.0) which is the value \(match.1)")
+                            self.handleLowerMatch(tuple: match)
+                        }
+                        else {
+                            if let match = rule.higherMatch(units) {
+                                print("Found higher match for: \(units) in orders \(rule.orders) at index: \(match.0) which is the value \(match.1)")
+                                self.handleHigherMatch(tuple: match)
+                            }
+                        }
+                    }
+
+                    condition = true // #todo
+                } // next
 
 
                 // update condition
@@ -63,4 +76,26 @@ class Selling : NSObject {
             }
         }
     }
+
+    //
+    // MARK: (Private) functions
+    //
+
+    private func cardsWithProduction(deck: Deck) -> [Card] {
+        let results = deck.cards.filter({ (c: Card) -> Bool in
+            return (c.production.units > 0)
+        })
+        return results
+    }
+
+    private func handlePerfectMatch(tuple: (Int, Int)) {
+    }
+
+    private func handleLowerMatch(tuple: (Int, Int)) {
+    }
+
+    private func handleHigherMatch(tuple: (Int, Int)) {
+    }
+
+
 }

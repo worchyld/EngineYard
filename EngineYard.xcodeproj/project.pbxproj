@@ -51,6 +51,7 @@
 		4DEE8725215224430038F0CF /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE8724215224430038F0CF /* StateMachine.swift */; };
 		4DEE87272152244B0038F0CF /* GameStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE87262152244B0038F0CF /* GameStateTests.swift */; };
 		4DFB8217215A042C0036F9FD /* SalesRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA92C1621565E5200AD19B7 /* SalesRule.swift */; };
+		4DFB8218215A08AB0036F9FD /* SalesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA92C1421564C0E00AD19B7 /* SalesTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -406,6 +407,7 @@
 				4D617D562081EE110036BB00 /* DieTests.swift in Sources */,
 				4DC5AEE6214E7A1500D2841D /* MarketDemandsTests.swift in Sources */,
 				4D2847922138147200C81B5C /* ProductionTests.swift in Sources */,
+				4DFB8218215A08AB0036F9FD /* SalesTests.swift in Sources */,
 				4DA5237220815C06000FFAAB /* TaxTests.swift in Sources */,
 				4DEE87172151B6130038F0CF /* TurnOrderTests.swift in Sources */,
 				4DA8396B2136AE7900F7CAB9 /* GameBoardSetupTests.swift in Sources */,

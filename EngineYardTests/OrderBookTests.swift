@@ -58,7 +58,7 @@ class OrderBookTests: EngineYardTests {
         XCTAssertFalse(firstDeck.orderBook.canAdd(orderType: .completedOrder)) // I should not be allowed to add completed orders
 
         var idx = 1
-        for order in firstDeck.existingOrders {
+        for order in firstDeck.orderBook.existingOrderValues {
             XCTAssertTrue(order == idx)
             idx += 1
         }
