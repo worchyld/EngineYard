@@ -20,98 +20,6 @@ class SalesTests: EngineYardTests {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testSingleSaleBook() {
-        let sb: SalesBook = SalesBook()
-
-        let sale = Sale(units: 100, price: 10)
-
-        sb.add(sale: sale)
-
-        XCTAssertTrue(sb.total == (100 * 10) )
-    }
-
-    func testMultipleSalesBook() {
-
-        let sb: SalesBook = SalesBook()
-
-        let sales = [ Sale(units: 100, price: 10),
-                      Sale(units: 100, price: 10),
-                      Sale(units: 100, price: 10)
-        ]
-
-        sales.forEach{ sb.add(sale: $0) }
-
-        XCTAssertTrue(sb.total == ((100 * 10) * sales.count) )
-    }
-
-    func testWithSingleProduct() {
-        guard let game:Game = (Game.setup(with: Mock.players(howMany: 5))) else {
-            XCTFail("Game object did not initialise")
-            return
-        }
-        guard let board = game.board else {
-            XCTFail("Board object not initialised")
-            return
-        }
-        guard let firstDeck = board.decks.first else {
-            XCTFail("No first deck found")
-            return
-        }
-
-        guard let player = game.players?.first as? Player else {
-            print ("No player found")
-            return
-        }
-
-        firstDeck.orderBook.clear()
-
-        firstDeck.orderBook.add(.existingOrder, values: [3])
-        XCTAssertTrue(firstDeck.orderBook.existingOrderValues.first == 3)
-
-        guard let firstOrder = firstDeck.orderBook.existingOrders.first else {
-            return
-        }
-
-        let sale = Sale(product: firstDeck, units: firstOrder.value, price: firstDeck.income)
-        player.salesBook.add(sale: sale)
-
-        XCTAssertTrue(player.salesBook.sales.count == 1, "\(player.salesBook.sales.count)")
-        XCTAssertTrue(player.salesBook.total == (3 * firstDeck.income) )
-    }
-
-    func testWithMultipleSales() {
-        guard let game:Game = (Game.setup(with: Mock.players(howMany: 5))) else {
-            XCTFail("Game object did not initialise")
-            return
-        }
-        guard let board = game.board else {
-            XCTFail("Board object not initialised")
-            return
-        }
-        guard let firstDeck = board.decks.first else {
-            XCTFail("No first deck found")
-            return
-        }
-
-        guard let player = game.players?.first as? Player else {
-            print ("No player found")
-            return
-        }
-
-        firstDeck.orderBook.clear()
-
-        firstDeck.orderBook.add(.existingOrder, values: [3, 5, 2])
-        XCTAssertTrue(firstDeck.orderBook.existingOrderValues.first == 3)
-
-        for order in firstDeck.orderBook.existingOrders {
-
-            let sale = Sale(product: firstDeck, units: order.value, price: firstDeck.income)
-            player.salesBook.add(sale: sale)
-        }
-
-        XCTAssertTrue(player.salesBook.sales.count == 3)
-        XCTAssertTrue(player.salesBook.total == ((3 + 5 + 2) * firstDeck.income) )
-    }
 
     func testSalesLoop() {
         guard let game:Game = (Game.setup(with: Mock.players(howMany: 5))) else {
@@ -134,10 +42,24 @@ class SalesTests: EngineYardTests {
             return
         }
         XCTAssertNoThrow(try player.hand.add(unownedCard))
+        XCTAssertTrue(player.hand.cards.count == 1)
+        guard let playerCard = player.hand.cards.first else {
+            XCTFail("No cards in hand")
+            return
+        }
+
+
+        firstDeck.orderBook.clear()
+        firstDeck.orderBook.add(.existingOrder, values: [3,5,2])
+        playerCard.production.add(9)
+        XCTAssertTrue(playerCard.production.units == 10)
+        let expectedDollarValue = (playerCard.production.units * firstDeck.income)
 
         let sell = Selling(decks: board.decks)
         sell.salesLoop()
+        print (sell.description)
 
+        XCTAssertTrue(firstDeck.salesBook.total == expectedDollarValue, "Expected: \(expectedDollarValue). Actual: \(firstDeck.salesBook.total)")
     }
 
 }

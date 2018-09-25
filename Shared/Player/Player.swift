@@ -22,7 +22,6 @@ class Player : NSObject, GKGameModelPlayer {
     }
     var wallet : Wallet = Wallet()
     lazy var hand : Hand = Hand(owner: self) // Hand of cards
-    lazy var salesBook: SalesBook = SalesBook(owner: self)
 
     init(name: String) {
         self.name = name

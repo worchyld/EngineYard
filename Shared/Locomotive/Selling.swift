@@ -10,10 +10,14 @@ import Foundation
 
 // handles selling?
 
-class Selling : NSObject {
+class Selling : CustomStringConvertible {
 
     private var _decks: [Deck] = [Deck]()
     private var makeCopy: Bool = true
+
+    var description: String {
+        return ""
+    }
 
     lazy var filtered = self._decks
         .filter { (d: Deck) -> Bool in
@@ -30,7 +34,6 @@ class Selling : NSObject {
     init(decks: [Deck], makeCopy: Bool = true) {
         self._decks = decks
         self.makeCopy = makeCopy
-        super.init()
     }
 
 
@@ -45,16 +48,19 @@ class Selling : NSObject {
         }
 
         for deck in decks {
+
+
             var condition = true
             while (condition == true) {
 
                 for card in cardsWithProduction(deck: deck) {
 
+
                     let orders = deck.orderBook.existingOrderValues
                     let rule = SalesRule.init(orders)
                     let units = card.production.units
 
-                    print (">> orders: \(orders), units: \(units)")
+                    print (">> orders: \(orders), units: \(units), spent: \(card.production.spentUnits)")
 
                     if let match = rule.perfectMatch(units) {
                         print("Found perfect match for: \(units) in orders \(rule.orders) at index: \(match.0) which is the value \(match.1)")
@@ -72,18 +78,21 @@ class Selling : NSObject {
                             }
                         }
                     }
+
+
+                    print (">> deck \(deck.description) <<")
                 } // next
 
-                condition = false // #todo
 
                 // update condition
-                /*
                 condition = (
                     (cardsWithProduction(deck: deck).count > 0) &&
-                    (deck.orderBook.existingOrders.count > 0)
-                )*/
-            }
-        }
+                        (deck.orderBook.existingOrders.count > 0)
+                )
+
+            } // wend
+
+        } // next
     }
 
     //
@@ -98,14 +107,55 @@ class Selling : NSObject {
     }
 
     private func handlePerfectMatch(deck: Deck, card: Card, tuple: (Int, Int)) {
-        
+        let unitsSold = card.production.units
+        do {
+            try card.production.spend(unitsSold)
+
+            let saleObj = Sale(productId: card.name, units: unitsSold, price: deck.income)
+            deck.salesBook.add(sale: saleObj)
+
+            deck.orderBook.reduceValueAt(index: tuple.0, byValue: unitsSold)
+            print ("sold @ perfect match: \(unitsSold)")
+        } catch let err {
+            print (err.localizedDescription)
+        }
     }
 
     private func handleLowerMatch(deck: Deck, card: Card, tuple: (Int, Int)) {
+        let unitsSold = card.production.units
+
+        do {
+            try card.production.spend(unitsSold)
+
+            let saleObj = Sale(productId: card.name, units: unitsSold, price: deck.income)
+            deck.salesBook.add(sale: saleObj)
+
+            deck.orderBook.reduceValueAt(index: tuple.0, byValue: unitsSold)
+            print ("sold @ lower match: \(unitsSold)")
+        } catch let err {
+            print (err.localizedDescription)
+        }
     }
 
     private func handleHigherMatch(deck: Deck, card: Card, tuple: (Int, Int)) {
+        let unitsSold: Int = {
+            return deck.orderBook.existingOrderValues[tuple.0] as Int
+        }()
+
+        do {
+            try card.production.spend(unitsSold)
+
+            var remainingUnits: Int = unitsSold
+            remainingUnits -= unitsSold
+            deck.orderBook.reduceValueAt(index: tuple.0, byValue: unitsSold)
+
+            let saleObj = Sale(productId: card.name, units: unitsSold, price: deck.income)
+            deck.salesBook.add(sale: saleObj)
+
+            print ("sold @ higher match: \(unitsSold)")
+        } catch let err {
+            print (err.localizedDescription)
+        }
     }
-
-
+    
 }

@@ -50,6 +50,9 @@ final class Deck : NSObject, NSCopying, DeckDelegate {
     // OrderBook
     lazy var orderBook: OrderBook = OrderBook(parent: self)
 
+    // SalesBook
+    lazy var salesBook : SalesBook = SalesBook(parent: self)
+
     // Ownership
     var owners: [Player]? {
         return self.cards

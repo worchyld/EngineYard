@@ -40,6 +40,10 @@ final class Production : NSObject, NSCopying {
         return hasParent.productionCost
     }
 
+    override var description: String {
+        return ("units = \(self.units), spent = \(self.spentUnits)")
+    }
+
     func setParent(card: Card) {
         self.parent = card
     }

@@ -126,6 +126,11 @@ extension OrderBook {
             }
         }
     }
+
+    func reduceValueAt(index: Int, byValue: Int) {
+        let result = self.orders[index] as Order
+        result.value -= byValue
+    }
 }
 extension OrderBook {
 
