@@ -9,7 +9,7 @@
 import Foundation
 import GameplayKit
 
-class Player : NSObject, GKGameModelPlayer {
+class Player : NSObject, NSCopying, GKGameModelPlayer {
     internal var playerId: Int = 0 {
         didSet {
             print ("Set playerId = \(self.playerId)")
@@ -25,6 +25,14 @@ class Player : NSObject, GKGameModelPlayer {
 
     init(name: String) {
         self.name = name
+    }
+
+    func copy(with zone: NSZone? = nil) -> Any {
+        let player = Player.init(name: self.name)
+        player.playerId = self.playerId
+        player.wallet = self.wallet
+        player.hand = self.hand
+        return player
     }
 }
 

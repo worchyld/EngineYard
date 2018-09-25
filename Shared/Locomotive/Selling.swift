@@ -111,8 +111,8 @@ class Selling : CustomStringConvertible {
         do {
             try card.production.spend(unitsSold)
 
-            let saleObj = Sale(productId: card.name, units: unitsSold, price: deck.income)
-            deck.salesBook.add(sale: saleObj)
+//            let saleObj = Sale(productId: card.name, units: unitsSold, price: deck.income)
+//            deck.salesBook.add(sale: saleObj)
 
             deck.orderBook.reduceValueAt(index: tuple.0, byValue: unitsSold)
             print ("sold @ perfect match: \(unitsSold)")
@@ -127,8 +127,8 @@ class Selling : CustomStringConvertible {
         do {
             try card.production.spend(unitsSold)
 
-            let saleObj = Sale(productId: card.name, units: unitsSold, price: deck.income)
-            deck.salesBook.add(sale: saleObj)
+//            let saleObj = Sale(productId: card.name, units: unitsSold, price: deck.income)
+//            deck.salesBook.add(sale: saleObj)
 
             deck.orderBook.reduceValueAt(index: tuple.0, byValue: unitsSold)
             print ("sold @ lower match: \(unitsSold)")
@@ -149,8 +149,8 @@ class Selling : CustomStringConvertible {
             remainingUnits -= unitsSold
             deck.orderBook.reduceValueAt(index: tuple.0, byValue: unitsSold)
 
-            let saleObj = Sale(productId: card.name, units: unitsSold, price: deck.income)
-            deck.salesBook.add(sale: saleObj)
+//            let saleObj = Sale(productId: card.name, units: unitsSold, price: deck.income)
+//            deck.salesBook.add(sale: saleObj)
 
             print ("sold @ higher match: \(unitsSold)")
         } catch let err {

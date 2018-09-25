@@ -11,12 +11,15 @@ import Foundation
 class SalesBook : NSObject {
     weak var parent : Deck?
     var sales: [Sale] = [Sale]()
+    var totalUnits : Int {
+        return self.sales.reduce(0, { $0 + $1.units } )
+    }
     var total : Int {
         return self.sales.reduce(0, { $0 + $1.total } )
     }
 
     override var description: String {
-        return ("SalesLedger: Items Sold: \(self.sales.count), Total $:\(self.total)")
+        return ("SalesBook: #items: \(self.sales.count)  #units: \(self.totalUnits), Total $\(self.total)")
     }
 
     init(parent: Deck) {
