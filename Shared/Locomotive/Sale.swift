@@ -9,7 +9,14 @@
 import Foundation
 
 // `Sales` model - Records a product, unit and price
-struct Sale : CustomStringConvertible {
+
+protocol SalesProtocol {
+    var units: Int { get set }
+    var price: Int { get set }
+    var total: Int { get }
+}
+
+struct Sale : CustomStringConvertible, SalesProtocol {
     var productId : String?
     var units : Int = 0 // units sold
     var price : Int = 0 // price sold at

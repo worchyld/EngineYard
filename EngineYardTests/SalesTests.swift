@@ -68,38 +68,18 @@ class SalesTests: EngineYardTests {
         XCTAssertTrue(playerCard.production.units == 10)
 
 
-        guard let copiedBoard = gameCopy.board else {
-            XCTFail("No board copied")
-            return
-        }
+        // Expect the original salesbook to stay the same
+        let originalSB = player.salesBook
+        let copiedSB = copiedPlayer.salesBook
 
-        let salesObj = Selling.init(board: copiedBoard)
-        salesObj.salesLoop()
+        copiedSB.add(sale: Sale.init(units: 10, price: 10))
 
-        // expect the copied player:
-        // first card production to be 0
-        // first card spent production to be 10
-        // sales book to record sales
+        XCTAssertTrue(originalSB.sales.count == 0)
+        XCTAssertTrue(copiedSB.sales.count == 1)
 
-        print (copiedPlayer.salesBook)
+        let selling = Selling(game: gameCopy)
+        selling.beginSelling()
 
-
-
-        /*
-        if let copiedBoard = gameCopy.board {
-
-            let salesObj = Selling.init(board: copiedBoard)
-            salesObj.salesLoop()
-
-            let copiedPlayerSB = copiedPlayer.salesBook
-
-            XCTAssertTrue( copiedPlayerSB.sales.count == 3 , "\(copiedPlayerSB.sales.count)")
-            XCTAssertTrue( copiedPlayerSB.totalUnitsSold == 10, "\(copiedPlayerSB.totalUnitsSold)")
-        }
-        else {
-            XCTFail("No board was copied")
-        }
-        */
     }
 
 }

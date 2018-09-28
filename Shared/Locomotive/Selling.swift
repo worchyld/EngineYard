@@ -12,6 +12,48 @@ protocol SalesRecordDelegate {
     func addSalesRecord(card: Card, units: Int, price: Int)
 }
 
+struct SellingRound : SalesProtocol {
+    var detail: String?
+    var player: Player?
+    var deck: Deck?
+    var card: Card?
+    var units: Int = 0
+    var price: Int = 0
+    var total: Int {
+        guard (units > 0 && price > 0) else {
+            return 0
+        }
+        return (units * price)
+    }
+}
+
+class Selling : NSObject {
+    private weak var game: Game?
+
+    var round : [SellingRound]  = [SellingRound]()
+
+
+    init(game: Game) {
+        self.game = game
+    }
+
+    func beginSelling() {
+        guard let hasGame = self.game else {
+            assertionFailure("No game object found")
+            return
+        }
+
+        let filtered = Board.filterDecksWithExistingOrders(decks: hasGame.board.decks)
+        print (filtered)
+
+        for deck in filtered {
+            print ("selling from deck: \(deck.name)")
+        }
+        
+    }
+}
+
+/*
 class Selling : CustomStringConvertible, SalesRecordDelegate {
 
     private var _decks: [Deck] = [Deck]()
@@ -142,6 +184,8 @@ class Selling : CustomStringConvertible, SalesRecordDelegate {
         }
         let sale = Sale.init(productId: card.name, units: units, price: price)
         hasOwner.salesBook.add(sale: sale)
+        print ("added sale: \(sale.description) to \(String(describing: hasOwner.name)) salesbook --> \(hasOwner.salesBook.sales.count)")
     }
     
 }
+*/
