@@ -29,6 +29,7 @@ class GameSetupManager {
                 }
 
                 gameObj.board = Board()
+                gameObj.board.prepare()
 
                 // Setup players
                 switch players.count {

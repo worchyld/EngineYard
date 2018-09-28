@@ -14,10 +14,6 @@ protocol GameBoardDelegate {
 
 // Board model
 final class Board : NSObject, NSCopying, GameBoardDelegate {
-    // Create a static, constant instance of
-    // the enclosing class (itself) and initialize.
-    //static let instance = Board()
-
     private var _decks = [Deck]()
 
     public var decks: [Deck] {
@@ -32,12 +28,13 @@ final class Board : NSObject, NSCopying, GameBoardDelegate {
 
     override init() {
         super.init()
-        self._decks = prepare()
     }
 
+    func prepare() {
+        self._decks = self.builder()
+    }
 
-    // Prepare game decks
-    private func prepare() -> [Deck] {
+    private func builder() -> [Deck] {
         let decks = [
             Deck.init(name: "Green.1", cost: 4, generation: .first, color: .green, capacity: 3, numberOfChildren: 4)
             , Deck.init(name: "Red.1", cost: 8, generation: .first, color: .red, capacity: 3, numberOfChildren: 3)
@@ -70,10 +67,15 @@ final class Board : NSObject, NSCopying, GameBoardDelegate {
 
     func copy(with zone: NSZone? = nil) -> Any {
         let copy = Board()
+
         copy._decks = _decks.map({ (d: Deck) -> Deck in
             return d.copy(with: zone) as! Deck
         })
         return copy
+    }
+
+    func empty() {
+        self._decks.removeAll()
     }
 }
 
@@ -140,5 +142,4 @@ extension Board {
         }
         return filtered
     }
-
 }

@@ -68,23 +68,14 @@ class CopyTests: EngineYardTests {
     }
 
     func testCopyBoard() {
-        let copied = board.copy() as! Board
+        XCTAssertTrue(game.board.decks.count == Rules.Board.decks)
+        let gameCopy = game.copy() as! Game
+        XCTAssertTrue(gameCopy.board.decks.count == Rules.Board.decks)
 
-        XCTAssertTrue(board.decks.count == Rules.Board.decks)
+        gameCopy.board.empty()
 
-        guard let originalDeck = board.decks.first else {
-            return
-        }
-
-        guard let firstDeck = copied.decks.first else {
-            return
-        }
-        firstDeck.orderBook.clear()
-
-        XCTAssertTrue(firstDeck.orderBook.existingOrders.count == 0)
-        XCTAssertTrue(firstDeck.orderBook.completedOrders.count == 0)
-        XCTAssertTrue(originalDeck.orderBook.existingOrders.count == 1)
-        XCTAssertTrue(originalDeck.orderBook.completedOrders.count == 0)
+        XCTAssertTrue(game.board.decks.count == Rules.Board.decks, "\(game.board.decks.count)")
+        XCTAssertTrue(gameCopy.board.decks.count == 0, "\(gameCopy.board.decks.count)")
     }
 
     func testCopyPlayersHand() {
@@ -270,50 +261,7 @@ class CopyTests: EngineYardTests {
     }
 
     func testMockSale() {
-        guard let firstPlayer = game.players?.first as? Player else {
-            return
-        }
-        guard let firstDeck = board.decks.first else {
-            return
-        }
-        guard let card = firstDeck.findFirstUnownedCard() else {
-            return
-        }
 
-        XCTAssertNoThrow(try firstPlayer.hand.add(card))
-        firstDeck.orderBook.clear()
-        firstDeck.orderBook.add(.existingOrder, values: [3,5,2])
-        card.production.add(9)
-
-        XCTAssertTrue(card.production.units == 10)
-
-        let gameCopy = game.copy() as! Game
-
-        let filtered : [Deck] = Board.filterDecksWithExistingOrders(decks: gameCopy.board.decks)
-
-        for deck in filtered {
-            for card in deck.cards {
-
-                do {
-                    let unitsSold = card.production.units
-                    try card.production.spend(unitsSold)
-                    deck.orderBook.reduceValueAt(index: 0, byValue: unitsSold)
-                } catch let err {
-                    print (err.localizedDescription)
-                }
-            }
-        }
-
-        print ("-----")
-
-        print ("firstDeck = \(firstDeck)")
-        print ("player = \(firstPlayer)")
-        print ("card = \(card)")
-
-        // I expect the original state not to have changed, and that all affects are on the copy
-        XCTAssertTrue(firstPlayer.hand.cards.first?.production.units == 10)
-        XCTAssertTrue(card.production.units == 10)
-        XCTAssertTrue(firstDeck.orderBook.existingOrderValues == [3,5,2])
     }
 
     func testCopyDeck() {
