@@ -56,10 +56,6 @@ class SalesTests: EngineYardTests {
 
         let gameCopy = game.copy() as! Game
 
-        
-
-
-
         if let copiedBoard = gameCopy.board {
 
             guard let copiedPlayer = gameCopy.players?.first as? Player else {

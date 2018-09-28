@@ -40,6 +40,7 @@ class Game : NSObject, GKGameModel, TurnOrderUpdateDelegate {
         if let inputModel = gameModel as? Game {
             self.board = inputModel.board
             self.activePlayer = inputModel.activePlayer
+            self.players = inputModel.players
             self.turnOrderIndex = inputModel.turnOrderIndex
         }
     }
