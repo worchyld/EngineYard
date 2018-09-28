@@ -150,6 +150,48 @@ class CopyTests: EngineYardTests {
         XCTAssertTrue(totalUnits == 0)
     }
 
+    func testDuplicateHand() {
+        guard let game:Game = (Game.setup(with: Mock.players(howMany: 5))) else {
+            XCTFail("Game object did not initialise")
+            return
+        }
+        guard let board = game.board else {
+            XCTFail("Board object not initialised")
+            return
+        }
+        guard let firstDeck = board.decks.first else {
+            XCTFail("No first deck found")
+            return
+        }
+        guard let player = game.players?.first as? Player else {
+            print ("No player found")
+            return
+        }
+        guard let unownedCard = firstDeck.findFirstUnownedCard() else {
+            return
+        }
+        XCTAssertNoThrow(try player.hand.add(unownedCard))
+        XCTAssertTrue(player.hand.cards.count == 1)
+
+
+        let gameCopy = game.copy() as! Game
+
+        guard let copiedPlayer = gameCopy.players?.first as? Player else {
+            XCTFail("No copied player")
+            return
+        }
+
+        let expected = player.hand.cards.count
+
+        XCTAssertTrue(copiedPlayer.hand.cards.count == expected)
+        XCTAssertTrue(player.hand.cards.count == expected)
+
+        copiedPlayer.hand.empty()
+
+        XCTAssertTrue(copiedPlayer.hand.cards.count == 0)
+        XCTAssertTrue(player.hand.cards.count == expected)
+    }
+
     func testMockSale() {
         guard let firstPlayer = game.players?.first as? Player else {
             return

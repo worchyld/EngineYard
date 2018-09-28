@@ -65,6 +65,10 @@ final class Hand : NSObject, NSCopying, HandObserver {
 
     func copy(with zone: NSZone? = nil) -> Any {
         let copy = Hand(owner: self.owner!)
+        let duplicateHand = self.cards.map { (c: Card) -> Card in
+            return (c.copy(with: zone)) as! Card
+        }
+        copy.cards = duplicateHand
         return copy
     }
 }

@@ -39,7 +39,7 @@ final class Card : NSObject, NSCopying {
         let copy = Card.init(parent: self.parent!)
         copy.parent = self.parent
         copy.owner = self.owner
-        copy.production = self.production
+        copy.production = self.production.copy(with: zone) as! Production
         return copy
     }
 }

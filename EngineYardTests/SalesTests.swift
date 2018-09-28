@@ -43,45 +43,19 @@ class SalesTests: EngineYardTests {
         }
         XCTAssertNoThrow(try player.hand.add(unownedCard))
         XCTAssertTrue(player.hand.cards.count == 1)
-        guard let playerCard = player.hand.cards.first else {
-            XCTFail("No cards in hand")
-            return
-        }
 
-
-        firstDeck.orderBook.clear()
-        firstDeck.orderBook.add(.existingOrder, values: [3,5,2])
-        playerCard.production.add(9)
-        XCTAssertTrue(playerCard.production.units == 10)
 
         let gameCopy = game.copy() as! Game
 
-        if let copiedBoard = gameCopy.board {
-
-            guard let copiedPlayer = gameCopy.players?.first as? Player else {
-                XCTFail("No copied player -- \(String(describing: gameCopy.players?.description))")
-                return
-            }
-
-            let salesObj = Selling.init(board: copiedBoard)
-            salesObj.salesLoop()
-
-            // Test dollar value sales
-            let expected = ((3 + 5 + 2) * firstDeck.income)
-
-            XCTAssertTrue(copiedPlayer.salesBook.sales.count == 3 , "\(player.salesBook.sales.count)")
-            XCTAssertTrue(copiedPlayer.salesBook.totalUnitsSold == 10, "\(player.salesBook.totalUnitsSold)")
-            XCTAssertTrue(copiedPlayer.salesBook.totalDollarValue == expected, "\(player.salesBook.totalDollarValue)")
-
-            XCTAssertTrue(player.salesBook.sales.count == 0, "\(player.salesBook.sales.count)")
-            XCTAssertTrue(player.salesBook.totalUnitsSold == 0, "\(player.salesBook.totalUnitsSold)")
-            XCTAssertTrue(player.salesBook.totalDollarValue == 0, "\(player.salesBook.totalDollarValue)")
-
-        }
-        else {
-            XCTFail("No copied board")
+        guard let copiedPlayer = gameCopy.players?.first as? Player else {
+            XCTFail("No copied player")
             return
         }
+
+        XCTAssertTrue(copiedPlayer.hand.cards.count == player.hand.cards.count)
+        XCTAssertTrue(copiedPlayer.cash == player.cash)
+
+        
 
 
 
