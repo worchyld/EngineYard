@@ -44,8 +44,10 @@ class SalesTests: EngineYardTests {
         XCTAssertNoThrow(try player.hand.add(unownedCard))
         XCTAssertTrue(player.hand.cards.count == 1)
 
-
+        // Copy the game state
         let gameCopy = game.copy() as! Game
+
+        XCTAssertTrue(gameCopy.board == board)
 
         guard let copiedPlayer = gameCopy.players?.first as? Player else {
             XCTFail("No copied player")
@@ -53,12 +55,51 @@ class SalesTests: EngineYardTests {
         }
 
         XCTAssertTrue(copiedPlayer.hand.cards.count == player.hand.cards.count)
-        XCTAssertTrue(copiedPlayer.cash == player.cash)
 
-        
+        guard let playerCard = player.hand.cards.first else {
+            XCTFail("No cards in hand")
+            return
+        }
+
+        // Reset the orderBook
+        firstDeck.orderBook.clear()
+        firstDeck.orderBook.add(.existingOrder, values: [3,5,2])
+        playerCard.production.add(9)
+        XCTAssertTrue(playerCard.production.units == 10)
+
+
+        guard let copiedBoard = gameCopy.board else {
+            XCTFail("No board copied")
+            return
+        }
+
+        let salesObj = Selling.init(board: copiedBoard)
+        salesObj.salesLoop()
+
+        // expect the copied player:
+        // first card production to be 0
+        // first card spent production to be 10
+        // sales book to record sales
+
+        print (copiedPlayer.salesBook)
 
 
 
+        /*
+        if let copiedBoard = gameCopy.board {
+
+            let salesObj = Selling.init(board: copiedBoard)
+            salesObj.salesLoop()
+
+            let copiedPlayerSB = copiedPlayer.salesBook
+
+            XCTAssertTrue( copiedPlayerSB.sales.count == 3 , "\(copiedPlayerSB.sales.count)")
+            XCTAssertTrue( copiedPlayerSB.totalUnitsSold == 10, "\(copiedPlayerSB.totalUnitsSold)")
+        }
+        else {
+            XCTFail("No board was copied")
+        }
+        */
     }
 
 }

@@ -29,6 +29,7 @@ class SalesBook : NSObject, NSCopying {
 
     func copy(with zone: NSZone? = nil) -> Any {
         let copy = SalesBook(owner: self.owner!)
+        copy.sales = self.sales
         return copy
     }
 

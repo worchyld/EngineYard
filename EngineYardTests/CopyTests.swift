@@ -240,6 +240,35 @@ class CopyTests: EngineYardTests {
         XCTAssertTrue(originalFirstCard.production.units == expected)
     }
 
+    func testCopiedSalesBook() {
+        guard let firstPlayer = game.players?.first as? Player else {
+            return
+        }
+
+        XCTAssertTrue(firstPlayer.salesBook.sales.count == 0)
+
+        let gameCopy = game.copy() as! Game
+
+        guard let copiedPlayer = gameCopy.players?.first as? Player else {
+            XCTFail("copied player")
+            return
+        }
+
+        let mockSale = Sale.init(units: 10, price: 10)
+        copiedPlayer.salesBook.add(sale: mockSale)
+
+        XCTAssertNotNil(copiedPlayer.salesBook.owner)
+
+        XCTAssertTrue(copiedPlayer.salesBook.sales.count == 1)
+        XCTAssertTrue(firstPlayer.salesBook.sales.count == 0)
+        XCTAssertTrue(firstPlayer.salesBook.totalUnitsSold == 0)
+        XCTAssertTrue(firstPlayer.salesBook.totalDollarValue == 0)
+
+        XCTAssertTrue(copiedPlayer.salesBook.totalUnitsSold == 10, "\(copiedPlayer.salesBook.totalUnitsSold)")
+        XCTAssertTrue(copiedPlayer.salesBook.totalDollarValue == 100)
+
+    }
+
     func testMockSale() {
         guard let firstPlayer = game.players?.first as? Player else {
             return

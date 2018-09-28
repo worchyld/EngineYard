@@ -34,11 +34,12 @@ class Player : NSObject, NSCopying, GKGameModelPlayer {
     }
 
     func copy(with zone: NSZone? = nil) -> Any {
-        let player = Player.init(name: self.name)
-        player.wallet = self.wallet.copy(with: zone) as! Wallet
-        player.playerId = self.playerId
-        player.hand = self.hand.copy(with: zone) as! Hand
-        return player
+        let copy = Player.init(name: self.name)
+        copy.wallet = self.wallet.copy(with: zone) as! Wallet
+        copy.playerId = self.playerId
+        copy.hand = self.hand.copy(with: zone) as! Hand
+        copy.salesBook = self.salesBook.copy(with: zone) as! SalesBook
+        return copy
     }
 }
 
