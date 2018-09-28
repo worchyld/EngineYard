@@ -8,32 +8,16 @@
 
 import Foundation
 
-protocol SalesRecordDelegate {
-    func addSalesRecord(card: Card, units: Int, price: Int)
+protocol SalesDelegate {
+    func add(card: Card, units: Int, price: Int)
 }
 
-struct SellingRound : SalesProtocol {
-    var detail: String?
-    var player: Player?
-    var deck: Deck?
-    var card: Card?
-    var units: Int = 0
-    var price: Int = 0
-    var total: Int {
-        guard (units > 0 && price > 0) else {
-            return 0
-        }
-        return (units * price)
-    }
-}
-
-class Selling : NSObject {
+class Selling : NSObject, SalesDelegate {
     private weak var game: Game?
-
-    var round : [SellingRound]  = [SellingRound]()
-
+    lazy var salesDelegate : SalesDelegate = self
 
     init(game: Game) {
+        super.init()
         self.game = game
     }
 
@@ -43,14 +27,104 @@ class Selling : NSObject {
             return
         }
 
+        guard let fp = hasGame.players?.first as? Player else {
+            return
+        }
+
+        let sale = Sale.init(units: 10, price: 10)
+        fp.salesBook.add(sale: sale)
+        
+    }
+
+    private func handle() {
+        guard let hasGame = self.game else {
+            assertionFailure("No game object found")
+            return
+        }
         let filtered = Board.filterDecksWithExistingOrders(decks: hasGame.board.decks)
-        print (filtered)
+        print ("Results found: \(filtered)")
 
         for deck in filtered {
             print ("selling from deck: \(deck.name)")
+
+            var condition = true
+            while (condition == true) {
+
+                for card in cardsWithProduction(deck: deck) {
+
+                    let orders = deck.orderBook.existingOrderValues
+                    let rule = SalesRule.init(orders)
+                    let units = card.production.units
+
+                    if let match = rule.perfectMatch(units) {
+                        print("Found PERFECT MATCH for: \(units) in orders \(rule.orders) at index: \(match.0) which is the value \(match.1)")
+                        self.handlePerfectMatch(deck: deck, card: card, tuple: match)
+                    }
+                    else {
+                        if let match = rule.lowerMatch(units) {
+                            print("Found LOWER MATCH for: \(units) in orders \(rule.orders) at index: \(match.0) which is the value \(match.1)")
+                            self.handleLowerMatch(deck: deck, card: card, tuple: match)
+                        }
+                        else {
+                            if let match = rule.higherMatch(units) {
+                                print("Found HIGHER MATCH for: \(units) in orders \(rule.orders) at index: \(match.0) which is the value \(match.1)")
+                                self.handleHigherMatch(deck: deck, card: card, tuple: match)
+                            }
+                        }
+                    }
+
+                } // next
+
+                // update condition
+                /*
+                 condition = (
+                 (cardsWithProduction(deck: deck).count > 0) &&
+                 (deck.orderBook.existingOrders.count > 0)
+                 )*/
+                condition = false
+
+            } // wend
         }
+    }
+
+    func cardsWithProduction(deck: Deck) -> [Card] {
+        let results = deck.cards.filter({ (c: Card) -> Bool in
+            return (c.production.units > 0)
+        })
+        return results
+    }
+
+    func handlePerfectMatch(deck: Deck, card: Card, tuple: (Int, Int)) {
+
+        salesDelegate.add(card: card, units: 1, price: 1)
+
+    }
+
+    func handleLowerMatch(deck: Deck, card: Card, tuple: (Int, Int)) {
+
+        salesDelegate.add(card: card, units: 1, price: 1)
+
+    }
+
+    func handleHigherMatch(deck: Deck, card: Card, tuple: (Int, Int)) {
+
+        salesDelegate.add(card: card, units: 1, price: 1)
+
+
+    }
+
+    // MARK: Sales Delegate
+
+    func add(card: Card, units: Int, price: Int) {
+        guard let owner = card.owner else {
+            assertionFailure("Card \(card.name) has no owner")
+            return
+        }
+        let sale = Sale.init(units: units, price: price)
+        owner.salesBook.add(sale: sale)
         
     }
+
 }
 
 /*

@@ -72,13 +72,14 @@ class SalesTests: EngineYardTests {
         let originalSB = player.salesBook
         let copiedSB = copiedPlayer.salesBook
 
-        copiedSB.add(sale: Sale.init(units: 10, price: 10))
-
         XCTAssertTrue(originalSB.sales.count == 0)
-        XCTAssertTrue(copiedSB.sales.count == 1)
+        XCTAssertTrue(copiedSB.sales.count == 0)
 
         let selling = Selling(game: gameCopy)
         selling.beginSelling()
+
+        XCTAssertTrue(originalSB.sales.count == 0, "Actual: \(originalSB.sales.count)")
+        XCTAssertTrue(copiedSB.sales.count == 1, "Actual: \(copiedSB.sales.count)")
 
     }
 

@@ -16,7 +16,7 @@ protocol GameBoardDelegate {
 final class Board : NSObject, NSCopying, GameBoardDelegate {
     // Create a static, constant instance of
     // the enclosing class (itself) and initialize.
-    static let instance = Board()
+    //static let instance = Board()
 
     private var _decks = [Deck]()
 
@@ -69,7 +69,10 @@ final class Board : NSObject, NSCopying, GameBoardDelegate {
     }
 
     func copy(with zone: NSZone? = nil) -> Any {
-        let copy = Board.instance
+        let copy = Board()
+        copy._decks = _decks.map({ (d: Deck) -> Deck in
+            return d.copy(with: zone) as! Deck
+        })
         return copy
     }
 }
@@ -113,7 +116,7 @@ extension Board {
         let filtered = decks
             .filter { (d: Deck) -> Bool in
                 return ((d.orderBook.existingOrders.count > 0) &&
-                    (d.orderBook.totalExistingOrders > 0) &&
+                    (d.orderBook.ordersOnBooks > 0) &&
                     (d.owners?.count ?? 0 > 0) &&
                     (d.active)
                 )}

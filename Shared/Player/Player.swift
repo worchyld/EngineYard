@@ -12,7 +12,6 @@ import GameplayKit
 class Player : NSObject, NSCopying, GKGameModelPlayer {
     internal var playerId: Int = 0 {
         didSet {
-            print ("Set playerId = \(self.playerId)")
         }
     }
     public private (set) var turnOrder: Int = 0

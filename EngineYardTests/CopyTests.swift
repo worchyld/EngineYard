@@ -287,9 +287,9 @@ class CopyTests: EngineYardTests {
 
         XCTAssertTrue(card.production.units == 10)
 
-        let copyBoard = board.copy() as! Board
+        let gameCopy = game.copy() as! Game
 
-        let filtered : [Deck] = Board.filterDecksWithExistingOrders(decks: copyBoard.decks)
+        let filtered : [Deck] = Board.filterDecksWithExistingOrders(decks: gameCopy.board.decks)
 
         for deck in filtered {
             for card in deck.cards {

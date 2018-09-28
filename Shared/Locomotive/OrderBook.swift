@@ -51,7 +51,7 @@ final class OrderBook : NSObject, NSCopying {
             return o.value
         })
     }
-    var totalExistingOrders: Int {
+    var ordersOnBooks: Int {
         return (self.existingOrderValues.reduce(0, +))
     }
 
