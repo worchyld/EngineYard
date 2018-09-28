@@ -38,9 +38,7 @@ class Game : NSObject, GKGameModel, TurnOrderUpdateDelegate {
 
     func setGameModel(_ gameModel: GKGameModel) {
         if let inputModel = gameModel as? Game {
-            self.delegate = inputModel.delegate
             self.board = inputModel.board
-            self.players = inputModel.players
             self.activePlayer = inputModel.activePlayer
             self.turnOrderIndex = inputModel.turnOrderIndex
         }

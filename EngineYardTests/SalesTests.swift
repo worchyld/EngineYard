@@ -54,26 +54,23 @@ class SalesTests: EngineYardTests {
         playerCard.production.add(9)
         XCTAssertTrue(playerCard.production.units == 10)
 
-        // COPY THE BOARD FIRST!!
-        let copyBoard = board.copy() as! Board
+  
+        /*
+        let salesObj = Selling.init(board: gameCopy.board)
+        salesObj.salesLoop()
 
-        let decks: [Deck] = Board.filterDecksWithExistingOrders(decks: copyBoard.decks)
+        // Test dollar value sales
+        let expected = ((3 + 5 + 2) * firstDeck.income)
 
-        for deck in decks {
-            for card in deck.cards {
 
-                do {
-                    let unitsSold = card.production.units
-                    try card.production.spend(unitsSold)
-                    deck.orderBook.reduceValueAt(index: 0, byValue: unitsSold)
-                } catch let err {
-                    print (err.localizedDescription)
-                }
-            }
-        }
+        XCTAssertTrue(copiedPlayer.salesBook.sales.count == 3 , "\(player.salesBook.sales.count)")
+        XCTAssertTrue(copiedPlayer.salesBook.totalUnitsSold == 10, "\(player.salesBook.totalUnitsSold)")
+        XCTAssertTrue(copiedPlayer.salesBook.totalDollarValue == expected, "\(player.salesBook.totalDollarValue)")
 
-        // Test amount of items sold
-
+        XCTAssertTrue(player.salesBook.sales.count == 0, "\(player.salesBook.sales.count)")
+        XCTAssertTrue(player.salesBook.totalUnitsSold == 0)
+        XCTAssertTrue(player.salesBook.totalDollarValue == 0)
+        */
     }
 
 }

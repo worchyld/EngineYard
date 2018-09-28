@@ -15,42 +15,21 @@ protocol SalesRecordDelegate {
 class Selling : CustomStringConvertible, SalesRecordDelegate {
 
     private var _decks: [Deck] = [Deck]()
-    private var makeCopy: Bool = true
     lazy var delegate: SalesRecordDelegate = self
 
     var description: String {
         return ""
     }
 
-    lazy var filtered = self._decks
-        .filter { (d: Deck) -> Bool in
-            return ((d.orderBook.existingOrders.count > 0) &&
-                (d.orderBook.totalExistingOrders > 0) &&
-                (d.owners?.count ?? 0 > 0) &&
-                (d.active)
-            )}
-        .sorted(by: { (t1: Deck, t2: Deck) -> Bool in
-            return (t1.cost < t2.cost)
-        }
-    )
-
-    init(decks: [Deck], makeCopy: Bool = true) {
-        self._decks = decks
-        self.makeCopy = makeCopy
+    init(board: Board, makeCopy: Bool = true) {
+        self._decks = board.decks
     }
 
 
     func salesLoop() {
-        var decks: [Deck]
+        let filtered = Board.filterDecksWithExistingOrders(decks: self._decks)
 
-        if (self.makeCopy) {
-            decks = self.filtered.map{ $0.copy() as! Deck }
-        }
-        else {
-            decks = self.filtered
-        }
-
-        for deck in decks {
+        for deck in filtered {
 
             var condition = true
             while (condition == true) {
@@ -80,8 +59,6 @@ class Selling : CustomStringConvertible, SalesRecordDelegate {
                         }
                     }
 
-
-                    print (">> deck \(deck.description) <<")
                 } // next
 
 
@@ -160,6 +137,7 @@ class Selling : CustomStringConvertible, SalesRecordDelegate {
 
     func addSalesRecord(card: Card, units: Int, price: Int) {
         guard let hasOwner = card.owner else {
+            print ("\(#function) has no owner")
             return
         }
         let sale = Sale.init(productId: card.name, units: units, price: price)

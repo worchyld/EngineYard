@@ -34,6 +34,27 @@ class CopyTests: EngineYardTests {
         self.board = nil
     }
 
+    func testCopyGame() {
+        let gameCopy = game.copy() as! Game
+
+        guard let copiedPlayer = gameCopy.players?.first as? Player else {
+            print ("No copied player found")
+            return
+        }
+
+        guard let player = game.players?.first as? Player else {
+            return
+        }
+
+        let cash = player.cash
+
+        XCTAssertNoThrow(try copiedPlayer.wallet.debit(amount: copiedPlayer.cash))
+        XCTAssertNoThrow(try copiedPlayer.wallet.credit(amount: 100))
+
+        XCTAssertTrue(player.cash == cash)
+        XCTAssertTrue(copiedPlayer.cash == 100)
+    }
+
     func testCopyBoard() {
         let copied = board.copy() as! Board
 

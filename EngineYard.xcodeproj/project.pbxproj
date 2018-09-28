@@ -197,8 +197,8 @@
 		4DA3486720812972006DA164 /* EngineYardTests */ = {
 			isa = PBXGroup;
 			children = (
-				4DFB821D215A7F070036F9FD /* CopyTests.swift */,
 				4DA3486820812972006DA164 /* EngineYardTests.swift */,
+				4DFB821D215A7F070036F9FD /* CopyTests.swift */,
 				4DA5237120815C06000FFAAB /* TaxTests.swift */,
 				4D617D552081EE110036BB00 /* DieTests.swift */,
 				4D3DF4B620834679000DF88E /* WalletTests.swift */,
