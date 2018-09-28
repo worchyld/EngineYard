@@ -37,6 +37,17 @@ class CopyTests: EngineYardTests {
     func testCopyGame() {
         let gameCopy = game.copy() as! Game
 
+        guard let players = game.players else {
+            XCTFail("No players")
+            return
+        }
+        guard let _ = gameCopy.players else {
+            XCTFail("No copied players")
+            return
+        }
+
+        XCTAssertTrue(gameCopy.players!.count == players.count)
+
         guard let copiedPlayer = gameCopy.players?.first as? Player else {
             print ("No copied player found")
             return
@@ -46,12 +57,12 @@ class CopyTests: EngineYardTests {
             return
         }
 
-        let cash = player.cash
+        let expectedCash = player.cash
 
         XCTAssertNoThrow(try copiedPlayer.wallet.debit(amount: copiedPlayer.cash))
         XCTAssertNoThrow(try copiedPlayer.wallet.credit(amount: 100))
 
-        XCTAssertTrue(player.cash == cash)
+        XCTAssertTrue(player.cash == cash , "Expected: \(expectedCash). Actual: \(player.cash)")
         XCTAssertTrue(copiedPlayer.cash == 100)
     }
 

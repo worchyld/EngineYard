@@ -54,23 +54,41 @@ class SalesTests: EngineYardTests {
         playerCard.production.add(9)
         XCTAssertTrue(playerCard.production.units == 10)
 
-  
-        /*
-        let salesObj = Selling.init(board: gameCopy.board)
-        salesObj.salesLoop()
+        let gameCopy = game.copy() as! Game
 
-        // Test dollar value sales
-        let expected = ((3 + 5 + 2) * firstDeck.income)
+        
 
 
-        XCTAssertTrue(copiedPlayer.salesBook.sales.count == 3 , "\(player.salesBook.sales.count)")
-        XCTAssertTrue(copiedPlayer.salesBook.totalUnitsSold == 10, "\(player.salesBook.totalUnitsSold)")
-        XCTAssertTrue(copiedPlayer.salesBook.totalDollarValue == expected, "\(player.salesBook.totalDollarValue)")
 
-        XCTAssertTrue(player.salesBook.sales.count == 0, "\(player.salesBook.sales.count)")
-        XCTAssertTrue(player.salesBook.totalUnitsSold == 0)
-        XCTAssertTrue(player.salesBook.totalDollarValue == 0)
-        */
+        if let copiedBoard = gameCopy.board {
+
+            guard let copiedPlayer = gameCopy.players?.first as? Player else {
+                XCTFail("No copied player -- \(String(describing: gameCopy.players?.description))")
+                return
+            }
+
+            let salesObj = Selling.init(board: copiedBoard)
+            salesObj.salesLoop()
+
+            // Test dollar value sales
+            let expected = ((3 + 5 + 2) * firstDeck.income)
+
+            XCTAssertTrue(copiedPlayer.salesBook.sales.count == 3 , "\(player.salesBook.sales.count)")
+            XCTAssertTrue(copiedPlayer.salesBook.totalUnitsSold == 10, "\(player.salesBook.totalUnitsSold)")
+            XCTAssertTrue(copiedPlayer.salesBook.totalDollarValue == expected, "\(player.salesBook.totalDollarValue)")
+
+            XCTAssertTrue(player.salesBook.sales.count == 0, "\(player.salesBook.sales.count)")
+            XCTAssertTrue(player.salesBook.totalUnitsSold == 0, "\(player.salesBook.totalUnitsSold)")
+            XCTAssertTrue(player.salesBook.totalDollarValue == 0, "\(player.salesBook.totalDollarValue)")
+
+        }
+        else {
+            XCTFail("No copied board")
+            return
+        }
+
+
+
     }
 
 }

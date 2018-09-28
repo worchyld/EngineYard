@@ -46,7 +46,7 @@ class Game : NSObject, GKGameModel, TurnOrderUpdateDelegate {
 
     func copy(with zone: NSZone? = nil) -> Any {
         let copy = Game()
-        copy.setGameModel(self)
+        copy.setGameModel(self)        
         return copy
     }
 
