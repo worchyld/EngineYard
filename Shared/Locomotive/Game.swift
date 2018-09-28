@@ -40,14 +40,21 @@ class Game : NSObject, GKGameModel, TurnOrderUpdateDelegate {
         if let inputModel = gameModel as? Game {
             self.board = inputModel.board
             self.activePlayer = inputModel.activePlayer
-            self.players = inputModel.players
             self.turnOrderIndex = inputModel.turnOrderIndex
         }
     }
 
     func copy(with zone: NSZone? = nil) -> Any {
         let copy = Game()
-        copy.setGameModel(self)        
+        copy.setGameModel(self)
+
+        let duplicate = self.players?.map({ (player: GKGameModelPlayer) -> GKGameModelPlayer in
+            let person = player as! Player
+            let copiedPlayer = person.copy(with: zone) as! Player
+            return copiedPlayer
+        })
+        copy.players = duplicate
+
         return copy
     }
 
