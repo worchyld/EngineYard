@@ -8,8 +8,6 @@
 
 import Foundation
 
-typealias Locomotive = Deck
-
 final class Deck : NSObject, NSCopying {
     public fileprivate (set) var subscribers: [GameBoardDelegate] = []
 
