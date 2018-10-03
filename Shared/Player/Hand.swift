@@ -11,7 +11,8 @@ import Foundation
 typealias Tableau = Hand
 
 enum HandError: Error, Equatable {
-    case handAlreadyHasCard
+    case alreadyHaveThisCard
+    case sameCardFromThisDeck
     case cannotFindCard
     case handIsEmpty
     case noOwnership
@@ -21,7 +22,9 @@ enum HandError: Error, Equatable {
 extension HandError {
     static func == (lhs: HandError, rhs: HandError) -> Bool {
         switch (lhs, rhs) {
-        case (.handAlreadyHasCard, .handAlreadyHasCard):
+        case (.alreadyHaveThisCard, .alreadyHaveThisCard):
+            return true
+        case (.sameCardFromThisDeck, .sameCardFromThisDeck):
             return true
         case (.cannotFindCard, .cannotFindCard):
             return true
@@ -84,8 +87,9 @@ extension Hand {
 
 extension Hand {
     func add(_ card: Card) throws {
-        try checkCardHasParent(card: card)
-        try checkOccurance(card)
+        try checkCardHasParent(card)
+        try checkParentOccurance(card)
+        try checkCardOccurance(card)
 
         do {
             try willAdd(card: card)
@@ -128,7 +132,7 @@ extension Hand {
 
 
     private func canRemove(_ card: Card) throws -> (Int, Card)? {
-        try checkCardHasParent(card: card)
+        try checkCardHasParent(card)
         let _ = try checkHandHasOwner()
         try checkHandIsNotEmpty()
 
@@ -146,7 +150,7 @@ extension Hand {
         return owner
     }
 
-    private func checkCardHasParent(card: Card) throws {
+    private func checkCardHasParent(_ card: Card) throws {
         guard card.parent != nil else {
             throw HandError.noParent
         }
@@ -158,10 +162,17 @@ extension Hand {
         }
     }
 
-    private func checkOccurance(_ card: Card) throws {
+    private func checkParentOccurance(_ card: Card) throws {
         let results = self.cards.filter{$0.parent == card.parent}.count
-        guard results == 0 else {
-            throw HandError.handAlreadyHasCard
+        if (results > 0) {
+            throw HandError.sameCardFromThisDeck
+        }
+    }
+
+    private func checkCardOccurance(_ card: Card) throws {
+        let results = self.cards.filter{$0.name == card.name}.count
+        if (results > 0) {
+            throw HandError.alreadyHaveThisCard
         }
     }
 
@@ -169,7 +180,6 @@ extension Hand {
         guard let needle = (self.cards.enumerated().filter {
             (offset, element) -> Bool
             in
-            //return (index, element).1.name == card.name
             return (index, element).1 == card
             }).first
         else {

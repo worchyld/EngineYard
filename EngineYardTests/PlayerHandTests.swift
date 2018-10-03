@@ -102,7 +102,7 @@ class PlayerHandTests: EngineYardTests {
         // try to add the same card
         // expect it to throw an error (Already have this card)
         XCTAssertThrowsError(try firstPlayer.hand.add(firstCard)) { error in
-            XCTAssertEqual(error as? HandError, HandError.handAlreadyHasCard)
+            XCTAssertEqual(error as? HandError, HandError.sameCardFromThisDeck)
         }
     }
 
@@ -145,7 +145,7 @@ class PlayerHandTests: EngineYardTests {
         // try to add a card from the same deck
         // expect it to throw an error (Already have this card)
         XCTAssertThrowsError(try firstPlayer.hand.add(lastCard)) { error in
-            XCTAssertEqual(error as? HandError, HandError.handAlreadyHasCard)
+            XCTAssertEqual(error as? HandError, HandError.sameCardFromThisDeck)
         }
 
         XCTAssertTrue(firstPlayer.hand.cards.count == 1)
