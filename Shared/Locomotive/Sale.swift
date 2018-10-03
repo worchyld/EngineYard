@@ -8,11 +8,18 @@
 
 import Foundation
 
-// Sales model - Records a product, unit and price
-struct Sale {
-    var product : Deck?
-    var units : Int = 0
-    var price : Int = 0
+// `Sales` model - Records a product, unit and price
+
+protocol SalesProtocol {
+    var units: Int { get set }
+    var price: Int { get set }
+    var total: Int { get }
+}
+
+struct Sale : CustomStringConvertible, SalesProtocol {
+    var productId : String?
+    var units : Int = 0 // units sold
+    var price : Int = 0 // price sold at
 
     var total : Int {
         guard (units > 0 && price > 0) else {
@@ -21,11 +28,15 @@ struct Sale {
         return (units * price)
     }
 
-    init(product: Deck? = nil, units: Int, price: Int) {
-        if let product = product {
-            self.product = product
+    init(productId: String? = nil, units: Int, price: Int) {
+        if let productId = productId {
+            self.productId = productId
         }
         self.units = units
         self.price = price
+    }
+
+    var description: String {
+        return ("Sale:: \(self.units) units sold at $\(self.price) for a total of \(self.total)")
     }
 }

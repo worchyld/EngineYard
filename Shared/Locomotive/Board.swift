@@ -13,11 +13,7 @@ protocol GameBoardDelegate {
 }
 
 // Board model
-final class Board : NSObject, GameBoardDelegate {
-    // Create a static, constant instance of
-    // the enclosing class (itself) and initialize.
-    static let instance = Board()
-
+final class Board : NSObject, NSCopying, GameBoardDelegate {
     private var _decks = [Deck]()
 
     public var decks: [Deck] {
@@ -30,29 +26,15 @@ final class Board : NSObject, GameBoardDelegate {
         return (self.decks.reduce(0) { $0 + ($1.active ? 1 : 0) })
     }
 
-    public var filtered: [Deck] {
-        let filtered = self.decks
-            .filter { (d: Deck) -> Bool in
-            return ((d.orderBook.existingOrders.count > 0) &&
-                (d.orderBook.totalExistingOrders > 0) &&
-                (d.owners?.count ?? 0 > 0) &&
-                (d.active)
-            )}
-            .sorted(by: { (t1: Deck, t2: Deck) -> Bool in
-                return (t1.cost < t2.cost)
-            }
-        )
-        return filtered
-    }
-
     override init() {
         super.init()
-        self._decks = prepare()
     }
 
+    func prepare() {
+        self._decks = self.builder()
+    }
 
-    // Prepare game decks
-    private func prepare() -> [Deck] {
+    private func builder() -> [Deck] {
         let decks = [
             Deck.init(name: "Green.1", cost: 4, generation: .first, color: .green, capacity: 3, numberOfChildren: 4)
             , Deck.init(name: "Red.1", cost: 8, generation: .first, color: .red, capacity: 3, numberOfChildren: 3)
@@ -81,6 +63,14 @@ final class Board : NSObject, GameBoardDelegate {
 
     override var description: String {
         return "[Board]. Decks: \(self.decks.count)"
+    }
+
+    func copy(with zone: NSZone? = nil) -> Any {
+        let copy = Board()
+        copy._decks = _decks.map({ (d: Deck) -> Deck in
+            return d.copy(with: zone) as! Deck
+        })
+        return copy
     }
 }
 
@@ -119,4 +109,32 @@ extension Board {
         return results
     }
 
+    public static func filterDecksWithExistingOrders(decks: [Deck]) -> [Deck] {
+        let filtered = decks
+            .filter { (d: Deck) -> Bool in
+                return ((d.orderBook.existingOrders.count > 0) &&
+                    (d.orderBook.ordersOnBooks > 0) &&
+                    (d.owners?.count ?? 0 > 0) &&
+                    (d.active)
+                )}
+            .sorted(by: { (t1: Deck, t2: Deck) -> Bool in
+                return (t1.cost < t2.cost)
+            }
+        )
+        return filtered
+    }
+
+    public static func findCard(productId: String, in decks:[Deck]) -> Card? {
+        let results = decks.flatMap {
+            $0.cards
+                .filter({ (c: Card) -> Bool in
+                    return (c.name == productId)
+                })
+        }
+        
+        guard let filtered = results.first else {
+            return nil
+        }
+        return filtered
+    }
 }

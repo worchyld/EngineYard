@@ -18,6 +18,12 @@ final class Card : NSObject, NSCopying {
         production.setParent(card: self)
         return production
     }()
+    var income: Int {
+        guard let hasParent = self.parent else {
+            return 0
+        }
+        return hasParent.income
+    }
 
     init(parent: Deck) {
         super.init()
@@ -31,6 +37,9 @@ final class Card : NSObject, NSCopying {
 
     func copy(with zone: NSZone? = nil) -> Any {
         let copy = Card.init(parent: self.parent!)
+        copy.parent = self.parent
+        copy.owner = self.owner
+        copy.production = self.production.copy(with: zone) as! Production
         return copy
     }
 }

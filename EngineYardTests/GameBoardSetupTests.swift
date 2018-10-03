@@ -24,6 +24,7 @@ class GameBoardSetupTests: EngineYardTests {
 
     func testBoardInitialSeed() {
         let board = Board()
+        board.prepare()
         XCTAssertTrue(board.decks.count == 14)
         XCTAssertTrue(board.countUnlocked == 0)
     }

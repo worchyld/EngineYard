@@ -8,35 +8,30 @@
 
 import Foundation
 
-typealias Locomotive = Deck
-
-protocol DeckDelegate {
-    var name : String { get  }
-    var color : EngineColor { get }
-    var generation : Generation { get }
-
-    var cost : Int { get }
-    var productionCost : Int { get }
-    var income : Int { get }
-
-    var capacity : Int { get } // maximum dice capacity
-}
-
-
-final class Deck : NSObject, NSCopying, DeckDelegate {
+final class Deck : NSObject, NSCopying {
     public fileprivate (set) var subscribers: [GameBoardDelegate] = []
 
     // Each deck has a series of cards
     public private (set) var cards : [Card] = [Card]()
 
-    public private (set) var name: String = ""
-    public private (set) var cost: Int = 0
-    public private (set) var productionCost: Int = 0
-    public private (set) var income: Int = 0
-    public private (set) var generation: Generation = .first
-    public private (set) var color: EngineColor = .green
-    public private (set) var capacity: Int = 0
-    public private (set) var numberOfChildren: Int = 0
+    let name: String
+    let cost: Int
+    var productionCost: Int {
+        guard (cost % 4 == 0) else {
+            return 0
+        }
+        return (cost / 2)
+    }
+    var income: Int {
+        guard (cost % 4 == 0) else {
+            return 0
+        }
+        return (productionCost / 2)
+    }
+    let generation: Generation
+    let color: EngineColor
+    let capacity: Int
+    let numberOfChildren: Int
     public private (set) var rustedState: RustedState = .normal
 
     var active: Bool {
@@ -49,22 +44,13 @@ final class Deck : NSObject, NSCopying, DeckDelegate {
 
     // OrderBook
     lazy var orderBook: OrderBook = OrderBook(parent: self)
-    var existingOrders : [Int] {
-        return orderBook.existingOrderValues
-    }
-    var completedOrders : [Int] {
-        return orderBook.completedOrderValues
-    }
-    var currentNumberOfDice: Int {
-        return (self.existingOrders.count + self.completedOrders.count)
-    }
 
     // Ownership
     var owners: [Player]? {
         return self.cards
             .lazy
             .compactMap { card in card.owner.map{ (card: card, owner: $0) } }
-            //.sorted { $0.owner.turnOrder < $1.owner.turnOrder }
+            .sorted { $0.owner.turnOrder < $1.owner.turnOrder }
             .map { $0.owner }
     }
 
@@ -74,17 +60,15 @@ final class Deck : NSObject, NSCopying, DeckDelegate {
         assert(capacity > 0, "Capacity must be > 0")
         assert(numberOfChildren > 0, "Number of Children must be > 0")
 
-        super.init()
 
         self.name = name
         self.generation = generation
         self.color = color
-        self.cost = cost
-        self.productionCost = Int( cost / 2 )
-        self.income = Int( self.productionCost / 2 )
-
+        self.cost = cost        
         self.capacity = capacity
         self.numberOfChildren = numberOfChildren
+
+        super.init()
     }
 
     func addChildCards() {
@@ -101,7 +85,12 @@ final class Deck : NSObject, NSCopying, DeckDelegate {
 
     func copy(with zone: NSZone? = nil) -> Any {
         let copy = Deck.init(name: self.name, cost: self.cost, generation: self.generation, color: self.color, capacity: self.capacity, numberOfChildren: self.numberOfChildren)
-        copy.cards = self.cards
+
+        let results = self.cards.map { (c: Card) -> Card in
+            return c.copy(with: zone) as! Card
+        }
+        copy.cards = results
+
         copy.orderBook = self.orderBook.copy(with: zone) as! OrderBook
 
         return copy

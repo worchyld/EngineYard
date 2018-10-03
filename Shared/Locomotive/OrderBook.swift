@@ -51,7 +51,7 @@ final class OrderBook : NSObject, NSCopying {
             return o.value
         })
     }
-    var totalExistingOrders: Int {
+    var ordersOnBooks: Int {
         return (self.existingOrderValues.reduce(0, +))
     }
 
@@ -125,6 +125,11 @@ extension OrderBook {
                 self.add(orderType)
             }
         }
+    }
+
+    func reduceValueAt(index: Int, byValue: Int) {
+        let result = self.orders[index] as Order
+        result.value -= byValue
     }
 }
 extension OrderBook {

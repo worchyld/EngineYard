@@ -19,11 +19,11 @@
 		4D3DF4B520834592000DF88E /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3DF4B420834592000DF88E /* Player.swift */; };
 		4D3DF4B720834679000DF88E /* WalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3DF4B620834679000DF88E /* WalletTests.swift */; };
 		4D3DF4B920835DB7000DF88E /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3DF4B820835DB7000DF88E /* Rules.swift */; };
+		4D50C4F121569DA000E43C77 /* Selling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D50C4F021569DA000E43C77 /* Selling.swift */; };
 		4D617D562081EE110036BB00 /* DieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D617D552081EE110036BB00 /* DieTests.swift */; };
 		4D74BA482084A6D000ADC00C /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74BA472084A6D000ADC00C /* Hand.swift */; };
 		4D74BA4C2084AC5000ADC00C /* OrderBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74BA4B2084AC5000ADC00C /* OrderBook.swift */; };
 		4D7D430F21529136003CCF89 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7D430E21529136003CCF89 /* Mock.swift */; };
-		4D95B5A221569C5500DF91E5 /* SalesBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA92C102156496700AD19B7 /* SalesBook.swift */; };
 		4D95B5A321569C5D00DF91E5 /* Sale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA92C1221564A0500AD19B7 /* Sale.swift */; };
 		4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3486820812972006DA164 /* EngineYardTests.swift */; };
 		4DA3487C20812A8B006DA164 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3487420812A8B006DA164 /* ViewController.swift */; };
@@ -49,6 +49,10 @@
 		4DEE87172151B6130038F0CF /* TurnOrderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE87162151B6130038F0CF /* TurnOrderTests.swift */; };
 		4DEE8725215224430038F0CF /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE8724215224430038F0CF /* StateMachine.swift */; };
 		4DEE87272152244B0038F0CF /* GameStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE87262152244B0038F0CF /* GameStateTests.swift */; };
+		4DFB8217215A042C0036F9FD /* SalesRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA92C1621565E5200AD19B7 /* SalesRule.swift */; };
+		4DFB8218215A08AB0036F9FD /* SalesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA92C1421564C0E00AD19B7 /* SalesTests.swift */; };
+		4DFB821A215A71DF0036F9FD /* SalesBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFB8219215A71DF0036F9FD /* SalesBook.swift */; };
+		4DFB821E215A7F070036F9FD /* CopyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFB821D215A7F070036F9FD /* CopyTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +78,7 @@
 		4D3DF4B420834592000DF88E /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		4D3DF4B620834679000DF88E /* WalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTests.swift; sourceTree = "<group>"; };
 		4D3DF4B820835DB7000DF88E /* Rules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rules.swift; sourceTree = "<group>"; };
+		4D50C4F021569DA000E43C77 /* Selling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selling.swift; sourceTree = "<group>"; };
 		4D617D552081EE110036BB00 /* DieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DieTests.swift; sourceTree = "<group>"; };
 		4D74BA472084A6D000ADC00C /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
 		4D74BA4B2084AC5000ADC00C /* OrderBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBook.swift; sourceTree = "<group>"; };
@@ -97,7 +102,6 @@
 		4DA8396A2136AE7900F7CAB9 /* GameBoardSetupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardSetupTests.swift; sourceTree = "<group>"; };
 		4DA8396C2136B0ED00F7CAB9 /* GameSetupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetupManager.swift; sourceTree = "<group>"; };
 		4DA92C0E2156186400AD19B7 /* OrderBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookTests.swift; sourceTree = "<group>"; };
-		4DA92C102156496700AD19B7 /* SalesBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesBook.swift; sourceTree = "<group>"; };
 		4DA92C1221564A0500AD19B7 /* Sale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sale.swift; sourceTree = "<group>"; };
 		4DA92C1421564C0E00AD19B7 /* SalesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesTests.swift; sourceTree = "<group>"; };
 		4DA92C1621565E5200AD19B7 /* SalesRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesRule.swift; sourceTree = "<group>"; };
@@ -109,6 +113,8 @@
 		4DEE87162151B6130038F0CF /* TurnOrderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnOrderTests.swift; sourceTree = "<group>"; };
 		4DEE8724215224430038F0CF /* StateMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
 		4DEE87262152244B0038F0CF /* GameStateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameStateTests.swift; sourceTree = "<group>"; };
+		4DFB8219215A71DF0036F9FD /* SalesBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesBook.swift; sourceTree = "<group>"; };
+		4DFB821D215A7F070036F9FD /* CopyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CopyTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,9 +144,10 @@
 				4D1BD48A2083846500051FD9 /* Card.swift */,
 				4D1BD48C208384ED00051FD9 /* Production.swift */,
 				4D74BA4B2084AC5000ADC00C /* OrderBook.swift */,
-				4DA92C102156496700AD19B7 /* SalesBook.swift */,
+				4DFB8219215A71DF0036F9FD /* SalesBook.swift */,
 				4DA92C1221564A0500AD19B7 /* Sale.swift */,
 				4DA92C1621565E5200AD19B7 /* SalesRule.swift */,
+				4D50C4F021569DA000E43C77 /* Selling.swift */,
 				4DC5AEE7214ED9E500D2841D /* MarketDemandsManager.swift */,
 			);
 			path = Locomotive;
@@ -191,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				4DA3486820812972006DA164 /* EngineYardTests.swift */,
+				4DFB821D215A7F070036F9FD /* CopyTests.swift */,
 				4DA5237120815C06000FFAAB /* TaxTests.swift */,
 				4D617D552081EE110036BB00 /* DieTests.swift */,
 				4D3DF4B620834679000DF88E /* WalletTests.swift */,
@@ -368,12 +376,13 @@
 				4DA523652081582B000FFAAB /* Enums.swift in Sources */,
 				4D95B5A321569C5D00DF91E5 /* Sale.swift in Sources */,
 				4D74BA482084A6D000ADC00C /* Hand.swift in Sources */,
+				4D50C4F121569DA000E43C77 /* Selling.swift in Sources */,
 				4DA8396D2136B0ED00F7CAB9 /* GameSetupManager.swift in Sources */,
 				4DE3872521527B4300BFF9DB /* PhaseManager.swift in Sources */,
 				4DA5236720815885000FFAAB /* Die.swift in Sources */,
 				4D3DF4B920835DB7000DF88E /* Rules.swift in Sources */,
-				4D95B5A221569C5500DF91E5 /* SalesBook.swift in Sources */,
 				4DA5236E20815960000FFAAB /* Tax.swift in Sources */,
+				4DFB8217215A042C0036F9FD /* SalesRule.swift in Sources */,
 				4D1BD48B2083846500051FD9 /* Card.swift in Sources */,
 				4DEE8725215224430038F0CF /* StateMachine.swift in Sources */,
 				4DC5AEE8214ED9E500D2841D /* MarketDemandsManager.swift in Sources */,
@@ -382,6 +391,7 @@
 				4D3DF4B520834592000DF88E /* Player.swift in Sources */,
 				4D1BD4872083829900051FD9 /* Deck.swift in Sources */,
 				4DA3487C20812A8B006DA164 /* ViewController.swift in Sources */,
+				4DFB821A215A71DF0036F9FD /* SalesBook.swift in Sources */,
 				4DEE871321518ABE0038F0CF /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,6 +410,8 @@
 				4D617D562081EE110036BB00 /* DieTests.swift in Sources */,
 				4DC5AEE6214E7A1500D2841D /* MarketDemandsTests.swift in Sources */,
 				4D2847922138147200C81B5C /* ProductionTests.swift in Sources */,
+				4DFB8218215A08AB0036F9FD /* SalesTests.swift in Sources */,
+				4DFB821E215A7F070036F9FD /* CopyTests.swift in Sources */,
 				4DA5237220815C06000FFAAB /* TaxTests.swift in Sources */,
 				4DEE87172151B6130038F0CF /* TurnOrderTests.swift in Sources */,
 				4DA8396B2136AE7900F7CAB9 /* GameBoardSetupTests.swift in Sources */,

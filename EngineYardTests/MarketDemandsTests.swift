@@ -74,11 +74,11 @@ class MarketDemandsTests: EngineYardTests {
         XCTAssertTrue(activeGreenDecks.count == 1, "\(activeGreenDecks.count)")
         XCTAssertFalse(firstDeck.orderBook.hasMaximumDice)
 
-        let emptySpaces = (firstDeck.capacity - firstDeck.existingOrders.count)
+        let emptySpaces = (firstDeck.capacity - firstDeck.orderBook.existingOrders.count)
         for _ in 1...emptySpaces {
             firstDeck.orderBook.add(.existingOrder)
         }
-        XCTAssertTrue(firstDeck.existingOrders.count == firstDeck.capacity)
+        XCTAssertTrue(firstDeck.orderBook.existingOrders.count == firstDeck.capacity)
         XCTAssertTrue(firstDeck.orderBook.hasMaximumDice)
     }
 
@@ -157,7 +157,7 @@ class MarketDemandsTests: EngineYardTests {
         guard let firstDeck = board.decks.first else {
             return
         }
-        XCTAssertTrue(firstDeck.existingOrders.count == 1)
+        XCTAssertTrue(firstDeck.orderBook.existingOrders.count == 1)
 
         guard let firstExistingOrder = firstDeck.orderBook.existingOrders.first else {
             XCTFail("No first order found")
@@ -190,7 +190,7 @@ class MarketDemandsTests: EngineYardTests {
         guard let firstDeck = board.decks.first else {
             return
         }
-        XCTAssertTrue(firstDeck.existingOrders.count == 1)
+        XCTAssertTrue(firstDeck.orderBook.existingOrders.count == 1)
 
         guard let firstExistingOrder = firstDeck.orderBook.existingOrders.first else {
             XCTFail("No first order found")
@@ -284,8 +284,8 @@ class MarketDemandsTests: EngineYardTests {
                 XCTAssertTrue(deck.rustedState == .old)
             }
             else {
-                XCTAssertTrue(deck.completedOrders.count == 0)
-                XCTAssertTrue(deck.existingOrders.count == 2)
+                XCTAssertTrue(deck.orderBook.completedOrders.count == 0)
+                XCTAssertTrue(deck.orderBook.existingOrders.count == 2)
                 XCTAssertTrue(deck.rustedState == .normal)
             }
         }

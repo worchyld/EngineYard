@@ -40,6 +40,10 @@ final class Production : NSObject, NSCopying {
         return hasParent.productionCost
     }
 
+    override var description: String {
+        return ("units = \(self.units), spent = \(self.spentUnits)")
+    }
+
     func setParent(card: Card) {
         self.parent = card
     }
@@ -76,6 +80,9 @@ final class Production : NSObject, NSCopying {
 
     func copy(with zone: NSZone? = nil) -> Any {
         let copy = Production.init()
+        copy.parent = self.parent
+        copy.units = self.units
+        copy.spentUnits = self.spentUnits
         return copy
     }
 }

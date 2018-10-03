@@ -9,23 +9,36 @@
 import Foundation
 import GameplayKit
 
-class Player : NSObject, GKGameModelPlayer {
+class Player : NSObject, NSCopying, GKGameModelPlayer {
     internal var playerId: Int = 0 {
         didSet {
-            print ("Set playerId = \(self.playerId)")
         }
     }
+    public private (set) var turnOrder: Int = 0
 
     var name : String!
     var cash : Int {
         return self.wallet.balance
     }
     var wallet : Wallet = Wallet()
-    lazy var hand : Hand = Hand(owner: self) // Hand of cards
-    lazy var salesBook: SalesBook = SalesBook(owner: self)
+
+    // Hand of cards
+    lazy var hand : Hand = Hand(owner: self)
+
+    // SalesBook
+    lazy var salesBook : SalesBook = SalesBook(owner: self)
 
     init(name: String) {
         self.name = name
+    }
+
+    func copy(with zone: NSZone? = nil) -> Any {
+        let copy = Player.init(name: self.name)
+        copy.wallet = self.wallet.copy(with: zone) as! Wallet
+        copy.playerId = self.playerId
+        copy.hand = self.hand.copy(with: zone) as! Hand
+        copy.salesBook = self.salesBook.copy(with: zone) as! SalesBook
+        return copy
     }
 }
 
@@ -40,6 +53,10 @@ extension Player {
 
     func setPlayerId(_ playerId: Int) {
         self.playerId = playerId
+    }
+
+    func setTurnOrderIndex(_ value: Int) {
+        self.turnOrder = value
     }
 }
 

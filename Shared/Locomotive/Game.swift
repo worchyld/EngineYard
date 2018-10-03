@@ -9,15 +9,20 @@
 import Foundation
 import GameplayKit
 
+protocol TurnOrderUpdateDelegate {
+    func updateTurnOrder()
+}
+
 /* This `GKGameModel` is very basic, I really don't know how to code a proper one */
 
-class Game : NSObject, GKGameModel {
+class Game : NSObject, GKGameModel, TurnOrderUpdateDelegate {
     var board: Board!
     var turnOrderIndex = 0
 
     // -- GKGameModel code follows --
     var players: [GKGameModelPlayer]?
     var activePlayer: GKGameModelPlayer?
+    lazy var delegate: TurnOrderUpdateDelegate = self
 
     func gameModelUpdates(for player: GKGameModelPlayer) -> [GKGameModelUpdate]? {
         return nil
@@ -34,7 +39,6 @@ class Game : NSObject, GKGameModel {
     func setGameModel(_ gameModel: GKGameModel) {
         if let inputModel = gameModel as? Game {
             self.board = inputModel.board
-            self.players = inputModel.players
             self.activePlayer = inputModel.activePlayer
             self.turnOrderIndex = inputModel.turnOrderIndex
         }
@@ -43,6 +47,15 @@ class Game : NSObject, GKGameModel {
     func copy(with zone: NSZone? = nil) -> Any {
         let copy = Game()
         copy.setGameModel(self)
+        copy.board = self.board.copy(with: zone) as? Board
+
+        let duplicate = self.players?.map({ (player: GKGameModelPlayer) -> GKGameModelPlayer in
+            let person = player as! Player
+            let copiedPlayer = person.copy(with: zone) as! Player
+            return copiedPlayer
+        })
+        copy.players = duplicate
+
         return copy
     }
 
@@ -72,6 +85,7 @@ extension Game {
             return
         }
         self.players = hasPlayers.shuffled()
+        delegate.updateTurnOrder()
     }
     
     func nextOnTurn() {
@@ -85,5 +99,16 @@ extension Game {
             turnOrderIndex = 0
         }
         self.activePlayer = hasPlayers[turnOrderIndex]
+    }
+
+    // MARK: TurnOrderUpdateDelegate method
+    func updateTurnOrder() {
+        guard let players = self.players as? [Player] else {
+            return
+        }
+        for (index, p) in players.enumerated() {
+            p.setTurnOrderIndex(index)
+            
+        }
     }
 }
