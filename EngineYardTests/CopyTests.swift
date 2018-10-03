@@ -70,12 +70,26 @@ class CopyTests: EngineYardTests {
     func testCopyBoard() {
         XCTAssertTrue(game.board.decks.count == Rules.Board.decks)
         let gameCopy = game.copy() as! Game
+
         XCTAssertTrue(gameCopy.board.decks.count == Rules.Board.decks)
+        XCTAssertTrue(board.decks.count == Rules.Board.decks)
 
-        gameCopy.board.empty()
 
-        XCTAssertTrue(game.board.decks.count == Rules.Board.decks, "\(game.board.decks.count)")
-        XCTAssertTrue(gameCopy.board.decks.count == 0, "\(gameCopy.board.decks.count)")
+        // reset the orders of the copied object
+        guard let copiedFirstDeck = gameCopy.board.decks.first else {
+            return
+        }
+        guard let originalDeck = game.board.decks.first else {
+            return
+        }
+
+        copiedFirstDeck.orderBook.clear()
+
+        // expect the copied orderbook to be empty
+        // expect the original orderbook to have 1 order
+
+        XCTAssertTrue(copiedFirstDeck.orderBook.existingOrders.count == 0)
+        XCTAssertTrue(originalDeck.orderBook.existingOrders.count == 1)
     }
 
     func testCopyPlayersHand() {

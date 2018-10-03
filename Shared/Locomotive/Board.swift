@@ -67,15 +67,10 @@ final class Board : NSObject, NSCopying, GameBoardDelegate {
 
     func copy(with zone: NSZone? = nil) -> Any {
         let copy = Board()
-
         copy._decks = _decks.map({ (d: Deck) -> Deck in
             return d.copy(with: zone) as! Deck
         })
         return copy
-    }
-
-    func empty() {
-        self._decks.removeAll()
     }
 }
 

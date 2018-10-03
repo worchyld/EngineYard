@@ -47,6 +47,7 @@ class Game : NSObject, GKGameModel, TurnOrderUpdateDelegate {
     func copy(with zone: NSZone? = nil) -> Any {
         let copy = Game()
         copy.setGameModel(self)
+        copy.board = self.board.copy(with: zone) as? Board
 
         let duplicate = self.players?.map({ (player: GKGameModelPlayer) -> GKGameModelPlayer in
             let person = player as! Player

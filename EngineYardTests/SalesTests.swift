@@ -45,9 +45,7 @@ class SalesTests: EngineYardTests {
         XCTAssertTrue(player.hand.cards.count == 1)
 
         // Copy the game state
-        let gameCopy = game.copy() as! Game
-
-        XCTAssertTrue(gameCopy.board == board)
+        let gameCopy = game.copy() as! Game        
 
         guard let copiedPlayer = gameCopy.players?.first as? Player else {
             XCTFail("No copied player")
