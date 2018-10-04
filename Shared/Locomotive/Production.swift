@@ -16,6 +16,10 @@ enum ProductionError : Error {
     case cannotUpgradeDownstream
 }
 
+protocol ProductionDelegate {
+    func didShift(units: Int)
+}
+
 final class Production : NSObject, NSCopying {
     public private (set) weak var parent: Card?
     public private (set) var units: Int = 0 {
@@ -62,6 +66,9 @@ final class Production : NSObject, NSCopying {
     }
 
     func reset() {
+        guard self.spentUnits > 0 else {
+            return
+        }
         self.units += self.spentUnits
         self.spentUnits = 0
     }
@@ -76,6 +83,11 @@ final class Production : NSObject, NSCopying {
         guard (self.units - amount >= 0) else {
             throw ProductionError.notEnoughUnits
         }
+    }
+
+    func shift(units: Int, to: Card) {
+        to.production.add(units)
+        self.units -= units
     }
 
     func copy(with zone: NSZone? = nil) -> Any {
@@ -98,6 +110,7 @@ extension Production {
 
         return ((to.production.cost - from.production.cost) * amount)
     }
+
     
     private static func canShift(amount: Int, from: Card, to: Card) throws {
         guard amount > 0 else {

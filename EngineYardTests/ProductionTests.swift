@@ -138,7 +138,48 @@ class ProductionTests: EngineYardTests {
     }
 
     func testShiftProduction() {
-        
+        guard let game:Game = (Game.setup(with: Mock.players(howMany: 5))) else {
+            XCTFail("Game object did not initialise")
+            return
+        }
+        guard let board = game.board else {
+            XCTFail("Board object not initialised")
+            return
+        }
+        let firstTwoDecks = board.decks[0...1]
+        guard let firstDeck = firstTwoDecks.first else {
+            XCTFail("No first deck found")
+            return
+        }
+        guard let lastDeck = firstTwoDecks.last else {
+            XCTFail("No last deck found")
+            return
+        }
+        guard let firstGreenCard = firstDeck.cards.first else {
+            return
+        }
+        guard let firstRedCard = lastDeck.cards.first else {
+            return
+        }
+
+        guard let firstPlayer = game.players?.first as? Player else {
+            print ("No player found")
+            return
+        }
+
+        XCTAssertNoThrow(try firstPlayer.hand.add(firstGreenCard))
+        XCTAssertNoThrow(try firstPlayer.hand.add(firstRedCard))
+
+        XCTAssertTrue(firstGreenCard.production.units == 1)
+        XCTAssertTrue(firstRedCard.production.units == 1)
+
+        let units = firstGreenCard.production.units
+
+        XCTAssertNoThrow(firstGreenCard.production.shift(units: units, to: firstRedCard))
+
+        XCTAssertTrue(firstGreenCard.production.units == 0)
+        XCTAssertTrue(firstRedCard.production.units == 2)
+
     }
 
 }
