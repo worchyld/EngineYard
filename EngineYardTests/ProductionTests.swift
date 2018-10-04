@@ -105,7 +105,7 @@ class ProductionTests: EngineYardTests {
     }
 
     // Cannot shift production from a new tech to older tech
-    func testCannotUpgradeDownstream() {
+    func testCannotSelectDownstream() {
         guard let board = self.prepare() else {
             XCTFail("Board object did not initialise")
             return
@@ -130,7 +130,6 @@ class ProductionTests: EngineYardTests {
 
         XCTAssertTrue(firstDeck.productionCost == 2, "\(firstDeck.productionCost)")
         XCTAssertTrue(lastDeck.productionCost == 4, "\(lastDeck.productionCost)")
-
 
         XCTAssertThrowsError(try Hand.costToShift(amount: 1, from: firstRedCard, to: firstGreenCard)) { error in
             XCTAssertEqual(error as? HandError, HandError.cannotSelectDownstream)
@@ -168,15 +167,32 @@ class ProductionTests: EngineYardTests {
         }
 
         XCTAssertNoThrow(try firstPlayer.hand.add(firstGreenCard))
+
+        let units = firstGreenCard.production.units
+
+        XCTAssertThrowsError(try firstPlayer.hand.canShift(amount: units, from: firstGreenCard, to: firstRedCard)) { error in
+            XCTAssertEqual(error as? HandError, HandError.cannotFindCard)
+        }
+
         XCTAssertNoThrow(try firstPlayer.hand.add(firstRedCard))
 
         XCTAssertTrue(firstGreenCard.production.units == 1)
         XCTAssertTrue(firstRedCard.production.units == 1)
 
-        let units = firstGreenCard.production.units
+        guard let result1 = firstPlayer.hand.find(firstGreenCard) else {
+            XCTFail("No green card found")
+            return
+        }
+        guard let result2 = firstPlayer.hand.find(firstRedCard) else {
+            XCTFail("No red card found")
+            return
+        }
+
+        XCTAssertTrue(result1.1 == firstGreenCard)
+        XCTAssertTrue(result2.1 == firstRedCard)
+
 
         XCTAssertNoThrow(firstGreenCard.production.shift(units: units, to: firstRedCard))
-
         XCTAssertTrue(firstGreenCard.production.units == 0)
         XCTAssertTrue(firstRedCard.production.units == 2)
 

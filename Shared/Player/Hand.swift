@@ -99,7 +99,10 @@ extension Hand {
     func add(_ card: Card) throws {
         try checkCardHasParent(card)
         try checkParentOccurance(card)
-        try checkCardOccurance(card)
+
+        if let _ = find(card) {
+            throw HandError.alreadyHaveThisCard
+        }
 
         do {
             try willAdd(card: card)
@@ -147,7 +150,7 @@ extension Hand {
         try checkHandIsNotEmpty()
 
         // Find card in hand
-        if let result = try find(card) {
+        if let result = find(card) {
             return result
         }
         return nil
@@ -179,14 +182,7 @@ extension Hand {
         }
     }
 
-    private func checkCardOccurance(_ card: Card) throws {
-        let results = self.cards.filter{$0.name == card.name}.count
-        if (results > 0) {
-            throw HandError.alreadyHaveThisCard
-        }
-    }
-
-    private func find(_ card:Card) throws -> (Int, Card)? {
+    func find(_ card:Card) -> (Int, Card)? {
         guard let needle = (self.cards.enumerated().filter {
             (offset, element) -> Bool
             in
@@ -201,9 +197,9 @@ extension Hand {
 
 // MARK: Production shift functions
 extension Hand {
-    public static func costToShift(amount: Int, from: Card, to: Card) throws -> Int {
+    func costToShift(amount: Int, from: Card, to: Card) throws -> Int {
         do {
-            try canShift(amount: amount, from: from, to: to)
+            try self.canShift(amount: amount, from: from, to: to)
         } catch let error as ProductionError {
             throw error
         }
@@ -211,8 +207,13 @@ extension Hand {
         return ((to.production.cost - from.production.cost) * amount)
     }
 
-
-    private static func canShift(amount: Int, from: Card, to: Card) throws {
+    func canShift(amount: Int, from: Card, to: Card) throws {
+        guard let _ = self.find(from) else {
+            throw HandError.cannotFindCard
+        }
+        guard let _ = self.find(to) else {
+            throw HandError.cannotFindCard
+        }
         guard amount > 0 else {
             throw NumberError.mustBePositive
         }
