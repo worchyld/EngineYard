@@ -101,7 +101,7 @@ class ProductionTests: EngineYardTests {
         XCTAssertTrue(firstDeck.productionCost == 2, "\(firstDeck.productionCost)")
         XCTAssertTrue(lastDeck.productionCost == 4, "\(lastDeck.productionCost)")
 
-        XCTAssertNoThrow(try Production.costToShift(amount: 1, from: firstGreenCard, to: firstRedCard), "error")
+        XCTAssertNoThrow(try Hand.costToShift(amount: 1, from: firstGreenCard, to: firstRedCard), "error")
     }
 
     // Cannot shift production from a new tech to older tech
@@ -132,8 +132,8 @@ class ProductionTests: EngineYardTests {
         XCTAssertTrue(lastDeck.productionCost == 4, "\(lastDeck.productionCost)")
 
 
-        XCTAssertThrowsError(try Production.costToShift(amount: 1, from: firstRedCard, to: firstGreenCard)) { error in
-            XCTAssertEqual(error as? ProductionError, ProductionError.cannotUpgradeDownstream)
+        XCTAssertThrowsError(try Hand.costToShift(amount: 1, from: firstRedCard, to: firstGreenCard)) { error in
+            XCTAssertEqual(error as? HandError, HandError.cannotSelectDownstream)
         }
     }
 

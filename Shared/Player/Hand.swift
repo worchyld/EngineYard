@@ -17,6 +17,9 @@ enum HandError: Error, Equatable {
     case handIsEmpty
     case noOwnership
     case noParent
+    case cannotSelectSameCard
+    case cannotSelectCardFromSameParent
+    case cannotSelectDownstream
 }
 
 extension HandError {
@@ -34,6 +37,13 @@ extension HandError {
             return true
         case (.noParent, .noParent):
             return true
+        case (cannotSelectSameCard, cannotSelectSameCard):
+            return true
+        case (cannotSelectCardFromSameParent, cannotSelectCardFromSameParent):
+            return true
+        case (cannotSelectDownstream, cannotSelectDownstream):
+            return true
+
         default:
             return false
         }
@@ -186,6 +196,36 @@ extension Hand {
             return nil
         }
         return needle
+    }
+}
+
+// MARK: Production shift functions
+extension Hand {
+    public static func costToShift(amount: Int, from: Card, to: Card) throws -> Int {
+        do {
+            try canShift(amount: amount, from: from, to: to)
+        } catch let error as ProductionError {
+            throw error
+        }
+
+        return ((to.production.cost - from.production.cost) * amount)
+    }
+
+
+    private static func canShift(amount: Int, from: Card, to: Card) throws {
+        guard amount > 0 else {
+            throw NumberError.mustBePositive
+        }
+        guard from != to else {
+            throw HandError.cannotSelectSameCard
+        }
+        guard from.parent != to.parent else {
+            throw HandError.cannotSelectCardFromSameParent
+        }
+        // Shifting production can only go upstream
+        guard ((from.parent?.cost)! < (to.parent?.cost)!) else {
+            throw HandError.cannotSelectDownstream
+        }
     }
 }
 

@@ -8,8 +8,11 @@
 
 import Foundation
 
-enum WalletError : Error {
+enum NumberError : Error {
     case mustBePositive
+}
+
+enum WalletError : Error {
     case notEnoughFunds
 }
 
@@ -43,13 +46,13 @@ class Wallet : NSCopying, CustomStringConvertible, WalletDelegate {
 extension Wallet {
     private func canCredit(amount: Int) throws {
         guard amount > 0 else {
-            throw WalletError.mustBePositive
+            throw NumberError.mustBePositive
         }
     }
 
     private func canDebit(amount: Int) throws {
         guard amount > 0 else {
-            throw WalletError.mustBePositive
+            throw NumberError.mustBePositive
         }
 
         guard self.balance >= amount else {
