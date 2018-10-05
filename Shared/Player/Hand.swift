@@ -197,14 +197,8 @@ extension Hand {
 
 // MARK: Production shift functions
 extension Hand {
-    func costToShift(amount: Int, from: Card, to: Card) throws -> Int {
-        do {
-            try self.canShift(amount: amount, from: from, to: to)
-        } catch let error as ProductionError {
-            throw error
-        }
-
-        return ((to.production.cost - from.production.cost) * amount)
+    public static func costToShift(units: Int, from: Card, to: Card) -> Int {
+        return ((to.production.cost - from.production.cost) * units)
     }
 
     func canShift(amount: Int, from: Card, to: Card) throws {
@@ -227,6 +221,14 @@ extension Hand {
         guard ((from.parent?.cost)! < (to.parent?.cost)!) else {
             throw HandError.cannotSelectDownstream
         }
+    }
+
+    func shift(units: Int, from: Card, to: Card) throws -> Int {
+        try canShift(amount: units, from: from, to: to)
+        let cost = Hand.costToShift(units: units, from: from, to: to)
+        to.production.add(units)
+        from.production.didShift(units: units)        
+        return cost
     }
 }
 

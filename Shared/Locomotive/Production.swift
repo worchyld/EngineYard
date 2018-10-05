@@ -12,10 +12,6 @@ enum ProductionError : Error {
     case notEnoughUnits
 }
 
-protocol ProductionDelegate {
-    func didShift(units: Int)
-}
-
 final class Production : NSObject, NSCopying {
     public private (set) weak var parent: Card?
     public private (set) var units: Int = 0 {
@@ -81,16 +77,15 @@ final class Production : NSObject, NSCopying {
         }
     }
 
-    func shift(units: Int, to: Card) {
-        to.production.add(units)
-        self.units -= units
-    }
-
     func copy(with zone: NSZone? = nil) -> Any {
         let copy = Production.init()
         copy.parent = self.parent
         copy.units = self.units
         copy.spentUnits = self.spentUnits
         return copy
+    }
+
+    func didShift(units: Int) {
+        self.units -= units
     }
 }

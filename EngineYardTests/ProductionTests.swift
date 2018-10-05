@@ -76,8 +76,12 @@ class ProductionTests: EngineYardTests {
     }
 
     func testCanShiftProduction() {
-        guard let board = self.prepare() else {
-            XCTFail("Board object did not initialise")
+        guard let game:Game = (Game.setup(with: Mock.players(howMany: 5))) else {
+            XCTFail("Game object did not initialise")
+            return
+        }
+        guard let board = game.board else {
+            XCTFail("Board object not initialised")
             return
         }
         let firstTwoDecks = board.decks[0...1]
@@ -101,13 +105,28 @@ class ProductionTests: EngineYardTests {
         XCTAssertTrue(firstDeck.productionCost == 2, "\(firstDeck.productionCost)")
         XCTAssertTrue(lastDeck.productionCost == 4, "\(lastDeck.productionCost)")
 
-        XCTAssertNoThrow(try Hand.costToShift(amount: 1, from: firstGreenCard, to: firstRedCard), "error")
+        guard let firstPlayer = game.players?.first as? Player else {
+            print ("No player found")
+            return
+        }
+
+        XCTAssertNoThrow(try firstPlayer.hand.add(firstGreenCard))
+
+        let units = firstGreenCard.production.units
+
+        let costToShift = Hand.costToShift(units: units, from: firstGreenCard, to: firstRedCard)
+
+        XCTAssertTrue(costToShift == 2, "\(costToShift)")
     }
 
-    // Cannot shift production from a new tech to older tech
+    // Cannot shift production `downstream` from a new tech to older tech
     func testCannotSelectDownstream() {
-        guard let board = self.prepare() else {
-            XCTFail("Board object did not initialise")
+        guard let game:Game = (Game.setup(with: Mock.players(howMany: 5))) else {
+            XCTFail("Game object did not initialise")
+            return
+        }
+        guard let board = game.board else {
+            XCTFail("Board object not initialised")
             return
         }
         let firstTwoDecks = board.decks[0...1]
@@ -131,9 +150,19 @@ class ProductionTests: EngineYardTests {
         XCTAssertTrue(firstDeck.productionCost == 2, "\(firstDeck.productionCost)")
         XCTAssertTrue(lastDeck.productionCost == 4, "\(lastDeck.productionCost)")
 
-        XCTAssertThrowsError(try Hand.costToShift(amount: 1, from: firstRedCard, to: firstGreenCard)) { error in
+
+        guard let firstPlayer = game.players?.first as? Player else {
+            print ("No player found")
+            return
+        }
+        XCTAssertNoThrow(try firstPlayer.hand.add(firstGreenCard))
+        XCTAssertNoThrow(try firstPlayer.hand.add(firstRedCard))
+
+        XCTAssertThrowsError(try firstPlayer.hand.canShift(amount: 1, from: firstRedCard, to: firstGreenCard)
+        ) { error in
             XCTAssertEqual(error as? HandError, HandError.cannotSelectDownstream)
         }
+
     }
 
     func testShiftProduction() {
@@ -192,7 +221,8 @@ class ProductionTests: EngineYardTests {
         XCTAssertTrue(result2.1 == firstRedCard)
 
 
-        XCTAssertNoThrow(firstGreenCard.production.shift(units: units, to: firstRedCard))
+        XCTAssertNoThrow(try firstPlayer.hand.shift(units: units, from: firstGreenCard, to: firstRedCard))
+
         XCTAssertTrue(firstGreenCard.production.units == 0)
         XCTAssertTrue(firstRedCard.production.units == 2)
 
