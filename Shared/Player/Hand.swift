@@ -17,6 +17,9 @@ enum HandError: Error, Equatable {
     case handIsEmpty
     case noOwnership
     case noParent
+    case cannotSelectSameCard
+    case cannotSelectCardFromSameParent
+    case cannotSelectDownstream
 }
 
 extension HandError {
@@ -34,6 +37,13 @@ extension HandError {
             return true
         case (.noParent, .noParent):
             return true
+        case (cannotSelectSameCard, cannotSelectSameCard):
+            return true
+        case (cannotSelectCardFromSameParent, cannotSelectCardFromSameParent):
+            return true
+        case (cannotSelectDownstream, cannotSelectDownstream):
+            return true
+
         default:
             return false
         }
@@ -89,7 +99,10 @@ extension Hand {
     func add(_ card: Card) throws {
         try checkCardHasParent(card)
         try checkParentOccurance(card)
-        try checkCardOccurance(card)
+
+        if let _ = find(card) {
+            throw HandError.alreadyHaveThisCard
+        }
 
         do {
             try willAdd(card: card)
@@ -137,7 +150,7 @@ extension Hand {
         try checkHandIsNotEmpty()
 
         // Find card in hand
-        if let result = try find(card) {
+        if let result = find(card) {
             return result
         }
         return nil
@@ -169,14 +182,7 @@ extension Hand {
         }
     }
 
-    private func checkCardOccurance(_ card: Card) throws {
-        let results = self.cards.filter{$0.name == card.name}.count
-        if (results > 0) {
-            throw HandError.alreadyHaveThisCard
-        }
-    }
-
-    private func find(_ card:Card) throws -> (Int, Card)? {
+    func find(_ card:Card) -> (Int, Card)? {
         guard let needle = (self.cards.enumerated().filter {
             (offset, element) -> Bool
             in
@@ -186,6 +192,43 @@ extension Hand {
             return nil
         }
         return needle
+    }
+}
+
+// MARK: Production shift functions
+extension Hand {
+    public static func costToShift(units: Int, from: Card, to: Card) -> Int {
+        return ((to.production.cost - from.production.cost) * units)
+    }
+
+    func canShift(amount: Int, from: Card, to: Card) throws {
+        guard let _ = self.find(from) else {
+            throw HandError.cannotFindCard
+        }
+        guard let _ = self.find(to) else {
+            throw HandError.cannotFindCard
+        }
+        guard amount > 0 else {
+            throw NumberError.mustBePositive
+        }
+        guard from != to else {
+            throw HandError.cannotSelectSameCard
+        }
+        guard from.parent != to.parent else {
+            throw HandError.cannotSelectCardFromSameParent
+        }
+        // Shifting production can only go upstream
+        guard ((from.parent?.cost)! < (to.parent?.cost)!) else {
+            throw HandError.cannotSelectDownstream
+        }
+    }
+
+    func shift(units: Int, from: Card, to: Card) throws -> Int {
+        try canShift(amount: units, from: from, to: to)
+        let cost = Hand.costToShift(units: units, from: from, to: to)
+        to.production.add(units)
+        from.production.didShift(units: units)        
+        return cost
     }
 }
 

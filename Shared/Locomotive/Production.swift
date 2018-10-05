@@ -9,11 +9,7 @@
 import Foundation
 
 enum ProductionError : Error {
-    case mustBePositive
     case notEnoughUnits
-    case cannotSelectSameCard
-    case cannotSelectCardFromSameParent
-    case cannotUpgradeDownstream
 }
 
 final class Production : NSObject, NSCopying {
@@ -62,13 +58,16 @@ final class Production : NSObject, NSCopying {
     }
 
     func reset() {
+        guard self.spentUnits > 0 else {
+            return
+        }
         self.units += self.spentUnits
         self.spentUnits = 0
     }
 
     private func canSpend(amount: Int) throws {
         guard amount > 0 else {
-            throw ProductionError.mustBePositive
+            throw NumberError.mustBePositive
         }
         guard self.units >= amount else {
             throw ProductionError.notEnoughUnits
@@ -85,33 +84,8 @@ final class Production : NSObject, NSCopying {
         copy.spentUnits = self.spentUnits
         return copy
     }
-}
 
-// Shift methods
-extension Production {
-    public static func costToShift(amount: Int, from: Card, to: Card) throws -> Int {
-        do {
-            try canShift(amount: amount, from: from, to: to)
-        } catch let error as ProductionError {
-            throw error
-        }
-
-        return ((to.production.cost - from.production.cost) * amount)
-    }
-    
-    private static func canShift(amount: Int, from: Card, to: Card) throws {
-        guard amount > 0 else {
-            throw ProductionError.mustBePositive
-        }
-        guard from != to else {
-            throw ProductionError.cannotSelectSameCard
-        }
-        guard from.parent != to.parent else {
-            throw ProductionError.cannotSelectCardFromSameParent
-        }
-        // Shifting production can only go upstream
-        guard ((from.parent?.cost)! < (to.parent?.cost)!) else {
-            throw ProductionError.cannotUpgradeDownstream
-        }
+    func didShift(units: Int) {
+        self.units -= units
     }
 }
