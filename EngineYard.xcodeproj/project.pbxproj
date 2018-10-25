@@ -49,6 +49,11 @@
 		4DEE87172151B6130038F0CF /* TurnOrderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE87162151B6130038F0CF /* TurnOrderTests.swift */; };
 		4DEE8725215224430038F0CF /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE8724215224430038F0CF /* StateMachine.swift */; };
 		4DEE87272152244B0038F0CF /* GameStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE87262152244B0038F0CF /* GameStateTests.swift */; };
+		4DF1509221679E0300D39D65 /* MainMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1509121679E0300D39D65 /* MainMenu.storyboard */; };
+		4DF1509421679E6200D39D65 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1509321679E6200D39D65 /* MainMenuViewController.swift */; };
+		4DF1509621679F0600D39D65 /* NewGameSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1509521679F0600D39D65 /* NewGameSetupViewController.swift */; };
+		4DF150992167A6FE00D39D65 /* NewGamePlayerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF150972167A6FE00D39D65 /* NewGamePlayerCollectionViewCell.swift */; };
+		4DF1509A2167A6FE00D39D65 /* NewGamePlayerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DF150982167A6FE00D39D65 /* NewGamePlayerCollectionViewCell.xib */; };
 		4DFB8217215A042C0036F9FD /* SalesRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA92C1621565E5200AD19B7 /* SalesRule.swift */; };
 		4DFB8218215A08AB0036F9FD /* SalesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA92C1421564C0E00AD19B7 /* SalesTests.swift */; };
 		4DFB821A215A71DF0036F9FD /* SalesBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFB8219215A71DF0036F9FD /* SalesBook.swift */; };
@@ -113,6 +118,11 @@
 		4DEE87162151B6130038F0CF /* TurnOrderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnOrderTests.swift; sourceTree = "<group>"; };
 		4DEE8724215224430038F0CF /* StateMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
 		4DEE87262152244B0038F0CF /* GameStateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameStateTests.swift; sourceTree = "<group>"; };
+		4DF1509121679E0300D39D65 /* MainMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainMenu.storyboard; sourceTree = "<group>"; };
+		4DF1509321679E6200D39D65 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		4DF1509521679F0600D39D65 /* NewGameSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGameSetupViewController.swift; sourceTree = "<group>"; };
+		4DF150972167A6FE00D39D65 /* NewGamePlayerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGamePlayerCollectionViewCell.swift; sourceTree = "<group>"; };
+		4DF150982167A6FE00D39D65 /* NewGamePlayerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewGamePlayerCollectionViewCell.xib; sourceTree = "<group>"; };
 		4DFB8219215A71DF0036F9FD /* SalesBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesBook.swift; sourceTree = "<group>"; };
 		4DFB821D215A7F070036F9FD /* CopyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CopyTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -220,9 +230,14 @@
 			isa = PBXGroup;
 			children = (
 				4DA3487420812A8B006DA164 /* ViewController.swift */,
+				4DF1509321679E6200D39D65 /* MainMenuViewController.swift */,
+				4DF1509521679F0600D39D65 /* NewGameSetupViewController.swift */,
+				4DF150972167A6FE00D39D65 /* NewGamePlayerCollectionViewCell.swift */,
+				4DF150982167A6FE00D39D65 /* NewGamePlayerCollectionViewCell.xib */,
 				4DA3487520812A8B006DA164 /* Assets.xcassets */,
 				4DA3487620812A8B006DA164 /* LaunchScreen.storyboard */,
 				4DA3487820812A8B006DA164 /* Main.storyboard */,
+				4DF1509121679E0300D39D65 /* MainMenu.storyboard */,
 				4DA3487A20812A8B006DA164 /* AppDelegate.swift */,
 				4DA3487B20812A8B006DA164 /* Info.plist */,
 			);
@@ -345,7 +360,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DF1509221679E0300D39D65 /* MainMenu.storyboard in Resources */,
 				4DA3487F20812A8B006DA164 /* Main.storyboard in Resources */,
+				4DF1509A2167A6FE00D39D65 /* NewGamePlayerCollectionViewCell.xib in Resources */,
 				4DA3487D20812A8B006DA164 /* Assets.xcassets in Resources */,
 				4DE3873921528D3600BFF9DB /* Media.xcassets in Resources */,
 				4DA3487E20812A8B006DA164 /* LaunchScreen.storyboard in Resources */,
@@ -370,6 +387,7 @@
 				4D74BA4C2084AC5000ADC00C /* OrderBook.swift in Sources */,
 				4DA3488020812A8B006DA164 /* AppDelegate.swift in Sources */,
 				4D01469B208393AF00AE54B1 /* Card+Colors.swift in Sources */,
+				4DF1509421679E6200D39D65 /* MainMenuViewController.swift in Sources */,
 				4D1BD48D208384ED00051FD9 /* Production.swift in Sources */,
 				4DA5236C208158C8000FFAAB /* EY+Array.swift in Sources */,
 				4D7D430F21529136003CCF89 /* Mock.swift in Sources */,
@@ -379,6 +397,8 @@
 				4D50C4F121569DA000E43C77 /* Selling.swift in Sources */,
 				4DA8396D2136B0ED00F7CAB9 /* GameSetupManager.swift in Sources */,
 				4DE3872521527B4300BFF9DB /* PhaseManager.swift in Sources */,
+				4DF150992167A6FE00D39D65 /* NewGamePlayerCollectionViewCell.swift in Sources */,
+				4DF1509621679F0600D39D65 /* NewGameSetupViewController.swift in Sources */,
 				4DA5236720815885000FFAAB /* Die.swift in Sources */,
 				4D3DF4B920835DB7000DF88E /* Rules.swift in Sources */,
 				4DA5236E20815960000FFAAB /* Tax.swift in Sources */,
