@@ -10,7 +10,7 @@ import UIKit
 
 private struct ViewModel {
     static let pageTitle = "New game setup"
-    static let reuseIdentifier = "newGameCellId"
+    static let reuseIdentifier = "PlayerCellID"
 }
 
 @objc protocol ConfigureCellDelegate {
@@ -30,6 +30,9 @@ class NewGameSetupViewController: UIViewController, UICollectionViewDelegate, UI
         self.title = ViewModel.pageTitle
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
+        self.collectionView.register(UINib(nibName:"NewGamePlayerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: ViewModel.reuseIdentifier)
+        self.collectionView.allowsMultipleSelection = false
+        self.collectionView.layoutIfNeeded()
     }
 
     // MARK: - CollectionView
@@ -44,7 +47,10 @@ class NewGameSetupViewController: UIViewController, UICollectionViewDelegate, UI
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ViewModel.reuseIdentifier, for: indexPath)
+
+        //let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ViewModel.reuseIdentifier, for: indexPath)
+        let cell: NewGamePlayerCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: ViewModel.reuseIdentifier, for: indexPath) as! NewGamePlayerCollectionViewCell
+
 
         configure(cell: cell, at: indexPath)
 

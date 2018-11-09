@@ -10,12 +10,16 @@ import UIKit
 
 class NewGamePlayerCollectionViewCell: UICollectionViewCell {
 
-
+    @IBOutlet weak var avatarImgView: UIImageView!
     @IBOutlet weak var btnPlayerState: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
+        guard let img = UIImage(named: "avt_1") else {
+            return
+        }
+        self.avatarImgView.maskCircle(anyImage: img)
     }
 
     @IBAction func togglePlayerState(_ sender: Any) {
