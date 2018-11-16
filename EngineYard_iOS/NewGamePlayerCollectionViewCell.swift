@@ -9,10 +9,11 @@
 import UIKit
 
 class NewGamePlayerCollectionViewCell: UICollectionViewCell {
-
+    
     @IBOutlet weak var avatarImgView: UIImageView!
     @IBOutlet weak var btnPlayerState: UIButton!
-    var player: Player! {
+
+    var player: DummyPlayer! {
         didSet {
             if let assetName = player.asset {
                 self.avatarImgView.image = UIImage(named: assetName)

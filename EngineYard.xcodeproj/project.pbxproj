@@ -25,6 +25,7 @@
 		4D74BA482084A6D000ADC00C /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74BA472084A6D000ADC00C /* Hand.swift */; };
 		4D74BA4C2084AC5000ADC00C /* OrderBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74BA4B2084AC5000ADC00C /* OrderBook.swift */; };
 		4D7D430F21529136003CCF89 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7D430E21529136003CCF89 /* Mock.swift */; };
+		4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D925D74219F4E2D00441733 /* EY+Time.swift */; };
 		4D95B5A321569C5D00DF91E5 /* Sale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA92C1221564A0500AD19B7 /* Sale.swift */; };
 		4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3486820812972006DA164 /* EngineYardTests.swift */; };
 		4DA3487C20812A8B006DA164 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3487420812A8B006DA164 /* ViewController.swift */; };
@@ -91,6 +92,7 @@
 		4D74BA472084A6D000ADC00C /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
 		4D74BA4B2084AC5000ADC00C /* OrderBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBook.swift; sourceTree = "<group>"; };
 		4D7D430E21529136003CCF89 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
+		4D925D74219F4E2D00441733 /* EY+Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Time.swift"; sourceTree = "<group>"; };
 		4DA3485020812970006DA164 /* EngineYard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EngineYard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA3486420812972006DA164 /* EngineYardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EngineYardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA3486820812972006DA164 /* EngineYardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineYardTests.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				4DA52368208158A8000FFAAB /* EY+Colors.swift */,
+				4D925D74219F4E2D00441733 /* EY+Time.swift */,
 				4DA5236B208158C8000FFAAB /* EY+Array.swift */,
 				4D01469A208393AF00AE54B1 /* Card+Colors.swift */,
 				4D2A4B8B2195DEB300315524 /* EY+ImageView.swift */,
@@ -420,6 +423,7 @@
 				4D1BD4872083829900051FD9 /* Deck.swift in Sources */,
 				4DA3487C20812A8B006DA164 /* ViewController.swift in Sources */,
 				4DFB821A215A71DF0036F9FD /* SalesBook.swift in Sources */,
+				4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */,
 				4DEE871321518ABE0038F0CF /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
