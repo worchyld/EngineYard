@@ -12,6 +12,14 @@ class NewGamePlayerCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var avatarImgView: UIImageView!
     @IBOutlet weak var btnPlayerState: UIButton!
+    var player: Player! {
+        didSet {
+            if let assetName = player.asset {
+                self.avatarImgView.image = UIImage(named: assetName)
+            }
+            self.btnPlayerState.isSelected = self.player.isAI
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

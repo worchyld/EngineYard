@@ -17,9 +17,11 @@ class Player : NSObject, NSCopying, GKGameModelPlayer {
     public private (set) var turnOrder: Int = 0
 
     var name : String!
+    var asset : String?
     var cash : Int {
         return self.wallet.balance
     }
+    var isAI : Bool = true
     var wallet : Wallet = Wallet()
 
     // Hand of cards
@@ -28,12 +30,16 @@ class Player : NSObject, NSCopying, GKGameModelPlayer {
     // SalesBook
     lazy var salesBook : SalesBook = SalesBook(owner: self)
 
-    init(name: String) {
+    init(name: String, isAI: Bool = true, asset: String? = nil) {
         self.name = name
+        self.isAI = isAI
+        if let asset = asset {
+            self.asset = asset
+        }
     }
 
     func copy(with zone: NSZone? = nil) -> Any {
-        let copy = Player.init(name: self.name)
+        let copy = Player.init(name: self.name, isAI: self.isAI, asset: self.asset)
         copy.wallet = self.wallet.copy(with: zone) as! Wallet
         copy.playerId = self.playerId
         copy.hand = self.hand.copy(with: zone) as! Hand

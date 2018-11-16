@@ -11,16 +11,30 @@ import UIKit
 private struct ViewModel {
     static let pageTitle = "New game setup"
     static let reuseIdentifier = "PlayerCellID"
+
+    var players: [Player] = [Player]()
+
+    init() {
+        for idx:Int in 1...Rules.NumberOfPlayers.max {
+            let name = "Player #\(idx)"
+            let filename = "avt_\(idx)"
+
+            var isAI: Bool = true
+            if (idx == 1) {
+                isAI = false
+            }
+
+            let playerObj = Player.init(name: name, isAI: isAI, asset: filename)
+            self.players.append(playerObj)
+        }
+    }
 }
 
-@objc protocol ConfigureCellDelegate {
-    @objc optional func configure(cell: UITableViewCell, at indexPath:IndexPath)
-    @objc optional func configure(cell: UICollectionViewCell, at indexPath: IndexPath)
-}
 
 class NewGameSetupViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, ConfigureCellDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    private var viewModel: ViewModel = ViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +56,7 @@ class NewGameSetupViewController: UIViewController, UICollectionViewDelegate, UI
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Rules.NumberOfPlayers.max
+        return viewModel.players.count
     }
 
     func collectionView(_ collectionView: UICollectionView,
@@ -51,14 +65,13 @@ class NewGameSetupViewController: UIViewController, UICollectionViewDelegate, UI
         //let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ViewModel.reuseIdentifier, for: indexPath)
         let cell: NewGamePlayerCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: ViewModel.reuseIdentifier, for: indexPath) as! NewGamePlayerCollectionViewCell
 
-
         configure(cell: cell, at: indexPath)
 
         return cell
     }
 
-    @nonobjc func configure(cell: UICollectionViewCell, at indexPath: IndexPath) {
-
+    @nonobjc func configure(cell: NewGamePlayerCollectionViewCell, at indexPath: IndexPath) {
+        cell.player = viewModel.players[indexPath.row]
     }
 
 
