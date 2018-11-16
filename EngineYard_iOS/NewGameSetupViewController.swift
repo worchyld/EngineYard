@@ -47,6 +47,9 @@ class NewGameSetupViewController: UIViewController, UICollectionViewDelegate, UI
         self.collectionView.register(UINib(nibName:"NewGamePlayerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: ViewModel.reuseIdentifier)
         self.collectionView.allowsMultipleSelection = false
         self.collectionView.layoutIfNeeded()
+
+        let barBtnPlay = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(playBtnDidPress))
+        self.navigationItem.rightBarButtonItem = barBtnPlay
     }
 
     // MARK: - CollectionView
@@ -74,7 +77,11 @@ class NewGameSetupViewController: UIViewController, UICollectionViewDelegate, UI
         cell.player = viewModel.players[indexPath.row]
     }
 
+    // MARK: - Actions
 
+    @objc func playBtnDidPress() {
+
+    }
 
     /*
     // MARK: - Navigation
