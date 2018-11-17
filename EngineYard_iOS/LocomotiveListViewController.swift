@@ -8,12 +8,23 @@
 
 import UIKit
 
+class LocomotiveListViewModel : BaseViewModel {
+    static let pageTitle: String = NSLocalizedString("Buy Train", comment: "Buy train page title")
+}
+
 class LocomotiveListViewController: UIViewController {
+
+    var viewModel: LocomotiveListViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.title = LocomotiveListViewModel.pageTitle
+
+        guard let viewModel = self.viewModel else {
+            return
+        }
+        print(viewModel.description)
     }
     
 

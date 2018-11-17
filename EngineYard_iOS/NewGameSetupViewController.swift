@@ -164,9 +164,12 @@ class NewGameSetupViewController: UIViewController, UICollectionViewDelegate, UI
         // Pass the selected object to the new view controller.
 
         if (segue.identifier == "launchGameSegue") {
-
-            //let vc : BuyTrainListViewController = (segue.destination as? BuyTrainListViewController)!
-            //vc.viewModel = BuyTrainListViewModel.init(game: hasGame)
+            guard let hasGame = self.viewModel.game else {
+                print ("No game")
+                return 
+            }
+            let vc : LocomotiveListViewController = (segue.destination as? LocomotiveListViewController)!
+            vc.viewModel = LocomotiveListViewModel.init(game: hasGame)
 
         }
 
