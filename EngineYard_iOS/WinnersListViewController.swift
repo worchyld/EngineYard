@@ -8,31 +8,30 @@
 
 import UIKit
 
-private struct ViewModel {
+class WinnersViewModel : BaseViewModel {
     static let reuseIdentifier = "winnerCellId"
+    static let pageTitle = "Winner"
 }
 
 class WinnersListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    private var viewModel: ViewModel = ViewModel()
+    var viewModel: WinnersViewModel!
 
     lazy var tableView : UITableView = {
         let tv = UITableView()
         tv.delegate = self
         tv.dataSource = self
-        tv.register(UITableViewCell.self, forCellReuseIdentifier: ViewModel.reuseIdentifier)
+        tv.register(UITableViewCell.self, forCellReuseIdentifier: WinnersViewModel.reuseIdentifier)
         return tv
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.title = WinnersViewModel.pageTitle
     }
-    
-    // MARK: - UITableView
 
-    // MARK: - Table view data source
+    // MARK: - Tableview delegate
 
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -45,7 +44,7 @@ class WinnersListViewController: UIViewController, UITableViewDelegate, UITableV
 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ViewModel.reuseIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: WinnersViewModel.reuseIdentifier, for: indexPath)
 
         // Configure the cell...
         //viewModel.configureCell(cell: cell, atIndex: indexPath)

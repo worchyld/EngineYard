@@ -13,6 +13,7 @@
 		4D1BD48D208384ED00051FD9 /* Production.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1BD48C208384ED00051FD9 /* Production.swift */; };
 		4D1BD48F2083864B00051FD9 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1BD48E2083864B00051FD9 /* Board.swift */; };
 		4D247B32219FF2FB0004478D /* WinnersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D247B31219FF2FB0004478D /* WinnersListViewController.swift */; };
+		4D247B35219FF9740004478D /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D247B34219FF9740004478D /* BaseViewModel.swift */; };
 		4D2847902137FC3500C81B5C /* BoardUnlockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D28478F2137FC3500C81B5C /* BoardUnlockTests.swift */; };
 		4D2847922138147200C81B5C /* ProductionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2847912138147200C81B5C /* ProductionTests.swift */; };
 		4D28479421381F4500C81B5C /* PlayerHandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D28479321381F4500C81B5C /* PlayerHandTests.swift */; };
@@ -47,7 +48,6 @@
 		4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB448C6219F380900F8507F /* EY+Protocols.swift */; };
 		4DBEDB9E219FBDD200A56FE1 /* Decks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBEDB9D219FBDD200A56FE1 /* Decks.storyboard */; };
 		4DBEDBA2219FBE5D00A56FE1 /* LocomotiveListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBEDBA1219FBE5D00A56FE1 /* LocomotiveListViewController.swift */; };
-		4DBEDBA7219FC46F00A56FE1 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBEDBA6219FC46F00A56FE1 /* BaseViewModel.swift */; };
 		4DC5AEE6214E7A1500D2841D /* MarketDemandsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC5AEE5214E7A1500D2841D /* MarketDemandsTests.swift */; };
 		4DC5AEE8214ED9E500D2841D /* MarketDemandsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC5AEE7214ED9E500D2841D /* MarketDemandsManager.swift */; };
 		4DE3872521527B4300BFF9DB /* PhaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3872421527B4300BFF9DB /* PhaseManager.swift */; };
@@ -84,6 +84,7 @@
 		4D1BD48C208384ED00051FD9 /* Production.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Production.swift; sourceTree = "<group>"; };
 		4D1BD48E2083864B00051FD9 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		4D247B31219FF2FB0004478D /* WinnersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnersListViewController.swift; sourceTree = "<group>"; };
+		4D247B34219FF9740004478D /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		4D28478F2137FC3500C81B5C /* BoardUnlockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardUnlockTests.swift; sourceTree = "<group>"; };
 		4D2847912138147200C81B5C /* ProductionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionTests.swift; sourceTree = "<group>"; };
 		4D28479321381F4500C81B5C /* PlayerHandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerHandTests.swift; sourceTree = "<group>"; };
@@ -123,7 +124,6 @@
 		4DB448C6219F380900F8507F /* EY+Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Protocols.swift"; sourceTree = "<group>"; };
 		4DBEDB9D219FBDD200A56FE1 /* Decks.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Decks.storyboard; sourceTree = "<group>"; };
 		4DBEDBA1219FBE5D00A56FE1 /* LocomotiveListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocomotiveListViewController.swift; sourceTree = "<group>"; };
-		4DBEDBA6219FC46F00A56FE1 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		4DC5AEE5214E7A1500D2841D /* MarketDemandsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDemandsTests.swift; sourceTree = "<group>"; };
 		4DC5AEE7214ED9E500D2841D /* MarketDemandsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDemandsManager.swift; sourceTree = "<group>"; };
 		4DE3872421527B4300BFF9DB /* PhaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhaseManager.swift; sourceTree = "<group>"; };
@@ -199,6 +199,14 @@
 			path = Functions;
 			sourceTree = "<group>";
 		};
+		4D247B33219FF9740004478D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4D247B34219FF9740004478D /* BaseViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		4DA3484720812970006DA164 = {
 			isa = PBXGroup;
 			children = (
@@ -264,7 +272,7 @@
 		4DA3488220812B08006DA164 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				4DBEDBA5219FC44000A56FE1 /* ViewModels */,
+				4D247B33219FF9740004478D /* ViewModels */,
 				4DE3873821528D3600BFF9DB /* Media.xcassets */,
 				4DA5236A208158B5000FFAAB /* Extensions */,
 				4D00A42520A8C5C700A2E88E /* Functions */,
@@ -296,14 +304,6 @@
 				4DE3872421527B4300BFF9DB /* PhaseManager.swift */,
 			);
 			name = Managers;
-			sourceTree = "<group>";
-		};
-		4DBEDBA5219FC44000A56FE1 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				4DBEDBA6219FC46F00A56FE1 /* BaseViewModel.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -418,6 +418,7 @@
 				4D2A4B8C2195DEB300315524 /* EY+ImageView.swift in Sources */,
 				4DA3488020812A8B006DA164 /* AppDelegate.swift in Sources */,
 				4D01469B208393AF00AE54B1 /* Card+Colors.swift in Sources */,
+				4D247B35219FF9740004478D /* BaseViewModel.swift in Sources */,
 				4DF1509421679E6200D39D65 /* MainMenuViewController.swift in Sources */,
 				4D1BD48D208384ED00051FD9 /* Production.swift in Sources */,
 				4DA5236C208158C8000FFAAB /* EY+Array.swift in Sources */,
@@ -445,7 +446,6 @@
 				4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */,
 				4D1BD4872083829900051FD9 /* Deck.swift in Sources */,
 				4DA3487C20812A8B006DA164 /* ViewController.swift in Sources */,
-				4DBEDBA7219FC46F00A56FE1 /* BaseViewModel.swift in Sources */,
 				4DFB821A215A71DF0036F9FD /* SalesBook.swift in Sources */,
 				4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */,
 				4DEE871321518ABE0038F0CF /* Game.swift in Sources */,
