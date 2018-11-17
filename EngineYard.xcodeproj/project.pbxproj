@@ -14,6 +14,7 @@
 		4D1BD48F2083864B00051FD9 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1BD48E2083864B00051FD9 /* Board.swift */; };
 		4D247B32219FF2FB0004478D /* WinnersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D247B31219FF2FB0004478D /* WinnersListViewController.swift */; };
 		4D247B35219FF9740004478D /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D247B34219FF9740004478D /* BaseViewModel.swift */; };
+		4D247B37219FFE340004478D /* ObjectCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D247B36219FFE340004478D /* ObjectCache.swift */; };
 		4D2847902137FC3500C81B5C /* BoardUnlockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D28478F2137FC3500C81B5C /* BoardUnlockTests.swift */; };
 		4D2847922138147200C81B5C /* ProductionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2847912138147200C81B5C /* ProductionTests.swift */; };
 		4D28479421381F4500C81B5C /* PlayerHandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D28479321381F4500C81B5C /* PlayerHandTests.swift */; };
@@ -85,6 +86,7 @@
 		4D1BD48E2083864B00051FD9 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		4D247B31219FF2FB0004478D /* WinnersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnersListViewController.swift; sourceTree = "<group>"; };
 		4D247B34219FF9740004478D /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		4D247B36219FFE340004478D /* ObjectCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectCache.swift; sourceTree = "<group>"; };
 		4D28478F2137FC3500C81B5C /* BoardUnlockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardUnlockTests.swift; sourceTree = "<group>"; };
 		4D2847912138147200C81B5C /* ProductionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionTests.swift; sourceTree = "<group>"; };
 		4D28479321381F4500C81B5C /* PlayerHandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerHandTests.swift; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 				4D01469A208393AF00AE54B1 /* Card+Colors.swift */,
 				4D2A4B8B2195DEB300315524 /* EY+ImageView.swift */,
 				4DB448C6219F380900F8507F /* EY+Protocols.swift */,
+				4D247B36219FFE340004478D /* ObjectCache.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				4DFB8217215A042C0036F9FD /* SalesRule.swift in Sources */,
 				4D1BD48B2083846500051FD9 /* Card.swift in Sources */,
 				4DEE8725215224430038F0CF /* StateMachine.swift in Sources */,
+				4D247B37219FFE340004478D /* ObjectCache.swift in Sources */,
 				4DC5AEE8214ED9E500D2841D /* MarketDemandsManager.swift in Sources */,
 				4DA52369208158A8000FFAAB /* EY+Colors.swift in Sources */,
 				4D1BD48F2083864B00051FD9 /* Board.swift in Sources */,

@@ -13,7 +13,7 @@ class WinnersViewModel : BaseViewModel {
     static let pageTitle = "Winner"
 }
 
-class WinnersListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class WinnersListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ConfigureCellDelegate {
 
     var viewModel: WinnersViewModel!
 
@@ -22,6 +22,8 @@ class WinnersListViewController: UIViewController, UITableViewDelegate, UITableV
         tv.delegate = self
         tv.dataSource = self
         tv.register(UITableViewCell.self, forCellReuseIdentifier: WinnersViewModel.reuseIdentifier)
+        tv.allowsMultipleSelection = false
+        tv.allowsSelection = false
         return tv
     }()
 
@@ -34,22 +36,40 @@ class WinnersListViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: - Tableview delegate
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        guard let hasGame = self.viewModel.game else {
+            return 0
+        }
+        guard let hasPlayers = hasGame.players else {
+            return 0
+        }
+        return hasPlayers.count
     }
 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: WinnersViewModel.reuseIdentifier, for: indexPath)
 
-        // Configure the cell...
-        //viewModel.configureCell(cell: cell, atIndex: indexPath)
+        configure(cell: cell, at: indexPath)
 
         return cell
+    }
+
+    @nonobjc func configure(cell: UITableViewCell, at indexPath: IndexPath) {
+        guard let hasGame = self.viewModel.game else {
+            return
+        }
+        guard let hasPlayers = hasGame.players else {
+            return
+        }
+
+        let playerObj = hasPlayers[indexPath.row] as! Player
+        let cashText = ObjectCache.currencyRateFormatter.string(from: NSNumber(integerLiteral: playerObj.cash))
+
+        cell.textLabel?.text = "\(String(describing: playerObj.name)), \(cashText ?? "No cash")"
     }
 
 
