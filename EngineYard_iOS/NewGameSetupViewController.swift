@@ -27,6 +27,7 @@ class DummyPlayer {
 private struct ViewModel {
     static let pageTitle = "New game setup"
     static let reuseIdentifier = "PlayerCellID"
+    static let segue = "LaunchGameSegue"
 
     var dummyPlayers: [DummyPlayer] = [DummyPlayer]()
     var maxPlayers: Int = Rules.NumberOfPlayers.max
@@ -133,7 +134,7 @@ class NewGameSetupViewController: UIViewController, UICollectionViewDelegate, UI
 
         waitFor(duration: 0.85) { (completed) in
             if (completed) {
-                self.performSegue(withIdentifier: "launchGameSegue", sender: self)
+                self.performSegue(withIdentifier: ViewModel.segue, sender: self)
             }
         }
     }
@@ -141,7 +142,7 @@ class NewGameSetupViewController: UIViewController, UICollectionViewDelegate, UI
     // MARK: - Navigation
 
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if (identifier == "launchGameSegue") {
+        if (identifier == ViewModel.segue) {
             guard let hasGame = self.viewModel.game else {
                 print ("No game")
                 return false
@@ -163,7 +164,7 @@ class NewGameSetupViewController: UIViewController, UICollectionViewDelegate, UI
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
 
-        if (segue.identifier == "launchGameSegue") {
+        if (segue.identifier == ViewModel.segue) {
             guard let hasGame = self.viewModel.game else {
                 print ("No game")
                 return 
