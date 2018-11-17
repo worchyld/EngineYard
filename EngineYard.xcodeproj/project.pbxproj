@@ -12,6 +12,7 @@
 		4D1BD48B2083846500051FD9 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1BD48A2083846500051FD9 /* Card.swift */; };
 		4D1BD48D208384ED00051FD9 /* Production.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1BD48C208384ED00051FD9 /* Production.swift */; };
 		4D1BD48F2083864B00051FD9 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1BD48E2083864B00051FD9 /* Board.swift */; };
+		4D247B32219FF2FB0004478D /* WinnersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D247B31219FF2FB0004478D /* WinnersListViewController.swift */; };
 		4D2847902137FC3500C81B5C /* BoardUnlockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D28478F2137FC3500C81B5C /* BoardUnlockTests.swift */; };
 		4D2847922138147200C81B5C /* ProductionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2847912138147200C81B5C /* ProductionTests.swift */; };
 		4D28479421381F4500C81B5C /* PlayerHandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D28479321381F4500C81B5C /* PlayerHandTests.swift */; };
@@ -82,6 +83,7 @@
 		4D1BD48A2083846500051FD9 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		4D1BD48C208384ED00051FD9 /* Production.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Production.swift; sourceTree = "<group>"; };
 		4D1BD48E2083864B00051FD9 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		4D247B31219FF2FB0004478D /* WinnersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnersListViewController.swift; sourceTree = "<group>"; };
 		4D28478F2137FC3500C81B5C /* BoardUnlockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardUnlockTests.swift; sourceTree = "<group>"; };
 		4D2847912138147200C81B5C /* ProductionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionTests.swift; sourceTree = "<group>"; };
 		4D28479321381F4500C81B5C /* PlayerHandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerHandTests.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				4DF150972167A6FE00D39D65 /* NewGamePlayerCollectionViewCell.swift */,
 				4DF150982167A6FE00D39D65 /* NewGamePlayerCollectionViewCell.xib */,
 				4DBEDBA1219FBE5D00A56FE1 /* LocomotiveListViewController.swift */,
+				4D247B31219FF2FB0004478D /* WinnersListViewController.swift */,
 				4DA3487520812A8B006DA164 /* Assets.xcassets */,
 				4DA3487620812A8B006DA164 /* LaunchScreen.storyboard */,
 				4DA3487820812A8B006DA164 /* Main.storyboard */,
@@ -429,6 +432,7 @@
 				4DF150992167A6FE00D39D65 /* NewGamePlayerCollectionViewCell.swift in Sources */,
 				4DF1509621679F0600D39D65 /* NewGameSetupViewController.swift in Sources */,
 				4DA5236720815885000FFAAB /* Die.swift in Sources */,
+				4D247B32219FF2FB0004478D /* WinnersListViewController.swift in Sources */,
 				4D3DF4B920835DB7000DF88E /* Rules.swift in Sources */,
 				4DA5236E20815960000FFAAB /* Tax.swift in Sources */,
 				4DFB8217215A042C0036F9FD /* SalesRule.swift in Sources */,
