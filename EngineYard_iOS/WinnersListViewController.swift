@@ -31,6 +31,7 @@ class WinnersListViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
 
         self.title = WinnersViewModel.pageTitle
+        self.view.addSubview(tableView)
     }
 
     // MARK: - Tableview delegate
