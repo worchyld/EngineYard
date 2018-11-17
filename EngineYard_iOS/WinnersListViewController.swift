@@ -9,7 +9,7 @@
 import UIKit
 
 private struct ViewModel {
-    static let reuseIdentifer = "winnerCellId"
+    static let reuseIdentifier = "winnerCellId"
 }
 
 class WinnersListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -45,7 +45,7 @@ class WinnersListViewController: UIViewController, UITableViewDelegate, UITableV
 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: ViewModel.reuseIdentifier, for: indexPath)
 
         // Configure the cell...
         //viewModel.configureCell(cell: cell, atIndex: indexPath)
