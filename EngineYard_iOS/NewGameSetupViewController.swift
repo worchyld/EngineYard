@@ -132,19 +132,9 @@ class NewGameSetupViewController: UIViewController, UICollectionViewDelegate, UI
     private func submitPlayBtn() {
         viewModel.launchGame()
 
-        guard let gameObj = viewModel.game else {
-            return
-        }
-
         waitFor(duration: 0.85) { (completed) in
             if (completed) {
-                //self.performSegue(withIdentifier: NewGameViewModel.segue, sender: self)
-
-                /*
-                let vc = WinnersListViewController()
-                vc.viewModel = WinnersViewModel.init(game: gameObj)
-                self.navigationController?.pushViewController(vc, animated: true)
-                 */
+                self.performSegue(withIdentifier: NewGameViewModel.segue, sender: self)
             }
         }
     }
@@ -182,10 +172,7 @@ class NewGameSetupViewController: UIViewController, UICollectionViewDelegate, UI
             }
             let vc : LocomotiveListViewController = (segue.destination as? LocomotiveListViewController)!
             vc.viewModel = LocomotiveListViewModel.init(game: hasGame)
-
         }
-
     }
-
 
 }

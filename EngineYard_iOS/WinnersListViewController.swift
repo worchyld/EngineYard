@@ -2,83 +2,47 @@
 //  WinnersListViewController.swift
 //  EngineYard
 //
-//  Created by Amarjit on 17/11/2018.
+//  Created by Amarjit on 18/11/2018.
 //  Copyright © 2018 Amarjit. All rights reserved.
 //
 
 import UIKit
 
-// Displays winner chart
+private let reuseIdentifier = "WinnersCellId"
 
-class WinnersViewModel : BaseViewModel {
-    static let reuseIdentifier = "winnerCellId"
-    static let pageTitle = "Winner"
-
-    override init(game: Game) {
-        super.init(game: game)
-    }
-}
-
-class WinnersListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ConfigureCellDelegate {
-
-    var viewModel: WinnersViewModel!
-
+class WinnersListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     lazy var tableView : UITableView = {
-        let tv = UITableView()
+        let tv = UITableView(frame: self.view.frame, style: .plain)
         tv.delegate = self
         tv.dataSource = self
-        tv.register(UITableViewCell.self, forCellReuseIdentifier: WinnersViewModel.reuseIdentifier)
-        tv.allowsMultipleSelection = false
         tv.allowsSelection = false
+        tv.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
         return tv
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.title = WinnersViewModel.pageTitle
-        self.view.addSubview(tableView)
+        self.title = "Winners"
     }
 
-    // MARK: - Tableview delegate
+    // MARK: - Table view data source
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let hasGame = self.viewModel.game else {
-            return 0
-        }
-        guard let hasPlayers = hasGame.players else {
-            return 0
-        }
-        return hasPlayers.count
+        return 1
     }
 
-
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: WinnersViewModel.reuseIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
 
-        configure(cell: cell, at: indexPath)
+        // Configure the cell...
 
         return cell
     }
-
-    @nonobjc func configure(cell: UITableViewCell, at indexPath: IndexPath) {
-        guard let hasGame = self.viewModel.game else {
-            return
-        }
-        guard let hasPlayers = hasGame.players else {
-            return
-        }
-
-        let playerObj = hasPlayers[indexPath.row] as! Player
-        let cashText = ObjectCache.currencyRateFormatter.string(from: NSNumber(integerLiteral: playerObj.cash))
-
-        cell.textLabel?.text = "\(String(describing: playerObj.name)), \(cashText ?? "No cash")"
-    }
-
 
     /*
     // MARK: - Navigation
