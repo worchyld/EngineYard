@@ -64,5 +64,17 @@ extension Player {
     func setTurnOrderIndex(_ value: Int) {
         self.turnOrder = value
     }
+
+    public static func sortByHighestCash(_ players: [Player]) -> [Player] {
+        return players.sorted { (p1, p2) -> Bool in
+            return p1.cash > p2.cash
+        }
+    }
+
+    public static func sortByLowestCash(_ players: [Player]) -> [Player] {
+        return players.sorted { (p1, p2) -> Bool in
+            return p1.cash < p2.cash
+        }
+    }
 }
 
