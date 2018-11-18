@@ -132,9 +132,19 @@ class NewGameSetupViewController: UIViewController, UICollectionViewDelegate, UI
     private func submitPlayBtn() {
         viewModel.launchGame()
 
+        guard let gameObj = viewModel.game else {
+            return
+        }
+
         waitFor(duration: 0.85) { (completed) in
             if (completed) {
-                self.performSegue(withIdentifier: NewGameViewModel.segue, sender: self)
+                //self.performSegue(withIdentifier: NewGameViewModel.segue, sender: self)
+
+                /*
+                let vc = WinnersListViewController()
+                vc.viewModel = WinnersViewModel.init(game: gameObj)
+                self.navigationController?.pushViewController(vc, animated: true)
+                 */
             }
         }
     }
@@ -164,6 +174,7 @@ class NewGameSetupViewController: UIViewController, UICollectionViewDelegate, UI
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
 
+        
         if (segue.identifier == NewGameViewModel.segue) {
             guard let hasGame = self.viewModel.game else {
                 print ("No game")

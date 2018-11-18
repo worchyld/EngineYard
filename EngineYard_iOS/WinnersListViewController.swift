@@ -13,6 +13,10 @@ import UIKit
 class WinnersViewModel : BaseViewModel {
     static let reuseIdentifier = "winnerCellId"
     static let pageTitle = "Winner"
+
+    override init(game: Game) {
+        super.init(game: game)
+    }
 }
 
 class WinnersListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ConfigureCellDelegate {
