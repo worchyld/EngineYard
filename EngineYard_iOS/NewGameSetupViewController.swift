@@ -8,6 +8,7 @@
 
 import UIKit
 
+// This is used to set up players for the game.
 class DummyPlayer {
     var name: String
     var isAI: Bool = false
@@ -132,11 +133,18 @@ class NewGameSetupViewController: UIViewController, UICollectionViewDelegate, UI
     private func submitPlayBtn() {
         viewModel.launchGame()
 
+        let sb: UIStoryboard = UIStoryboard(name: "Winner", bundle: nil)
+        if let controller = sb.instantiateViewController(withIdentifier: "WinnersListViewController") as? WinnersListViewController
+        {
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
+
+        /*
         waitFor(duration: 0.85) { (completed) in
             if (completed) {
                 self.performSegue(withIdentifier: NewGameViewModel.segue, sender: self)
             }
-        }
+        }*/
     }
 
     // MARK: - Navigation
