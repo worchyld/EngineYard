@@ -13,23 +13,72 @@ import UIKit
 
 class LocomotiveListViewModel : BaseViewModel {
     static let pageTitle: String = NSLocalizedString("Buy Train", comment: "Buy train page title")
+    static let reuseIdentifier = "LocomotiveCellId"
 }
 
-class LocomotiveListViewController: UIViewController {
+class LocomotiveListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var viewModel: LocomotiveListViewModel?
+    lazy var tableView : UITableView = {
+        let tv = UITableView()
+        tv.delegate = self
+        tv.dataSource = self
+        tv.backgroundColor = .red
+        tv.register(UITableViewCell.self, forCellReuseIdentifier: LocomotiveListViewModel.reuseIdentifier)
+        return tv
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = LocomotiveListViewModel.pageTitle
+        self.view.addSubview(tableView)
+    }
+    
+    // MARK: - Table view data source
 
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let viewModel = self.viewModel else {
+            return 0
+        }
+        guard let gameObj = viewModel.game else {
+            return 0
+        }
+        return gameObj.board.decks.count
+    }
+
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: LocomotiveListViewModel.reuseIdentifier, for: indexPath)
+
+        // Configure the cell...
+        configure(cell: cell, at: indexPath)
+
+        return cell
+    }
+
+    func configure(cell: UITableViewCell, at indexPath: IndexPath) {
         guard let viewModel = self.viewModel else {
             return
         }
-        print(viewModel.description)
+        guard let gameObj = viewModel.game else {
+            return
+        }
+        guard (indexPath.row > 0 && indexPath.row <= gameObj.board.decks.count) else {
+            return
+        }
+        guard let cellLabel = cell.textLabel else {
+            return
+        }
+
+        let deck = gameObj.board.decks[indexPath.row]
+        cellLabel.text = "\(deck.name), \(deck.color) \(deck.generation) Cost: $\(deck.cost) Production: $\(deck.productionCost) Income: $\(deck.income)"
     }
-    
+
 
     /*
     // MARK: - Navigation

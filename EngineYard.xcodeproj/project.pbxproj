@@ -39,10 +39,8 @@
 		4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D925D74219F4E2D00441733 /* EY+Time.swift */; };
 		4D95B5A321569C5D00DF91E5 /* Sale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA92C1221564A0500AD19B7 /* Sale.swift */; };
 		4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3486820812972006DA164 /* EngineYardTests.swift */; };
-		4DA3487C20812A8B006DA164 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3487420812A8B006DA164 /* ViewController.swift */; };
 		4DA3487D20812A8B006DA164 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DA3487520812A8B006DA164 /* Assets.xcassets */; };
 		4DA3487E20812A8B006DA164 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA3487620812A8B006DA164 /* LaunchScreen.storyboard */; };
-		4DA3487F20812A8B006DA164 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA3487820812A8B006DA164 /* Main.storyboard */; };
 		4DA3488020812A8B006DA164 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3487A20812A8B006DA164 /* AppDelegate.swift */; };
 		4DA523652081582B000FFAAB /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA523642081582B000FFAAB /* Enums.swift */; };
 		4DA5236720815885000FFAAB /* Die.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5236620815885000FFAAB /* Die.swift */; };
@@ -121,10 +119,8 @@
 		4DA3486420812972006DA164 /* EngineYardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EngineYardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA3486820812972006DA164 /* EngineYardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineYardTests.swift; sourceTree = "<group>"; };
 		4DA3486A20812972006DA164 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4DA3487420812A8B006DA164 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4DA3487520812A8B006DA164 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DA3487720812A8B006DA164 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		4DA3487920812A8B006DA164 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4DA3487A20812A8B006DA164 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DA3487B20812A8B006DA164 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DA523642081582B000FFAAB /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
@@ -270,7 +266,6 @@
 		4DA3487320812A8B006DA164 /* EngineYard_iOS */ = {
 			isa = PBXGroup;
 			children = (
-				4DA3487420812A8B006DA164 /* ViewController.swift */,
 				4DF1509321679E6200D39D65 /* MainMenuViewController.swift */,
 				4DF1509521679F0600D39D65 /* NewGameSetupViewController.swift */,
 				4DF150972167A6FE00D39D65 /* NewGamePlayerCollectionViewCell.swift */,
@@ -283,7 +278,6 @@
 				4D247B4421A125E80004478D /* WinnersListViewController.swift */,
 				4DA3487520812A8B006DA164 /* Assets.xcassets */,
 				4DA3487620812A8B006DA164 /* LaunchScreen.storyboard */,
-				4DA3487820812A8B006DA164 /* Main.storyboard */,
 				4DF1509121679E0300D39D65 /* MainMenu.storyboard */,
 				4DBEDB9D219FBDD200A56FE1 /* Decks.storyboard */,
 				4D247B4C21A1522B0004478D /* Production.storyboard */,
@@ -417,7 +411,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DF1509221679E0300D39D65 /* MainMenu.storyboard in Resources */,
-				4DA3487F20812A8B006DA164 /* Main.storyboard in Resources */,
 				4DF1509A2167A6FE00D39D65 /* NewGamePlayerCollectionViewCell.xib in Resources */,
 				4D247B4921A127FA0004478D /* Winner.storyboard in Resources */,
 				4DBEDB9E219FBDD200A56FE1 /* Decks.storyboard in Resources */,
@@ -480,7 +473,6 @@
 				4D3DF4B520834592000DF88E /* Player.swift in Sources */,
 				4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */,
 				4D1BD4872083829900051FD9 /* Deck.swift in Sources */,
-				4DA3487C20812A8B006DA164 /* ViewController.swift in Sources */,
 				4DFB821A215A71DF0036F9FD /* SalesBook.swift in Sources */,
 				4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */,
 				4DEE871321518ABE0038F0CF /* Game.swift in Sources */,
@@ -527,14 +519,6 @@
 				4DA3487720812A8B006DA164 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		4DA3487820812A8B006DA164 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4DA3487920812A8B006DA164 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
