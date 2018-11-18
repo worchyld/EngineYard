@@ -2,7 +2,7 @@
 //  LocomotiveListViewController.swift
 //  EngineYard
 //
-//  Created by Amarjit on 17/11/2018.
+//  Created by Amarjit on 18/11/2018.
 //  Copyright © 2018 Amarjit. All rights reserved.
 //
 
@@ -19,22 +19,20 @@ class LocomotiveListViewModel : BaseViewModel {
 class LocomotiveListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var viewModel: LocomotiveListViewModel?
+
     lazy var tableView : UITableView = {
-        let tv = UITableView()
+        let tv = UITableView(frame: self.view.frame, style: .plain)
         tv.delegate = self
         tv.dataSource = self
-        tv.backgroundColor = .red
         tv.register(UITableViewCell.self, forCellReuseIdentifier: LocomotiveListViewModel.reuseIdentifier)
         return tv
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.title = LocomotiveListViewModel.pageTitle
         self.view.addSubview(tableView)
     }
-    
+
     // MARK: - Table view data source
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -50,7 +48,6 @@ class LocomotiveListViewController: UIViewController, UITableViewDelegate, UITab
         }
         return gameObj.board.decks.count
     }
-
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: LocomotiveListViewModel.reuseIdentifier, for: indexPath)
@@ -78,7 +75,6 @@ class LocomotiveListViewController: UIViewController, UITableViewDelegate, UITab
         let deck = gameObj.board.decks[indexPath.row]
         cellLabel.text = "\(deck.name), \(deck.color) \(deck.generation) Cost: $\(deck.cost) Production: $\(deck.productionCost) Income: $\(deck.income)"
     }
-
 
     /*
     // MARK: - Navigation
