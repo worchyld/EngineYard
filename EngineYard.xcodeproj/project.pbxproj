@@ -21,6 +21,8 @@
 		4D247B4121A117280004478D /* WinnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D247B4021A117280004478D /* WinnerTests.swift */; };
 		4D247B4621A125E80004478D /* WinnersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D247B4421A125E80004478D /* WinnersListViewController.swift */; };
 		4D247B4921A127FA0004478D /* Winner.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D247B4821A127FA0004478D /* Winner.storyboard */; };
+		4D247B4B21A151510004478D /* MarketDemands.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D247B4A21A151510004478D /* MarketDemands.storyboard */; };
+		4D247B4D21A1522B0004478D /* Production.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D247B4C21A1522B0004478D /* Production.storyboard */; };
 		4D2847902137FC3500C81B5C /* BoardUnlockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D28478F2137FC3500C81B5C /* BoardUnlockTests.swift */; };
 		4D2847922138147200C81B5C /* ProductionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2847912138147200C81B5C /* ProductionTests.swift */; };
 		4D28479421381F4500C81B5C /* PlayerHandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D28479321381F4500C81B5C /* PlayerHandTests.swift */; };
@@ -99,6 +101,8 @@
 		4D247B4021A117280004478D /* WinnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerTests.swift; sourceTree = "<group>"; };
 		4D247B4421A125E80004478D /* WinnersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnersListViewController.swift; sourceTree = "<group>"; };
 		4D247B4821A127FA0004478D /* Winner.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Winner.storyboard; sourceTree = "<group>"; };
+		4D247B4A21A151510004478D /* MarketDemands.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MarketDemands.storyboard; sourceTree = "<group>"; };
+		4D247B4C21A1522B0004478D /* Production.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Production.storyboard; sourceTree = "<group>"; };
 		4D28478F2137FC3500C81B5C /* BoardUnlockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardUnlockTests.swift; sourceTree = "<group>"; };
 		4D2847912138147200C81B5C /* ProductionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionTests.swift; sourceTree = "<group>"; };
 		4D28479321381F4500C81B5C /* PlayerHandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerHandTests.swift; sourceTree = "<group>"; };
@@ -282,6 +286,8 @@
 				4DA3487820812A8B006DA164 /* Main.storyboard */,
 				4DF1509121679E0300D39D65 /* MainMenu.storyboard */,
 				4DBEDB9D219FBDD200A56FE1 /* Decks.storyboard */,
+				4D247B4C21A1522B0004478D /* Production.storyboard */,
+				4D247B4A21A151510004478D /* MarketDemands.storyboard */,
 				4D247B4821A127FA0004478D /* Winner.storyboard */,
 				4DA3487A20812A8B006DA164 /* AppDelegate.swift */,
 				4DA3487B20812A8B006DA164 /* Info.plist */,
@@ -417,6 +423,8 @@
 				4DBEDB9E219FBDD200A56FE1 /* Decks.storyboard in Resources */,
 				4DA3487D20812A8B006DA164 /* Assets.xcassets in Resources */,
 				4DE3873921528D3600BFF9DB /* Media.xcassets in Resources */,
+				4D247B4D21A1522B0004478D /* Production.storyboard in Resources */,
+				4D247B4B21A151510004478D /* MarketDemands.storyboard in Resources */,
 				4DA3487E20812A8B006DA164 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
