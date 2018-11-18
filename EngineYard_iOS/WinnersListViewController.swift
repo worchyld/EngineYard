@@ -14,15 +14,6 @@ class WinnersListViewController: UIViewController, UITableViewDelegate, UITableV
 
     @IBOutlet var tableView: UITableView!
 
-//    lazy var tableView : UITableView = {
-//        let tv = UITableView(frame: self.view.frame, style: .plain)
-//        tv.delegate = self
-//        tv.dataSource = self
-//        tv.allowsSelection = false
-//        tv.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
-//        return tv
-//    }()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Winners"
