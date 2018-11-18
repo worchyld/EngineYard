@@ -75,7 +75,7 @@ extension Game {
 
     func isWin(for player: GKGameModelPlayer) -> Bool {
         let plyObj: Player = player as! Player
-        return Rules.isGameEndConditionMet(plyObj.cash)
+        return Rules.didMeetEndGameCondition(plyObj.cash)
     }
 }
 

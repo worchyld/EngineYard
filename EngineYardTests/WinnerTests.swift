@@ -63,7 +63,7 @@ class WinnerTests: EngineYardTests {
         let cash = [0,299,300,329,330,331]
 
         let filtered = cash.filter({
-            return (Rules.isGameEndConditionMet($0))
+            return (Rules.didMeetEndGameCondition($0))
         })
 
         XCTAssertTrue(filtered.count == 2)

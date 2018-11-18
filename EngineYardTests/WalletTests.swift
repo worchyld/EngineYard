@@ -68,7 +68,7 @@ class WalletTests: EngineYardTests {
         let cash = [0,299,300,329,330,331]
 
         let reachedGoal = cash.filter({
-            return (Rules.isGameEndConditionMet($0))
+            return (Rules.didMeetEndGameCondition($0))
         })
 
         XCTAssertTrue(reachedGoal.count == 2)
