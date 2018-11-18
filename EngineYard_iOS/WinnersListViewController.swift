@@ -23,6 +23,13 @@ class WinnersListViewController: UIViewController, UITableViewDelegate, UITableV
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
         self.tableView.allowsSelection = false
         self.tableView.layoutIfNeeded()
+
+//        let sb: UIStoryboard = UIStoryboard(name: "Winner", bundle: nil)
+//        if let controller = sb.instantiateViewController(withIdentifier: "WinnersListViewController") as? WinnersListViewController
+//        {
+//            self.navigationController?.pushViewController(controller, animated: true)
+//        }
+
     }
 
     // MARK: - Table view data source
