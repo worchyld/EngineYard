@@ -8,6 +8,8 @@
 
 import UIKit
 
+// Displays winner chart
+
 class WinnersViewModel : BaseViewModel {
     static let reuseIdentifier = "winnerCellId"
     static let pageTitle = "Winner"

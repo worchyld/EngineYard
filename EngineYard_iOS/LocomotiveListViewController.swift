@@ -8,6 +8,9 @@
 
 import UIKit
 
+// Lists locomotives
+// modes: List, ForSale
+
 class LocomotiveListViewModel : BaseViewModel {
     static let pageTitle: String = NSLocalizedString("Buy Train", comment: "Buy train page title")
 }
