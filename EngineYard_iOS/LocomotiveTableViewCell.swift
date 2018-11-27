@@ -41,27 +41,7 @@ class LocomotiveTableViewCell: UITableViewCell {
     }
 
     func tintTrainIcon(deck: Deck) {
-        switch deck.color {
-        case .green:
-            let color = UIColor(red: 66/255, green: 230/255, blue: 149/255, alpha: 1)
-            self.iconTrainImageView.tintColor = color
-            break
-
-        case .red:
-            let color = UIColor.init(red: 245/255, green: 78/255, blue: 162/255, alpha: 1)
-            self.iconTrainImageView.tintColor = color
-            break
-
-        case .yellow:
-            let color = UIColor.init(red: 252/255, green: 227/255, blue: 138/255, alpha: 1)
-            self.iconTrainImageView.tintColor = color
-            break
-
-        case .blue:
-            let color = UIColor.init(red: 23/255, green: 234/255, blue: 217/255, alpha: 1)
-            self.iconTrainImageView.tintColor = color
-            break
-        }
+        self.iconTrainImageView.tintColor = .red
     }
 
     /*
