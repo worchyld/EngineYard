@@ -41,28 +41,8 @@ class LocomotiveTableViewCell: UITableViewCell {
     }
 
     func tintTrainIcon(deck: Deck) {
-        self.iconTrainImageView.tintColor = .red
+        //self.backgroundColor = EngineColor.getColorForEngine(deck.color)()
     }
-
-    /*
-    func applyHeaderColor(card: EngineCard) {
-
-        switch card.engineColor {
-        case .green:
-            self.headerView.backgroundColor = UIColor.init(colorLiteralRed: 66/255, green: 230/255, blue: 149/255, alpha: 1)
-            break
-        case .red:
-            self.headerView.backgroundColor = UIColor.init(colorLiteralRed: 245/255, green: 78/255, blue: 162/255, alpha: 1)
-            break
-        case .yellow:
-            self.headerView.backgroundColor = UIColor.init(colorLiteralRed: 252/255, green: 227/255, blue: 138/255, alpha: 1)
-            break
-        case .blue:
-            self.headerView.backgroundColor = UIColor.init(colorLiteralRed: 23/255, green: 234/255, blue: 217/255, alpha: 1)
-            break
-        }
-    }
-    */
 
 
     override func setSelected(_ selected: Bool, animated: Bool) {
