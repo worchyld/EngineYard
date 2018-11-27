@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		4D01469B208393AF00AE54B1 /* Card+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01469A208393AF00AE54B1 /* Card+Colors.swift */; };
+		4D137FFD21ACDF7600771496 /* HUDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D137FFB21ACDF7600771496 /* HUDViewController.swift */; };
+		4D137FFE21ACDF7600771496 /* HUDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D137FFC21ACDF7600771496 /* HUDViewController.xib */; };
+		4D13800021ACE33300771496 /* PlayerHUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D137FFF21ACE33300771496 /* PlayerHUDView.swift */; };
+		4D13800221ACE34600771496 /* PlayerHUDView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D13800121ACE34600771496 /* PlayerHUDView.xib */; };
 		4D1BD4872083829900051FD9 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1BD4862083829900051FD9 /* Deck.swift */; };
 		4D1BD48B2083846500051FD9 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1BD48A2083846500051FD9 /* Card.swift */; };
 		4D1BD48D208384ED00051FD9 /* Production.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1BD48C208384ED00051FD9 /* Production.swift */; };
@@ -86,6 +90,10 @@
 
 /* Begin PBXFileReference section */
 		4D01469A208393AF00AE54B1 /* Card+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Colors.swift"; sourceTree = "<group>"; };
+		4D137FFB21ACDF7600771496 /* HUDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDViewController.swift; sourceTree = "<group>"; };
+		4D137FFC21ACDF7600771496 /* HUDViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HUDViewController.xib; sourceTree = "<group>"; };
+		4D137FFF21ACE33300771496 /* PlayerHUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerHUDView.swift; sourceTree = "<group>"; };
+		4D13800121ACE34600771496 /* PlayerHUDView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerHUDView.xib; sourceTree = "<group>"; };
 		4D1BD4862083829900051FD9 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		4D1BD48A2083846500051FD9 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		4D1BD48C208384ED00051FD9 /* Production.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Production.swift; sourceTree = "<group>"; };
@@ -276,6 +284,10 @@
 				4D247B3C21A1167B0004478D /* SalesReportViewController.swift */,
 				4D247B3A21A116690004478D /* TaxViewController.swift */,
 				4D247B4421A125E80004478D /* WinnersListViewController.swift */,
+				4D137FFB21ACDF7600771496 /* HUDViewController.swift */,
+				4D137FFC21ACDF7600771496 /* HUDViewController.xib */,
+				4D137FFF21ACE33300771496 /* PlayerHUDView.swift */,
+				4D13800121ACE34600771496 /* PlayerHUDView.xib */,
 				4DA3487520812A8B006DA164 /* Assets.xcassets */,
 				4DA3487620812A8B006DA164 /* LaunchScreen.storyboard */,
 				4DF1509121679E0300D39D65 /* MainMenu.storyboard */,
@@ -418,6 +430,8 @@
 				4DE3873921528D3600BFF9DB /* Media.xcassets in Resources */,
 				4D247B4D21A1522B0004478D /* Production.storyboard in Resources */,
 				4D247B4B21A151510004478D /* MarketDemands.storyboard in Resources */,
+				4D137FFE21ACDF7600771496 /* HUDViewController.xib in Resources */,
+				4D13800221ACE34600771496 /* PlayerHUDView.xib in Resources */,
 				4DA3487E20812A8B006DA164 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -453,6 +467,7 @@
 				4D74BA482084A6D000ADC00C /* Hand.swift in Sources */,
 				4D50C4F121569DA000E43C77 /* Selling.swift in Sources */,
 				4D247B4621A125E80004478D /* WinnersListViewController.swift in Sources */,
+				4D13800021ACE33300771496 /* PlayerHUDView.swift in Sources */,
 				4DA8396D2136B0ED00F7CAB9 /* GameSetupManager.swift in Sources */,
 				4D247B3F21A1168D0004478D /* BuyProductionViewController.swift in Sources */,
 				4DE3872521527B4300BFF9DB /* PhaseManager.swift in Sources */,
@@ -465,6 +480,7 @@
 				4DFB8217215A042C0036F9FD /* SalesRule.swift in Sources */,
 				4D1BD48B2083846500051FD9 /* Card.swift in Sources */,
 				4DEE8725215224430038F0CF /* StateMachine.swift in Sources */,
+				4D137FFD21ACDF7600771496 /* HUDViewController.swift in Sources */,
 				4D247B37219FFE340004478D /* ObjectCache.swift in Sources */,
 				4DC5AEE8214ED9E500D2841D /* MarketDemandsManager.swift in Sources */,
 				4D247B3B21A116690004478D /* TaxViewController.swift in Sources */,
