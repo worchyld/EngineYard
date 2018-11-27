@@ -21,10 +21,11 @@ class LocomotiveListViewController: UIViewController, UITableViewDelegate, UITab
     var viewModel: LocomotiveListViewModel?
 
     @IBOutlet weak var tableView: UITableView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: LocomotiveListViewModel.reuseIdentifier)
+        //self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: LocomotiveListViewModel.reuseIdentifier)
+        self.tableView.register(UINib(nibName: "LocomotiveTableViewCell", bundle: nil), forCellReuseIdentifier: LocomotiveListViewModel.reuseIdentifier)
     }
 
     // MARK: - Table view data source
@@ -44,7 +45,7 @@ class LocomotiveListViewController: UIViewController, UITableViewDelegate, UITab
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: LocomotiveListViewModel.reuseIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: LocomotiveListViewModel.reuseIdentifier, for: indexPath) as! LocomotiveTableViewCell
 
         // Configure the cell...
         configure(cell: cell, at: indexPath)
@@ -52,7 +53,16 @@ class LocomotiveListViewController: UIViewController, UITableViewDelegate, UITab
         return cell
     }
 
-    func configure(cell: UITableViewCell, at indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+
+
+    func configure(cell: LocomotiveTableViewCell, at indexPath: IndexPath) {
         guard let viewModel = self.viewModel else {
             return
         }
@@ -62,13 +72,13 @@ class LocomotiveListViewController: UIViewController, UITableViewDelegate, UITab
         guard (indexPath.row > 0 && indexPath.row <= gameObj.board.decks.count) else {
             return
         }
-        guard let cellLabel = cell.textLabel else {
-            return
-        }
 
         let deck = gameObj.board.decks[indexPath.row]
-        cellLabel.text = "\(deck.name), \(deck.color) \(deck.generation) Cost: $\(deck.cost) Production: $\(deck.productionCost) Income: $\(deck.income)"
+        cell.configure(with: deck)
+
+        //cellLabel.text = "\(deck.name), \(deck.color) \(deck.generation) Cost: $\(deck.cost) Production: $\(deck.productionCost) Income: $\(deck.income)"
     }
+
 
     /*
     // MARK: - Navigation
