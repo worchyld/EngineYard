@@ -14,18 +14,36 @@ import UIKit
 class LocomotiveListViewModel : BaseViewModel {
     static let pageTitle: String = NSLocalizedString("Buy Train", comment: "Buy train page title")
     static let reuseIdentifier = "LocomotiveCellId"
+
+    var decks : [Deck] {
+        guard let gameObj = self.game else {
+            return []
+        }
+        return gameObj.board.decks
+    }
 }
 
 class LocomotiveListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    var viewModel: LocomotiveListViewModel?
+    var viewModel: LocomotiveListViewModel!
 
-    @IBOutlet weak var tableView: UITableView!
+    lazy var tableView : UITableView = {
+        let tv = UITableView(frame: self.view.frame, style: .plain)
+        tv.delegate = self
+        tv.dataSource = self
+        tv.register(UITableViewCell.self, forCellReuseIdentifier: LocomotiveListViewModel.reuseIdentifier)
+        tv.allowsSelection = false
+        tv.allowsMultipleSelection = false
+        return tv
+    }()
+
+    @IBOutlet weak var tableContainerView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: LocomotiveListViewModel.reuseIdentifier)
-        self.tableView.register(UINib(nibName: "LocomotiveTableViewCell", bundle: nil), forCellReuseIdentifier: LocomotiveListViewModel.reuseIdentifier)
+
+        self.title = "\(viewModel.decks.count) decks"
+        self.tableContainerView.addSubview(tableView)
     }
 
     // MARK: - Table view data source
@@ -35,59 +53,18 @@ class LocomotiveListViewController: UIViewController, UITableViewDelegate, UITab
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let viewModel = self.viewModel else {
-            return 0
-        }
-        guard let gameObj = viewModel.game else {
-            return 0
-        }
-        return gameObj.board.decks.count
+        return viewModel.decks.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: LocomotiveListViewModel.reuseIdentifier, for: indexPath) as! LocomotiveTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: LocomotiveListViewModel.reuseIdentifier, for: indexPath)
 
-        // Configure the cell...
-        configure(cell: cell, at: indexPath)
+        let deck = viewModel.decks[indexPath.row]
+
+        cell.textLabel?.text = "#\(indexPath.row), \(deck.description)"
 
         return cell
     }
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
-    }
-
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
-    }
-
-
-    func configure(cell: LocomotiveTableViewCell, at indexPath: IndexPath) {
-        guard let viewModel = self.viewModel else {
-            return
-        }
-        guard let gameObj = viewModel.game else {
-            return
-        }
-        guard (indexPath.row > 0 && indexPath.row <= gameObj.board.decks.count) else {
-            return
-        }
-
-        let deck = gameObj.board.decks[indexPath.row]
-        cell.configure(with: deck)
-
-        //cellLabel.text = "\(deck.name), \(deck.color) \(deck.generation) Cost: $\(deck.cost) Production: $\(deck.productionCost) Income: $\(deck.income)"
-    }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
