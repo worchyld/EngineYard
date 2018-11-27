@@ -31,7 +31,8 @@ class LocomotiveListViewController: UIViewController, UITableViewDelegate, UITab
         let tv = UITableView(frame: self.view.frame, style: .plain)
         tv.delegate = self
         tv.dataSource = self
-        tv.register(UITableViewCell.self, forCellReuseIdentifier: LocomotiveListViewModel.reuseIdentifier)
+        //tv.register(UITableViewCell.self, forCellReuseIdentifier: LocomotiveListViewModel.reuseIdentifier)
+        tv.register(UINib(nibName: "LocomotiveTableViewCell", bundle: nil), forCellReuseIdentifier: LocomotiveListViewModel.reuseIdentifier)
         tv.allowsSelection = false
         tv.allowsMultipleSelection = false
         return tv
@@ -57,14 +58,14 @@ class LocomotiveListViewController: UIViewController, UITableViewDelegate, UITab
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: LocomotiveListViewModel.reuseIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: LocomotiveListViewModel.reuseIdentifier, for: indexPath) as! LocomotiveTableViewCell
 
         let deck = viewModel.decks[indexPath.row]
 
-        cell.textLabel?.text = "#\(indexPath.row), \(deck.description)"
+        //cell.textLabel?.text = "#\(indexPath.row), \(deck.description)"
+        cell.configure(with: deck)
 
         return cell
     }
-
 
 }

@@ -19,36 +19,48 @@
                 <rect key="frame" x="0.0" y="0.0" width="286" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Green.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZW-Rp-HEj">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZW-Rp-HEj">
                         <rect key="frame" x="52" y="4" width="52" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Generation #1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHC-kk-zor">
-                        <rect key="frame" x="52" y="22" width="74" height="14"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generation #1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHC-kk-zor">
+                        <rect key="frame" x="52" y="21" width="74" height="14"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4 / 2 / 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTK-2U-9eU">
-                        <rect key="frame" x="224" y="13" width="50" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 / 2 / 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTK-2U-9eU">
+                        <rect key="frame" x="224" y="13.5" width="50" height="17"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-train" translatesAutoresizingMaskIntoConstraints="NO" id="IFQ-qD-knb">
-                        <rect key="frame" x="15" y="9" width="25" height="25"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-train" translatesAutoresizingMaskIntoConstraints="NO" id="IFQ-qD-knb">
+                        <rect key="frame" x="15" y="9.5" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="PPI-SW-EL1"/>
+                            <constraint firstAttribute="height" constant="25" id="ywY-cc-mnS"/>
+                        </constraints>
                     </imageView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="iTK-2U-9eU" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="C43-z1-dEu"/>
+                    <constraint firstItem="CHC-kk-zor" firstAttribute="top" secondItem="rZW-Rp-HEj" secondAttribute="bottom" id="GEn-p1-4ed"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="iTK-2U-9eU" secondAttribute="trailing" constant="4" id="MQ9-Uf-RkQ"/>
+                    <constraint firstItem="IFQ-qD-knb" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="fTH-fc-lCa"/>
+                    <constraint firstItem="rZW-Rp-HEj" firstAttribute="leading" secondItem="IFQ-qD-knb" secondAttribute="trailing" constant="12" id="gXW-0j-Sfj"/>
+                    <constraint firstItem="CHC-kk-zor" firstAttribute="leading" secondItem="rZW-Rp-HEj" secondAttribute="leading" id="jgE-E3-jxB"/>
+                    <constraint firstAttribute="bottom" secondItem="CHC-kk-zor" secondAttribute="bottom" constant="8.5" id="lzw-7l-95O"/>
+                    <constraint firstItem="IFQ-qD-knb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="qgM-0z-k5X"/>
+                    <constraint firstItem="rZW-Rp-HEj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="tz0-P5-bdc"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="generationLabel" destination="CHC-kk-zor" id="ztt-NC-7z0"/>
+                <outlet property="iconTrainImageView" destination="IFQ-qD-knb" id="nx6-hb-qTT"/>
                 <outlet property="infoLabel" destination="iTK-2U-9eU" id="blA-df-S2r"/>
                 <outlet property="nameLabel" destination="rZW-Rp-HEj" id="nc9-uI-MB1"/>
                 <outletCollection property="lblCollection" destination="rZW-Rp-HEj" collectionClass="NSMutableArray" id="kh5-Cu-mSs"/>
