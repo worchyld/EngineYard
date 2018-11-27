@@ -20,17 +20,11 @@ class LocomotiveListViewController: UIViewController, UITableViewDelegate, UITab
 
     var viewModel: LocomotiveListViewModel?
 
-    lazy var tableView : UITableView = {
-        let tv = UITableView(frame: self.view.frame, style: .plain)
-        tv.delegate = self
-        tv.dataSource = self
-        tv.register(UITableViewCell.self, forCellReuseIdentifier: LocomotiveListViewModel.reuseIdentifier)
-        return tv
-    }()
-
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.addSubview(tableView)
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: LocomotiveListViewModel.reuseIdentifier)
     }
 
     // MARK: - Table view data source

@@ -22,6 +22,7 @@ class HUDViewController: UIViewController, UICollectionViewDelegate, UICollectio
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: HUDViewModel.reuseIdentifier)
     }
 
     // MARK: UICollectionView Delegate
@@ -39,6 +40,7 @@ class HUDViewController: UIViewController, UICollectionViewDelegate, UICollectio
 
         let cell: UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: HUDViewModel.reuseIdentifier, for: indexPath) //as! UICollectionViewCell
 
+        cell.backgroundColor = .red
 
         return cell
     }
