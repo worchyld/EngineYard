@@ -12,6 +12,8 @@
 		4D137FFE21ACDF7600771496 /* HUDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D137FFC21ACDF7600771496 /* HUDViewController.xib */; };
 		4D13800021ACE33300771496 /* PlayerHUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D137FFF21ACE33300771496 /* PlayerHUDView.swift */; };
 		4D13800221ACE34600771496 /* PlayerHUDView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D13800121ACE34600771496 /* PlayerHUDView.xib */; };
+		4D13800B21ADDDCE00771496 /* LocomotiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D13800921ADDDCE00771496 /* LocomotiveTableViewCell.swift */; };
+		4D13800C21ADDDCE00771496 /* LocomotiveTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D13800A21ADDDCE00771496 /* LocomotiveTableViewCell.xib */; };
 		4D1BD4872083829900051FD9 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1BD4862083829900051FD9 /* Deck.swift */; };
 		4D1BD48B2083846500051FD9 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1BD48A2083846500051FD9 /* Card.swift */; };
 		4D1BD48D208384ED00051FD9 /* Production.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1BD48C208384ED00051FD9 /* Production.swift */; };
@@ -94,6 +96,8 @@
 		4D137FFC21ACDF7600771496 /* HUDViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HUDViewController.xib; sourceTree = "<group>"; };
 		4D137FFF21ACE33300771496 /* PlayerHUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerHUDView.swift; sourceTree = "<group>"; };
 		4D13800121ACE34600771496 /* PlayerHUDView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerHUDView.xib; sourceTree = "<group>"; };
+		4D13800921ADDDCE00771496 /* LocomotiveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocomotiveTableViewCell.swift; sourceTree = "<group>"; };
+		4D13800A21ADDDCE00771496 /* LocomotiveTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocomotiveTableViewCell.xib; sourceTree = "<group>"; };
 		4D1BD4862083829900051FD9 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		4D1BD48A2083846500051FD9 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		4D1BD48C208384ED00051FD9 /* Production.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Production.swift; sourceTree = "<group>"; };
@@ -280,6 +284,8 @@
 				4DF150982167A6FE00D39D65 /* NewGamePlayerCollectionViewCell.xib */,
 				4D247B3821A1162D0004478D /* SingleTrainViewController.swift */,
 				4D247B4E21A1B4360004478D /* LocomotiveListViewController.swift */,
+				4D13800921ADDDCE00771496 /* LocomotiveTableViewCell.swift */,
+				4D13800A21ADDDCE00771496 /* LocomotiveTableViewCell.xib */,
 				4D247B3E21A1168D0004478D /* BuyProductionViewController.swift */,
 				4D247B3C21A1167B0004478D /* SalesReportViewController.swift */,
 				4D247B3A21A116690004478D /* TaxViewController.swift */,
@@ -430,6 +436,7 @@
 				4DE3873921528D3600BFF9DB /* Media.xcassets in Resources */,
 				4D247B4D21A1522B0004478D /* Production.storyboard in Resources */,
 				4D247B4B21A151510004478D /* MarketDemands.storyboard in Resources */,
+				4D13800C21ADDDCE00771496 /* LocomotiveTableViewCell.xib in Resources */,
 				4D137FFE21ACDF7600771496 /* HUDViewController.xib in Resources */,
 				4D13800221ACE34600771496 /* PlayerHUDView.xib in Resources */,
 				4DA3487E20812A8B006DA164 /* LaunchScreen.storyboard in Resources */,
@@ -467,6 +474,7 @@
 				4D74BA482084A6D000ADC00C /* Hand.swift in Sources */,
 				4D50C4F121569DA000E43C77 /* Selling.swift in Sources */,
 				4D247B4621A125E80004478D /* WinnersListViewController.swift in Sources */,
+				4D13800B21ADDDCE00771496 /* LocomotiveTableViewCell.swift in Sources */,
 				4D13800021ACE33300771496 /* PlayerHUDView.swift in Sources */,
 				4DA8396D2136B0ED00F7CAB9 /* GameSetupManager.swift in Sources */,
 				4D247B3F21A1168D0004478D /* BuyProductionViewController.swift in Sources */,
