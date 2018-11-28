@@ -15,6 +15,7 @@ class LocomotiveTableViewCell: UITableViewCell {
     @IBOutlet weak var generationLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet var lblCollection: [UILabel]!
+    @IBOutlet var dieCollection: [UIImageView]!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,13 +38,25 @@ class LocomotiveTableViewCell: UITableViewCell {
         self.generationLabel.text = "Generation: #\(deck.generation)"
         self.infoLabel.text = "\(formattedCost) / \(formattedProduction) / \(formattedIncome)"
 
-        tintTrainIcon(deck: deck)
-    }
+        let _ = self.dieCollection.map({
+            $0.isHidden = true
+        })
 
-    func tintTrainIcon(deck: Deck) {
-        //self.backgroundColor = EngineColor.getColorForEngine(deck.color)()
-    }
+        if (deck.orderBook.existingOrders.count > 0) {
+            for (index, orderValue) in deck.orderBook.existingOrderValues.enumerated() {
+                let asset = Die.asset(die: orderValue)
 
+                guard let item = (self.dieCollection.filter({ (imgView) -> Bool in
+                    return (imgView.tag == index)
+                }).first) else {
+                    return
+                }
+
+                item.image = UIImage(named: asset)
+                item.isHidden = false
+            }
+        }
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

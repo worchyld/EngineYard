@@ -25,26 +25,30 @@
                                     <constraint firstAttribute="height" constant="150" id="tap-hK-OPX"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VEc-xa-hAz">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UyL-8Y-XHt">
                                 <rect key="frame" x="0.0" y="150" width="375" height="517"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
+                                <connections>
+                                    <outlet property="dataSource" destination="8Pq-bj-Cr1" id="9DF-b7-0SD"/>
+                                    <outlet property="delegate" destination="8Pq-bj-Cr1" id="BK0-uA-EVT"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="VEc-xa-hAz" firstAttribute="top" secondItem="9dM-xe-U9O" secondAttribute="bottom" id="3O1-OW-UOx"/>
                             <constraint firstItem="9dM-xe-U9O" firstAttribute="centerX" secondItem="qKV-2S-YLA" secondAttribute="centerX" id="6UT-gt-h2y"/>
+                            <constraint firstAttribute="bottom" secondItem="UyL-8Y-XHt" secondAttribute="bottom" id="8T4-o9-2E1"/>
                             <constraint firstItem="9dM-xe-U9O" firstAttribute="trailing" secondItem="tM8-ae-vkc" secondAttribute="trailing" id="IRh-ks-h4a"/>
-                            <constraint firstAttribute="trailing" secondItem="VEc-xa-hAz" secondAttribute="trailing" id="PNk-GH-ZiM"/>
                             <constraint firstItem="9dM-xe-U9O" firstAttribute="top" secondItem="qKV-2S-YLA" secondAttribute="top" id="Pf0-iT-4RP"/>
-                            <constraint firstAttribute="bottom" secondItem="VEc-xa-hAz" secondAttribute="bottom" id="UVH-aS-I4Y"/>
                             <constraint firstItem="9dM-xe-U9O" firstAttribute="leading" secondItem="tM8-ae-vkc" secondAttribute="leading" id="XmY-ZJ-4f8"/>
-                            <constraint firstItem="VEc-xa-hAz" firstAttribute="leading" secondItem="qKV-2S-YLA" secondAttribute="leading" id="bsD-O8-hE9"/>
+                            <constraint firstItem="UyL-8Y-XHt" firstAttribute="top" secondItem="9dM-xe-U9O" secondAttribute="bottom" id="gaw-Ry-LRS"/>
+                            <constraint firstAttribute="trailing" secondItem="UyL-8Y-XHt" secondAttribute="trailing" id="npd-Ts-L6u"/>
+                            <constraint firstItem="UyL-8Y-XHt" firstAttribute="leading" secondItem="qKV-2S-YLA" secondAttribute="leading" id="rtA-LF-98T"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tM8-ae-vkc"/>
                     </view>
                     <connections>
-                        <outlet property="tableContainerView" destination="VEc-xa-hAz" id="6AF-Y7-ZgZ"/>
+                        <outlet property="tableView" destination="UyL-8Y-XHt" id="ynu-k4-5hn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pPO-C3-3Lc" userLabel="First Responder" sceneMemberID="firstResponder"/>

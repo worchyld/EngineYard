@@ -27,24 +27,29 @@ class LocomotiveListViewController: UIViewController, UITableViewDelegate, UITab
 
     var viewModel: LocomotiveListViewModel!
 
-    lazy var tableView : UITableView = {
+    /*
+    lazy var _tableView : UITableView = {
         let tv = UITableView(frame: self.view.frame, style: .plain)
         tv.delegate = self
         tv.dataSource = self
         //tv.register(UITableViewCell.self, forCellReuseIdentifier: LocomotiveListViewModel.reuseIdentifier)
         tv.register(UINib(nibName: "LocomotiveTableViewCell", bundle: nil), forCellReuseIdentifier: LocomotiveListViewModel.reuseIdentifier)
-        tv.allowsSelection = false
         tv.allowsMultipleSelection = false
         return tv
     }()
+    */
 
-    @IBOutlet weak var tableContainerView: UIView!
+    @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.automaticallyAdjustsScrollViewInsets = false
         self.title = "\(viewModel.decks.count) decks"
-        self.tableContainerView.addSubview(tableView)
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.register(UINib(nibName: "LocomotiveTableViewCell", bundle: nil), forCellReuseIdentifier: LocomotiveListViewModel.reuseIdentifier)
+        self.tableView.allowsMultipleSelection = false
     }
 
     // MARK: - Table view data source
@@ -66,6 +71,10 @@ class LocomotiveListViewController: UIViewController, UITableViewDelegate, UITab
         cell.configure(with: deck)
 
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 55
     }
 
 }
