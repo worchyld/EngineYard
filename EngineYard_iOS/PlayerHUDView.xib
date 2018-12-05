@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PlayerHUDView" customModule="EngineYard" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="110" height="50"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -70,6 +70,14 @@
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="activePlayerView" destination="jOd-am-Wu8" id="T7z-dV-RrB"/>
+                <outlet property="avatarImageView" destination="qwo-Ac-9SV" id="gLt-RP-nQi"/>
+                <outlet property="cashLabel" destination="mww-F4-K8v" id="VXX-Wd-jAw"/>
+                <outlet property="portfolioLabel" destination="Uds-pa-6IP" id="OI1-T0-22U"/>
+                <outletCollection property="labelCollection" destination="mww-F4-K8v" collectionClass="NSMutableArray" id="Rv7-GR-2sj"/>
+                <outletCollection property="labelCollection" destination="Uds-pa-6IP" collectionClass="NSMutableArray" id="NKS-gT-ezq"/>
+            </connections>
             <point key="canvasLocation" x="60.799999999999997" y="48.575712143928037"/>
         </view>
     </objects>

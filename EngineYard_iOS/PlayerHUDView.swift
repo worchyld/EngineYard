@@ -10,6 +10,27 @@ import UIKit
 
 class PlayerHUDView: UIView {
 
+    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var cashLabel: UILabel!
+    @IBOutlet weak var portfolioLabel: UILabel!
+    @IBOutlet weak var activePlayerView: UIView!
+    @IBOutlet var labelCollection: [UILabel]!
+
+
+    func configure(with player: Player, isActivePlayer: Bool = false) {
+        labelCollection.forEach { (label) in
+            label.sizeToFit()
+        }
+
+        let cash: NSNumber = NSNumber(integerLiteral: player.cash)
+        let formattedCash = ObjectCache.currencyRateFormatter.string(from: cash)!
+
+        self.cashLabel.text = "\(formattedCash)"
+        self.portfolioLabel.text = "\(player.hand.size)"
+
+        self.activePlayerView.isHidden = !(isActivePlayer)
+    }
+
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

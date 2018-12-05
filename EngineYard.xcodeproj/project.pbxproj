@@ -21,7 +21,6 @@
 		4D1BD48F2083864B00051FD9 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1BD48E2083864B00051FD9 /* Board.swift */; };
 		4D247B35219FF9740004478D /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D247B34219FF9740004478D /* BaseViewModel.swift */; };
 		4D247B37219FFE340004478D /* ObjectCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D247B36219FFE340004478D /* ObjectCache.swift */; };
-		4D247B3921A1162D0004478D /* SingleTrainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D247B3821A1162D0004478D /* SingleTrainViewController.swift */; };
 		4D247B3B21A116690004478D /* TaxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D247B3A21A116690004478D /* TaxViewController.swift */; };
 		4D247B3D21A1167B0004478D /* SalesReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D247B3C21A1167B0004478D /* SalesReportViewController.swift */; };
 		4D247B3F21A1168D0004478D /* BuyProductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D247B3E21A1168D0004478D /* BuyProductionViewController.swift */; };
@@ -106,7 +105,6 @@
 		4D1BD48E2083864B00051FD9 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		4D247B34219FF9740004478D /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		4D247B36219FFE340004478D /* ObjectCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectCache.swift; sourceTree = "<group>"; };
-		4D247B3821A1162D0004478D /* SingleTrainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTrainViewController.swift; sourceTree = "<group>"; };
 		4D247B3A21A116690004478D /* TaxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxViewController.swift; sourceTree = "<group>"; };
 		4D247B3C21A1167B0004478D /* SalesReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesReportViewController.swift; sourceTree = "<group>"; };
 		4D247B3E21A1168D0004478D /* BuyProductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyProductionViewController.swift; sourceTree = "<group>"; };
@@ -281,14 +279,8 @@
 		4DA3487320812A8B006DA164 /* EngineYard_iOS */ = {
 			isa = PBXGroup;
 			children = (
-				4DF1509321679E6200D39D65 /* MainMenuViewController.swift */,
-				4DF1509521679F0600D39D65 /* NewGameSetupViewController.swift */,
-				4DF150972167A6FE00D39D65 /* NewGamePlayerCollectionViewCell.swift */,
-				4DF150982167A6FE00D39D65 /* NewGamePlayerCollectionViewCell.xib */,
-				4D247B3821A1162D0004478D /* SingleTrainViewController.swift */,
-				4D247B4E21A1B4360004478D /* LocomotiveListViewController.swift */,
-				4D13800921ADDDCE00771496 /* LocomotiveTableViewCell.swift */,
-				4D13800A21ADDDCE00771496 /* LocomotiveTableViewCell.xib */,
+				4DFAED2421B7FB0900244CF9 /* Main-Menu */,
+				4DFAED2521B7FB1400244CF9 /* Locomotive-List */,
 				4D247B3E21A1168D0004478D /* BuyProductionViewController.swift */,
 				4D247B3C21A1167B0004478D /* SalesReportViewController.swift */,
 				4D247B3A21A116690004478D /* TaxViewController.swift */,
@@ -346,6 +338,27 @@
 				4DE3872421527B4300BFF9DB /* PhaseManager.swift */,
 			);
 			name = Managers;
+			sourceTree = "<group>";
+		};
+		4DFAED2421B7FB0900244CF9 /* Main-Menu */ = {
+			isa = PBXGroup;
+			children = (
+				4DF1509321679E6200D39D65 /* MainMenuViewController.swift */,
+				4DF1509521679F0600D39D65 /* NewGameSetupViewController.swift */,
+				4DF150972167A6FE00D39D65 /* NewGamePlayerCollectionViewCell.swift */,
+				4DF150982167A6FE00D39D65 /* NewGamePlayerCollectionViewCell.xib */,
+			);
+			path = "Main-Menu";
+			sourceTree = "<group>";
+		};
+		4DFAED2521B7FB1400244CF9 /* Locomotive-List */ = {
+			isa = PBXGroup;
+			children = (
+				4D247B4E21A1B4360004478D /* LocomotiveListViewController.swift */,
+				4D13800921ADDDCE00771496 /* LocomotiveTableViewCell.swift */,
+				4D13800A21ADDDCE00771496 /* LocomotiveTableViewCell.xib */,
+			);
+			path = "Locomotive-List";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -463,7 +476,6 @@
 				4D3DF4B320834587000DF88E /* Wallet.swift in Sources */,
 				4D74BA4C2084AC5000ADC00C /* OrderBook.swift in Sources */,
 				4D2A4B8C2195DEB300315524 /* EY+ImageView.swift in Sources */,
-				4D247B3921A1162D0004478D /* SingleTrainViewController.swift in Sources */,
 				4DA3488020812A8B006DA164 /* AppDelegate.swift in Sources */,
 				4D01469B208393AF00AE54B1 /* Card+Colors.swift in Sources */,
 				4D247B35219FF9740004478D /* BaseViewModel.swift in Sources */,
