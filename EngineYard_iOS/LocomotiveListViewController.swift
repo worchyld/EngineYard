@@ -66,15 +66,14 @@ class LocomotiveListViewController: UIViewController, UITableViewDelegate, UITab
         let cell = tableView.dequeueReusableCell(withIdentifier: LocomotiveListViewModel.reuseIdentifier, for: indexPath) as! LocomotiveTableViewCell
 
         let deck = viewModel.decks[indexPath.row]
-
-        //cell.textLabel?.text = "#\(indexPath.row), \(deck.description)"
+        
         cell.configure(with: deck)
 
         return cell
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 55
+        return 80
     }
 
 }
