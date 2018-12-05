@@ -66,7 +66,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="1CS-Mc-8QR"/>
                             <constraint firstItem="FRR-sy-GoF" firstAttribute="width" secondItem="9Ff-wH-YSk" secondAttribute="width" id="2iN-27-ZLU"/>
@@ -131,7 +131,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="XjC-1Q-eMv" firstAttribute="width" secondItem="tKq-2d-eYc" secondAttribute="width" id="1XV-vz-J3T"/>
                             <constraint firstItem="QMm-e1-c2k" firstAttribute="centerY" secondItem="6NZ-Rw-y2r" secondAttribute="centerY" id="5Ha-Qf-ziQ"/>
@@ -188,6 +188,7 @@
                 <outlet property="iconTrainImageView" destination="IFQ-qD-knb" id="nx6-hb-qTT"/>
                 <outlet property="incomeLabel" destination="21H-Z5-nGw" id="scm-E9-EVn"/>
                 <outlet property="nameLabel" destination="rZW-Rp-HEj" id="nc9-uI-MB1"/>
+                <outlet property="ordersLabel" destination="n6D-wy-pfk" id="oCq-EC-DmT"/>
                 <outlet property="productionCost" destination="QMm-e1-c2k" id="dL0-oM-HwU"/>
                 <outletCollection property="lblCollection" destination="rZW-Rp-HEj" collectionClass="NSMutableArray" id="kh5-Cu-mSs"/>
                 <outletCollection property="lblCollection" destination="CHC-kk-zor" collectionClass="NSMutableArray" id="jSc-63-crY"/>
