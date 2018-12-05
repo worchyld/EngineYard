@@ -13,7 +13,9 @@ class LocomotiveTableViewCell: UITableViewCell {
     @IBOutlet weak var iconTrainImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var generationLabel: UILabel!
-    @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var costLabel: UILabel!
+    @IBOutlet weak var productionCost: UILabel!
+    @IBOutlet weak var incomeLabel: UILabel!
     @IBOutlet var lblCollection: [UILabel]!
     @IBOutlet var dieCollection: [UIImageView]!
     
@@ -36,7 +38,9 @@ class LocomotiveTableViewCell: UITableViewCell {
 
         self.nameLabel.text = deck.name
         self.generationLabel.text = "Generation: #\(deck.generation)"
-        self.infoLabel.text = "\(formattedCost) / \(formattedProduction) / \(formattedIncome)"
+        self.productionCost.text = formattedProduction
+        self.incomeLabel.text = formattedIncome
+        self.costLabel.text = formattedCost
 
         let _ = self.dieCollection.map({
             $0.isHidden = true
