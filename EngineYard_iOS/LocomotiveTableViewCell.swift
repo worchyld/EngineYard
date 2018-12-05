@@ -47,7 +47,7 @@ class LocomotiveTableViewCell: UITableViewCell {
             $0.isHidden = true
         })
 
-        self.backgroundColor = EngineColor.getColorForEngine(deck.color)()
+        //self.backgroundColor = EngineColor.getColorForEngine(deck.color)()
         self.ordersLabel.isHidden = (deck.orderBook.existingOrderValues.count <= 0)
 
         if (deck.orderBook.existingOrders.count > 0) {
