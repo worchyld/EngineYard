@@ -16,7 +16,6 @@ class PlayerHUDView: UIView {
     @IBOutlet weak var activePlayerView: UIView!
     @IBOutlet var labelCollection: [UILabel]!
 
-
     func configure(with player: Player, isActivePlayer: Bool = false) {
         labelCollection.forEach { (label) in
             label.sizeToFit()
@@ -29,6 +28,14 @@ class PlayerHUDView: UIView {
         self.portfolioLabel.text = "\(player.hand.size)"
 
         self.activePlayerView.isHidden = !(isActivePlayer)
+
+        guard let assetName = player.asset else {
+            return
+        }
+        guard let img = UIImage(named: assetName) else {
+            return
+        }
+        self.avatarImageView.maskCircle(anyImage: img)
     }
 
     /*
