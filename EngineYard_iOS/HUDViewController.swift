@@ -58,3 +58,35 @@ class HUDViewController: UIViewController, UICollectionViewDelegate, UICollectio
         return cell
     }
 }
+
+extension HUDViewController {
+    public static func loadHUD(game: Game?, viewController: UIViewController) -> HUDViewController? {
+        guard let hasGame = game else {
+            assertionFailure("** HUD Failure - No game object found **")
+            return nil
+        }
+
+        let sb: UIStoryboard = UIStoryboard(name: "HUD", bundle: nil)
+        let hudVC = sb.instantiateViewController(withIdentifier: "HUDViewController") as? HUDViewController
+
+        if let controller = hudVC
+        {
+            let view = viewController.view!
+
+            controller.viewModel = HUDViewModel(game: hasGame)
+            viewController.addChild(controller)
+            controller.view.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(controller.view)
+
+            NSLayoutConstraint.activate([
+                controller.view.topAnchor.constraint(equalTo: view.topAnchor),
+                controller.view.leftAnchor.constraint(equalTo: view.leftAnchor),
+                controller.view.rightAnchor.constraint(equalTo: view.rightAnchor),
+                ])
+
+            controller.didMove(toParent: viewController)
+        }
+
+        return hudVC
+    }
+}

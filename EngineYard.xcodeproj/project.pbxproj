@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4D01469B208393AF00AE54B1 /* Card+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01469A208393AF00AE54B1 /* Card+Colors.swift */; };
 		4D137FFD21ACDF7600771496 /* HUDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D137FFB21ACDF7600771496 /* HUDViewController.swift */; };
-		4D137FFE21ACDF7600771496 /* HUDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D137FFC21ACDF7600771496 /* HUDViewController.xib */; };
+		4D137FFE21ACDF7600771496 /* old-HUDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D137FFC21ACDF7600771496 /* old-HUDViewController.xib */; };
 		4D13800021ACE33300771496 /* PlayerHUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D137FFF21ACE33300771496 /* PlayerHUDView.swift */; };
 		4D13800221ACE34600771496 /* PlayerHUDView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D13800121ACE34600771496 /* PlayerHUDView.xib */; };
 		4D13800B21ADDDCE00771496 /* LocomotiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D13800921ADDDCE00771496 /* LocomotiveTableViewCell.swift */; };
@@ -27,6 +27,7 @@
 		4D2847922138147200C81B5C /* ProductionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2847912138147200C81B5C /* ProductionTests.swift */; };
 		4D28479421381F4500C81B5C /* PlayerHandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D28479321381F4500C81B5C /* PlayerHandTests.swift */; };
 		4D2A4B8C2195DEB300315524 /* EY+ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2A4B8B2195DEB300315524 /* EY+ImageView.swift */; };
+		4D318D1721CE24EA006B2D3A /* HUD.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D318D1621CE24EA006B2D3A /* HUD.storyboard */; };
 		4D3DF4B320834587000DF88E /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3DF4B220834587000DF88E /* Wallet.swift */; };
 		4D3DF4B520834592000DF88E /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3DF4B420834592000DF88E /* Player.swift */; };
 		4D3DF4B720834679000DF88E /* WalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3DF4B620834679000DF88E /* WalletTests.swift */; };
@@ -86,7 +87,7 @@
 /* Begin PBXFileReference section */
 		4D01469A208393AF00AE54B1 /* Card+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Colors.swift"; sourceTree = "<group>"; };
 		4D137FFB21ACDF7600771496 /* HUDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDViewController.swift; sourceTree = "<group>"; };
-		4D137FFC21ACDF7600771496 /* HUDViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HUDViewController.xib; sourceTree = "<group>"; };
+		4D137FFC21ACDF7600771496 /* old-HUDViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "old-HUDViewController.xib"; sourceTree = "<group>"; };
 		4D137FFF21ACE33300771496 /* PlayerHUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerHUDView.swift; sourceTree = "<group>"; };
 		4D13800121ACE34600771496 /* PlayerHUDView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerHUDView.xib; sourceTree = "<group>"; };
 		4D13800921ADDDCE00771496 /* LocomotiveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocomotiveTableViewCell.swift; sourceTree = "<group>"; };
@@ -104,6 +105,7 @@
 		4D2847912138147200C81B5C /* ProductionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionTests.swift; sourceTree = "<group>"; };
 		4D28479321381F4500C81B5C /* PlayerHandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerHandTests.swift; sourceTree = "<group>"; };
 		4D2A4B8B2195DEB300315524 /* EY+ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+ImageView.swift"; sourceTree = "<group>"; };
+		4D318D1621CE24EA006B2D3A /* HUD.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HUD.storyboard; sourceTree = "<group>"; };
 		4D3DF4B220834587000DF88E /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		4D3DF4B420834592000DF88E /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		4D3DF4B620834679000DF88E /* WalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTests.swift; sourceTree = "<group>"; };
@@ -268,13 +270,14 @@
 				4DFAED2421B7FB0900244CF9 /* Main-Menu */,
 				4DFAED2521B7FB1400244CF9 /* Locomotive-List */,
 				4D137FFB21ACDF7600771496 /* HUDViewController.swift */,
-				4D137FFC21ACDF7600771496 /* HUDViewController.xib */,
+				4D137FFC21ACDF7600771496 /* old-HUDViewController.xib */,
 				4D137FFF21ACE33300771496 /* PlayerHUDView.swift */,
 				4D13800121ACE34600771496 /* PlayerHUDView.xib */,
 				4DA3487520812A8B006DA164 /* Assets.xcassets */,
 				4DA3487620812A8B006DA164 /* LaunchScreen.storyboard */,
 				4DF1509121679E0300D39D65 /* MainMenu.storyboard */,
 				4DBEDB9D219FBDD200A56FE1 /* Decks.storyboard */,
+				4D318D1621CE24EA006B2D3A /* HUD.storyboard */,
 				4DA3487A20812A8B006DA164 /* AppDelegate.swift */,
 				4DA3487B20812A8B006DA164 /* Info.plist */,
 			);
@@ -429,8 +432,9 @@
 				4DA3487D20812A8B006DA164 /* Assets.xcassets in Resources */,
 				4DE3873921528D3600BFF9DB /* Media.xcassets in Resources */,
 				4D13800C21ADDDCE00771496 /* LocomotiveTableViewCell.xib in Resources */,
-				4D137FFE21ACDF7600771496 /* HUDViewController.xib in Resources */,
+				4D137FFE21ACDF7600771496 /* old-HUDViewController.xib in Resources */,
 				4D13800221ACE34600771496 /* PlayerHUDView.xib in Resources */,
+				4D318D1721CE24EA006B2D3A /* HUD.storyboard in Resources */,
 				4DA3487E20812A8B006DA164 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
