@@ -16,7 +16,7 @@ class LocomotiveTableViewCell: UITableViewCell {
     @IBOutlet weak var costLabel: UILabel!
     @IBOutlet weak var productionCost: UILabel!
     @IBOutlet weak var incomeLabel: UILabel!
-    //@IBOutlet weak var ordersLabel: UILabel!
+    @IBOutlet weak var noOrdersLabel: UILabel!
     @IBOutlet var lblCollection: [UILabel]!
     @IBOutlet var dieCollection: [UIImageView]!
     
@@ -47,8 +47,8 @@ class LocomotiveTableViewCell: UITableViewCell {
             $0.isHidden = true
         })
 
-        //self.backgroundColor = EngineColor.getColorForEngine(deck.color)()
-        //self.ordersLabel.isHidden = (deck.orderBook.existingOrderValues.count <= 0)
+        self.noOrdersLabel.text = "No orders"
+        self.noOrdersLabel.isHidden = (deck.orderBook.existingOrderValues.count != 0)
 
         if (deck.orderBook.existingOrders.count > 0) {
             for (index, orderValue) in deck.orderBook.existingOrderValues.enumerated() {
