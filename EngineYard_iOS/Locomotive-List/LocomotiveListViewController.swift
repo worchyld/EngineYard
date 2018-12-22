@@ -26,7 +26,7 @@ class LocomotiveListViewModel : BaseViewModel {
 class LocomotiveListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var viewModel: LocomotiveListViewModel!
-    weak var HUD: HUDViewController?
+    //weak var HUD: HUDViewController?
 
     private lazy var _tableView : UITableView = {
         let tv = UITableView(frame: self.view.frame, style: .plain)
@@ -45,8 +45,7 @@ class LocomotiveListViewController: UIViewController, UITableViewDelegate, UITab
 
         self.view.addSubview(_tableView)
 
-        self.HUD = HUDViewController.loadHUD(game: self.viewModel.game, viewController: self)
-
+        //self.HUD = HUDViewController.loadHUD(game: self.viewModel.game, viewController: self)
     }
 
     // MARK: - Table view data source

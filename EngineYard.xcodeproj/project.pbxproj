@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4D01469B208393AF00AE54B1 /* Card+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01469A208393AF00AE54B1 /* Card+Colors.swift */; };
-		4D137FFD21ACDF7600771496 /* HUDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D137FFB21ACDF7600771496 /* HUDViewController.swift */; };
-		4D137FFE21ACDF7600771496 /* old-HUDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D137FFC21ACDF7600771496 /* old-HUDViewController.xib */; };
 		4D13800021ACE33300771496 /* PlayerHUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D137FFF21ACE33300771496 /* PlayerHUDView.swift */; };
 		4D13800221ACE34600771496 /* PlayerHUDView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D13800121ACE34600771496 /* PlayerHUDView.xib */; };
 		4D13800B21ADDDCE00771496 /* LocomotiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D13800921ADDDCE00771496 /* LocomotiveTableViewCell.swift */; };
@@ -86,8 +84,6 @@
 
 /* Begin PBXFileReference section */
 		4D01469A208393AF00AE54B1 /* Card+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Colors.swift"; sourceTree = "<group>"; };
-		4D137FFB21ACDF7600771496 /* HUDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDViewController.swift; sourceTree = "<group>"; };
-		4D137FFC21ACDF7600771496 /* old-HUDViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "old-HUDViewController.xib"; sourceTree = "<group>"; };
 		4D137FFF21ACE33300771496 /* PlayerHUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerHUDView.swift; sourceTree = "<group>"; };
 		4D13800121ACE34600771496 /* PlayerHUDView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerHUDView.xib; sourceTree = "<group>"; };
 		4D13800921ADDDCE00771496 /* LocomotiveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocomotiveTableViewCell.swift; sourceTree = "<group>"; };
@@ -269,8 +265,6 @@
 			children = (
 				4DFAED2421B7FB0900244CF9 /* Main-Menu */,
 				4DFAED2521B7FB1400244CF9 /* Locomotive-List */,
-				4D137FFB21ACDF7600771496 /* HUDViewController.swift */,
-				4D137FFC21ACDF7600771496 /* old-HUDViewController.xib */,
 				4D137FFF21ACE33300771496 /* PlayerHUDView.swift */,
 				4D13800121ACE34600771496 /* PlayerHUDView.xib */,
 				4DA3487520812A8B006DA164 /* Assets.xcassets */,
@@ -432,7 +426,6 @@
 				4DA3487D20812A8B006DA164 /* Assets.xcassets in Resources */,
 				4DE3873921528D3600BFF9DB /* Media.xcassets in Resources */,
 				4D13800C21ADDDCE00771496 /* LocomotiveTableViewCell.xib in Resources */,
-				4D137FFE21ACDF7600771496 /* old-HUDViewController.xib in Resources */,
 				4D13800221ACE34600771496 /* PlayerHUDView.xib in Resources */,
 				4D318D1721CE24EA006B2D3A /* HUD.storyboard in Resources */,
 				4DA3487E20812A8B006DA164 /* LaunchScreen.storyboard in Resources */,
@@ -481,7 +474,6 @@
 				4DFB8217215A042C0036F9FD /* SalesRule.swift in Sources */,
 				4D1BD48B2083846500051FD9 /* Card.swift in Sources */,
 				4DEE8725215224430038F0CF /* StateMachine.swift in Sources */,
-				4D137FFD21ACDF7600771496 /* HUDViewController.swift in Sources */,
 				4D247B37219FFE340004478D /* ObjectCache.swift in Sources */,
 				4DC5AEE8214ED9E500D2841D /* MarketDemandsManager.swift in Sources */,
 				4DA52369208158A8000FFAAB /* EY+Colors.swift in Sources */,
