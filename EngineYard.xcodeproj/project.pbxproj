@@ -31,6 +31,9 @@
 		4D318D1F21CE379D006B2D3A /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D318D1E21CE379D006B2D3A /* CardView.xib */; };
 		4D318D2121CE38BC006B2D3A /* CardXIBView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D318D2021CE38BC006B2D3A /* CardXIBView.xib */; };
 		4D318D2321CE38DC006B2D3A /* CardXIBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D318D2221CE38DC006B2D3A /* CardXIBView.swift */; };
+		4D318D2521CE9BB0006B2D3A /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D318D2421CE9BB0006B2D3A /* CardDetailViewController.swift */; };
+		4D318D2721CE9D71006B2D3A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D318D2621CE9D71006B2D3A /* Message.swift */; };
+		4D318D2921CE9FC8006B2D3A /* EY+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D318D2821CE9FC8006B2D3A /* EY+ViewController.swift */; };
 		4D3DF4B320834587000DF88E /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3DF4B220834587000DF88E /* Wallet.swift */; };
 		4D3DF4B520834592000DF88E /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3DF4B420834592000DF88E /* Player.swift */; };
 		4D3DF4B720834679000DF88E /* WalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3DF4B620834679000DF88E /* WalletTests.swift */; };
@@ -112,6 +115,9 @@
 		4D318D1E21CE379D006B2D3A /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		4D318D2021CE38BC006B2D3A /* CardXIBView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardXIBView.xib; sourceTree = "<group>"; };
 		4D318D2221CE38DC006B2D3A /* CardXIBView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardXIBView.swift; sourceTree = "<group>"; };
+		4D318D2421CE9BB0006B2D3A /* CardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
+		4D318D2621CE9D71006B2D3A /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		4D318D2821CE9FC8006B2D3A /* EY+ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+ViewController.swift"; sourceTree = "<group>"; };
 		4D3DF4B220834587000DF88E /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		4D3DF4B420834592000DF88E /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		4D3DF4B620834679000DF88E /* WalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTests.swift; sourceTree = "<group>"; };
@@ -312,6 +318,7 @@
 				4D01469A208393AF00AE54B1 /* Card+Colors.swift */,
 				4D2A4B8B2195DEB300315524 /* EY+ImageView.swift */,
 				4DB448C6219F380900F8507F /* EY+Protocols.swift */,
+				4D318D2821CE9FC8006B2D3A /* EY+ViewController.swift */,
 				4D247B36219FFE340004478D /* ObjectCache.swift */,
 			);
 			path = Extensions;
@@ -323,6 +330,7 @@
 				4DA8396C2136B0ED00F7CAB9 /* GameSetupManager.swift */,
 				4DEE8724215224430038F0CF /* StateMachine.swift */,
 				4DE3872421527B4300BFF9DB /* PhaseManager.swift */,
+				4D318D2621CE9D71006B2D3A /* Message.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -344,6 +352,7 @@
 				4D247B4E21A1B4360004478D /* LocomotiveListViewController.swift */,
 				4D13800921ADDDCE00771496 /* LocomotiveTableViewCell.swift */,
 				4D13800A21ADDDCE00771496 /* LocomotiveTableViewCell.xib */,
+				4D318D2421CE9BB0006B2D3A /* CardDetailViewController.swift */,
 				4D318D1C21CE3794006B2D3A /* CardView.swift */,
 				4D318D1E21CE379D006B2D3A /* CardView.xib */,
 				4D318D2221CE38DC006B2D3A /* CardXIBView.swift */,
@@ -473,9 +482,11 @@
 				4DF1509421679E6200D39D65 /* MainMenuViewController.swift in Sources */,
 				4D1BD48D208384ED00051FD9 /* Production.swift in Sources */,
 				4DA5236C208158C8000FFAAB /* EY+Array.swift in Sources */,
+				4D318D2721CE9D71006B2D3A /* Message.swift in Sources */,
 				4D7D430F21529136003CCF89 /* Mock.swift in Sources */,
 				4DA523652081582B000FFAAB /* Enums.swift in Sources */,
 				4D95B5A321569C5D00DF91E5 /* Sale.swift in Sources */,
+				4D318D2521CE9BB0006B2D3A /* CardDetailViewController.swift in Sources */,
 				4D247B4F21A1B4360004478D /* LocomotiveListViewController.swift in Sources */,
 				4D318D1D21CE3794006B2D3A /* CardView.swift in Sources */,
 				4D74BA482084A6D000ADC00C /* Hand.swift in Sources */,
@@ -483,6 +494,7 @@
 				4D13800B21ADDDCE00771496 /* LocomotiveTableViewCell.swift in Sources */,
 				4D13800021ACE33300771496 /* PlayerHUDView.swift in Sources */,
 				4DA8396D2136B0ED00F7CAB9 /* GameSetupManager.swift in Sources */,
+				4D318D2921CE9FC8006B2D3A /* EY+ViewController.swift in Sources */,
 				4DE3872521527B4300BFF9DB /* PhaseManager.swift in Sources */,
 				4DF150992167A6FE00D39D65 /* NewGamePlayerCollectionViewCell.swift in Sources */,
 				4DF1509621679F0600D39D65 /* NewGameSetupViewController.swift in Sources */,
