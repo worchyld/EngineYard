@@ -22,7 +22,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="75v-7l-Jfn"/>
                     <connections>
-                        <segue destination="eKr-ba-A60" kind="show" identifier="ç" id="b1s-wT-wnf"/>
+                        <segue destination="eKr-ba-A60" kind="show" identifier="cardDetailSegue" id="b1s-wT-wnf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pPO-C3-3Lc" userLabel="First Responder" sceneMemberID="firstResponder"/>

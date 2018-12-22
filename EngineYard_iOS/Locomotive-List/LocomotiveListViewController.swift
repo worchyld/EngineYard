@@ -44,8 +44,12 @@ class LocomotiveListViewController: UIViewController, UITableViewDelegate, UITab
         self.automaticallyAdjustsScrollViewInsets = false
         self.title = "\(viewModel.decks.count) decks"
 
-
         self.view.addSubview(_tableView)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.navigationBar.isHidden = false
     }
 
     // MARK: - Table view data source
