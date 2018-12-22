@@ -21,14 +21,7 @@
 		4D1BD48F2083864B00051FD9 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1BD48E2083864B00051FD9 /* Board.swift */; };
 		4D247B35219FF9740004478D /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D247B34219FF9740004478D /* BaseViewModel.swift */; };
 		4D247B37219FFE340004478D /* ObjectCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D247B36219FFE340004478D /* ObjectCache.swift */; };
-		4D247B3B21A116690004478D /* TaxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D247B3A21A116690004478D /* TaxViewController.swift */; };
-		4D247B3D21A1167B0004478D /* SalesReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D247B3C21A1167B0004478D /* SalesReportViewController.swift */; };
-		4D247B3F21A1168D0004478D /* BuyProductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D247B3E21A1168D0004478D /* BuyProductionViewController.swift */; };
 		4D247B4121A117280004478D /* WinnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D247B4021A117280004478D /* WinnerTests.swift */; };
-		4D247B4621A125E80004478D /* WinnersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D247B4421A125E80004478D /* WinnersListViewController.swift */; };
-		4D247B4921A127FA0004478D /* Winner.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D247B4821A127FA0004478D /* Winner.storyboard */; };
-		4D247B4B21A151510004478D /* MarketDemands.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D247B4A21A151510004478D /* MarketDemands.storyboard */; };
-		4D247B4D21A1522B0004478D /* Production.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D247B4C21A1522B0004478D /* Production.storyboard */; };
 		4D247B4F21A1B4360004478D /* LocomotiveListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D247B4E21A1B4360004478D /* LocomotiveListViewController.swift */; };
 		4D2847902137FC3500C81B5C /* BoardUnlockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D28478F2137FC3500C81B5C /* BoardUnlockTests.swift */; };
 		4D2847922138147200C81B5C /* ProductionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2847912138147200C81B5C /* ProductionTests.swift */; };
@@ -105,14 +98,7 @@
 		4D1BD48E2083864B00051FD9 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		4D247B34219FF9740004478D /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		4D247B36219FFE340004478D /* ObjectCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectCache.swift; sourceTree = "<group>"; };
-		4D247B3A21A116690004478D /* TaxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxViewController.swift; sourceTree = "<group>"; };
-		4D247B3C21A1167B0004478D /* SalesReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesReportViewController.swift; sourceTree = "<group>"; };
-		4D247B3E21A1168D0004478D /* BuyProductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyProductionViewController.swift; sourceTree = "<group>"; };
 		4D247B4021A117280004478D /* WinnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerTests.swift; sourceTree = "<group>"; };
-		4D247B4421A125E80004478D /* WinnersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnersListViewController.swift; sourceTree = "<group>"; };
-		4D247B4821A127FA0004478D /* Winner.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Winner.storyboard; sourceTree = "<group>"; };
-		4D247B4A21A151510004478D /* MarketDemands.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MarketDemands.storyboard; sourceTree = "<group>"; };
-		4D247B4C21A1522B0004478D /* Production.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Production.storyboard; sourceTree = "<group>"; };
 		4D247B4E21A1B4360004478D /* LocomotiveListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocomotiveListViewController.swift; sourceTree = "<group>"; };
 		4D28478F2137FC3500C81B5C /* BoardUnlockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardUnlockTests.swift; sourceTree = "<group>"; };
 		4D2847912138147200C81B5C /* ProductionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionTests.swift; sourceTree = "<group>"; };
@@ -281,10 +267,6 @@
 			children = (
 				4DFAED2421B7FB0900244CF9 /* Main-Menu */,
 				4DFAED2521B7FB1400244CF9 /* Locomotive-List */,
-				4D247B3E21A1168D0004478D /* BuyProductionViewController.swift */,
-				4D247B3C21A1167B0004478D /* SalesReportViewController.swift */,
-				4D247B3A21A116690004478D /* TaxViewController.swift */,
-				4D247B4421A125E80004478D /* WinnersListViewController.swift */,
 				4D137FFB21ACDF7600771496 /* HUDViewController.swift */,
 				4D137FFC21ACDF7600771496 /* HUDViewController.xib */,
 				4D137FFF21ACE33300771496 /* PlayerHUDView.swift */,
@@ -293,9 +275,6 @@
 				4DA3487620812A8B006DA164 /* LaunchScreen.storyboard */,
 				4DF1509121679E0300D39D65 /* MainMenu.storyboard */,
 				4DBEDB9D219FBDD200A56FE1 /* Decks.storyboard */,
-				4D247B4C21A1522B0004478D /* Production.storyboard */,
-				4D247B4A21A151510004478D /* MarketDemands.storyboard */,
-				4D247B4821A127FA0004478D /* Winner.storyboard */,
 				4DA3487A20812A8B006DA164 /* AppDelegate.swift */,
 				4DA3487B20812A8B006DA164 /* Info.plist */,
 			);
@@ -446,12 +425,9 @@
 			files = (
 				4DF1509221679E0300D39D65 /* MainMenu.storyboard in Resources */,
 				4DF1509A2167A6FE00D39D65 /* NewGamePlayerCollectionViewCell.xib in Resources */,
-				4D247B4921A127FA0004478D /* Winner.storyboard in Resources */,
 				4DBEDB9E219FBDD200A56FE1 /* Decks.storyboard in Resources */,
 				4DA3487D20812A8B006DA164 /* Assets.xcassets in Resources */,
 				4DE3873921528D3600BFF9DB /* Media.xcassets in Resources */,
-				4D247B4D21A1522B0004478D /* Production.storyboard in Resources */,
-				4D247B4B21A151510004478D /* MarketDemands.storyboard in Resources */,
 				4D13800C21ADDDCE00771496 /* LocomotiveTableViewCell.xib in Resources */,
 				4D137FFE21ACDF7600771496 /* HUDViewController.xib in Resources */,
 				4D13800221ACE34600771496 /* PlayerHUDView.xib in Resources */,
@@ -488,17 +464,14 @@
 				4D247B4F21A1B4360004478D /* LocomotiveListViewController.swift in Sources */,
 				4D74BA482084A6D000ADC00C /* Hand.swift in Sources */,
 				4D50C4F121569DA000E43C77 /* Selling.swift in Sources */,
-				4D247B4621A125E80004478D /* WinnersListViewController.swift in Sources */,
 				4D13800B21ADDDCE00771496 /* LocomotiveTableViewCell.swift in Sources */,
 				4D13800021ACE33300771496 /* PlayerHUDView.swift in Sources */,
 				4DA8396D2136B0ED00F7CAB9 /* GameSetupManager.swift in Sources */,
-				4D247B3F21A1168D0004478D /* BuyProductionViewController.swift in Sources */,
 				4DE3872521527B4300BFF9DB /* PhaseManager.swift in Sources */,
 				4DF150992167A6FE00D39D65 /* NewGamePlayerCollectionViewCell.swift in Sources */,
 				4DF1509621679F0600D39D65 /* NewGameSetupViewController.swift in Sources */,
 				4D13800E21ADE35100771496 /* DeckColors.swift in Sources */,
 				4DA5236720815885000FFAAB /* Die.swift in Sources */,
-				4D247B3D21A1167B0004478D /* SalesReportViewController.swift in Sources */,
 				4D3DF4B920835DB7000DF88E /* Rules.swift in Sources */,
 				4DA5236E20815960000FFAAB /* Tax.swift in Sources */,
 				4DFB8217215A042C0036F9FD /* SalesRule.swift in Sources */,
@@ -507,7 +480,6 @@
 				4D137FFD21ACDF7600771496 /* HUDViewController.swift in Sources */,
 				4D247B37219FFE340004478D /* ObjectCache.swift in Sources */,
 				4DC5AEE8214ED9E500D2841D /* MarketDemandsManager.swift in Sources */,
-				4D247B3B21A116690004478D /* TaxViewController.swift in Sources */,
 				4DA52369208158A8000FFAAB /* EY+Colors.swift in Sources */,
 				4D1BD48F2083864B00051FD9 /* Board.swift in Sources */,
 				4D3DF4B520834592000DF88E /* Player.swift in Sources */,
