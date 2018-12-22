@@ -122,6 +122,7 @@ class LocomotiveListViewController: UIViewController, UITableViewDelegate, UITab
             let vc : CardDetailViewController = (segue.destination as? CardDetailViewController)!
             vc.viewModel = CardDetailViewModel.init(game: game)
             vc.viewModel.deck = selectedDeck
+            vc.navigationController?.isNavigationBarHidden = false
         }
     }
 

@@ -23,8 +23,10 @@ class CardDetailViewController: UIViewController {
         print ("Viewing: \(viewModel.deck.description)")
     }
 
-  
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.navigationBar.isHidden = false
+    }
 
     /*
     // MARK: - Navigation
