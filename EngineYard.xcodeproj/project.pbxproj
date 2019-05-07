@@ -226,6 +226,17 @@
 			path = Functions;
 			sourceTree = "<group>";
 		};
+		4D13866822821A8A006A6C9D /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				4D318D1621CE24EA006B2D3A /* HUD.storyboard */,
+				4D318D1A21CE2C05006B2D3A /* HUDViewController.swift */,
+				4D137FFF21ACE33300771496 /* PlayerHUDView.swift */,
+				4D13800121ACE34600771496 /* PlayerHUDView.xib */,
+			);
+			path = HUD;
+			sourceTree = "<group>";
+		};
 		4D247B33219FF9740004478D /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,16 +290,12 @@
 		4DA3487320812A8B006DA164 /* EngineYard_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				4D13866822821A8A006A6C9D /* HUD */,
 				4DFAED2421B7FB0900244CF9 /* Main-Menu */,
 				4DFAED2521B7FB1400244CF9 /* Locomotive-List */,
-				4D318D1A21CE2C05006B2D3A /* HUDViewController.swift */,
-				4D137FFF21ACE33300771496 /* PlayerHUDView.swift */,
-				4D13800121ACE34600771496 /* PlayerHUDView.xib */,
 				4DA3487520812A8B006DA164 /* Assets.xcassets */,
 				4DA3487620812A8B006DA164 /* LaunchScreen.storyboard */,
 				4DF1509121679E0300D39D65 /* MainMenu.storyboard */,
-				4DBEDB9D219FBDD200A56FE1 /* Decks.storyboard */,
-				4D318D1621CE24EA006B2D3A /* HUD.storyboard */,
 				4DA3487A20812A8B006DA164 /* AppDelegate.swift */,
 				4DA3487B20812A8B006DA164 /* Info.plist */,
 			);
@@ -349,6 +356,7 @@
 		4DFAED2521B7FB1400244CF9 /* Locomotive-List */ = {
 			isa = PBXGroup;
 			children = (
+				4DBEDB9D219FBDD200A56FE1 /* Decks.storyboard */,
 				4D247B4E21A1B4360004478D /* LocomotiveListViewController.swift */,
 				4D13800921ADDDCE00771496 /* LocomotiveTableViewCell.swift */,
 				4D13800A21ADDDCE00771496 /* LocomotiveTableViewCell.xib */,
