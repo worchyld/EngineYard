@@ -8,6 +8,7 @@
 
 import UIKit
 
+// This is used to set up players for the game.
 class DummyPlayer {
     var name: String
     var isAI: Bool = false
@@ -24,9 +25,10 @@ class DummyPlayer {
     }
 }
 
-private struct ViewModel {
+private struct NewGameViewModel {
     static let pageTitle = "New game setup"
     static let reuseIdentifier = "PlayerCellID"
+    static let segue = "LaunchGameSegue"
 
     var dummyPlayers: [DummyPlayer] = [DummyPlayer]()
     var maxPlayers: Int = Rules.NumberOfPlayers.max
@@ -76,17 +78,17 @@ class NewGameSetupViewController: UIViewController, UICollectionViewDelegate, UI
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var btnPlay: UIButton!
     
-    private var viewModel: ViewModel = ViewModel()
+    private var viewModel: NewGameViewModel = NewGameViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.navigationController?.isNavigationBarHidden = false
-        self.title = ViewModel.pageTitle
+        self.title = NewGameViewModel.pageTitle
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
-        self.collectionView.register(UINib(nibName:"NewGamePlayerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: ViewModel.reuseIdentifier)
+        self.collectionView.register(UINib(nibName:"NewGamePlayerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: NewGameViewModel.reuseIdentifier)
         self.collectionView.allowsMultipleSelection = false
         self.collectionView.layoutIfNeeded()
 
@@ -107,7 +109,7 @@ class NewGameSetupViewController: UIViewController, UICollectionViewDelegate, UI
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cell: NewGamePlayerCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: ViewModel.reuseIdentifier, for: indexPath) as! NewGamePlayerCollectionViewCell
+        let cell: NewGamePlayerCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: NewGameViewModel.reuseIdentifier, for: indexPath) as! NewGamePlayerCollectionViewCell
 
         configure(cell: cell, at: indexPath)
 
@@ -133,7 +135,7 @@ class NewGameSetupViewController: UIViewController, UICollectionViewDelegate, UI
 
         waitFor(duration: 0.85) { (completed) in
             if (completed) {
-                self.performSegue(withIdentifier: "launchGameSegue", sender: self)
+                self.performSegue(withIdentifier: NewGameViewModel.segue, sender: self)
             }
         }
     }
@@ -141,7 +143,7 @@ class NewGameSetupViewController: UIViewController, UICollectionViewDelegate, UI
     // MARK: - Navigation
 
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if (identifier == "launchGameSegue") {
+        if (identifier == NewGameViewModel.segue) {
             guard let hasGame = self.viewModel.game else {
                 print ("No game")
                 return false
@@ -162,15 +164,15 @@ class NewGameSetupViewController: UIViewController, UICollectionViewDelegate, UI
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-
-        if (segue.identifier == "launchGameSegue") {
-
-            //let vc : BuyTrainListViewController = (segue.destination as? BuyTrainListViewController)!
-            //vc.viewModel = BuyTrainListViewModel.init(game: hasGame)
-
+        
+        if (segue.identifier == NewGameViewModel.segue) {
+            guard let hasGame = self.viewModel.game else {
+                print ("No game")
+                return 
+            }
+            let vc : LocomotiveListViewController = (segue.destination as? LocomotiveListViewController)!
+            vc.viewModel = LocomotiveListViewModel.init(game: hasGame)
         }
-
     }
-
 
 }

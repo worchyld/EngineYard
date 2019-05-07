@@ -18,7 +18,7 @@ struct Rules {
     public static let goal: Int = 330
     public static let taxRate: Float = 0.10
 
-    public static func isGameEndConditionMet(_ cash: Int) -> Bool {
+    public static func didMeetEndGameCondition(_ cash: Int) -> Bool {
         return (cash >= Rules.goal)
     }
 

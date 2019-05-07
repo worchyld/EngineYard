@@ -20,9 +20,29 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="tM8-ae-vkc"/>
                     </view>
+                    <navigationItem key="navigationItem" id="75v-7l-Jfn"/>
+                    <connections>
+                        <segue destination="eKr-ba-A60" kind="show" identifier="cardDetailSegue" id="b1s-wT-wnf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pPO-C3-3Lc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="162" y="-200"/>
+        </scene>
+        <!--Card Detail View Controller-->
+        <scene sceneID="iyz-zG-ac4">
+            <objects>
+                <viewController storyboardIdentifier="CardDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eKr-ba-A60" customClass="CardDetailViewController" customModule="EngineYard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="03s-lu-1gs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="dxX-xu-BFr"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jTo-Pn-Hg3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1049" y="1"/>
         </scene>
     </scenes>
 </document>

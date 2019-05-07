@@ -65,6 +65,9 @@ final class Hand : NSObject, NSCopying, HandObserver {
 
     public private (set) weak var owner: Player?
     public private (set) var cards: [Card] = [Card]()
+    var size: Int {
+        return self.cards.count
+    }
 
     init(owner: Player) {
         super.init()

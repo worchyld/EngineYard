@@ -1,21 +1,32 @@
 //
-//  LocomotiveListViewController.swift
+//  CardDetailViewController.swift
 //  EngineYard
 //
-//  Created by Amarjit on 17/11/2018.
+//  Created by Amarjit on 22/12/2018.
 //  Copyright © 2018 Amarjit. All rights reserved.
 //
 
 import UIKit
 
-class LocomotiveListViewController: UIViewController {
+class CardDetailViewModel : BaseViewModel {
+    var deck: Deck!    
+}
+
+class CardDetailViewController: UIViewController {
+
+    var viewModel : CardDetailViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = viewModel.deck.name
 
-        // Do any additional setup after loading the view.
+        print ("Viewing: \(viewModel.deck.description)")
     }
-    
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.navigationBar.isHidden = false
+    }
 
     /*
     // MARK: - Navigation

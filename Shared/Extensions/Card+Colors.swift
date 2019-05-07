@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 extension EngineColor {
-    func getColorForEngine() -> UIColor {
-        switch self {
+    public static func getColor(color: EngineColor) -> UIColor {
+        switch color {
         case .green:
             return UIColor.flat(color: .Emerald)
 

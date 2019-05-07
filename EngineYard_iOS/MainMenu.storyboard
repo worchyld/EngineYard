@@ -106,7 +106,7 @@
                     <connections>
                         <outlet property="btnPlay" destination="kWa-8G-f9M" id="A7a-WL-Dbx"/>
                         <outlet property="collectionView" destination="dWB-el-QWr" id="ReP-Oz-hD3"/>
-                        <segue destination="MlN-k2-8jH" kind="showDetail" identifier="LaunchGameSegue" id="8gJ-rz-Vc6"/>
+                        <segue destination="MlN-k2-8jH" kind="presentation" identifier="LaunchGameSegue" modalPresentationStyle="fullScreen" id="8gJ-rz-Vc6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKb-LW-FKK" userLabel="First Responder" sceneMemberID="firstResponder"/>
