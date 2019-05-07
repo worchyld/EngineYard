@@ -49,6 +49,7 @@
 		4D5464702282210100582027 /* GameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D54646F2282210100582027 /* GameEntity.swift */; };
 		4D5464722282268400582027 /* OrderEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5464712282268400582027 /* OrderEntity.swift */; };
 		4D546474228227EB00582027 /* SaleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D546473228227EB00582027 /* SaleEntity.swift */; };
+		4D546476228228D600582027 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D546475228228D600582027 /* DBManager.swift */; };
 		4D617D562081EE110036BB00 /* DieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D617D552081EE110036BB00 /* DieTests.swift */; };
 		4D74BA482084A6D000ADC00C /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74BA472084A6D000ADC00C /* Hand.swift */; };
 		4D74BA4C2084AC5000ADC00C /* OrderBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74BA4B2084AC5000ADC00C /* OrderBook.swift */; };
@@ -148,6 +149,7 @@
 		4D54646F2282210100582027 /* GameEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEntity.swift; sourceTree = "<group>"; };
 		4D5464712282268400582027 /* OrderEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderEntity.swift; sourceTree = "<group>"; };
 		4D546473228227EB00582027 /* SaleEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleEntity.swift; sourceTree = "<group>"; };
+		4D546475228228D600582027 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		4D617D552081EE110036BB00 /* DieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DieTests.swift; sourceTree = "<group>"; };
 		4D74BA472084A6D000ADC00C /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
 		4D74BA4B2084AC5000ADC00C /* OrderBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBook.swift; sourceTree = "<group>"; };
@@ -392,6 +394,7 @@
 		4DA8396E2136B0F300F7CAB9 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				4D546475228228D600582027 /* DBManager.swift */,
 				4DA8396C2136B0ED00F7CAB9 /* GameSetupManager.swift */,
 				4DEE8724215224430038F0CF /* StateMachine.swift */,
 				4DE3872421527B4300BFF9DB /* PhaseManager.swift */,
@@ -697,6 +700,7 @@
 				4D3DF4B520834592000DF88E /* Player.swift in Sources */,
 				4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */,
 				4D1BD4872083829900051FD9 /* Deck.swift in Sources */,
+				4D546476228228D600582027 /* DBManager.swift in Sources */,
 				4D54646C228220C900582027 /* OrderBookEntity.swift in Sources */,
 				4DFB821A215A71DF0036F9FD /* SalesBook.swift in Sources */,
 				4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */,
