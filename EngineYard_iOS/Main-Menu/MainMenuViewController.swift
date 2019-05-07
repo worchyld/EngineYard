@@ -31,7 +31,7 @@ class MainMenuViewController: UIViewController {
     }
     
     @IBAction func playBtnPressed(_ sender: Any) {
-        performSegue(withIdentifier: ViewModel.Segue.newGameSegue, sender: self)
+        //performSegue(withIdentifier: ViewModel.Segue.newGameSegue, sender: self)
     }
 
 
