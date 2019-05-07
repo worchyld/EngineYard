@@ -40,6 +40,15 @@
 		4D3DF4B720834679000DF88E /* WalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3DF4B620834679000DF88E /* WalletTests.swift */; };
 		4D3DF4B920835DB7000DF88E /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3DF4B820835DB7000DF88E /* Rules.swift */; };
 		4D50C4F121569DA000E43C77 /* Selling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D50C4F021569DA000E43C77 /* Selling.swift */; };
+		4D54646422821FF100582027 /* PlayerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D54646322821FF100582027 /* PlayerEntity.swift */; };
+		4D5464662282207F00582027 /* DeckEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5464652282207F00582027 /* DeckEntity.swift */; };
+		4D5464682282209800582027 /* CardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5464672282209800582027 /* CardEntity.swift */; };
+		4D54646A228220B200582027 /* ProductionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D546469228220B200582027 /* ProductionEntity.swift */; };
+		4D54646C228220C900582027 /* OrderBookEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D54646B228220C900582027 /* OrderBookEntity.swift */; };
+		4D54646E228220E400582027 /* SalesBookEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D54646D228220E400582027 /* SalesBookEntity.swift */; };
+		4D5464702282210100582027 /* GameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D54646F2282210100582027 /* GameEntity.swift */; };
+		4D5464722282268400582027 /* OrderEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5464712282268400582027 /* OrderEntity.swift */; };
+		4D546474228227EB00582027 /* SaleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D546473228227EB00582027 /* SaleEntity.swift */; };
 		4D617D562081EE110036BB00 /* DieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D617D552081EE110036BB00 /* DieTests.swift */; };
 		4D74BA482084A6D000ADC00C /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74BA472084A6D000ADC00C /* Hand.swift */; };
 		4D74BA4C2084AC5000ADC00C /* OrderBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74BA4B2084AC5000ADC00C /* OrderBook.swift */; };
@@ -59,7 +68,7 @@
 		4DA8396B2136AE7900F7CAB9 /* GameBoardSetupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8396A2136AE7900F7CAB9 /* GameBoardSetupTests.swift */; };
 		4DA8396D2136B0ED00F7CAB9 /* GameSetupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8396C2136B0ED00F7CAB9 /* GameSetupManager.swift */; };
 		4DA92C0F2156186400AD19B7 /* OrderBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA92C0E2156186400AD19B7 /* OrderBookTests.swift */; };
-		4DA92C212156874500AD19B7 /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		4DA92C212156874500AD19B7 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB448C6219F380900F8507F /* EY+Protocols.swift */; };
 		4DBEDB9E219FBDD200A56FE1 /* Decks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBEDB9D219FBDD200A56FE1 /* Decks.storyboard */; };
 		4DC5AEE6214E7A1500D2841D /* MarketDemandsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC5AEE5214E7A1500D2841D /* MarketDemandsTests.swift */; };
@@ -130,6 +139,15 @@
 		4D3DF4B620834679000DF88E /* WalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTests.swift; sourceTree = "<group>"; };
 		4D3DF4B820835DB7000DF88E /* Rules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rules.swift; sourceTree = "<group>"; };
 		4D50C4F021569DA000E43C77 /* Selling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selling.swift; sourceTree = "<group>"; };
+		4D54646322821FF100582027 /* PlayerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEntity.swift; sourceTree = "<group>"; };
+		4D5464652282207F00582027 /* DeckEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckEntity.swift; sourceTree = "<group>"; };
+		4D5464672282209800582027 /* CardEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEntity.swift; sourceTree = "<group>"; };
+		4D546469228220B200582027 /* ProductionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionEntity.swift; sourceTree = "<group>"; };
+		4D54646B228220C900582027 /* OrderBookEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookEntity.swift; sourceTree = "<group>"; };
+		4D54646D228220E400582027 /* SalesBookEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesBookEntity.swift; sourceTree = "<group>"; };
+		4D54646F2282210100582027 /* GameEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEntity.swift; sourceTree = "<group>"; };
+		4D5464712282268400582027 /* OrderEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderEntity.swift; sourceTree = "<group>"; };
+		4D546473228227EB00582027 /* SaleEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleEntity.swift; sourceTree = "<group>"; };
 		4D617D552081EE110036BB00 /* DieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DieTests.swift; sourceTree = "<group>"; };
 		4D74BA472084A6D000ADC00C /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
 		4D74BA4B2084AC5000ADC00C /* OrderBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBook.swift; sourceTree = "<group>"; };
@@ -203,7 +221,6 @@
 				34BCC40CD8E29B072165BA3D /* Pods-EngineYardTests.debug.xcconfig */,
 				3000C6051CB63205F8FC8955 /* Pods-EngineYardTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -265,6 +282,22 @@
 				4D247B34219FF9740004478D /* BaseViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4D54646222821FDF00582027 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				4D54646F2282210100582027 /* GameEntity.swift */,
+				4D54646322821FF100582027 /* PlayerEntity.swift */,
+				4D5464652282207F00582027 /* DeckEntity.swift */,
+				4D5464672282209800582027 /* CardEntity.swift */,
+				4D546469228220B200582027 /* ProductionEntity.swift */,
+				4D54646B228220C900582027 /* OrderBookEntity.swift */,
+				4D5464712282268400582027 /* OrderEntity.swift */,
+				4D54646D228220E400582027 /* SalesBookEntity.swift */,
+				4D546473228227EB00582027 /* SaleEntity.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		4DA3484720812970006DA164 = {
@@ -329,6 +362,7 @@
 		4DA3488220812B08006DA164 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				4D54646222821FDF00582027 /* Entities */,
 				4D247B33219FF9740004478D /* ViewModels */,
 				4DE3873821528D3600BFF9DB /* Media.xcassets */,
 				4DA5236A208158B5000FFAAB /* Extensions */,
@@ -619,6 +653,8 @@
 				4D74BA4C2084AC5000ADC00C /* OrderBook.swift in Sources */,
 				4D2A4B8C2195DEB300315524 /* EY+ImageView.swift in Sources */,
 				4DA3488020812A8B006DA164 /* AppDelegate.swift in Sources */,
+				4D54646A228220B200582027 /* ProductionEntity.swift in Sources */,
+				4D5464662282207F00582027 /* DeckEntity.swift in Sources */,
 				4D01469B208393AF00AE54B1 /* Card+Colors.swift in Sources */,
 				4D247B35219FF9740004478D /* BaseViewModel.swift in Sources */,
 				4DF1509421679E6200D39D65 /* MainMenuViewController.swift in Sources */,
@@ -629,15 +665,20 @@
 				4DA523652081582B000FFAAB /* Enums.swift in Sources */,
 				4D95B5A321569C5D00DF91E5 /* Sale.swift in Sources */,
 				4D318D2521CE9BB0006B2D3A /* CardDetailViewController.swift in Sources */,
+				4D54646422821FF100582027 /* PlayerEntity.swift in Sources */,
 				4D247B4F21A1B4360004478D /* LocomotiveListViewController.swift in Sources */,
 				4D318D1D21CE3794006B2D3A /* CardView.swift in Sources */,
+				4D546474228227EB00582027 /* SaleEntity.swift in Sources */,
 				4D74BA482084A6D000ADC00C /* Hand.swift in Sources */,
 				4D50C4F121569DA000E43C77 /* Selling.swift in Sources */,
 				4D13800B21ADDDCE00771496 /* LocomotiveTableViewCell.swift in Sources */,
 				4D13800021ACE33300771496 /* PlayerHUDView.swift in Sources */,
 				4DA8396D2136B0ED00F7CAB9 /* GameSetupManager.swift in Sources */,
+				4D5464682282209800582027 /* CardEntity.swift in Sources */,
 				4D318D2921CE9FC8006B2D3A /* EY+ViewController.swift in Sources */,
 				4DE3872521527B4300BFF9DB /* PhaseManager.swift in Sources */,
+				4D54646E228220E400582027 /* SalesBookEntity.swift in Sources */,
+				4D5464722282268400582027 /* OrderEntity.swift in Sources */,
 				4DF150992167A6FE00D39D65 /* NewGamePlayerCollectionViewCell.swift in Sources */,
 				4DF1509621679F0600D39D65 /* NewGameSetupViewController.swift in Sources */,
 				4D13800E21ADE35100771496 /* DeckColors.swift in Sources */,
@@ -646,6 +687,7 @@
 				4DA5236E20815960000FFAAB /* Tax.swift in Sources */,
 				4DFB8217215A042C0036F9FD /* SalesRule.swift in Sources */,
 				4D1BD48B2083846500051FD9 /* Card.swift in Sources */,
+				4D5464702282210100582027 /* GameEntity.swift in Sources */,
 				4DEE8725215224430038F0CF /* StateMachine.swift in Sources */,
 				4D247B37219FFE340004478D /* ObjectCache.swift in Sources */,
 				4D318D2321CE38DC006B2D3A /* CardXIBView.swift in Sources */,
@@ -655,6 +697,7 @@
 				4D3DF4B520834592000DF88E /* Player.swift in Sources */,
 				4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */,
 				4D1BD4872083829900051FD9 /* Deck.swift in Sources */,
+				4D54646C228220C900582027 /* OrderBookEntity.swift in Sources */,
 				4DFB821A215A71DF0036F9FD /* SalesBook.swift in Sources */,
 				4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */,
 				4DEE871321518ABE0038F0CF /* Game.swift in Sources */,
@@ -668,7 +711,7 @@
 				4D3DF4B720834679000DF88E /* WalletTests.swift in Sources */,
 				4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */,
 				4D247B4121A117280004478D /* WinnerTests.swift in Sources */,
-				4DA92C212156874500AD19B7 /* BuildFile in Sources */,
+				4DA92C212156874500AD19B7 /* (null) in Sources */,
 				4DA92C0F2156186400AD19B7 /* OrderBookTests.swift in Sources */,
 				4DEE87272152244B0038F0CF /* GameStateTests.swift in Sources */,
 				4D2847902137FC3500C81B5C /* BoardUnlockTests.swift in Sources */,
