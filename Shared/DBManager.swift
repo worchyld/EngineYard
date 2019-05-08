@@ -10,6 +10,10 @@ import Foundation
 import RealmSwift
 
 class DBManager {
+    static func showPath() {
+        print (Realm.Configuration.defaultConfiguration.fileURL as Any)
+    }
+
     static func save (object: Object, completion: @escaping () -> Void) {
         DispatchQueue(label: "background").async {
             autoreleasepool {
