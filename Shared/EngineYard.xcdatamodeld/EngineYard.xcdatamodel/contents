@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="17G6030" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Card" representedClassName="Card" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Player" inverseName="hand" inverseEntity="Player" syncable="YES"/>
         <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deck" inverseName="card" inverseEntity="Deck" syncable="YES"/>
         <relationship name="production" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Production" inverseName="card" inverseEntity="Production" syncable="YES"/>
@@ -9,6 +10,7 @@
         <attribute name="color" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="cost" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="generation" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="numberOfCards" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="state" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="card" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Card" inverseName="parent" inverseEntity="Card" syncable="YES"/>
@@ -56,8 +58,8 @@
         <relationship name="game" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Game" inverseName="winner" inverseEntity="Game" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Card" positionX="-62.53125" positionY="178.30859375" width="128" height="90"/>
-        <element name="Deck" positionX="-60.578125" positionY="-75.90625" width="128" height="180"/>
+        <element name="Card" positionX="-62.53125" positionY="178.30859375" width="128" height="105"/>
+        <element name="Deck" positionX="-60.578125" positionY="-75.90625" width="128" height="195"/>
         <element name="Game" positionX="-256.31640625" positionY="-127.67578125" width="128" height="135"/>
         <element name="Order" positionX="154.27734375" positionY="-78.8828125" width="128" height="90"/>
         <element name="Player" positionX="-253.08984375" positionY="36.16015625" width="128" height="150"/>
