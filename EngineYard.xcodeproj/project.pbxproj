@@ -123,13 +123,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1197640847050E1E88F38DDA /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		4D00A42320A8C4F400A2E88E /* Locomotive */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,13 +148,6 @@
 			path = Functions;
 			sourceTree = "<group>";
 		};
-		4D13866822821A8A006A6C9D /* HUD */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = HUD;
-			sourceTree = "<group>";
-		};
 		4D247B33219FF9740004478D /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,7 +170,6 @@
 				4DA3487320812A8B006DA164 /* EngineYard_iOS */,
 				4DA3486720812972006DA164 /* EngineYardTests */,
 				4DA3485120812970006DA164 /* Products */,
-				1197640847050E1E88F38DDA /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -224,9 +209,6 @@
 		4DA3487320812A8B006DA164 /* EngineYard_iOS */ = {
 			isa = PBXGroup;
 			children = (
-				4D13866822821A8A006A6C9D /* HUD */,
-				4DFAED2421B7FB0900244CF9 /* Main-Menu */,
-				4DFAED2521B7FB1400244CF9 /* Locomotive-List */,
 				4DA3487520812A8B006DA164 /* Assets.xcassets */,
 				4DA3487620812A8B006DA164 /* LaunchScreen.storyboard */,
 				4DF1509121679E0300D39D65 /* MainMenu.storyboard */,
@@ -276,20 +258,6 @@
 				4D318D2621CE9D71006B2D3A /* Message.swift */,
 			);
 			name = Managers;
-			sourceTree = "<group>";
-		};
-		4DFAED2421B7FB0900244CF9 /* Main-Menu */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Main-Menu";
-			sourceTree = "<group>";
-		};
-		4DFAED2521B7FB1400244CF9 /* Locomotive-List */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Locomotive-List";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
