@@ -1,4 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="17G6030" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+    <entity name="Card" representedClassName="Card" syncable="YES" codeGenerationType="class">
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Player" inverseName="hand" inverseEntity="Player" syncable="YES"/>
+        <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deck" inverseName="card" inverseEntity="Deck" syncable="YES"/>
+    </entity>
+    <entity name="Deck" representedClassName="Deck" syncable="YES" codeGenerationType="class">
+        <relationship name="card" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Card" inverseName="parent" inverseEntity="Card" syncable="YES"/>
+        <relationship name="game" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Game" inverseName="deck" inverseEntity="Game" syncable="YES"/>
+    </entity>
+    <entity name="Game" representedClassName="Game" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="deck" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Deck" inverseName="game" inverseEntity="Deck" syncable="YES"/>
+        <relationship name="players" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Player" inverseName="game" inverseEntity="Player" syncable="YES"/>
+    </entity>
+    <entity name="Order" representedClassName="Order" syncable="YES" codeGenerationType="class"/>
+    <entity name="OrderBook" representedClassName="OrderBook" syncable="YES" codeGenerationType="class"/>
+    <entity name="Player" representedClassName="Player" syncable="YES" codeGenerationType="class">
+        <attribute name="asset" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cash" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isAI" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="turnOrder" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="game" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Game" inverseName="players" inverseEntity="Game" syncable="YES"/>
+        <relationship name="hand" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Card" inverseName="owner" inverseEntity="Card" syncable="YES"/>
+    </entity>
+    <entity name="Production" representedClassName="Production" syncable="YES" codeGenerationType="class"/>
+    <entity name="Sale" representedClassName="Sale" syncable="YES" codeGenerationType="class"/>
+    <entity name="SalesBook" representedClassName="SalesBook" syncable="YES" codeGenerationType="class"/>
+    <entity name="Winner" representedClassName="Winner" syncable="YES" codeGenerationType="class"/>
+    <elements>
+        <element name="Game" positionX="-257.9609375" positionY="-128.91796875" width="128" height="90"/>
+        <element name="Player" positionX="-253.08984375" positionY="36.16015625" width="128" height="150"/>
+        <element name="Deck" positionX="-61.87890625" positionY="-45.4453125" width="128" height="75"/>
+        <element name="Card" positionX="109.94921875" positionY="-63.0703125" width="128" height="75"/>
+        <element name="Production" positionX="117.109375" positionY="38.1484375" width="128" height="45"/>
+        <element name="OrderBook" positionX="4.06640625" positionY="149.90625" width="128" height="45"/>
+        <element name="Order" positionX="156.0234375" positionY="145.828125" width="128" height="45"/>
+        <element name="SalesBook" positionX="6.73046875" positionY="224.3984375" width="128" height="45"/>
+        <element name="Sale" positionX="162.3828125" positionY="216.25390625" width="128" height="45"/>
+        <element name="Winner" positionX="-68.33203125" positionY="-260.109375" width="128" height="45"/>
+    </elements>
 </model>
