@@ -14,7 +14,7 @@ My goal is to make a simple board game for iOS and tvOS targets
 
 # 19 Sep 2019
 
-A lot of the classes are pretty much complete, but there is still a lot to do.
+Clearing out old code - Swift 5 means I have to redo a few things.  
 
 # 30 August 2019
 
