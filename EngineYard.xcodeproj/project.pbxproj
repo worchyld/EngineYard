@@ -14,12 +14,16 @@
 		4DA3487D20812A8B006DA164 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DA3487520812A8B006DA164 /* Assets.xcassets */; };
 		4DA3487E20812A8B006DA164 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA3487620812A8B006DA164 /* LaunchScreen.storyboard */; };
 		4DA3488020812A8B006DA164 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3487A20812A8B006DA164 /* AppDelegate.swift */; };
-		4DA523652081582B000FFAAB /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA523642081582B000FFAAB /* Enums.swift */; };
 		4DA5236720815885000FFAAB /* Die.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5236620815885000FFAAB /* Die.swift */; };
 		4DA52369208158A8000FFAAB /* EY+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA52368208158A8000FFAAB /* EY+Colors.swift */; };
 		4DA5236C208158C8000FFAAB /* EY+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5236B208158C8000FFAAB /* EY+Array.swift */; };
 		4DA92C212156874500AD19B7 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB448C6219F380900F8507F /* EY+Protocols.swift */; };
+		4DC3D847233430FF0066FE9F /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC3D846233430FF0066FE9F /* Card.swift */; };
+		4DC3D84A233431140066FE9F /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC3D849233431140066FE9F /* Deck.swift */; };
+		4DC3D84C2334314F0066FE9F /* CardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC3D84B2334314F0066FE9F /* CardColor.swift */; };
+		4DC3D84E2334324E0066FE9F /* Generation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC3D84D2334324E0066FE9F /* Generation.swift */; };
+		4DC3D8502334326A0066FE9F /* CardState.swfit in Sources */ = {isa = PBXBuildFile; fileRef = 4DC3D84F2334326A0066FE9F /* CardState.swfit */; };
 		4DE3873921528D3600BFF9DB /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3873821528D3600BFF9DB /* Media.xcassets */; };
 		4DF1509221679E0300D39D65 /* MainMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1509121679E0300D39D65 /* MainMenu.storyboard */; };
 /* End PBXBuildFile section */
@@ -45,12 +49,16 @@
 		4DA3487720812A8B006DA164 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DA3487A20812A8B006DA164 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DA3487B20812A8B006DA164 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4DA523642081582B000FFAAB /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		4DA5236620815885000FFAAB /* Die.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Die.swift; sourceTree = "<group>"; };
 		4DA52368208158A8000FFAAB /* EY+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Colors.swift"; sourceTree = "<group>"; };
 		4DA5236B208158C8000FFAAB /* EY+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Array.swift"; sourceTree = "<group>"; };
 		4DB448C6219F380900F8507F /* EY+Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Protocols.swift"; sourceTree = "<group>"; };
 		4DC3D84423342D8F0066FE9F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DC3D846233430FF0066FE9F /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		4DC3D849233431140066FE9F /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		4DC3D84B2334314F0066FE9F /* CardColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardColor.swift; sourceTree = "<group>"; };
+		4DC3D84D2334324E0066FE9F /* Generation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generation.swift; sourceTree = "<group>"; };
+		4DC3D84F2334326A0066FE9F /* CardState.swfit */ = {isa = PBXFileReference; lastKnownFileType = text; path = CardState.swfit; sourceTree = "<group>"; };
 		4DE3873821528D3600BFF9DB /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		4DF1509121679E0300D39D65 /* MainMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainMenu.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,24 +81,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4D00A42320A8C4F400A2E88E /* Locomotive */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Locomotive;
-			sourceTree = "<group>";
-		};
-		4D00A42420A8C59E00A2E88E /* Player */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Player;
-			sourceTree = "<group>";
-		};
 		4D00A42520A8C5C700A2E88E /* Functions */ = {
 			isa = PBXGroup;
 			children = (
-				4DA523642081582B000FFAAB /* Enums.swift */,
 				4DA5236620815885000FFAAB /* Die.swift */,
 			);
 			path = Functions;
@@ -143,8 +136,7 @@
 				4DA5236A208158B5000FFAAB /* Extensions */,
 				4D00A42520A8C5C700A2E88E /* Functions */,
 				4DA8396E2136B0F300F7CAB9 /* Managers */,
-				4D00A42320A8C4F400A2E88E /* Locomotive */,
-				4D00A42420A8C59E00A2E88E /* Player */,
+				4DC3D848233431080066FE9F /* Models */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -167,6 +159,18 @@
 			children = (
 			);
 			name = Managers;
+			sourceTree = "<group>";
+		};
+		4DC3D848233431080066FE9F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4DC3D849233431140066FE9F /* Deck.swift */,
+				4DC3D846233430FF0066FE9F /* Card.swift */,
+				4DC3D84B2334314F0066FE9F /* CardColor.swift */,
+				4DC3D84D2334324E0066FE9F /* Generation.swift */,
+				4DC3D84F2334326A0066FE9F /* CardState.swfit */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,13 +278,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D2A4B8C2195DEB300315524 /* EY+ImageView.swift in Sources */,
+				4DC3D84E2334324E0066FE9F /* Generation.swift in Sources */,
 				4DA3488020812A8B006DA164 /* AppDelegate.swift in Sources */,
 				4DA5236C208158C8000FFAAB /* EY+Array.swift in Sources */,
-				4DA523652081582B000FFAAB /* Enums.swift in Sources */,
+				4DC3D8502334326A0066FE9F /* CardState.swfit in Sources */,
 				4DA5236720815885000FFAAB /* Die.swift in Sources */,
 				4D247B37219FFE340004478D /* ObjectCache.swift in Sources */,
 				4DA52369208158A8000FFAAB /* EY+Colors.swift in Sources */,
+				4DC3D84C2334314F0066FE9F /* CardColor.swift in Sources */,
+				4DC3D847233430FF0066FE9F /* Card.swift in Sources */,
 				4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */,
+				4DC3D84A233431140066FE9F /* Deck.swift in Sources */,
 				4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
