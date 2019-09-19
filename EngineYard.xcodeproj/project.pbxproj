@@ -23,7 +23,7 @@
 		4DC3D84A233431140066FE9F /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC3D849233431140066FE9F /* Deck.swift */; };
 		4DC3D84C2334314F0066FE9F /* CardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC3D84B2334314F0066FE9F /* CardColor.swift */; };
 		4DC3D84E2334324E0066FE9F /* Generation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC3D84D2334324E0066FE9F /* Generation.swift */; };
-		4DC3D8502334326A0066FE9F /* CardState.swfit in Sources */ = {isa = PBXBuildFile; fileRef = 4DC3D84F2334326A0066FE9F /* CardState.swfit */; };
+		4DC3D852233432FA0066FE9F /* CardState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC3D851233432FA0066FE9F /* CardState.swift */; };
 		4DE3873921528D3600BFF9DB /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3873821528D3600BFF9DB /* Media.xcassets */; };
 		4DF1509221679E0300D39D65 /* MainMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1509121679E0300D39D65 /* MainMenu.storyboard */; };
 /* End PBXBuildFile section */
@@ -58,7 +58,7 @@
 		4DC3D849233431140066FE9F /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		4DC3D84B2334314F0066FE9F /* CardColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardColor.swift; sourceTree = "<group>"; };
 		4DC3D84D2334324E0066FE9F /* Generation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generation.swift; sourceTree = "<group>"; };
-		4DC3D84F2334326A0066FE9F /* CardState.swfit */ = {isa = PBXFileReference; lastKnownFileType = text; path = CardState.swfit; sourceTree = "<group>"; };
+		4DC3D851233432FA0066FE9F /* CardState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardState.swift; sourceTree = "<group>"; };
 		4DE3873821528D3600BFF9DB /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		4DF1509121679E0300D39D65 /* MainMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainMenu.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -168,7 +168,7 @@
 				4DC3D846233430FF0066FE9F /* Card.swift */,
 				4DC3D84B2334314F0066FE9F /* CardColor.swift */,
 				4DC3D84D2334324E0066FE9F /* Generation.swift */,
-				4DC3D84F2334326A0066FE9F /* CardState.swfit */,
+				4DC3D851233432FA0066FE9F /* CardState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -281,12 +281,12 @@
 				4DC3D84E2334324E0066FE9F /* Generation.swift in Sources */,
 				4DA3488020812A8B006DA164 /* AppDelegate.swift in Sources */,
 				4DA5236C208158C8000FFAAB /* EY+Array.swift in Sources */,
-				4DC3D8502334326A0066FE9F /* CardState.swfit in Sources */,
 				4DA5236720815885000FFAAB /* Die.swift in Sources */,
 				4D247B37219FFE340004478D /* ObjectCache.swift in Sources */,
 				4DA52369208158A8000FFAAB /* EY+Colors.swift in Sources */,
 				4DC3D84C2334314F0066FE9F /* CardColor.swift in Sources */,
 				4DC3D847233430FF0066FE9F /* Card.swift in Sources */,
+				4DC3D852233432FA0066FE9F /* CardState.swift in Sources */,
 				4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */,
 				4DC3D84A233431140066FE9F /* Deck.swift in Sources */,
 				4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */,
