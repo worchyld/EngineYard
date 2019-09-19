@@ -13,7 +13,7 @@ extension BidirectionalCollection where Iterator.Element: Equatable {
     typealias Element = Self.Iterator.Element
 
     func after(_ item: Element, loop: Bool = false) -> Element? {
-        if let itemIndex = self.index(of: item) {
+        if let itemIndex = self.firstIndex(of: item) {
             let lastItem: Bool = (index(after:itemIndex) == endIndex)
             if loop && lastItem {
                 return self.first
@@ -27,7 +27,7 @@ extension BidirectionalCollection where Iterator.Element: Equatable {
     }
 
     func before(_ item: Element, loop: Bool = false) -> Element? {
-        if let itemIndex = self.index(of: item) {
+        if let itemIndex = self.firstIndex(of: item) {
             let firstItem: Bool = (itemIndex == startIndex)
             if loop && firstItem {
                 return self.last
