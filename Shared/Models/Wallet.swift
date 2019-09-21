@@ -14,21 +14,27 @@ public enum WalletError: Error, Equatable {
 }
 
 fileprivate protocol WalletDelegate {
-    func handleDebit(balance: Int, amount: Int) -> Int
-    func handleCredit(balance: Int, amount: Int) -> Int
+    func handleDebit(amount: Int) -> Int
+    func handleCredit(amount: Int) -> Int
 }
 
 // Simple cash:Int credit/debit handling
 struct Wallet {
-    func debit(balance: Int, amount: Int) throws -> Int? {
-        guard let result = try canDebit(balance: balance, amount: amount) else {
+    private let balance: Int
+
+    init(balance: Int = 0) {
+        self.balance = balance
+    }
+
+    func debit(amount: Int) throws -> Int? {
+        guard let result = try canDebit(amount: amount) else {
             return nil
         }
         return result
     }
 
-    func credit(balance: Int, amount: Int) throws -> Int? {
-        guard let result = try canCredit(balance: balance, amount: amount) else {
+    func credit(amount: Int) throws -> Int? {
+        guard let result = try canCredit(amount: amount) else {
             return nil
         }
         return result
@@ -36,7 +42,7 @@ struct Wallet {
 }
 
 extension Wallet {
-    private func canDebit(balance: Int, amount: Int) throws -> Int? {
+    private func canDebit(amount: Int) throws -> Int? {
         guard amount > 0 else {
             throw WalletError.mustBePositive
         }
@@ -47,22 +53,22 @@ extension Wallet {
         guard ((sum - amount) >= 0) else {
             throw WalletError.notEnoughFunds
         }
-        return handleDebit(balance: balance, amount: amount)
+        return handleDebit(amount: amount)
     }
 
-    private func canCredit(balance: Int, amount: Int) throws -> Int? {
+    private func canCredit(amount: Int) throws -> Int? {
         guard amount > 0 else {
             throw WalletError.mustBePositive
         }
-        return handleCredit(balance: balance, amount: amount)
+        return handleCredit(amount: amount)
     }
 }
 
 extension Wallet: WalletDelegate {
-    fileprivate func handleDebit(balance: Int, amount: Int) -> Int {
+    fileprivate func handleDebit(amount: Int) -> Int {
         return (balance - amount)
     }
-    fileprivate func handleCredit(balance: Int, amount: Int) -> Int {
+    fileprivate func handleCredit(amount: Int) -> Int {
         return (balance + amount)
     }
 }

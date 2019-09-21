@@ -24,9 +24,9 @@ class WalletTests: EngineYardTests {
         let balance = 100
         let amount = 101
 
-        let w = Wallet()
+        let w = Wallet(balance: balance)
 
-        XCTAssertThrowsError(try w.debit(balance: balance, amount: amount)) { error in
+        XCTAssertThrowsError(try w.debit(amount: amount)) { error in
             XCTAssertEqual(error as! WalletError, WalletError.notEnoughFunds)
         }
     }
@@ -35,9 +35,9 @@ class WalletTests: EngineYardTests {
         let balance = 100
         let amount = -100
 
-        let w = Wallet()
+        let w = Wallet(balance: balance)
 
-        XCTAssertThrowsError(try w.debit(balance: balance, amount: amount)) { error in
+        XCTAssertThrowsError(try w.debit(amount: amount)) { error in
             XCTAssertEqual(error as! WalletError, WalletError.mustBePositive)
         }
     }
@@ -46,27 +46,27 @@ class WalletTests: EngineYardTests {
         let balance = 100
         let amount = balance
 
-        let w = Wallet()
+        let w = Wallet(balance: balance)
 
-        XCTAssertTrue(try w.debit(balance: balance, amount: amount) == 0)
+        XCTAssertTrue(try w.debit(amount: amount) == 0)
     }
 
     func testDebitPositiveValue() {
         let balance = 100
         let amount = 5
 
-        let w = Wallet()
+        let w = Wallet(balance: balance)
 
-        XCTAssertTrue(try w.debit(balance: balance, amount: amount) == 95)
+        XCTAssertTrue(try w.debit(amount: amount) == 95)
     }
 
     func testDebitZero() {
         let balance = 0
         let amount = 0
 
-        let w = Wallet()
+        let w = Wallet(balance: balance)
 
-        XCTAssertThrowsError(try w.debit(balance: balance, amount: amount)) { error in
+        XCTAssertThrowsError(try w.debit(amount: amount)) { error in
             XCTAssertEqual(error as! WalletError, WalletError.mustBePositive)
         }
     }
@@ -75,9 +75,9 @@ class WalletTests: EngineYardTests {
         let balance = 0
         let amount = 0
 
-        let w = Wallet()
+        let w = Wallet(balance: balance)
 
-        XCTAssertThrowsError(try w.credit(balance: balance, amount: amount)) { error in
+        XCTAssertThrowsError(try w.credit(amount: amount)) { error in
             XCTAssertEqual(error as! WalletError, WalletError.mustBePositive)
         }
     }
@@ -86,9 +86,9 @@ class WalletTests: EngineYardTests {
         let balance = 0
         let amount = -100
 
-        let w = Wallet()
+        let w = Wallet(balance: balance)
 
-        XCTAssertThrowsError(try w.credit(balance: balance, amount: amount)) { error in
+        XCTAssertThrowsError(try w.credit(amount: amount)) { error in
             XCTAssertEqual(error as! WalletError, WalletError.mustBePositive)
         }
     }
@@ -97,8 +97,8 @@ class WalletTests: EngineYardTests {
         let balance = 100
         let amount = balance
 
-        let w = Wallet()
+        let w = Wallet(balance: balance)
 
-        XCTAssertTrue(try w.credit(balance: balance, amount: amount) == balance * 2)
+        XCTAssertTrue(try w.credit(amount: amount) == balance * 2)
     }
 }
