@@ -31,8 +31,6 @@
 		4DC3D852233432FA0066FE9F /* CardState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC3D851233432FA0066FE9F /* CardState.swift */; };
 		4DE3873921528D3600BFF9DB /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3873821528D3600BFF9DB /* Media.xcassets */; };
 		4DF1509221679E0300D39D65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1509121679E0300D39D65 /* Main.storyboard */; };
-		4DFF752323358FE000C7CC24 /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF752223358FE000C7CC24 /* BuyViewController.swift */; };
-		4DFF752523358FF600C7CC24 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF752423358FF600C7CC24 /* CreateAccountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,8 +71,6 @@
 		4DC3D851233432FA0066FE9F /* CardState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardState.swift; sourceTree = "<group>"; };
 		4DE3873821528D3600BFF9DB /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		4DF1509121679E0300D39D65 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		4DFF752223358FE000C7CC24 /* BuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyViewController.swift; sourceTree = "<group>"; };
-		4DFF752423358FF600C7CC24 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,8 +146,6 @@
 				4DA3487A20812A8B006DA164 /* AppDelegate.swift */,
 				4DA3487B20812A8B006DA164 /* Info.plist */,
 				4D3C17DA2334CF7B0036808F /* ViewController.swift */,
-				4DFF752223358FE000C7CC24 /* BuyViewController.swift */,
-				4DFF752423358FF600C7CC24 /* CreateAccountViewController.swift */,
 			);
 			path = EngineYard_iOS;
 			sourceTree = "<group>";
@@ -298,7 +292,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DFF752523358FF600C7CC24 /* CreateAccountViewController.swift in Sources */,
 				4D2A4B8C2195DEB300315524 /* EY+ImageView.swift in Sources */,
 				4DC3D84E2334324E0066FE9F /* Generation.swift in Sources */,
 				4D3C17D72334CE730036808F /* Coordinator.swift in Sources */,
@@ -310,7 +303,6 @@
 				4DA52369208158A8000FFAAB /* EY+Colors.swift in Sources */,
 				4DC3D84C2334314F0066FE9F /* CardColor.swift in Sources */,
 				4D3C17DB2334CF7B0036808F /* ViewController.swift in Sources */,
-				4DFF752323358FE000C7CC24 /* BuyViewController.swift in Sources */,
 				4DC3D847233430FF0066FE9F /* Card.swift in Sources */,
 				4DC3D852233432FA0066FE9F /* CardState.swift in Sources */,
 				4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */,
