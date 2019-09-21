@@ -38,6 +38,16 @@ extension Hand {
     private func canRemove(card: Card) -> Bool {
         return true
     }
+
+    // #TODO
+    private func find(card: Card) -> Card? {
+        return nil
+    }
+
+    // #TODO
+    private func find(card: Card) -> Int? {
+        return nil
+    }
 }
 
 extension Hand: CustomStringConvertible {
