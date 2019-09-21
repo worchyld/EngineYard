@@ -22,18 +22,14 @@ class WalletTests: EngineYardTests {
 
     func testCanDebit() {
         let balance = 100
-        let amount = 10
+        let amount = 101
 
         let w = Wallet()
-
-        do {
-            guard let result = try w.debit(balance: balance, amount: amount) else {
-                return
-            }
-            print (String(result))
-        } catch {
-            print(error)
+        
+        XCTAssertThrowsError(try w.debit(balance: balance, amount: amount), "error occured") { (error) in
+            XCTAssertTrue(error is WalletError.notEnoughFunds)
         }
+
     }
 
 }

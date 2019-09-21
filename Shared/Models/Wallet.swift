@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum WalletError: Error {
+public enum WalletError: Error {
     case mustBePositive
     case notEnoughFunds
 }
@@ -27,6 +27,15 @@ struct Wallet {
         return result
     }
 
+    func credit(balance: Int, amount: Int) throws -> Int? {
+        guard let result = try canCredit(balance: balance, amount: amount) else {
+            return nil
+        }
+        return result
+    }
+}
+
+extension Wallet {
     private func canDebit(balance: Int, amount: Int) throws -> Int? {
         guard amount > 0 else {
             throw WalletError.mustBePositive
@@ -39,6 +48,13 @@ struct Wallet {
             throw WalletError.notEnoughFunds
         }
         return handleDebit(balance: balance, amount: amount)
+    }
+
+    private func canCredit(balance: Int, amount: Int) throws -> Int? {
+        guard amount > 0 else {
+            throw WalletError.mustBePositive
+        }
+        return handleCredit(balance: balance, amount: amount)
     }
 }
 
