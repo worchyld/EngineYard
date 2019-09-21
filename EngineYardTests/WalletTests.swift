@@ -51,6 +51,15 @@ class WalletTests: EngineYardTests {
         XCTAssertTrue(try w.debit(balance: balance, amount: amount) == 0)
     }
 
+    func testDebitPositiveValue() {
+        let balance = 100
+        let amount = 5
+
+        let w = Wallet()
+
+        XCTAssertTrue(try w.debit(balance: balance, amount: amount) == 95)
+    }
+
     func testDebitZero() {
         let balance = 0
         let amount = 0
