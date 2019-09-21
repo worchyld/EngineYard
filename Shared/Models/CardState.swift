@@ -10,8 +10,8 @@ import Foundation
 
 // Obsolescence
 public enum CardState : Int {
-    case inactive = 1
-    case active = 2
+    case inactive = 0
+    case active = 1
     case obsolete = -1
 
     static let allRawValues = CardState.inactive.rawValue...CardState.obsolete.rawValue
