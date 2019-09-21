@@ -9,7 +9,7 @@
 import Foundation
 
 struct Tax {
-    public static let rate: Float = 0.10 // Players pay 10% of their cash in taxes, rounded down
+    private static let rate: Float = 0.10 // Players pay 10% of their cash in taxes, rounded down
 
     public static func due(onBalance: Int) -> Int {
         // Return rounded down amount
@@ -24,21 +24,4 @@ struct Tax {
         let salesTax: Int = due(onBalance: onBalance)
         return Int(onBalance + salesTax)
     }
-
-
-    /*
-    func due(onBalance: Int) -> Int {
-        // Return rounded down amount
-        return Int(floor(Float(onBalance) * Tax.rate))
-    }
-
-    func pay(onBalance: Int) -> Int {
-        return Int(onBalance - due(onBalance: onBalance))
-    }
-
-    func getSalesTax(onBalance: Int) -> Int {
-        let salesTax: Int = due(onBalance: onBalance)
-        return Int(onBalance + salesTax)
-    }
-     */
 }
