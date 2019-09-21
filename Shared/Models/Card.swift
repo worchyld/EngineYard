@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct Card {
+final class Card {
     
 }

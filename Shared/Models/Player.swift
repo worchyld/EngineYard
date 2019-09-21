@@ -14,13 +14,29 @@ enum PlayerState: Int {
     case thinking
 }
 
-class Player {
+final class Player {
     private let uuid: String = UUID().uuidString
     let name: String
-    public private (set) var cash: Int = 0
-    public private (set) var isAI: Bool = true
+    let isAI: Bool
 
-    init(name: String) {
+    public private (set) var cash: Int = 0
+    public private (set) var asset: String = ""
+    lazy var hand: Hand = Hand(owner: self) // hand of cards
+
+    init(name: String, isAI: Bool = true) {
         self.name = name
+        self.isAI = isAI
+    }
+}
+
+extension Player : Equatable {
+    public static func ==(lhs: Player, rhs: Player) -> Bool {
+        return (lhs.uuid == rhs.uuid)
+    }
+}
+
+extension Player : CustomStringConvertible {
+    var description: String {
+        return ("\(self.name), cash: $\(self.cash)")
     }
 }

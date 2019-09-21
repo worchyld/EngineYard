@@ -25,6 +25,6 @@ protocol DeckProtocol {
     var owners : Int { get }
 }
 
-struct Deck {
+final class Deck {
 
 }
