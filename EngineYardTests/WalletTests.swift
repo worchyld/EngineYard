@@ -20,16 +20,76 @@ class WalletTests: EngineYardTests {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testCanDebit() {
+    func testDebitNotEnoughFunds() {
         let balance = 100
         let amount = 101
 
         let w = Wallet()
-        
-        XCTAssertThrowsError(try w.debit(balance: balance, amount: amount), "error occured") { (error) in
-            XCTAssertTrue(error is WalletError.notEnoughFunds)
-        }
 
+        XCTAssertThrowsError(try w.debit(balance: balance, amount: amount)) { error in
+            XCTAssertEqual(error as! WalletError, WalletError.notEnoughFunds)
+        }
     }
 
+    func testDebitNegativeValue() {
+        let balance = 100
+        let amount = -100
+
+        let w = Wallet()
+
+        XCTAssertThrowsError(try w.debit(balance: balance, amount: amount)) { error in
+            XCTAssertEqual(error as! WalletError, WalletError.mustBePositive)
+        }
+    }
+
+    func testDebitExactValue() {
+        let balance = 100
+        let amount = balance
+
+        let w = Wallet()
+
+        XCTAssertTrue(try w.debit(balance: balance, amount: amount) == 0)
+    }
+
+    func testDebitZero() {
+        let balance = 0
+        let amount = 0
+
+        let w = Wallet()
+
+        XCTAssertThrowsError(try w.debit(balance: balance, amount: amount)) { error in
+            XCTAssertEqual(error as! WalletError, WalletError.mustBePositive)
+        }
+    }
+
+    func testCreditZero() {
+        let balance = 0
+        let amount = 0
+
+        let w = Wallet()
+
+        XCTAssertThrowsError(try w.credit(balance: balance, amount: amount)) { error in
+            XCTAssertEqual(error as! WalletError, WalletError.mustBePositive)
+        }
+    }
+
+    func testCreditNegativeValue() {
+        let balance = 0
+        let amount = -100
+
+        let w = Wallet()
+
+        XCTAssertThrowsError(try w.credit(balance: balance, amount: amount)) { error in
+            XCTAssertEqual(error as! WalletError, WalletError.mustBePositive)
+        }
+    }
+
+    func testCreditPositiveValue() {
+        let balance = 100
+        let amount = balance
+
+        let w = Wallet()
+
+        XCTAssertTrue(try w.credit(balance: balance, amount: amount) == balance * 2)
+    }
 }

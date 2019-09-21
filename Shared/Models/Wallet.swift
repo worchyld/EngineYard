@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum WalletError: Error {
+public enum WalletError: Error, Equatable {
     case mustBePositive
     case notEnoughFunds
 }
@@ -40,11 +40,11 @@ extension Wallet {
         guard amount > 0 else {
             throw WalletError.mustBePositive
         }
-        guard balance > 0 else {
+        guard balance >= amount else {
             throw WalletError.notEnoughFunds
         }
         let sum = balance
-        guard ((sum - amount) > 0) else {
+        guard ((sum - amount) >= 0) else {
             throw WalletError.notEnoughFunds
         }
         return handleDebit(balance: balance, amount: amount)
