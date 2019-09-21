@@ -15,6 +15,7 @@
 		4D111E0B2336730800472BDC /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D111E0A2336730800472BDC /* Player.swift */; };
 		4D111E0D2336997900472BDC /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D111E0C2336997900472BDC /* Hand.swift */; };
 		4D111E102336A83900472BDC /* CardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D111E0F2336A83900472BDC /* CardEntity.swift */; };
+		4D111E122336ABB400472BDC /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D111E112336ABB400472BDC /* Deck.swift */; };
 		4D247B37219FFE340004478D /* ObjectCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D247B36219FFE340004478D /* ObjectCache.swift */; };
 		4D2A4B8C2195DEB300315524 /* EY+ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2A4B8B2195DEB300315524 /* EY+ImageView.swift */; };
 		4D3C17D02334B6200036808F /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3C17CA2334B6200036808F /* Message.swift */; };
@@ -32,11 +33,6 @@
 		4DA5236C208158C8000FFAAB /* EY+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5236B208158C8000FFAAB /* EY+Array.swift */; };
 		4DA92C212156874500AD19B7 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB448C6219F380900F8507F /* EY+Protocols.swift */; };
-		4DC3D847233430FF0066FE9F /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC3D846233430FF0066FE9F /* Card.swift */; };
-		4DC3D84A233431140066FE9F /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC3D849233431140066FE9F /* Deck.swift */; };
-		4DC3D84C2334314F0066FE9F /* DeckType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC3D84B2334314F0066FE9F /* DeckType.swift */; };
-		4DC3D84E2334324E0066FE9F /* Generation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC3D84D2334324E0066FE9F /* Generation.swift */; };
-		4DC3D852233432FA0066FE9F /* CardState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC3D851233432FA0066FE9F /* CardState.swift */; };
 		4DF1509221679E0300D39D65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1509121679E0300D39D65 /* Main.storyboard */; };
 		4DFF75282336067400C7CC24 /* EY+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF75262336067400C7CC24 /* EY+ViewController.swift */; };
 		4DFF752B2336077400C7CC24 /* Tax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF752A2336077400C7CC24 /* Tax.swift */; };
@@ -67,6 +63,7 @@
 		4D111E0A2336730800472BDC /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		4D111E0C2336997900472BDC /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
 		4D111E0F2336A83900472BDC /* CardEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEntity.swift; sourceTree = "<group>"; };
+		4D111E112336ABB400472BDC /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		4D247B36219FFE340004478D /* ObjectCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectCache.swift; sourceTree = "<group>"; };
 		4D2A4B8B2195DEB300315524 /* EY+ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+ImageView.swift"; sourceTree = "<group>"; };
 		4D3C17CA2334B6200036808F /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -87,11 +84,6 @@
 		4DA5236B208158C8000FFAAB /* EY+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Array.swift"; sourceTree = "<group>"; };
 		4DB448C6219F380900F8507F /* EY+Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Protocols.swift"; sourceTree = "<group>"; };
 		4DC3D84423342D8F0066FE9F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4DC3D846233430FF0066FE9F /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		4DC3D849233431140066FE9F /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
-		4DC3D84B2334314F0066FE9F /* DeckType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckType.swift; sourceTree = "<group>"; };
-		4DC3D84D2334324E0066FE9F /* Generation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generation.swift; sourceTree = "<group>"; };
-		4DC3D851233432FA0066FE9F /* CardState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardState.swift; sourceTree = "<group>"; };
 		4DF1509121679E0300D39D65 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4DFF75262336067400C7CC24 /* EY+ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EY+ViewController.swift"; sourceTree = "<group>"; };
 		4DFF752A2336077400C7CC24 /* Tax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tax.swift; sourceTree = "<group>"; };
@@ -252,15 +244,11 @@
 			isa = PBXGroup;
 			children = (
 				4D3C17CA2334B6200036808F /* Message.swift */,
-				4DC3D849233431140066FE9F /* Deck.swift */,
-				4DC3D84B2334314F0066FE9F /* DeckType.swift */,
-				4DC3D846233430FF0066FE9F /* Card.swift */,
-				4DC3D851233432FA0066FE9F /* CardState.swift */,
-				4DC3D84D2334324E0066FE9F /* Generation.swift */,
 				4DFF752A2336077400C7CC24 /* Tax.swift */,
 				4DFF753623360ED300C7CC24 /* Wallet.swift */,
 				4D111E0A2336730800472BDC /* Player.swift */,
 				4D111E0C2336997900472BDC /* Hand.swift */,
+				4D111E112336ABB400472BDC /* Deck.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -375,7 +363,6 @@
 			files = (
 				4DFF753723360ED300C7CC24 /* Wallet.swift in Sources */,
 				4D2A4B8C2195DEB300315524 /* EY+ImageView.swift in Sources */,
-				4DC3D84E2334324E0066FE9F /* Generation.swift in Sources */,
 				4D3C17D72334CE730036808F /* Coordinator.swift in Sources */,
 				4D111E0D2336997900472BDC /* Hand.swift in Sources */,
 				4DA3488020812A8B006DA164 /* AppDelegate.swift in Sources */,
@@ -386,16 +373,13 @@
 				4DFF753223360BA700C7CC24 /* Fonts.swift in Sources */,
 				4DA52369208158A8000FFAAB /* EY+Colors.swift in Sources */,
 				4DFF753323360BA700C7CC24 /* Sounds.swift in Sources */,
-				4DC3D84C2334314F0066FE9F /* DeckType.swift in Sources */,
+				4D111E122336ABB400472BDC /* Deck.swift in Sources */,
 				4D3C17DB2334CF7B0036808F /* ViewController.swift in Sources */,
 				4DFF753123360BA700C7CC24 /* Devices.swift in Sources */,
-				4DC3D847233430FF0066FE9F /* Card.swift in Sources */,
-				4DC3D852233432FA0066FE9F /* CardState.swift in Sources */,
 				4DFF75282336067400C7CC24 /* EY+ViewController.swift in Sources */,
 				4D111E0B2336730800472BDC /* Player.swift in Sources */,
 				4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */,
 				4D3C17D02334B6200036808F /* Message.swift in Sources */,
-				4DC3D84A233431140066FE9F /* Deck.swift in Sources */,
 				4DFF752B2336077400C7CC24 /* Tax.swift in Sources */,
 				4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */,
 				4D111E102336A83900472BDC /* CardEntity.swift in Sources */,
