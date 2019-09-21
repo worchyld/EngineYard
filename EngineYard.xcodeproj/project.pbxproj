@@ -26,11 +26,14 @@
 		4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB448C6219F380900F8507F /* EY+Protocols.swift */; };
 		4DC3D847233430FF0066FE9F /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC3D846233430FF0066FE9F /* Card.swift */; };
 		4DC3D84A233431140066FE9F /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC3D849233431140066FE9F /* Deck.swift */; };
-		4DC3D84C2334314F0066FE9F /* CardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC3D84B2334314F0066FE9F /* CardColor.swift */; };
+		4DC3D84C2334314F0066FE9F /* DeckType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC3D84B2334314F0066FE9F /* DeckType.swift */; };
 		4DC3D84E2334324E0066FE9F /* Generation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC3D84D2334324E0066FE9F /* Generation.swift */; };
 		4DC3D852233432FA0066FE9F /* CardState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC3D851233432FA0066FE9F /* CardState.swift */; };
 		4DE3873921528D3600BFF9DB /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3873821528D3600BFF9DB /* Media.xcassets */; };
 		4DF1509221679E0300D39D65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1509121679E0300D39D65 /* Main.storyboard */; };
+		4DFF75282336067400C7CC24 /* EY+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF75262336067400C7CC24 /* EY+ViewController.swift */; };
+		4DFF752B2336077400C7CC24 /* Tax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF752A2336077400C7CC24 /* Tax.swift */; };
+		4DFF752D233608FC00C7CC24 /* TaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF752C233608FC00C7CC24 /* TaxTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,11 +69,14 @@
 		4DC3D84423342D8F0066FE9F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DC3D846233430FF0066FE9F /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		4DC3D849233431140066FE9F /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
-		4DC3D84B2334314F0066FE9F /* CardColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardColor.swift; sourceTree = "<group>"; };
+		4DC3D84B2334314F0066FE9F /* DeckType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckType.swift; sourceTree = "<group>"; };
 		4DC3D84D2334324E0066FE9F /* Generation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generation.swift; sourceTree = "<group>"; };
 		4DC3D851233432FA0066FE9F /* CardState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardState.swift; sourceTree = "<group>"; };
 		4DE3873821528D3600BFF9DB /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		4DF1509121679E0300D39D65 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		4DFF75262336067400C7CC24 /* EY+ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EY+ViewController.swift"; sourceTree = "<group>"; };
+		4DFF752A2336077400C7CC24 /* Tax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tax.swift; sourceTree = "<group>"; };
+		4DFF752C233608FC00C7CC24 /* TaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +139,7 @@
 			children = (
 				4DC3D84423342D8F0066FE9F /* Info.plist */,
 				4DA3486820812972006DA164 /* EngineYardTests.swift */,
+				4DFF752C233608FC00C7CC24 /* TaxTests.swift */,
 			);
 			path = EngineYardTests;
 			sourceTree = "<group>";
@@ -165,6 +172,7 @@
 		4DA5236A208158B5000FFAAB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4DFF75262336067400C7CC24 /* EY+ViewController.swift */,
 				4DA52368208158A8000FFAAB /* EY+Colors.swift */,
 				4D925D74219F4E2D00441733 /* EY+Time.swift */,
 				4DA5236B208158C8000FFAAB /* EY+Array.swift */,
@@ -180,10 +188,11 @@
 			children = (
 				4D3C17CA2334B6200036808F /* Message.swift */,
 				4DC3D849233431140066FE9F /* Deck.swift */,
+				4DC3D84B2334314F0066FE9F /* DeckType.swift */,
 				4DC3D846233430FF0066FE9F /* Card.swift */,
-				4DC3D84B2334314F0066FE9F /* CardColor.swift */,
-				4DC3D84D2334324E0066FE9F /* Generation.swift */,
 				4DC3D851233432FA0066FE9F /* CardState.swift */,
+				4DC3D84D2334324E0066FE9F /* Generation.swift */,
+				4DFF752A2336077400C7CC24 /* Tax.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -301,13 +310,15 @@
 				4D247B37219FFE340004478D /* ObjectCache.swift in Sources */,
 				4D3C17DD2334CFCB0036808F /* MainCoordinator.swift in Sources */,
 				4DA52369208158A8000FFAAB /* EY+Colors.swift in Sources */,
-				4DC3D84C2334314F0066FE9F /* CardColor.swift in Sources */,
+				4DC3D84C2334314F0066FE9F /* DeckType.swift in Sources */,
 				4D3C17DB2334CF7B0036808F /* ViewController.swift in Sources */,
 				4DC3D847233430FF0066FE9F /* Card.swift in Sources */,
 				4DC3D852233432FA0066FE9F /* CardState.swift in Sources */,
+				4DFF75282336067400C7CC24 /* EY+ViewController.swift in Sources */,
 				4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */,
 				4D3C17D02334B6200036808F /* Message.swift in Sources */,
 				4DC3D84A233431140066FE9F /* Deck.swift in Sources */,
+				4DFF752B2336077400C7CC24 /* Tax.swift in Sources */,
 				4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */,
 				4D3C17D92334CEBD0036808F /* Storyboarded.swift in Sources */,
 			);
@@ -318,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */,
+				4DFF752D233608FC00C7CC24 /* TaxTests.swift in Sources */,
 				4DA92C212156874500AD19B7 /* (null) in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
