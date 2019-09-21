@@ -35,7 +35,6 @@
 		4DC3D84C2334314F0066FE9F /* DeckType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC3D84B2334314F0066FE9F /* DeckType.swift */; };
 		4DC3D84E2334324E0066FE9F /* Generation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC3D84D2334324E0066FE9F /* Generation.swift */; };
 		4DC3D852233432FA0066FE9F /* CardState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC3D851233432FA0066FE9F /* CardState.swift */; };
-		4DE3873921528D3600BFF9DB /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3873821528D3600BFF9DB /* Media.xcassets */; };
 		4DF1509221679E0300D39D65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1509121679E0300D39D65 /* Main.storyboard */; };
 		4DFF75282336067400C7CC24 /* EY+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF75262336067400C7CC24 /* EY+ViewController.swift */; };
 		4DFF752B2336077400C7CC24 /* Tax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF752A2336077400C7CC24 /* Tax.swift */; };
@@ -89,7 +88,6 @@
 		4DC3D84B2334314F0066FE9F /* DeckType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckType.swift; sourceTree = "<group>"; };
 		4DC3D84D2334324E0066FE9F /* Generation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generation.swift; sourceTree = "<group>"; };
 		4DC3D851233432FA0066FE9F /* CardState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardState.swift; sourceTree = "<group>"; };
-		4DE3873821528D3600BFF9DB /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		4DF1509121679E0300D39D65 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4DFF75262336067400C7CC24 /* EY+ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EY+ViewController.swift"; sourceTree = "<group>"; };
 		4DFF752A2336077400C7CC24 /* Tax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tax.swift; sourceTree = "<group>"; };
@@ -213,7 +211,6 @@
 			children = (
 				4D111DFD233672CE00472BDC /* Assets */,
 				4D3C17C82334B6200036808F /* Managers */,
-				4DE3873821528D3600BFF9DB /* Media.xcassets */,
 				4DA5236A208158B5000FFAAB /* Extensions */,
 				4D00A42520A8C5C700A2E88E /* Functions */,
 				4DC3D848233431080066FE9F /* Models */,
@@ -340,7 +337,6 @@
 				4D111E07233672CE00472BDC /* cardSlide1.wav in Resources */,
 				4DF1509221679E0300D39D65 /* Main.storyboard in Resources */,
 				4DA3487D20812A8B006DA164 /* Assets.xcassets in Resources */,
-				4DE3873921528D3600BFF9DB /* Media.xcassets in Resources */,
 				4D111E09233672CE00472BDC /* cardSlide8.wav in Resources */,
 				4D111E08233672CE00472BDC /* Birdy_Notification1.wav in Resources */,
 				4D111E06233672CE00472BDC /* Birdy_Note5.wav in Resources */,
