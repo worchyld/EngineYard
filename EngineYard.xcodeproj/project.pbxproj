@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D111E05233672CE00472BDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D111DFF233672CE00472BDC /* Assets.xcassets */; };
+		4D111E06233672CE00472BDC /* Birdy_Note5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D111E01233672CE00472BDC /* Birdy_Note5.wav */; };
+		4D111E07233672CE00472BDC /* cardSlide1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D111E02233672CE00472BDC /* cardSlide1.wav */; };
+		4D111E08233672CE00472BDC /* Birdy_Notification1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D111E03233672CE00472BDC /* Birdy_Notification1.wav */; };
+		4D111E09233672CE00472BDC /* cardSlide8.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D111E04233672CE00472BDC /* cardSlide8.wav */; };
 		4D247B37219FFE340004478D /* ObjectCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D247B36219FFE340004478D /* ObjectCache.swift */; };
 		4D2A4B8C2195DEB300315524 /* EY+ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2A4B8B2195DEB300315524 /* EY+ImageView.swift */; };
 		4D3C17D02334B6200036808F /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3C17CA2334B6200036808F /* Message.swift */; };
@@ -52,6 +57,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D111DFF233672CE00472BDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4D111E01233672CE00472BDC /* Birdy_Note5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Note5.wav; sourceTree = "<group>"; };
+		4D111E02233672CE00472BDC /* cardSlide1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardSlide1.wav; sourceTree = "<group>"; };
+		4D111E03233672CE00472BDC /* Birdy_Notification1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Notification1.wav; sourceTree = "<group>"; };
+		4D111E04233672CE00472BDC /* cardSlide8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardSlide8.wav; sourceTree = "<group>"; };
 		4D247B36219FFE340004478D /* ObjectCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectCache.swift; sourceTree = "<group>"; };
 		4D2A4B8B2195DEB300315524 /* EY+ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+ImageView.swift"; sourceTree = "<group>"; };
 		4D3C17CA2334B6200036808F /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -115,6 +125,34 @@
 			path = Functions;
 			sourceTree = "<group>";
 		};
+		4D111DFD233672CE00472BDC /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				4D111DFE233672CE00472BDC /* Music */,
+				4D111DFF233672CE00472BDC /* Assets.xcassets */,
+				4D111E00233672CE00472BDC /* Sounds */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		4D111DFE233672CE00472BDC /* Music */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
+		4D111E00233672CE00472BDC /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				4D111E01233672CE00472BDC /* Birdy_Note5.wav */,
+				4D111E02233672CE00472BDC /* cardSlide1.wav */,
+				4D111E03233672CE00472BDC /* Birdy_Notification1.wav */,
+				4D111E04233672CE00472BDC /* cardSlide8.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		4D3C17C82334B6200036808F /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +209,7 @@
 		4DA3488220812B08006DA164 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				4D111DFD233672CE00472BDC /* Assets */,
 				4D3C17C82334B6200036808F /* Managers */,
 				4DE3873821528D3600BFF9DB /* Media.xcassets */,
 				4DA5236A208158B5000FFAAB /* Extensions */,
@@ -295,10 +334,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D111E07233672CE00472BDC /* cardSlide1.wav in Resources */,
 				4DF1509221679E0300D39D65 /* Main.storyboard in Resources */,
 				4DA3487D20812A8B006DA164 /* Assets.xcassets in Resources */,
 				4DE3873921528D3600BFF9DB /* Media.xcassets in Resources */,
+				4D111E09233672CE00472BDC /* cardSlide8.wav in Resources */,
+				4D111E08233672CE00472BDC /* Birdy_Notification1.wav in Resources */,
+				4D111E06233672CE00472BDC /* Birdy_Note5.wav in Resources */,
 				4DA3487E20812A8B006DA164 /* LaunchScreen.storyboard in Resources */,
+				4D111E05233672CE00472BDC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
