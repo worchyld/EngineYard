@@ -29,7 +29,7 @@ struct Seed {
     private static let threePlayerSeedCash: Int = 12
     private static let fivePlayerSeedCash: Int = 14
 
-    static func cash(numberOfPlayers: Int) -> Int? {
+    static func cash(for numberOfPlayers: Int) -> Int? {
         switch numberOfPlayers {
         case 3:
             return threePlayerSeedCash
