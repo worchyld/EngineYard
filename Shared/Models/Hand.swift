@@ -20,22 +20,23 @@ class Hand {
 
 extension Hand {
     // #TODO
-    func add(card: Card) {
+    // push = add card to hand
+    func push(card: Card) {
 
     }
 
     // #TODO
-    func remove(card: Card) {
+    func pop(card: Card) {
 
     }
 
     // #TODO
-    private func canAdd(card: Card) -> Bool {
+    private func canPush(card: Card) -> Bool {
         return true
     }
 
     // #TODO
-    private func canRemove(card: Card) -> Bool {
+    private func canPop(card: Card) -> Bool {
         return true
     }
 

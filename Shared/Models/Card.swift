@@ -9,5 +9,6 @@
 import Foundation
 
 struct Card {
-    
+    let owner: Player?
+    let production: Production?
 }
