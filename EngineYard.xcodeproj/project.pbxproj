@@ -29,6 +29,8 @@
 		4D5CA5102337E82D00EF9F96 /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CA50F2337E82D00EF9F96 /* GameBoard.swift */; };
 		4D5CA5122337EA0200EF9F96 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CA5112337EA0200EF9F96 /* Order.swift */; };
 		4D5CA5142337ED0A00EF9F96 /* OrderBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CA5132337ED0A00EF9F96 /* OrderBook.swift */; };
+		4D5CA5162337F01300EF9F96 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CA5152337F01300EF9F96 /* Constants.swift */; };
+		4D5CA5182337FC6900EF9F96 /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CA5172337FC6900EF9F96 /* ErrorCode.swift */; };
 		4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D925D74219F4E2D00441733 /* EY+Time.swift */; };
 		4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3486820812972006DA164 /* EngineYardTests.swift */; };
 		4DA3487D20812A8B006DA164 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DA3487520812A8B006DA164 /* Assets.xcassets */; };
@@ -83,6 +85,8 @@
 		4D5CA50F2337E82D00EF9F96 /* GameBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
 		4D5CA5112337EA0200EF9F96 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		4D5CA5132337ED0A00EF9F96 /* OrderBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBook.swift; sourceTree = "<group>"; };
+		4D5CA5152337F01300EF9F96 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4D5CA5172337FC6900EF9F96 /* ErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCode.swift; sourceTree = "<group>"; };
 		4D925D74219F4E2D00441733 /* EY+Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Time.swift"; sourceTree = "<group>"; };
 		4DA3485020812970006DA164 /* EngineYard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EngineYard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA3486420812972006DA164 /* EngineYardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EngineYardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -267,6 +271,8 @@
 				4D5CA50F2337E82D00EF9F96 /* GameBoard.swift */,
 				4D5CA5112337EA0200EF9F96 /* Order.swift */,
 				4D5CA5132337ED0A00EF9F96 /* OrderBook.swift */,
+				4D5CA5152337F01300EF9F96 /* Constants.swift */,
+				4D5CA5172337FC6900EF9F96 /* ErrorCode.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -388,6 +394,7 @@
 				4D247B37219FFE340004478D /* ObjectCache.swift in Sources */,
 				4D3C17DD2334CFCB0036808F /* MainCoordinator.swift in Sources */,
 				4D111E192336B20900472BDC /* Hand.swift in Sources */,
+				4D5CA5182337FC6900EF9F96 /* ErrorCode.swift in Sources */,
 				4DFF753223360BA700C7CC24 /* Fonts.swift in Sources */,
 				4DA52369208158A8000FFAAB /* EY+Colors.swift in Sources */,
 				4DFF753323360BA700C7CC24 /* Sounds.swift in Sources */,
@@ -408,6 +415,7 @@
 				4D3C17D92334CEBD0036808F /* Storyboarded.swift in Sources */,
 				4D111E142336AEDC00472BDC /* Card.swift in Sources */,
 				4D5CA5122337EA0200EF9F96 /* Order.swift in Sources */,
+				4D5CA5162337F01300EF9F96 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

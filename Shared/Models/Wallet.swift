@@ -11,6 +11,7 @@ import Foundation
 public enum WalletError: Error, Equatable {
     case mustBePositive
     case notEnoughFunds
+    case insufficientFunds(coinsNeeded: Int)
 }
 
 fileprivate protocol WalletDelegate {

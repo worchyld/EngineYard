@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+class GameModel {
+
+    func didTriggerEndGame(cash: Int) -> Bool {
+        return (cash >= Constants.endGameCashTrigger)
+    }
+
+}
