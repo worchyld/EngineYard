@@ -35,11 +35,10 @@ struct Deck {
         static let allValues = Array(allRawValues.map{ Generation(rawValue: $0)! })
     }
 
+    private let uid: String = UUID().uuidString
+    let name: String
     let color: Deck.Color
     let generation: Deck.Generation
-    var name: String {
-        return ("\(String(describing: self.color)) #\(String(describing: self.generation))")
-    }
     let cost: Int
     var productionCost: Int? {
         guard (cost % 4 == 0) else {
@@ -57,14 +56,13 @@ struct Deck {
         return Int(productionCost / 2)
     }
     let cards: [Card]
-    let orders: [Int]
-    let sales: [Int]
     let capacity: Int
     let numberOfChildren: Int
     let state: Deck.State
 
-    init(color: Deck.Color, generation: Deck.Generation, cost: Int, capacity: Int, numberOfChildren: Int) {
+    init(name: String, cost: Int, generation: Deck.Generation, color: Deck.Color, capacity: Int, numberOfChildren: Int) {
         assert(cost % 4 == 0, "Cost must be a multiple of 4")
+        self.name = name
         self.color = color
         self.generation = generation
         self.cost = cost
@@ -72,7 +70,17 @@ struct Deck {
         self.capacity = capacity
         self.state = .inactive
         self.cards = [Card]()
-        self.orders = [Int]()
-        self.sales = [Int]()
+    }
+}
+
+extension Deck: Equatable {
+    public static func ==(lhs: Deck, rhs: Deck) -> Bool {
+        return (lhs.uid == rhs.uid)
+    }
+}
+
+extension Deck: CustomStringConvertible {
+    public var description: String {
+        return "\(self.color) \(self.generation)"
     }
 }
