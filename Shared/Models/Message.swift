@@ -18,6 +18,7 @@ protocol MessageProtocol {
 struct Message : MessageProtocol {
     var title: String?
     var message: String?
+    private let _created: Date = Date.init(timeIntervalSinceNow: 0)
 
     init(title: String?, message: String?) {
         if let hasTitle = title {

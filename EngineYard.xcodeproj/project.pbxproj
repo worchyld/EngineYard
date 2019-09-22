@@ -31,6 +31,7 @@
 		4D5CA5142337ED0A00EF9F96 /* OrderBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CA5132337ED0A00EF9F96 /* OrderBook.swift */; };
 		4D5CA5162337F01300EF9F96 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CA5152337F01300EF9F96 /* Constants.swift */; };
 		4D5CA5182337FC6900EF9F96 /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CA5172337FC6900EF9F96 /* ErrorCode.swift */; };
+		4D5CA51A2338011E00EF9F96 /* SalesRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CA5192338011E00EF9F96 /* SalesRule.swift */; };
 		4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D925D74219F4E2D00441733 /* EY+Time.swift */; };
 		4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3486820812972006DA164 /* EngineYardTests.swift */; };
 		4DA3487D20812A8B006DA164 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DA3487520812A8B006DA164 /* Assets.xcassets */; };
@@ -87,6 +88,7 @@
 		4D5CA5132337ED0A00EF9F96 /* OrderBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBook.swift; sourceTree = "<group>"; };
 		4D5CA5152337F01300EF9F96 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4D5CA5172337FC6900EF9F96 /* ErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCode.swift; sourceTree = "<group>"; };
+		4D5CA5192338011E00EF9F96 /* SalesRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesRule.swift; sourceTree = "<group>"; };
 		4D925D74219F4E2D00441733 /* EY+Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Time.swift"; sourceTree = "<group>"; };
 		4DA3485020812970006DA164 /* EngineYard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EngineYard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA3486420812972006DA164 /* EngineYardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EngineYardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -273,6 +275,7 @@
 				4D5CA5132337ED0A00EF9F96 /* OrderBook.swift */,
 				4D5CA5152337F01300EF9F96 /* Constants.swift */,
 				4D5CA5172337FC6900EF9F96 /* ErrorCode.swift */,
+				4D5CA5192338011E00EF9F96 /* SalesRule.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */,
 				4D5CA5102337E82D00EF9F96 /* GameBoard.swift in Sources */,
 				4D5CA5142337ED0A00EF9F96 /* OrderBook.swift in Sources */,
+				4D5CA51A2338011E00EF9F96 /* SalesRule.swift in Sources */,
 				4D111E102336A83900472BDC /* CardEntity.swift in Sources */,
 				4D3C17D92334CEBD0036808F /* Storyboarded.swift in Sources */,
 				4D111E142336AEDC00472BDC /* Card.swift in Sources */,
