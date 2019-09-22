@@ -59,6 +59,7 @@ struct Deck {
     let capacity: Int
     let numberOfChildren: Int
     let state: Deck.State
+    let orders: [Order]
 
     init(name: String, cost: Int, generation: Deck.Generation, color: Deck.Color, capacity: Int, numberOfChildren: Int) {
         assert(cost % 4 == 0, "Cost must be a multiple of 4")
@@ -70,6 +71,7 @@ struct Deck {
         self.capacity = capacity
         self.state = .inactive
         self.cards = [Card]()
+        self.orders = [Order]()
     }
 }
 

@@ -9,7 +9,6 @@
 import UIKit
 
 extension Deck.Color {
-
     func color() -> UIColor {
         switch self {
             case .green:
