@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct GameBoard {
+struct Board {
     private let _decks: [Deck]
     public var decks: [Deck] {
         return self._decks

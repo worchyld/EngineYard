@@ -15,12 +15,17 @@ public enum WalletError: Error, Equatable {
 }
 
 fileprivate protocol WalletDelegate {
+    func credit(amount: Int) throws -> Int?
+    func debit(amount: Int) throws -> Int?
+}
+
+fileprivate protocol WalletHandlerDelegate {
     func handleDebit(amount: Int) -> Int
     func handleCredit(amount: Int) -> Int
 }
 
 // Simple cash:Int credit/debit handling
-struct Wallet {
+struct Wallet : WalletDelegate {
     private let balance: Int
 
     init(balance: Int = 0) {
@@ -39,6 +44,12 @@ struct Wallet {
             return nil
         }
         return result
+    }
+}
+
+extension Wallet: CustomStringConvertible {
+    var description: String {
+        return "$\(self.balance)"
     }
 }
 
@@ -65,7 +76,7 @@ extension Wallet {
     }
 }
 
-extension Wallet: WalletDelegate {
+extension Wallet: WalletHandlerDelegate {
     fileprivate func handleDebit(amount: Int) -> Int {
         return (balance - amount)
     }
