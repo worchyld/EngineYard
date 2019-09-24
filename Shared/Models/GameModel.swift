@@ -8,6 +8,16 @@
 
 import Foundation
 
+enum GamePhase: Int {
+    case PurchaseLocomotivePhase
+    case PurchaseProductionPhase
+    case SellingPhase
+    case PayTaxesPhase
+    case MarketDemandsPhase
+    case CheckEndGameTriggerPhase
+    case DeclareWinnerPhase
+}
+
 class GameModel {
 
     func didTriggerEndGame(cash: Int) -> Bool {
