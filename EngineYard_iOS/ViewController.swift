@@ -13,15 +13,10 @@ class ViewController: UIViewController, Storyboarded {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
-    @IBAction func buyBtnPressed(_ sender: Any) {
-        //coordinator?.buySubscription()
-    }
-
-    @IBAction func createBtnPressed(_ sender: Any) {
-        //coordinator?.createAccount()
+    
+    @IBAction func nextBtnPressed(_ sender: Any) {
+        coordinator?.showNext()
     }
 }

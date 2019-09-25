@@ -13,8 +13,8 @@ class MainCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = [Coordinator]()
     var navigationController: UINavigationController
 
-    init(nav: UINavigationController) {
-        self.navigationController = nav
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
     }
 
     func start() {
@@ -23,4 +23,8 @@ class MainCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: false)
     }
 
+    func showNext() {
+        let vc = SecondViewController.instantiate()
+        navigationController.pushViewController(vc, animated: true)
+    }
 }

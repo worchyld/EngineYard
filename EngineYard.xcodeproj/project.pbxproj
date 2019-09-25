@@ -43,6 +43,7 @@
 		4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB448C6219F380900F8507F /* EY+Protocols.swift */; };
 		4DF1509221679E0300D39D65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1509121679E0300D39D65 /* Main.storyboard */; };
 		4DF38DF8233AC138003771C3 /* Winner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF38DF7233AC138003771C3 /* Winner.swift */; };
+		4DF38E1B233BF6D7003771C3 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF38E1A233BF6D7003771C3 /* SecondViewController.swift */; };
 		4DFF75282336067400C7CC24 /* EY+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF75262336067400C7CC24 /* EY+ViewController.swift */; };
 		4DFF752B2336077400C7CC24 /* Tax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF752A2336077400C7CC24 /* Tax.swift */; };
 		4DFF752D233608FC00C7CC24 /* TaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF752C233608FC00C7CC24 /* TaxTests.swift */; };
@@ -103,6 +104,7 @@
 		4DC3D84423342D8F0066FE9F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DF1509121679E0300D39D65 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4DF38DF7233AC138003771C3 /* Winner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Winner.swift; sourceTree = "<group>"; };
+		4DF38E1A233BF6D7003771C3 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		4DFF75262336067400C7CC24 /* EY+ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EY+ViewController.swift"; sourceTree = "<group>"; };
 		4DFF752A2336077400C7CC24 /* Tax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tax.swift; sourceTree = "<group>"; };
 		4DFF752C233608FC00C7CC24 /* TaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTests.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				4DA3487A20812A8B006DA164 /* AppDelegate.swift */,
 				4DA3487B20812A8B006DA164 /* Info.plist */,
 				4D3C17DA2334CF7B0036808F /* ViewController.swift */,
+				4DF38E1A233BF6D7003771C3 /* SecondViewController.swift */,
 			);
 			path = EngineYard_iOS;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DF38E1B233BF6D7003771C3 /* SecondViewController.swift in Sources */,
 				4DFF753723360ED300C7CC24 /* Wallet.swift in Sources */,
 				4D2A4B8C2195DEB300315524 /* EY+ImageView.swift in Sources */,
 				4D3C17D72334CE730036808F /* Coordinator.swift in Sources */,
