@@ -16,9 +16,42 @@ enum ProductionError : Error {
     case cannotUpgradeDownstream
 }
 
-struct Card {
-    let units: Int
-    private let spentUnits: Int
+class Card {
+    var units: Int
+    private var spentUnits: Int
+
+    init(units: Int = 0) {
+        self.units = units
+        self.spentUnits = 0
+    }
+
+    func spend(units: Int) {
+        do {
+            try canSpend(amount: units)
+        } catch let error {
+            print(error)
+        }
+    }
+
+    private func didSpend(units: Int) {
+        self.spentUnits += units
+        self.units -= units
+    }
+
+    private func reset() {
+        self.units = self.spentUnits
+        self.spentUnits = 0
+    }
+
+    func shift(units: Int, to card: Card) {
+        guard canShift(units: units, to: card) else {
+            return
+        }
+    }
+
+    private func canShift(units: Int, to: Card) -> Bool {
+        return false
+    }
 }
 
 

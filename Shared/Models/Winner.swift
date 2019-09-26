@@ -16,6 +16,7 @@ struct Winner {
         })
         return sorted
     }()
+
     init(players: [Player]) {
         self.players = players
     }
