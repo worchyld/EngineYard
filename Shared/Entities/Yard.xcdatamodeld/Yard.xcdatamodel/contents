@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14492.1" systemVersion="18G95" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="CardEntity" representedClassName="CardEntity" syncable="YES" codeGenerationType="class">
+    <entity name="CardEntity" representedClassName="CardEntity" syncable="YES">
         <attribute name="spentUnits" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="units" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="cards" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeckEntity" inverseName="deck" inverseEntity="DeckEntity" syncable="YES"/>
         <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlayerEntity" inverseName="cards" inverseEntity="PlayerEntity" syncable="YES"/>
     </entity>
-    <entity name="DeckEntity" representedClassName="DeckEntity" syncable="YES" codeGenerationType="class">
+    <entity name="DeckEntity" representedClassName="DeckEntity" syncable="YES">
         <attribute name="capacity" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="color" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="cost" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -19,14 +19,14 @@
         <relationship name="deck" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CardEntity" inverseName="cards" inverseEntity="CardEntity" syncable="YES"/>
         <relationship name="game" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GameEntity" inverseName="decks" inverseEntity="GameEntity" syncable="YES"/>
     </entity>
-    <entity name="GameEntity" representedClassName="GameEntity" syncable="YES" codeGenerationType="class">
+    <entity name="GameEntity" representedClassName="GameEntity" syncable="YES">
         <attribute name="phase" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="playerOnTurn" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="state" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="decks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DeckEntity" inverseName="game" inverseEntity="DeckEntity" syncable="YES"/>
         <relationship name="players" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlayerEntity" inverseName="game" inverseEntity="PlayerEntity" syncable="YES"/>
     </entity>
-    <entity name="PlayerEntity" representedClassName="PlayerEntity" syncable="YES" codeGenerationType="class">
+    <entity name="PlayerEntity" representedClassName="PlayerEntity" syncable="YES">
         <attribute name="avatar" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cash" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -36,9 +36,9 @@
         <relationship name="game" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GameEntity" inverseName="players" inverseEntity="GameEntity" syncable="YES"/>
     </entity>
     <elements>
-        <element name="DeckEntity" positionX="-92.53125" positionY="69.7265625" width="128" height="208"/>
         <element name="CardEntity" positionX="119.78125" positionY="80.38671875" width="128" height="103"/>
+        <element name="DeckEntity" positionX="-92.53125" positionY="69.7265625" width="128" height="208"/>
         <element name="GameEntity" positionX="120.5859375" positionY="278.3828125" width="128" height="118"/>
-        <element name="PlayerEntity" positionX="355.59375" positionY="239.703125" width="128" height="150"/>
+        <element name="PlayerEntity" positionX="355.59375" positionY="239.703125" width="128" height="148"/>
     </elements>
 </model>

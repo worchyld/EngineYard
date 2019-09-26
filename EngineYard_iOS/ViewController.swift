@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController, Storyboarded {
     weak var coordinator: MainCoordinator?
@@ -19,4 +20,27 @@ class ViewController: UIViewController, Storyboarded {
     @IBAction func nextBtnPressed(_ sender: Any) {
         coordinator?.showNext()
     }
+}
+
+extension ViewController {
+
+    func setupData() {
+
+        let delegate = UIApplication.shared.delegate as? AppDelegate
+
+        if let context = delegate?.persistentContainer.viewContext {
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "DeckEntity")
+
+            do {
+                if let items = try context.fetch(fetchRequest) as? [DeckEntity] {
+                    print (items)
+                }
+            } catch {
+                print("Failed to fetch data request.")
+            }
+        }
+
+
+    }
+
 }
