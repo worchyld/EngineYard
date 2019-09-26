@@ -52,6 +52,13 @@
 		4DFA7A40233D4887004099B7 /* PlayerEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFA7A3A233D4887004099B7 /* PlayerEntity+CoreDataProperties.swift */; };
 		4DFA7A41233D4887004099B7 /* CardEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFA7A3B233D4887004099B7 /* CardEntity+CoreDataClass.swift */; };
 		4DFA7A42233D4887004099B7 /* CardEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFA7A3C233D4887004099B7 /* CardEntity+CoreDataProperties.swift */; };
+		4DFA7A46233D55D9004099B7 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFA7A45233D55D9004099B7 /* MainMenuViewController.swift */; };
+		4DFA7A49233D5648004099B7 /* PickPlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFA7A48233D5648004099B7 /* PickPlayersViewController.swift */; };
+		4DFA7A4B233D56D5004099B7 /* PlayerCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFA7A4A233D56D5004099B7 /* PlayerCardView.xib */; };
+		4DFA7A4D233D579E004099B7 /* PlayerWinnerCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFA7A4C233D579E004099B7 /* PlayerWinnerCellView.xib */; };
+		4DFA7A4F233D5840004099B7 /* PlayerTaxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFA7A4E233D5840004099B7 /* PlayerTaxView.xib */; };
+		4DFA7A51233D58A2004099B7 /* DieCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFA7A50233D58A2004099B7 /* DieCellView.xib */; };
+		4DFA7A53233D58F7004099B7 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFA7A52233D58F7004099B7 /* CardView.xib */; };
 		4DFF75282336067400C7CC24 /* EY+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF75262336067400C7CC24 /* EY+ViewController.swift */; };
 		4DFF752B2336077400C7CC24 /* Tax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF752A2336077400C7CC24 /* Tax.swift */; };
 		4DFF752D233608FC00C7CC24 /* TaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF752C233608FC00C7CC24 /* TaxTests.swift */; };
@@ -121,6 +128,13 @@
 		4DFA7A3A233D4887004099B7 /* PlayerEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4DFA7A3B233D4887004099B7 /* CardEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4DFA7A3C233D4887004099B7 /* CardEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4DFA7A45233D55D9004099B7 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		4DFA7A48233D5648004099B7 /* PickPlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickPlayersViewController.swift; sourceTree = "<group>"; };
+		4DFA7A4A233D56D5004099B7 /* PlayerCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerCardView.xib; sourceTree = "<group>"; };
+		4DFA7A4C233D579E004099B7 /* PlayerWinnerCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerWinnerCellView.xib; sourceTree = "<group>"; };
+		4DFA7A4E233D5840004099B7 /* PlayerTaxView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerTaxView.xib; sourceTree = "<group>"; };
+		4DFA7A50233D58A2004099B7 /* DieCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DieCellView.xib; sourceTree = "<group>"; };
+		4DFA7A52233D58F7004099B7 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		4DFF75262336067400C7CC24 /* EY+ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EY+ViewController.swift"; sourceTree = "<group>"; };
 		4DFF752A2336077400C7CC24 /* Tax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tax.swift; sourceTree = "<group>"; };
 		4DFF752C233608FC00C7CC24 /* TaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTests.swift; sourceTree = "<group>"; };
@@ -251,6 +265,7 @@
 				4DA3487B20812A8B006DA164 /* Info.plist */,
 				4D3C17DA2334CF7B0036808F /* ViewController.swift */,
 				4DF38E1A233BF6D7003771C3 /* SecondViewController.swift */,
+				4DFA7A47233D55DE004099B7 /* Main Menu */,
 			);
 			path = EngineYard_iOS;
 			sourceTree = "<group>";
@@ -305,6 +320,20 @@
 				4DF38DF7233AC138003771C3 /* Winner.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		4DFA7A47233D55DE004099B7 /* Main Menu */ = {
+			isa = PBXGroup;
+			children = (
+				4DFA7A45233D55D9004099B7 /* MainMenuViewController.swift */,
+				4DFA7A48233D5648004099B7 /* PickPlayersViewController.swift */,
+				4DFA7A4A233D56D5004099B7 /* PlayerCardView.xib */,
+				4DFA7A4C233D579E004099B7 /* PlayerWinnerCellView.xib */,
+				4DFA7A4E233D5840004099B7 /* PlayerTaxView.xib */,
+				4DFA7A50233D58A2004099B7 /* DieCellView.xib */,
+				4DFA7A52233D58F7004099B7 /* CardView.xib */,
+			);
+			path = "Main Menu";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,11 +420,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D111E07233672CE00472BDC /* cardSlide1.wav in Resources */,
+				4DFA7A4B233D56D5004099B7 /* PlayerCardView.xib in Resources */,
 				4DF1509221679E0300D39D65 /* Main.storyboard in Resources */,
+				4DFA7A4F233D5840004099B7 /* PlayerTaxView.xib in Resources */,
+				4DFA7A4D233D579E004099B7 /* PlayerWinnerCellView.xib in Resources */,
 				4DA3487D20812A8B006DA164 /* Assets.xcassets in Resources */,
 				4D111E09233672CE00472BDC /* cardSlide8.wav in Resources */,
+				4DFA7A51233D58A2004099B7 /* DieCellView.xib in Resources */,
 				4D111E08233672CE00472BDC /* Birdy_Notification1.wav in Resources */,
 				4D111E06233672CE00472BDC /* Birdy_Note5.wav in Resources */,
+				4DFA7A53233D58F7004099B7 /* CardView.xib in Resources */,
 				4DA3487E20812A8B006DA164 /* LaunchScreen.storyboard in Resources */,
 				4D111E05233672CE00472BDC /* Art.xcassets in Resources */,
 			);
@@ -433,6 +467,7 @@
 				4DFF753323360BA700C7CC24 /* Sounds.swift in Sources */,
 				4D111E122336ABB400472BDC /* Deck.swift in Sources */,
 				4DFA7A35233D4869004099B7 /* DeckEntity+CoreDataClass.swift in Sources */,
+				4DFA7A46233D55D9004099B7 /* MainMenuViewController.swift in Sources */,
 				4D3C17DB2334CF7B0036808F /* ViewController.swift in Sources */,
 				4DFF753123360BA700C7CC24 /* Devices.swift in Sources */,
 				4DFA7A41233D4887004099B7 /* CardEntity+CoreDataClass.swift in Sources */,
@@ -448,6 +483,7 @@
 				4DF38E25233D36EC003771C3 /* Yard.xcdatamodeld in Sources */,
 				4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */,
 				4DFA7A40233D4887004099B7 /* PlayerEntity+CoreDataProperties.swift in Sources */,
+				4DFA7A49233D5648004099B7 /* PickPlayersViewController.swift in Sources */,
 				4D5CA5102337E82D00EF9F96 /* Board.swift in Sources */,
 				4DFA7A3E233D4887004099B7 /* GameEntity+CoreDataProperties.swift in Sources */,
 				4D5CA51A2338011E00EF9F96 /* SalesRule.swift in Sources */,
