@@ -12,7 +12,6 @@
 		4D111E07233672CE00472BDC /* cardSlide1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D111E02233672CE00472BDC /* cardSlide1.wav */; };
 		4D111E08233672CE00472BDC /* Birdy_Notification1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D111E03233672CE00472BDC /* Birdy_Notification1.wav */; };
 		4D111E09233672CE00472BDC /* cardSlide8.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D111E04233672CE00472BDC /* cardSlide8.wav */; };
-		4D111E102336A83900472BDC /* CardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D111E0F2336A83900472BDC /* CardEntity.swift */; };
 		4D111E122336ABB400472BDC /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D111E112336ABB400472BDC /* Deck.swift */; };
 		4D111E142336AEDC00472BDC /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D111E132336AEDC00472BDC /* Card.swift */; };
 		4D111E162336B04300472BDC /* Deck+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D111E152336B04300472BDC /* Deck+Colors.swift */; };
@@ -44,6 +43,7 @@
 		4DF1509221679E0300D39D65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1509121679E0300D39D65 /* Main.storyboard */; };
 		4DF38DF8233AC138003771C3 /* Winner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF38DF7233AC138003771C3 /* Winner.swift */; };
 		4DF38E1B233BF6D7003771C3 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF38E1A233BF6D7003771C3 /* SecondViewController.swift */; };
+		4DF38E25233D36EC003771C3 /* Yard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4DF38E23233D36EC003771C3 /* Yard.xcdatamodeld */; };
 		4DFF75282336067400C7CC24 /* EY+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF75262336067400C7CC24 /* EY+ViewController.swift */; };
 		4DFF752B2336077400C7CC24 /* Tax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF752A2336077400C7CC24 /* Tax.swift */; };
 		4DFF752D233608FC00C7CC24 /* TaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF752C233608FC00C7CC24 /* TaxTests.swift */; };
@@ -70,7 +70,6 @@
 		4D111E02233672CE00472BDC /* cardSlide1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardSlide1.wav; sourceTree = "<group>"; };
 		4D111E03233672CE00472BDC /* Birdy_Notification1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Notification1.wav; sourceTree = "<group>"; };
 		4D111E04233672CE00472BDC /* cardSlide8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardSlide8.wav; sourceTree = "<group>"; };
-		4D111E0F2336A83900472BDC /* CardEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEntity.swift; sourceTree = "<group>"; };
 		4D111E112336ABB400472BDC /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		4D111E132336AEDC00472BDC /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		4D111E152336B04300472BDC /* Deck+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+Colors.swift"; sourceTree = "<group>"; };
@@ -105,6 +104,7 @@
 		4DF1509121679E0300D39D65 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4DF38DF7233AC138003771C3 /* Winner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Winner.swift; sourceTree = "<group>"; };
 		4DF38E1A233BF6D7003771C3 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		4DF38E24233D36EC003771C3 /* Yard.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Yard.xcdatamodel; sourceTree = "<group>"; };
 		4DFF75262336067400C7CC24 /* EY+ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EY+ViewController.swift"; sourceTree = "<group>"; };
 		4DFF752A2336077400C7CC24 /* Tax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tax.swift; sourceTree = "<group>"; };
 		4DFF752C233608FC00C7CC24 /* TaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTests.swift; sourceTree = "<group>"; };
@@ -172,7 +172,7 @@
 		4D111E0E2336A82B00472BDC /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				4D111E0F2336A83900472BDC /* CardEntity.swift */,
+				4DF38E23233D36EC003771C3 /* Yard.xcdatamodeld */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -415,11 +415,11 @@
 				4D5CA50E2337E82400EF9F96 /* GameModel.swift in Sources */,
 				4D111E162336B04300472BDC /* Deck+Colors.swift in Sources */,
 				4DFF752B2336077400C7CC24 /* Tax.swift in Sources */,
+				4DF38E25233D36EC003771C3 /* Yard.xcdatamodeld in Sources */,
 				4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */,
 				4D5CA5102337E82D00EF9F96 /* Board.swift in Sources */,
 				4D5CA51A2338011E00EF9F96 /* SalesRule.swift in Sources */,
 				4DF38DF8233AC138003771C3 /* Winner.swift in Sources */,
-				4D111E102336A83900472BDC /* CardEntity.swift in Sources */,
 				4D3C17D92334CEBD0036808F /* Storyboarded.swift in Sources */,
 				4D111E142336AEDC00472BDC /* Card.swift in Sources */,
 				4D5CA5122337EA0200EF9F96 /* Order.swift in Sources */,
@@ -685,6 +685,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4DF38E23233D36EC003771C3 /* Yard.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4DF38E24233D36EC003771C3 /* Yard.xcdatamodel */,
+			);
+			currentVersion = 4DF38E24233D36EC003771C3 /* Yard.xcdatamodel */;
+			path = Yard.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4DA3484820812970006DA164 /* Project object */;
 }
