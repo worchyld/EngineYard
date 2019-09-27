@@ -25,6 +25,7 @@ class ViewController: UIViewController, Storyboarded {
 
 extension ViewController {
 
+    // This is just for testing purposes
     func setupData() {
         let listener = NotificationListener()
         NotificationCenter.default.addObserver(listener, selector: #selector(NotificationListener.handleDidSaveNotification(_:)), name: NSNotification.Name.NSManagedObjectContextDidSave, object: nil)
