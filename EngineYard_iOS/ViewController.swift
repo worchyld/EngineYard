@@ -40,7 +40,7 @@ extension ViewController {
                     print ("\(items.count) results found")
 
                     if (items.count == 0) {
-                        let decks = GameModel().prepare()
+                        let decks = Deck.allDecks()
                         for object in decks {
                             let deck = NSEntityDescription.insertNewObject(forEntityName: "DeckEntity", into: context) as! DeckEntity
 

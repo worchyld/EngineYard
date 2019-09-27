@@ -25,7 +25,7 @@
 		4D3C17DB2334CF7B0036808F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3C17DA2334CF7B0036808F /* ViewController.swift */; };
 		4D3C17DD2334CFCB0036808F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3C17DC2334CFCB0036808F /* MainCoordinator.swift */; };
 		4D5CA50E2337E82400EF9F96 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CA50D2337E82400EF9F96 /* GameModel.swift */; };
-		4D5CA5102337E82D00EF9F96 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CA50F2337E82D00EF9F96 /* Board.swift */; };
+		4D5CA5102337E82D00EF9F96 /* Decks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CA50F2337E82D00EF9F96 /* Decks.swift */; };
 		4D5CA5122337EA0200EF9F96 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CA5112337EA0200EF9F96 /* Order.swift */; };
 		4D5CA5162337F01300EF9F96 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CA5152337F01300EF9F96 /* Constants.swift */; };
 		4D5CA5182337FC6900EF9F96 /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CA5172337FC6900EF9F96 /* ErrorCode.swift */; };
@@ -101,7 +101,7 @@
 		4D3C17DA2334CF7B0036808F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4D3C17DC2334CFCB0036808F /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		4D5CA50D2337E82400EF9F96 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
-		4D5CA50F2337E82D00EF9F96 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		4D5CA50F2337E82D00EF9F96 /* Decks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decks.swift; sourceTree = "<group>"; };
 		4D5CA5112337EA0200EF9F96 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		4D5CA5152337F01300EF9F96 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4D5CA5172337FC6900EF9F96 /* ErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCode.swift; sourceTree = "<group>"; };
@@ -317,13 +317,13 @@
 				4DFF752A2336077400C7CC24 /* Tax.swift */,
 				4DFF753623360ED300C7CC24 /* Wallet.swift */,
 				4D111E112336ABB400472BDC /* Deck.swift */,
+				4D5CA50F2337E82D00EF9F96 /* Decks.swift */,
 				4D111E132336AEDC00472BDC /* Card.swift */,
 				4D111E152336B04300472BDC /* Deck+Colors.swift */,
 				4D111E182336B20900472BDC /* Player.swift */,
 				4D111E172336B20900472BDC /* Hand.swift */,
 				4DE127DD233E776E00F84C57 /* Production.swift */,
 				4D5CA50D2337E82400EF9F96 /* GameModel.swift */,
-				4D5CA50F2337E82D00EF9F96 /* Board.swift */,
 				4D5CA5112337EA0200EF9F96 /* Order.swift */,
 				4D5CA5192338011E00EF9F96 /* SalesRule.swift */,
 				4DF38DF7233AC138003771C3 /* Winner.swift */,
@@ -495,7 +495,7 @@
 				4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */,
 				4DFA7A40233D4887004099B7 /* PlayerEntity+CoreDataProperties.swift in Sources */,
 				4DFA7A49233D5648004099B7 /* PickPlayersViewController.swift in Sources */,
-				4D5CA5102337E82D00EF9F96 /* Board.swift in Sources */,
+				4D5CA5102337E82D00EF9F96 /* Decks.swift in Sources */,
 				4DFA7A3E233D4887004099B7 /* GameEntity+CoreDataProperties.swift in Sources */,
 				4D5CA51A2338011E00EF9F96 /* SalesRule.swift in Sources */,
 				4DF38DF8233AC138003771C3 /* Winner.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  GameBoard.swift
+//  Decks.swift
 //  EngineYard
 //
 //  Created by Amarjit on 22/09/2019.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-extension GameModel {
-    func prepare() -> [Deck] {
+extension Deck {
+    static func allDecks() -> [Deck] {
         let decks = [
             Deck.init(name: "Green.1", cost: 4, generation: .first, color: .green, capacity: 3, numberOfChildren: 4)
             , Deck.init(name: "Red.1", cost: 8, generation: .first, color: .red, capacity: 3, numberOfChildren: 3)
@@ -27,11 +27,12 @@ extension GameModel {
             , Deck.init(name: "Green.5", cost: 56, generation: .fifth, color: .green, capacity: 5, numberOfChildren: 4)
         ]
 
+
+        // add deck subscriber
+        //        let _ = decks.map({
+        //            $0.addSubscriber(self)
+        //        })
+
         return decks
     }
 }
-
-        // add deck subscriber
-//        let _ = decks.map({
-//            $0.addSubscriber(self)
-//        })
