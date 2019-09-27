@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct Order {
-    enum State {
-        case existing
+final class Order {
+    enum State: Int {
+        case existing = 1
         case completed
     }
 

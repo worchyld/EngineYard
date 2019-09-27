@@ -17,7 +17,7 @@ enum HandError: Error, Equatable {
 
 
 // Each player has their own hand of cards
-class Hand {
+final class Hand {
     public private(set) weak var owner: Player?
     public private(set) var cards: [Card] = [Card]()
 

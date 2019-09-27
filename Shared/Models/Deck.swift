@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Deck {
+final class Deck {
     enum State: Int {
         case inactive = 0
         case active

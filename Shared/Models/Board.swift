@@ -8,14 +8,9 @@
 
 import Foundation
 
-struct Board {
-    private let _decks: [Deck]
-    public var decks: [Deck] {
-        return self._decks
-    }
-
-    init() {
-        self._decks = [
+extension GameModel {
+    func prepare() -> [Deck] {
+        let decks = [
             Deck.init(name: "Green.1", cost: 4, generation: .first, color: .green, capacity: 3, numberOfChildren: 4)
             , Deck.init(name: "Red.1", cost: 8, generation: .first, color: .red, capacity: 3, numberOfChildren: 3)
             , Deck.init(name: "Yellow.1", cost: 12, generation: .first, color: .yellow, capacity: 2, numberOfChildren: 2)
@@ -32,9 +27,11 @@ struct Board {
             , Deck.init(name: "Green.5", cost: 56, generation: .fifth, color: .green, capacity: 5, numberOfChildren: 4)
         ]
 
+        return decks
+    }
+}
+
         // add deck subscriber
 //        let _ = decks.map({
 //            $0.addSubscriber(self)
 //        })
-    }
-}

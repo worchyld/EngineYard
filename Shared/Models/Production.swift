@@ -14,7 +14,7 @@ enum ProductionError : Error {
     case cannotUpgradeDownstream
 }
 
-class Production {
+final class Production {
     private var spentUnits: Int
     var units: Int
 

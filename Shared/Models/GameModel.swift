@@ -20,7 +20,6 @@ enum GamePhase: Int {
 }
 
 final class GameModel: NSObject, GKGameModel {
-    var board = Board()
     var phase: GamePhase?
     var players: [GKGameModelPlayer]?
     var activePlayer: GKGameModelPlayer?
@@ -30,7 +29,6 @@ final class GameModel: NSObject, GKGameModel {
 extension GameModel {
     func setGameModel(_ gameModel: GKGameModel) {
         if let sourceModel = gameModel as? GameModel {
-            self.board = sourceModel.board
             self.phase = sourceModel.phase
             guard let activePlayer = sourceModel.activePlayer else {
                 return

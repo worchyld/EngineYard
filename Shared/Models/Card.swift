@@ -16,7 +16,7 @@ enum CardError : Error {
     case cardHasNoParent
 }
 
-class Card {
+final class Card {
     private weak var parent: Deck?
     public private(set) weak var owner: Player?
     private let uid: UUID = UUID()
