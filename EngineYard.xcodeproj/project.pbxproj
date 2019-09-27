@@ -41,6 +41,7 @@
 		4DA5236C208158C8000FFAAB /* EY+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5236B208158C8000FFAAB /* EY+Array.swift */; };
 		4DA92C212156874500AD19B7 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB448C6219F380900F8507F /* EY+Protocols.swift */; };
+		4DE127DE233E776E00F84C57 /* Production.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE127DD233E776E00F84C57 /* Production.swift */; };
 		4DF1509221679E0300D39D65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1509121679E0300D39D65 /* Main.storyboard */; };
 		4DF38DF8233AC138003771C3 /* Winner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF38DF7233AC138003771C3 /* Winner.swift */; };
 		4DF38E1B233BF6D7003771C3 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF38E1A233BF6D7003771C3 /* SecondViewController.swift */; };
@@ -118,6 +119,7 @@
 		4DA5236B208158C8000FFAAB /* EY+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Array.swift"; sourceTree = "<group>"; };
 		4DB448C6219F380900F8507F /* EY+Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Protocols.swift"; sourceTree = "<group>"; };
 		4DC3D84423342D8F0066FE9F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DE127DD233E776E00F84C57 /* Production.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Production.swift; sourceTree = "<group>"; };
 		4DF1509121679E0300D39D65 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4DF38DF7233AC138003771C3 /* Winner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Winner.swift; sourceTree = "<group>"; };
 		4DF38E1A233BF6D7003771C3 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
@@ -306,19 +308,20 @@
 		4DC3D848233431080066FE9F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4D5CA5152337F01300EF9F96 /* Constants.swift */,
+				4D5CA5172337FC6900EF9F96 /* ErrorCode.swift */,
 				4D3C17CA2334B6200036808F /* Message.swift */,
 				4DFF752A2336077400C7CC24 /* Tax.swift */,
 				4DFF753623360ED300C7CC24 /* Wallet.swift */,
 				4D111E112336ABB400472BDC /* Deck.swift */,
 				4D111E132336AEDC00472BDC /* Card.swift */,
 				4D111E152336B04300472BDC /* Deck+Colors.swift */,
-				4D111E172336B20900472BDC /* Hand.swift */,
 				4D111E182336B20900472BDC /* Player.swift */,
+				4D111E172336B20900472BDC /* Hand.swift */,
+				4DE127DD233E776E00F84C57 /* Production.swift */,
 				4D5CA50D2337E82400EF9F96 /* GameModel.swift */,
 				4D5CA50F2337E82D00EF9F96 /* Board.swift */,
 				4D5CA5112337EA0200EF9F96 /* Order.swift */,
-				4D5CA5152337F01300EF9F96 /* Constants.swift */,
-				4D5CA5172337FC6900EF9F96 /* ErrorCode.swift */,
 				4D5CA5192338011E00EF9F96 /* SalesRule.swift */,
 				4DF38DF7233AC138003771C3 /* Winner.swift */,
 			);
@@ -457,6 +460,7 @@
 				4D2A4B8C2195DEB300315524 /* EY+ImageView.swift in Sources */,
 				4D3C17D72334CE730036808F /* Coordinator.swift in Sources */,
 				4DFA7A3F233D4887004099B7 /* PlayerEntity+CoreDataClass.swift in Sources */,
+				4DE127DE233E776E00F84C57 /* Production.swift in Sources */,
 				4DA3488020812A8B006DA164 /* AppDelegate.swift in Sources */,
 				4DA5236C208158C8000FFAAB /* EY+Array.swift in Sources */,
 				4DA5236720815885000FFAAB /* Die.swift in Sources */,

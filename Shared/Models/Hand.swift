@@ -9,11 +9,10 @@
 import Foundation
 
 enum HandError: Error, Equatable {
-    case alreadyHaveCard
-    case cannotFindCard
+    case alreadyHave(card: Card)
+    case cannotFind(card: Card)
     case handIsEmpty
-    case noOwnership
-    case noParent
+    case handHasNoOwner
 }
 
 
@@ -63,24 +62,5 @@ extension Hand {
 extension Hand: CustomStringConvertible {
     var description: String {
         return ("Hand cards #\(self.cards.count)")
-    }
-}
-
-extension HandError {
-    static func == (lhs: HandError, rhs: HandError) -> Bool {
-        switch (lhs, rhs) {
-        case (.alreadyHaveCard, .alreadyHaveCard):
-            return true
-        case (.cannotFindCard, .cannotFindCard):
-            return true
-        case (.handIsEmpty, .handIsEmpty):
-            return true
-        case (.noOwnership, .noOwnership):
-            return true
-        case (.noParent, .noParent):
-            return true
-        default:
-            return false
-        }
     }
 }

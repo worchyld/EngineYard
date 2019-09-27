@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Deck {
+class Deck {
     enum State: Int {
         case inactive = 0
         case active
@@ -35,7 +35,7 @@ struct Deck {
         static let allValues = Array(allRawValues.map{ Generation(rawValue: $0)! })
     }
 
-    private let uid: String = UUID().uuidString
+    private let uid: UUID = UUID()
     let name: String
     let color: Deck.Color
     let generation: Deck.Generation
@@ -62,14 +62,13 @@ struct Deck {
     let orders: [Order]
 
     // Ownership
-    /*
     var owners: [Player]? {
         return self.cards
             .lazy
-            //.flatMap { card in card.owner.map{ (card: card, owner: $0) } }
+            .compactMap { card in card.owner.map{ (card: card, owner: $0) } }
             //.sorted { $0.owner.turnOrder < $1.owner.turnOrder }
             .map { $0.owner }
-    }*/
+    }
 
     init(name: String, cost: Int, generation: Deck.Generation, color: Deck.Color, capacity: Int, numberOfChildren: Int) {
         assert(cost % 4 == 0, "Cost must be a multiple of 4")

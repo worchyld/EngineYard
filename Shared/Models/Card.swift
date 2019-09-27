@@ -8,63 +8,44 @@
 
 import Foundation
 
-enum ProductionError : Error {
-    case mustBePositive
-    case notEnoughUnits
-    case cannotSelectSameCard
+enum CardError : Error {
     case cannotSelectCardFromSameParent
-    case cannotUpgradeDownstream
+    case parentIsObsolete
+    case cardDoesNotExist
+    case cardAlreadyHasOwner
+    case cardHasNoParent
 }
 
 class Card {
-    var units: Int
-    private var spentUnits: Int
+    private weak var parent: Deck?
+    public private(set) weak var owner: Player?
+    private let uid: UUID = UUID()
 
-    init(units: Int = 0) {
-        self.units = units
-        self.spentUnits = 0
-    }
-
-    func spend(units: Int) {
-        do {
-            try canSpend(amount: units)
-        } catch let error {
-            print(error)
-        }
-    }
-
-    private func didSpend(units: Int) {
-        self.spentUnits += units
-        self.units -= units
-    }
-
-    private func reset() {
-        self.units = self.spentUnits
-        self.spentUnits = 0
-    }
-
-    func shift(units: Int, to card: Card) {
-        guard canShift(units: units, to: card) else {
-            return
-        }
-    }
-
-    private func canShift(units: Int, to: Card) -> Bool {
-        return false
+    init(parent: Deck?) {
+        self.parent = parent
     }
 }
 
+extension Card: Equatable {
+    public static func ==(lhs: Card, rhs: Card) -> Bool {
+        return (lhs.uid == rhs.uid)
+    }
+}
 
 extension Card {
-    private func canSpend(amount: Int) throws {
-        guard amount > 0 else {
-            throw ProductionError.mustBePositive
+    func setOwner(as player:Player) {
+        guard canSetOwner(as: player) else {
+            return
         }
-        guard self.units >= amount else {
-            throw ProductionError.notEnoughUnits
+        self.owner = player
+    }
+
+    private func canSetOwner(as player: Player) -> Bool {
+        if let _ = self.owner {
+            return false
         }
-        guard (self.units - amount >= 0) else {
-            throw ProductionError.notEnoughUnits
-        }
+        return true
     }
 }
+
+

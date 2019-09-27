@@ -15,7 +15,7 @@ enum PlayerState: Int {
 }
 
 final class Player {
-    private let uuid: String = UUID().uuidString
+    private let uid: UUID = UUID()
     let name: String
     let isAI: Bool
 
@@ -31,7 +31,7 @@ final class Player {
 
 extension Player : Equatable {
     public static func ==(lhs: Player, rhs: Player) -> Bool {
-        return (lhs.uuid == rhs.uuid)
+        return (lhs.uid == rhs.uid)
     }
 }
 
