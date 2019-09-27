@@ -25,7 +25,7 @@ struct Deck {
         static let allValues = Array(allRawValues.map{ Color(rawValue: $0)! })
     }
     enum Generation: Int {
-        case first = 1
+        case first
         case second
         case third
         case fourth

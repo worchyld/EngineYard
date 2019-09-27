@@ -13,13 +13,11 @@ public enum ErrorCode: Error {
     case noGameBoardDefined
     case noPlayerFound
     case invalidNumberOfPlayers
-    case notYourTurn    
-
+    case notYourTurn
 }
 
-
-extension ErrorCode {
-    public var localizedDescription: String {
+extension ErrorCode : LocalizedError {
+    public var errorDescription: String? {
         switch self {
         case .noGameObjectDefined:
             return NSLocalizedString("** No game object defined **", comment: "System-error: No game object defined message")

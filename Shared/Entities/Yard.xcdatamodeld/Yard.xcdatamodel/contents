@@ -37,7 +37,7 @@
     </entity>
     <elements>
         <element name="CardEntity" positionX="119.78125" positionY="80.38671875" width="128" height="103"/>
-        <element name="DeckEntity" positionX="-92.53125" positionY="69.7265625" width="128" height="208"/>
+        <element name="DeckEntity" positionX="-92.53125" positionY="69.7265625" width="128" height="210"/>
         <element name="GameEntity" positionX="120.5859375" positionY="278.3828125" width="128" height="118"/>
         <element name="PlayerEntity" positionX="355.59375" positionY="239.703125" width="128" height="148"/>
     </elements>
