@@ -17,18 +17,18 @@ final class Board {
         })
     }
 
-    // Helper function return number of .active, .inactive, .rusting, etc
-    public static func count(for state: Deck.State) -> Int {
-        let board = Board.instance
-        return (board.decks.reduce(0) { $0 + ($1.state == state ? 1 : 0) })
-    }
-
     init() {
         self._decks = self.prepare()
     }
 }
 
 extension Board {
+    // Helper function return number of .active, .inactive, .rusting, etc
+    public static func count(for state: Deck.State) -> Int {
+        let board = Board.instance
+        return (board.decks.reduce(0) { $0 + ($1.state == state ? 1 : 0) })
+    }
+
     private func prepare() -> [Deck] {
         // Game has 14 decks
         let decks = [
