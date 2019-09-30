@@ -17,17 +17,10 @@ final class Board {
         })
     }
 
-    var countActive : Int {
-        return (self.decks.reduce(0) { $0 + ($1.state == .active ? 1 : 0) })
-    }
-    var countInactive: Int {
-        return (self.decks.reduce(0) { $0 + ($1.state == .inactive ? 1 : 0) })
-    }
-    var countRusting: Int {
-        return (self.decks.reduce(0) { $0 + ($1.state == .rusting ? 1 : 0) })
-    }
-    var countRusted: Int {
-        return (self.decks.reduce(0) { $0 + ($1.state == .rusted ? 1 : 0) })
+    // Helper function return number of .active, .inactive, .rusting, etc
+    public static func count(for state: Deck.State) -> Int {
+        let board = Board.instance
+        return (board.decks.reduce(0) { $0 + ($1.state == state ? 1 : 0) })
     }
 
     init() {
