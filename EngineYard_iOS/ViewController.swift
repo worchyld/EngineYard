@@ -54,6 +54,8 @@ extension ViewController {
                             deck.setValue(object.productionCost, forKey: "productionCost")
                             deck.setValue(object.state.rawValue, forKey: "state")
 
+                            //: Make children (cards)
+
                             //: Save the context so it's populated with the entities.
                             do {
                                 try context.save()

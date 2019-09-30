@@ -19,11 +19,13 @@ struct Player {
     let name: String
     let isAI: Bool
     let cash: Int
+    let avatar: String
 
-    init(name: String, cash: Int = 0, isAI: Bool = true) {
+    init(name: String, cash: Int = 0, avatar: String = "", isAI: Bool = true) {
         self.name = name
         self.cash = cash
         self.isAI = isAI
+        self.avatar = avatar
     }
 }
 
