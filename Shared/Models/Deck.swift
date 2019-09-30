@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class Deck {
+struct Deck {
     enum State: Int {
         case inactive = 0
         case active
@@ -55,12 +55,13 @@ final class Deck {
         }
         return Int(productionCost / 2)
     }
-    let cards: [Card]
     let capacity: Int
     let numberOfChildren: Int
     let state: Deck.State
     let orders: [Order]
+    let cards: [Card]
 
+    /*
     // Ownership
     var owners: [Player]? {
         return self.cards
@@ -69,6 +70,8 @@ final class Deck {
             //.sorted { $0.owner.turnOrder < $1.owner.turnOrder }
             .map { $0.owner }
     }
+    */
+
 
     init(name: String, cost: Int, generation: Deck.Generation, color: Deck.Color, capacity: Int, numberOfChildren: Int) {
         assert(cost % 4 == 0, "Cost must be a multiple of 4")

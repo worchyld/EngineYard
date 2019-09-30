@@ -8,55 +8,15 @@
 
 import Foundation
 
-enum HandError: Error, Equatable {
+enum HandError: Error {
     case alreadyHave(card: Card)
     case cannotFind(card: Card)
     case handIsEmpty
     case handHasNoOwner
 }
 
-
-// Each player has their own hand of cards
-final class Hand {
-    public private(set) weak var owner: Player?
-    public private(set) var cards: [Card] = [Card]()
-
-    init(owner: Player) {
-        self.owner = owner
-    }
-}
-
-extension Hand {
-    // #TODO
-    // push = add card to hand
-    func push(card: Card) {
-
-    }
-
-    // #TODO
-    func pop(card: Card) {
-
-    }
-
-    // #TODO
-    private func canPush(card: Card) -> Bool {
-        return true
-    }
-
-    // #TODO
-    private func canPop(card: Card) -> Bool {
-        return true
-    }
-
-    // #TODO
-    private func find(card: Card) -> Card? {
-        return nil
-    }
-
-    // #TODO
-    private func find(card: Card) -> Int? {
-        return nil
-    }
+struct Hand {
+    let cards: [Card]
 }
 
 extension Hand: CustomStringConvertible {

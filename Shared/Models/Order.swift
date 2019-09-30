@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class Order {
+struct Order {
     enum State: Int {
         case existing = 1
         case completed

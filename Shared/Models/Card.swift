@@ -16,13 +16,12 @@ enum CardError : Error {
     case cardHasNoParent
 }
 
-final class Card {
-    private weak var parent: Deck?
-    public private(set) weak var owner: Player?
+struct Card {
     private let uid: UUID = UUID()
+    private let units: Int
 
-    init(parent: Deck?) {
-        self.parent = parent
+    init() {
+        self.units = 0
     }
 }
 
@@ -31,21 +30,3 @@ extension Card: Equatable {
         return (lhs.uid == rhs.uid)
     }
 }
-
-extension Card {
-    func setOwner(as player:Player) {
-        guard canSetOwner(as: player) else {
-            return
-        }
-        self.owner = player
-    }
-
-    private func canSetOwner(as player: Player) -> Bool {
-        if let _ = self.owner {
-            return false
-        }
-        return true
-    }
-}
-
-

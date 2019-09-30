@@ -10,6 +10,8 @@ import Foundation
 
 extension Deck {
     static func allDecks() -> [Deck] {
+
+        // Game has 14 decks
         let decks = [
             Deck.init(name: "Green.1", cost: 4, generation: .first, color: .green, capacity: 3, numberOfChildren: 4)
             , Deck.init(name: "Red.1", cost: 8, generation: .first, color: .red, capacity: 3, numberOfChildren: 3)
@@ -25,8 +27,7 @@ extension Deck {
             , Deck.init(name: "Yellow.3", cost: 48, generation: .third, color: .yellow, capacity: 3, numberOfChildren: 3)
             , Deck.init(name: "Red.4", cost: 52, generation: .fourth, color: .red, capacity: 4, numberOfChildren: 4)
             , Deck.init(name: "Green.5", cost: 56, generation: .fifth, color: .green, capacity: 5, numberOfChildren: 4)
-        ]
-
+        ]        
 
         // add deck subscriber
         //        let _ = decks.map({
@@ -36,3 +37,4 @@ extension Deck {
         return decks
     }
 }
+

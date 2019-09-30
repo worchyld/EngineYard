@@ -14,17 +14,15 @@ enum PlayerState: Int {
     case thinking
 }
 
-final class Player {
+struct Player {
     private let uid: UUID = UUID()
     let name: String
     let isAI: Bool
+    let cash: Int
 
-    public private (set) var cash: Int = 0
-    public private (set) var asset: String = ""
-    lazy var hand: Hand = Hand(owner: self) // hand of cards
-
-    init(name: String, isAI: Bool = true) {
+    init(name: String, cash: Int = 0, isAI: Bool = true) {
         self.name = name
+        self.cash = cash
         self.isAI = isAI
     }
 }

@@ -55,7 +55,8 @@ extension GameModel {
     }
 
     func score(for player: GKGameModelPlayer) -> Int {
-        let player = player as! Player
-        return Int(player.cash)
+        //let player = player as! Player
+        //return Int(player.cash)
+        return 0
     }
 }
