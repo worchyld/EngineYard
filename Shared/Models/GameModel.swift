@@ -23,6 +23,7 @@ final class GameModel: NSObject, GKGameModel {
     var phase: GamePhase?
     var players: [GKGameModelPlayer]?
     var activePlayer: GKGameModelPlayer?
+    var board: Board?
 }
 
 // Required by protocol

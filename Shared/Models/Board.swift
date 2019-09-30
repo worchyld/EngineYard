@@ -8,9 +8,33 @@
 
 import Foundation
 
-extension Deck {
-    static func allDecks() -> [Deck] {
+class Board {
+    static var instance = Board()
+    private var _decks: [Deck] = [Deck]()
+    public var decks: [Deck] {
+        return self._decks.sorted(by: { (t1: Deck, t2: Deck) -> Bool in
+            return (t1.cost < t2.cost)
+        })
+    }
 
+    var countActive : Int {
+        return (self.decks.reduce(0) { $0 + ($1.state == .active ? 1 : 0) })
+    }
+    var countInactive: Int {
+        return (self.decks.reduce(0) { $0 + ($1.state == .inactive ? 1 : 0) })
+    }
+    var countRusting: Int {
+        return (self.decks.reduce(0) { $0 + ($1.state == .rusting ? 1 : 0) })
+    }
+    var countRusted: Int {
+        return (self.decks.reduce(0) { $0 + ($1.state == .rusted ? 1 : 0) })
+    }
+
+    init() {
+        self._decks = self.prepare()
+    }
+
+    private func prepare() -> [Deck] {
         // Game has 14 decks
         let decks = [
             Deck.init(name: "Green.1", cost: 4, generation: .first, color: .green, capacity: 3, numberOfChildren: 4)
@@ -27,7 +51,7 @@ extension Deck {
             , Deck.init(name: "Yellow.3", cost: 48, generation: .third, color: .yellow, capacity: 3, numberOfChildren: 3)
             , Deck.init(name: "Red.4", cost: 52, generation: .fourth, color: .red, capacity: 4, numberOfChildren: 4)
             , Deck.init(name: "Green.5", cost: 56, generation: .fifth, color: .green, capacity: 5, numberOfChildren: 4)
-        ]        
+        ]
 
         // add deck subscriber
         //        let _ = decks.map({
@@ -37,4 +61,3 @@ extension Deck {
         return decks
     }
 }
-
