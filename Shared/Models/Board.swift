@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Board {
+final class Board {
     static var instance = Board()
     private var _decks: [Deck] = [Deck]()
     public var decks: [Deck] {
@@ -33,7 +33,9 @@ class Board {
     init() {
         self._decks = self.prepare()
     }
+}
 
+extension Board {
     private func prepare() -> [Deck] {
         // Game has 14 decks
         let decks = [
