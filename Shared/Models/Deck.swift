@@ -15,24 +15,18 @@ struct Deck {
         case rusting
         case rusted = -1 // Obsolescent
     }
-    enum Color: Int {
+    enum Color: Int, CaseIterable {
         case green = 1  // Passenger
         case red    // Fast
         case yellow // Freight
         case blue   // Special
-
-        static let allRawValues = Color.green.rawValue...Color.blue.rawValue
-        static let allValues = Array(allRawValues.map{ Color(rawValue: $0)! })
     }
-    enum Generation: Int {
-        case first
+    enum Generation: Int, CaseIterable  {
+        case first = 1
         case second
         case third
         case fourth
         case fifth
-
-        static let allRawValues = Generation.first.rawValue...Generation.fifth.rawValue
-        static let allValues = Array(allRawValues.map{ Generation(rawValue: $0)! })
     }
 
     private let uid: UUID = UUID()
@@ -93,6 +87,6 @@ extension Deck: Equatable {
 
 extension Deck: CustomStringConvertible {
     public var description: String {
-        return "\(self.color) \(self.generation)"
+        return "\(self.name)"
     }
 }
