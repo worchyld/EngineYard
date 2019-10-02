@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Deck {
+class Deck {
     enum State: Int {
         case inactive = 0
         case active
@@ -53,7 +53,10 @@ struct Deck {
     let numberOfChildren: Int
     let state: Deck.State
     let orders: [Order]
-    //let cards: [Card]
+    private var _cards: [Card] = [Card]()
+    public var cards: [Card] {
+        return self._cards
+    }
 
     /*
     // Ownership
@@ -76,6 +79,9 @@ struct Deck {
         self.capacity = capacity
         self.state = .inactive
         self.orders = [Order]()
+
+        // Functional code to map cards
+        self._cards += (1...numberOfChildren).map{ _ in Card(parent: self) }
     }
 }
 

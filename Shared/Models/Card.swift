@@ -16,12 +16,24 @@ enum CardError : Error {
     case cardHasNoParent
 }
 
-struct Card {
+class Card {
+    private weak var parent: Deck?
+    private weak var owner: Player?
     private let uid: UUID = UUID()
-    private let units: Int
+    let units: Int
 
-    init() {
+    init(parent: Deck) {
         self.units = 0
+        self.parent = parent
+    }
+}
+
+extension Card : CustomStringConvertible {
+    var description: String {
+        guard let parent = self.parent else {
+            return ("\(CardError.cardHasNoParent)")
+        }
+        return parent.name
     }
 }
 
@@ -30,3 +42,11 @@ extension Card: Equatable {
         return (lhs.uid == rhs.uid)
     }
 }
+
+extension Card {
+    func setOwner(owner: Player) {
+        self.owner = owner
+    }
+}
+
+

@@ -15,12 +15,25 @@ enum HandError: Error {
     case handHasNoOwner
 }
 
-struct Hand {
-    let cards: [Card]
+class Hand {
+    private var _cards: [Card] = [Card]()
+    public var cards: [Card] {
+        return self._cards
+    }
 }
 
 extension Hand: CustomStringConvertible {
     var description: String {
         return ("Hand cards #\(self.cards.count)")
+    }
+}
+
+extension Hand {
+    func push(card: Card) {
+
+    }
+
+    func pop(card: Card) {
+
     }
 }

@@ -10,6 +10,7 @@ import Foundation
 
 final class Board {
     static var instance = Board()
+
     private var _decks: [Deck] = [Deck]()
     public var decks: [Deck] {
         return self._decks.sorted(by: { (t1: Deck, t2: Deck) -> Bool in
@@ -25,8 +26,8 @@ final class Board {
 extension Board {
     // Helper function return number of .active, .inactive, .rusting, etc
     public static func count(for state: Deck.State) -> Int {
-        let board = Board.instance
-        return (board.decks.reduce(0) { $0 + ($1.state == state ? 1 : 0) })
+        let instance = Board.instance
+        return (instance.decks.reduce(0) { $0 + ($1.state == state ? 1 : 0) })
     }
 
     private func prepare() -> [Deck] {
