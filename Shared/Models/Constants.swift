@@ -44,7 +44,6 @@ struct Seed {
 struct Meta {
     static let totalDecks: Int = 14 // total number of decks
     static let totalCards: Int = 43 // total number of cards
-    static let totalCapacity: Int = 46 // total capacity of all trains
 
     // There are 43 engine cards:
     // 20 green, 13 red, 7 yellow, 3 blue
@@ -63,7 +62,7 @@ struct Meta {
 
     // There are 14 decks, the makeup of the decks is:
     // 5 green, 4 red, 3 yellow, 2 blue
-    static func numberOfDecks(with color: Deck.Color) -> Int {
+    static func numberOfGenerations(with color: Deck.Color) -> Int {
         switch color {
         case .green:
             return 5

@@ -34,20 +34,11 @@ class Deck {
     let color: Deck.Color
     let generation: Deck.Generation
     let cost: Int
-    var productionCost: Int? {
-        guard (cost % 4 == 0) else {
-            return nil
-        }
+    var productionCost: Int {
         return Int(cost / 2)
     }
-    var income: Int? {
-        guard let productionCost = self.productionCost else {
-            return nil
-        }
-        guard (productionCost % 4 == 0) else {
-            return nil
-        }
-        return Int(productionCost / 2)
+    var income: Int {
+        return Int(productionCost / 2) 
     }
     let capacity: Int
     let numberOfChildren: Int
