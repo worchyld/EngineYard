@@ -74,6 +74,7 @@ class DeckTests: EngineYardTests {
             XCTAssertTrue(deck.cost % 4 == 0)
             XCTAssertTrue(deck.productionCost == Int(deck.cost / 2))
             XCTAssertTrue(deck.income == Int(deck.productionCost / 2))
+            XCTAssertTrue(deck.orders.count == 0)
 
             totalCards += deck.cards.count
 
@@ -81,9 +82,6 @@ class DeckTests: EngineYardTests {
                 counter.increment(with: deck.color)
             }
         }
-
-        print (counter.description)
-        print ("-------")
 
         XCTAssertTrue(totalCards == Meta.totalCards, "\(totalCards). Expected: \(Meta.totalCards)")
         XCTAssertTrue(counter.red == Meta.numberOfCards(with: .red))
