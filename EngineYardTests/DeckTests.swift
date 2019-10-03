@@ -15,6 +15,14 @@ fileprivate struct CardCounter : CustomStringConvertible {
     var yellow : Int = 0
     var red : Int = 0
 
+    struct Expected {
+        static let green: Int = Meta.numberOfCards(with: .green)
+        static let red: Int = Meta.numberOfCards(with: .red)
+        static let blue: Int = Meta.numberOfCards(with: .blue)
+        static let yellow: Int = Meta.numberOfCards(with: .yellow)
+        static let totalCards: Int = Meta.totalCards
+    }
+
     var total : Int {
         return (self.green + self.blue + self.yellow + self.red)
     }
@@ -83,11 +91,11 @@ class DeckTests: EngineYardTests {
             }
         }
 
-        XCTAssertTrue(totalCards == Meta.totalCards, "\(totalCards). Expected: \(Meta.totalCards)")
-        XCTAssertTrue(counter.red == Meta.numberOfCards(with: .red))
-        XCTAssertTrue(counter.green == Meta.numberOfCards(with: .green))
-        XCTAssertTrue(counter.yellow == Meta.numberOfCards(with: .yellow))
-        XCTAssertTrue(counter.blue == Meta.numberOfCards(with: .blue))
+        XCTAssertTrue(totalCards == CardCounter.Expected.totalCards, "\(totalCards). Expected: \(Meta.totalCards)")
+        XCTAssertTrue(counter.red == CardCounter.Expected.red)
+        XCTAssertTrue(counter.green == CardCounter.Expected.green)
+        XCTAssertTrue(counter.yellow == CardCounter.Expected.yellow)
+        XCTAssertTrue(counter.blue == CardCounter.Expected.blue)
     }
 
 }

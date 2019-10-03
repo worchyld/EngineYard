@@ -14,7 +14,7 @@ class ViewController: UIViewController, Storyboarded {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupData()
+        //setupData()
     }
 
     
@@ -26,7 +26,8 @@ class ViewController: UIViewController, Storyboarded {
 extension ViewController {
 
     // This is just for testing purposes
-    func setupData() {
+    private func setupData() {
+        /*
         let listener = NotificationListener()
         NotificationCenter.default.addObserver(listener, selector: #selector(NotificationListener.handleDidSaveNotification(_:)), name: NSNotification.Name.NSManagedObjectContextDidSave, object: nil)
 
@@ -93,7 +94,7 @@ extension ViewController {
                 print("Failed to fetch data request.")
             }
         }
-
+        */
 
 
 
