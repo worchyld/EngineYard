@@ -18,15 +18,14 @@ class Player {
     private let uid: UUID = UUID()
     let name: String
     let isAI: Bool
-    let cash: Int
+    public private (set) var cash: Int = 0
     let avatar: String
     let hand: Hand
 
-    init(name: String, cash: Int = 0, avatar: String = "", isAI: Bool = true) {
+    init(name: String, isAI: Bool = true) {
         self.name = name
-        self.cash = cash
         self.isAI = isAI
-        self.avatar = avatar
+        self.avatar = ""
         self.hand = Hand()
     }
 }

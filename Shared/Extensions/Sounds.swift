@@ -8,17 +8,9 @@
 
 import Foundation
 
-enum EYSounds: String {
+enum Sounds: String, CaseIterable {
     case click = "Birdy_Note5.wav"
     case notify = "Birdy_Notification1.wav"
     case cardOpen = "cardSlide8.wav"
     case cardSlide = "cardSlide1.wav"
-
-    static let allValues:[EYSounds] = [
-        .click,
-        .notify,
-        .cardOpen,
-        .cardSlide
-    ]
-
 }
