@@ -61,8 +61,8 @@ extension SetupManager {
             assertionFailure("GameBoard is not defined")
             return
         }
-
-        guard let seedCash = Constants.NumberOfPlayers.setSeedCash(for: 3) else {
+        let numberPlayers: Int = 3
+        guard let seedCash = Constants.NumberOfPlayers.setSeedCash(for: numberPlayers) else {
             assertionFailure("Invalid number of players")
             return
         }
@@ -103,7 +103,7 @@ extension SetupManager {
 
         //firstDeck.orders.add()
         //lastDeck.orders.add()
-        
+
     }
 }
 
