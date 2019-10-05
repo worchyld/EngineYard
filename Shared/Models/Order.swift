@@ -14,25 +14,29 @@ class Order {
         case completed
     }
 
-    let value: Int
-    private var _state: Order.State
+    let value: Int = 0
+    private var _state: Order.State = .existing
     public var state: Order.State {
         return self._state
     }
 
-    init(_ withValue: Int = 0) {
-        self._state = .existing
-        if (withValue > 0) {
-            self.value = withValue
-        }
-        else {
-            self.value = Die.roll()
-        }
-    }
 }
 
 extension Order : CustomStringConvertible {
     var description: String {
         return "Order: \(self.value) State: \(self.state.rawValue)"
+    }
+}
+
+extension Order {
+    func add(orderValue: Int = 0) -> Int {
+        var value = orderValue
+        if (value == 0) {
+            return value
+        }
+        else {
+            value = Die.roll()
+        }
+        return value
     }
 }

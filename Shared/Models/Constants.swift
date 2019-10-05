@@ -15,6 +15,8 @@ struct Constants {
     public struct NumberOfPlayers {
         public static let min: Int = 3
         public static let max: Int = 5
+        private static let threePlayerSeedCash: Int = 12
+        private static let fivePlayerSeedCash: Int = 14
 
         public static func valid(_ numberOfPlayers: Int) throws -> Bool {
             guard ((Constants.NumberOfPlayers.min ... Constants.NumberOfPlayers.max).contains(numberOfPlayers)) else {
@@ -22,21 +24,16 @@ struct Constants {
             }
             return true
         }
-    }
-}
 
-struct Seed {
-    private static let threePlayerSeedCash: Int = 12
-    private static let fivePlayerSeedCash: Int = 14
-
-    static func cash(for numberOfPlayers: Int) -> Int? {
-        switch numberOfPlayers {
-        case 3:
-            return threePlayerSeedCash
-        case 4, 5:
-            return fivePlayerSeedCash
-        default:
-            return nil
+        public static func setSeedCash(for numberOfPlayers: Int) -> Int? {
+            switch numberOfPlayers {
+            case 3:
+                return threePlayerSeedCash
+            case 4, 5:
+                return fivePlayerSeedCash
+            default:
+                return nil
+            }
         }
     }
 }

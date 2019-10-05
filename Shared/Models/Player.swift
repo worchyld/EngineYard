@@ -18,15 +18,17 @@ class Player {
     private let uid: UUID = UUID()
     let name: String
     let isAI: Bool
-    public private (set) var cash: Int = 0
+    var cash: Int {
+        return 0
+    }
+    let wallet: Wallet = Wallet()
+    lazy var hand: Hand = Hand(owner: self) // hand of cards
     let avatar: String
-    let hand: Hand
 
     init(name: String, isAI: Bool = true) {
         self.name = name
         self.isAI = isAI
         self.avatar = ""
-        self.hand = Hand()
     }
 }
 

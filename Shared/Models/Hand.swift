@@ -16,9 +16,14 @@ enum HandError: Error {
 }
 
 class Hand {
+    public private(set) weak var owner: Player?
     private var _cards: [Card] = [Card]()
     public var cards: [Card] {
         return self._cards
+    }
+
+    init(owner: Player) {
+        self.owner = owner
     }
 }
 
@@ -29,10 +34,17 @@ extension Hand: CustomStringConvertible {
 }
 
 extension Hand {
+    // add card to a players hand
     func push(card: Card) {
-
+        guard let owner = self.owner else {
+            assertionFailure("No player owns this hand")
+            return
+        }
+        card.setOwner(owner: owner)
+        self._cards.append(card)
     }
 
+    // pop a card from a players hand
     func pop(card: Card) {
 
     }

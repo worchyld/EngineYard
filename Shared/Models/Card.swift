@@ -49,4 +49,15 @@ extension Card {
     }
 }
 
+extension Card {
+    public static func findFirstUnownedCard(in deck: Deck) -> Card? {
+        guard let card = (deck.cards.filter({ (card) -> Bool in
+            return (card.owner == nil)
+        }).first) else {
+            return nil
+        }
+
+        return card
+    }
+}
 

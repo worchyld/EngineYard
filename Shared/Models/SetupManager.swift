@@ -30,6 +30,7 @@ class SetupManager {
                     break
 
                 default:
+                    // # TODO
                     assertionFailure("Error -- Invalid number of players")
                     break
                 }
@@ -56,7 +57,53 @@ class SetupManager {
 //
 extension SetupManager {
     private func threePlayerSetup(game: GameModel) {
+        guard let board = game.board else {
+            assertionFailure("GameBoard is not defined")
+            return
+        }
 
+        guard let seedCash = Constants.NumberOfPlayers.setSeedCash(for: 3) else {
+            assertionFailure("Invalid number of players")
+            return
+        }
+
+        for player in game.players as! [Player] {
+            do {
+                let _ = try player.wallet.credit(amount: seedCash)
+            } catch {
+                assertionFailure("`(error)")
+                break
+            }
+        }
+
+        // Get first 2 decks
+        let decks = board.decks[0...1]
+
+        guard let firstDeck = decks.first else {
+            assertionFailure("No first deck found")
+            return
+        }
+
+        guard let lastDeck = decks.last else {
+            assertionFailure("No last deck found")
+            return
+        }
+
+        assert(firstDeck.generation == .first && firstDeck.color == .green)
+        assert(lastDeck.generation == .first && lastDeck.color == .red)
+
+        // Give each player a card from first deck (if possible)
+        for player in game.players as! [Player] {
+            guard let card = Card.findFirstUnownedCard(in: firstDeck) else {
+                assertionFailure("Cant find any unowned cards")
+                return
+            }
+            let _ = player.hand.push(card: card)
+        }
+
+        //firstDeck.orders.add()
+        //lastDeck.orders.add()
+        
     }
 }
 
