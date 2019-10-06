@@ -19,7 +19,7 @@ class Player {
     let name: String
     let isAI: Bool
     public private (set) var cash: Int = 0
-    let wallet: Wallet = Wallet()
+    let wallet: Wallet = Wallet() // REFACTOR: Probably should remove this reference and make the wallet static
     lazy var hand: Hand = Hand(owner: self) // hand of cards
     let avatar: String
 
