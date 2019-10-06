@@ -16,6 +16,11 @@ class Order {
 
     public private (set) var value: Int = 0
     public private (set) var state: Order.State = .existing
+
+    init() {
+        self.value = Order.generate()
+        self.state = .existing
+    }
 }
 
 extension Order : CustomStringConvertible {
@@ -25,9 +30,7 @@ extension Order : CustomStringConvertible {
 }
 
 extension Order {
-    func add(value: Int = 0) -> Int {
-        return 0
+    public static func generate() -> Int {
+        return Die.roll()
     }
-
-    
 }

@@ -336,12 +336,12 @@
 				4D111E182336B20900472BDC /* Player.swift */,
 				4D111E172336B20900472BDC /* Hand.swift */,
 				4D5CA50D2337E82400EF9F96 /* GameModel.swift */,
-				4D5CA5112337EA0200EF9F96 /* Order.swift */,
 				4D5CA5192338011E00EF9F96 /* SalesRule.swift */,
 				4DF38DF7233AC138003771C3 /* Winner.swift */,
 				4DC788F82346EC1200C1A1D6 /* Settings.swift */,
 				4DC788FA2346EEC400C1A1D6 /* SetupManager.swift */,
 				4D0CE5EE2349A402000252C1 /* OrderBook.swift */,
+				4D5CA5112337EA0200EF9F96 /* Order.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

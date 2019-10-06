@@ -9,5 +9,15 @@
 import Foundation
 
 class OrderBook {
+    private weak var deck: Deck?
+    public private (set) var orders: [Order] = [Order]()
 
+    init(deck: Deck) {
+        self.deck = deck
+    }
+
+    func addOrder() {
+        let order = Order()
+        self.orders.append(order)
+    }
 }

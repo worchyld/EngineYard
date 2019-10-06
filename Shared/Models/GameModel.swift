@@ -62,30 +62,3 @@ extension GameModel {
     }
 }
 
-
-//: Game setup function
-extension GameModel {
-
-    public static func setup(players:[Player]) -> GameModel? {
-        do {
-            //let settings = GameConfig()
-
-            guard let game = try SetupManager.instance.setup(players: players) else {
-                assertionFailure("no game model found")
-                return nil
-            }
-
-            return game
-
-        } catch let error {
-            print (error.localizedDescription)
-            assertionFailure(error.localizedDescription)
-            return nil
-        }
-    }
-
-
-    // #TODO
-    func abandon() {
-    }
-}

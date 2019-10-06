@@ -42,8 +42,15 @@ class Deck {
     }
     let capacity: Int
     let numberOfChildren: Int
-    let state: Deck.State
-    let orders: [Order]
+    var state: Deck.State = .inactive
+
+    //: Orders
+    lazy var orderBook: OrderBook = OrderBook(deck: self) // order book & completedOrders book
+    public var orders: [Order] {
+        return self.orderBook.orders
+    }
+
+    //: Cards
     private var _cards: [Card] = [Card]()
     public var cards: [Card] {
         return self._cards
@@ -69,7 +76,6 @@ class Deck {
         self.numberOfChildren = numberOfChildren
         self.capacity = capacity
         self.state = .inactive
-        self.orders = [Order]()
 
         // Functional code to map cards
         self._cards += (1...numberOfChildren).map{ _ in Card(parent: self) }

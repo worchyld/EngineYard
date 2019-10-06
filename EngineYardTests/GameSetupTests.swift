@@ -24,10 +24,7 @@ class GameSetupTests: EngineYardTests {
     }
 
     func createPlayers(howMany: Int) -> [Player]? {
-        do {
-            let _ = try Constants.NumberOfPlayers.valid(howMany)
-        } catch {
-            print (error)
+        guard Constants.Players.valid(howMany) else {
             return nil
         }
         var players: [Player] = [Player]()
@@ -43,8 +40,24 @@ class GameSetupTests: EngineYardTests {
             XCTFail("No players created")
             return
         }
+        
+        guard let mockPlayers: [Player] = SetupManager.createPlayers(howMany: 3) else {
+            XCTFail("Invalid player creation")
+            return
+        }
+        XCTAssertTrue(mockPlayers.count == 3)
 
-        //self.game.setup(with: players)
+        guard let game = SetupManager.instance.setup(players: mockPlayers) else {
+            XCTFail("no game")
+            return
+        }
+        XCTAssertTrue(game.players?.count == 3, ("\(game.players?.count ?? 0)"))
+
+        let _ = game.players.map({
+            print($0)
+
+        })
+
     }
 
 }
