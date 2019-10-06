@@ -35,7 +35,7 @@ extension Hand {
     //: Add card to a players hand
     func push(card: Card) -> Error? {
         do {
-            let result = try canAdd(card: card)
+            let result = try canPush(card: card)
 
             if (result) {
                 self.didPush(card: card)
@@ -51,22 +51,22 @@ extension Hand {
 
     //: Remove a card from a players hand
     func pop(card: Card) -> Error? {
-        do {
-            let result = try canPop(card: card)
-
-            if (result) {
-                self.didPop(card: card)
-                return nil
-            }
-            else {
-                return HandError.couldNotHandleCard(card: card)
-            }
-        } catch let error {
-            return error
-        }
+        // #TODO
+        return nil
     }
 
-    func canAdd(card: Card) throws -> Bool {
+    public static func find(card: Card, in cards:[Card]) -> Card? {
+        guard let card = (cards.filter({
+            return $0 == card
+        }).first) else {
+            return nil
+        }
+        return card
+    }
+}
+
+extension Hand {
+    private func canPush(card: Card) throws -> Bool {
         guard let _ = self.owner else {
             throw HandError.handHasNoOwner
         }
@@ -82,37 +82,25 @@ extension Hand {
         return true
     }
 
-    func canPop(card: Card) throws -> Bool {
-        guard let _ = self.owner else {
-            throw HandError.handHasNoOwner
-        }
-
-        let result = Hand.find(card: card, in: self.cards)
-        guard (result != nil) else {
-            throw HandError.cannotFind(card: card)
-        }
-
+    private func canPop(card: Card) throws -> Bool {
+        // #TODO
         return true
     }
 
-    public static func find(card: Card, in cards:[Card]) -> Card? {
-        guard let card = (cards.filter({
-            return $0 == card
-        }).first) else {
-            return nil
-        }
-        return card
-    }
-}
-
-extension Hand {
     private func didPush(card: Card) {
+        guard let owner = self.owner else {
+            assertionFailure(HandError.handHasNoOwner.localizedDescription)
+            return
+        }
+        card.setOwner(owner: owner)
         self.cards.append(card)
     }
 
     private func didPop(card: Card) {
+        // #TODO
+        /*
         self.cards.removeAll { (c: Card) -> Bool in
             return (c == card)
-        }
+        }*/
     }
 }

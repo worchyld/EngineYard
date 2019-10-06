@@ -98,14 +98,18 @@ extension SetupManager {
             }
         })
 
-        // Give each player: 1x first green card with 1 unit production
-        /*
-        guard let card = (firstDeck.cards.filter({
-            return $0.owner == nil
-        }).first) else {
-            assertionFailure("All cards have an owner")
+        // Give each player: 1x first green card with 1x unit production
+        for p in players as! [Player] {
+            guard let card = Deck.findFirstUnownedCard(in: firstDeck) else {
+                assertionFailure("No card can be found")
+                break
+            }
+            card.add(units: 1)
+            if let result = p.hand.push(card: card) {
+                assertionFailure("\(result)")
+                break
+            }
         }
-        */
     }
 }
 

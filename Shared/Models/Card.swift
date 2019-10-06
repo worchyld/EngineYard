@@ -20,10 +20,10 @@ class Card {
     public private (set) weak var parent: Deck?
     public private (set) weak var owner: Player?
     private let uid: UUID = UUID()
-    let units: Int
+    public private (set) var units: Int = 0
+    private var spentUnits: Int = 0
 
     init(parent: Deck) {
-        self.units = 0
         self.parent = parent
     }
 }
@@ -47,17 +47,25 @@ extension Card {
     func setOwner(owner: Player) {
         self.owner = owner
     }
-}
 
-extension Card {
-    public static func findFirstUnownedCard(in deck: Deck) -> Card? {
-        guard let card = (deck.cards.filter({ (card) -> Bool in
-            return (card.owner == nil)
-        }).first) else {
-            return nil
+    func add(units: Int) {
+        self.units += units
+    }
+
+    func spend(units: Int) {
+        guard (canSpend(units: units)) else {
+            return
         }
+        self.spentUnits += units
+        self.units -= units
+    }
 
-        return card
+    func reset() {
+        self.units += spentUnits
+        self.spentUnits = 0
+    }
+
+    private func canSpend(units: Int) -> Bool {
+        return true
     }
 }
-

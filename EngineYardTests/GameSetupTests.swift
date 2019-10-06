@@ -95,7 +95,13 @@ class GameSetupTests: EngineYardTests {
         })
 
 
+        print ("---")
 
+        for (index, card) in firstDeck.cards.enumerated() {
+            print ("index: \(index), card: \(card), units: \(card.units) self.owner: \(card.owner?.description ?? "None" )")
+        }
+
+        print ("---")
     }
 
 }
