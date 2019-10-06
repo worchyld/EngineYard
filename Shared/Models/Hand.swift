@@ -9,18 +9,16 @@
 import Foundation
 
 enum HandError: Error {
-    case alreadyHave(card: Card)
+    case alreadyHaveCardFromThisDeck
     case cannotFind(card: Card)
     case handIsEmpty
     case handHasNoOwner
+    case couldNotHandleCard(card: Card)
 }
 
 class Hand {
-    public private(set) weak var owner: Player?
-    private var _cards: [Card] = [Card]()
-    public var cards: [Card] {
-        return self._cards
-    }
+    public private (set) weak var owner: Player?
+    public private (set) var cards: [Card] = [Card]()
 
     init(owner: Player) {
         self.owner = owner
@@ -34,18 +32,87 @@ extension Hand: CustomStringConvertible {
 }
 
 extension Hand {
-    // add card to a players hand
-    func push(card: Card) {
-        guard let owner = self.owner else {
-            assertionFailure("No player owns this hand")
-            return
+    //: Add card to a players hand
+    func push(card: Card) -> Error? {
+        do {
+            let result = try canAdd(card: card)
+
+            if (result) {
+                self.didPush(card: card)
+                return nil
+            }
+            else {
+                return HandError.couldNotHandleCard(card: card)
+            }
+        } catch let error {
+            return error
         }
-        card.setOwner(owner: owner)
-        self._cards.append(card)
     }
 
-    // pop a card from a players hand
-    func pop(card: Card) {
+    //: Remove a card from a players hand
+    func pop(card: Card) -> Error? {
+        do {
+            let result = try canPop(card: card)
 
+            if (result) {
+                self.didPop(card: card)
+                return nil
+            }
+            else {
+                return HandError.couldNotHandleCard(card: card)
+            }
+        } catch let error {
+            return error
+        }
+    }
+
+    func canAdd(card: Card) throws -> Bool {
+        guard let _ = self.owner else {
+            throw HandError.handHasNoOwner
+        }
+
+        let results = self.cards.filter({
+            return ($0.parent == card.parent)
+        }).count
+
+        guard (results == 0) else {
+            throw HandError.alreadyHaveCardFromThisDeck
+        }
+
+        return true
+    }
+
+    func canPop(card: Card) throws -> Bool {
+        guard let _ = self.owner else {
+            throw HandError.handHasNoOwner
+        }
+
+        let result = Hand.find(card: card, in: self.cards)
+        guard (result != nil) else {
+            throw HandError.cannotFind(card: card)
+        }
+
+        return true
+    }
+
+    public static func find(card: Card, in cards:[Card]) -> Card? {
+        guard let card = (cards.filter({
+            return $0 == card
+        }).first) else {
+            return nil
+        }
+        return card
+    }
+}
+
+extension Hand {
+    private func didPush(card: Card) {
+        self.cards.append(card)
+    }
+
+    private func didPop(card: Card) {
+        self.cards.removeAll { (c: Card) -> Bool in
+            return (c == card)
+        }
     }
 }
