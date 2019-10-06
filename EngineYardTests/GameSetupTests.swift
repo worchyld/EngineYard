@@ -92,8 +92,8 @@ class GameSetupTests: EngineYardTests {
         let _ = players.map({
             let p = ($0 as! Player)
             XCTAssertTrue(p.cash == Constants.threePlayerSeedCash, "Expected: \(Constants.threePlayerSeedCash). Actual: \(p.cash)")
+            XCTAssertTrue(p.hand.cards.count == 1)
         })
-
 
         print ("---")
 
@@ -101,7 +101,7 @@ class GameSetupTests: EngineYardTests {
             print ("index: \(index), card: \(card), units: \(card.units) self.owner: \(card.owner?.description ?? "None" )")
         }
 
-        print ("---")
+        
     }
 
 }
