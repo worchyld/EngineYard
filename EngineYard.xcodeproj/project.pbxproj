@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D0CE5EF2349A402000252C1 /* OrderBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0CE5EE2349A402000252C1 /* OrderBook.swift */; };
 		4D111E05233672CE00472BDC /* Art.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D111DFF233672CE00472BDC /* Art.xcassets */; };
 		4D111E06233672CE00472BDC /* Birdy_Note5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D111E01233672CE00472BDC /* Birdy_Note5.wav */; };
 		4D111E07233672CE00472BDC /* cardSlide1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D111E02233672CE00472BDC /* cardSlide1.wav */; };
@@ -87,6 +88,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D0CE5EE2349A402000252C1 /* OrderBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBook.swift; sourceTree = "<group>"; };
 		4D111DFF233672CE00472BDC /* Art.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Art.xcassets; sourceTree = "<group>"; };
 		4D111E01233672CE00472BDC /* Birdy_Note5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Note5.wav; sourceTree = "<group>"; };
 		4D111E02233672CE00472BDC /* cardSlide1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardSlide1.wav; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 				4DF38DF7233AC138003771C3 /* Winner.swift */,
 				4DC788F82346EC1200C1A1D6 /* Settings.swift */,
 				4DC788FA2346EEC400C1A1D6 /* SetupManager.swift */,
+				4D0CE5EE2349A402000252C1 /* OrderBook.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */,
 				4D3C17D02334B6200036808F /* Message.swift in Sources */,
 				4D111E1A2336B20900472BDC /* Player.swift in Sources */,
+				4D0CE5EF2349A402000252C1 /* OrderBook.swift in Sources */,
 				4D5CA50E2337E82400EF9F96 /* GameModel.swift in Sources */,
 				4DFA7A3D233D4887004099B7 /* GameEntity+CoreDataClass.swift in Sources */,
 				4D111E162336B04300472BDC /* Deck+Colors.swift in Sources */,
