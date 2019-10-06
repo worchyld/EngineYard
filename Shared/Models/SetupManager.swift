@@ -17,6 +17,7 @@ class SetupManager {
             return nil
         }
         let game: GameModel = GameModel()
+        game.board = Board()
         game.players = (players as [GKGameModelPlayer])
 
         switch players.count {
@@ -65,7 +66,6 @@ extension SetupManager {
 extension SetupManager {
     private func threePlayerSetup(game: GameModel) {
         guard let board = game.board else {
-            assertionFailure("No board")
             return
         }
         // Get first 2 decks

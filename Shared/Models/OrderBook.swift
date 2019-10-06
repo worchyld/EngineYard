@@ -19,7 +19,7 @@ class OrderBook {
     func add() {
         guard let deck = self.deck else {
             assertionFailure("No deck found")
-            return false
+            return
         }
         guard canAdd() else {
             return

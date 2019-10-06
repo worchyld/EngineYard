@@ -91,7 +91,7 @@ class GameSetupTests: EngineYardTests {
 
         let _ = players.map({
             let p = ($0 as! Player)
-            XCTAssertTrue(p.cash == Constants.threePlayerSeedCash)
+            XCTAssertTrue(p.cash == Constants.threePlayerSeedCash, "Expected: \(Constants.threePlayerSeedCash). Actual: \(p.cash)")
         })
 
 
