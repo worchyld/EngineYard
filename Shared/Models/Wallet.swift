@@ -24,9 +24,10 @@ fileprivate protocol WalletHandlerDelegate {
     func handleCredit(amount: Int) -> Int
 }
 
+// Might need to refactor this to be private static functions
 // Simple cash:Int credit/debit handling
-struct Wallet : WalletDelegate {
-    private let balance: Int
+class Wallet : WalletDelegate {
+    public private (set) var balance: Int = 0
 
     init(balance: Int = 0) {
         self.balance = balance
@@ -78,9 +79,11 @@ extension Wallet {
 
 extension Wallet: WalletHandlerDelegate {
     fileprivate func handleDebit(amount: Int) -> Int {
-        return (balance - amount)
+        self.balance -= amount
+        return (self.balance)
     }
     fileprivate func handleCredit(amount: Int) -> Int {
-        return (balance + amount)
+        self.balance += amount
+        return self.balance
     }
 }

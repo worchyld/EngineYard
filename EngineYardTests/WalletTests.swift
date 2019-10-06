@@ -95,10 +95,29 @@ class WalletTests: EngineYardTests {
 
     func testCreditPositiveValue() {
         let balance = 100
-        let amount = balance
+        let creditAmount = balance
 
         let w = Wallet(balance: balance)
 
-        XCTAssertTrue(try w.credit(amount: amount) == balance * 2)
+        XCTAssertTrue(try w.credit(amount: creditAmount) == balance * 2)
+    }
+
+    func testCreditThenDebit() {
+        let openingBalance = 100
+        let credit = 50
+        let debit = 40
+        let w = Wallet(balance: openingBalance)
+
+        XCTAssertTrue(try (w.credit(amount: credit) == 150))
+
+        do {
+            let result = try (w.debit(amount: debit))
+            XCTAssertTrue(result == 110, "\(String(describing: result))")
+        }
+        catch {
+            XCTFail("\(error)")
+        }
+
+        XCTAssertTrue(w.balance == 110)
     }
 }

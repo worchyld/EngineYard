@@ -18,9 +18,7 @@ class Player {
     private let uid: UUID = UUID()
     let name: String
     let isAI: Bool
-    var cash: Int {
-        return 0
-    }
+    public private (set) var cash: Int = 0
     let wallet: Wallet = Wallet()
     lazy var hand: Hand = Hand(owner: self) // hand of cards
     let avatar: String
