@@ -53,6 +53,35 @@ class GameSetupTests: EngineYardTests {
         XCTAssertNotNil(game)
         XCTAssertNotNil(game.players)
 
+        guard let board = game.board else {
+            XCTFail("No board found")
+            return
+        }
+
+        let decksWithOrders = board.decks.filter({
+            return ($0.orders.count > 0)
+        })
+        let activeDecks = board.decks.filter({
+            return ($0.state == .active)
+        }).count
+
+        XCTAssertTrue(decksWithOrders.count == 2)
+        XCTAssertTrue(activeDecks == 2)
+
+        guard let firstDeck = decksWithOrders.first else {
+            XCTFail("No first deck")
+            return
+        }
+        guard let secondDeck = decksWithOrders.last else {
+            XCTFail("No second deck")
+            return
+        }
+        XCTAssertTrue(firstDeck.orders.count == 3)
+        XCTAssertTrue(firstDeck.state == .active)
+        XCTAssertTrue(secondDeck.orders.count == 1)
+        XCTAssertTrue(secondDeck.state == .active)
+
+        // Player testing
         guard let players = game.players else {
             XCTFail("No players defined")
             return
@@ -64,6 +93,8 @@ class GameSetupTests: EngineYardTests {
             let p = ($0 as! Player)
             XCTAssertTrue(p.cash == Constants.threePlayerSeedCash)
         })
+
+
 
     }
 

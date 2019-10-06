@@ -21,7 +21,7 @@ class SetupManager {
 
         switch players.count {
         case 3, 4:
-            threePlayerSetup()
+            threePlayerSetup(game: game)
             break
         case 5:
             fivePlayerSetup()
@@ -63,8 +63,40 @@ extension SetupManager {
 // one unowned First Generation Green card.
 // Each player places one Production Unit counter
 extension SetupManager {
-    private func threePlayerSetup() {
+    private func threePlayerSetup(game: GameModel) {
+        guard let board = game.board else {
+            assertionFailure("No board")
+            return
+        }
+        // Get first 2 decks
+        let firstTwoDecks = board.decks[0...1]
 
+        guard let firstDeck = firstTwoDecks.first else {
+            assertionFailure("No first deck")
+            return
+        }
+        guard let secondDeck = firstTwoDecks.last else {
+            assertionFailure("No second deck")
+            return
+        }
+        for _ in 0...3 {
+            firstDeck.orderBook.add()
+        }
+        secondDeck.orderBook.add()
+
+        guard let players = game.players else {
+            return
+        }
+        let _ = players.map({
+            let p = ($0 as! Player)
+            do {
+                let result = try p.wallet.credit(amount: Constants.threePlayerSeedCash)
+                print ("result: \(result ?? 0)")
+            } catch let error {
+                print (error)
+                return
+            }
+        })
     }
 }
 

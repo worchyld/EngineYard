@@ -16,8 +16,27 @@ class OrderBook {
         self.deck = deck
     }
 
-    func addOrder() {
+    func add() {
+        guard let deck = self.deck else {
+            assertionFailure("No deck found")
+            return false
+        }
+        guard canAdd() else {
+            return
+        }
+        deck.state = .active
         let order = Order()
         self.orders.append(order)
+    }
+
+    private func canAdd() -> Bool {
+        guard let deck = self.deck else {
+            assertionFailure("No deck found")
+            return false
+        }
+        guard (deck.orders.count < deck.capacity) else {
+            return false
+        }
+        return true
     }
 }
