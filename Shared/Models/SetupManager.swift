@@ -25,7 +25,7 @@ class SetupManager {
             threePlayerSetup(game: game)
             break
         case 5:
-            fivePlayerSetup()
+            fivePlayerSetup(game: game)
             break
         default:
             assertionFailure("Invalid player count")
@@ -97,16 +97,45 @@ extension SetupManager {
                 return
             }
         })
+
+        // Give each player: 1x first green card with 1 unit production
+        /*
+        guard let card = (firstDeck.cards.filter({
+            return $0.owner == nil
+        }).first) else {
+            assertionFailure("All cards have an owner")
+        }
+        */
     }
 }
 
 //    # Setup for 5 players:
 //    + Give each player 14 coins.
 //    + No one starts with a locomotive card in play.
-//    + Roll only 1 die and place it in the Initial Orders
-//    area of the First Generation of the green Passenger locomotive.\
+//    + First deck gets 1 order
 extension SetupManager {
-    private func fivePlayerSetup() {
+    private func fivePlayerSetup(game: GameModel) {
+        guard let board = game.board else {
+            return
+        }
+        guard let firstDeck = board.decks.first else {
+            assertionFailure("No first deck")
+            return
+        }
+        firstDeck.orderBook.add()
 
+        // Player setup
+        guard let players = game.players else {
+            return
+        }
+        let _ = players.map({
+            let p = ($0 as! Player)
+            do {
+                let _ = try p.wallet.credit(amount: Constants.fivePlayerSeedCash)
+            } catch let error {
+                print (error)
+                return
+            }
+        })
     }
 }

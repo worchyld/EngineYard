@@ -17,8 +17,8 @@ enum CardError : Error {
 }
 
 class Card {
-    private weak var parent: Deck?
-    private weak var owner: Player?
+    public private (set) weak var parent: Deck?
+    public private (set) weak var owner: Player?
     private let uid: UUID = UUID()
     let units: Int
 
