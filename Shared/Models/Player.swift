@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import GameplayKit
 
 enum PlayerState: Int {
     case inactive
@@ -14,8 +15,9 @@ enum PlayerState: Int {
     case thinking
 }
 
-class Player {
-    private let uid: UUID = UUID()
+class Player : NSObject, GKGameModelPlayer {
+    var playerId: Int
+    
     let name: String
     let isAI: Bool
     public private (set) var cash: Int = 0
@@ -27,17 +29,18 @@ class Player {
         self.name = name
         self.isAI = isAI
         self.avatar = ""
+        self.playerId = 0
     }
 }
 
-extension Player : Equatable {
+extension Player {
     public static func ==(lhs: Player, rhs: Player) -> Bool {
-        return (lhs.uid == rhs.uid)
+        return (lhs.playerId == rhs.playerId)
     }
 }
 
-extension Player : CustomStringConvertible {
-    var description: String {
+extension Player  {
+    override var description: String {
         return ("\(self.name), cash: $\(self.cash)")
     }
 }

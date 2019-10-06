@@ -46,16 +46,23 @@ class GameSetupTests: EngineYardTests {
             return
         }
         XCTAssertTrue(mockPlayers.count == 3)
-
         guard let game = SetupManager.instance.setup(players: mockPlayers) else {
             XCTFail("no game")
             return
         }
-        XCTAssertTrue(game.players?.count == 3, ("\(game.players?.count ?? 0)"))
+        XCTAssertNotNil(game)
+        XCTAssertNotNil(game.players)
 
-        let _ = game.players.map({
-            print($0)
+        guard let players = game.players else {
+            XCTFail("No players defined")
+            return
+        }
 
+        XCTAssertTrue(players.count == 3)
+
+        let _ = players.map({
+            let p = ($0 as! Player)
+            XCTAssertTrue(p.cash == Constants.threePlayerSeedCash)
         })
 
     }

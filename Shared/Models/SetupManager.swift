@@ -17,9 +17,20 @@ class SetupManager {
             return nil
         }
         let game: GameModel = GameModel()
-        for p in players {
-            game.players?.append(p as! GKGameModelPlayer)
+        game.players = (players as [GKGameModelPlayer])
+
+        switch players.count {
+        case 3, 4:
+            threePlayerSetup()
+            break
+        case 5:
+            fivePlayerSetup()
+            break
+        default:
+            assertionFailure("Invalid player count")
+            break
         }
+        
         return game
     }
 }
