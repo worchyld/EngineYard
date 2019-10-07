@@ -56,8 +56,7 @@ class Deck {
         return self._cards
     }
 
-    /*
-    // Ownership
+    //: Ownership
     var owners: [Player]? {
         return self.cards
             .lazy
@@ -65,7 +64,7 @@ class Deck {
             //.sorted { $0.owner.turnOrder < $1.owner.turnOrder }
             .map { $0.owner }
     }
-    */
+
 
     init(name: String, cost: Int, generation: Deck.Generation, color: Deck.Color, capacity: Int, numberOfChildren: Int) {
         assert(cost % 4 == 0, "Cost must be a multiple of 4")

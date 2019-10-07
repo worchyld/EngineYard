@@ -35,17 +35,27 @@ class GameSetupTests: EngineYardTests {
         return players
     }
 
+    // # Tests for a 3 player game
+    // Each player has 12 coins
+    // Each player has 1x First Generation Green card with 1 unit
+    // First two decks are considered active
+    // First deck has 3 orders in a `active` state
+    // First deck has 3 owners (3 player game).  Other cards in this deck must have 0 owners.
+    // Second deck has 1 order in a `active` state
+    // Only 2 decks should have owners, orders and be `active`    
     func testThreePlayerGameSetup() {
-        guard let _ = self.createPlayers(howMany: 3) else {
+        let playerCount = 3
+
+        guard let _ = self.createPlayers(howMany: playerCount) else {
             XCTFail("No players created")
             return
         }
         
-        guard let mockPlayers: [Player] = SetupManager.createPlayers(howMany: 3) else {
+        guard let mockPlayers: [Player] = SetupManager.createPlayers(howMany: playerCount) else {
             XCTFail("Invalid player creation")
             return
         }
-        XCTAssertTrue(mockPlayers.count == 3)
+        XCTAssertTrue(mockPlayers.count == playerCount)
         guard let game = SetupManager.instance.setup(players: mockPlayers) else {
             XCTFail("no game")
             return
@@ -63,10 +73,10 @@ class GameSetupTests: EngineYardTests {
         })
         let activeDecks = board.decks.filter({
             return ($0.state == .active)
-        }).count
+        })
 
         XCTAssertTrue(decksWithOrders.count == 2)
-        XCTAssertTrue(activeDecks == 2)
+        XCTAssertTrue(activeDecks.count == 2)
 
         guard let firstDeck = decksWithOrders.first else {
             XCTFail("No first deck")
@@ -95,13 +105,88 @@ class GameSetupTests: EngineYardTests {
             XCTAssertTrue(p.hand.cards.count == 1)
         })
 
-        print ("---")
-
         for (index, card) in firstDeck.cards.enumerated() {
             print ("index: \(index), card: \(card), units: \(card.units) self.owner: \(card.owner?.description ?? "None" )")
+            if (index < 3) {
+                XCTAssertNotNil(card.owner)
+                XCTAssertTrue(card.units == 1)
+            }
+            else {
+                XCTAssertNil(card.owner)
+                XCTAssertTrue(card.units == 0)
+            }
+
+            XCTAssertTrue(card.parent?.generation == .first)
+            XCTAssertTrue(card.parent?.color == .green)
+        }
+    }
+
+    // # Tests for a 5 player game:
+    // + Each player has 14 coins.
+    // + No player should have any cards && no cards should have any owners.
+    // + First deck gets 1 order and be considered `active`
+    // + 1 deck should be `active` (first deck)
+    // + No deck should have any owners
+    func testFivePlayerSetup() {
+        let playerCount = 5
+
+        guard let _ = self.createPlayers(howMany: playerCount) else {
+            XCTFail("No players created")
+            return
         }
 
-        
+        guard let mockPlayers: [Player] = SetupManager.createPlayers(howMany: playerCount) else {
+            XCTFail("Invalid player creation")
+            return
+        }
+        XCTAssertTrue(mockPlayers.count == playerCount)
+        guard let game = SetupManager.instance.setup(players: mockPlayers) else {
+            XCTFail("no game")
+            return
+        }
+        XCTAssertNotNil(game)
+        XCTAssertNotNil(game.players)
+
+        guard let board = game.board else {
+            XCTFail("No board found")
+            return
+        }
+
+        let decksWithOrders = board.decks.filter({
+            return ($0.orders.count > 0)
+        })
+        let activeDecks = board.decks.filter({
+            return ($0.state == .active)
+        })
+
+        XCTAssertTrue(decksWithOrders.count == 1)
+        XCTAssertTrue(activeDecks.count == 1)
+
+        guard let firstDeck = board.decks.first else {
+            XCTFail("No first deck")
+            return
+        }
+
+        XCTAssertTrue(firstDeck.orders.count == 1)
+
+        let _ = board.decks.map({
+            XCTAssertTrue($0.owners?.count == 0)
+        })
+
+        // Player testing
+        guard let players = game.players else {
+            XCTFail("No players defined")
+            return
+        }
+
+        XCTAssertTrue(players.count == 5)
+
+        let _ = players.map({
+            let p = ($0 as! Player)
+            XCTAssertTrue(p.cash == Constants.fivePlayerSeedCash, "Expected: \(Constants.fivePlayerSeedCash). Actual: \(p.cash)")
+            XCTAssertTrue(p.hand.cards.count == 0)
+        })
+
     }
 
 }
