@@ -20,13 +20,44 @@ class WinnerTests: EngineYardTests {
     }
 
     func testEndCashGoal() {
-        let cash = [0,299,300,329,330,331]
+        let values = [0,299,300,329,330,331]
 
-        let filtered = cash.filter({
-            return ($0 >= Constants.endGameCashTrigger)
+        let filtered = values.filter({
+            return Constants.hasReachedGoal($0)
         })
 
         XCTAssertTrue(filtered.count == 2)
+    }
+
+    func testWinningPlayer() {
+        let players = Mock.players(howMany: 5)!
+
+        var filtered = players.filter({
+            return Constants.hasReachedGoal($0.cash)
+        })
+
+        XCTAssertTrue(filtered.count == 0)
+
+        guard let firstPlayer = players.first else {
+            XCTFail("No first player")
+            return
+        }
+
+        let amount = 330
+        do {
+            let _ = try (firstPlayer.wallet.credit(amount: amount))
+        } catch {
+            XCTFail("\(error)")
+            return
+        }
+
+        filtered = players.filter({
+            return (Constants.hasReachedGoal($0.cash))
+        })
+
+        XCTAssertTrue(filtered.count == 1)
+
+
     }
 
 }

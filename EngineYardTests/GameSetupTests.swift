@@ -23,18 +23,6 @@ class GameSetupTests: EngineYardTests {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func createPlayers(howMany: Int) -> [Player]? {
-        guard Constants.Players.valid(howMany) else {
-            return nil
-        }
-        var players: [Player] = [Player]()
-        for index in stride(from:0, to: howMany, by: 1) {
-            let player = Player(name: "Player #\(index)", isAI: true)
-            players.append(player)
-        }
-        return players
-    }
-
     // # Tests for a 3 player game
     // Each player has 12 coins
     // Each player has 1x First Generation Green card with 1 unit
@@ -46,7 +34,7 @@ class GameSetupTests: EngineYardTests {
     func testThreePlayerGameSetup() {
         let playerCount = 3
 
-        guard let _ = self.createPlayers(howMany: playerCount) else {
+        guard let _ = Mock.players(howMany: playerCount) else {
             XCTFail("No players created")
             return
         }
@@ -130,7 +118,7 @@ class GameSetupTests: EngineYardTests {
     func testFivePlayerSetup() {
         let playerCount = 5
 
-        guard let _ = self.createPlayers(howMany: playerCount) else {
+        guard let _ = Mock.players(howMany: playerCount) else {
             XCTFail("No players created")
             return
         }

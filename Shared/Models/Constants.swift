@@ -13,7 +13,11 @@ struct Constants {
     public static let endGameCashTrigger: Int = 330 // Game ends when a player hits 330 coins or more
     public static let threePlayerSeedCash: Int = 12
     public static let fivePlayerSeedCash: Int = 14
-    
+
+    public static func hasReachedGoal(_ cash: Int) -> Bool {
+        return (cash >= Constants.endGameCashTrigger)
+    }
+
     public struct Players {
         public static let min: Int = 3
         public static let max: Int = 5
