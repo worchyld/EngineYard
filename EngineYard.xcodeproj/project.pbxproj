@@ -42,6 +42,8 @@
 		4DA5236C208158C8000FFAAB /* EY+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5236B208158C8000FFAAB /* EY+Array.swift */; };
 		4DA92C212156874500AD19B7 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB448C6219F380900F8507F /* EY+Protocols.swift */; };
+		4DC55162235A373100623833 /* SalesRulesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC55161235A373100623833 /* SalesRulesTests.swift */; };
+		4DC55164235A37DC00623833 /* SalesRuleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC55163235A37DC00623833 /* SalesRuleHandler.swift */; };
 		4DC788F72346E8EB00C1A1D6 /* GameSetupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC788F62346E8EB00C1A1D6 /* GameSetupTests.swift */; };
 		4DC788F92346EC1200C1A1D6 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC788F82346EC1200C1A1D6 /* Settings.swift */; };
 		4DC788FB2346EEC400C1A1D6 /* SetupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC788FA2346EEC400C1A1D6 /* SetupManager.swift */; };
@@ -126,6 +128,8 @@
 		4DA5236B208158C8000FFAAB /* EY+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Array.swift"; sourceTree = "<group>"; };
 		4DB448C6219F380900F8507F /* EY+Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Protocols.swift"; sourceTree = "<group>"; };
 		4DC3D84423342D8F0066FE9F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DC55161235A373100623833 /* SalesRulesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesRulesTests.swift; sourceTree = "<group>"; };
+		4DC55163235A37DC00623833 /* SalesRuleHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesRuleHandler.swift; sourceTree = "<group>"; };
 		4DC788F62346E8EB00C1A1D6 /* GameSetupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetupTests.swift; sourceTree = "<group>"; };
 		4DC788F82346EC1200C1A1D6 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		4DC788FA2346EEC400C1A1D6 /* SetupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupManager.swift; sourceTree = "<group>"; };
@@ -271,6 +275,7 @@
 				4DE21C2823452D8D00155575 /* DeckTests.swift */,
 				4DE21C2A2345C95600155575 /* WinnerTests.swift */,
 				4DC788F62346E8EB00C1A1D6 /* GameSetupTests.swift */,
+				4DC55161235A373100623833 /* SalesRulesTests.swift */,
 			);
 			path = EngineYardTests;
 			sourceTree = "<group>";
@@ -337,6 +342,7 @@
 				4D111E172336B20900472BDC /* Hand.swift */,
 				4D5CA50D2337E82400EF9F96 /* GameModel.swift */,
 				4D5CA5192338011E00EF9F96 /* SalesRule.swift */,
+				4DC55163235A37DC00623833 /* SalesRuleHandler.swift */,
 				4DF38DF7233AC138003771C3 /* Winner.swift */,
 				4DC788F82346EC1200C1A1D6 /* Settings.swift */,
 				4DC788FA2346EEC400C1A1D6 /* SetupManager.swift */,
@@ -489,6 +495,7 @@
 				4D111E192336B20900472BDC /* Hand.swift in Sources */,
 				4D5CA5182337FC6900EF9F96 /* ErrorCode.swift in Sources */,
 				4DFF753223360BA700C7CC24 /* Fonts.swift in Sources */,
+				4DC55164235A37DC00623833 /* SalesRuleHandler.swift in Sources */,
 				4DFA7A36233D4869004099B7 /* DeckEntity+CoreDataProperties.swift in Sources */,
 				4DA52369208158A8000FFAAB /* EY+Colors.swift in Sources */,
 				4DFF753323360BA700C7CC24 /* Sounds.swift in Sources */,
@@ -534,6 +541,7 @@
 				4DFF75392336155C00C7CC24 /* WalletTests.swift in Sources */,
 				4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */,
 				4DFF752D233608FC00C7CC24 /* TaxTests.swift in Sources */,
+				4DC55162235A373100623833 /* SalesRulesTests.swift in Sources */,
 				4DA92C212156874500AD19B7 /* (null) in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
