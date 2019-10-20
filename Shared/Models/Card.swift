@@ -69,3 +69,29 @@ extension Card {
         return true
     }
 }
+
+
+extension Card {
+    public static func find(card: Card, in cards:[Card]) -> Card? {
+        guard let card = (cards.filter({
+            return $0 == card
+        }).first) else {
+            return nil
+        }
+        return card
+    }
+
+    public static func findIndexOf(card: Card, in cards:[Card]) -> Int? {
+        guard (cards.count > 0) else {
+            return nil
+        }
+
+        guard let index = (cards.firstIndex { (c: Card) -> Bool in
+            return (c == card)
+        }) else {
+            return nil
+        }
+
+        return index
+    }
+}

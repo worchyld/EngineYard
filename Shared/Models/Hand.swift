@@ -55,57 +55,40 @@ extension Hand {
         // #TODO
         return nil
     }
-}
 
-// Public static functions
-extension Card {
-    public static func find(card: Card, in cards:[Card]) -> Card? {
-        guard let card = (cards.filter({
-            return $0 == card
-        }).first) else {
-            return nil
-        }
-        return card
-    }
-
-    public static func findIndexOf(card: Card, in cards:[Card]) -> Int? {
-        guard (cards.count > 0) else {
-            return nil
-        }
-
-        guard let index = (cards.firstIndex { (c: Card) -> Bool in
-            return (c == card)
-        }) else {
-            return nil
-        }
-
-        return index
+    public static func containsParent(deck: Deck) -> Bool {
+        let filter = deck.cards.contains(where: {
+            return ($0.parent == deck)
+        })
+        return filter
     }
 }
 
 extension Hand {
-    private func canPush(card: Card) throws -> Bool {
+    // Rules:
+    // Can't add if its from same deck
+    // Can't add duplicates
+    // Parent and owner must exist
+    internal func canPush(card: Card) throws -> Bool {
         guard let _ = self.owner else {
+            print ("Hand error 1: \(String(describing: self.owner))")
             throw HandError.handHasNoOwner
         }
-        guard let _ = card.parent else {
+        guard card.owner == nil else {            
+            throw CardError.cardAlreadyHasOwner
+        }
+        guard let deck = card.parent else {
             throw CardError.cardHasNoParent
         }
-
-        let results = self.cards.filter({
-            return ($0.parent == card.parent)
-        }).count
-
-        if (results > 0) {
+        guard (Hand.containsParent(deck: deck) == false) else {
+            throw HandError.alreadyHaveCardFromThisDeck
+        }
+        guard (deck.cards.filter({
+            return ($0.owner == self.owner)
+        }).count == 0) else {
             throw HandError.alreadyHaveCardFromThisDeck
         }
 
-
-        return true
-    }
-
-    private func canPop(card: Card) throws -> Bool {
-        // #TODO
         return true
     }
 
@@ -116,6 +99,11 @@ extension Hand {
         }
         card.setOwner(owner: owner)
         self.cards.append(card)
+    }
+
+    internal func canPop(card: Card) throws -> Bool {
+        // #TODO
+        return true
     }
 
     private func didPop(card: Card) {
