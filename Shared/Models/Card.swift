@@ -8,12 +8,17 @@
 
 import Foundation
 
-enum CardError : Error {
+enum CardError : Error, Equatable {
     case cannotSelectCardFromSameParent
     case parentIsObsolete
     case cardDoesNotExist
     case cardAlreadyHasOwner
     case cardHasNoParent
+    case alreadyHaveCardFromThisDeck
+    case cannotFind(card: Card)
+    case handIsEmpty
+    case handHasNoOwner
+    case couldNotHandleCard(card: Card)
 }
 
 class Card {

@@ -62,7 +62,7 @@ class HandTests: EngineYardTests {
         XCTAssertTrue(firstPlayer.hand.cards.count == 1)
 
         XCTAssertThrowsError(try (firstPlayer.hand.push(card: firstCard)), "Failed") { (error) in
-            XCTAssertEqual(error as! HandError, HandError.alreadyHaveCardFromThisDeck)
+            XCTAssertEqual(error as! CardError, CardError.cardAlreadyHasOwner)
         }
 
         XCTAssertTrue(firstPlayer.hand.cards.count == 1)
@@ -104,7 +104,7 @@ class HandTests: EngineYardTests {
         }
 
         XCTAssertThrowsError(try (firstPlayer.hand.push(card: nextCard)), "Failed") { (error) in
-            XCTAssertEqual(error as! HandError, HandError.alreadyHaveCardFromThisDeck)
+            XCTAssertEqual(error as! CardError, CardError.cardAlreadyHasOwner)
         }
 
         XCTAssertTrue(firstPlayer.hand.cards.count == 1)
@@ -143,7 +143,7 @@ class HandTests: EngineYardTests {
                     XCTFail("No unowned card")
                     return
                 }
-                XCTAssertTrue(try player.hand.canPush(card: firstCard))
+                XCTAssertNotNil(try player.hand.canPush(card: firstCard))
                 XCTAssertNoThrow(try player.hand.push(card: firstCard))
                 XCTAssertTrue(player.hand.size == 1)
             }
