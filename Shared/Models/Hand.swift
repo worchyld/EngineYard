@@ -80,9 +80,9 @@ extension Hand {
         guard let deck = card.parent else {
             throw CardError.cardHasNoParent
         }
-        guard (Hand.containsParent(deck: deck) == false) else {
-            throw HandError.alreadyHaveCardFromThisDeck
-        }
+//        guard (Hand.containsParent(deck: deck) == false) else {
+//            throw HandError.alreadyHaveCardFromThisDeck
+//        }
         guard (deck.cards.filter({
             return ($0.owner == self.owner)
         }).count == 0) else {

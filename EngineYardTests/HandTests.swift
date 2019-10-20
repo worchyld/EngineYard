@@ -130,39 +130,28 @@ class HandTests: EngineYardTests {
             return
         }
 
-//
-//        // Try to add all 4 cards from first train to 5 players;
-//        // this should assign 4 players and leave 1 with no card
-//
-//        for (index, player) in players.enumerated() {
-//            print ("#\(index)- Adding to player's hand \(player.name) -- \(player.hand.cards.count)")
-//
-//            guard let firstCard = Deck.findFirstUnownedCard(in: firstDeck) else {
-//                XCTFail("No card found")
-//                return
-//            }
-//
-//            if (index < firstDeck.numberOfChildren) {
-//                XCTAssertFalse(Hand.containsParent(deck: firstDeck))
-//            }
-//
-//            /*
-//            if (index < firstDeck.numberOfChildren) {
-//                XCTAssertFalse(Hand.containsParent(deck: firstDeck))
-//                XCTAssertTrue(try player.hand.canPush(card: firstCard))
-//                XCTAssertNoThrow(try (player.hand.push(card: firstCard)))
-//                XCTAssertTrue(player.hand.size == 1)
-//
-//                let _ = player.hand.cards.map({
-//                    XCTAssertNotNil($0.owner)
-//                    XCTAssertTrue($0.parent == firstDeck)
-//                })
-//            }
-//            else {
-//                XCTAssertFalse(try player.hand.canPush(card: firstCard))
-//                XCTAssertTrue(player.hand.size == 0)
-//            }*/
-//        }
+        // Try to add all 4 cards from first train to 5 players;
+        // this should assign 4 players and leave 1 with no card
+
+        for (index, player) in players.enumerated() {
+            print ("#\(index)- Adding to player's hand \(player.name) -- \(player.hand.cards.count)")
+
+            if (index < firstDeck.numberOfChildren) {
+
+
+                guard let firstCard = (Deck.findFirstUnownedCard(in: firstDeck)) else {
+                    XCTFail("No unowned card")
+                    return
+                }
+                XCTAssertTrue(try player.hand.canPush(card: firstCard))
+                XCTAssertNoThrow(try player.hand.push(card: firstCard))
+                XCTAssertTrue(player.hand.size == 1)
+            }
+            else {
+
+            }
+        }
+
     }
 
     // Expect: Wallet test: Don't add card if can't afford it
