@@ -38,7 +38,7 @@ extension Card : CustomStringConvertible {
         guard let parent = self.parent else {
             return ("\(CardError.cardHasNoParent)")
         }
-        return parent.name
+        return ("name: \(parent.name), owner: \(String(describing: self.owner)), units: \(self.units)")
     }
 }
 

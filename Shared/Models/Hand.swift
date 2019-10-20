@@ -53,6 +53,9 @@ extension Hand {
         guard let deck = cardObj.parent else {
             throw CardError.cardHasNoParent
         }
+        if (cardObj.owner != nil) {
+            throw CardError.cardAlreadyHasOwner
+        }
         guard self.alreadyHaveCardInHand(card: cardObj) else {
             throw CardError.cardAlreadyHasOwner
         }

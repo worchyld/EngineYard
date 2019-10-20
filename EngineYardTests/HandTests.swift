@@ -137,8 +137,6 @@ class HandTests: EngineYardTests {
             print ("#\(index)- Adding to player's hand \(player.name) -- \(player.hand.cards.count)")
 
             if (index < firstDeck.numberOfChildren) {
-
-
                 guard let firstCard = (Deck.findFirstUnownedCard(in: firstDeck)) else {
                     XCTFail("No unowned card")
                     return
@@ -186,5 +184,79 @@ class HandTests: EngineYardTests {
         }
     }
 
-    // #TODO: Remove card from hand
+    // Expect: Another player can't add a card if its claimed by another player
+    func testCannotAddCardAlreadyTaken() {
+        guard let game = self.game else {
+            XCTFail("No game")
+            return
+        }
+        guard let board = game.board else {
+            XCTFail("No board")
+            return
+        }
+        guard let players: [Player] = game.players as? [Player] else {
+            XCTFail("No players")
+            return
+        }
+        guard let firstDeck = board.decks.first else {
+            XCTFail("No deck found")
+            return
+        }
+        guard let firstCard = (Deck.findFirstUnownedCard(in: firstDeck)) else {
+            XCTFail("No unowned card")
+            return
+        }
+
+        for (index, player) in players.enumerated() {
+            if (index == 0) {
+                XCTAssertNotNil(try player.hand.canPush(card: firstCard))
+                XCTAssertNoThrow(try player.hand.push(card: firstCard))
+                XCTAssertTrue(player.hand.size == 1)
+            }
+            else {
+                print (firstCard.description)
+                XCTAssertThrowsError(try (player.hand.push(card: firstCard)), "Failed on #\(index)") { (error) in
+                    XCTAssertEqual(error as! CardError, CardError.cardAlreadyHasOwner)
+                }
+                XCTAssertTrue(player.hand.size == 0)
+            }
+        }
+    }
+
+    // MARK: Find card tests
+    // ---------------------------------
+
+    // Expect: Find card in hand
+    func testFindCardByIndex() {
+
+    }
+
+    // Expect: Find card by card object
+    func testFindCardByCardObject() {
+
+    }
+
+    // Expect can't find card in hand
+    func testFindCardByIndexFails() {
+
+    }
+
+    // Expect can't find card in hand
+    func testFindCardByCardObjectFails() {
+
+    }
+
+
+    // MARK: Remove card tests
+    // ---------------------------------
+    // #TODO: Pop/Remove card from hand
+
+    // Expect: Can't pop hand when its empty
+    func testPopCardWhenHandIsEmpty() {
+
+    }
+
+    func testPopCard() {
+
+    }
 }
