@@ -227,12 +227,12 @@ class HandTests: EngineYardTests {
     // ---------------------------------
 
     // Expect: Find card in hand
-    func testFindCardByIndex() {
+    func testFindCardAndGetIndex() {
 
     }
 
     // Expect: Find card by card object
-    func testFindCardByCardObject() {
+    func testFindCardAndGetCardObject() {
 
     }
 
