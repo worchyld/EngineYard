@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum HandError: Error {
+enum HandError: Error, Equatable {
     case alreadyHaveCardFromThisDeck
     case cannotFind(card: Card)
     case handIsEmpty
@@ -19,6 +19,9 @@ enum HandError: Error {
 class Hand {
     public private (set) weak var owner: Player?
     public private (set) var cards: [Card] = [Card]()
+    public var size: Int {
+        return self.cards.count
+    }
 
     init(owner: Player) {
         self.owner = owner
@@ -33,20 +36,18 @@ extension Hand: CustomStringConvertible {
 
 extension Hand {
     //: Add card to a players hand
-    func push(card: Card) -> Error? {
+
+    func push(card: Card) throws -> Error? {
         do {
             let result = try canPush(card: card)
-
             if (result) {
                 self.didPush(card: card)
                 return nil
             }
-            else {
-                return HandError.couldNotHandleCard(card: card)
-            }
         } catch let error {
-            return error
+            throw error
         }
+        return nil
     }
 
     //: Remove a card from a players hand
@@ -87,14 +88,18 @@ extension Hand {
         guard let _ = self.owner else {
             throw HandError.handHasNoOwner
         }
+        guard let _ = card.parent else {
+            throw CardError.cardHasNoParent
+        }
 
         let results = self.cards.filter({
             return ($0.parent == card.parent)
         }).count
 
-        guard (results == 0) else {
+        if (results > 0) {
             throw HandError.alreadyHaveCardFromThisDeck
         }
+
 
         return true
     }

@@ -37,6 +37,10 @@ class HandTests: EngineYardTests {
             XCTFail("No game")
             return
         }
+        guard let board = game.board else {
+            XCTFail("No board")
+            return
+        }
         guard let players: [Player] = game.players as? [Player] else {
             XCTFail("No players")
             return
@@ -45,7 +49,7 @@ class HandTests: EngineYardTests {
             XCTFail("No first player")
             return
         }
-        guard let firstDeck = game.board?.decks.first else {
+        guard let firstDeck = board.decks.first else {
             XCTFail("No first deck")
             return
         }
@@ -54,22 +58,126 @@ class HandTests: EngineYardTests {
             return
         }
 
-        if let result = (firstPlayer.hand.push(card: firstCard)) {
-            XCTFail(String(describing: result))
+        XCTAssertNoThrow(try (firstPlayer.hand.push(card: firstCard)))
+        XCTAssertTrue(firstPlayer.hand.cards.count == 1)
+
+        XCTAssertThrowsError(try (firstPlayer.hand.push(card: firstCard)), "Failed") { (error) in
+            XCTAssertEqual(error as! HandError, HandError.alreadyHaveCardFromThisDeck)
         }
 
-        // Add same card
-        XCTAssertThrowsError( (firstPlayer.hand.push(card: firstCard))  )
+        XCTAssertTrue(firstPlayer.hand.cards.count == 1)
+        XCTAssertTrue(firstCard.owner! == firstPlayer)
     }
 
     // Expect: Cannot add card from same parent
     func testSameParent() {
+        guard let game = self.game else {
+            XCTFail("No game")
+            return
+        }
+        guard let board = game.board else {
+            XCTFail("No board")
+            return
+        }
+        guard let players: [Player] = game.players as? [Player] else {
+            XCTFail("No players")
+            return
+        }
+        guard let firstPlayer: Player = players.first else {
+            XCTFail("No first player")
+            return
+        }
+        guard let firstDeck = board.decks.first else {
+            XCTFail("No first deck")
+            return
+        }
+        guard let firstCard = Deck.findFirstUnownedCard(in: firstDeck) else {
+            XCTFail("No first card")
+            return
+        }
+        XCTAssertNoThrow(try (firstPlayer.hand.push(card: firstCard)))
+        XCTAssertTrue(firstPlayer.hand.cards.count == 1)
 
+        guard let nextCard = Deck.findFirstUnownedCard(in: firstDeck) else {
+            XCTFail("No card found")
+            return
+        }
+
+        XCTAssertThrowsError(try (firstPlayer.hand.push(card: nextCard)), "Failed") { (error) in
+            XCTAssertEqual(error as! HandError, HandError.alreadyHaveCardFromThisDeck)
+        }
+
+        XCTAssertTrue(firstPlayer.hand.cards.count == 1)
     }
 
-    // Expect: Don't add card if can't afford it
-    func testCannotAffordCard() {
+    // Expect: When all cards in a single deck are owned, the player cannot add card from this deck
+    func testNoCardsRemaining() {
+        /*
+        guard let game = self.game else {
+            XCTFail("No game")
+            return
+        }
+        guard let board = game.board else {
+            XCTFail("No board")
+            return
+        }
+        guard let players: [Player] = game.players as? [Player] else {
+            XCTFail("No players")
+            return
+        }
+        guard let firstDeck = board.decks.first else {
+            XCTFail("No first deck")
+            return
+        }
 
+        // first deck has 4 cards
+        // expect: in a 5-player game, the fifth player gets nothing
+        for (playerIndex, player) in players.enumerated() {
+            for card in firstDeck.cards {
+                if (playerIndex < 5) {
+                    XCTAssertNoThrow(try player.hand.push(card: card))
+                }
+                else {
+
+                    XCTAssertThrowsError(try (player.hand.push(card: card)), "Failed") { (error) in
+                        XCTAssertEqual(error as! HandError, HandError.couldNotHandleCard(card: card))
+                    }
+                }
+            }
+        }
+         */
+    }
+
+    // Expect: Wallet test: Don't add card if can't afford it
+    func testCannotAffordCard() {
+        guard let game = self.game else {
+            XCTFail("No game")
+            return
+        }
+        guard let board = game.board else {
+            XCTFail("No board")
+            return
+        }
+        guard let players: [Player] = game.players as? [Player] else {
+            XCTFail("No players")
+            return
+        }
+        guard let firstPlayer = players.first else {
+            XCTFail("No first player")
+            return
+        }
+
+        // Get most expensive deck in game
+        guard let deck = (board.decks.sorted { (a, b) -> Bool in
+            return (a.cost > b.cost)
+            }.first) else {
+                XCTFail("No cards found")
+                return
+        }
+
+        XCTAssertThrowsError(try (firstPlayer.wallet.debit(amount: deck.cost)), "Failed") { (error) in
+            XCTAssertEqual(error as! WalletError, WalletError.notEnoughFunds)
+        }
     }
 
     // #TODO: Remove card from hand

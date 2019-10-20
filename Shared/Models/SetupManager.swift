@@ -107,8 +107,10 @@ extension SetupManager {
                 break
             }
             card.add(units: 1)
-            if let result = p.hand.push(card: card) {
-                assertionFailure("\(result)")
+            do {
+                let _ = try p.hand.push(card: card)
+            } catch {
+                assertionFailure("\(error)")
                 break
             }
         }
