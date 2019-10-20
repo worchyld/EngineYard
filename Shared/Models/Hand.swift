@@ -50,7 +50,7 @@ extension Hand {
     }
 
     //: Remove a card from a players hand
-    func pop(card: Card) -> Error? {
+    func remove(card: Card) -> Error? {
         // #TODO
         return nil
     }

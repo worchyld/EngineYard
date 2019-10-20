@@ -79,9 +79,11 @@ extension SetupManager {
             assertionFailure("No second deck")
             return
         }
+        // In a 3-4 player game, first deck has 3 orders
         for _ in 0...3 {
             firstDeck.orderBook.add()
         }
+        // In a 3-player game, second deck has 1 order
         secondDeck.orderBook.add()
 
         guard let players = game.players else {
