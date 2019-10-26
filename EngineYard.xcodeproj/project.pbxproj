@@ -25,6 +25,7 @@
 		4D3C17D92334CEBD0036808F /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3C17D82334CEBD0036808F /* Storyboarded.swift */; };
 		4D3C17DB2334CF7B0036808F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3C17DA2334CF7B0036808F /* ViewController.swift */; };
 		4D3C17DD2334CFCB0036808F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3C17DC2334CFCB0036808F /* MainCoordinator.swift */; };
+		4D41F58E23640F3B0082D273 /* Production.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D41F58D23640F3B0082D273 /* Production.swift */; };
 		4D58965E235BF2AE00FCA0AE /* HandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D58965D235BF2AE00FCA0AE /* HandTests.swift */; };
 		4D5CA50E2337E82400EF9F96 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CA50D2337E82400EF9F96 /* GameModel.swift */; };
 		4D5CA5102337E82D00EF9F96 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CA50F2337E82D00EF9F96 /* Board.swift */; };
@@ -109,6 +110,7 @@
 		4D3C17D82334CEBD0036808F /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		4D3C17DA2334CF7B0036808F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4D3C17DC2334CFCB0036808F /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		4D41F58D23640F3B0082D273 /* Production.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Production.swift; sourceTree = "<group>"; };
 		4D58965D235BF2AE00FCA0AE /* HandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandTests.swift; sourceTree = "<group>"; };
 		4D5CA50D2337E82400EF9F96 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		4D5CA50F2337E82D00EF9F96 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 				4D111E152336B04300472BDC /* Deck+Colors.swift */,
 				4D5CA50F2337E82D00EF9F96 /* Board.swift */,
 				4D111E132336AEDC00472BDC /* Card.swift */,
+				4D41F58D23640F3B0082D273 /* Production.swift */,
 				4D111E182336B20900472BDC /* Player.swift */,
 				4D111E172336B20900472BDC /* Hand.swift */,
 				4D5CA50D2337E82400EF9F96 /* GameModel.swift */,
@@ -515,6 +518,7 @@
 				4D111E1A2336B20900472BDC /* Player.swift in Sources */,
 				4D0CE5EF2349A402000252C1 /* OrderBook.swift in Sources */,
 				4D5CA50E2337E82400EF9F96 /* GameModel.swift in Sources */,
+				4D41F58E23640F3B0082D273 /* Production.swift in Sources */,
 				4DFA7A3D233D4887004099B7 /* GameEntity+CoreDataClass.swift in Sources */,
 				4D111E162336B04300472BDC /* Deck+Colors.swift in Sources */,
 				4DFF752B2336077400C7CC24 /* Tax.swift in Sources */,

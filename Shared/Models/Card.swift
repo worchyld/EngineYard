@@ -25,8 +25,8 @@ class Card {
     public private (set) weak var parent: Deck?
     public private (set) weak var owner: Player?
     private let uid: UUID = UUID()
-    public private (set) var units: Int = 0
-    private var spentUnits: Int = 0
+    var units: Int = 0
+    var spentUnits: Int = 0
 
     init(parent: Deck) {
         self.parent = parent
@@ -53,30 +53,6 @@ extension Card {
         self.owner = owner
     }
 
-    func add(units: Int) {
-        self.units += units
-    }
-
-    func spend(units: Int) {
-        guard (canSpend(units: units)) else {
-            return
-        }
-        self.spentUnits += units
-        self.units -= units
-    }
-
-    func reset() {
-        self.units += spentUnits
-        self.spentUnits = 0
-    }
-
-    private func canSpend(units: Int) -> Bool {
-        return true
-    }
-}
-
-
-extension Card {
     public static func find(card: Card, in cards:[Card]) -> Card? {
         guard let card = (cards.filter({
             return $0 == card

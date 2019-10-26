@@ -102,11 +102,11 @@ extension SetupManager {
 
         // Give each player: 1x first green card with 1x unit production
         for p in players as! [Player] {
-            guard let card = Deck.findFirstUnownedCard(in: firstDeck) else {
+            guard var card = Deck.findFirstUnownedCard(in: firstDeck) else {
                 assertionFailure("No card can be found")
                 break
             }
-            card.add(units: 1)
+            card = Production().add(units: 1, card: card)
             do {
                 let _ = try p.hand.push(card: card)
             } catch {
