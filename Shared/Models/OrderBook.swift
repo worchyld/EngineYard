@@ -40,3 +40,24 @@ class OrderBook {
         return true
     }
 }
+
+extension OrderBook {
+    func transfer() {
+        // #TODO
+    }
+
+    func rerollAndTransfer() {
+        // #TODO
+    }
+
+    func reduceExistingOrderValueAtIndex(index:Int, byValue:Int) -> Int? {
+         // #TODO
+        return nil
+    }
+
+    // Remove first value from completedOrder
+    // If no value is found; remove the lowest numbered value in orders
+    func removeFirstValueFromCompletedOrder() {
+        // #TODO
+    }
+}

@@ -33,4 +33,23 @@ extension Order {
     public static func generate() -> Int {
         return Die.roll()
     }
+
+    func transfer() {
+        switch self.state {
+        case .existing:
+            // move: existingOrder -> completedOrder
+            self.state = .completed
+        break
+
+        case .completed:
+             // move: completedOrder -> existingOrder
+            self.state = .existing
+        break
+        }
+    }
+
+    private func didTransfer() {
+
+    }
+
 }

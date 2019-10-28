@@ -49,6 +49,7 @@
 		4DC788F72346E8EB00C1A1D6 /* GameSetupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC788F62346E8EB00C1A1D6 /* GameSetupTests.swift */; };
 		4DC788F92346EC1200C1A1D6 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC788F82346EC1200C1A1D6 /* Settings.swift */; };
 		4DC788FB2346EEC400C1A1D6 /* SetupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC788FA2346EEC400C1A1D6 /* SetupManager.swift */; };
+		4DD22C862366B94B00579400 /* ObserverProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD22C852366B94B00579400 /* ObserverProtocols.swift */; };
 		4DE127E0233E826C00F84C57 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DE127DF233E826C00F84C57 /* Icons.xcassets */; };
 		4DE21C2923452D8D00155575 /* DeckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE21C2823452D8D00155575 /* DeckTests.swift */; };
 		4DE21C2B2345C95600155575 /* WinnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE21C2A2345C95600155575 /* WinnerTests.swift */; };
@@ -137,6 +138,7 @@
 		4DC788F62346E8EB00C1A1D6 /* GameSetupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetupTests.swift; sourceTree = "<group>"; };
 		4DC788F82346EC1200C1A1D6 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		4DC788FA2346EEC400C1A1D6 /* SetupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupManager.swift; sourceTree = "<group>"; };
+		4DD22C852366B94B00579400 /* ObserverProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserverProtocols.swift; sourceTree = "<group>"; };
 		4DE127DF233E826C00F84C57 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		4DE21C2823452D8D00155575 /* DeckTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckTests.swift; sourceTree = "<group>"; };
 		4DE21C2A2345C95600155575 /* WinnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerTests.swift; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 				4DC788FA2346EEC400C1A1D6 /* SetupManager.swift */,
 				4D0CE5EE2349A402000252C1 /* OrderBook.swift */,
 				4D5CA5112337EA0200EF9F96 /* Order.swift */,
+				4DD22C852366B94B00579400 /* ObserverProtocols.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 				4DC788F92346EC1200C1A1D6 /* Settings.swift in Sources */,
 				4D2A4B8C2195DEB300315524 /* EY+ImageView.swift in Sources */,
 				4D3C17D72334CE730036808F /* Coordinator.swift in Sources */,
+				4DD22C862366B94B00579400 /* ObserverProtocols.swift in Sources */,
 				4DFA7A3F233D4887004099B7 /* PlayerEntity+CoreDataClass.swift in Sources */,
 				4DA3488020812A8B006DA164 /* AppDelegate.swift in Sources */,
 				4DC788FB2346EEC400C1A1D6 /* SetupManager.swift in Sources */,
