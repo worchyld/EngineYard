@@ -28,6 +28,21 @@ class DeckUnlockTests: EngineYardTests {
         }
     }
 
+    func testUnlockAllDecks() {
+        let board = Board()
+
+        let _ = board.decks.map { (d: Deck) in
+            XCTAssertTrue(d.state == .inactive)
+            d.activate()
+        }
+
+        let results = board.decks.filter { (d: Deck) in
+            return (d.state == .active)
+            }.count
+
+        XCTAssertTrue(results == board.decks.count)
+    }
+
     func testUnlockSingleDeck() {
         let board = Board()
 
