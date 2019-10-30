@@ -8,23 +8,7 @@
 
 import Foundation
 
-protocol BoardProtocol {
-    func unlockDeck(_ deck: Deck)
-}
-
-protocol DeckSubscriptionProtocol {
-    func addSubscriber(_ subscriber: BoardProtocol)
-    func notifySubscribers()
-    func removeSubscribers()
-}
-
-protocol DeckUnlockProtocol {
-    func willUnlock()
-}
-
 final class Deck {
-    public private (set) var subscribers: [BoardProtocol] = []
-
     enum State: Int {
         case inactive = 0
         case active
@@ -120,10 +104,6 @@ extension Deck {
         return card
     }
 
-    func activate() {
-        self.state = .active
-    }
-
     var existingOrderValues: [Int] {
         return orderBook.existingOrders.compactMap({ (o:Order) -> Int in
             return o.value
@@ -136,30 +116,8 @@ extension Deck {
             return o.value
         })
     }
-}
 
-// MARK: DeckUnlockProtocol
-
-extension Deck : DeckUnlockProtocol {
-    func willUnlock() {
-        self.orderBook.add()
-    }
-}
-
-// MARK: DeckSubscriptionProtocol
-
-extension Deck : DeckSubscriptionProtocol {
-    func addSubscriber(_ subscriber: BoardProtocol) {
-        self.subscribers.append(subscriber)
-    }
-
-    func notifySubscribers() {
-        let _ = self.subscribers.map({ item in
-            item.unlockDeck(self)
-        })
-    }
-
-    func removeSubscribers() {
-        self.subscribers.removeAll()
+    func activate() {
+        self.state = .active
     }
 }

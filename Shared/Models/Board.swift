@@ -8,6 +8,11 @@
 
 import Foundation
 
+private protocol BoardProtocol {
+    func unlockNextDeck(_ deck: Deck)
+}
+
+
 final class Board {
     static var instance = Board()
 
@@ -59,7 +64,7 @@ extension Board {
 }
 
 extension Board : BoardProtocol {
-    func unlockDeck(_ deck: Deck) {
+    func unlockNextDeck(_ deck: Deck) {
         guard let nextDeck = self.decks.after(deck) else {
             return
         }
@@ -68,6 +73,6 @@ extension Board : BoardProtocol {
             return
         }
 
-        nextDeck.willUnlock()
+        nextDeck.activate()
     }
 }
