@@ -10,16 +10,16 @@ import Foundation
 
 class Order {
     enum State: Int {
-        case existing = 1
-        case completed
+        case existingOrder = 0
+        case completedOrder
     }
 
     public private (set) var value: Int = 0
-    public private (set) var state: Order.State = .existing
+    public private (set) var state: Order.State = .existingOrder
 
     init() {
         self.value = Order.generate()
-        self.state = .existing
+        self.state = .existingOrder
     }
 }
 
@@ -36,14 +36,14 @@ extension Order {
 
     func transfer() {
         switch self.state {
-        case .existing:
+        case .existingOrder:
             // move: existingOrder -> completedOrder
-            self.state = .completed
+            self.state = .completedOrder
         break
 
-        case .completed:
+        case .completedOrder:
              // move: completedOrder -> existingOrder
-            self.state = .existing
+            self.state = .existingOrder
         break
         }
     }

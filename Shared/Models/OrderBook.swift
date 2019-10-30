@@ -12,19 +12,34 @@ class OrderBook {
     private weak var deck: Deck?
     public private (set) var orders: [Order] = [Order]()
 
+    var existingOrders: [Order] {
+        return self.orders.filter({
+            return ($0.state == .existingOrder)
+        })
+    }
+    var completedOrders: [Order] {
+        return self.orders.filter({
+            return ($0.state == .completedOrder)
+        })
+    }
+
+
     init(deck: Deck) {
         self.deck = deck
     }
 
+    deinit {
+        self.orders.removeAll()
+    }
+
     func add() {
         guard let deck = self.deck else {
-            assertionFailure("No deck found")
             return
         }
         guard canAdd() else {
             return
         }
-        deck.state = .active
+        deck.activate()
         let order = Order()
         self.orders.append(order)
     }

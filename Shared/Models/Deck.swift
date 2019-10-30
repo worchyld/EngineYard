@@ -8,12 +8,28 @@
 
 import Foundation
 
-class Deck {
+protocol BoardProtocol {
+    func unlockDeck(_ deck: Deck)
+}
+
+protocol DeckSubscriptionProtocol {
+    func addSubscriber(_ subscriber: BoardProtocol)
+    func notifySubscribers()
+    func removeSubscribers()
+}
+
+protocol DeckUnlockProtocol {
+    func willUnlock()
+}
+
+final class Deck {
+    public private (set) var subscribers: [BoardProtocol] = []
+
     enum State: Int {
         case inactive = 0
         case active
         case rusting
-        case rusted = -1 // Obsolescent
+        case rusted = -1 // Obsolete
     }
     enum Color: Int, CaseIterable {
         case green = 1  // Passenger
@@ -42,7 +58,7 @@ class Deck {
     }
     let capacity: Int
     let numberOfChildren: Int
-    var state: Deck.State = .inactive
+    public private (set) var state: Deck.State = .inactive
 
     //: Orders
     lazy var orderBook: OrderBook = OrderBook(deck: self) // order book & completedOrders book
@@ -102,5 +118,48 @@ extension Deck {
         }
 
         return card
+    }
+
+    func activate() {
+        self.state = .active
+    }
+
+    var existingOrderValues: [Int] {
+        return orderBook.existingOrders.compactMap({ (o:Order) -> Int in
+            return o.value
+        })
+
+    }
+
+    var completedOrderValues: [Int] {
+        return orderBook.completedOrders.compactMap({ (o:Order) -> Int in
+            return o.value
+        })
+    }
+}
+
+// MARK: DeckUnlockProtocol
+
+extension Deck : DeckUnlockProtocol {
+    func willUnlock() {
+        self.orderBook.add()
+    }
+}
+
+// MARK: DeckSubscriptionProtocol
+
+extension Deck : DeckSubscriptionProtocol {
+    func addSubscriber(_ subscriber: BoardProtocol) {
+        self.subscribers.append(subscriber)
+    }
+
+    func notifySubscribers() {
+        let _ = self.subscribers.map({ item in
+            item.unlockDeck(self)
+        })
+    }
+
+    func removeSubscribers() {
+        self.subscribers.removeAll()
     }
 }

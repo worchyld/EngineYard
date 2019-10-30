@@ -57,3 +57,17 @@ extension Board {
         return decks
     }
 }
+
+extension Board : BoardProtocol {
+    func unlockDeck(_ deck: Deck) {
+        guard let nextDeck = self.decks.after(deck) else {
+            return
+        }
+
+        guard (nextDeck.state == .inactive) else {
+            return
+        }
+
+        nextDeck.willUnlock()
+    }
+}

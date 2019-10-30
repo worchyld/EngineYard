@@ -8,6 +8,8 @@
 
 import Foundation
 
+// # Not used - May remove
+
 // Requires a list of observers and the ability to add, remove one and notify them
 protocol ObservableProtocol : class {
     var observers : [ObserverProtocol] { get set }
