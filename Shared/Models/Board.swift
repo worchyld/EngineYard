@@ -9,7 +9,7 @@
 import Foundation
 
 private protocol BoardProtocol {
-    func unlockNextDeck(_ deck: Deck)
+    func unlockNextDeck(after deck: Deck)
 }
 
 
@@ -64,7 +64,7 @@ extension Board {
 }
 
 extension Board : BoardProtocol {
-    func unlockNextDeck(_ deck: Deck) {
+    func unlockNextDeck(after deck: Deck) {
         guard let nextDeck = self.decks.after(deck) else {
             return
         }
@@ -73,6 +73,6 @@ extension Board : BoardProtocol {
             return
         }
 
-        nextDeck.activate()
+        nextDeck.orderBook.add()
     }
 }
