@@ -24,6 +24,7 @@ final class GameModel: NSObject, GKGameModel {
     var players: [GKGameModelPlayer]?
     var activePlayer: GKGameModelPlayer?
     var board: Board?
+    var turnOrderIndex: Int = 0
 }
 
 // Required by protocol
@@ -56,3 +57,23 @@ extension GameModel {
     }
 }
 
+extension GameModel {
+    public func shuffleTurnOrder() {
+        guard let players = self.players else {
+            return
+        }
+        self.players = players.shuffled()
+    }
+
+    public func nextOnTurn() {
+        guard let players = self.players else {
+            return
+        }
+        if (self.turnOrderIndex < (players.count - 1)) {
+            self.turnOrderIndex += 1
+        }
+        else {
+            self.turnOrderIndex = 0
+        }
+    }
+}

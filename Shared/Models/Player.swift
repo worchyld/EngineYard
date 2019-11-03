@@ -26,12 +26,14 @@ class Player : NSObject, GKGameModelPlayer {
     let wallet: Wallet = Wallet() // REFACTOR: Probably should remove this reference and make the wallet static
     lazy var hand: Hand = Hand(owner: self) // hand of cards
     let avatar: String
+    public private (set) var turnOrder: Int
 
-    init(name: String, isAI: Bool = true) {
+    init(id: Int = 0, name: String, isAI: Bool = true) {
         self.name = name
         self.isAI = isAI
         self.avatar = ""
-        self.playerId = 0
+        self.playerId = id
+        self.turnOrder = 0
     }
 }
 
@@ -44,5 +46,11 @@ extension Player {
 extension Player  {
     override var description: String {
         return ("\(self.name), cash: $\(self.cash)")
+    }
+}
+
+extension Player {
+    func setTurnOrderIndex(number: Int) {
+        self.turnOrder = number
     }
 }

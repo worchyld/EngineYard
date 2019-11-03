@@ -100,4 +100,21 @@ extension Hand {
         }
         return true
     }
+
+    func contains(deck: Deck) -> Bool {
+        // does my hand already contain a card from deck
+        let filter1 = self.cards.contains(where: {
+            return ($0.parent == deck)
+        })
+        if (filter1 == true) {
+            return true
+        }
+        else {
+            // is there any nil owner spaces available
+            let results = deck.cards.filter({ (card) -> Bool in
+                return (card.owner == nil)
+            })
+            return (results.count == 0)
+        }
+    }
 }

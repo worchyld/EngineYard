@@ -16,7 +16,7 @@ public struct Mock {
         }
         var players: [Player] = [Player]()
         for index in stride(from:0, to: howMany, by: 1) {
-            let player = Player(name: "Player #\(index)", isAI: true)
+            let player = Player(id: index, name: "Player #\(index)", isAI: true)
             players.append(player)
         }
         return players
