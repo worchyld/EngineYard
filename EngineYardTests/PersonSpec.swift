@@ -30,6 +30,8 @@ class PersonSpec: QuickSpec {
 
     beforeSuite {
         Realm.Configuration.defaultConfiguration.inMemoryIdentifier = self.name
+        print("[REALM]: \(Realm.Configuration.defaultConfiguration.fileURL!)")
+        print("[REALM]: \(Realm.Configuration.defaultConfiguration.description)")
     }
 
     beforeEach {
