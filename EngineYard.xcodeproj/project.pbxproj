@@ -56,15 +56,6 @@
 		4DF1509221679E0300D39D65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1509121679E0300D39D65 /* Main.storyboard */; };
 		4DF38DF8233AC138003771C3 /* Winner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF38DF7233AC138003771C3 /* Winner.swift */; };
 		4DF38E1B233BF6D7003771C3 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF38E1A233BF6D7003771C3 /* SecondViewController.swift */; };
-		4DF38E25233D36EC003771C3 /* Yard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4DF38E23233D36EC003771C3 /* Yard.xcdatamodeld */; };
-		4DFA7A35233D4869004099B7 /* DeckEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFA7A33233D4869004099B7 /* DeckEntity+CoreDataClass.swift */; };
-		4DFA7A36233D4869004099B7 /* DeckEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFA7A34233D4869004099B7 /* DeckEntity+CoreDataProperties.swift */; };
-		4DFA7A3D233D4887004099B7 /* GameEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFA7A37233D4887004099B7 /* GameEntity+CoreDataClass.swift */; };
-		4DFA7A3E233D4887004099B7 /* GameEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFA7A38233D4887004099B7 /* GameEntity+CoreDataProperties.swift */; };
-		4DFA7A3F233D4887004099B7 /* PlayerEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFA7A39233D4887004099B7 /* PlayerEntity+CoreDataClass.swift */; };
-		4DFA7A40233D4887004099B7 /* PlayerEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFA7A3A233D4887004099B7 /* PlayerEntity+CoreDataProperties.swift */; };
-		4DFA7A41233D4887004099B7 /* CardEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFA7A3B233D4887004099B7 /* CardEntity+CoreDataClass.swift */; };
-		4DFA7A42233D4887004099B7 /* CardEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFA7A3C233D4887004099B7 /* CardEntity+CoreDataProperties.swift */; };
 		4DFA7A46233D55D9004099B7 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFA7A45233D55D9004099B7 /* MainMenuViewController.swift */; };
 		4DFA7A49233D5648004099B7 /* PickPlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFA7A48233D5648004099B7 /* PickPlayersViewController.swift */; };
 		4DFA7A4B233D56D5004099B7 /* PlayerCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFA7A4A233D56D5004099B7 /* PlayerCardView.xib */; };
@@ -145,15 +136,6 @@
 		4DF1509121679E0300D39D65 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4DF38DF7233AC138003771C3 /* Winner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Winner.swift; sourceTree = "<group>"; };
 		4DF38E1A233BF6D7003771C3 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		4DF38E24233D36EC003771C3 /* Yard.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Yard.xcdatamodel; sourceTree = "<group>"; };
-		4DFA7A33233D4869004099B7 /* DeckEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeckEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		4DFA7A34233D4869004099B7 /* DeckEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeckEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		4DFA7A37233D4887004099B7 /* GameEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		4DFA7A38233D4887004099B7 /* GameEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		4DFA7A39233D4887004099B7 /* PlayerEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		4DFA7A3A233D4887004099B7 /* PlayerEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		4DFA7A3B233D4887004099B7 /* CardEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		4DFA7A3C233D4887004099B7 /* CardEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4DFA7A45233D55D9004099B7 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		4DFA7A48233D5648004099B7 /* PickPlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickPlayersViewController.swift; sourceTree = "<group>"; };
 		4DFA7A4A233D56D5004099B7 /* PlayerCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerCardView.xib; sourceTree = "<group>"; };
@@ -226,22 +208,6 @@
 			path = Sounds;
 			sourceTree = "<group>";
 		};
-		4D111E0E2336A82B00472BDC /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				4DFA7A33233D4869004099B7 /* DeckEntity+CoreDataClass.swift */,
-				4DFA7A34233D4869004099B7 /* DeckEntity+CoreDataProperties.swift */,
-				4DFA7A37233D4887004099B7 /* GameEntity+CoreDataClass.swift */,
-				4DFA7A38233D4887004099B7 /* GameEntity+CoreDataProperties.swift */,
-				4DFA7A39233D4887004099B7 /* PlayerEntity+CoreDataClass.swift */,
-				4DFA7A3A233D4887004099B7 /* PlayerEntity+CoreDataProperties.swift */,
-				4DFA7A3B233D4887004099B7 /* CardEntity+CoreDataClass.swift */,
-				4DFA7A3C233D4887004099B7 /* CardEntity+CoreDataProperties.swift */,
-				4DF38E23233D36EC003771C3 /* Yard.xcdatamodeld */,
-			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
 		4D3C17C82334B6200036808F /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,7 +272,6 @@
 		4DA3488220812B08006DA164 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				4D111E0E2336A82B00472BDC /* Entities */,
 				4D111DFD233672CE00472BDC /* Assets */,
 				4D3C17C82334B6200036808F /* Managers */,
 				4DA5236A208158B5000FFAAB /* Extensions */,
@@ -494,7 +459,6 @@
 				4DC788F92346EC1200C1A1D6 /* Settings.swift in Sources */,
 				4D2A4B8C2195DEB300315524 /* EY+ImageView.swift in Sources */,
 				4D3C17D72334CE730036808F /* Coordinator.swift in Sources */,
-				4DFA7A3F233D4887004099B7 /* PlayerEntity+CoreDataClass.swift in Sources */,
 				4DA3488020812A8B006DA164 /* AppDelegate.swift in Sources */,
 				4DC788FB2346EEC400C1A1D6 /* SetupManager.swift in Sources */,
 				4DA5236C208158C8000FFAAB /* EY+Array.swift in Sources */,
@@ -505,16 +469,12 @@
 				4D5CA5182337FC6900EF9F96 /* ErrorCode.swift in Sources */,
 				4DFF753223360BA700C7CC24 /* Fonts.swift in Sources */,
 				4DC55164235A37DC00623833 /* SalesRuleHandler.swift in Sources */,
-				4DFA7A36233D4869004099B7 /* DeckEntity+CoreDataProperties.swift in Sources */,
 				4DA52369208158A8000FFAAB /* EY+Colors.swift in Sources */,
 				4DFF753323360BA700C7CC24 /* Sounds.swift in Sources */,
 				4D111E122336ABB400472BDC /* Deck.swift in Sources */,
-				4DFA7A35233D4869004099B7 /* DeckEntity+CoreDataClass.swift in Sources */,
 				4DFA7A46233D55D9004099B7 /* MainMenuViewController.swift in Sources */,
 				4D3C17DB2334CF7B0036808F /* ViewController.swift in Sources */,
 				4DFF753123360BA700C7CC24 /* Devices.swift in Sources */,
-				4DFA7A41233D4887004099B7 /* CardEntity+CoreDataClass.swift in Sources */,
-				4DFA7A42233D4887004099B7 /* CardEntity+CoreDataProperties.swift in Sources */,
 				4DFF75282336067400C7CC24 /* EY+ViewController.swift in Sources */,
 				4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */,
 				4D3C17D02334B6200036808F /* Message.swift in Sources */,
@@ -522,15 +482,11 @@
 				4D0CE5EF2349A402000252C1 /* OrderBook.swift in Sources */,
 				4D5CA50E2337E82400EF9F96 /* GameModel.swift in Sources */,
 				4D41F58E23640F3B0082D273 /* Production.swift in Sources */,
-				4DFA7A3D233D4887004099B7 /* GameEntity+CoreDataClass.swift in Sources */,
 				4D111E162336B04300472BDC /* Deck+Colors.swift in Sources */,
 				4DFF752B2336077400C7CC24 /* Tax.swift in Sources */,
-				4DF38E25233D36EC003771C3 /* Yard.xcdatamodeld in Sources */,
 				4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */,
-				4DFA7A40233D4887004099B7 /* PlayerEntity+CoreDataProperties.swift in Sources */,
 				4DFA7A49233D5648004099B7 /* PickPlayersViewController.swift in Sources */,
 				4D5CA5102337E82D00EF9F96 /* Board.swift in Sources */,
-				4DFA7A3E233D4887004099B7 /* GameEntity+CoreDataProperties.swift in Sources */,
 				4D5CA51A2338011E00EF9F96 /* SalesRule.swift in Sources */,
 				4DF38DF8233AC138003771C3 /* Winner.swift in Sources */,
 				4D3C17D92334CEBD0036808F /* Storyboarded.swift in Sources */,
@@ -805,19 +761,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		4DF38E23233D36EC003771C3 /* Yard.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				4DF38E24233D36EC003771C3 /* Yard.xcdatamodel */,
-			);
-			currentVersion = 4DF38E24233D36EC003771C3 /* Yard.xcdatamodel */;
-			path = Yard.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 4DA3484820812970006DA164 /* Project object */;
 }
