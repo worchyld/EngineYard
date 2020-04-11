@@ -43,6 +43,28 @@
 		4DA52369208158A8000FFAAB /* EY+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA52368208158A8000FFAAB /* EY+Colors.swift */; };
 		4DA5236C208158C8000FFAAB /* EY+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5236B208158C8000FFAAB /* EY+Array.swift */; };
 		4DA92C212156874500AD19B7 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		4DACC0A22441E5C500466ABE /* JGProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC09C2441E5C500466ABE /* JGProgressHUD.framework */; };
+		4DACC0A32441E5C500466ABE /* JGProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC09C2441E5C500466ABE /* JGProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4DACC0A42441E5C500466ABE /* EasyTipView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC09D2441E5C500466ABE /* EasyTipView.framework */; };
+		4DACC0A52441E5C500466ABE /* EasyTipView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC09D2441E5C500466ABE /* EasyTipView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4DACC0A62441E5C500466ABE /* FontAwesome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC09E2441E5C500466ABE /* FontAwesome.framework */; };
+		4DACC0A72441E5C500466ABE /* FontAwesome.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC09E2441E5C500466ABE /* FontAwesome.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4DACC0A82441E5C500466ABE /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC09F2441E5C500466ABE /* Haneke.framework */; };
+		4DACC0A92441E5C500466ABE /* Haneke.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC09F2441E5C500466ABE /* Haneke.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4DACC0AA2441E5C500466ABE /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC0A02441E5C500466ABE /* Realm.framework */; };
+		4DACC0AB2441E5C500466ABE /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC0A02441E5C500466ABE /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4DACC0AC2441E5C500466ABE /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC0A12441E5C500466ABE /* RealmSwift.framework */; };
+		4DACC0AD2441E5C500466ABE /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC0A12441E5C500466ABE /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4DACC0B12441E64800466ABE /* EYRealmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DACC0B02441E64800466ABE /* EYRealmTests.swift */; };
+		4DACC0B22441E80400466ABE /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC0A12441E5C500466ABE /* RealmSwift.framework */; };
+		4DACC0B32441E80400466ABE /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC0A02441E5C500466ABE /* Realm.framework */; };
+		4DACC0B72441FECA00466ABE /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC0B52441FECA00466ABE /* Quick.framework */; };
+		4DACC0B82441FECA00466ABE /* Quick.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC0B52441FECA00466ABE /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4DACC0B92441FECA00466ABE /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC0B62441FECA00466ABE /* Nimble.framework */; };
+		4DACC0BA2441FECA00466ABE /* Nimble.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC0B62441FECA00466ABE /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4DACC0BC2441FF0D00466ABE /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4DACC0B62441FECA00466ABE /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4DACC0BD2441FF0D00466ABE /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4DACC0B52441FECA00466ABE /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4DACC0C1244204E900466ABE /* PersonSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DACC0C0244204E900466ABE /* PersonSpec.swift */; };
 		4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB448C6219F380900F8507F /* EY+Protocols.swift */; };
 		4DC55162235A373100623833 /* SalesRulesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC55161235A373100623833 /* SalesRulesTests.swift */; };
 		4DC55164235A37DC00623833 /* SalesRuleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC55163235A37DC00623833 /* SalesRuleHandler.swift */; };
@@ -83,6 +105,38 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4DACC0AE2441E5C500466ABE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4DACC0A92441E5C500466ABE /* Haneke.framework in Embed Frameworks */,
+				4DACC0A32441E5C500466ABE /* JGProgressHUD.framework in Embed Frameworks */,
+				4DACC0AD2441E5C500466ABE /* RealmSwift.framework in Embed Frameworks */,
+				4DACC0BA2441FECA00466ABE /* Nimble.framework in Embed Frameworks */,
+				4DACC0A52441E5C500466ABE /* EasyTipView.framework in Embed Frameworks */,
+				4DACC0A72441E5C500466ABE /* FontAwesome.framework in Embed Frameworks */,
+				4DACC0AB2441E5C500466ABE /* Realm.framework in Embed Frameworks */,
+				4DACC0B82441FECA00466ABE /* Quick.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DACC0BB2441FEF200466ABE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4DACC0BC2441FF0D00466ABE /* Nimble.framework in CopyFiles */,
+				4DACC0BD2441FF0D00466ABE /* Quick.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		4D0CE5EE2349A402000252C1 /* OrderBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBook.swift; sourceTree = "<group>"; };
 		4D111DFF233672CE00472BDC /* Art.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Art.xcassets; sourceTree = "<group>"; };
@@ -122,6 +176,16 @@
 		4DA5236620815885000FFAAB /* Die.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Die.swift; sourceTree = "<group>"; };
 		4DA52368208158A8000FFAAB /* EY+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Colors.swift"; sourceTree = "<group>"; };
 		4DA5236B208158C8000FFAAB /* EY+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Array.swift"; sourceTree = "<group>"; };
+		4DACC09C2441E5C500466ABE /* JGProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JGProgressHUD.framework; path = Carthage/Build/iOS/JGProgressHUD.framework; sourceTree = "<group>"; };
+		4DACC09D2441E5C500466ABE /* EasyTipView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EasyTipView.framework; path = Carthage/Build/iOS/EasyTipView.framework; sourceTree = "<group>"; };
+		4DACC09E2441E5C500466ABE /* FontAwesome.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FontAwesome.framework; path = Carthage/Build/iOS/FontAwesome.framework; sourceTree = "<group>"; };
+		4DACC09F2441E5C500466ABE /* Haneke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Haneke.framework; path = Carthage/Build/iOS/Haneke.framework; sourceTree = "<group>"; };
+		4DACC0A02441E5C500466ABE /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		4DACC0A12441E5C500466ABE /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		4DACC0B02441E64800466ABE /* EYRealmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EYRealmTests.swift; sourceTree = "<group>"; };
+		4DACC0B52441FECA00466ABE /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		4DACC0B62441FECA00466ABE /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		4DACC0C0244204E900466ABE /* PersonSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonSpec.swift; sourceTree = "<group>"; };
 		4DB448C6219F380900F8507F /* EY+Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Protocols.swift"; sourceTree = "<group>"; };
 		4DC3D84423342D8F0066FE9F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DC55161235A373100623833 /* SalesRulesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesRulesTests.swift; sourceTree = "<group>"; };
@@ -158,6 +222,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DACC0A82441E5C500466ABE /* Haneke.framework in Frameworks */,
+				4DACC0A22441E5C500466ABE /* JGProgressHUD.framework in Frameworks */,
+				4DACC0AC2441E5C500466ABE /* RealmSwift.framework in Frameworks */,
+				4DACC0B92441FECA00466ABE /* Nimble.framework in Frameworks */,
+				4DACC0A42441E5C500466ABE /* EasyTipView.framework in Frameworks */,
+				4DACC0A62441E5C500466ABE /* FontAwesome.framework in Frameworks */,
+				4DACC0AA2441E5C500466ABE /* Realm.framework in Frameworks */,
+				4DACC0B72441FECA00466ABE /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +237,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DACC0B22441E80400466ABE /* RealmSwift.framework in Frameworks */,
+				4DACC0B32441E80400466ABE /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +299,7 @@
 				4DA3487320812A8B006DA164 /* EngineYard_iOS */,
 				4DA3486720812972006DA164 /* EngineYardTests */,
 				4DA3485120812970006DA164 /* Products */,
+				4DACC09B2441E5C500466ABE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -250,6 +325,8 @@
 				4DC55161235A373100623833 /* SalesRulesTests.swift */,
 				4D58965D235BF2AE00FCA0AE /* HandTests.swift */,
 				4DE441BB236A1887009A2939 /* DeckUnlockTests.swift */,
+				4DACC0B02441E64800466ABE /* EYRealmTests.swift */,
+				4DACC0C0244204E900466ABE /* PersonSpec.swift */,
 			);
 			path = EngineYardTests;
 			sourceTree = "<group>";
@@ -272,6 +349,7 @@
 		4DA3488220812B08006DA164 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				4DACC0B42441EAC900466ABE /* Entities */,
 				4D111DFD233672CE00472BDC /* Assets */,
 				4D3C17C82334B6200036808F /* Managers */,
 				4DA5236A208158B5000FFAAB /* Extensions */,
@@ -297,6 +375,28 @@
 				4D8AB2A0233E21C4009158CB /* EY+Notification.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4DACC09B2441E5C500466ABE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4DACC0B62441FECA00466ABE /* Nimble.framework */,
+				4DACC0B52441FECA00466ABE /* Quick.framework */,
+				4DACC09D2441E5C500466ABE /* EasyTipView.framework */,
+				4DACC09E2441E5C500466ABE /* FontAwesome.framework */,
+				4DACC09F2441E5C500466ABE /* Haneke.framework */,
+				4DACC09C2441E5C500466ABE /* JGProgressHUD.framework */,
+				4DACC0A02441E5C500466ABE /* Realm.framework */,
+				4DACC0A12441E5C500466ABE /* RealmSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4DACC0B42441EAC900466ABE /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		4DC3D848233431080066FE9F /* Models */ = {
@@ -350,6 +450,9 @@
 				4DA3484C20812970006DA164 /* Sources */,
 				4DA3484D20812970006DA164 /* Frameworks */,
 				4DA3484E20812970006DA164 /* Resources */,
+				4DACC0AE2441E5C500466ABE /* Embed Frameworks */,
+				4DACC0AF2441E5F300466ABE /* ShellScript */,
+				4DACC0BB2441FEF200466ABE /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -449,6 +552,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4DACC0AF2441E5F300466ABE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage outdated --xcode-warnings\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4DA3484C20812970006DA164 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -501,10 +626,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DACC0B12441E64800466ABE /* EYRealmTests.swift in Sources */,
 				4D58965E235BF2AE00FCA0AE /* HandTests.swift in Sources */,
 				4DE21C2B2345C95600155575 /* WinnerTests.swift in Sources */,
 				4DC788F72346E8EB00C1A1D6 /* GameSetupTests.swift in Sources */,
 				4DE21C2923452D8D00155575 /* DeckTests.swift in Sources */,
+				4DACC0C1244204E900466ABE /* PersonSpec.swift in Sources */,
 				4DE441BC236A1887009A2939 /* DeckUnlockTests.swift in Sources */,
 				4DFF75392336155C00C7CC24 /* WalletTests.swift in Sources */,
 				4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */,
@@ -656,6 +783,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A48R25Y4D5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = EngineYard_iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -675,6 +806,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A48R25Y4D5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = EngineYard_iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -695,6 +830,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A48R25Y4D5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = EngineYardTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -716,6 +855,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A48R25Y4D5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = EngineYardTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -1,0 +1,7 @@
+github "realm/realm-cocoa"
+github "Haneke/HanekeSwift"
+github "thii/FontAwesome.swift"
+github "JonasGessner/JGProgressHUD"
+github "teodorpatras/EasyTipView"
+github "Quick/Quick"
+github "Quick/Nimble"
