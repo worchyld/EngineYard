@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D0CC9362449B5510011BE4C /* BaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0CC9352449B5510011BE4C /* BaseSpec.swift */; };
+		4D0CC938244B17D40011BE4C /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0CC937244B17D40011BE4C /* Person.swift */; };
+		4D0CC93C244B50C30011BE4C /* DeckSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0CC93B244B50C30011BE4C /* DeckSpec.swift */; };
 		4D0CE5EF2349A402000252C1 /* OrderBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0CE5EE2349A402000252C1 /* OrderBook.swift */; };
 		4D111E05233672CE00472BDC /* Art.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D111DFF233672CE00472BDC /* Art.xcassets */; };
 		4D111E06233672CE00472BDC /* Birdy_Note5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D111E01233672CE00472BDC /* Birdy_Note5.wav */; };
@@ -55,7 +58,6 @@
 		4DACC0AB2441E5C500466ABE /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC0A02441E5C500466ABE /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4DACC0AC2441E5C500466ABE /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC0A12441E5C500466ABE /* RealmSwift.framework */; };
 		4DACC0AD2441E5C500466ABE /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC0A12441E5C500466ABE /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4DACC0B12441E64800466ABE /* EYRealmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DACC0B02441E64800466ABE /* EYRealmTests.swift */; };
 		4DACC0B22441E80400466ABE /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC0A12441E5C500466ABE /* RealmSwift.framework */; };
 		4DACC0B32441E80400466ABE /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC0A02441E5C500466ABE /* Realm.framework */; };
 		4DACC0B72441FECA00466ABE /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC0B52441FECA00466ABE /* Quick.framework */; };
@@ -138,6 +140,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4D0CC9352449B5510011BE4C /* BaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSpec.swift; sourceTree = "<group>"; };
+		4D0CC937244B17D40011BE4C /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		4D0CC93B244B50C30011BE4C /* DeckSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckSpec.swift; sourceTree = "<group>"; };
 		4D0CE5EE2349A402000252C1 /* OrderBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBook.swift; sourceTree = "<group>"; };
 		4D111DFF233672CE00472BDC /* Art.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Art.xcassets; sourceTree = "<group>"; };
 		4D111E01233672CE00472BDC /* Birdy_Note5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Note5.wav; sourceTree = "<group>"; };
@@ -182,7 +187,6 @@
 		4DACC09F2441E5C500466ABE /* Haneke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Haneke.framework; path = Carthage/Build/iOS/Haneke.framework; sourceTree = "<group>"; };
 		4DACC0A02441E5C500466ABE /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		4DACC0A12441E5C500466ABE /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
-		4DACC0B02441E64800466ABE /* EYRealmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EYRealmTests.swift; sourceTree = "<group>"; };
 		4DACC0B52441FECA00466ABE /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		4DACC0B62441FECA00466ABE /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		4DACC0C0244204E900466ABE /* PersonSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonSpec.swift; sourceTree = "<group>"; };
@@ -325,8 +329,9 @@
 				4DC55161235A373100623833 /* SalesRulesTests.swift */,
 				4D58965D235BF2AE00FCA0AE /* HandTests.swift */,
 				4DE441BB236A1887009A2939 /* DeckUnlockTests.swift */,
-				4DACC0B02441E64800466ABE /* EYRealmTests.swift */,
 				4DACC0C0244204E900466ABE /* PersonSpec.swift */,
+				4D0CC9352449B5510011BE4C /* BaseSpec.swift */,
+				4D0CC937244B17D40011BE4C /* Person.swift */,
 			);
 			path = EngineYardTests;
 			sourceTree = "<group>";
@@ -395,6 +400,7 @@
 		4DACC0B42441EAC900466ABE /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				4D0CC93B244B50C30011BE4C /* DeckSpec.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -583,6 +589,7 @@
 				4DFF753723360ED300C7CC24 /* Wallet.swift in Sources */,
 				4DC788F92346EC1200C1A1D6 /* Settings.swift in Sources */,
 				4D2A4B8C2195DEB300315524 /* EY+ImageView.swift in Sources */,
+				4D0CC93C244B50C30011BE4C /* DeckSpec.swift in Sources */,
 				4D3C17D72334CE730036808F /* Coordinator.swift in Sources */,
 				4DA3488020812A8B006DA164 /* AppDelegate.swift in Sources */,
 				4DC788FB2346EEC400C1A1D6 /* SetupManager.swift in Sources */,
@@ -626,7 +633,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DACC0B12441E64800466ABE /* EYRealmTests.swift in Sources */,
 				4D58965E235BF2AE00FCA0AE /* HandTests.swift in Sources */,
 				4DE21C2B2345C95600155575 /* WinnerTests.swift in Sources */,
 				4DC788F72346E8EB00C1A1D6 /* GameSetupTests.swift in Sources */,
@@ -634,8 +640,10 @@
 				4DACC0C1244204E900466ABE /* PersonSpec.swift in Sources */,
 				4DE441BC236A1887009A2939 /* DeckUnlockTests.swift in Sources */,
 				4DFF75392336155C00C7CC24 /* WalletTests.swift in Sources */,
+				4D0CC9362449B5510011BE4C /* BaseSpec.swift in Sources */,
 				4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */,
 				4DFF752D233608FC00C7CC24 /* TaxTests.swift in Sources */,
+				4D0CC938244B17D40011BE4C /* Person.swift in Sources */,
 				4DC55162235A373100623833 /* SalesRulesTests.swift in Sources */,
 				4DA92C212156874500AD19B7 /* (null) in Sources */,
 			);
