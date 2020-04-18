@@ -10,11 +10,11 @@ import Foundation
 import RealmSwift
 
 // [REALM] Card entity
-class CardSpec: Object {
+class CardEntity: Object {
     @objc dynamic var units: Int = 0
     @objc dynamic var spentUnits: Int = 0
 
     // RLMRelationships
-    @objc dynamic var owner: PlayerSpec? // To-one relationship
-    @objc dynamic var parentDeck: DeckSpec? // To-one relationship
+    @objc dynamic var owner: PlayerEntity? // To-one relationship
+    @objc dynamic var parentDeck: DeckEntity? // To-one relationship
 }

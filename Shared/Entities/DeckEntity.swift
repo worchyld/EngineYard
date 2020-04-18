@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 // [REALM] Deck entity
-class DeckSpec : Object {
+class DeckEntity : Object {
     @objc dynamic var state: Int = 0
     @objc dynamic var color: Int = 0
     @objc dynamic var generation: Int = 0
@@ -22,6 +22,6 @@ class DeckSpec : Object {
     @objc dynamic var numberOfChildren: Int = 0
 
     // RLMRelationships
-    let cards = List<CardSpec>() // To-many relationship
-    let orders = List<OrderSpec>() // To-many relationship
+    let cards = List<CardEntity>() // To-many relationship
+    let orders = List<OrderEntity>() // To-many relationship
 }

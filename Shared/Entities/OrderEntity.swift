@@ -10,10 +10,10 @@ import Foundation
 import RealmSwift
 
 // [REALM] Order entity
-class OrderSpec: Object {
+class OrderEntity: Object {
     @objc dynamic var state: Int = 0
     @objc dynamic var value: Int = 0
 
     // RLMRelationships
-    @objc dynamic var parentDeck: DeckSpec? // to-one relationship
+    @objc dynamic var parentDeck: DeckEntity? // to-one relationship
 }

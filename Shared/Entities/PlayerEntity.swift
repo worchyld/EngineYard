@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 // [REALM] Player entity
-class PlayerSpec: Object {
+class PlayerEntity: Object {
     @objc dynamic var playerId: Int = 0
     @objc dynamic var name: String = ""
     @objc dynamic var isAI: Bool = false
@@ -19,5 +19,5 @@ class PlayerSpec: Object {
     @objc dynamic var turnOrder: Int = 0
 
     // RLMRelationships
-    let cards = List<CardSpec>() // To-many relationship
+    let cards = List<CardEntity>() // To-many relationship
 }
