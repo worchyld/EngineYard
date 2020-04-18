@@ -10,6 +10,7 @@ import Foundation
 import Realm
 import RealmSwift
 
+/**
 
 class Dog: Object {
     @objc dynamic var name = ""
@@ -98,3 +99,4 @@ extension Person {
     }
   }
 }
+**/

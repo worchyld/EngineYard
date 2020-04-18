@@ -13,6 +13,7 @@ import RealmSwift
 
 @testable import EngineYard
 
+/**
 class PersonSpec: BaseSpec {
   override func spec() {
     super.spec()
@@ -225,3 +226,4 @@ extension PersonSpec {
     }
   }
 }
+**/
