@@ -13,9 +13,9 @@ import RealmSwift
 class PlayerSpec: Object {
     @objc dynamic var playerId: Int = 0
     @objc dynamic var name: String = ""
-    @objc dynamic var isAI: Bool
+    @objc dynamic var isAI: Bool = false
     @objc dynamic var cash: Int = 0
-    @objc dynamic var avatar: String
+    @objc dynamic var avatar: String = ""
     @objc dynamic var turnOrder: Int = 0
 
     // RLMRelationships
