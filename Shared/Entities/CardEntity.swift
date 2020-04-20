@@ -11,8 +11,13 @@ import RealmSwift
 
 // [REALM] Card entity
 class CardEntity: Object {
+    @objc dynamic var id = UUID().uuidString
     @objc dynamic var units: Int = 0
     @objc dynamic var spentUnits: Int = 0
+
+    override static func primaryKey() -> String {
+       return "id"
+    }
 
     // RLMRelationships
     @objc dynamic var owner: PlayerEntity? // To-one relationship

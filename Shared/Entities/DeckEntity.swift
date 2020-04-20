@@ -11,6 +11,7 @@ import RealmSwift
 
 // [REALM] Deck entity
 class DeckEntity : Object {
+    @objc dynamic var id = UUID().uuidString
     @objc dynamic var state: Int = 0
     @objc dynamic var color: Int = 0
     @objc dynamic var generation: Int = 0
@@ -18,6 +19,10 @@ class DeckEntity : Object {
     @objc dynamic var cost: Int = 0
     @objc dynamic var capacity: Int = 0
     @objc dynamic var numberOfChildren: Int = 0
+
+    override static func primaryKey() -> String {
+       return "id"
+    }
 
     // RLMRelationships
     let cards = List<CardEntity>() // To-many relationship
@@ -38,16 +43,23 @@ class DeckEntity : Object {
 
 extension DeckEntity {
   func save() {
-    let realm = try! Realm()
-    try! realm.write {
-      realm.add(self)
+    DispatchQueue(label: "background").async {
+        autoreleasepool {
+            // Get realm and table instances for this thread
+            let realm = try! Realm()
+
+            realm.add(self)
+
+            // Commit the write
+            try! realm.commitWrite()
+        }
     }
   }
 
-  class func all() -> Results<DeckEntity> {
-    let realm = try! Realm()
-    return realm.objects(DeckEntity.self)
-  }
+    static func all(in realm: Realm = try! Realm()) -> Results<DeckEntity> {
+        return realm.objects(DeckEntity.self)
+        .sorted(byKeyPath: "cost", ascending: true)
+    }
 
   func updateFrom(deckEntity: DeckEntity) {
     let realm = try! Realm()

@@ -84,6 +84,7 @@
 		4DF1509221679E0300D39D65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1509121679E0300D39D65 /* Main.storyboard */; };
 		4DF38DF8233AC138003771C3 /* Winner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF38DF7233AC138003771C3 /* Winner.swift */; };
 		4DF38E1B233BF6D7003771C3 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF38E1A233BF6D7003771C3 /* SecondViewController.swift */; };
+		4DF7B4A1244D7BC100814B64 /* RealmWriteAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF7B4A0244D7BC100814B64 /* RealmWriteAsync.swift */; };
 		4DFA7A46233D55D9004099B7 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFA7A45233D55D9004099B7 /* MainMenuViewController.swift */; };
 		4DFA7A49233D5648004099B7 /* PickPlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFA7A48233D5648004099B7 /* PickPlayersViewController.swift */; };
 		4DFA7A4B233D56D5004099B7 /* PlayerCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFA7A4A233D56D5004099B7 /* PlayerCardView.xib */; };
@@ -212,6 +213,7 @@
 		4DF1509121679E0300D39D65 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4DF38DF7233AC138003771C3 /* Winner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Winner.swift; sourceTree = "<group>"; };
 		4DF38E1A233BF6D7003771C3 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		4DF7B4A0244D7BC100814B64 /* RealmWriteAsync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmWriteAsync.swift; sourceTree = "<group>"; };
 		4DFA7A45233D55D9004099B7 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		4DFA7A48233D5648004099B7 /* PickPlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickPlayersViewController.swift; sourceTree = "<group>"; };
 		4DFA7A4A233D56D5004099B7 /* PlayerCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerCardView.xib; sourceTree = "<group>"; };
@@ -386,6 +388,7 @@
 				4DB448C6219F380900F8507F /* EY+Protocols.swift */,
 				4D247B36219FFE340004478D /* ObjectCache.swift */,
 				4D8AB2A0233E21C4009158CB /* EY+Notification.swift */,
+				4DF7B4A0244D7BC100814B64 /* RealmWriteAsync.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -603,6 +606,7 @@
 				4D2A4B8C2195DEB300315524 /* EY+ImageView.swift in Sources */,
 				4D01FB0C244B73200031BEE9 /* GameEntity.swift in Sources */,
 				4D0CC93C244B50C30011BE4C /* DeckEntity.swift in Sources */,
+				4DF7B4A1244D7BC100814B64 /* RealmWriteAsync.swift in Sources */,
 				4D3C17D72334CE730036808F /* Coordinator.swift in Sources */,
 				4DA3488020812A8B006DA164 /* AppDelegate.swift in Sources */,
 				4DC788FB2346EEC400C1A1D6 /* SetupManager.swift in Sources */,

@@ -11,8 +11,13 @@ import RealmSwift
 
 // [REALM] Order entity
 class OrderEntity: Object {
+    @objc dynamic var id = UUID().uuidString
     @objc dynamic var state: Int = 0
     @objc dynamic var value: Int = 0
+
+    override static func primaryKey() -> String {
+       return "id"
+    }
 
     // RLMRelationships
     @objc dynamic var parentDeck: DeckEntity? // to-one relationship

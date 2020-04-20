@@ -10,10 +10,11 @@ import Foundation
 import RealmSwift
 
 class GameEntity: Object {
+    @objc dynamic var id = UUID().uuidString
     @objc dynamic var activePlayer: Int = 0
     @objc dynamic var gamePhase: Int = 0
 
-    // RLMRelationships
-    //let players = List<PlayerEntity>() // To-many relationship
-    //let decks = List<DeckEntity>() // To-many relationship
+    override static func primaryKey() -> String {
+       return "id"
+    }
 }

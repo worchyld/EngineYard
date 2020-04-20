@@ -60,7 +60,6 @@ class EntityDeckSpec: BaseSpec {
                     expect(deckFromDatabase.numberOfChildren) == deck.numberOfChildren
                 }
             }
-
         }
     }
 }
