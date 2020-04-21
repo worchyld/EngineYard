@@ -84,7 +84,16 @@ class EntityDeckSpec: BaseSpec {
                 }
 
                 // Save board into realm
-                
+                let realm = try! Realm()
+                for deck in board.decks {
+                    let deckEntity = DeckEntity.init(with: deck)
+                    deckEntity.save()
+
+                    for card in deck.cards {
+                        
+                    }
+                }
+
             }
         }
     }

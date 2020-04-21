@@ -22,4 +22,12 @@ class CardEntity: Object {
     // RLMRelationships
     @objc dynamic var owner: PlayerEntity? // To-one relationship
     @objc dynamic var parentDeck: DeckEntity? // To-one relationship
+
+    convenience init(with card: Card) {
+        guard let parent = card.parent else { return }
+        self.init()
+        self.units = card.units
+        self.spentUnits = card.spentUnits
+        self.parentDeck = DeckEntity.find(parent: parent)
+    }
 }

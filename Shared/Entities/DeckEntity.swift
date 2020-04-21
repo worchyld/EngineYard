@@ -56,6 +56,12 @@ extension DeckEntity {
     }
   }
 
+    func find(deck: Deck) -> Deck {
+        let realm = try! Realm()
+        let results = realm.objects(DeckEntity.self).last(where: deck.name == self.name)
+    }
+
+
     static func all(in realm: Realm = try! Realm()) -> Results<DeckEntity> {
         return realm.objects(DeckEntity.self)
         .sorted(byKeyPath: "cost", ascending: true)
