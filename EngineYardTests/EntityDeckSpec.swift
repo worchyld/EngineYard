@@ -61,5 +61,31 @@ class EntityDeckSpec: BaseSpec {
                 }
             }
         }
+
+        describe("attempting saving board") {
+            it ("saving board correctly") {
+                let playerCount = 5
+
+                guard let _ = Mock.players(howMany: playerCount) else {
+                    fail("No players created")
+                    return
+                }
+                guard let mockPlayers: [Player] = SetupManager.createPlayers(howMany: playerCount) else {
+                    fail("Invalid player creation")
+                    return
+                }
+                guard let game = SetupManager.instance.setup(players: mockPlayers) else {
+                    fail("no game")
+                    return
+                }
+                guard let board = game.board else {
+                    XCTFail("No board found")
+                    return
+                }
+
+                // Save board into realm
+                
+            }
+        }
     }
 }
