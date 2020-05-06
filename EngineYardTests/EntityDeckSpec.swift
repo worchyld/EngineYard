@@ -58,6 +58,7 @@ class EntityDeckSpec: BaseSpec {
                     expect(deckFromDatabase.cost) == deck.cost
                     expect(deckFromDatabase.capacity) == deck.capacity
                     expect(deckFromDatabase.numberOfChildren) == deck.numberOfChildren
+                    expect(deckFromDatabase.cards.count) == 0
                 }
             }
         }
