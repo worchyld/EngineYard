@@ -70,37 +70,41 @@ extension DeckEntity {
         completion?()
     }
 
-
-}
-
-/**
-extension DeckEntity {
-    public static func find(deck: Deck) {
+    func save(completion: CompletionHandler? = nil) {
         let realm = try! Realm()
-        let predicate = NSPredicate(format: "%@ == ", deck.name)
-        let results = realm.objects(DeckEntity.self).filter(predicate)
-        print (results)
-        return
+        try! realm.write {
+            realm.add(self)
+        }
+        completion?()
     }
 
-
-    static func all(in realm: Realm = try! Realm()) -> Results<DeckEntity> {
+    public static func allRecords(in realm: Realm = try! Realm()) -> Results<DeckEntity> {
         return realm.objects(DeckEntity.self)
         .sorted(byKeyPath: "cost", ascending: true)
     }
 
-  func updateFrom(deckEntity: DeckEntity) {
-    let realm = try! Realm()
-    try! realm.write {
-        realm.add(deckEntity, update: .modified)
+    public static func findDecksByName(_ name: String) -> Results<DeckEntity> {
+        let realm: Realm = try! Realm()
+        let predicate = NSPredicate(format: "name = %@", name)
+        return realm.objects(DeckEntity.self).filter(predicate)
     }
-  }
 
-  func delete() {
-    let realm = try! Realm()
-    try! realm.write {
-      realm.delete(self)
+    func deleteEntity(completion: CompletionHandler? = nil) {
+        do {
+            let realm = try Realm()
+            do {
+                let _ = try realm.write {
+                    realm.delete(self)
+                }
+            } catch let error as NSError {
+                print (error.description)
+            }
+            completion?()
+        }
+        catch let error as NSError {
+            print (error.description)
+        }
+        completion?()
     }
-  }
+
 }
-**/

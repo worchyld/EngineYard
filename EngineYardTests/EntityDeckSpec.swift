@@ -61,45 +61,45 @@ class EntityDeckSpec: BaseSpec {
                     expect(deckFromDatabase.cards.count) == 0
                 }
             }
+
+            describe("attempt to find deck entity in realm") {
+                it ("found deck entity in realm") {
+                    let deck = Deck.init(name: "Deck #1", cost: 4, generation: .first, color: .green, capacity: 4, numberOfChildren: 4)
+
+                    DeckEntity.save(deck: deck, completion: nil)
+
+                    let realm = try! Realm()
+                    let predicate = NSPredicate(format: "cost = %d", 4)
+                    let results = realm.objects(DeckEntity.self).filter(predicate)
+
+                    expect(results.count) == 1
+
+                    guard let firstResult: DeckEntity = results.first else {
+                        fail("No first result found")
+                        return
+                    }
+
+                    expect(firstResult.name) == deck.name
+                    expect(firstResult.state) == deck.state.rawValue
+                    expect(firstResult.generation) == deck.generation.rawValue
+                    expect(firstResult.color) == deck.color.rawValue
+                    expect(firstResult.cost) == deck.cost
+                    expect(firstResult.capacity) == deck.capacity
+                    expect(firstResult.numberOfChildren) == deck.numberOfChildren
+                    expect(firstResult.cards.count) == 0
+                }
+            }
         }
 
 
-        /**
+        // Attempt to do bulk-save from memory -> realm
+
         describe("attempting saving board") {
             it ("saving board correctly") {
-                let playerCount = 5
 
-                guard let _ = Mock.players(howMany: playerCount) else {
-                    fail("No players created")
-                    return
-                }
-                guard let mockPlayers: [Player] = SetupManager.createPlayers(howMany: playerCount) else {
-                    fail("Invalid player creation")
-                    return
-                }
-                guard let game = SetupManager.instance.setup(players: mockPlayers) else {
-                    fail("no game")
-                    return
-                }
-                guard let board = game.board else {
-                    XCTFail("No board found")
-                    return
-                }
-                guard let firstDeck = board.decks.first else {
-                    XCTFail("Cant find first deck")
-                    return
-                }
-
-                // Attempt save board into realm
-                for deck in board.decks {
-                    let deckEntity = DeckEntity.init(with: deck)
-                    DeckEntity.save(entity: deckEntity)
-                }
-
-                let _ = DeckEntity.find(deck: firstDeck)
 
             }
         }
-        */
+
     }
 }
