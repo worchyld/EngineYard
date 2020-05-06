@@ -41,12 +41,10 @@ class EntityDeckSpec: BaseSpec {
             describe("attempting saving deck to realm") {
                 it("saves single deck correctly") {
                     let deck = Deck.init(name: "Deck #1", cost: 4, generation: .first, color: .green, capacity: 4, numberOfChildren: 4)
-                    let entity = DeckEntity.init(with: deck)
+
+                    DeckEntity.save(deck: deck, completion: nil)
 
                     let realm = try! Realm()
-                    try! realm.write {
-                        realm.add(entity)
-                    }
 
                     guard let deckFromDatabase = realm.objects(DeckEntity.self).last else {
                         fail("No deck from database found")

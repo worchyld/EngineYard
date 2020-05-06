@@ -40,8 +40,10 @@ class DeckEntity : Object {
     }
 }
 
+typealias CompletionHandler = () -> Void
 
 extension DeckEntity {
+    
     public static func saveInBackground(entity: DeckEntity, completion: () -> ()) {
         DispatchQueue(label: "background").async {
             autoreleasepool {
@@ -56,14 +58,19 @@ extension DeckEntity {
         completion()
     }
 
-    /*
-    public static func save(deck: Deck, completion: () -> ()) {
+    public static func save(deck: Deck, completion: CompletionHandler? = nil) {
         let realm = try! Realm()
 
+        let entity: DeckEntity = DeckEntity.init(with: deck)
         
+        try! realm.write {
+            realm.add(entity)
+        }
 
-        completion()
-    }*/
+        completion?()
+    }
+
+
 }
 
 /**
