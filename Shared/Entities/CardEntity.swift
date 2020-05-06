@@ -24,10 +24,27 @@ class CardEntity: Object {
     @objc dynamic var parentDeck: DeckEntity? // To-one relationship
 
     convenience init(with card: Card) {
-        guard let parent = card.parent else { return }
         self.init()
+        guard let _ = card.parent else { return }
         self.units = card.units
         self.spentUnits = card.spentUnits
-        self.parentDeck = DeckEntity.find(parent: parent)
     }
 }
+
+/**
+extension CardEntity {
+    func save() {
+        DispatchQueue(label: "background").async {
+            autoreleasepool {
+                // Get realm and table instances for this thread
+                let realm = try! Realm()
+
+                realm.add(self)
+
+                // Commit the write
+                try! realm.commitWrite()
+            }
+        }
+    }
+}
+**/

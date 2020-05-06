@@ -42,23 +42,38 @@ class DeckEntity : Object {
 
 
 extension DeckEntity {
-  func save() {
-    DispatchQueue(label: "background").async {
-        autoreleasepool {
-            // Get realm and table instances for this thread
-            let realm = try! Realm()
+    public static func saveInBackground(entity: DeckEntity, completion: () -> ()) {
+        DispatchQueue(label: "background").async {
+            autoreleasepool {
+                let realm = try! Realm()
 
-            realm.add(self)
+                realm.beginWrite()
+                realm.add(entity)
 
-            // Commit the write
-            try! realm.commitWrite()
+                try! realm.commitWrite()
+            }
         }
+        completion()
     }
-  }
 
-    func find(deck: Deck) -> Deck {
+    /*
+    public static func save(deck: Deck, completion: () -> ()) {
         let realm = try! Realm()
-        let results = realm.objects(DeckEntity.self).last(where: deck.name == self.name)
+
+        
+
+        completion()
+    }*/
+}
+
+/**
+extension DeckEntity {
+    public static func find(deck: Deck) {
+        let realm = try! Realm()
+        let predicate = NSPredicate(format: "%@ == ", deck.name)
+        let results = realm.objects(DeckEntity.self).filter(predicate)
+        print (results)
+        return
     }
 
 
@@ -81,3 +96,4 @@ extension DeckEntity {
     }
   }
 }
+**/

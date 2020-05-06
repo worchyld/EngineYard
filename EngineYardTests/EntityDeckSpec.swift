@@ -38,13 +38,15 @@ class EntityDeckSpec: BaseSpec {
                 }
             }
 
-            describe("attempting saving deck") {
+            describe("attempting saving deck to realm") {
                 it("saves single deck correctly") {
                     let deck = Deck.init(name: "Deck #1", cost: 4, generation: .first, color: .green, capacity: 4, numberOfChildren: 4)
-                    let deckEntity = DeckEntity.init(with: deck)
+                    let entity = DeckEntity.init(with: deck)
 
-                    deckEntity.save()
                     let realm = try! Realm()
+                    try! realm.write {
+                        realm.add(entity)
+                    }
 
                     guard let deckFromDatabase = realm.objects(DeckEntity.self).last else {
                         fail("No deck from database found")
@@ -62,6 +64,8 @@ class EntityDeckSpec: BaseSpec {
             }
         }
 
+
+        /**
         describe("attempting saving board") {
             it ("saving board correctly") {
                 let playerCount = 5
@@ -82,19 +86,21 @@ class EntityDeckSpec: BaseSpec {
                     XCTFail("No board found")
                     return
                 }
+                guard let firstDeck = board.decks.first else {
+                    XCTFail("Cant find first deck")
+                    return
+                }
 
-                // Save board into realm
-                let realm = try! Realm()
+                // Attempt save board into realm
                 for deck in board.decks {
                     let deckEntity = DeckEntity.init(with: deck)
-                    deckEntity.save()
-
-                    for card in deck.cards {
-                        
-                    }
+                    DeckEntity.save(entity: deckEntity)
                 }
+
+                let _ = DeckEntity.find(deck: firstDeck)
 
             }
         }
+        */
     }
 }
