@@ -76,12 +76,12 @@ extension DeckEntity {
         completion?()
     }
 
-    func save(completion: CompletionHandler? = nil) {
+    func save(completion: (Bool) -> () ) {
         let realm = try! Realm()
         try! realm.write {
             realm.add(self)
         }
-        completion?()
+        completion(true)
     }
 
     public static func allRecords(in realm: Realm = try! Realm()) -> Results<DeckEntity> {

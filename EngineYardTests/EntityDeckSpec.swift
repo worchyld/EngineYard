@@ -105,57 +105,42 @@ class EntityDeckSpec: BaseSpec {
                 for deck in board.decks {
                     let deckObj = DeckEntity.init(with: deck)
 
-                    try! realm.write {
-                        realm.add(deckObj)
-                    }
+                    deckObj.save { (completed: Bool) in
+                        if (completed) {
+                            for card in deck.cards {
+                                let cardObj = CardEntity.init(with: card)
 
-                    for card in deck.cards {
-                        let cardObj = CardEntity.init(with: card)
+                                try! realm.write {
+                                    realm.add(cardObj)
+                                    cardObj.parentDeck = deckObj
+                                    deckObj.cards.append(cardObj)
+                                }
+                            }
 
-                        try! realm.write {
-                            realm.add(cardObj)
-                            cardObj.parentDeck = deckObj
-                            deckObj.cards.append(cardObj)
                         }
                     }
                 }
 
-                let records = realm.objects(CardEntity.self)
-                expect(records.count) == Meta.totalCards
+                print ("REALM DECKS")
+                let decks = DeckEntity.allRecords()
+                expect(decks.count) == Meta.totalDecks
 
-                for card: CardEntity in records {
+                for deck: DeckEntity in decks {
+                    print (deck.debugDescription)
+                    expect(deck.cards.count) == deck.numberOfChildren
+                }
+
+                print ("\n-----")
+                print ("REALM CARDS")
+                let cards = realm.objects(CardEntity.self)
+                expect(cards.count) == Meta.totalCards
+
+                for card: CardEntity in cards {
                     print (card.debugDescription)
 
                     expect(card.units) == 0
                     expect(card.spentUnits) == 0
-
-                    print ("\n====")
                 }
-
-                /*
-                let records = DeckEntity.allRecords()
-                expect(records.count) == Meta.totalDecks
-
-                for deck: DeckEntity in records {
-                    //print (deck.id, deck.name, deck.cost, deck.generation, deck.color, deck.capacity, deck.numberOfChildren)
-                    print (deck.debugDescription)
-                    expect(deck.cards.count) == deck.numberOfChildren
-
-                    for card: CardEntity in deck.cards {
-                        guard let parentDeck = card.parentDeck else {
-                            fail("No parent deck found")
-                            return
-                        }
-
-                        print (" card: \(card.debugDescription)\n")
-                        expect(card.parentDeck) == deck
-                        expect(parentDeck.id) == deck.id
-                        XCTAssertNil(card.owner)
-                    }
-                    print ("/n==============/n")
-                }
-                */
-                
             }
         }
 
