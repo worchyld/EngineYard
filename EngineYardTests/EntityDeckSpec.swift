@@ -14,7 +14,7 @@ import Nimble
 
 @testable import EngineYard
 
-// [REALM] Testing `Deck` entity
+// [REALM] Testing `Deck` entity in-memory saving
 
 class EntityDeckSpec: BaseSpec {
 
@@ -98,8 +98,79 @@ class EntityDeckSpec: BaseSpec {
             it ("saving board correctly") {
 
 
+                let board = Board()
+                let realm = try! Realm()
+                
+
+                for deck in board.decks {
+                    let deckObj = DeckEntity.init(with: deck)
+
+                    try! realm.write {
+                        realm.add(deckObj)
+                    }
+
+                    for card in deck.cards {
+                        let cardObj = CardEntity.init(with: card)
+
+                        try! realm.write {
+                            realm.add(cardObj)
+                            cardObj.parentDeck = deckObj
+                            deckObj.cards.append(cardObj)
+                        }
+                    }
+                }
+
+                let records = realm.objects(CardEntity.self)
+                expect(records.count) == Meta.totalCards
+
+                for card: CardEntity in records {
+                    print (card.debugDescription)
+
+                    expect(card.units) == 0
+                    expect(card.spentUnits) == 0
+
+                    print ("\n====")
+                }
+
+                /*
+                let records = DeckEntity.allRecords()
+                expect(records.count) == Meta.totalDecks
+
+                for deck: DeckEntity in records {
+                    //print (deck.id, deck.name, deck.cost, deck.generation, deck.color, deck.capacity, deck.numberOfChildren)
+                    print (deck.debugDescription)
+                    expect(deck.cards.count) == deck.numberOfChildren
+
+                    for card: CardEntity in deck.cards {
+                        guard let parentDeck = card.parentDeck else {
+                            fail("No parent deck found")
+                            return
+                        }
+
+                        print (" card: \(card.debugDescription)\n")
+                        expect(card.parentDeck) == deck
+                        expect(parentDeck.id) == deck.id
+                        XCTAssertNil(card.owner)
+                    }
+                    print ("/n==============/n")
+                }
+                */
+                
             }
         }
 
     }
 }
+
+/*
+ DispatchQueue(label: "background").async {
+     autoreleasepool {
+         let realm = try! Realm()
+
+         realm.beginWrite()
+         realm.add(entity)
+
+         try! realm.commitWrite()
+     }
+ }
+ */

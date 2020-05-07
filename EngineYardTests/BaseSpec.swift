@@ -10,30 +10,51 @@ import Quick
 import Nimble
 import RealmSwift
 
+private let inMemoryIdentifier: String = "Yard"
+
 class BaseSpec: QuickSpec {
-  override func spec() {
-    super.spec()
+    override func spec() {
+        super.spec()
 
-    beforeSuite {
-      self.useTestDatabase()
-    }
+        beforeSuite {
+            self.useTestDatabase()
+        }
 
-    beforeEach {
-      self.clearDatabase()
+        beforeEach {
+            self.clearDatabase()
+        }
+
+        describe("Realm Config Setup") {
+            it("Config setup correctly") {
+                let config = Realm.Configuration.defaultConfiguration
+                expect(config.inMemoryIdentifier) == inMemoryIdentifier
+            }
+        }
     }
-  }
 }
 
 extension BaseSpec {
-  func useTestDatabase() {
-    Realm.Configuration.defaultConfiguration.inMemoryIdentifier = self.name
-    print("[REALM]: \(Realm.Configuration.defaultConfiguration.description)")
-  }
-
-  func clearDatabase() {
-    let realm = try! Realm()
-    try! realm.write {
-      realm.deleteAll()
+    func useTestDatabase() {
+        Realm.Configuration.defaultConfiguration.inMemoryIdentifier = inMemoryIdentifier
+        print("[REALM]: \(Realm.Configuration.defaultConfiguration.description)")
     }
-  }
+
+    func clearDatabase() {
+        do {
+            let realm = try Realm()
+
+            do {
+                let _ = try realm.write {
+                    realm.deleteAll()
+                }
+            } catch let error as NSError {
+                fail(error.description)
+                return
+            }
+
+        } catch let error as NSError {
+            fail(error.description)
+            return
+        }
+    }
 }

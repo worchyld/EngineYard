@@ -43,7 +43,13 @@ class DeckEntity : Object {
 typealias CompletionHandler = () -> Void
 
 extension DeckEntity {
-    
+    override var debugDescription: String {
+        let string = "ID: \(self.id), name: \(self.name), cost: \(self.cost), generation:\(self.generation), color: \(self.color), capacity: \(self.capacity), numberOfChildren: \(self.numberOfChildren), #cards: \(self.cards.count)"
+        return string
+    }
+}
+
+extension DeckEntity {
     public static func saveInBackground(entity: DeckEntity, completion: () -> ()) {
         DispatchQueue(label: "background").async {
             autoreleasepool {

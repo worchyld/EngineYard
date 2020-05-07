@@ -25,26 +25,42 @@ class CardEntity: Object {
 
     convenience init(with card: Card) {
         self.init()
-        guard let _ = card.parent else { return }
+        guard let _ = card.parent else {
+            assertionFailure("No card parent defined")
+            return
+        }
         self.units = card.units
         self.spentUnits = card.spentUnits
     }
 }
 
-/**
 extension CardEntity {
-    func save() {
+    override var debugDescription: String {
+        let string = "ID: \(self.id), units: \(self.units), spentUnits: \(self.spentUnits), owner: \(String(describing: self.owner)), parentDeck:\(String(describing: self.parentDeck?.id))"
+        return string
+    }
+}
+
+extension CardEntity {
+    public static func bulkSave(cards: [Card], deckObj: DeckEntity, completion: @escaping (Bool) -> ()) {
+        let objectRef = ThreadSafeReference(to: deckObj)
+
         DispatchQueue(label: "background").async {
-            autoreleasepool {
-                // Get realm and table instances for this thread
-                let realm = try! Realm()
+           let realmOnBackgroundThread = try! Realm()
+           guard let myObject = realmOnBackgroundThread.resolve(objectRef) else {
+                print ("object was deleted")
+                return // object was deleted
+           }
+            for card in cards {
+                let cardObj = CardEntity.init(with: card)
+                cardObj.parentDeck = myObject
+                try! realmOnBackgroundThread.write {
+                    realmOnBackgroundThread.add(cardObj)
+                }
 
-                realm.add(self)
-
-                // Commit the write
-                try! realm.commitWrite()
             }
+            realmOnBackgroundThread.refresh()
+            completion(true)
         }
     }
 }
-**/
