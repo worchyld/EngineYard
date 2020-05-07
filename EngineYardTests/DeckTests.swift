@@ -9,7 +9,7 @@
 import XCTest
 @testable import EngineYard
 
-fileprivate struct CardCounter : CustomStringConvertible {
+struct CardCounter : CustomStringConvertible {
     var green : Int = 0
     var blue : Int = 0
     var yellow : Int = 0

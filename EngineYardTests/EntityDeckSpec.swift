@@ -125,10 +125,34 @@ class EntityDeckSpec: BaseSpec {
                 let decks = DeckEntity.allRecords()
                 expect(decks.count) == Meta.totalDecks
 
+                var counter = CardCounter()
+                 var totalCards: Int = 0
+
                 for deck: DeckEntity in decks {
                     print (deck.debugDescription)
                     expect(deck.cards.count) == deck.numberOfChildren
+                    XCTAssertTrue(deck.cost % 4 == 0)
+                    XCTAssertTrue(deck.orders.count == 0)
+
+                    totalCards += deck.cards.count
+
+                    for _ in deck.cards {
+                        guard let colorRef = Deck.Color.init(rawValue: deck.color) else {
+                            fail("No color defined")
+                            return
+                        }
+
+                        counter.increment(with: colorRef)
+                    }
                 }
+
+                expect(totalCards) == CardCounter.Expected.totalCards
+                expect(counter.red) == CardCounter.Expected.red
+                expect(counter.green) == CardCounter.Expected.green
+                expect(counter.yellow) == CardCounter.Expected.yellow
+                expect(counter.blue) == CardCounter.Expected.blue
+
+                // ---------------------
 
                 print ("\n-----")
                 print ("REALM CARDS")
