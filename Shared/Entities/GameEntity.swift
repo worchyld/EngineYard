@@ -13,6 +13,9 @@ class GameEntity: Object {
     @objc dynamic var id = UUID().uuidString
     @objc dynamic var activePlayer: Int = 0
     @objc dynamic var gamePhase: Int = 0
+    @objc dynamic var page: String = ""
+    @objc dynamic var hasSound: Bool = false
+    @objc dynamic var hasMusic: Bool = false
 
     override static func primaryKey() -> String {
        return "id"

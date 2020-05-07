@@ -21,3 +21,12 @@ struct Winner {
         self.players = players
     }
 }
+
+extension Winner {
+    mutating func getFirstPrize() -> Player? {
+        guard let firstPrize = self.sorted.first else {
+            return nil
+        }
+        return firstPrize
+    }
+}
