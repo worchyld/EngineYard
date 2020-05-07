@@ -259,14 +259,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4D00A42520A8C5C700A2E88E /* Functions */ = {
-			isa = PBXGroup;
-			children = (
-				4DA5236620815885000FFAAB /* Die.swift */,
-			);
-			path = Functions;
-			sourceTree = "<group>";
-		};
 		4D111DFD233672CE00472BDC /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -364,11 +356,11 @@
 		4DA3488220812B08006DA164 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				4DED366E246485EB00CB7D72 /* Helpers */,
 				4DACC0B42441EAC900466ABE /* Entities */,
 				4D111DFD233672CE00472BDC /* Assets */,
 				4D3C17C82334B6200036808F /* Managers */,
 				4DA5236A208158B5000FFAAB /* Extensions */,
-				4D00A42520A8C5C700A2E88E /* Functions */,
 				4DC3D848233431080066FE9F /* Models */,
 			);
 			path = Shared;
@@ -423,11 +415,7 @@
 		4DC3D848233431080066FE9F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4D5CA5152337F01300EF9F96 /* Constants.swift */,
-				4D5CA5172337FC6900EF9F96 /* ErrorCode.swift */,
 				4D3C17CA2334B6200036808F /* Message.swift */,
-				4DFF752A2336077400C7CC24 /* Tax.swift */,
-				4DFF753623360ED300C7CC24 /* Wallet.swift */,
 				4D111E112336ABB400472BDC /* Deck.swift */,
 				4D111E152336B04300472BDC /* Deck+Colors.swift */,
 				4D5CA50F2337E82D00EF9F96 /* Board.swift */,
@@ -445,6 +433,18 @@
 				4D5CA5112337EA0200EF9F96 /* Order.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		4DED366E246485EB00CB7D72 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4D5CA5172337FC6900EF9F96 /* ErrorCode.swift */,
+				4DFF753623360ED300C7CC24 /* Wallet.swift */,
+				4DA5236620815885000FFAAB /* Die.swift */,
+				4D5CA5152337F01300EF9F96 /* Constants.swift */,
+				4DFF752A2336077400C7CC24 /* Tax.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		4DFA7A47233D55DE004099B7 /* Main Menu */ = {
