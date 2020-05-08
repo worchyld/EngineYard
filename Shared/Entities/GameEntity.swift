@@ -24,3 +24,26 @@ class GameEntity: Object {
        return "id"
     }
 }
+
+extension GameEntity {
+    // Map from model -> entity
+    convenience init(from model: GameModel) {
+        self.init()
+        self.gamePhase = model.phase?.rawValue ?? 0
+        self.hasSound = model.sound as Bool
+        self.hasMusic = model.music as Bool
+        self.activePlayer = model.activePlayer?.playerId ?? 0
+        self.turnOrderIndex = model.turnOrderIndex
+    }
+}
+
+extension GameModel {
+    // Map from entity -> model
+    convenience init(from entity: GameEntity) {
+        self.init()
+        self.sound = Bool(entity.hasSound)
+        self.music = Bool(entity.hasMusic)
+        self.phase = GamePhase.init(rawValue: entity.gamePhase)
+        self.turnOrderIndex = entity.turnOrderIndex
+    }
+}
