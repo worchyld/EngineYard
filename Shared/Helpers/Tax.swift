@@ -8,20 +8,29 @@
 
 import Foundation
 
-struct Tax {
+private protocol TaxProtocol {
+    static func due(on amount: Int) -> Int
+    static func pay(on amount: Int) -> Int
+    static func add(on amount: Int) -> Int
+}
+
+struct Tax : TaxProtocol {
     static let rate: Float = 0.10 // Players pay 10% of their cash in taxes, rounded down
 
-    public static func due(onBalance: Int) -> Int {
+    // Finds out how much tax is due on an amount
+    static func due(on amount: Int) -> Int {
         // Return rounded down amount as per game rules
-        return Int(floor(Float(onBalance) * Tax.rate))
+        return Int(floor(Float(amount) * Tax.rate))
     }
 
-    public static func pay(onBalance: Int) -> Int {
-        return Int(onBalance - due(onBalance: onBalance))
+    // Used to pay tax on an amount
+    static func pay(on amount: Int) -> Int {
+        return Int(amount - due(on: amount))
     }
 
-    public static func getSalesTax(onBalance: Int) -> Int {
-        let salesTax: Int = due(onBalance: onBalance)
-        return Int(onBalance + salesTax)
+    // Used to add a "sales tax" on some items
+    static func add(on amount: Int) -> Int {
+        let taxDue: Int = due(on: amount)
+        return Int(amount + taxDue)
     }
 }

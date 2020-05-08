@@ -16,6 +16,7 @@ import Nimble
 
 // Tests to save/load game entity
 
+/*
 class EntityGameSpec: BaseSpec {
 
     private var game: GameModel?
@@ -115,3 +116,4 @@ class EntityGameSpec: BaseSpec {
 
 
 }
+*/

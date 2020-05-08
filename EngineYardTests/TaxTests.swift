@@ -12,30 +12,21 @@ import XCTest
 
 class TaxTests: EngineYardTests {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
     func testTaxDue() {
-        let balance = 100
-        let due = Tax.due(onBalance: balance)
-        XCTAssertTrue(due == 10)
+        let balance: Int = 100
+        let taxDue = Tax.due(on: balance)
+        XCTAssertTrue(taxDue == 10)
     }
 
     func testPayTax() {
         var balance = 100
-        balance = Tax.pay(onBalance: balance)
+        balance = Tax.pay(on: balance)
         XCTAssertTrue(balance == 100 - 10)
     }
 
-    func testCalculateSalesTax() {
+    func testAddTax() {
         let balance = 100
-        let due = Tax.getSalesTax(onBalance: balance)
-        XCTAssertTrue(due == 110)
+        let taxDue = Tax.add(on: balance)
+        XCTAssertTrue(taxDue == 110)
     }
-
 }

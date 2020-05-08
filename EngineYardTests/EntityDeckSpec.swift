@@ -16,6 +16,7 @@ import Nimble
 
 // [REALM] Testing `Deck` entity in-memory saving
 
+/*
 class EntityDeckSpec: BaseSpec {
 
     override func spec() {
@@ -170,6 +171,7 @@ class EntityDeckSpec: BaseSpec {
 
     }
 }
+*/
 
 /*
  DispatchQueue(label: "background").async {
