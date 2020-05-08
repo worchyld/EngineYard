@@ -14,7 +14,55 @@ final class DBManager {
 
     private init() {}
 
-    func save(game: GameModel, completion: () -> ()) {
+    func saveState(completion: () -> ()) {
+        completion()
+    }
+
+    func loadState(completion: () -> ()) {
+        completion()
+    }
+
+    //: (Private) funcs
+
+    private func save(gameModel: GameModel, completion: () -> ()) {
+        guard let gamePhase = gameModel.phase else {
+            print ("No game phase defined")
+            return
+        }
+        guard let activePlayer = gameModel.activePlayer else {
+            print ("No activePlayer defined")
+            return
+        }
+
+        let entity = GameEntity.init()
+        entity.gamePhase = gamePhase.rawValue
+        entity.activePlayer = activePlayer.playerId
+        entity.hasMusic = Settings().music as Bool
+        entity.hasSound = Settings().sound as Bool
+        entity.turnOrderIndex = gameModel.turnOrderIndex
+
+        let realm = try! Realm()
+
+        try! realm.write {
+           realm.add(entity)
+        }
+
+        completion()
+    }
+
+    private func save(decks: [Deck], completion: () -> ()) {
+        completion()
+    }
+
+    private func save(cards:[Card], completion: () -> ()) {
+        completion()
+    }
+
+    private func save(players:[Player], completion: () -> ()) {
+        completion()
+    }
+
+    private func save(settings:Settings, completion: () -> ()) {
         completion()
     }
 }

@@ -12,7 +12,6 @@ private protocol BoardProtocol {
     func unlockNextDeck(after deck: Deck)
 }
 
-
 final class Board {
     static var instance = Board()
 
@@ -24,18 +23,6 @@ final class Board {
     }
 
     init() {
-        self._decks = self.prepare()
-    }
-}
-
-extension Board {
-    // Helper function return number of .active, .inactive, .rusting, etc
-    public static func count(for state: Deck.State) -> Int {
-        let instance = Board.instance
-        return (instance.decks.reduce(0) { $0 + ($1.state == state ? 1 : 0) })
-    }
-
-    private func prepare() -> [Deck] {
         // Game has 14 decks
         let decks = [
             Deck.init(name: "Green.1", cost: 4, generation: .first, color: .green, capacity: 3, numberOfChildren: 4)
@@ -59,7 +46,15 @@ extension Board {
         //            $0.addSubscriber(self)
         //        })
 
-        return decks
+        self._decks = decks
+    }
+}
+
+extension Board {
+    // Helper function return number of .active, .inactive, .rusting, etc
+    public static func count(for state: Deck.State) -> Int {
+        let instance = Board.instance
+        return (instance.decks.reduce(0) { $0 + ($1.state == state ? 1 : 0) })
     }
 }
 
