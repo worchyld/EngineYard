@@ -22,16 +22,6 @@ class CardEntity: Object {
     // RLMRelationships
     @objc dynamic var owner: PlayerEntity? // To-one relationship
     @objc dynamic var parentDeck: DeckEntity? // To-one relationship
-
-    convenience init(with card: Card) {
-        self.init()
-        guard let _ = card.parent else {
-            assertionFailure("No card parent defined")
-            return
-        }
-        self.units = card.units
-        self.spentUnits = card.spentUnits
-    }
 }
 
 extension CardEntity {
@@ -41,6 +31,21 @@ extension CardEntity {
     }
 }
 
+extension CardEntity {
+    // Map the model -> entity
+    convenience init(with model: Card) {
+        self.init()
+        guard let _ = model.parent else {
+            assertionFailure("No card parent defined")
+            return
+        }
+        self.units = model.units
+        self.spentUnits = model.spentUnits
+    }
+}
+
+
+/*
 extension CardEntity {
     public static func bulkSave(cards: [Card], deckObj: DeckEntity, completion: @escaping (Bool) -> ()) {
         let objectRef = ThreadSafeReference(to: deckObj)
@@ -64,3 +69,4 @@ extension CardEntity {
         }
     }
 }
+*/

@@ -27,20 +27,7 @@ class DeckEntity : Object {
     // RLMRelationships
     let cards = List<CardEntity>() // To-many relationship
     let orders = List<OrderEntity>() // To-many relationship
-
-    convenience init(with deck: Deck) {
-        self.init()
-        self.state = deck.state.rawValue
-        self.color = deck.color.rawValue
-        self.generation = deck.generation.rawValue
-        self.name = deck.name
-        self.cost = deck.cost
-        self.capacity = deck.capacity
-        self.numberOfChildren = deck.numberOfChildren
-    }
 }
-
-typealias CompletionHandler = () -> Void
 
 extension DeckEntity {
     override var debugDescription: String {
@@ -48,6 +35,41 @@ extension DeckEntity {
         return string
     }
 }
+
+extension Deck {
+
+    // Map the entity -> model
+    convenience init(from entity: DeckEntity) {
+        let name = entity.name
+        let cost = entity.cost
+        let generation = Deck.Generation.init(rawValue: entity.generation) ?? Deck.Generation.first
+        let color = Deck.Color.init(rawValue: entity.color) ?? Deck.Color.green
+        let capacity = entity.capacity
+        let numberOfChildren = entity.numberOfChildren
+
+        self.init(name: name, cost: cost, generation: generation, color: color, capacity: capacity, numberOfChildren: numberOfChildren)
+    }
+}
+
+extension DeckEntity {
+
+    // Map the model -> entity
+    convenience init(with model: Deck) {
+        self.init()
+        self.state = model.state.rawValue
+        self.color = model.color.rawValue
+        self.generation = model.generation.rawValue
+        self.name = model.name
+        self.cost = model.cost
+        self.capacity = model.capacity
+        self.numberOfChildren = model.numberOfChildren
+    }
+}
+
+
+/*
+typealias CompletionHandler = () -> Void
+
 
 extension DeckEntity {
     public static func saveInBackground(entity: DeckEntity, completion: () -> ()) {
@@ -114,3 +136,4 @@ extension DeckEntity {
     }
 
 }
+*/

@@ -22,3 +22,25 @@ class OrderEntity: Object {
     // RLMRelationships
     @objc dynamic var parentDeck: DeckEntity? // to-one relationship
 }
+
+extension OrderEntity {
+    // Map the model -> entity
+    convenience init(model: Order) {
+        self.init()
+        self.state = model.state.rawValue
+        self.value = model.value
+    }
+}
+
+extension Order {
+    // Map the entity -> model
+    convenience init(entity: OrderEntity) {
+        var state: Order.State
+
+        state = Order.State.init(rawValue: entity.state) ?? Order.State.existingOrder
+
+        let value = entity.value
+
+        self.init(state: state, value: value)
+    }
+}

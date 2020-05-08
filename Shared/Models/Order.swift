@@ -17,9 +17,14 @@ class Order {
     public private (set) var value: Int = 0
     public private (set) var state: Order.State = .existingOrder
 
-    init() {
-        self.value = Order.generate()
-        self.state = .existingOrder
+    init(state: Order.State = .existingOrder, value: Int = 0) {
+        if (value == 0) {
+            self.value = Order.generate()
+        }
+        else {
+            self.value = value
+        }
+        self.state = state
     }
 }
 

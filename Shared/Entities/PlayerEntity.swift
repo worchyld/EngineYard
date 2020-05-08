@@ -26,3 +26,31 @@ class PlayerEntity: Object {
     // RLMRelationships
     let cards = List<CardEntity>() // To-many relationship
 }
+
+extension PlayerEntity {
+    // Map model -> entity
+    convenience init(model: Player) {
+        self.init()
+
+        self.playerId = model.playerId
+        self.name = model.name
+        self.isAI = model.isAI
+        self.cash = model.cash
+        self.avatar = model.avatar
+        self.turnOrder = model.turnOrder
+    }
+}
+
+extension Player {
+    // Map entity -> model
+    convenience init(entity: PlayerEntity) {
+        let playerId = entity.playerId
+        let name = entity.name
+        let isAI = entity.isAI
+        //let cash = entity.cash
+        //let avatar = entity.avatar
+        //let turnOrder = entity.turnOrder
+
+        self.init(id: playerId, name: name, isAI: isAI)
+    }
+}
