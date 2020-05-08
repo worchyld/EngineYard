@@ -9,8 +9,10 @@
 import Foundation
 import RealmSwift
 
+//private let uniqueId = "84259842-D756-4E5C-923E-747A79B5EC62"
+
 class GameEntity: Object {
-    @objc dynamic var id = UUID().uuidString
+    @objc dynamic var id: String = UUID().uuidString
     @objc dynamic var activePlayer: Int = 0
     @objc dynamic var turnOrderIndex: Int = 0
     @objc dynamic var gamePhase: Int = 0

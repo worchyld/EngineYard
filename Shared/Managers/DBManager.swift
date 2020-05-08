@@ -10,21 +10,11 @@ import Foundation
 import RealmSwift
 
 final class DBManager {
-    static var instance = DBManager()
+    static var shared = DBManager()
 
     private init() {}
 
-    func saveState(completion: () -> ()) {
-        completion()
-    }
-
-    func loadState(completion: () -> ()) {
-        completion()
-    }
-
-    //: (Private) funcs
-
-    private func save(gameModel: GameModel, completion: () -> ()) {
+    func save(gameModel: GameModel, completion: (Bool) -> ()) {
         guard let gamePhase = gameModel.phase else {
             print ("No game phase defined")
             return
@@ -37,18 +27,20 @@ final class DBManager {
         let entity = GameEntity.init()
         entity.gamePhase = gamePhase.rawValue
         entity.activePlayer = activePlayer.playerId
-        entity.hasMusic = Settings().music as Bool
-        entity.hasSound = Settings().sound as Bool
+        entity.hasMusic = gameModel.music
+        entity.hasSound = gameModel.sound
         entity.turnOrderIndex = gameModel.turnOrderIndex
 
         let realm = try! Realm()
 
-        try! realm.write {
-           realm.add(entity)
-        }
+        realm.beginWrite()
+        realm.add(entity)
+        try! realm.commitWrite()
 
-        completion()
+        completion(true)
     }
+
+    //: (Private) funcs
 
     private func save(decks: [Deck], completion: () -> ()) {
         completion()
@@ -62,7 +54,12 @@ final class DBManager {
         completion()
     }
 
-    private func save(settings:Settings, completion: () -> ()) {
+
+    private func saveState(completion: () -> ()) {
+        completion()
+    }
+
+    private func loadState(completion: () -> ()) {
         completion()
     }
 }

@@ -25,6 +25,17 @@ class BaseSpec: QuickSpec {
         }
 
         describe("Realm Config Setup") {
+            it("Realm connection works") {
+                do {
+                    let _ = try Realm()
+                }
+                catch let err as NSError {
+                    fail(err.description)
+                    return
+                }
+            }
+        }
+        describe("InMemory identifier is correct") {
             it("Config setup correctly") {
                 let config = Realm.Configuration.defaultConfiguration
                 expect(config.inMemoryIdentifier) == inMemoryIdentifier
@@ -40,21 +51,9 @@ extension BaseSpec {
     }
 
     func clearDatabase() {
-        do {
-            let realm = try Realm()
-
-            do {
-                let _ = try realm.write {
-                    realm.deleteAll()
-                }
-            } catch let error as NSError {
-                fail(error.description)
-                return
-            }
-
-        } catch let error as NSError {
-            fail(error.description)
-            return
+        let realm = try! Realm()
+        try! realm.write {
+            realm.deleteAll()
         }
     }
 }

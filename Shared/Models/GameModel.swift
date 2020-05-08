@@ -25,6 +25,8 @@ final class GameModel: NSObject, GKGameModel {
     var activePlayer: GKGameModelPlayer?
     var board: Board?
     var turnOrderIndex: Int = 0
+    var sound: Bool = true
+    var music: Bool = true
 }
 
 // Required by protocol
@@ -32,6 +34,9 @@ extension GameModel {
     func setGameModel(_ gameModel: GKGameModel) {
         if let sourceModel = gameModel as? GameModel {
             self.phase = sourceModel.phase
+            self.sound = sourceModel.sound
+            self.music = sourceModel.music
+            self.turnOrderIndex = sourceModel.turnOrderIndex
             guard let activePlayer = sourceModel.activePlayer else {
                 return
             }
@@ -75,5 +80,14 @@ extension GameModel {
         else {
             self.turnOrderIndex = 0
         }
+    }
+}
+
+extension GameModel {
+    func toggleMusic() {
+        self.music = !self.music
+    }
+    func toggleSound() {
+        self.sound = !self.sound
     }
 }

@@ -41,6 +41,7 @@
 		4D5CA5182337FC6900EF9F96 /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CA5172337FC6900EF9F96 /* ErrorCode.swift */; };
 		4D5CA51A2338011E00EF9F96 /* SalesRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CA5192338011E00EF9F96 /* SalesRule.swift */; };
 		4D8AB2A1233E21C4009158CB /* EY+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8AB2A0233E21C4009158CB /* EY+Notification.swift */; };
+		4D8F12F92465B97F00ADF8F0 /* EntityGameSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8F12F82465B97F00ADF8F0 /* EntityGameSpec.swift */; };
 		4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D925D74219F4E2D00441733 /* EY+Time.swift */; };
 		4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3486820812972006DA164 /* EngineYardTests.swift */; };
 		4DA3487D20812A8B006DA164 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DA3487520812A8B006DA164 /* Assets.xcassets */; };
@@ -70,12 +71,10 @@
 		4DACC0BA2441FECA00466ABE /* Nimble.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC0B62441FECA00466ABE /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4DACC0BC2441FF0D00466ABE /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4DACC0B62441FECA00466ABE /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4DACC0BD2441FF0D00466ABE /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4DACC0B52441FECA00466ABE /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4DACC0C1244204E900466ABE /* PersonSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DACC0C0244204E900466ABE /* PersonSpec.swift */; };
 		4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB448C6219F380900F8507F /* EY+Protocols.swift */; };
 		4DC55162235A373100623833 /* SalesRulesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC55161235A373100623833 /* SalesRulesTests.swift */; };
 		4DC55164235A37DC00623833 /* SalesRuleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC55163235A37DC00623833 /* SalesRuleHandler.swift */; };
 		4DC788F72346E8EB00C1A1D6 /* GameSetupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC788F62346E8EB00C1A1D6 /* GameSetupTests.swift */; };
-		4DC788F92346EC1200C1A1D6 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC788F82346EC1200C1A1D6 /* Settings.swift */; };
 		4DC788FB2346EEC400C1A1D6 /* SetupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC788FA2346EEC400C1A1D6 /* SetupManager.swift */; };
 		4DE127E0233E826C00F84C57 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DE127DF233E826C00F84C57 /* Icons.xcassets */; };
 		4DE21C2923452D8D00155575 /* DeckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE21C2823452D8D00155575 /* DeckTests.swift */; };
@@ -181,6 +180,7 @@
 		4D5CA5172337FC6900EF9F96 /* ErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCode.swift; sourceTree = "<group>"; };
 		4D5CA5192338011E00EF9F96 /* SalesRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesRule.swift; sourceTree = "<group>"; };
 		4D8AB2A0233E21C4009158CB /* EY+Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Notification.swift"; sourceTree = "<group>"; };
+		4D8F12F82465B97F00ADF8F0 /* EntityGameSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityGameSpec.swift; sourceTree = "<group>"; };
 		4D925D74219F4E2D00441733 /* EY+Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Time.swift"; sourceTree = "<group>"; };
 		4DA3485020812970006DA164 /* EngineYard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EngineYard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA3486420812972006DA164 /* EngineYardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EngineYardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -200,13 +200,11 @@
 		4DACC0A12441E5C500466ABE /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		4DACC0B52441FECA00466ABE /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		4DACC0B62441FECA00466ABE /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
-		4DACC0C0244204E900466ABE /* PersonSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonSpec.swift; sourceTree = "<group>"; };
 		4DB448C6219F380900F8507F /* EY+Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Protocols.swift"; sourceTree = "<group>"; };
 		4DC3D84423342D8F0066FE9F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DC55161235A373100623833 /* SalesRulesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesRulesTests.swift; sourceTree = "<group>"; };
 		4DC55163235A37DC00623833 /* SalesRuleHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesRuleHandler.swift; sourceTree = "<group>"; };
 		4DC788F62346E8EB00C1A1D6 /* GameSetupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetupTests.swift; sourceTree = "<group>"; };
-		4DC788F82346EC1200C1A1D6 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		4DC788FA2346EEC400C1A1D6 /* SetupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupManager.swift; sourceTree = "<group>"; };
 		4DE127DF233E826C00F84C57 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		4DE21C2823452D8D00155575 /* DeckTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckTests.swift; sourceTree = "<group>"; };
@@ -338,9 +336,9 @@
 				4DC55161235A373100623833 /* SalesRulesTests.swift */,
 				4D58965D235BF2AE00FCA0AE /* HandTests.swift */,
 				4DE441BB236A1887009A2939 /* DeckUnlockTests.swift */,
-				4DACC0C0244204E900466ABE /* PersonSpec.swift */,
 				4D0CC9352449B5510011BE4C /* BaseSpec.swift */,
 				4D01FB0D244B74010031BEE9 /* EntityDeckSpec.swift */,
+				4D8F12F82465B97F00ADF8F0 /* EntityGameSpec.swift */,
 			);
 			path = EngineYardTests;
 			sourceTree = "<group>";
@@ -434,7 +432,6 @@
 				4D5CA5192338011E00EF9F96 /* SalesRule.swift */,
 				4DC55163235A37DC00623833 /* SalesRuleHandler.swift */,
 				4DF38DF7233AC138003771C3 /* Winner.swift */,
-				4DC788F82346EC1200C1A1D6 /* Settings.swift */,
 				4D0CE5EE2349A402000252C1 /* OrderBook.swift */,
 				4D5CA5112337EA0200EF9F96 /* Order.swift */,
 			);
@@ -608,7 +605,6 @@
 			files = (
 				4DF38E1B233BF6D7003771C3 /* SecondViewController.swift in Sources */,
 				4DFF753723360ED300C7CC24 /* Wallet.swift in Sources */,
-				4DC788F92346EC1200C1A1D6 /* Settings.swift in Sources */,
 				4D2A4B8C2195DEB300315524 /* EY+ImageView.swift in Sources */,
 				4D01FB0C244B73200031BEE9 /* GameEntity.swift in Sources */,
 				4D0CC93C244B50C30011BE4C /* DeckEntity.swift in Sources */,
@@ -664,8 +660,8 @@
 				4D58965E235BF2AE00FCA0AE /* HandTests.swift in Sources */,
 				4DE21C2B2345C95600155575 /* WinnerTests.swift in Sources */,
 				4DC788F72346E8EB00C1A1D6 /* GameSetupTests.swift in Sources */,
+				4D8F12F92465B97F00ADF8F0 /* EntityGameSpec.swift in Sources */,
 				4DE21C2923452D8D00155575 /* DeckTests.swift in Sources */,
-				4DACC0C1244204E900466ABE /* PersonSpec.swift in Sources */,
 				4DE441BC236A1887009A2939 /* DeckUnlockTests.swift in Sources */,
 				4DFF75392336155C00C7CC24 /* WalletTests.swift in Sources */,
 				4D0CC9362449B5510011BE4C /* BaseSpec.swift in Sources */,

@@ -19,6 +19,8 @@ class SetupManager {
         let game: GameModel = GameModel()
         game.board = Board()
         game.players = (players as [GKGameModelPlayer])
+        game.sound = true
+        game.music = true
 
         switch players.count {
         case 3, 4:
