@@ -13,6 +13,11 @@ final class DBManager {
     static var shared = DBManager()
 
     private init() {}
+}
+
+
+/*
+extension DBManager {
 
     func save(gameModel: GameModel, completion: (Bool) -> ()) {
         guard let gamePhase = gameModel.phase else {
@@ -63,3 +68,4 @@ final class DBManager {
         completion()
     }
 }
+*/
