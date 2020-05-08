@@ -42,6 +42,7 @@
 		4D5CA51A2338011E00EF9F96 /* SalesRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CA5192338011E00EF9F96 /* SalesRule.swift */; };
 		4D8AB2A1233E21C4009158CB /* EY+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8AB2A0233E21C4009158CB /* EY+Notification.swift */; };
 		4D8F12F92465B97F00ADF8F0 /* EntityGameSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8F12F82465B97F00ADF8F0 /* EntityGameSpec.swift */; };
+		4D8F12FD2465F37900ADF8F0 /* SaveGameEntityProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8F12FC2465F37900ADF8F0 /* SaveGameEntityProtocol.swift */; };
 		4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D925D74219F4E2D00441733 /* EY+Time.swift */; };
 		4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3486820812972006DA164 /* EngineYardTests.swift */; };
 		4DA3487D20812A8B006DA164 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DA3487520812A8B006DA164 /* Assets.xcassets */; };
@@ -181,6 +182,7 @@
 		4D5CA5192338011E00EF9F96 /* SalesRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesRule.swift; sourceTree = "<group>"; };
 		4D8AB2A0233E21C4009158CB /* EY+Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Notification.swift"; sourceTree = "<group>"; };
 		4D8F12F82465B97F00ADF8F0 /* EntityGameSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityGameSpec.swift; sourceTree = "<group>"; };
+		4D8F12FC2465F37900ADF8F0 /* SaveGameEntityProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveGameEntityProtocol.swift; sourceTree = "<group>"; };
 		4D925D74219F4E2D00441733 /* EY+Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Time.swift"; sourceTree = "<group>"; };
 		4DA3485020812970006DA164 /* EngineYard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EngineYard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA3486420812972006DA164 /* EngineYardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EngineYardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -407,6 +409,7 @@
 		4DACC0B42441EAC900466ABE /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				4D8F12FC2465F37900ADF8F0 /* SaveGameEntityProtocol.swift */,
 				4DED36732465865500CB7D72 /* DBManager.swift */,
 				4D0CC93B244B50C30011BE4C /* DeckEntity.swift */,
 				4D0CC93D244B586D0011BE4C /* CardEntity.swift */,
@@ -618,6 +621,7 @@
 				4DA5236720815885000FFAAB /* Die.swift in Sources */,
 				4D247B37219FFE340004478D /* ObjectCache.swift in Sources */,
 				4D3C17DD2334CFCB0036808F /* MainCoordinator.swift in Sources */,
+				4D8F12FD2465F37900ADF8F0 /* SaveGameEntityProtocol.swift in Sources */,
 				4D111E192336B20900472BDC /* Hand.swift in Sources */,
 				4DED36762465866100CB7D72 /* SoundManager.swift in Sources */,
 				4D5CA5182337FC6900EF9F96 /* ErrorCode.swift in Sources */,
