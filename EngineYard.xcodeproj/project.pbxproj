@@ -81,6 +81,8 @@
 		4DE21C2923452D8D00155575 /* DeckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE21C2823452D8D00155575 /* DeckTests.swift */; };
 		4DE21C2B2345C95600155575 /* WinnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE21C2A2345C95600155575 /* WinnerTests.swift */; };
 		4DE441BC236A1887009A2939 /* DeckUnlockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE441BB236A1887009A2939 /* DeckUnlockTests.swift */; };
+		4DED36742465865600CB7D72 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DED36732465865500CB7D72 /* DBManager.swift */; };
+		4DED36762465866100CB7D72 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DED36752465866100CB7D72 /* SoundManager.swift */; };
 		4DF1509221679E0300D39D65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1509121679E0300D39D65 /* Main.storyboard */; };
 		4DF38DF8233AC138003771C3 /* Winner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF38DF7233AC138003771C3 /* Winner.swift */; };
 		4DF38E1B233BF6D7003771C3 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF38E1A233BF6D7003771C3 /* SecondViewController.swift */; };
@@ -210,6 +212,8 @@
 		4DE21C2823452D8D00155575 /* DeckTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckTests.swift; sourceTree = "<group>"; };
 		4DE21C2A2345C95600155575 /* WinnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerTests.swift; sourceTree = "<group>"; };
 		4DE441BB236A1887009A2939 /* DeckUnlockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckUnlockTests.swift; sourceTree = "<group>"; };
+		4DED36732465865500CB7D72 /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		4DED36752465866100CB7D72 /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		4DF1509121679E0300D39D65 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4DF38DF7233AC138003771C3 /* Winner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Winner.swift; sourceTree = "<group>"; };
 		4DF38E1A233BF6D7003771C3 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
@@ -294,6 +298,9 @@
 				4D3C17D62334CE730036808F /* Coordinator.swift */,
 				4D3C17DC2334CFCB0036808F /* MainCoordinator.swift */,
 				4D3C17D82334CEBD0036808F /* Storyboarded.swift */,
+				4DC788FA2346EEC400C1A1D6 /* SetupManager.swift */,
+				4DED36752465866100CB7D72 /* SoundManager.swift */,
+				4DED36732465865500CB7D72 /* DBManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -428,7 +435,6 @@
 				4DC55163235A37DC00623833 /* SalesRuleHandler.swift */,
 				4DF38DF7233AC138003771C3 /* Winner.swift */,
 				4DC788F82346EC1200C1A1D6 /* Settings.swift */,
-				4DC788FA2346EEC400C1A1D6 /* SetupManager.swift */,
 				4D0CE5EE2349A402000252C1 /* OrderBook.swift */,
 				4D5CA5112337EA0200EF9F96 /* Order.swift */,
 			);
@@ -617,6 +623,7 @@
 				4D247B37219FFE340004478D /* ObjectCache.swift in Sources */,
 				4D3C17DD2334CFCB0036808F /* MainCoordinator.swift in Sources */,
 				4D111E192336B20900472BDC /* Hand.swift in Sources */,
+				4DED36762465866100CB7D72 /* SoundManager.swift in Sources */,
 				4D5CA5182337FC6900EF9F96 /* ErrorCode.swift in Sources */,
 				4DFF753223360BA700C7CC24 /* Fonts.swift in Sources */,
 				4DC55164235A37DC00623833 /* SalesRuleHandler.swift in Sources */,
@@ -632,6 +639,7 @@
 				4D111E1A2336B20900472BDC /* Player.swift in Sources */,
 				4D0CE5EF2349A402000252C1 /* OrderBook.swift in Sources */,
 				4D5CA50E2337E82400EF9F96 /* GameModel.swift in Sources */,
+				4DED36742465865600CB7D72 /* DBManager.swift in Sources */,
 				4D41F58E23640F3B0082D273 /* Production.swift in Sources */,
 				4D111E162336B04300472BDC /* Deck+Colors.swift in Sources */,
 				4DFF752B2336077400C7CC24 /* Tax.swift in Sources */,

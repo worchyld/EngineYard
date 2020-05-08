@@ -10,27 +10,6 @@ import Foundation
 
 // #TODO
 
-class SoundManager {
-    static var instance: SoundManager = SoundManager()
-
-    let settings: Settings = Settings()
-
-    func play(_ sound: Sounds) {
-        guard (settings.sound) else {
-            return
-        }
-        // #TODO
-    }
-
-    func preload() {
-        /*
-        for sound in Sounds.AllCases {
-            // Preload effect
-        }
-        */
-    }
-}
-
 struct Settings {
     public private (set) var sound: Bool = false
     public private (set) var music: Bool = false
