@@ -298,7 +298,6 @@
 				4D3C17D82334CEBD0036808F /* Storyboarded.swift */,
 				4DC788FA2346EEC400C1A1D6 /* SetupManager.swift */,
 				4DED36752465866100CB7D72 /* SoundManager.swift */,
-				4DED36732465865500CB7D72 /* DBManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -408,6 +407,7 @@
 		4DACC0B42441EAC900466ABE /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				4DED36732465865500CB7D72 /* DBManager.swift */,
 				4D0CC93B244B50C30011BE4C /* DeckEntity.swift */,
 				4D0CC93D244B586D0011BE4C /* CardEntity.swift */,
 				4D0CC93F244B587C0011BE4C /* PlayerEntity.swift */,
