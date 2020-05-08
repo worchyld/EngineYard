@@ -8,13 +8,11 @@
 
 import Foundation
 
-struct Tax {    
-    public static var rate: Float {
-        return Constants.taxRate
-    }
+struct Tax {
+    static let rate: Float = 0.10 // Players pay 10% of their cash in taxes, rounded down
 
     public static func due(onBalance: Int) -> Int {
-        // Return rounded down amount
+        // Return rounded down amount as per game rules
         return Int(floor(Float(onBalance) * Tax.rate))
     }
 
