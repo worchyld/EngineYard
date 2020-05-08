@@ -11,3 +11,22 @@ import Foundation
 protocol SaveGameEntityProtocol {
     func updateGameEntity() -> Bool
 }
+
+// #TODO --
+/*
+protocol SaveDeckEntityProtocol {
+    func updateDeckEntity() -> Bool
+}
+
+protocol SaveCardEntityProtocol {
+    func updateCardEntity() -> Bool
+}
+
+protocol SavePlayerEntityProtocol {
+    func updatePlayerEntity() -> Bool
+}
+
+protocol SaveOrderEntityProtocol {
+    func updateOrderEntity() -> Bool
+}
+*/
