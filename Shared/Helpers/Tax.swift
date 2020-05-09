@@ -15,7 +15,9 @@ private protocol TaxProtocol {
 }
 
 struct Tax : TaxProtocol {
-    static let rate: Float = 0.10 // Players pay 10% of their cash in taxes, rounded down
+    static var rate: Float {
+        return Constants.taxRate   // Players pay 10% of their cash in taxes, rounded down
+    }
 
     // Finds out how much tax is due on an amount
     static func due(on amount: Int) -> Int {
