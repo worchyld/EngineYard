@@ -54,7 +54,7 @@ extension SetupManager {
                 isAI = false
             }
 
-            let playerObj = Player.init(name: name, isAI: isAI)
+            let playerObj = Player.init(id: index, name: name, isAI: isAI)
             players.append(playerObj)
         }
         return players
