@@ -57,8 +57,14 @@ extension GameModel {
     func copy(with zone: NSZone? = nil) -> Any {
         let copy = GameModel()
         copy.setGameModel(self)
-
         return copy
+    }
+
+    func score(for player: GKGameModelPlayer) -> Int {
+        if let playerObj: Player = player as? Player {
+            return playerObj.cash
+        }
+        return 0
     }
 }
 

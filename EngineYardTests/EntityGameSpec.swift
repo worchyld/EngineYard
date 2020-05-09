@@ -112,6 +112,7 @@ class EntityGameSpec: BaseSpec {
         }
         XCTAssertNotNil(game)
         XCTAssertNotNil(game.players)
+        //try expect(something).toNot(beNil())
     }
 
 
