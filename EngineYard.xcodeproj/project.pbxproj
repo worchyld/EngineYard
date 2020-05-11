@@ -8,38 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		4D01FB0C244B73200031BEE9 /* GameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01FB0B244B73200031BEE9 /* GameEntity.swift */; };
-		4D0CC93C244B50C30011BE4C /* DeckEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0CC93B244B50C30011BE4C /* DeckEntity.swift */; };
-		4D0CC93E244B586D0011BE4C /* CardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0CC93D244B586D0011BE4C /* CardEntity.swift */; };
-		4D0CC940244B587C0011BE4C /* PlayerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0CC93F244B587C0011BE4C /* PlayerEntity.swift */; };
-		4D0CC942244B58940011BE4C /* OrderEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0CC941244B58940011BE4C /* OrderEntity.swift */; };
-		4D0CE5EF2349A402000252C1 /* OrderBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0CE5EE2349A402000252C1 /* OrderBook.swift */; };
 		4D111E05233672CE00472BDC /* Art.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D111DFF233672CE00472BDC /* Art.xcassets */; };
 		4D111E06233672CE00472BDC /* Birdy_Note5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D111E01233672CE00472BDC /* Birdy_Note5.wav */; };
 		4D111E07233672CE00472BDC /* cardSlide1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D111E02233672CE00472BDC /* cardSlide1.wav */; };
 		4D111E08233672CE00472BDC /* Birdy_Notification1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D111E03233672CE00472BDC /* Birdy_Notification1.wav */; };
 		4D111E09233672CE00472BDC /* cardSlide8.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D111E04233672CE00472BDC /* cardSlide8.wav */; };
-		4D111E122336ABB400472BDC /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D111E112336ABB400472BDC /* Deck.swift */; };
-		4D111E142336AEDC00472BDC /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D111E132336AEDC00472BDC /* Card.swift */; };
-		4D111E162336B04300472BDC /* Deck+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D111E152336B04300472BDC /* Deck+Colors.swift */; };
-		4D111E192336B20900472BDC /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D111E172336B20900472BDC /* Hand.swift */; };
 		4D111E1A2336B20900472BDC /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D111E182336B20900472BDC /* Player.swift */; };
 		4D247B37219FFE340004478D /* ObjectCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D247B36219FFE340004478D /* ObjectCache.swift */; };
 		4D2A4B8C2195DEB300315524 /* EY+ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2A4B8B2195DEB300315524 /* EY+ImageView.swift */; };
-		4D3C17D02334B6200036808F /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3C17CA2334B6200036808F /* Message.swift */; };
 		4D3C17D72334CE730036808F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3C17D62334CE730036808F /* Coordinator.swift */; };
 		4D3C17D92334CEBD0036808F /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3C17D82334CEBD0036808F /* Storyboarded.swift */; };
 		4D3C17DB2334CF7B0036808F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3C17DA2334CF7B0036808F /* ViewController.swift */; };
 		4D3C17DD2334CFCB0036808F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3C17DC2334CFCB0036808F /* MainCoordinator.swift */; };
 		4D3DE9E32469B78B0092DBD5 /* Data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D3DE9E22469B78B0092DBD5 /* Data.plist */; };
-		4D41F58E23640F3B0082D273 /* Production.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D41F58D23640F3B0082D273 /* Production.swift */; };
 		4D5CA50E2337E82400EF9F96 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CA50D2337E82400EF9F96 /* GameModel.swift */; };
-		4D5CA5102337E82D00EF9F96 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CA50F2337E82D00EF9F96 /* Board.swift */; };
-		4D5CA5122337EA0200EF9F96 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CA5112337EA0200EF9F96 /* Order.swift */; };
 		4D5CA5162337F01300EF9F96 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CA5152337F01300EF9F96 /* Constants.swift */; };
 		4D5CA5182337FC6900EF9F96 /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CA5172337FC6900EF9F96 /* ErrorCode.swift */; };
-		4D5CA51A2338011E00EF9F96 /* SalesRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CA5192338011E00EF9F96 /* SalesRule.swift */; };
+		4D6C27662469CB83005F4AEF /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6C27652469CB83005F4AEF /* MockData.swift */; };
+		4D6C27682469CC2D005F4AEF /* MockPlayerDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6C27672469CC2D005F4AEF /* MockPlayerDataTest.swift */; };
+		4D6C276B2469CDD0005F4AEF /* EY+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6C27692469CDB6005F4AEF /* EY+Int.swift */; };
 		4D8AB2A1233E21C4009158CB /* EY+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8AB2A0233E21C4009158CB /* EY+Notification.swift */; };
-		4D8F12FD2465F37900ADF8F0 /* SaveGameEntityProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8F12FC2465F37900ADF8F0 /* SaveGameEntityProtocol.swift */; };
 		4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D925D74219F4E2D00441733 /* EY+Time.swift */; };
 		4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3486820812972006DA164 /* EngineYardTests.swift */; };
 		4DA3487D20812A8B006DA164 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DA3487520812A8B006DA164 /* Assets.xcassets */; };
@@ -70,14 +58,10 @@
 		4DACC0BC2441FF0D00466ABE /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4DACC0B62441FECA00466ABE /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4DACC0BD2441FF0D00466ABE /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4DACC0B52441FECA00466ABE /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB448C6219F380900F8507F /* EY+Protocols.swift */; };
-		4DC55164235A37DC00623833 /* SalesRuleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC55163235A37DC00623833 /* SalesRuleHandler.swift */; };
-		4DC788FB2346EEC400C1A1D6 /* SetupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC788FA2346EEC400C1A1D6 /* SetupManager.swift */; };
 		4DE127E0233E826C00F84C57 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DE127DF233E826C00F84C57 /* Icons.xcassets */; };
-		4DE21C2B2345C95600155575 /* WinnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE21C2A2345C95600155575 /* WinnerTests.swift */; };
-		4DED36742465865600CB7D72 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DED36732465865500CB7D72 /* DBManager.swift */; };
+		4DED36742465865600CB7D72 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DED36732465865500CB7D72 /* RealmHelper.swift */; };
 		4DED36762465866100CB7D72 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DED36752465866100CB7D72 /* SoundManager.swift */; };
 		4DF1509221679E0300D39D65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1509121679E0300D39D65 /* Main.storyboard */; };
-		4DF38DF8233AC138003771C3 /* Winner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF38DF7233AC138003771C3 /* Winner.swift */; };
 		4DF38E1B233BF6D7003771C3 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF38E1A233BF6D7003771C3 /* SecondViewController.swift */; };
 		4DF7B4A1244D7BC100814B64 /* RealmWriteAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF7B4A0244D7BC100814B64 /* RealmWriteAsync.swift */; };
 		4DFA7A46233D55D9004099B7 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFA7A45233D55D9004099B7 /* MainMenuViewController.swift */; };
@@ -89,12 +73,10 @@
 		4DFA7A53233D58F7004099B7 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFA7A52233D58F7004099B7 /* CardView.xib */; };
 		4DFF75282336067400C7CC24 /* EY+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF75262336067400C7CC24 /* EY+ViewController.swift */; };
 		4DFF752B2336077400C7CC24 /* Tax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF752A2336077400C7CC24 /* Tax.swift */; };
-		4DFF752D233608FC00C7CC24 /* TaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF752C233608FC00C7CC24 /* TaxTests.swift */; };
 		4DFF753123360BA700C7CC24 /* Devices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF752E23360BA600C7CC24 /* Devices.swift */; };
 		4DFF753223360BA700C7CC24 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF752F23360BA600C7CC24 /* Fonts.swift */; };
 		4DFF753323360BA700C7CC24 /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF753023360BA700C7CC24 /* Sounds.swift */; };
 		4DFF753723360ED300C7CC24 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF753623360ED300C7CC24 /* Wallet.swift */; };
-		4DFF75392336155C00C7CC24 /* WalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF75382336155C00C7CC24 /* WalletTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,38 +123,26 @@
 
 /* Begin PBXFileReference section */
 		4D01FB0B244B73200031BEE9 /* GameEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEntity.swift; sourceTree = "<group>"; };
-		4D0CC93B244B50C30011BE4C /* DeckEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckEntity.swift; sourceTree = "<group>"; };
-		4D0CC93D244B586D0011BE4C /* CardEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEntity.swift; sourceTree = "<group>"; };
-		4D0CC93F244B587C0011BE4C /* PlayerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEntity.swift; sourceTree = "<group>"; };
-		4D0CC941244B58940011BE4C /* OrderEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderEntity.swift; sourceTree = "<group>"; };
-		4D0CE5EE2349A402000252C1 /* OrderBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBook.swift; sourceTree = "<group>"; };
 		4D111DFF233672CE00472BDC /* Art.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Art.xcassets; sourceTree = "<group>"; };
 		4D111E01233672CE00472BDC /* Birdy_Note5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Note5.wav; sourceTree = "<group>"; };
 		4D111E02233672CE00472BDC /* cardSlide1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardSlide1.wav; sourceTree = "<group>"; };
 		4D111E03233672CE00472BDC /* Birdy_Notification1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Notification1.wav; sourceTree = "<group>"; };
 		4D111E04233672CE00472BDC /* cardSlide8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardSlide8.wav; sourceTree = "<group>"; };
-		4D111E112336ABB400472BDC /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
-		4D111E132336AEDC00472BDC /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		4D111E152336B04300472BDC /* Deck+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+Colors.swift"; sourceTree = "<group>"; };
-		4D111E172336B20900472BDC /* Hand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
 		4D111E182336B20900472BDC /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		4D247B36219FFE340004478D /* ObjectCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectCache.swift; sourceTree = "<group>"; };
 		4D2A4B8B2195DEB300315524 /* EY+ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+ImageView.swift"; sourceTree = "<group>"; };
-		4D3C17CA2334B6200036808F /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		4D3C17D62334CE730036808F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		4D3C17D82334CEBD0036808F /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		4D3C17DA2334CF7B0036808F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4D3C17DC2334CFCB0036808F /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		4D3DE9E22469B78B0092DBD5 /* Data.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Data.plist; sourceTree = "<group>"; };
-		4D41F58D23640F3B0082D273 /* Production.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Production.swift; sourceTree = "<group>"; };
 		4D5CA50D2337E82400EF9F96 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
-		4D5CA50F2337E82D00EF9F96 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
-		4D5CA5112337EA0200EF9F96 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		4D5CA5152337F01300EF9F96 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4D5CA5172337FC6900EF9F96 /* ErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCode.swift; sourceTree = "<group>"; };
-		4D5CA5192338011E00EF9F96 /* SalesRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesRule.swift; sourceTree = "<group>"; };
+		4D6C27652469CB83005F4AEF /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		4D6C27672469CC2D005F4AEF /* MockPlayerDataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPlayerDataTest.swift; sourceTree = "<group>"; };
+		4D6C27692469CDB6005F4AEF /* EY+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Int.swift"; sourceTree = "<group>"; };
 		4D8AB2A0233E21C4009158CB /* EY+Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Notification.swift"; sourceTree = "<group>"; };
-		4D8F12FC2465F37900ADF8F0 /* SaveGameEntityProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveGameEntityProtocol.swift; sourceTree = "<group>"; };
 		4D925D74219F4E2D00441733 /* EY+Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Time.swift"; sourceTree = "<group>"; };
 		4DA3485020812970006DA164 /* EngineYard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EngineYard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA3486420812972006DA164 /* EngineYardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EngineYardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,14 +164,10 @@
 		4DACC0B62441FECA00466ABE /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		4DB448C6219F380900F8507F /* EY+Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Protocols.swift"; sourceTree = "<group>"; };
 		4DC3D84423342D8F0066FE9F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4DC55163235A37DC00623833 /* SalesRuleHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesRuleHandler.swift; sourceTree = "<group>"; };
-		4DC788FA2346EEC400C1A1D6 /* SetupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupManager.swift; sourceTree = "<group>"; };
 		4DE127DF233E826C00F84C57 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
-		4DE21C2A2345C95600155575 /* WinnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerTests.swift; sourceTree = "<group>"; };
-		4DED36732465865500CB7D72 /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		4DED36732465865500CB7D72 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		4DED36752465866100CB7D72 /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		4DF1509121679E0300D39D65 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		4DF38DF7233AC138003771C3 /* Winner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Winner.swift; sourceTree = "<group>"; };
 		4DF38E1A233BF6D7003771C3 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		4DF7B4A0244D7BC100814B64 /* RealmWriteAsync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmWriteAsync.swift; sourceTree = "<group>"; };
 		4DFA7A45233D55D9004099B7 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
@@ -213,12 +179,10 @@
 		4DFA7A52233D58F7004099B7 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		4DFF75262336067400C7CC24 /* EY+ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EY+ViewController.swift"; sourceTree = "<group>"; };
 		4DFF752A2336077400C7CC24 /* Tax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tax.swift; sourceTree = "<group>"; };
-		4DFF752C233608FC00C7CC24 /* TaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTests.swift; sourceTree = "<group>"; };
 		4DFF752E23360BA600C7CC24 /* Devices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Devices.swift; sourceTree = "<group>"; };
 		4DFF752F23360BA600C7CC24 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		4DFF753023360BA700C7CC24 /* Sounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
 		4DFF753623360ED300C7CC24 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
-		4DFF75382336155C00C7CC24 /* WalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,7 +248,6 @@
 				4D3C17D62334CE730036808F /* Coordinator.swift */,
 				4D3C17DC2334CFCB0036808F /* MainCoordinator.swift */,
 				4D3C17D82334CEBD0036808F /* Storyboarded.swift */,
-				4DC788FA2346EEC400C1A1D6 /* SetupManager.swift */,
 				4DED36752465866100CB7D72 /* SoundManager.swift */,
 			);
 			path = Managers;
@@ -293,11 +256,19 @@
 		4D49AB16246921BE00C057D6 /* Store */ = {
 			isa = PBXGroup;
 			children = (
-				4DED36732465865500CB7D72 /* DBManager.swift */,
-				4D8F12FC2465F37900ADF8F0 /* SaveGameEntityProtocol.swift */,
+				4D6C27642469CA97005F4AEF /* Realm */,
 				4D3DE9E22469B78B0092DBD5 /* Data.plist */,
 			);
 			path = Store;
+			sourceTree = "<group>";
+		};
+		4D6C27642469CA97005F4AEF /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				4DED36732465865500CB7D72 /* RealmHelper.swift */,
+				4DF7B4A0244D7BC100814B64 /* RealmWriteAsync.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 		4DA3484720812970006DA164 = {
@@ -324,10 +295,9 @@
 			isa = PBXGroup;
 			children = (
 				4DC3D84423342D8F0066FE9F /* Info.plist */,
+				4D6C27652469CB83005F4AEF /* MockData.swift */,
 				4DA3486820812972006DA164 /* EngineYardTests.swift */,
-				4DFF752C233608FC00C7CC24 /* TaxTests.swift */,
-				4DFF75382336155C00C7CC24 /* WalletTests.swift */,
-				4DE21C2A2345C95600155575 /* WinnerTests.swift */,
+				4D6C27672469CC2D005F4AEF /* MockPlayerDataTest.swift */,
 			);
 			path = EngineYardTests;
 			sourceTree = "<group>";
@@ -373,9 +343,9 @@
 				4DA5236B208158C8000FFAAB /* EY+Array.swift */,
 				4D2A4B8B2195DEB300315524 /* EY+ImageView.swift */,
 				4DB448C6219F380900F8507F /* EY+Protocols.swift */,
-				4D247B36219FFE340004478D /* ObjectCache.swift */,
 				4D8AB2A0233E21C4009158CB /* EY+Notification.swift */,
-				4DF7B4A0244D7BC100814B64 /* RealmWriteAsync.swift */,
+				4D247B36219FFE340004478D /* ObjectCache.swift */,
+				4D6C27692469CDB6005F4AEF /* EY+Int.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -398,10 +368,6 @@
 		4DACC0B42441EAC900466ABE /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				4D0CC93B244B50C30011BE4C /* DeckEntity.swift */,
-				4D0CC93D244B586D0011BE4C /* CardEntity.swift */,
-				4D0CC93F244B587C0011BE4C /* PlayerEntity.swift */,
-				4D0CC941244B58940011BE4C /* OrderEntity.swift */,
 				4D01FB0B244B73200031BEE9 /* GameEntity.swift */,
 			);
 			path = Entities;
@@ -410,20 +376,9 @@
 		4DC3D848233431080066FE9F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4D3C17CA2334B6200036808F /* Message.swift */,
-				4D111E112336ABB400472BDC /* Deck.swift */,
-				4D111E152336B04300472BDC /* Deck+Colors.swift */,
-				4D5CA50F2337E82D00EF9F96 /* Board.swift */,
-				4D111E132336AEDC00472BDC /* Card.swift */,
-				4D41F58D23640F3B0082D273 /* Production.swift */,
 				4D111E182336B20900472BDC /* Player.swift */,
-				4D111E172336B20900472BDC /* Hand.swift */,
 				4D5CA50D2337E82400EF9F96 /* GameModel.swift */,
-				4D5CA5192338011E00EF9F96 /* SalesRule.swift */,
-				4DC55163235A37DC00623833 /* SalesRuleHandler.swift */,
-				4DF38DF7233AC138003771C3 /* Winner.swift */,
-				4D0CE5EE2349A402000252C1 /* OrderBook.swift */,
-				4D5CA5112337EA0200EF9F96 /* Order.swift */,
+				4DFF752A2336077400C7CC24 /* Tax.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -435,7 +390,6 @@
 				4DFF753623360ED300C7CC24 /* Wallet.swift */,
 				4DA5236620815885000FFAAB /* Die.swift */,
 				4D5CA5152337F01300EF9F96 /* Constants.swift */,
-				4DFF752A2336077400C7CC24 /* Tax.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -598,49 +552,32 @@
 				4DFF753723360ED300C7CC24 /* Wallet.swift in Sources */,
 				4D2A4B8C2195DEB300315524 /* EY+ImageView.swift in Sources */,
 				4D01FB0C244B73200031BEE9 /* GameEntity.swift in Sources */,
-				4D0CC93C244B50C30011BE4C /* DeckEntity.swift in Sources */,
 				4DF7B4A1244D7BC100814B64 /* RealmWriteAsync.swift in Sources */,
 				4D3C17D72334CE730036808F /* Coordinator.swift in Sources */,
 				4DA3488020812A8B006DA164 /* AppDelegate.swift in Sources */,
-				4DC788FB2346EEC400C1A1D6 /* SetupManager.swift in Sources */,
 				4DA5236C208158C8000FFAAB /* EY+Array.swift in Sources */,
-				4D0CC942244B58940011BE4C /* OrderEntity.swift in Sources */,
-				4D0CC940244B587C0011BE4C /* PlayerEntity.swift in Sources */,
 				4DA5236720815885000FFAAB /* Die.swift in Sources */,
 				4D247B37219FFE340004478D /* ObjectCache.swift in Sources */,
 				4D3C17DD2334CFCB0036808F /* MainCoordinator.swift in Sources */,
-				4D8F12FD2465F37900ADF8F0 /* SaveGameEntityProtocol.swift in Sources */,
-				4D111E192336B20900472BDC /* Hand.swift in Sources */,
 				4DED36762465866100CB7D72 /* SoundManager.swift in Sources */,
 				4D5CA5182337FC6900EF9F96 /* ErrorCode.swift in Sources */,
 				4DFF753223360BA700C7CC24 /* Fonts.swift in Sources */,
-				4DC55164235A37DC00623833 /* SalesRuleHandler.swift in Sources */,
 				4DA52369208158A8000FFAAB /* EY+Colors.swift in Sources */,
 				4DFF753323360BA700C7CC24 /* Sounds.swift in Sources */,
-				4D111E122336ABB400472BDC /* Deck.swift in Sources */,
 				4DFA7A46233D55D9004099B7 /* MainMenuViewController.swift in Sources */,
 				4D3C17DB2334CF7B0036808F /* ViewController.swift in Sources */,
 				4DFF753123360BA700C7CC24 /* Devices.swift in Sources */,
 				4DFF75282336067400C7CC24 /* EY+ViewController.swift in Sources */,
 				4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */,
-				4D3C17D02334B6200036808F /* Message.swift in Sources */,
 				4D111E1A2336B20900472BDC /* Player.swift in Sources */,
-				4D0CE5EF2349A402000252C1 /* OrderBook.swift in Sources */,
 				4D5CA50E2337E82400EF9F96 /* GameModel.swift in Sources */,
-				4DED36742465865600CB7D72 /* DBManager.swift in Sources */,
-				4D41F58E23640F3B0082D273 /* Production.swift in Sources */,
-				4D111E162336B04300472BDC /* Deck+Colors.swift in Sources */,
+				4DED36742465865600CB7D72 /* RealmHelper.swift in Sources */,
 				4DFF752B2336077400C7CC24 /* Tax.swift in Sources */,
 				4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */,
 				4DFA7A49233D5648004099B7 /* PickPlayersViewController.swift in Sources */,
-				4D5CA5102337E82D00EF9F96 /* Board.swift in Sources */,
-				4D5CA51A2338011E00EF9F96 /* SalesRule.swift in Sources */,
-				4DF38DF8233AC138003771C3 /* Winner.swift in Sources */,
 				4D3C17D92334CEBD0036808F /* Storyboarded.swift in Sources */,
+				4D6C276B2469CDD0005F4AEF /* EY+Int.swift in Sources */,
 				4D8AB2A1233E21C4009158CB /* EY+Notification.swift in Sources */,
-				4D0CC93E244B586D0011BE4C /* CardEntity.swift in Sources */,
-				4D111E142336AEDC00472BDC /* Card.swift in Sources */,
-				4D5CA5122337EA0200EF9F96 /* Order.swift in Sources */,
 				4D5CA5162337F01300EF9F96 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -649,10 +586,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DE21C2B2345C95600155575 /* WinnerTests.swift in Sources */,
-				4DFF75392336155C00C7CC24 /* WalletTests.swift in Sources */,
+				4D6C27682469CC2D005F4AEF /* MockPlayerDataTest.swift in Sources */,
 				4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */,
-				4DFF752D233608FC00C7CC24 /* TaxTests.swift in Sources */,
+				4D6C27662469CB83005F4AEF /* MockData.swift in Sources */,
 				4DA92C212156874500AD19B7 /* (null) in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

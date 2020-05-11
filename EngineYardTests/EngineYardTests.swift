@@ -9,20 +9,6 @@
 import XCTest
 @testable import EngineYard
 
-public struct Mock {
-    public static func players(howMany: Int) -> [Player]? {
-        guard Constants.Players.valid(howMany) else {
-            return nil
-        }
-        var players: [Player] = [Player]()
-        for index in stride(from:0, to: howMany, by: 1) {
-            let player = Player(id: index, name: "Player #\(index)", isAI: true)
-            players.append(player)
-        }
-        return players
-    }
-}
-
 class EngineYardTests: XCTestCase {
     
     override func setUp() {

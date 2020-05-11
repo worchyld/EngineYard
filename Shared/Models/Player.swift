@@ -16,25 +16,9 @@ enum PlayerState: Int {
 }
 
 class Player : NSObject, GKGameModelPlayer {
-    var playerId: Int
-    
-    let name: String
-    let isAI: Bool
-    var cash: Int {
-        return (self.wallet.balance)
-    }
-    let wallet: Wallet = Wallet() // REFACTOR: Probably should remove this reference and make the wallet static
-    lazy var hand: Hand = Hand(owner: self) // hand of cards
-    let avatar: String
-    public private (set) var turnOrder: Int
-
-    init(id: Int = 0, name: String, isAI: Bool = true) {
-        self.name = name
-        self.isAI = isAI
-        self.avatar = ""
-        self.playerId = id
-        self.turnOrder = 0
-    }
+    var playerId: Int = 0
+    let name: String = ""
+    var cash: Int = 0
 }
 
 extension Player {
@@ -46,11 +30,5 @@ extension Player {
 extension Player  {
     override var description: String {
         return ("\(self.name), cash: $\(self.cash)")
-    }
-}
-
-extension Player {
-    func setTurnOrderIndex(number: Int) {
-        self.turnOrder = number
     }
 }

@@ -1,5 +1,5 @@
 //
-//  DBManager.swift
+//  RealmHelper.swift
 //  EngineYard
 //
 //  Created by Amarjit on 08/05/2020.
@@ -9,8 +9,8 @@
 import Foundation
 import RealmSwift
 
-final class DBManager {
-    static var shared = DBManager()
+final class RealmHelper {
+    static var shared = RealmHelper()
 
     private init() {}
 }

@@ -9,15 +9,8 @@
 import Foundation
 import GameplayKit
 
-extension Int {
-    static func randomInt(withMax: Int) -> Int {
-        let maximum = UInt32(withMax)
-        return 1 + Int(arc4random_uniform(maximum))
-    }
-}
-
-struct Die {
-    static func roll() -> Int {
+struct Die: Equatable {
+    public static var roll: Int {
         if #available(iOS 9, *) {
             let d6 = GKRandomDistribution.d6()
             return (d6.nextInt())
@@ -28,10 +21,3 @@ struct Die {
         }
     }
 }
-
-extension Die {
-    static func asset(die: Int) -> String {
-        return "die-face-\(die)"
-    }
-}
-
