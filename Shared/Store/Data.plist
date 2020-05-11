@@ -20,183 +20,183 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>Green.1</string>
+			<string>Red.1</string>
 			<key>cost</key>
-			<integer>4</integer>
+			<integer>8</integer>
 			<key>generation</key>
 			<integer>1</integer>
 			<key>color</key>
-			<integer>1</integer>
+			<integer>2</integer>
 			<key>orderCapacity</key>
 			<integer>3</integer>
+			<key>numberOfChildren</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Yellow.1</string>
+			<key>cost</key>
+			<integer>12</integer>
+			<key>generation</key>
+			<integer>1</integer>
+			<key>color</key>
+			<integer>3</integer>
+			<key>orderCapacity</key>
+			<integer>2</integer>
+			<key>numberOfChildren</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Blue.1</string>
+			<key>cost</key>
+			<integer>16</integer>
+			<key>generation</key>
+			<integer>1</integer>
+			<key>color</key>
+			<integer>4</integer>
+			<key>orderCapacity</key>
+			<integer>1</integer>
+			<key>numberOfChildren</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Green.2</string>
+			<key>cost</key>
+			<integer>20</integer>
+			<key>generation</key>
+			<integer>2</integer>
+			<key>color</key>
+			<integer>1</integer>
+			<key>orderCapacity</key>
+			<integer>4</integer>
 			<key>numberOfChildren</key>
 			<integer>4</integer>
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>Green.1</string>
+			<string>Red.2</string>
 			<key>cost</key>
-			<integer>4</integer>
+			<integer>24</integer>
 			<key>generation</key>
-			<integer>1</integer>
+			<integer>2</integer>
+			<key>color</key>
+			<integer>2</integer>
+			<key>orderCapacity</key>
+			<integer>3</integer>
+			<key>numberOfChildren</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Yellow.2</string>
+			<key>cost</key>
+			<integer>28</integer>
+			<key>generation</key>
+			<integer>2</integer>
+			<key>color</key>
+			<integer>3</integer>
+			<key>orderCapacity</key>
+			<integer>3</integer>
+			<key>numberOfChildren</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Green.3</string>
+			<key>cost</key>
+			<integer>32</integer>
+			<key>generation</key>
+			<integer>3</integer>
 			<key>color</key>
 			<integer>1</integer>
 			<key>orderCapacity</key>
-			<integer>3</integer>
+			<integer>4</integer>
 			<key>numberOfChildren</key>
 			<integer>4</integer>
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>Green.1</string>
+			<string>Blue.2</string>
 			<key>cost</key>
-			<integer>4</integer>
+			<integer>36</integer>
 			<key>generation</key>
-			<integer>1</integer>
+			<integer>2</integer>
+			<key>color</key>
+			<integer>4</integer>
+			<key>orderCapacity</key>
+			<integer>2</integer>
+			<key>numberOfChildren</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Red.3</string>
+			<key>cost</key>
+			<integer>40</integer>
+			<key>generation</key>
+			<integer>3</integer>
+			<key>color</key>
+			<integer>2</integer>
+			<key>orderCapacity</key>
+			<integer>4</integer>
+			<key>numberOfChildren</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Green.4</string>
+			<key>cost</key>
+			<integer>44</integer>
+			<key>generation</key>
+			<integer>4</integer>
 			<key>color</key>
 			<integer>1</integer>
 			<key>orderCapacity</key>
-			<integer>3</integer>
+			<integer>5</integer>
 			<key>numberOfChildren</key>
 			<integer>4</integer>
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>Green.1</string>
+			<string>Yellow.3</string>
 			<key>cost</key>
-			<integer>4</integer>
+			<integer>48</integer>
 			<key>generation</key>
-			<integer>1</integer>
+			<integer>3</integer>
 			<key>color</key>
-			<integer>1</integer>
+			<integer>3</integer>
 			<key>orderCapacity</key>
 			<integer>3</integer>
+			<key>numberOfChildren</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Red.4</string>
+			<key>cost</key>
+			<integer>52</integer>
+			<key>generation</key>
+			<integer>4</integer>
+			<key>color</key>
+			<integer>2</integer>
+			<key>orderCapacity</key>
+			<integer>4</integer>
 			<key>numberOfChildren</key>
 			<integer>4</integer>
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>Green.1</string>
+			<string>Green.5</string>
 			<key>cost</key>
-			<integer>4</integer>
+			<integer>56</integer>
 			<key>generation</key>
-			<integer>1</integer>
+			<integer>5</integer>
 			<key>color</key>
 			<integer>1</integer>
 			<key>orderCapacity</key>
-			<integer>3</integer>
-			<key>numberOfChildren</key>
-			<integer>4</integer>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Green.1</string>
-			<key>cost</key>
-			<integer>4</integer>
-			<key>generation</key>
-			<integer>1</integer>
-			<key>color</key>
-			<integer>1</integer>
-			<key>orderCapacity</key>
-			<integer>3</integer>
-			<key>numberOfChildren</key>
-			<integer>4</integer>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Green.1</string>
-			<key>cost</key>
-			<integer>4</integer>
-			<key>generation</key>
-			<integer>1</integer>
-			<key>color</key>
-			<integer>1</integer>
-			<key>orderCapacity</key>
-			<integer>3</integer>
-			<key>numberOfChildren</key>
-			<integer>4</integer>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Green.1</string>
-			<key>cost</key>
-			<integer>4</integer>
-			<key>generation</key>
-			<integer>1</integer>
-			<key>color</key>
-			<integer>1</integer>
-			<key>orderCapacity</key>
-			<integer>3</integer>
-			<key>numberOfChildren</key>
-			<integer>4</integer>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Green.1</string>
-			<key>cost</key>
-			<integer>4</integer>
-			<key>generation</key>
-			<integer>1</integer>
-			<key>color</key>
-			<integer>1</integer>
-			<key>orderCapacity</key>
-			<integer>3</integer>
-			<key>numberOfChildren</key>
-			<integer>4</integer>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Green.1</string>
-			<key>cost</key>
-			<integer>4</integer>
-			<key>generation</key>
-			<integer>1</integer>
-			<key>color</key>
-			<integer>1</integer>
-			<key>orderCapacity</key>
-			<integer>3</integer>
-			<key>numberOfChildren</key>
-			<integer>4</integer>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Green.1</string>
-			<key>cost</key>
-			<integer>4</integer>
-			<key>generation</key>
-			<integer>1</integer>
-			<key>color</key>
-			<integer>1</integer>
-			<key>orderCapacity</key>
-			<integer>3</integer>
-			<key>numberOfChildren</key>
-			<integer>4</integer>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Green.1</string>
-			<key>cost</key>
-			<integer>4</integer>
-			<key>generation</key>
-			<integer>1</integer>
-			<key>color</key>
-			<integer>1</integer>
-			<key>orderCapacity</key>
-			<integer>3</integer>
-			<key>numberOfChildren</key>
-			<integer>4</integer>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Green.1</string>
-			<key>cost</key>
-			<integer>4</integer>
-			<key>generation</key>
-			<integer>1</integer>
-			<key>color</key>
-			<integer>1</integer>
-			<key>orderCapacity</key>
-			<integer>3</integer>
+			<integer>5</integer>
 			<key>numberOfChildren</key>
 			<integer>4</integer>
 		</dict>
