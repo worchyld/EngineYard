@@ -304,6 +304,15 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		4D49AB16246921BE00C057D6 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				4DED36732465865500CB7D72 /* DBManager.swift */,
+				4D8F12FC2465F37900ADF8F0 /* SaveGameEntityProtocol.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
 		4DA3484720812970006DA164 = {
 			isa = PBXGroup;
 			children = (
@@ -362,11 +371,12 @@
 		4DA3488220812B08006DA164 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				4DED366E246485EB00CB7D72 /* Helpers */,
-				4DACC0B42441EAC900466ABE /* Entities */,
 				4D111DFD233672CE00472BDC /* Assets */,
-				4D3C17C82334B6200036808F /* Managers */,
+				4DED366E246485EB00CB7D72 /* Helpers */,
 				4DA5236A208158B5000FFAAB /* Extensions */,
+				4D49AB16246921BE00C057D6 /* Store */,
+				4DACC0B42441EAC900466ABE /* Entities */,
+				4D3C17C82334B6200036808F /* Managers */,
 				4DC3D848233431080066FE9F /* Models */,
 			);
 			path = Shared;
@@ -409,8 +419,6 @@
 		4DACC0B42441EAC900466ABE /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				4D8F12FC2465F37900ADF8F0 /* SaveGameEntityProtocol.swift */,
-				4DED36732465865500CB7D72 /* DBManager.swift */,
 				4D0CC93B244B50C30011BE4C /* DeckEntity.swift */,
 				4D0CC93D244B586D0011BE4C /* CardEntity.swift */,
 				4D0CC93F244B587C0011BE4C /* PlayerEntity.swift */,
