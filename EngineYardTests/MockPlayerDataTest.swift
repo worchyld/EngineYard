@@ -7,10 +7,16 @@
 //
 
 import XCTest
+import Foundation
 
 @testable import EngineYard
 
 class MockPlayerDataTest: XCTestCase {
+
+    func testValidPlayersShouldBeFalse() {
+        let howManyPlayers = 1
+        XCTAssertFalse(Constants.Players.valid(howManyPlayers))
+    }
 
     func testMockGeneratedMinPlayers() {
         let players = MockData.players(howMany: Constants.Players.min)

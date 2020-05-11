@@ -59,6 +59,7 @@
 		4DACC0BD2441FF0D00466ABE /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4DACC0B52441FECA00466ABE /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB448C6219F380900F8507F /* EY+Protocols.swift */; };
 		4DE127E0233E826C00F84C57 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DE127DF233E826C00F84C57 /* Icons.xcassets */; };
+		4DE5494D2469EA0800ADC11C /* TaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE5494C2469EA0800ADC11C /* TaxTests.swift */; };
 		4DED36742465865600CB7D72 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DED36732465865500CB7D72 /* RealmHelper.swift */; };
 		4DED36762465866100CB7D72 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DED36752465866100CB7D72 /* SoundManager.swift */; };
 		4DF1509221679E0300D39D65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1509121679E0300D39D65 /* Main.storyboard */; };
@@ -165,6 +166,7 @@
 		4DB448C6219F380900F8507F /* EY+Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Protocols.swift"; sourceTree = "<group>"; };
 		4DC3D84423342D8F0066FE9F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DE127DF233E826C00F84C57 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
+		4DE5494C2469EA0800ADC11C /* TaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTests.swift; sourceTree = "<group>"; };
 		4DED36732465865500CB7D72 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		4DED36752465866100CB7D72 /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		4DF1509121679E0300D39D65 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 				4D6C27652469CB83005F4AEF /* MockData.swift */,
 				4DA3486820812972006DA164 /* EngineYardTests.swift */,
 				4D6C27672469CC2D005F4AEF /* MockPlayerDataTest.swift */,
+				4DE5494C2469EA0800ADC11C /* TaxTests.swift */,
 			);
 			path = EngineYardTests;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				4D111E182336B20900472BDC /* Player.swift */,
 				4D5CA50D2337E82400EF9F96 /* GameModel.swift */,
 				4DFF752A2336077400C7CC24 /* Tax.swift */,
+				4DFF753623360ED300C7CC24 /* Wallet.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -387,7 +391,6 @@
 			isa = PBXGroup;
 			children = (
 				4D5CA5172337FC6900EF9F96 /* ErrorCode.swift */,
-				4DFF753623360ED300C7CC24 /* Wallet.swift */,
 				4DA5236620815885000FFAAB /* Die.swift */,
 				4D5CA5152337F01300EF9F96 /* Constants.swift */,
 			);
@@ -588,6 +591,7 @@
 			files = (
 				4D6C27682469CC2D005F4AEF /* MockPlayerDataTest.swift in Sources */,
 				4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */,
+				4DE5494D2469EA0800ADC11C /* TaxTests.swift in Sources */,
 				4D6C27662469CB83005F4AEF /* MockData.swift in Sources */,
 				4DA92C212156874500AD19B7 /* (null) in Sources */,
 			);
