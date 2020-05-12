@@ -10,15 +10,13 @@ import Foundation
 import GameplayKit
 
 enum PlayerState: Int {
-    case inactive
+    case waiting = 0
     case active
     case thinking
 }
 
 class Player : NSObject, GKGameModelPlayer {
     var playerId: Int = 0
-    var isActivePlayer: Bool = false
-    var turnOrderIndex: Int = 0
 }
 
 extension Player {
