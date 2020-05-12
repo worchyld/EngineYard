@@ -9,7 +9,6 @@
 import Foundation
 
 struct Constants {
-    public static let taxRate: Float = 0.10 // Players pay 10% of their cash in taxes, rounded down
     public static let endGameCashTrigger: Int = 330 // Game ends when a player hits 330 coins or more
     public static let threePlayerSeedCash: Int = 12
     public static let fivePlayerSeedCash: Int = 14

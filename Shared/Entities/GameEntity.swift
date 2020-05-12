@@ -16,9 +16,9 @@ import RealmSwift
 class GameEntity: Object {
     @objc dynamic var id: String = UUID().uuidString
     @objc dynamic var activePlayer: Int = 0
-    @objc dynamic var turnOrderIndex: Int = 0
-    @objc dynamic var hasSound: Bool = false
-    @objc dynamic var hasMusic: Bool = false
+//    @objc dynamic var turnOrderIndex: Int = 0
+//    @objc dynamic var hasSound: Bool = false
+//    @objc dynamic var hasMusic: Bool = false
 
     override static func primaryKey() -> String {
        return "id"
