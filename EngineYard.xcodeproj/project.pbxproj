@@ -64,8 +64,11 @@
 		4DE54953246B1EF800ADC11C /* PlayerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE54952246B1EF800ADC11C /* PlayerEntity.swift */; };
 		4DE54955246B204000ADC11C /* MachineStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE54954246B204000ADC11C /* MachineStates.swift */; };
 		4DE54957246B2AA800ADC11C /* EY+Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE54956246B2AA800ADC11C /* EY+Enums.swift */; };
-		4DE54959246B2AF500ADC11C /* Locomotive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE54958246B2AF500ADC11C /* Locomotive.swift */; };
+		4DE54959246B2AF500ADC11C /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE54958246B2AF500ADC11C /* Deck.swift */; };
 		4DE5495B246B2B8B00ADC11C /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4DE5495A246B2B8B00ADC11C /* data.plist */; };
+		4DE5495D246B2BC400ADC11C /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE5495C246B2BC400ADC11C /* Card.swift */; };
+		4DE5495F246B2BEF00ADC11C /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE5495E246B2BEF00ADC11C /* Board.swift */; };
+		4DE54961246B33A600ADC11C /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE54960246B33A600ADC11C /* Order.swift */; };
 		4DED36742465865600CB7D72 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DED36732465865500CB7D72 /* RealmHelper.swift */; };
 		4DED36762465866100CB7D72 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DED36752465866100CB7D72 /* SoundManager.swift */; };
 		4DF1509221679E0300D39D65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1509121679E0300D39D65 /* Main.storyboard */; };
@@ -177,8 +180,11 @@
 		4DE54952246B1EF800ADC11C /* PlayerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEntity.swift; sourceTree = "<group>"; };
 		4DE54954246B204000ADC11C /* MachineStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineStates.swift; sourceTree = "<group>"; };
 		4DE54956246B2AA800ADC11C /* EY+Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Enums.swift"; sourceTree = "<group>"; };
-		4DE54958246B2AF500ADC11C /* Locomotive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locomotive.swift; sourceTree = "<group>"; };
+		4DE54958246B2AF500ADC11C /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		4DE5495A246B2B8B00ADC11C /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
+		4DE5495C246B2BC400ADC11C /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		4DE5495E246B2BEF00ADC11C /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		4DE54960246B33A600ADC11C /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		4DED36732465865500CB7D72 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		4DED36752465866100CB7D72 /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		4DF1509121679E0300D39D65 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -400,7 +406,10 @@
 				4D111E182336B20900472BDC /* Player.swift */,
 				4DFF752A2336077400C7CC24 /* Tax.swift */,
 				4DFF753623360ED300C7CC24 /* Wallet.swift */,
-				4DE54958246B2AF500ADC11C /* Locomotive.swift */,
+				4DE5495E246B2BEF00ADC11C /* Board.swift */,
+				4DE54958246B2AF500ADC11C /* Deck.swift */,
+				4DE5495C246B2BC400ADC11C /* Card.swift */,
+				4DE54960246B33A600ADC11C /* Order.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -586,10 +595,13 @@
 				4D5CA5182337FC6900EF9F96 /* ErrorCode.swift in Sources */,
 				4DFF753223360BA700C7CC24 /* Fonts.swift in Sources */,
 				4DA52369208158A8000FFAAB /* EY+Colors.swift in Sources */,
+				4DE5495F246B2BEF00ADC11C /* Board.swift in Sources */,
 				4DFF753323360BA700C7CC24 /* Sounds.swift in Sources */,
 				4DFA7A46233D55D9004099B7 /* MainMenuViewController.swift in Sources */,
 				4D3C17DB2334CF7B0036808F /* ViewController.swift in Sources */,
+				4DE5495D246B2BC400ADC11C /* Card.swift in Sources */,
 				4DFF753123360BA700C7CC24 /* Devices.swift in Sources */,
+				4DE54961246B33A600ADC11C /* Order.swift in Sources */,
 				4DFF75282336067400C7CC24 /* EY+ViewController.swift in Sources */,
 				4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */,
 				4D111E1A2336B20900472BDC /* Player.swift in Sources */,
@@ -602,7 +614,7 @@
 				4DFA7A49233D5648004099B7 /* PickPlayersViewController.swift in Sources */,
 				4D3C17D92334CEBD0036808F /* Storyboarded.swift in Sources */,
 				4D6C276B2469CDD0005F4AEF /* EY+Int.swift in Sources */,
-				4DE54959246B2AF500ADC11C /* Locomotive.swift in Sources */,
+				4DE54959246B2AF500ADC11C /* Deck.swift in Sources */,
 				4D8AB2A1233E21C4009158CB /* EY+Notification.swift in Sources */,
 				4D5CA5162337F01300EF9F96 /* Constants.swift in Sources */,
 			);

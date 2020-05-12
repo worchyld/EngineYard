@@ -1,5 +1,5 @@
 //
-//  Locomotive.swift
+//  Board.swift
 //  EngineYard
 //
 //  Created by Amarjit on 12/05/2020.
@@ -8,9 +8,6 @@
 
 import Foundation
 
-// Deck and Locomotive are interchangable
-typealias Deck = Locomotive
-
-struct Locomotive {
-    
+struct Board : Decodable {
+    let decks: [Deck]
 }
