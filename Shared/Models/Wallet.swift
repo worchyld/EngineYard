@@ -14,8 +14,6 @@ public enum WalletError: Error, Equatable {
     case insufficientFunds(coinsNeeded: Int)
 }
 
-/*
-
 fileprivate protocol WalletDelegate {
     func credit(amount: Int) throws -> Int?
     func debit(amount: Int) throws -> Int?
@@ -26,8 +24,6 @@ fileprivate protocol WalletHandlerDelegate {
     func handleCredit(amount: Int) -> Int
 }
 
-// Might need to refactor this to be private static functions
-// Simple cash:Int credit/debit handling
 class Wallet : WalletDelegate {
     public private (set) var balance: Int = 0
 
@@ -89,4 +85,3 @@ extension Wallet: WalletHandlerDelegate {
         return self.balance
     }
 }
-*/
