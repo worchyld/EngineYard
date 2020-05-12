@@ -19,7 +19,7 @@ class WalletTests: QuickSpec {
             context("Add cash to a wallet", {
                 it("Did add cash", closure: {
                     let w = Wallet()
-                    
+                    print (w)
                 })
             })
         }
