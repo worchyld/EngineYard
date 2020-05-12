@@ -6,23 +6,27 @@
 //  Copyright © 2020 Amarjit. All rights reserved.
 //
 
-import Quick
-import Nimble
+import XCTest
 
 @testable import EngineYard
 
-class WalletTests: QuickSpec {
+class WalletTests: XCTestCase {
 
-    override func spec() {
-
-        describe("Credit wallet with Int") {
-            context("Add cash to a wallet", {
-                it("Did add cash", closure: {
-                    let w = Wallet()
-                    print (w)
-                })
-            })
-        }
+    func testInitializeWallet() {
+        let w = Wallet(balance: 100)
+        XCTAssertTrue(w.balance == 100)
     }
 
+    func testCreditWallet() {
+        let w = Wallet(balance: 100)
+        XCTAssertNoThrow(try w.credit(amount: 100))
+        XCTAssertTrue(w.balance == 200)
+    }
+
+    func testDebitWallet() {
+        let w = Wallet(balance: 100)
+        let _ = try! w.credit(amount: 150)
+        XCTAssertNoThrow(try w.debit(amount: 50))
+        XCTAssertTrue(w.balance == 200)
+    }
 }

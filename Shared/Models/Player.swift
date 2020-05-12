@@ -17,8 +17,8 @@ enum PlayerState: Int {
 
 class Player : NSObject, GKGameModelPlayer {
     var playerId: Int = 0
-    let name: String = ""
-    var cash: Int = 0
+    var isActivePlayer: Bool = false
+    var turnOrderIndex: Int = 0
 }
 
 extension Player {
@@ -29,6 +29,6 @@ extension Player {
 
 extension Player  {
     override var description: String {
-        return ("\(self.name), cash: $\(self.cash)")
+        return ("\(self.playerId)")
     }
 }

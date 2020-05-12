@@ -1,0 +1,117 @@
+{
+    "decks":
+    [
+     {
+       "name": "Green.1",
+       "cost": 4,
+       "generation": 1,
+       "color": 1,
+       "orderCapacity": 3,
+       "numberOfChildren": 4
+     },
+     {
+       "name": "Red.1",
+       "cost": 8,
+       "generation": 1,
+       "color": 2,
+       "orderCapacity": 3,
+       "numberOfChildren": 3
+     },
+     {
+       "name": "Yellow.1",
+       "cost": 12,
+       "generation": 1,
+       "color": 3,
+       "orderCapacity": 2,
+       "numberOfChildren": 2
+     },
+     {
+       "name": "Blue.1",
+       "cost": 16,
+       "generation": 1,
+       "color": 4,
+       "orderCapacity": 1,
+       "numberOfChildren": 1
+     },
+     {
+       "name": "Green.2",
+       "cost": 20,
+       "generation": 2,
+       "color": 1,
+       "orderCapacity": 4,
+       "numberOfChildren": 4
+     },
+     {
+       "name": "Red.2",
+       "cost": 24,
+       "generation": 2,
+       "color": 2,
+       "orderCapacity": 3,
+       "numberOfChildren": 3
+     },
+     {
+       "name": "Yellow.2",
+       "cost": 28,
+       "generation": 2,
+       "color": 3,
+       "orderCapacity": 3,
+       "numberOfChildren": 2
+     },
+     {
+       "name": "Green.3",
+       "cost": 32,
+       "generation": 3,
+       "color": 1,
+       "orderCapacity": 4,
+       "numberOfChildren": 4
+     },
+     {
+       "name": "Blue.2",
+       "cost": 36,
+       "generation": 2,
+       "color": 4,
+       "orderCapacity": 2,
+       "numberOfChildren": 2
+     },
+     {
+       "name": "Red.3",
+       "cost": 40,
+       "generation": 3,
+       "color": 2,
+       "orderCapacity": 4,
+       "numberOfChildren": 3
+     },
+     {
+       "name": "Green.4",
+       "cost": 44,
+       "generation": 4,
+       "color": 1,
+       "orderCapacity": 5,
+       "numberOfChildren": 4
+     },
+     {
+       "name": "Yellow.3",
+       "cost": 48,
+       "generation": 3,
+       "color": 3,
+       "orderCapacity": 3,
+       "numberOfChildren": 3
+     },
+     {
+       "name": "Red.4",
+       "cost": 52,
+       "generation": 4,
+       "color": 2,
+       "orderCapacity": 4,
+       "numberOfChildren": 4
+     },
+     {
+       "name": "Green.5",
+       "cost": 56,
+       "generation": 5,
+       "color": 1,
+       "orderCapacity": 5,
+       "numberOfChildren": 4
+     }
+    ]
+}
