@@ -73,6 +73,7 @@
 		4DE54965246B36D300ADC11C /* CardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE54964246B36D200ADC11C /* CardEntity.swift */; };
 		4DE54967246B36EB00ADC11C /* OrderEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE54966246B36EB00ADC11C /* OrderEntity.swift */; };
 		4DE54969246B373700ADC11C /* GameLogEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE54968246B373700ADC11C /* GameLogEntity.swift */; };
+		4DE5496B246BF76000ADC11C /* EY+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE5496A246BF76000ADC11C /* EY+String.swift */; };
 		4DED36742465865600CB7D72 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DED36732465865500CB7D72 /* RealmHelper.swift */; };
 		4DED36762465866100CB7D72 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DED36752465866100CB7D72 /* SoundManager.swift */; };
 		4DF1509221679E0300D39D65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1509121679E0300D39D65 /* Main.storyboard */; };
@@ -193,6 +194,7 @@
 		4DE54964246B36D200ADC11C /* CardEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEntity.swift; sourceTree = "<group>"; };
 		4DE54966246B36EB00ADC11C /* OrderEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderEntity.swift; sourceTree = "<group>"; };
 		4DE54968246B373700ADC11C /* GameLogEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogEntity.swift; sourceTree = "<group>"; };
+		4DE5496A246BF76000ADC11C /* EY+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+String.swift"; sourceTree = "<group>"; };
 		4DED36732465865500CB7D72 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		4DED36752465866100CB7D72 /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		4DF1509121679E0300D39D65 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -377,6 +379,7 @@
 				4D8AB2A0233E21C4009158CB /* EY+Notification.swift */,
 				4D247B36219FFE340004478D /* ObjectCache.swift */,
 				4D6C27692469CDB6005F4AEF /* EY+Int.swift */,
+				4DE5496A246BF76000ADC11C /* EY+String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 				4DE54953246B1EF800ADC11C /* PlayerEntity.swift in Sources */,
 				4DED36742465865600CB7D72 /* RealmHelper.swift in Sources */,
 				4DFF752B2336077400C7CC24 /* Tax.swift in Sources */,
+				4DE5496B246BF76000ADC11C /* EY+String.swift in Sources */,
 				4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */,
 				4DE54957246B2AA800ADC11C /* EY+Enums.swift in Sources */,
 				4DFA7A49233D5648004099B7 /* PickPlayersViewController.swift in Sources */,
