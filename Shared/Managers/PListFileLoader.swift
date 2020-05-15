@@ -10,19 +10,12 @@ import Foundation
 
 // A very basic PList loader
 struct PListFileLoader {
-    //typealias Operation = (Data?) -> ()
-
-    private enum FileError: Error {
+    enum FileError: Error {
+        case fileHasNoData
         case filePathNotFound(path: String)
     }
 
-    let bundle: Bundle
-
-    var resourcePath: String? {
-        return self.bundle.resourcePath
-    }
-
-    func getDataFrom(filename: String, completionHandler: @escaping (Data?, Error?) -> Void) {
+    public static func getDataFrom(filename: String, completionHandler: @escaping (Data?, Error?) -> Void) {
         let fileManager = FileManager.default
         let documentsDirectory = FileManager.documentsDirectory()
         let URL = documentsDirectory.appendingPathComponent(filename)
@@ -32,6 +25,17 @@ struct PListFileLoader {
             return
         }
 
+        let serialQueue = DispatchQueue(label: "GetDataFromFile")
+        do {
+            let _ = try serialQueue.sync {
+                let data = try Data(contentsOf: URL, options: .mappedIfSafe)
+                completionHandler(data, nil)
+            }
+        } catch {
+            completionHandler(nil, error)
+        }
+        
+        /*
         DispatchQueue.global(qos: .utility).async {
             do {
                 let data = try Data(contentsOf: URL, options: .mappedIfSafe)
@@ -45,7 +49,7 @@ struct PListFileLoader {
                    completionHandler(nil, error)
                 }
             }
-        }
+        }*/
     }
 
     func load(filename: String) throws -> Data {
