@@ -10,7 +10,10 @@ import Foundation
 import RealmSwift
 
 // :[Realm entity] Deck
-
+class DeckEntity : Object {
+    @objc dynamic var id = UUID().uuidString
+}
+/*
 class DeckEntity : Object {
     @objc dynamic var id = UUID().uuidString
     @objc dynamic var state: Int = 0
@@ -36,3 +39,4 @@ extension DeckEntity {
         return string
     }
 }
+*/

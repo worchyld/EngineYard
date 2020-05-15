@@ -63,7 +63,6 @@
 		4DE54951246B1E6800ADC11C /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DE54950246B1E6800ADC11C /* data.json */; };
 		4DE54953246B1EF800ADC11C /* PlayerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE54952246B1EF800ADC11C /* PlayerEntity.swift */; };
 		4DE54955246B204000ADC11C /* MachineStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE54954246B204000ADC11C /* MachineStates.swift */; };
-		4DE54957246B2AA800ADC11C /* EY+Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE54956246B2AA800ADC11C /* EY+Enums.swift */; };
 		4DE54959246B2AF500ADC11C /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE54958246B2AF500ADC11C /* Deck.swift */; };
 		4DE5495B246B2B8B00ADC11C /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4DE5495A246B2B8B00ADC11C /* data.plist */; };
 		4DE5495D246B2BC400ADC11C /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE5495C246B2BC400ADC11C /* Card.swift */; };
@@ -184,7 +183,6 @@
 		4DE54950246B1E6800ADC11C /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		4DE54952246B1EF800ADC11C /* PlayerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEntity.swift; sourceTree = "<group>"; };
 		4DE54954246B204000ADC11C /* MachineStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineStates.swift; sourceTree = "<group>"; };
-		4DE54956246B2AA800ADC11C /* EY+Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Enums.swift"; sourceTree = "<group>"; };
 		4DE54958246B2AF500ADC11C /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		4DE5495A246B2B8B00ADC11C /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
 		4DE5495C246B2BC400ADC11C /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -415,7 +413,6 @@
 		4DC3D848233431080066FE9F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4DE54956246B2AA800ADC11C /* EY+Enums.swift */,
 				4DE54954246B204000ADC11C /* MachineStates.swift */,
 				4D5CA50D2337E82400EF9F96 /* GameModel.swift */,
 				4D111E182336B20900472BDC /* Player.swift */,
@@ -628,7 +625,6 @@
 				4DFF752B2336077400C7CC24 /* Tax.swift in Sources */,
 				4DE5496B246BF76000ADC11C /* EY+String.swift in Sources */,
 				4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */,
-				4DE54957246B2AA800ADC11C /* EY+Enums.swift in Sources */,
 				4DFA7A49233D5648004099B7 /* PickPlayersViewController.swift in Sources */,
 				4DE54965246B36D300ADC11C /* CardEntity.swift in Sources */,
 				4D3C17D92334CEBD0036808F /* Storyboarded.swift in Sources */,

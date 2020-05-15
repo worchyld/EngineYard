@@ -21,7 +21,35 @@ protocol DeckProtocol {
     var numberOfChildren: Int  { get }
 }
 
-struct Deck: Decodable, DeckProtocol, Identifiable {
+class Deck: Decodable, DeckProtocol, Identifiable {
+    // : enums
+    enum State: Int, CaseIterable {
+        case inactive = 0
+        case active
+        case rusting
+        case rusted = -1 // Obsolete
+
+        static let allRawValues = Deck.State.inactive.rawValue...Deck.State.rusted.rawValue
+    }
+    enum Color: Int, CaseIterable {
+        case green = 1  // Passenger
+        case red    // Fast
+        case yellow // Freight
+        case blue   // Special
+
+        static let allRawValues = Deck.Color.green.rawValue...Deck.Color.blue.rawValue
+    }
+    enum Generation: Int, CaseIterable  {
+        case first = 1
+        case second
+        case third
+        case fourth
+        case fifth
+
+        static let allRawValues = Deck.Generation.first.rawValue...Deck.Generation.fifth.rawValue
+    }
+
+    // : Structure 
     let id: UUID = UUID()
     let name: String
     let cost: Int
