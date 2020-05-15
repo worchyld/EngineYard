@@ -12,10 +12,6 @@ import XCTest
 
 class LoadPListTest: XCTestCase {
 
-    override func setUpWithError() throws {
-
-    }
-
     func testBundleNotNill() throws -> Bundle {
         let bundle = Bundle(for: type(of: self))
         XCTAssertNotNil(bundle)

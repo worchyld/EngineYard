@@ -8,6 +8,19 @@
 
 import Foundation
 
+enum CardError : Error {
+    case cannotSelectCardFromSameParent
+    case parentIsObsolete
+    case cardDoesNotExist
+    case cardAlreadyHasOwner
+    case cardHasNoParent
+    case alreadyHaveCardFromThisDeck
+    case cannotFind(card: Card)
+    case handIsEmpty
+    case handHasNoOwner
+    case couldNotHandleCard(card: Card)
+}
+
 class Card: Identifiable {
     let uuid: UUID = UUID()
     private (set) weak var owner: Player?
@@ -18,6 +31,12 @@ class Card: Identifiable {
 
     init(with deck: Deck) {
         self.deck = deck
+    }
+}
+
+extension Card: Equatable {
+    public static func ==(lhs: Card, rhs: Card) -> Bool {
+        return (lhs.uuid == rhs.uuid)
     }
 }
 
