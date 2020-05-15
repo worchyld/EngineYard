@@ -26,9 +26,13 @@ class BoardInitializerTests: XCTestCase {
     }
 
     func testBoardDidLoad() {
+        //[weak self]
         BoardLoaderManager.loadBoard { (board, error)  in
-            XCTAssertNotNil(board, "Board is nil")
-            XCTAssertNotNil(error, error.debugDescription)
+            XCTAssertNotNil(board)
+            XCTAssertNil(error, error.debugDescription)
+            if (error != nil) {
+                XCTFail(error.debugDescription)
+            }
         }
     }
 

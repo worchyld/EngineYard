@@ -36,6 +36,7 @@ class BoardLoaderManager {
                 do {
                     print ("found board")
                     let board = try decodeBoard(from: hasData)
+                    print ("board -- \(board)")
                     completionHandler(board, nil)
                 } catch {
                     print ("some other board error occured")
