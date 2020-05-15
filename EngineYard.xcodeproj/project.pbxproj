@@ -16,6 +16,9 @@
 		4D111E1A2336B20900472BDC /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D111E182336B20900472BDC /* Player.swift */; };
 		4D247B37219FFE340004478D /* ObjectCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D247B36219FFE340004478D /* ObjectCache.swift */; };
 		4D2A4B8C2195DEB300315524 /* EY+ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2A4B8B2195DEB300315524 /* EY+ImageView.swift */; };
+		4D300D87246EB3A10083AEE1 /* LoadPListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D300D86246EB3A10083AEE1 /* LoadPListTest.swift */; };
+		4D300D8A246EB4B40083AEE1 /* PListFileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D300D88246EB4170083AEE1 /* PListFileLoader.swift */; };
+		4D300D8D246EC66F0083AEE1 /* EY+Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D300D8B246EBF470083AEE1 /* EY+Paths.swift */; };
 		4D3C17D72334CE730036808F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3C17D62334CE730036808F /* Coordinator.swift */; };
 		4D3C17D92334CEBD0036808F /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3C17D82334CEBD0036808F /* Storyboarded.swift */; };
 		4D3C17DB2334CF7B0036808F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3C17DA2334CF7B0036808F /* ViewController.swift */; };
@@ -145,6 +148,9 @@
 		4D111E182336B20900472BDC /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		4D247B36219FFE340004478D /* ObjectCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectCache.swift; sourceTree = "<group>"; };
 		4D2A4B8B2195DEB300315524 /* EY+ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+ImageView.swift"; sourceTree = "<group>"; };
+		4D300D86246EB3A10083AEE1 /* LoadPListTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPListTest.swift; sourceTree = "<group>"; };
+		4D300D88246EB4170083AEE1 /* PListFileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PListFileLoader.swift; sourceTree = "<group>"; };
+		4D300D8B246EBF470083AEE1 /* EY+Paths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Paths.swift"; sourceTree = "<group>"; };
 		4D3C17D62334CE730036808F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		4D3C17D82334CEBD0036808F /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		4D3C17DA2334CF7B0036808F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -277,6 +283,7 @@
 				4D3C17DC2334CFCB0036808F /* MainCoordinator.swift */,
 				4D3C17D82334CEBD0036808F /* Storyboarded.swift */,
 				4DED36752465866100CB7D72 /* SoundManager.swift */,
+				4D300D88246EB4170083AEE1 /* PListFileLoader.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -329,6 +336,7 @@
 				4D6C27672469CC2D005F4AEF /* MockPlayerDataTest.swift */,
 				4DE5494C2469EA0800ADC11C /* TaxTests.swift */,
 				4DE5494E246AEAC200ADC11C /* WalletTests.swift */,
+				4D300D86246EB3A10083AEE1 /* LoadPListTest.swift */,
 			);
 			path = EngineYardTests;
 			sourceTree = "<group>";
@@ -378,6 +386,7 @@
 				4D247B36219FFE340004478D /* ObjectCache.swift */,
 				4D6C27692469CDB6005F4AEF /* EY+Int.swift */,
 				4DE5496A246BF76000ADC11C /* EY+String.swift */,
+				4D300D8B246EBF470083AEE1 /* EY+Paths.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -625,11 +634,13 @@
 				4DFF752B2336077400C7CC24 /* Tax.swift in Sources */,
 				4DE5496B246BF76000ADC11C /* EY+String.swift in Sources */,
 				4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */,
+				4D300D8D246EC66F0083AEE1 /* EY+Paths.swift in Sources */,
 				4DFA7A49233D5648004099B7 /* PickPlayersViewController.swift in Sources */,
 				4DE54965246B36D300ADC11C /* CardEntity.swift in Sources */,
 				4D3C17D92334CEBD0036808F /* Storyboarded.swift in Sources */,
 				4DE54969246B373700ADC11C /* GameLogEntity.swift in Sources */,
 				4D6C276B2469CDD0005F4AEF /* EY+Int.swift in Sources */,
+				4D300D8A246EB4B40083AEE1 /* PListFileLoader.swift in Sources */,
 				4DE54959246B2AF500ADC11C /* Deck.swift in Sources */,
 				4D8AB2A1233E21C4009158CB /* EY+Notification.swift in Sources */,
 				4D5CA5162337F01300EF9F96 /* Constants.swift in Sources */,
@@ -646,6 +657,7 @@
 				4D6C27662469CB83005F4AEF /* MockData.swift in Sources */,
 				4DE5494F246AEAC200ADC11C /* WalletTests.swift in Sources */,
 				4DA92C212156874500AD19B7 /* (null) in Sources */,
+				4D300D87246EB3A10083AEE1 /* LoadPListTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
