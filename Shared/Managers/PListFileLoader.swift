@@ -32,26 +32,20 @@ struct PListFileLoader {
             return
         }
 
-        let queue = OperationQueue()
-        queue.maxConcurrentOperationCount = 1
-        queue.name = "Get data from filename: \(filename)"
-
-        let operation = BlockOperation(block: {
-          print("start fetching \(filename)")
+        DispatchQueue.global(qos: .utility).async {
             do {
                 let data = try Data(contentsOf: URL, options: .mappedIfSafe)
-                print("after data loaded")
-                completionHandler(data, nil)
+                DispatchQueue.main.async {
+                    completionHandler(data, nil)
+                }
             }
             catch {
-                print("error occured trying to load data")
-                queue.cancelAllOperations()
-                completionHandler(nil, error)
+                DispatchQueue.main.async {
+                    print ("failed with error found")
+                   completionHandler(nil, error)
+                }
             }
-        })
-
-        queue.addOperation(operation)
-        queue.waitUntilAllOperationsAreFinished()
+        }
     }
 
     func load(filename: String) throws -> Data {
