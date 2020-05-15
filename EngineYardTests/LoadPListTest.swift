@@ -12,33 +12,58 @@ import XCTest
 
 class LoadPListTest: XCTestCase {
 
-    private weak var bundle: Bundle?
-    private var loader: PListFileLoader?
-
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        let bundle = Bundle(for: type(of: self))
-        self.loader = PListFileLoader(bundle: bundle)
-        self.bundle = bundle
+
     }
 
-    func test_bundle() {
-        guard let bundle = self.bundle else {
-            XCTFail("No bundle found")
-            return
-        }
-        XCTAssertNotNil(bundle.resourceURL)
+    func testBundleNotNill() throws -> Bundle {
+        let bundle = Bundle(for: type(of: self))
+        XCTAssertNotNil(bundle)
+        XCTAssertNotNil(bundle.resourcePath)
         XCTAssertNotNil(bundle.bundlePath)
         XCTAssertNotNil(bundle.bundleURL)
+        return bundle
     }
 
-    func test_can_load_plist_file() {
-        guard let loader = self.loader else {
-            XCTFail("Loader not found")
-            return
-        }
-        XCTAssertNoThrow(try loader.load(filename: "data.plist"), "Error was thrown")
+    func testLoaderNotNill() throws -> PListFileLoader {
+        let bundle = try testBundleNotNill()
+        let loader = PListFileLoader(bundle: bundle)
         XCTAssertNotNil(loader)
+        return loader
     }
 
+    func testNoThrowImport() throws {
+        let loader = try testLoaderNotNill()
+        XCTAssertNoThrow(try loader.load(filename: "data.plist"), "Error was thrown")
+    }
+
+    func testImportPlistHasData() throws -> Data {
+        let loader = try testLoaderNotNill()
+        let data = try loader.load(filename: "data.plist")
+        XCTAssertNotNil(data)
+        XCTAssertFalse(data.isEmpty)
+        return data
+    }
+
+    func testDataLoaderWithCompletionHandler() throws {
+        let loader = try testLoaderNotNill()
+        loader.getDataFrom(filename: "data.plist") { (data, error) in
+            XCTAssertNotNil(data, "Data not found")
+            XCTAssertNil(error, error.debugDescription)
+        }
+    }
+
+    func testPropertyListDecoder() throws {
+        let data = try testImportPlistHasData()
+
+        do {
+            let decoder = PropertyListDecoder()
+            let results = try decoder.decode(Board.self, from: data)
+
+            XCTAssertTrue(results.decks.count > 0)
+        } catch {
+            // handle error
+            print (error)
+        }
+    }
 }
