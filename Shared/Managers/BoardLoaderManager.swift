@@ -1,5 +1,5 @@
 //
-//  BoardLoader.swift
+//  BoardLoaderManager.swift
 //  EngineYard
 //
 //  Created by Amarjit on 15/05/2020.
@@ -8,32 +8,37 @@
 
 import Foundation
 
-class BoardLoader {
+class BoardLoaderManager {
 //    private lazy var queue: OperationQueue = {
 //      var queue = OperationQueue()
 //      queue.name = "Load PList from disk"
 //      queue.maxConcurrentOperationCount = 1
 //      return queue
 //    }()
-    class func load(completionHandler: @escaping (Board?, Error?) -> Void) {
-        //let queue = OperationQueue()
-        //queue.name = "Load PList from disk"
-        //queue.maxConcurrentOperationCount = 1
-        //queue.waitUntilAllOperationsAreFinished()
+    //let queue = OperationQueue()
+    //queue.name = "Load PList from disk"
+    //queue.maxConcurrentOperationCount = 1
+    //queue.waitUntilAllOperationsAreFinished()
 
+    static func loadBoard(completionHandler: @escaping (Board?, Error?) -> Void) {
+        print ("- loadBoard -")
         PListFileLoader.getDataFrom(filename: "data.plist") { (data, error) in
             if (error != nil) {
+                print ("errors found")
                 completionHandler(nil, error)
             }
             else {
                 guard let hasData = data else {
+                    print ("no data found")
                     completionHandler(nil, error)
                     return
                 }
                 do {
+                    print ("found board")
                     let board = try decodeBoard(from: hasData)
                     completionHandler(board, nil)
                 } catch {
+                    print ("some other board error occured")
                     completionHandler(nil, error)
                 }
             }

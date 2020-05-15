@@ -22,8 +22,7 @@ class LoadPListTest: XCTestCase {
     }
 
     func testLoaderNotNill() throws -> PListFileLoader {
-        let bundle = try testBundleNotNill()
-        let loader = PListFileLoader(bundle: bundle)
+        let loader = PListFileLoader()
         XCTAssertNotNil(loader)
         return loader
     }
@@ -33,7 +32,7 @@ class LoadPListTest: XCTestCase {
         XCTAssertNoThrow(try loader.load(filename: "data.plist"), "Error was thrown")
     }
 
-    func testImportPlistHasData() throws -> Data {
+    func testFileHasData() throws -> Data {
         let loader = try testLoaderNotNill()
         let data = try loader.load(filename: "data.plist")
         XCTAssertNotNil(data)
@@ -41,25 +40,4 @@ class LoadPListTest: XCTestCase {
         return data
     }
 
-    func testDataLoaderWithCompletionHandler() throws {
-        let loader = try testLoaderNotNill()
-        loader.getDataFrom(filename: "data.plist") { (data, error) in
-            XCTAssertNotNil(data, "Data not found")
-            XCTAssertNil(error, error.debugDescription)
-        }
-    }
-
-    func testPropertyListDecoder() throws {
-        let data = try testImportPlistHasData()
-
-        do {
-            let decoder = PropertyListDecoder()
-            let results = try decoder.decode(Board.self, from: data)
-
-            XCTAssertTrue(results.decks.count > 0)
-        } catch {
-            // handle error
-            print (error)
-        }
-    }
 }
