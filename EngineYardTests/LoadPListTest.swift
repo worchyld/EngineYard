@@ -12,6 +12,9 @@ import XCTest
 
 class LoadPListTest: XCTestCase {
 
+    /*
+     let urlPath = Bundle.main.url(forResource: "input", withExtension: "txt")
+     */
     func testBundleNotNill() throws -> Bundle {
         let bundle = Bundle(for: type(of: self))
         XCTAssertNotNil(bundle)
