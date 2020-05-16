@@ -335,8 +335,8 @@
 				4D6C27672469CC2D005F4AEF /* MockPlayerDataTest.swift */,
 				4DE5494C2469EA0800ADC11C /* TaxTests.swift */,
 				4DE5494E246AEAC200ADC11C /* WalletTests.swift */,
-				4D300D8E246EDF880083AEE1 /* RealmGameModelSaveTests.swift */,
 				4D300D90246EE10E0083AEE1 /* BasicGKGameModelTests.swift */,
+				4D300D8E246EDF880083AEE1 /* RealmGameModelSaveTests.swift */,
 			);
 			path = EngineYardTests;
 			sourceTree = "<group>";
