@@ -16,9 +16,18 @@ struct Constants {
         public static let fivePlayer: Int = 14
     }
 
-    public struct Players {
+    public struct ValidNumberOfPlayers {
         public static let min: Int = 3
         public static let max: Int = 5
+
+        static func isValid( _ numberOfPlayers: Int) -> Bool {
+            let min = Constants.ValidNumberOfPlayers.min
+            let max = Constants.ValidNumberOfPlayers.max
+            guard ((min ... max).contains(numberOfPlayers)) else {
+                return false
+            }
+            return true
+        }
     }
 
     public static func hasReachedGoal(_ cash: Int) -> Bool {
