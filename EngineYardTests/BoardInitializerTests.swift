@@ -55,7 +55,7 @@ class BoardInitializerTests: XCTestCase {
         self.waitForExpectations(timeout: 1.0, handler: nil)
     }
 
-    /*
+
     func testHasExpectedTotalCards(decks: [Deck]) {
         // Expected `totalCards` = 43
         let totalCards = decks.reduce(0, { $0 + $1.cards.count })
@@ -88,5 +88,5 @@ class BoardInitializerTests: XCTestCase {
         let sumOfColors = decks.reduce(0, {$0 + $1.color})
         XCTAssertTrue(sumOfColors == Board.ExpectedData.sumOfColors)
     }
- */
+ 
 }

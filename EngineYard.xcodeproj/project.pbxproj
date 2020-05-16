@@ -22,7 +22,7 @@
 		4D300D8F246EDF880083AEE1 /* RealmGameModelSaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D300D8E246EDF880083AEE1 /* RealmGameModelSaveTests.swift */; };
 		4D300D91246EE10E0083AEE1 /* BasicGKGameModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D300D90246EE10E0083AEE1 /* BasicGKGameModelTests.swift */; };
 		4D300D93246EF7810083AEE1 /* BoardInitializerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D300D92246EF7810083AEE1 /* BoardInitializerTests.swift */; };
-		4D300D95246F13D20083AEE1 /* BoardLoaderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D300D94246F13D20083AEE1 /* BoardLoaderManager.swift */; };
+		4D300D97246F8DB90083AEE1 /* BoardLoaderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D300D96246F8DB90083AEE1 /* BoardLoaderManager.swift */; };
 		4D3C17D72334CE730036808F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3C17D62334CE730036808F /* Coordinator.swift */; };
 		4D3C17D92334CEBD0036808F /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3C17D82334CEBD0036808F /* Storyboarded.swift */; };
 		4D3C17DB2334CF7B0036808F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3C17DA2334CF7B0036808F /* ViewController.swift */; };
@@ -158,7 +158,7 @@
 		4D300D8E246EDF880083AEE1 /* RealmGameModelSaveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmGameModelSaveTests.swift; sourceTree = "<group>"; };
 		4D300D90246EE10E0083AEE1 /* BasicGKGameModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicGKGameModelTests.swift; sourceTree = "<group>"; };
 		4D300D92246EF7810083AEE1 /* BoardInitializerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardInitializerTests.swift; sourceTree = "<group>"; };
-		4D300D94246F13D20083AEE1 /* BoardLoaderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardLoaderManager.swift; sourceTree = "<group>"; };
+		4D300D96246F8DB90083AEE1 /* BoardLoaderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardLoaderManager.swift; sourceTree = "<group>"; };
 		4D3C17D62334CE730036808F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		4D3C17D82334CEBD0036808F /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		4D3C17DA2334CF7B0036808F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -287,12 +287,12 @@
 		4D3C17C82334B6200036808F /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				4D300D96246F8DB90083AEE1 /* BoardLoaderManager.swift */,
 				4D3C17D62334CE730036808F /* Coordinator.swift */,
 				4D3C17DC2334CFCB0036808F /* MainCoordinator.swift */,
 				4D3C17D82334CEBD0036808F /* Storyboarded.swift */,
 				4DED36752465866100CB7D72 /* SoundManager.swift */,
 				4D300D88246EB4170083AEE1 /* PListFileLoader.swift */,
-				4D300D94246F13D20083AEE1 /* BoardLoaderManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -630,10 +630,10 @@
 				4DA52369208158A8000FFAAB /* EY+Colors.swift in Sources */,
 				4DE5495F246B2BEF00ADC11C /* Board.swift in Sources */,
 				4DFF753323360BA700C7CC24 /* Sounds.swift in Sources */,
+				4D300D97246F8DB90083AEE1 /* BoardLoaderManager.swift in Sources */,
 				4DE54963246B369600ADC11C /* DeckEntity.swift in Sources */,
 				4DFA7A46233D55D9004099B7 /* MainMenuViewController.swift in Sources */,
 				4D3C17DB2334CF7B0036808F /* ViewController.swift in Sources */,
-				4D300D95246F13D20083AEE1 /* BoardLoaderManager.swift in Sources */,
 				4DE54967246B36EB00ADC11C /* OrderEntity.swift in Sources */,
 				4DE5495D246B2BC400ADC11C /* Card.swift in Sources */,
 				4DFF753123360BA700C7CC24 /* Devices.swift in Sources */,
