@@ -15,16 +15,18 @@ class MockPlayerDataTest: XCTestCase {
 
     func testValidPlayersShouldBeFalse() {
         let howManyPlayers = 1
-        XCTAssertFalse(Constants.Players.valid(howManyPlayers))
+        XCTAssertFalse(Player.isValidNumberOfPlayers(howManyPlayers))
     }
 
     func testMockGeneratedMinPlayers() {
-        let players = MockData.players(howMany: Constants.Players.min)
-        XCTAssertTrue(players?.count == Constants.Players.min)
+        let howMany = Constants.Players.min
+        let players = Player.generatePlayers(howMany: howMany)
+        XCTAssertTrue(players?.count == howMany)
     }
 
     func testMockGeneratedMaxPlayers() {
-        let players = MockData.players(howMany: Constants.Players.max)
-        XCTAssertTrue(players?.count == Constants.Players.max)
+        let howMany = Constants.Players.max
+        let players = Player.generatePlayers(howMany: howMany)
+        XCTAssertTrue(players?.count == howMany)
     }
 }
