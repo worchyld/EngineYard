@@ -20,7 +20,7 @@ public struct MockData {
 
         for index in stride(from:0, to: howMany, by: 1) {
             let player = Player.init()
-            player.playerId = index
+            player.setPlayerId(playerId: index)
             players.append(player)
         }
 

@@ -74,7 +74,6 @@
 		4DE54963246B369600ADC11C /* DeckEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE54962246B369600ADC11C /* DeckEntity.swift */; };
 		4DE54965246B36D300ADC11C /* CardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE54964246B36D200ADC11C /* CardEntity.swift */; };
 		4DE54967246B36EB00ADC11C /* OrderEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE54966246B36EB00ADC11C /* OrderEntity.swift */; };
-		4DE54969246B373700ADC11C /* GameLogEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE54968246B373700ADC11C /* GameLogEntity.swift */; };
 		4DE5496B246BF76000ADC11C /* EY+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE5496A246BF76000ADC11C /* EY+String.swift */; };
 		4DED36742465865600CB7D72 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DED36732465865500CB7D72 /* RealmHelper.swift */; };
 		4DED36762465866100CB7D72 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DED36752465866100CB7D72 /* SoundManager.swift */; };
@@ -197,7 +196,6 @@
 		4DE54962246B369600ADC11C /* DeckEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckEntity.swift; sourceTree = "<group>"; };
 		4DE54964246B36D200ADC11C /* CardEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEntity.swift; sourceTree = "<group>"; };
 		4DE54966246B36EB00ADC11C /* OrderEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderEntity.swift; sourceTree = "<group>"; };
-		4DE54968246B373700ADC11C /* GameLogEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogEntity.swift; sourceTree = "<group>"; };
 		4DE5496A246BF76000ADC11C /* EY+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+String.swift"; sourceTree = "<group>"; };
 		4DED36732465865500CB7D72 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		4DED36752465866100CB7D72 /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
@@ -414,7 +412,6 @@
 				4DE54962246B369600ADC11C /* DeckEntity.swift */,
 				4DE54964246B36D200ADC11C /* CardEntity.swift */,
 				4DE54966246B36EB00ADC11C /* OrderEntity.swift */,
-				4DE54968246B373700ADC11C /* GameLogEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -638,7 +635,6 @@
 				4DFA7A49233D5648004099B7 /* PickPlayersViewController.swift in Sources */,
 				4DE54965246B36D300ADC11C /* CardEntity.swift in Sources */,
 				4D3C17D92334CEBD0036808F /* Storyboarded.swift in Sources */,
-				4DE54969246B373700ADC11C /* GameLogEntity.swift in Sources */,
 				4D6C276B2469CDD0005F4AEF /* EY+Int.swift in Sources */,
 				4DE54959246B2AF500ADC11C /* Deck.swift in Sources */,
 				4D8AB2A1233E21C4009158CB /* EY+Notification.swift in Sources */,

@@ -20,4 +20,7 @@ class OrderEntity: Object {
     override static func primaryKey() -> String {
        return "id"
     }
+
+    // RLMRelationships
+    @objc dynamic var card: CardEntity? // To-one relationship
 }

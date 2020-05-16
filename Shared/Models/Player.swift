@@ -9,14 +9,17 @@
 import Foundation
 import GameplayKit
 
-enum PlayerState: Int {
-    case waiting = 0
-    case active
-    case thinking
-}
-
 class Player : NSObject, GKGameModelPlayer {
-    var playerId: Int = 0
+    enum State: Int {
+        case none
+        case waiting
+        case active
+        case thinking
+        case completed
+    }
+
+    private (set) var playerId: Int = 0
+    private (set) var state: Player.State = .none
 }
 
 extension Player {
@@ -28,5 +31,11 @@ extension Player {
 extension Player  {
     override var description: String {
         return ("\(self.playerId)")
+    }
+}
+
+extension Player  {
+    func setPlayerId(playerId: Int = 0) {
+        self.playerId = playerId
     }
 }

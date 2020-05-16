@@ -11,4 +11,3 @@ import Foundation
 class Board : Decodable {
     let decks: [Deck]
 }
-

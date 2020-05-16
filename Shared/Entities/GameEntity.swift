@@ -11,16 +11,14 @@ import RealmSwift
 
 // :[Realm entity] Game
 
-//private let uniqueId = "84259842-D756-4E5C-923E-747A79B5EC62"
-
 class GameEntity: Object {
     @objc dynamic var id: String = UUID().uuidString
+    @objc dynamic var timestamp: Int64 = Date.currentTimeStamp
     @objc dynamic var activePlayer: Int = 0
-//    @objc dynamic var turnOrderIndex: Int = 0
-//    @objc dynamic var hasSound: Bool = false
-//    @objc dynamic var hasMusic: Bool = false
-
     override static func primaryKey() -> String {
        return "id"
     }
+
+    // RLMRelationships
+    let players = List<PlayerEntity>() // To-many relationship
 }

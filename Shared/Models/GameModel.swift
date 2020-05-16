@@ -17,11 +17,8 @@ final class GameModel: NSObject, GKGameModel {
 // Required by protocol
 extension GameModel {
     func setGameModel(_ gameModel: GKGameModel) {
-        if let sourceModel = gameModel as? GameModel {
-            guard let activePlayer = sourceModel.activePlayer else {
-                return
-            }
-            self.activePlayer = activePlayer
+        if let model = gameModel as? GameModel {
+            self.activePlayer = model.activePlayer
         }
     }
 

@@ -12,7 +12,16 @@ import RealmSwift
 // :[Realm entity] Deck
 class DeckEntity : Object {
     @objc dynamic var id = UUID().uuidString
+
+    override static func primaryKey() -> String {
+       return "id"
+    }
+
+    // RLMRelationships
+    let cards = List<CardEntity>() // To-many relationship
+    let orders = List<OrderEntity>() // To-many relationship
 }
+
 /*
 class DeckEntity : Object {
     @objc dynamic var id = UUID().uuidString
@@ -31,12 +40,5 @@ class DeckEntity : Object {
     // RLMRelationships
     let cards = List<CardEntity>() // To-many relationship
     let orders = List<OrderEntity>() // To-many relationship
-}
-
-extension DeckEntity {
-    override var debugDescription: String {
-        let string = "ID: \(self.id), name: \(self.name), cost: \(self.cost), generation:\(self.generation), color: \(self.color), capacity: \(self.capacity), numberOfChildren: \(self.numberOfChildren), #cards: \(self.cards.count)"
-        return string
-    }
 }
 */
