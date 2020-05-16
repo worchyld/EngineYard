@@ -10,6 +10,7 @@ import Foundation
 import GameplayKit
 
 final class GameModel: NSObject, GKGameModel {
+    //private (set) var id: UUID = UUID()
     var players: [GKGameModelPlayer]?
     var activePlayer: GKGameModelPlayer?
 }
@@ -18,6 +19,7 @@ final class GameModel: NSObject, GKGameModel {
 extension GameModel {
     func setGameModel(_ gameModel: GKGameModel) {
         if let model = gameModel as? GameModel {
+            //self.id = model.id
             self.activePlayer = model.activePlayer
             self.players = model.players
         }

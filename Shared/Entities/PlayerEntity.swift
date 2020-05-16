@@ -12,7 +12,7 @@ import RealmSwift
 // :[Realm entity] Player
 
 class PlayerEntity: Object {
-    @objc dynamic var id = UUID().uuidString
+    @objc dynamic var id: String = UUID().uuidString
     @objc dynamic var playerId: Int = 0
     @objc dynamic var state: Int = 0 // active, waiting, thinking, etc
 
@@ -22,5 +22,5 @@ class PlayerEntity: Object {
 
     // RLMRelationships
     //let cards = List<CardEntity>() // To-many relationship
-    @objc dynamic var game: GameEntity? // To-one relationship
+    @objc dynamic var gameModel: GameModelEntity? // To-one relationship
 }

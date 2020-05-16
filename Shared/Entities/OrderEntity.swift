@@ -12,7 +12,7 @@ import RealmSwift
 // :[Realm entity] Order
 
 class OrderEntity: Object {
-    @objc dynamic var uuid: UUID = UUID()
+    @objc dynamic var uuid: String = UUID().uuidString
     @objc dynamic var id: Int = 0
     @objc dynamic var value: Int = 0
     @objc dynamic var orderState: Int = 0
