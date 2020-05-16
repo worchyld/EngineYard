@@ -39,9 +39,6 @@
 		4DA52369208158A8000FFAAB /* EY+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA52368208158A8000FFAAB /* EY+Colors.swift */; };
 		4DA5236C208158C8000FFAAB /* EY+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5236B208158C8000FFAAB /* EY+Array.swift */; };
 		4DA92C212156874500AD19B7 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		4DAA5BAB246FA32E00165829 /* PListFileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA5BAA246FA32E00165829 /* PListFileLoader.swift */; };
-		4DAA5BAD246FA36600165829 /* BoardLoaderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA5BAC246FA36600165829 /* BoardLoaderManager.swift */; };
-		4DAA5BAF246FA36D00165829 /* BoardInitializerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA5BAE246FA36D00165829 /* BoardInitializerTests.swift */; };
 		4DACC0A22441E5C500466ABE /* JGProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC09C2441E5C500466ABE /* JGProgressHUD.framework */; };
 		4DACC0A32441E5C500466ABE /* JGProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC09C2441E5C500466ABE /* JGProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4DACC0A42441E5C500466ABE /* EasyTipView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC09D2441E5C500466ABE /* EasyTipView.framework */; };
@@ -176,9 +173,6 @@
 		4DA5236620815885000FFAAB /* Die.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Die.swift; sourceTree = "<group>"; };
 		4DA52368208158A8000FFAAB /* EY+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Colors.swift"; sourceTree = "<group>"; };
 		4DA5236B208158C8000FFAAB /* EY+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Array.swift"; sourceTree = "<group>"; };
-		4DAA5BAA246FA32E00165829 /* PListFileLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PListFileLoader.swift; sourceTree = "<group>"; };
-		4DAA5BAC246FA36600165829 /* BoardLoaderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardLoaderManager.swift; sourceTree = "<group>"; };
-		4DAA5BAE246FA36D00165829 /* BoardInitializerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardInitializerTests.swift; sourceTree = "<group>"; };
 		4DACC09C2441E5C500466ABE /* JGProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JGProgressHUD.framework; path = Carthage/Build/iOS/JGProgressHUD.framework; sourceTree = "<group>"; };
 		4DACC09D2441E5C500466ABE /* EasyTipView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EasyTipView.framework; path = Carthage/Build/iOS/EasyTipView.framework; sourceTree = "<group>"; };
 		4DACC09E2441E5C500466ABE /* FontAwesome.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FontAwesome.framework; path = Carthage/Build/iOS/FontAwesome.framework; sourceTree = "<group>"; };
@@ -285,12 +279,10 @@
 		4D3C17C82334B6200036808F /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				4DAA5BAC246FA36600165829 /* BoardLoaderManager.swift */,
 				4D3C17D62334CE730036808F /* Coordinator.swift */,
 				4D3C17DC2334CFCB0036808F /* MainCoordinator.swift */,
 				4D3C17D82334CEBD0036808F /* Storyboarded.swift */,
 				4DED36752465866100CB7D72 /* SoundManager.swift */,
-				4DAA5BAA246FA32E00165829 /* PListFileLoader.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -345,7 +337,6 @@
 				4DE5494E246AEAC200ADC11C /* WalletTests.swift */,
 				4D300D8E246EDF880083AEE1 /* RealmGameModelSaveTests.swift */,
 				4D300D90246EE10E0083AEE1 /* BasicGKGameModelTests.swift */,
-				4DAA5BAE246FA36D00165829 /* BoardInitializerTests.swift */,
 			);
 			path = EngineYardTests;
 			sourceTree = "<group>";
@@ -627,7 +618,6 @@
 				4DA52369208158A8000FFAAB /* EY+Colors.swift in Sources */,
 				4DE5495F246B2BEF00ADC11C /* Board.swift in Sources */,
 				4DFF753323360BA700C7CC24 /* Sounds.swift in Sources */,
-				4DAA5BAD246FA36600165829 /* BoardLoaderManager.swift in Sources */,
 				4DE54963246B369600ADC11C /* DeckEntity.swift in Sources */,
 				4DFA7A46233D55D9004099B7 /* MainMenuViewController.swift in Sources */,
 				4D3C17DB2334CF7B0036808F /* ViewController.swift in Sources */,
@@ -653,7 +643,6 @@
 				4DE54959246B2AF500ADC11C /* Deck.swift in Sources */,
 				4D8AB2A1233E21C4009158CB /* EY+Notification.swift in Sources */,
 				4D5CA5162337F01300EF9F96 /* Constants.swift in Sources */,
-				4DAA5BAB246FA32E00165829 /* PListFileLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -664,7 +653,6 @@
 				4D6C27682469CC2D005F4AEF /* MockPlayerDataTest.swift in Sources */,
 				4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */,
 				4D300D91246EE10E0083AEE1 /* BasicGKGameModelTests.swift in Sources */,
-				4DAA5BAF246FA36D00165829 /* BoardInitializerTests.swift in Sources */,
 				4DE5494D2469EA0800ADC11C /* TaxTests.swift in Sources */,
 				4D6C27662469CB83005F4AEF /* MockData.swift in Sources */,
 				4DE5494F246AEAC200ADC11C /* WalletTests.swift in Sources */,
