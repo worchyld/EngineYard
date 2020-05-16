@@ -23,9 +23,10 @@ class Player : NSObject, GKGameModelPlayer {
 }
 
 extension Player {
-    public static func ==(lhs: Player, rhs: Player) -> Bool {
-        return (lhs.playerId == rhs.playerId)
+    static func == (lhs: Player, rhs: Player) -> Bool {
+        return (lhs.isEqual(rhs))
     }
+
 }
 
 extension Player  {

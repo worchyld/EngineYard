@@ -11,6 +11,13 @@ import GameplayKit
 
 @testable import EngineYard
 
+public protocol RecordingObserver {}
+extension GameModel: RecordingObserver {
+    func areEqual<T>(a: T,b: T) -> Bool where T: Equatable, T: RecordingObserver {
+        return true
+    }
+}
+
 class BasicGKGameModelTests: XCTestCase {
 
     override func setUpWithError() throws {
@@ -49,4 +56,25 @@ class BasicGKGameModelTests: XCTestCase {
         XCTAssertNotNil(gameModel.activePlayer)
     }
 
+    func testGameModelDidCopy() {
+        let gameModel = self.testGameModelHasThreePlayers()
+        let copyOfGameModel = gameModel.copy() as! GameModel
+
+        guard let gameModelPlayers = gameModel.players else {
+            XCTFail("No game players found")
+            return
+        }
+        guard let copyOfGameModelPlayers = copyOfGameModel.players else {
+            XCTFail("copy of game model has no players found")
+            return
+        }
+        let equality = gameModel.areEqual(a: gameModel, b: copyOfGameModel)
+        XCTAssertTrue(equality)
+
+        let objectsAreEqual = gameModelPlayers.elementsEqual(copyOfGameModelPlayers) { (player, element) -> Bool in
+            return (player.isEqual(element))
+        }
+
+        XCTAssertTrue(objectsAreEqual)
+    }
 }
