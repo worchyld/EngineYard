@@ -287,11 +287,11 @@
 		4D3C17C82334B6200036808F /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				4D300D96246F8DB90083AEE1 /* BoardLoaderManager.swift */,
 				4D3C17D62334CE730036808F /* Coordinator.swift */,
 				4D3C17DC2334CFCB0036808F /* MainCoordinator.swift */,
 				4D3C17D82334CEBD0036808F /* Storyboarded.swift */,
 				4DED36752465866100CB7D72 /* SoundManager.swift */,
+				4D300D96246F8DB90083AEE1 /* BoardLoaderManager.swift */,
 				4D300D88246EB4170083AEE1 /* PListFileLoader.swift */,
 			);
 			path = Managers;
