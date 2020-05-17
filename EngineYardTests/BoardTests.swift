@@ -24,9 +24,14 @@ class BoardTests: XCTestCase {
     }
 
     func testBoardHasExpectedNumberOfCards() {
-        let allCards = board.getAllCards()
-        XCTAssertTrue(allCards.count == Constants.totalCards)
+        XCTAssertTrue(board.allCards.count == Constants.totalCards)
     }
-    
 
+    func testCardQtyForGreenFamilyIsCorrect() {
+        let expected = Constants.Family.Color.green.ExpectedTotals
+        let qtyOfGreenCards = board.getAllCardsThatMatch(color: .green).count
+        XCTAssertTrue(qtyOfGreenCards == expected)
+    }
+
+    
 }

@@ -14,6 +14,10 @@ import Foundation
 // A position has a `state`
 struct Board {
     private(set) var positions: [BoardPosition]
+    var allCards: [Card] {
+        let allCards = self.positions.compactMap({$0.cards}).flatMap { $0 }
+        return allCards
+    }
 
     // Build the board
     // Create positions
@@ -126,7 +130,33 @@ extension Board {
 }
 
 extension Board {
-    // get family of cards
+    func getAllCardsThatMatch(color: FamilyColor) -> [Card] {
+        let cards = self.allCards
+
+        let results = cards.filter { (c: Card) -> Bool in
+            return (c.color == color)
+        }.sorted { (a: Card, b: Card) -> Bool in
+            return (
+                (a.color.rawValue < b.color.rawValue) &&
+                (a.cost < b.cost)
+            )
+        }
+        return results
+    }
+    func getAllCardsThatMatch(generation: FamilyGeneration) -> [Card] {
+        let cards = self.allCards
+
+        let results = cards.filter { (c: Card) -> Bool in
+            return (c.generation == generation)
+        }.sorted { (a: Card, b: Card) -> Bool in
+            return (
+                (a.generation.rawValue < b.generation.rawValue) &&
+                (a.cost < b.cost)
+            )
+        }
+        return results
+    }
+
     public static func getFamilyOfCards(for cards:[Card], withColor: FamilyColor, withGeneration: FamilyGeneration) -> [Card] {
         let results = cards.filter { (c: Card) -> Bool in
             return (c.color == withColor) && (c.generation == withGeneration)
@@ -136,15 +166,8 @@ extension Board {
         return results
     }
 
-    func getAllCards() -> [Card] {
-        let allCards = self.positions.compactMap({$0.cards}).flatMap { $0 }
-        return allCards
-    }
-
     func printAllCards() {
-        let allCards = self.positions.compactMap({$0.cards}).flatMap { $0 }
-
-        for (index, card) in allCards.enumerated() {
+        for (index, card) in self.allCards.enumerated() {
             print ("#\(index): Card -- \(card.description)")
         }
 
