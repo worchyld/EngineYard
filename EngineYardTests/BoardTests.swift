@@ -44,4 +44,14 @@ class BoardTests: XCTestCase {
         let qty = board.getAllCardsThatMatch(color: .blue).count
         XCTAssertTrue(qty == expected)
     }
+
+    func testQtyForYellowCardsIsCorrect() {
+        let expected = Constants.Family.Color.yellow.ExpectedTotals
+        let qty = board.getAllCardsThatMatch(color: .yellow).count
+        XCTAssertTrue(qty == expected)
+    }
+
+    func testQtyOfFirstGenerationCardsIsCorrect() {
+        let expected = Constants.Family.Generation.first.ExpectedTotals
+    }
 }
