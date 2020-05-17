@@ -1,0 +1,260 @@
+[
+  {
+    "name": "Green.first",
+    "cost": 4,
+    "color": 1,
+    "generation": 1
+  },
+  {
+    "name": "Green.first",
+    "cost": 4,
+    "color": 1,
+    "generation": 1
+  },
+  {
+    "name": "Green.first",
+    "cost": 4,
+    "color": 1,
+    "generation": 1
+  },
+  {
+    "name": "Green.first",
+    "cost": 4,
+    "color": 1,
+    "generation": 1
+  },
+  {
+    "name": "Red.first",
+    "cost": 8,
+    "color": 2,
+    "generation": 1
+  },
+  {
+    "name": "Red.first",
+    "cost": 8,
+    "color": 2,
+    "generation": 1
+  },
+  {
+    "name": "Red.first",
+    "cost": 8,
+    "color": 2,
+    "generation": 1
+  },
+  {
+    "name": "Yellow.first",
+    "cost": 12,
+    "color": 3,
+    "generation": 1
+  },
+  {
+    "name": "Yellow.first",
+    "cost": 12,
+    "color": 3,
+    "generation": 1
+  },
+  {
+    "name": "Blue.first",
+    "cost": 16,
+    "color": 4,
+    "generation": 1
+  },
+  {
+    "name": "Green.second",
+    "cost": 20,
+    "color": 1,
+    "generation": 2
+  },
+  {
+    "name": "Green.second",
+    "cost": 20,
+    "color": 1,
+    "generation": 2
+  },
+  {
+    "name": "Green.second",
+    "cost": 20,
+    "color": 1,
+    "generation": 2
+  },
+  {
+    "name": "Green.second",
+    "cost": 20,
+    "color": 1,
+    "generation": 2
+  },
+  {
+    "name": "Red.second",
+    "cost": 24,
+    "color": 2,
+    "generation": 2
+  },
+  {
+    "name": "Red.second",
+    "cost": 24,
+    "color": 2,
+    "generation": 2
+  },
+  {
+    "name": "Red.second",
+    "cost": 24,
+    "color": 2,
+    "generation": 2
+  },
+  {
+    "name": "Yellow.second",
+    "cost": 28,
+    "color": 3,
+    "generation": 2
+  },
+  {
+    "name": "Yellow.second",
+    "cost": 28,
+    "color": 3,
+    "generation": 2
+  },
+  {
+    "name": "Green.third",
+    "cost": 32,
+    "color": 1,
+    "generation": 3
+  },
+  {
+    "name": "Green.third",
+    "cost": 32,
+    "color": 1,
+    "generation": 3
+  },
+  {
+    "name": "Green.third",
+    "cost": 32,
+    "color": 1,
+    "generation": 3
+  },
+  {
+    "name": "Green.third",
+    "cost": 32,
+    "color": 1,
+    "generation": 3
+  },
+  {
+    "name": "Blue.second",
+    "cost": 36,
+    "color": 4,
+    "generation": 2
+  },
+  {
+    "name": "Blue.second",
+    "cost": 36,
+    "color": 4,
+    "generation": 2
+  },
+  {
+    "name": "Red.third",
+    "cost": 40,
+    "color": 2,
+    "generation": 3
+  },
+  {
+    "name": "Red.third",
+    "cost": 40,
+    "color": 2,
+    "generation": 3
+  },
+  {
+    "name": "Red.third",
+    "cost": 40,
+    "color": 2,
+    "generation": 3
+  },
+  {
+    "name": "Green.fourth",
+    "cost": 44,
+    "color": 1,
+    "generation": 4
+  },
+  {
+    "name": "Green.fourth",
+    "cost": 44,
+    "color": 1,
+    "generation": 4
+  },
+  {
+    "name": "Green.fourth",
+    "cost": 44,
+    "color": 1,
+    "generation": 4
+  },
+  {
+    "name": "Green.fourth",
+    "cost": 44,
+    "color": 1,
+    "generation": 4
+  },
+  {
+    "name": "Yellow.third",
+    "cost": 48,
+    "color": 3,
+    "generation": 3
+  },
+  {
+    "name": "Yellow.third",
+    "cost": 48,
+    "color": 3,
+    "generation": 3
+  },
+  {
+    "name": "Yellow.third",
+    "cost": 48,
+    "color": 3,
+    "generation": 3
+  },
+  {
+    "name": "Red.fourth",
+    "cost": 52,
+    "color": 2,
+    "generation": 4
+  },
+  {
+    "name": "Red.fourth",
+    "cost": 52,
+    "color": 2,
+    "generation": 4
+  },
+  {
+    "name": "Red.fourth",
+    "cost": 52,
+    "color": 2,
+    "generation": 4
+  },
+  {
+    "name": "Red.fourth",
+    "cost": 52,
+    "color": 2,
+    "generation": 4
+  },
+  {
+    "name": "Green.fifth",
+    "cost": 56,
+    "color": 1,
+    "generation": 5
+  },
+  {
+    "name": "Green.fifth",
+    "cost": 56,
+    "color": 1,
+    "generation": 5
+  },
+  {
+    "name": "Green.fifth",
+    "cost": 56,
+    "color": 1,
+    "generation": 5
+  },
+  {
+    "name": "Green.fifth",
+    "cost": 56,
+    "color": 1,
+    "generation": 5
+  }
+]
