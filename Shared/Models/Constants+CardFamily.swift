@@ -70,7 +70,7 @@ extension Constants.Family.Generation {
         case .second:
             return 11
         case .third:
-            return 12
+            return 10
         case .fourth:
             return 8
         case .fifth:

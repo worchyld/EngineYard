@@ -14,6 +14,7 @@ import GameplayKit
 
 // Tests to try to see if we can create a GKGameModel, save it to realm and restore it
 
+/*
 class RealmGameModelSaveTests: XCTestCase {
 
     let inMemoryIdentifier: String = "Yard"
@@ -86,4 +87,4 @@ class RealmGameModelSaveTests: XCTestCase {
     }
 
 }
-
+*/

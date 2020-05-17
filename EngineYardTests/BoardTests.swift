@@ -36,30 +36,36 @@ class BoardTests: XCTestCase {
     func testQtyForRedCardsIsCorrect() {
         let expected = Constants.Family.Color.red.ExpectedTotalCards
         let qty = board.getAllCardsThatMatch(color: .red).count
-        XCTAssertTrue(qty == expected)
+        XCTAssertTrue(qty == expected, "qty: \(qty) vs \(expected)")
     }
 
     func testQtyForBlueCardsIsCorrect() {
         let expected = Constants.Family.Color.blue.ExpectedTotalCards
         let qty = board.getAllCardsThatMatch(color: .blue).count
-        XCTAssertTrue(qty == expected)
+        XCTAssertTrue(qty == expected, "qty: \(qty) vs \(expected)")
     }
 
     func testQtyForYellowCardsIsCorrect() {
         let expected = Constants.Family.Color.yellow.ExpectedTotalCards
         let qty = board.getAllCardsThatMatch(color: .yellow).count
-        XCTAssertTrue(qty == expected)
+        XCTAssertTrue(qty == expected, "qty: \(qty) vs \(expected)")
     }
 
     func testQtyOfFirstGenerationCardsIsCorrect() {
         let expected = Constants.Family.Generation.first.ExpectedTotalCards
         let qty = board.getAllCardsThatMatch(generation: .first).count
-        XCTAssertTrue(qty == expected)
+        XCTAssertTrue(qty == expected, "qty: \(qty) vs \(expected)")
     }
 
     func testQtyOfSecondGenerationCardsIsCorrect() {
         let expected = Constants.Family.Generation.second.ExpectedTotalCards
         let qty = board.getAllCardsThatMatch(generation: .second).count
+        XCTAssertTrue(qty == expected, "qty: \(qty) vs \(expected)")
+    }
+
+    func testQtyOfThirdGenerationCardsIsCorrect() {
+        let expected = Constants.Family.Generation.third.ExpectedTotalCards
+        let qty = board.getAllCardsThatMatch(generation: .third).count
         XCTAssertTrue(qty == expected, "qty: \(qty) vs \(expected)")
     }
 }
