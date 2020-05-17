@@ -10,38 +10,6 @@ import XCTest
 
 @testable import EngineYard
 
-private extension Constants.Family.Color {
-    var ExpectedTotalCards: Int {
-        switch self {
-        case .green:
-            return 20
-        case .red:
-            return 13
-        case .yellow:
-            return 7
-        case .blue:
-            return 3
-        }
-    }
-}
-
-private extension Constants.Family.Generation {
-    var ExpectedTotalCards: Int {
-        switch self {
-        case .first:
-            return 10
-        case .second:
-            return 9
-        case .third:
-            return 12
-        case .fourth:
-            return 8
-        case .fifth:
-            return 4
-        }
-    }
-}
-
 class BoardTests: XCTestCase {
 
     private var board: Board!
@@ -87,5 +55,11 @@ class BoardTests: XCTestCase {
         let expected = Constants.Family.Generation.first.ExpectedTotalCards
         let qty = board.getAllCardsThatMatch(generation: .first).count
         XCTAssertTrue(qty == expected)
+    }
+
+    func testQtyOfSecondGenerationCardsIsCorrect() {
+        let expected = Constants.Family.Generation.second.ExpectedTotalCards
+        let qty = board.getAllCardsThatMatch(generation: .second).count
+        XCTAssertTrue(qty == expected, "qty: \(qty) vs \(expected)")
     }
 }

@@ -43,5 +43,38 @@ extension Constants {
             static let allRawValues = FamilyGeneration.first.rawValue...FamilyGeneration.fifth.rawValue
         }
     }
+}
 
+// Extension to aid reporting, error checking, sanity checking, etc
+extension Constants.Family.Color {
+    var ExpectedTotalCards: Int {
+        switch self {
+        case .green:
+            return 20
+        case .red:
+            return 13
+        case .yellow:
+            return 7
+        case .blue:
+            return 3
+        }
+    }
+}
+
+// Extension to aid reporting, error checking, sanity checking, etc
+extension Constants.Family.Generation {
+    var ExpectedTotalCards: Int {
+        switch self {
+        case .first:
+            return 10
+        case .second:
+            return 11
+        case .third:
+            return 12
+        case .fourth:
+            return 8
+        case .fifth:
+            return 4
+        }
+    }
 }
