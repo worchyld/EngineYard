@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Constants {
+public struct Constants {
     public static let endGameCashTrigger: Int = 330 // Game ends when a player hits 330 coins or more
 
     public struct SeedCash {

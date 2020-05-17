@@ -40,7 +40,7 @@ struct Board {
 
         // walk through each position in the board then add the cards to that array
         self.positions.mutateEach { (position) in
-            position.cards = Board.getFamilyOfCards(for: cards, withColor: position.color, withGeneration: position.generation)
+            position.cards = Board.get(cards: cards, whereColor: position.color, whereGeneration: position.generation)
         }
 
     }
@@ -126,10 +126,11 @@ extension Board {
 }
 
 extension Board {
-    public func getAllCards() -> [Card] {
+    private func getAllCards() -> [Card] {
         let allCards = self.positions.compactMap({$0.cards}).flatMap { $0 }
         return allCards
     }
+
     public func getAllCardsThatMatch(color: FamilyColor) -> [Card] {
         let cards = self.getAllCards()
 
@@ -143,6 +144,7 @@ extension Board {
         }
         return results
     }
+
     public func getAllCardsThatMatch(generation: FamilyGeneration) -> [Card] {
         let cards = self.getAllCards()
 
@@ -157,15 +159,26 @@ extension Board {
         return results
     }
 
-    public static func getFamilyOfCards(for cards:[Card], withColor: FamilyColor, withGeneration: FamilyGeneration) -> [Card] {
+    public func getAllCardsThatMatch(color: FamilyColor, andGeneration: FamilyGeneration) -> [Card] {
+        let cards = self.getAllCards()
+
+        let results = Board.get(cards: cards, whereColor: color, whereGeneration: andGeneration)
+
+        return results
+    }
+
+    public static func get(cards: [Card], whereColor: FamilyColor, whereGeneration: FamilyGeneration) -> [Card] {
         let results = cards.filter { (c: Card) -> Bool in
-            return (c.color == withColor) && (c.generation == withGeneration)
+            return (c.color == whereColor) && (c.generation == whereGeneration)
         }.sorted { (a: Card, b: Card) -> Bool in
             return (a.cost < b.cost)
         }
         return results
     }
 
+
+
+    // to be removed
     func printAllCards() {
         let cards = self.getAllCards()
         for (index, card) in cards.enumerated() {

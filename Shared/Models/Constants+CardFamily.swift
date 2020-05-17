@@ -42,12 +42,15 @@ extension Constants {
 
             static let allRawValues = FamilyGeneration.first.rawValue...FamilyGeneration.fifth.rawValue
         }
+
+        let color: Color
+        let generation: Generation
     }
 }
 
 // Extension to aid reporting, error checking, sanity checking, etc
 extension Constants.Family.Color {
-    var ExpectedTotalCards: Int {
+    var expectedTotalCards: Int {
         switch self {
         case .green:
             return 20
@@ -63,7 +66,7 @@ extension Constants.Family.Color {
 
 // Extension to aid reporting, error checking, sanity checking, etc
 extension Constants.Family.Generation {
-    var ExpectedTotalCards: Int {
+    var expectedTotalCards: Int {
         switch self {
         case .first:
             return 10
@@ -75,6 +78,78 @@ extension Constants.Family.Generation {
             return 8
         case .fifth:
             return 4
+        }
+    }
+}
+
+extension Constants.Family {
+    /*
+    private func internalCheck(for color: FamilyColor?, generation: Generation?) -> Int {
+        if ((color != nil) && (generation != nil)) {
+            return self.expectedTotalCards(for: color!, generation: generation!)
+        }
+        else if ((color != nil) && (generation == nil)) {
+            return color!.expectedTotalCards
+        } else if ((color == nil) && (generation != nil)) {
+            return generation!.expectedTotalCards
+        }
+        return 0
+    }*/
+}
+
+
+extension Constants.Family {
+
+    func counterFor(color: FamilyColor, generation: FamilyGeneration) -> Int {
+        switch color {
+        case .green: // 20
+            switch generation {
+            case .first:
+                return 4
+            case .second:
+                return 4
+            case .third:
+                return 4
+            case .fourth:
+                return 4
+            case .fifth:
+                return 4
+            }
+        case .red: // 13
+            switch generation {
+            case .first:
+                return 3
+            case .second:
+                return 3
+            case .third:
+                return 3
+            case .fourth:
+                return 4
+            default:
+                return 0
+            }
+
+        case .yellow: // 7
+            switch generation {
+            case .first:
+                return 2
+            case .second:
+                return 2
+            case .third:
+                return 3
+            default:
+                return 0
+            }
+
+        case .blue:
+            switch generation {
+            case .first:
+                return 1
+            case .second:
+                return 2
+            default:
+                return 0
+            }
         }
     }
 }
