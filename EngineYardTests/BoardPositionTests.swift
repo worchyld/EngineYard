@@ -52,7 +52,11 @@ class BoardPositionTests: XCTestCase {
         XCTAssertTrue(firstPosition.generation == FamilyGeneration.first)
 
         let cards = firstPosition.cards
-        XCTAssertTrue(cards.count > 0)
+
+        let family = Constants.Family()
+        let expected = family.counterUp(color: firstPosition.color, generation: firstPosition.generation)
+
+        XCTAssertTrue(cards.count == expected)
     }
 
 }

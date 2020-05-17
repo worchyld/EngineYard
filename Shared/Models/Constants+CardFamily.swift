@@ -42,9 +42,6 @@ extension Constants {
 
             static let allRawValues = FamilyGeneration.first.rawValue...FamilyGeneration.fifth.rawValue
         }
-
-        let color: Color
-        let generation: Generation
     }
 }
 
@@ -83,24 +80,8 @@ extension Constants.Family.Generation {
 }
 
 extension Constants.Family {
-    /*
-    private func internalCheck(for color: FamilyColor?, generation: Generation?) -> Int {
-        if ((color != nil) && (generation != nil)) {
-            return self.expectedTotalCards(for: color!, generation: generation!)
-        }
-        else if ((color != nil) && (generation == nil)) {
-            return color!.expectedTotalCards
-        } else if ((color == nil) && (generation != nil)) {
-            return generation!.expectedTotalCards
-        }
-        return 0
-    }*/
-}
-
-
-extension Constants.Family {
-
-    func counterFor(color: FamilyColor, generation: FamilyGeneration) -> Int {
+    func counterUp(color: FamilyColor, generation: FamilyGeneration) -> Int {
+        
         switch color {
         case .green: // 20
             switch generation {
@@ -151,5 +132,11 @@ extension Constants.Family {
                 return 0
             }
         }
+    }
+}
+
+extension Constants {
+    func statsFor(color: FamilyColor?, generation: FamilyGeneration?) -> Int {
+        return 0
     }
 }
