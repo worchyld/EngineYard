@@ -51,7 +51,14 @@ class BoardPositionTests: XCTestCase {
         XCTAssertTrue(firstPosition.color == Family.Color.green)
         XCTAssertTrue(firstPosition.generation == Family.Generation.first)
 
-        //let cards = firstPosition.cards
+        let cards = firstPosition.cards
+
+        // run report
+        let report = Constants.Expected.init(color: .green , generation: .first)
+        let expected = report.results
+
+        let qty = cards.count
+        XCTAssertTrue(qty == expected, "qty: \(qty) vs \(expected)")
     }
 
 }
