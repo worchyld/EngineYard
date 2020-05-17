@@ -35,6 +35,7 @@ class BoardIntegrityTests: XCTestCase {
         XCTAssertTrue(sut.positions.count == Constants.totalBoardPositions)
     }
 
+
     func testBoardHasExpectedNumberOfCards() -> [Card] {
         guard let cards = self.allCards else {
             XCTFail()
@@ -44,57 +45,95 @@ class BoardIntegrityTests: XCTestCase {
         return cards
     }
 
+
     func testQtyOfGreenCardsIsCorrect() {
-        let expected = Constants.Family.Color.green.expectedTotalCards
+        // run report
+        let report = Constants.Expected.init(color: .green, generation: nil)
+        let expected = report.results
+
         let qty = sut.getAllCardsThatMatch(color: .green).count
         XCTAssertTrue(qty == expected)
     }
 
     func testQtyForRedCardsIsCorrect() {
-        let expected = Constants.Family.Color.red.expectedTotalCards
+        // run report
+        let report = Constants.Expected.init(color: .red, generation: nil)
+        let expected = report.results
+
         let qty = sut.getAllCardsThatMatch(color: .red).count
         XCTAssertTrue(qty == expected, "qty: \(qty) vs \(expected)")
     }
 
     func testQtyForBlueCardsIsCorrect() {
-        let expected = Constants.Family.Color.blue.expectedTotalCards
+        // run report
+        let report = Constants.Expected.init(color: .blue, generation: nil)
+        let expected = report.results
+
         let qty = sut.getAllCardsThatMatch(color: .blue).count
         XCTAssertTrue(qty == expected, "qty: \(qty) vs \(expected)")
     }
 
     func testQtyForYellowCardsIsCorrect() {
-        let expected = Constants.Family.Color.yellow.expectedTotalCards
+        // run report
+        let report = Constants.Expected.init(color: .yellow, generation: nil)
+        let expected = report.results
+
         let qty = sut.getAllCardsThatMatch(color: .yellow).count
         XCTAssertTrue(qty == expected, "qty: \(qty) vs \(expected)")
     }
 
     func testQtyOfFirstGenerationCardsIsCorrect() {
-        let expected = Constants.Family.Generation.first.expectedTotalCards
+        // run report
+        let report = Constants.Expected.init(color: nil , generation: .first)
+        let expected = report.results
+
         let qty = sut.getAllCardsThatMatch(generation: .first).count
         XCTAssertTrue(qty == expected, "qty: \(qty) vs \(expected)")
     }
 
     func testQtyOfSecondGenerationCardsIsCorrect() {
-        let expected = Constants.Family.Generation.second.expectedTotalCards
+        // run report
+        let report = Constants.Expected.init(color: nil , generation: .second)
+        let expected = report.results
+
         let qty = sut.getAllCardsThatMatch(generation: .second).count
         XCTAssertTrue(qty == expected, "qty: \(qty) vs \(expected)")
     }
 
     func testQtyOfThirdGenerationCardsIsCorrect() {
-        let expected = Constants.Family.Generation.third.expectedTotalCards
+        // run report
+        let report = Constants.Expected.init(color: nil , generation: .third)
+        let expected = report.results
+
         let qty = sut.getAllCardsThatMatch(generation: .third).count
         XCTAssertTrue(qty == expected, "qty: \(qty) vs \(expected)")
     }
 
     func testQtyOfFourthGenerationCardsIsCorrect() {
-       let expected = Constants.Family.Generation.fourth.expectedTotalCards
+        // run report
+        let report = Constants.Expected.init(color: nil , generation: .fourth)
+        let expected = report.results
+
        let qty = sut.getAllCardsThatMatch(generation: .fourth).count
        XCTAssertTrue(qty == expected, "qty: \(qty) vs \(expected)")
     }
 
     func testQtyOfFifthGenerationCardsIsCorrect() {
-       let expected = Constants.Family.Generation.fifth.expectedTotalCards
+        // run report
+        let report = Constants.Expected.init(color: nil , generation: .fifth)
+        let expected = report.results
+
        let qty = sut.getAllCardsThatMatch(generation: .fifth).count
+       XCTAssertTrue(qty == expected, "qty: \(qty) vs \(expected)")
+    }
+
+    func testQtyOfGreenFirstCardsIsCorrect() {
+        // run report
+        let report = Constants.Expected.init(color: .green , generation: .first)
+        let expected = report.results
+
+        let qty = sut.getAllCardsThatMatch(color: .green, andGeneration: .first).count
+
        XCTAssertTrue(qty == expected, "qty: \(qty) vs \(expected)")
     }
 

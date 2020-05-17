@@ -131,7 +131,7 @@ extension Board {
         return allCards
     }
 
-    public func getAllCardsThatMatch(color: FamilyColor) -> [Card] {
+    public func getAllCardsThatMatch(color: Family.Color) -> [Card] {
         let cards = self.getAllCards()
 
         let results = cards.filter { (c: Card) -> Bool in
@@ -145,7 +145,7 @@ extension Board {
         return results
     }
 
-    public func getAllCardsThatMatch(generation: FamilyGeneration) -> [Card] {
+    public func getAllCardsThatMatch(generation: Family.Generation) -> [Card] {
         let cards = self.getAllCards()
 
         let results = cards.filter { (c: Card) -> Bool in
@@ -159,7 +159,7 @@ extension Board {
         return results
     }
 
-    public func getAllCardsThatMatch(color: FamilyColor, andGeneration: FamilyGeneration) -> [Card] {
+    public func getAllCardsThatMatch(color: Family.Color, andGeneration: Family.Generation) -> [Card] {
         let cards = self.getAllCards()
 
         let results = Board.get(cards: cards, whereColor: color, whereGeneration: andGeneration)
@@ -167,7 +167,7 @@ extension Board {
         return results
     }
 
-    public static func get(cards: [Card], whereColor: FamilyColor, whereGeneration: FamilyGeneration) -> [Card] {
+    public static func get(cards: [Card], whereColor: Family.Color, whereGeneration: Family.Generation) -> [Card] {
         let results = cards.filter { (c: Card) -> Bool in
             return (c.color == whereColor) && (c.generation == whereGeneration)
         }.sorted { (a: Card, b: Card) -> Bool in

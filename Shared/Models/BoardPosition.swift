@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct BoardPosition: Identifiable, CardFamilyProtocol {
+struct BoardPosition: Identifiable, FamilyProtocol {
     let id: Int
-    var color: FamilyColor
-    var generation: FamilyGeneration
+    var color: Family.Color
+    var generation: Family.Generation
     var name: String {
         return ("\(self.color).\(self.generation)")
     }
@@ -24,7 +24,7 @@ struct BoardPosition: Identifiable, CardFamilyProtocol {
     }
     var state: BoardPosition.State = .unavailable
 
-    init(_ id: Int = 0, color: FamilyColor, generation: FamilyGeneration, orderCapacity: Int) {
+    init(_ id: Int = 0, color: Family.Color, generation: Family.Generation, orderCapacity: Int) {
         self.id = id
         self.color = color
         self.generation = generation

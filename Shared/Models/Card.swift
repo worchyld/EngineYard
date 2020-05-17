@@ -9,17 +9,17 @@
 import Foundation
 
 // : Card model as a struct
-struct Card: Identifiable, CardFamilyProtocol {
+struct Card: Identifiable, FamilyProtocol {
     let id: UUID = UUID()
-    var color: FamilyColor
-    var generation: FamilyGeneration
+    var color: Family.Color
+    var generation: Family.Generation
     let cost: Int
     var isAvailable: Bool = false
     var name: String {
         return "\(self.color).\(self.generation)"
     }
 
-    init(cost: Int, color: FamilyColor, generation: FamilyGeneration) {
+    init(cost: Int, color: Family.Color, generation: Family.Generation) {
         self.cost = cost
         self.color = color
         self.generation = generation

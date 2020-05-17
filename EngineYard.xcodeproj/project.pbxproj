@@ -40,7 +40,6 @@
 		4DA92C212156874500AD19B7 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		4DAA5BB12470309A00165829 /* Player+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA5BB02470309A00165829 /* Player+Helpers.swift */; };
 		4DAA5BB3247155B600165829 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA5BB2247155B600165829 /* Board.swift */; };
-		4DAA5BB52471565E00165829 /* Constants+CardFamily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA5BB42471565E00165829 /* Constants+CardFamily.swift */; };
 		4DAA5BB7247159A900165829 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA5BB6247159A900165829 /* Card.swift */; };
 		4DAA5BB924715E1D00165829 /* BoardPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA5BB824715E1D00165829 /* BoardPosition.swift */; };
 		4DAA5BBB2471630700165829 /* BoardIntegrityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA5BBA2471630700165829 /* BoardIntegrityTests.swift */; };
@@ -48,6 +47,8 @@
 		4DAA5BC32471A24D00165829 /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA5BC22471A24D00165829 /* Hand.swift */; };
 		4DAA5BC52471A30300165829 /* PlayerHandManagementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA5BC42471A30300165829 /* PlayerHandManagementTests.swift */; };
 		4DAA5BC72471A5E500165829 /* BoardPositionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA5BC62471A5E500165829 /* BoardPositionTests.swift */; };
+		4DAA5BC92471D5AA00165829 /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA5BC82471D5AA00165829 /* Family.swift */; };
+		4DAA5BCB2471D97600165829 /* Constants+Expected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA5BCA2471D97600165829 /* Constants+Expected.swift */; };
 		4DACC0A22441E5C500466ABE /* JGProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC09C2441E5C500466ABE /* JGProgressHUD.framework */; };
 		4DACC0A32441E5C500466ABE /* JGProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC09C2441E5C500466ABE /* JGProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4DACC0A42441E5C500466ABE /* EasyTipView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC09D2441E5C500466ABE /* EasyTipView.framework */; };
@@ -173,7 +174,6 @@
 		4DA5236B208158C8000FFAAB /* EY+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Array.swift"; sourceTree = "<group>"; };
 		4DAA5BB02470309A00165829 /* Player+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player+Helpers.swift"; sourceTree = "<group>"; };
 		4DAA5BB2247155B600165829 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
-		4DAA5BB42471565E00165829 /* Constants+CardFamily.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+CardFamily.swift"; sourceTree = "<group>"; };
 		4DAA5BB6247159A900165829 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		4DAA5BB824715E1D00165829 /* BoardPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardPosition.swift; sourceTree = "<group>"; };
 		4DAA5BBA2471630700165829 /* BoardIntegrityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardIntegrityTests.swift; sourceTree = "<group>"; };
@@ -181,6 +181,8 @@
 		4DAA5BC22471A24D00165829 /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
 		4DAA5BC42471A30300165829 /* PlayerHandManagementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerHandManagementTests.swift; sourceTree = "<group>"; };
 		4DAA5BC62471A5E500165829 /* BoardPositionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardPositionTests.swift; sourceTree = "<group>"; };
+		4DAA5BC82471D5AA00165829 /* Family.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Family.swift; sourceTree = "<group>"; };
+		4DAA5BCA2471D97600165829 /* Constants+Expected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+Expected.swift"; sourceTree = "<group>"; };
 		4DACC09C2441E5C500466ABE /* JGProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JGProgressHUD.framework; path = Carthage/Build/iOS/JGProgressHUD.framework; sourceTree = "<group>"; };
 		4DACC09D2441E5C500466ABE /* EasyTipView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EasyTipView.framework; path = Carthage/Build/iOS/EasyTipView.framework; sourceTree = "<group>"; };
 		4DACC09E2441E5C500466ABE /* FontAwesome.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FontAwesome.framework; path = Carthage/Build/iOS/FontAwesome.framework; sourceTree = "<group>"; };
@@ -418,7 +420,7 @@
 			isa = PBXGroup;
 			children = (
 				4D5CA5152337F01300EF9F96 /* Constants.swift */,
-				4DAA5BB42471565E00165829 /* Constants+CardFamily.swift */,
+				4DAA5BCA2471D97600165829 /* Constants+Expected.swift */,
 				4DE54954246B204000ADC11C /* MachineStates.swift */,
 				4D5CA50D2337E82400EF9F96 /* GameModel.swift */,
 				4D111E182336B20900472BDC /* Player.swift */,
@@ -427,6 +429,7 @@
 				4DFF753623360ED300C7CC24 /* Wallet.swift */,
 				4DAA5BB2247155B600165829 /* Board.swift */,
 				4DAA5BB824715E1D00165829 /* BoardPosition.swift */,
+				4DAA5BC82471D5AA00165829 /* Family.swift */,
 				4DAA5BB6247159A900165829 /* Card.swift */,
 				4DAA5BC22471A24D00165829 /* Hand.swift */,
 			);
@@ -599,6 +602,7 @@
 				4DF38E1B233BF6D7003771C3 /* SecondViewController.swift in Sources */,
 				4DFF753723360ED300C7CC24 /* Wallet.swift in Sources */,
 				4DE54955246B204000ADC11C /* MachineStates.swift in Sources */,
+				4DAA5BCB2471D97600165829 /* Constants+Expected.swift in Sources */,
 				4D2A4B8C2195DEB300315524 /* EY+ImageView.swift in Sources */,
 				4DAA5BB924715E1D00165829 /* BoardPosition.swift in Sources */,
 				4D01FB0C244B73200031BEE9 /* GameModelEntity.swift in Sources */,
@@ -607,6 +611,7 @@
 				4DA3488020812A8B006DA164 /* AppDelegate.swift in Sources */,
 				4DAA5BB12470309A00165829 /* Player+Helpers.swift in Sources */,
 				4DA5236C208158C8000FFAAB /* EY+Array.swift in Sources */,
+				4DAA5BC92471D5AA00165829 /* Family.swift in Sources */,
 				4DA5236720815885000FFAAB /* Die.swift in Sources */,
 				4D247B37219FFE340004478D /* ObjectCache.swift in Sources */,
 				4D3C17DD2334CFCB0036808F /* MainCoordinator.swift in Sources */,
@@ -635,7 +640,6 @@
 				4DAA5BB7247159A900165829 /* Card.swift in Sources */,
 				4D6C276B2469CDD0005F4AEF /* EY+Int.swift in Sources */,
 				4D8AB2A1233E21C4009158CB /* EY+Notification.swift in Sources */,
-				4DAA5BB52471565E00165829 /* Constants+CardFamily.swift in Sources */,
 				4D5CA5162337F01300EF9F96 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
