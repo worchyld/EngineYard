@@ -20,8 +20,8 @@ struct Board {
     }
 
     // Build the board
-    // Create positions
-    // Fill each position with array of cards
+    // Create board positions
+    // Fill each board position with an array of cards that match the color & generation
     init() {
         let positions = [
             BoardPosition.init(0, color: .green, generation: .first, orderCapacity: 3),
@@ -82,7 +82,7 @@ extension Board {
             Card.init(cost: 24, color: .red, generation: .second),
             Card.init(cost: 24, color: .red, generation: .second),
 
-            // Yellow.second (x3)
+            // Yellow.second (x2)
             Card.init(cost: 28, color: .yellow, generation: .second),
             Card.init(cost: 28, color: .yellow, generation: .second),
 
@@ -130,7 +130,7 @@ extension Board {
 }
 
 extension Board {
-    func getAllCardsThatMatch(color: FamilyColor) -> [Card] {
+    public func getAllCardsThatMatch(color: FamilyColor) -> [Card] {
         let cards = self.allCards
 
         let results = cards.filter { (c: Card) -> Bool in
@@ -143,7 +143,7 @@ extension Board {
         }
         return results
     }
-    func getAllCardsThatMatch(generation: FamilyGeneration) -> [Card] {
+    public func getAllCardsThatMatch(generation: FamilyGeneration) -> [Card] {
         let cards = self.allCards
 
         let results = cards.filter { (c: Card) -> Bool in
