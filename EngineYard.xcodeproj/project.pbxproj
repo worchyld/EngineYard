@@ -44,6 +44,8 @@
 		4DAA5BB7247159A900165829 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA5BB6247159A900165829 /* Card.swift */; };
 		4DAA5BB924715E1D00165829 /* BoardPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA5BB824715E1D00165829 /* BoardPosition.swift */; };
 		4DAA5BBB2471630700165829 /* BoardIntegrityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA5BBA2471630700165829 /* BoardIntegrityTests.swift */; };
+		4DAA5BC12471A1B000165829 /* cards-list.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DAA5BC02471A1B000165829 /* cards-list.json */; };
+		4DAA5BC32471A24D00165829 /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA5BC22471A24D00165829 /* Hand.swift */; };
 		4DACC0A22441E5C500466ABE /* JGProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC09C2441E5C500466ABE /* JGProgressHUD.framework */; };
 		4DACC0A32441E5C500466ABE /* JGProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC09C2441E5C500466ABE /* JGProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4DACC0A42441E5C500466ABE /* EasyTipView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC09D2441E5C500466ABE /* EasyTipView.framework */; };
@@ -68,13 +70,8 @@
 		4DE127E0233E826C00F84C57 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DE127DF233E826C00F84C57 /* Icons.xcassets */; };
 		4DE5494D2469EA0800ADC11C /* TaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE5494C2469EA0800ADC11C /* TaxTests.swift */; };
 		4DE5494F246AEAC200ADC11C /* WalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE5494E246AEAC200ADC11C /* WalletTests.swift */; };
-		4DE54951246B1E6800ADC11C /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DE54950246B1E6800ADC11C /* data.json */; };
 		4DE54953246B1EF800ADC11C /* PlayerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE54952246B1EF800ADC11C /* PlayerEntity.swift */; };
 		4DE54955246B204000ADC11C /* MachineStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE54954246B204000ADC11C /* MachineStates.swift */; };
-		4DE5495B246B2B8B00ADC11C /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4DE5495A246B2B8B00ADC11C /* data.plist */; };
-		4DE54963246B369600ADC11C /* DeckEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE54962246B369600ADC11C /* DeckEntity.swift */; };
-		4DE54965246B36D300ADC11C /* CardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE54964246B36D200ADC11C /* CardEntity.swift */; };
-		4DE54967246B36EB00ADC11C /* OrderEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE54966246B36EB00ADC11C /* OrderEntity.swift */; };
 		4DE5496B246BF76000ADC11C /* EY+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE5496A246BF76000ADC11C /* EY+String.swift */; };
 		4DED36742465865600CB7D72 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DED36732465865500CB7D72 /* RealmHelper.swift */; };
 		4DED36762465866100CB7D72 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DED36752465866100CB7D72 /* SoundManager.swift */; };
@@ -178,6 +175,8 @@
 		4DAA5BB6247159A900165829 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		4DAA5BB824715E1D00165829 /* BoardPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardPosition.swift; sourceTree = "<group>"; };
 		4DAA5BBA2471630700165829 /* BoardIntegrityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardIntegrityTests.swift; sourceTree = "<group>"; };
+		4DAA5BC02471A1B000165829 /* cards-list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "cards-list.json"; sourceTree = "<group>"; };
+		4DAA5BC22471A24D00165829 /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
 		4DACC09C2441E5C500466ABE /* JGProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JGProgressHUD.framework; path = Carthage/Build/iOS/JGProgressHUD.framework; sourceTree = "<group>"; };
 		4DACC09D2441E5C500466ABE /* EasyTipView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EasyTipView.framework; path = Carthage/Build/iOS/EasyTipView.framework; sourceTree = "<group>"; };
 		4DACC09E2441E5C500466ABE /* FontAwesome.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FontAwesome.framework; path = Carthage/Build/iOS/FontAwesome.framework; sourceTree = "<group>"; };
@@ -191,13 +190,8 @@
 		4DE127DF233E826C00F84C57 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		4DE5494C2469EA0800ADC11C /* TaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTests.swift; sourceTree = "<group>"; };
 		4DE5494E246AEAC200ADC11C /* WalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTests.swift; sourceTree = "<group>"; };
-		4DE54950246B1E6800ADC11C /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		4DE54952246B1EF800ADC11C /* PlayerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEntity.swift; sourceTree = "<group>"; };
 		4DE54954246B204000ADC11C /* MachineStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineStates.swift; sourceTree = "<group>"; };
-		4DE5495A246B2B8B00ADC11C /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
-		4DE54962246B369600ADC11C /* DeckEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckEntity.swift; sourceTree = "<group>"; };
-		4DE54964246B36D200ADC11C /* CardEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEntity.swift; sourceTree = "<group>"; };
-		4DE54966246B36EB00ADC11C /* OrderEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderEntity.swift; sourceTree = "<group>"; };
 		4DE5496A246BF76000ADC11C /* EY+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+String.swift"; sourceTree = "<group>"; };
 		4DED36732465865500CB7D72 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		4DED36752465866100CB7D72 /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
@@ -290,9 +284,8 @@
 		4D49AB16246921BE00C057D6 /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				4DAA5BC02471A1B000165829 /* cards-list.json */,
 				4D6C27642469CA97005F4AEF /* Realm */,
-				4DE54950246B1E6800ADC11C /* data.json */,
-				4DE5495A246B2B8B00ADC11C /* data.plist */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -411,9 +404,6 @@
 			children = (
 				4D01FB0B244B73200031BEE9 /* GameModelEntity.swift */,
 				4DE54952246B1EF800ADC11C /* PlayerEntity.swift */,
-				4DE54962246B369600ADC11C /* DeckEntity.swift */,
-				4DE54964246B36D200ADC11C /* CardEntity.swift */,
-				4DE54966246B36EB00ADC11C /* OrderEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -432,6 +422,7 @@
 				4DAA5BB2247155B600165829 /* Board.swift */,
 				4DAA5BB824715E1D00165829 /* BoardPosition.swift */,
 				4DAA5BB6247159A900165829 /* Card.swift */,
+				4DAA5BC22471A24D00165829 /* Hand.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -550,16 +541,15 @@
 				4DE127E0233E826C00F84C57 /* Icons.xcassets in Resources */,
 				4DF1509221679E0300D39D65 /* Main.storyboard in Resources */,
 				4DFA7A4F233D5840004099B7 /* PlayerTaxView.xib in Resources */,
+				4DAA5BC12471A1B000165829 /* cards-list.json in Resources */,
 				4DFA7A4D233D579E004099B7 /* PlayerWinnerCellView.xib in Resources */,
 				4DA3487D20812A8B006DA164 /* Assets.xcassets in Resources */,
 				4D111E09233672CE00472BDC /* cardSlide8.wav in Resources */,
 				4DFA7A51233D58A2004099B7 /* DieCellView.xib in Resources */,
 				4D111E08233672CE00472BDC /* Birdy_Notification1.wav in Resources */,
-				4DE54951246B1E6800ADC11C /* data.json in Resources */,
 				4D111E06233672CE00472BDC /* Birdy_Note5.wav in Resources */,
 				4DFA7A53233D58F7004099B7 /* CardView.xib in Resources */,
 				4DA3487E20812A8B006DA164 /* LaunchScreen.storyboard in Resources */,
-				4DE5495B246B2B8B00ADC11C /* data.plist in Resources */,
 				4D111E05233672CE00472BDC /* Art.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -617,12 +607,11 @@
 				4DED36762465866100CB7D72 /* SoundManager.swift in Sources */,
 				4D5CA5182337FC6900EF9F96 /* ErrorCode.swift in Sources */,
 				4DFF753223360BA700C7CC24 /* Fonts.swift in Sources */,
+				4DAA5BC32471A24D00165829 /* Hand.swift in Sources */,
 				4DA52369208158A8000FFAAB /* EY+Colors.swift in Sources */,
 				4DFF753323360BA700C7CC24 /* Sounds.swift in Sources */,
-				4DE54963246B369600ADC11C /* DeckEntity.swift in Sources */,
 				4DFA7A46233D55D9004099B7 /* MainMenuViewController.swift in Sources */,
 				4D3C17DB2334CF7B0036808F /* ViewController.swift in Sources */,
-				4DE54967246B36EB00ADC11C /* OrderEntity.swift in Sources */,
 				4DAA5BB3247155B600165829 /* Board.swift in Sources */,
 				4DFF753123360BA700C7CC24 /* Devices.swift in Sources */,
 				4DFF75282336067400C7CC24 /* EY+ViewController.swift in Sources */,
@@ -636,7 +625,6 @@
 				4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */,
 				4D300D8D246EC66F0083AEE1 /* EY+Paths.swift in Sources */,
 				4DFA7A49233D5648004099B7 /* PickPlayersViewController.swift in Sources */,
-				4DE54965246B36D300ADC11C /* CardEntity.swift in Sources */,
 				4D3C17D92334CEBD0036808F /* Storyboarded.swift in Sources */,
 				4DAA5BB7247159A900165829 /* Card.swift in Sources */,
 				4D6C276B2469CDD0005F4AEF /* EY+Int.swift in Sources */,
