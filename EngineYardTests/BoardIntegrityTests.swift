@@ -10,20 +10,23 @@ import XCTest
 
 @testable import EngineYard
 
+// Tests the board after initialisation from code to ensure that:
+// All cards, decks, quantities matches expectations
+//
 class BoardIntegrityTests: XCTestCase {
 
-    private var board: Board!
+    private var sut: Board!
     lazy var allCards: [Card]? = {
-        return board.getAllCards()
+        return sut.getAllCards()
     }()
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        self.board = Board()
+        self.sut = Board()
     }
 
     func testBoardHasExpectedNumberOfPositions() {
-        XCTAssertTrue(board.positions.count == Constants.totalBoardPositions)
+        XCTAssertTrue(sut.positions.count == Constants.totalBoardPositions)
     }
 
     func testBoardHasExpectedNumberOfCards() -> [Card] {
@@ -37,60 +40,60 @@ class BoardIntegrityTests: XCTestCase {
 
     func testQtyOfGreenCardsIsCorrect() {
         let expected = Constants.Family.Color.green.ExpectedTotalCards
-        let qty = board.getAllCardsThatMatch(color: .green).count
+        let qty = sut.getAllCardsThatMatch(color: .green).count
         XCTAssertTrue(qty == expected)
     }
 
     func testQtyForRedCardsIsCorrect() {
         let expected = Constants.Family.Color.red.ExpectedTotalCards
-        let qty = board.getAllCardsThatMatch(color: .red).count
+        let qty = sut.getAllCardsThatMatch(color: .red).count
         XCTAssertTrue(qty == expected, "qty: \(qty) vs \(expected)")
     }
 
     func testQtyForBlueCardsIsCorrect() {
         let expected = Constants.Family.Color.blue.ExpectedTotalCards
-        let qty = board.getAllCardsThatMatch(color: .blue).count
+        let qty = sut.getAllCardsThatMatch(color: .blue).count
         XCTAssertTrue(qty == expected, "qty: \(qty) vs \(expected)")
     }
 
     func testQtyForYellowCardsIsCorrect() {
         let expected = Constants.Family.Color.yellow.ExpectedTotalCards
-        let qty = board.getAllCardsThatMatch(color: .yellow).count
+        let qty = sut.getAllCardsThatMatch(color: .yellow).count
         XCTAssertTrue(qty == expected, "qty: \(qty) vs \(expected)")
     }
 
     func testQtyOfFirstGenerationCardsIsCorrect() {
         let expected = Constants.Family.Generation.first.ExpectedTotalCards
-        let qty = board.getAllCardsThatMatch(generation: .first).count
+        let qty = sut.getAllCardsThatMatch(generation: .first).count
         XCTAssertTrue(qty == expected, "qty: \(qty) vs \(expected)")
     }
 
     func testQtyOfSecondGenerationCardsIsCorrect() {
         let expected = Constants.Family.Generation.second.ExpectedTotalCards
-        let qty = board.getAllCardsThatMatch(generation: .second).count
+        let qty = sut.getAllCardsThatMatch(generation: .second).count
         XCTAssertTrue(qty == expected, "qty: \(qty) vs \(expected)")
     }
 
     func testQtyOfThirdGenerationCardsIsCorrect() {
         let expected = Constants.Family.Generation.third.ExpectedTotalCards
-        let qty = board.getAllCardsThatMatch(generation: .third).count
+        let qty = sut.getAllCardsThatMatch(generation: .third).count
         XCTAssertTrue(qty == expected, "qty: \(qty) vs \(expected)")
     }
 
     func testQtyOfFourthGenerationCardsIsCorrect() {
        let expected = Constants.Family.Generation.fourth.ExpectedTotalCards
-       let qty = board.getAllCardsThatMatch(generation: .fourth).count
+       let qty = sut.getAllCardsThatMatch(generation: .fourth).count
        XCTAssertTrue(qty == expected, "qty: \(qty) vs \(expected)")
     }
 
     func testQtyOfFifthGenerationCardsIsCorrect() {
        let expected = Constants.Family.Generation.fifth.ExpectedTotalCards
-       let qty = board.getAllCardsThatMatch(generation: .fifth).count
+       let qty = sut.getAllCardsThatMatch(generation: .fifth).count
        XCTAssertTrue(qty == expected, "qty: \(qty) vs \(expected)")
     }
 
     func testSumOfCapacity() {
-        let positions = board.positions
+        let positions = sut.positions
         let sumOfOrderCapacity = positions.reduce(0, {$0 + $1.orderCapacity} )
         let expected = Constants.sumOfOrderCapacity
         XCTAssertTrue(sumOfOrderCapacity == expected, "sumOfOrderCapacity: \(sumOfOrderCapacity) vs \(expected)")
