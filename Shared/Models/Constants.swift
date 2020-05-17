@@ -34,7 +34,7 @@ struct Constants {
         return (cash >= Constants.endGameCashTrigger)
     }
 
-    static let totalDecks: Int = 14 // total number of families/groups/decks in the game
+    static let totalBoardPositions: Int = 14 // total number of positions held by the board
     static let totalCards: Int = 43 // total number of cards in the game
     static let sumOfCapacity: Int = 46 // when you add up all the orderCapacity from every card in teh game
     static let sumOfCosts: Int = 420 // when you total up all the deck costs together
