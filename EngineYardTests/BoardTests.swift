@@ -68,4 +68,16 @@ class BoardTests: XCTestCase {
         let qty = board.getAllCardsThatMatch(generation: .third).count
         XCTAssertTrue(qty == expected, "qty: \(qty) vs \(expected)")
     }
+
+    func testQtyOfFourthGenerationCardsIsCorrect() {
+       let expected = Constants.Family.Generation.fourth.ExpectedTotalCards
+       let qty = board.getAllCardsThatMatch(generation: .fourth).count
+       XCTAssertTrue(qty == expected, "qty: \(qty) vs \(expected)")
+    }
+
+    func testQtyOfFifthGenerationCardsIsCorrect() {
+       let expected = Constants.Family.Generation.fifth.ExpectedTotalCards
+       let qty = board.getAllCardsThatMatch(generation: .fifth).count
+       XCTAssertTrue(qty == expected, "qty: \(qty) vs \(expected)")
+    }
 }
