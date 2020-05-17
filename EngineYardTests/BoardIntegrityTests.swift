@@ -1,5 +1,5 @@
 //
-//  BoardTests.swift
+//  BoardIntegrityTests.swift
 //  EngineYardTests
 //
 //  Created by Amarjit on 17/05/2020.
@@ -10,7 +10,7 @@ import XCTest
 
 @testable import EngineYard
 
-class BoardTests: XCTestCase {
+class BoardIntegrityTests: XCTestCase {
 
     private var board: Board!
     lazy var allCards: [Card]? = {
