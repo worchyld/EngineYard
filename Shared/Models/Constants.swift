@@ -36,8 +36,7 @@ struct Constants {
 
     static let totalBoardPositions: Int = 14 // total number of positions held by the board
     static let totalCards: Int = 43 // total number of cards in the game
-    static let sumOfCapacity: Int = 46 // when you add up all the orderCapacity from every card in teh game
-    static let sumOfCosts: Int = 420 // when you total up all the deck costs together
-    static let sumOfGenerations: Int = 34 // when you total up all the generation values in the decks together
-    static let sumOfColors: Int = 30 // when you total up all the color values in the decks together
+    // --
+    static let sumOfOrderCapacity: Int = 46 // when you add up all the orderCapacity from every card in teh game
+    static let sumOfCosts: Int = 1360 // when you total up all the deck costs together
 }

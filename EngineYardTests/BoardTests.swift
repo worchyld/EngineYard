@@ -13,6 +13,9 @@ import XCTest
 class BoardTests: XCTestCase {
 
     private var board: Board!
+    lazy var allCards: [Card]? = {
+        return board.getAllCards()
+    }()
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -23,8 +26,13 @@ class BoardTests: XCTestCase {
         XCTAssertTrue(board.positions.count == Constants.totalBoardPositions)
     }
 
-    func testBoardHasExpectedNumberOfCards() {
-        XCTAssertTrue(board.allCards.count == Constants.totalCards)
+    func testBoardHasExpectedNumberOfCards() -> [Card] {
+        guard let cards = self.allCards else {
+            XCTFail()
+            return []
+        }
+        XCTAssertTrue(cards.count == Constants.totalCards)
+        return cards
     }
 
     func testQtyOfGreenCardsIsCorrect() {
@@ -79,5 +87,19 @@ class BoardTests: XCTestCase {
        let expected = Constants.Family.Generation.fifth.ExpectedTotalCards
        let qty = board.getAllCardsThatMatch(generation: .fifth).count
        XCTAssertTrue(qty == expected, "qty: \(qty) vs \(expected)")
+    }
+
+    func testSumOfCapacity() {
+        let positions = board.positions
+        let sumOfOrderCapacity = positions.reduce(0, {$0 + $1.orderCapacity} )
+        let expected = Constants.sumOfOrderCapacity
+        XCTAssertTrue(sumOfOrderCapacity == expected, "sumOfOrderCapacity: \(sumOfOrderCapacity) vs \(expected)")
+    }
+
+    func testSumOfCosts() {
+        let cards = testBoardHasExpectedNumberOfCards()
+        let sumOfCosts = cards.reduce(0, {$0 + $1.cost})
+        let expected = Constants.sumOfCosts
+        XCTAssertTrue(sumOfCosts == expected, "\(sumOfCosts) vs \(expected)")
     }
 }

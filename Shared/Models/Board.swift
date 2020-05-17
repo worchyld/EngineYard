@@ -13,11 +13,7 @@ import Foundation
 // Each position holds a stack/array/collection of cards
 // A position has a `state`
 struct Board {
-    private(set) var positions: [BoardPosition]
-    var allCards: [Card] {
-        let allCards = self.positions.compactMap({$0.cards}).flatMap { $0 }
-        return allCards
-    }
+    private(set) var positions: [BoardPosition]    
 
     // Build the board
     // Create board positions
@@ -130,8 +126,12 @@ extension Board {
 }
 
 extension Board {
+    public func getAllCards() -> [Card] {
+        let allCards = self.positions.compactMap({$0.cards}).flatMap { $0 }
+        return allCards
+    }
     public func getAllCardsThatMatch(color: FamilyColor) -> [Card] {
-        let cards = self.allCards
+        let cards = self.getAllCards()
 
         let results = cards.filter { (c: Card) -> Bool in
             return (c.color == color)
@@ -144,7 +144,7 @@ extension Board {
         return results
     }
     public func getAllCardsThatMatch(generation: FamilyGeneration) -> [Card] {
-        let cards = self.allCards
+        let cards = self.getAllCards()
 
         let results = cards.filter { (c: Card) -> Bool in
             return (c.generation == generation)
@@ -167,10 +167,11 @@ extension Board {
     }
 
     func printAllCards() {
-        for (index, card) in self.allCards.enumerated() {
+        let cards = self.getAllCards()
+        for (index, card) in cards.enumerated() {
             print ("#\(index): Card -- \(card.description)")
         }
 
-        print (allCards.count)
+        print (cards.count)
     }
 }
