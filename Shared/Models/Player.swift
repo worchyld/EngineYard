@@ -18,8 +18,9 @@ class Player : NSObject, GKGameModelPlayer {
         case completed
     }
 
-    private (set) var playerId: Int = 0
-    private (set) var state: Player.State = .none
+    var playerId: Int = 0
+    var state: Player.State = .none
+    let hand: Hand = Hand() // A player has a hand of cards
 }
 
 extension Player {
