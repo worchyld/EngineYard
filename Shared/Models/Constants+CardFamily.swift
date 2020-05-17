@@ -134,9 +134,3 @@ extension Constants.Family {
         }
     }
 }
-
-extension Constants {
-    func statsFor(color: FamilyColor?, generation: FamilyGeneration?) -> Int {
-        return 0
-    }
-}
