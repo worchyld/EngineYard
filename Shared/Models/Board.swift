@@ -136,6 +136,11 @@ extension Board {
         return results
     }
 
+    func getAllCards() -> [Card] {
+        let allCards = self.positions.compactMap({$0.cards}).flatMap { $0 }
+        return allCards
+    }
+
     func printAllCards() {
         let allCards = self.positions.compactMap({$0.cards}).flatMap { $0 }
 

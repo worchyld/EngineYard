@@ -43,6 +43,7 @@
 		4DAA5BB52471565E00165829 /* Constants+CardFamily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA5BB42471565E00165829 /* Constants+CardFamily.swift */; };
 		4DAA5BB7247159A900165829 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA5BB6247159A900165829 /* Card.swift */; };
 		4DAA5BB924715E1D00165829 /* BoardPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA5BB824715E1D00165829 /* BoardPosition.swift */; };
+		4DAA5BBB2471630700165829 /* BoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA5BBA2471630700165829 /* BoardTests.swift */; };
 		4DACC0A22441E5C500466ABE /* JGProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC09C2441E5C500466ABE /* JGProgressHUD.framework */; };
 		4DACC0A32441E5C500466ABE /* JGProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC09C2441E5C500466ABE /* JGProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4DACC0A42441E5C500466ABE /* EasyTipView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC09D2441E5C500466ABE /* EasyTipView.framework */; };
@@ -176,6 +177,7 @@
 		4DAA5BB42471565E00165829 /* Constants+CardFamily.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+CardFamily.swift"; sourceTree = "<group>"; };
 		4DAA5BB6247159A900165829 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		4DAA5BB824715E1D00165829 /* BoardPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardPosition.swift; sourceTree = "<group>"; };
+		4DAA5BBA2471630700165829 /* BoardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTests.swift; sourceTree = "<group>"; };
 		4DACC09C2441E5C500466ABE /* JGProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JGProgressHUD.framework; path = Carthage/Build/iOS/JGProgressHUD.framework; sourceTree = "<group>"; };
 		4DACC09D2441E5C500466ABE /* EasyTipView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EasyTipView.framework; path = Carthage/Build/iOS/EasyTipView.framework; sourceTree = "<group>"; };
 		4DACC09E2441E5C500466ABE /* FontAwesome.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FontAwesome.framework; path = Carthage/Build/iOS/FontAwesome.framework; sourceTree = "<group>"; };
@@ -334,6 +336,7 @@
 				4DE5494E246AEAC200ADC11C /* WalletTests.swift */,
 				4D300D90246EE10E0083AEE1 /* BasicGKGameModelTests.swift */,
 				4D300D8E246EDF880083AEE1 /* RealmGameModelSaveTests.swift */,
+				4DAA5BBA2471630700165829 /* BoardTests.swift */,
 			);
 			path = EngineYardTests;
 			sourceTree = "<group>";
@@ -653,6 +656,7 @@
 				4DE5494D2469EA0800ADC11C /* TaxTests.swift in Sources */,
 				4DE5494F246AEAC200ADC11C /* WalletTests.swift in Sources */,
 				4DA92C212156874500AD19B7 /* (null) in Sources */,
+				4DAA5BBB2471630700165829 /* BoardTests.swift in Sources */,
 				4D300D8F246EDF880083AEE1 /* RealmGameModelSaveTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
