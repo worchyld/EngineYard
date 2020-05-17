@@ -31,19 +31,6 @@ extension Constants {
             case blue
 
             static let allRawValues = FamilyColor.green.rawValue...FamilyColor.blue.rawValue
-
-            var ExpectedTotals: Int {
-                switch self {
-                case .green:
-                    return 20
-                case .red:
-                    return 13
-                case .yellow:
-                    return 7
-                case .blue:
-                    return 3
-                }
-            }
         }
 
         public enum Generation: Int, CaseIterable {
