@@ -8,10 +8,8 @@
 
 import Foundation
 
-typealias Card = Locomotive
-
 // : Locomotive model as a struct
-struct Locomotive: Identifiable, FamilyProtocol {
+struct Card: Identifiable, FamilyProtocol {
     let id: UUID = UUID()
     var color: Family.Color
     var generation: Family.Generation
