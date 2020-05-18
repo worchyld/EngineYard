@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct BoardPosition: Identifiable, FamilyProtocol {
+class BoardPosition: Identifiable, FamilyProtocol {
     let id: Int
     var color: Family.Color
     var generation: Family.Generation
@@ -17,10 +17,10 @@ struct BoardPosition: Identifiable, FamilyProtocol {
     }
     let orderCapacity: Int
     var cards: [Card] = [Card]()
-    var orders: [Int]
+    var dice: [Int] // orders go here
 
     enum State: Int, CaseIterable {
-        case unavailable, available, rusting, rusted
+        case unavailable, available, old, obsolete
     }
     var state: BoardPosition.State = .unavailable
 
@@ -29,13 +29,18 @@ struct BoardPosition: Identifiable, FamilyProtocol {
         self.color = color
         self.generation = generation
         self.orderCapacity = orderCapacity
-        self.orders = [Int]()
-        self.orders.reserveCapacity(orderCapacity)
+        self.dice = [Int]()
+        self.dice.reserveCapacity(orderCapacity)
     }
 }
 
 extension BoardPosition {
+    /*
     fileprivate mutating func setCards(cards: [Card]) {
+        print ("setCards is called")
+        self.cards = cards
+    }*/
+    func setCards(cards: [Card]) {
         print ("setCards is called")
         self.cards = cards
     }

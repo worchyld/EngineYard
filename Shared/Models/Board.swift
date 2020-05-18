@@ -36,18 +36,21 @@ struct Board {
             BoardPosition.init(13, color: .green, generation: .fifth, orderCapacity: 5)
         ]
         self.positions = positions
-        let cards = self.buildCards()
+        let cards = self.buildAllCards()
 
         // walk through each position in the board then add the cards to that array
-        self.positions.mutateEach { (position) in
+        //self.positions.mutateEach { (position) in
+        //    position.cards = Board.get(cards: cards, whereColor: position.color, whereGeneration: position.generation)
+        //}
+        self.positions.forEach { (position) in
             position.cards = Board.get(cards: cards, whereColor: position.color, whereGeneration: position.generation)
         }
-
     }
 }
 
 extension Board {
-    private func buildCards() -> [Card] {
+    // Builds all the cards used in the game
+    private func buildAllCards() -> [Card] {
         let cards = [
             // Green.first (x4)
             Card.init(cost: 4, color: .green, generation: .first),

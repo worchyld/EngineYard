@@ -24,8 +24,6 @@ struct Locomotive: Identifiable, FamilyProtocol {
         guard (cost % 4 == 0) else { return 0 }
          return Int( floor(Double(productionCost / 2)) )
     }
-
-    var isAvailable: Bool = false
     var name: String {
         return "\(self.color).\(self.generation)"
     }

@@ -8,9 +8,6 @@
 
 import Foundation
 
-//typealias FamilyColor = Family.Color
-//typealias FamilyGeneration = Family.Generation
-
 protocol FamilyProtocol {
     var color: Family.Color { get }
     var generation: Family.Generation { get }
