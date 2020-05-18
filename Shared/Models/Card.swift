@@ -8,12 +8,23 @@
 
 import Foundation
 
-// : Card model as a struct
-struct Card: Identifiable, FamilyProtocol {
+typealias Card = Locomotive
+
+// : Locomotive model as a struct
+struct Locomotive: Identifiable, FamilyProtocol {
     let id: UUID = UUID()
     var color: Family.Color
     var generation: Family.Generation
     let cost: Int
+    var productionCost: Int {
+        guard (self.cost % 4 == 0) else { return 0 }
+        return Int( floor(Double(self.cost / 2)) )
+    }
+    var income: Int {
+        guard (cost % 4 == 0) else { return 0 }
+         return Int( floor(Double(productionCost / 2)) )
+    }
+
     var isAvailable: Bool = false
     var name: String {
         return "\(self.color).\(self.generation)"
