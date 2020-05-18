@@ -20,7 +20,7 @@ class Player : NSObject, GKGameModelPlayer {
 
     var playerId: Int = 0
     var state: Player.State = .none
-    //let hand: Hand = Hand() // A player has a hand of cards
+    let hand: Hand = Hand() // A player has a hand of cards
 }
 
 extension Player {
