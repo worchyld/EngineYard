@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomCell: UITableViewCell {
+private class CustomCell: UITableViewCell {
     var position: BoardPosition? {
         didSet {
 
@@ -21,6 +21,7 @@ class CustomCell: UITableViewCell {
 
             self.textLabel?.text = name
             self.detailTextLabel?.text = "Family: \(family), qty: \(cardsQty)"
+            
         }
     }
 
@@ -36,8 +37,9 @@ class CustomCell: UITableViewCell {
 class SecondViewController: UIViewController,
     UITableViewDataSource, UITableViewDelegate, Storyboarded {
 
-    private var board: Board?
+    weak var coordinator: MainCoordinator?
 
+    private var board: Board?
     private static let cellReuseId = "myCellId"
 
     lazy var tableView : UITableView = {
@@ -45,7 +47,7 @@ class SecondViewController: UIViewController,
         tv.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         tv.delegate = self
         tv.dataSource = self
-        tv.allowsSelection = false
+        tv.allowsSelection = true
         //tv.register(UITableViewCell.self, forCellReuseIdentifier: SecondViewController.cellReuseId)
         tv.register(CustomCell.self, forCellReuseIdentifier: SecondViewController.cellReuseId)
         return tv
@@ -55,7 +57,7 @@ class SecondViewController: UIViewController,
         super.viewDidLoad()
 
         self.view.addSubview(self.tableView)
-        self.navigationController?.title = "Board debug"
+        self.title = "Positions"
 
         self.board = Board.init()
     }
@@ -79,6 +81,8 @@ class SecondViewController: UIViewController,
         let cell = CustomCell(style: .subtitle, reuseIdentifier: SecondViewController.cellReuseId)
 
         // Configure the cell...
+        cell.accessoryType = .disclosureIndicator
+
         guard let board = self.board else {
             cell.textLabel?.text = "The board is incorrectly initialized"
             return cell
@@ -88,6 +92,15 @@ class SecondViewController: UIViewController,
         cell.position = currentItem
 
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let board = self.board else {
+            return
+        }
+        let positionAtIndex = board.positions[indexPath.row]
+        print ("Selected: \(positionAtIndex.description)")
+        coordinator?.showListOfCards(position: positionAtIndex)
     }
 
 

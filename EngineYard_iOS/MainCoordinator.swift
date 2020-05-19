@@ -25,6 +25,14 @@ class MainCoordinator: Coordinator {
 
     func showNext() {
         let vc = SecondViewController.instantiate()
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
+    }
+
+    func showListOfCards(position: BoardPosition) {
+        let vc = ListCardsViewController.instantiate()
+        vc.coordinator = self
+        vc.position = position
         navigationController.pushViewController(vc, animated: true)
     }
 }
