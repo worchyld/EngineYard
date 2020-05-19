@@ -32,7 +32,6 @@
 		4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D925D74219F4E2D00441733 /* EY+Time.swift */; };
 		4D9EBCF82473F5E700648376 /* StackedCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D9EBCF72473F5E700648376 /* StackedCardView.xib */; };
 		4D9EBCFE2474128A00648376 /* ListCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9EBCFD2474128A00648376 /* ListCardsViewController.swift */; };
-		4D9EBD002474136400648376 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9EBCFF2474136400648376 /* TableViewController.swift */; };
 		4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3486820812972006DA164 /* EngineYardTests.swift */; };
 		4DA3487D20812A8B006DA164 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DA3487520812A8B006DA164 /* Assets.xcassets */; };
 		4DA3487E20812A8B006DA164 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA3487620812A8B006DA164 /* LaunchScreen.storyboard */; };
@@ -165,7 +164,6 @@
 		4D925D74219F4E2D00441733 /* EY+Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Time.swift"; sourceTree = "<group>"; };
 		4D9EBCF72473F5E700648376 /* StackedCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StackedCardView.xib; sourceTree = "<group>"; };
 		4D9EBCFD2474128A00648376 /* ListCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCardsViewController.swift; sourceTree = "<group>"; };
-		4D9EBCFF2474136400648376 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		4DA3485020812970006DA164 /* EngineYard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EngineYard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA3486420812972006DA164 /* EngineYardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EngineYardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA3486820812972006DA164 /* EngineYardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineYardTests.swift; sourceTree = "<group>"; };
@@ -355,7 +353,6 @@
 				4D3C17DA2334CF7B0036808F /* ViewController.swift */,
 				4DF38E1A233BF6D7003771C3 /* SecondViewController.swift */,
 				4D9EBCFD2474128A00648376 /* ListCardsViewController.swift */,
-				4D9EBCFF2474136400648376 /* TableViewController.swift */,
 				4DFA7A47233D55DE004099B7 /* XIBs */,
 			);
 			path = EngineYard_iOS;
@@ -604,7 +601,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DF38E1B233BF6D7003771C3 /* SecondViewController.swift in Sources */,
-				4D9EBD002474136400648376 /* TableViewController.swift in Sources */,
 				4DFF753723360ED300C7CC24 /* Wallet.swift in Sources */,
 				4DE54955246B204000ADC11C /* MachineStates.swift in Sources */,
 				4DAA5BCB2471D97600165829 /* Constants+Expected.swift in Sources */,
