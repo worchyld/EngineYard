@@ -19,10 +19,14 @@ class ViewController: UIViewController, Storyboarded {
 
     
     @IBAction func nextBtnPressed(_ sender: Any) {
+        #if DEBUG
+            self.goToNextScreen()
+        #else
         self.showSimpleHUD()
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1000)) {
             self.goToNextScreen()
         }
+        #endif
     }
 
     func goToNextScreen() {
