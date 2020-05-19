@@ -30,6 +30,7 @@
 		4D6C276B2469CDD0005F4AEF /* EY+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6C27692469CDB6005F4AEF /* EY+Int.swift */; };
 		4D8AB2A1233E21C4009158CB /* EY+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8AB2A0233E21C4009158CB /* EY+Notification.swift */; };
 		4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D925D74219F4E2D00441733 /* EY+Time.swift */; };
+		4D9EBCF82473F5E700648376 /* StackedCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D9EBCF72473F5E700648376 /* StackedCardView.xib */; };
 		4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3486820812972006DA164 /* EngineYardTests.swift */; };
 		4DA3487D20812A8B006DA164 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DA3487520812A8B006DA164 /* Assets.xcassets */; };
 		4DA3487E20812A8B006DA164 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA3487620812A8B006DA164 /* LaunchScreen.storyboard */; };
@@ -81,13 +82,11 @@
 		4DF1509221679E0300D39D65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1509121679E0300D39D65 /* Main.storyboard */; };
 		4DF38E1B233BF6D7003771C3 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF38E1A233BF6D7003771C3 /* SecondViewController.swift */; };
 		4DF7B4A1244D7BC100814B64 /* RealmWriteAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF7B4A0244D7BC100814B64 /* RealmWriteAsync.swift */; };
-		4DFA7A46233D55D9004099B7 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFA7A45233D55D9004099B7 /* MainMenuViewController.swift */; };
-		4DFA7A49233D5648004099B7 /* PickPlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFA7A48233D5648004099B7 /* PickPlayersViewController.swift */; };
-		4DFA7A4B233D56D5004099B7 /* PlayerCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFA7A4A233D56D5004099B7 /* PlayerCardView.xib */; };
+		4DFA7A4B233D56D5004099B7 /* PlayerProfileMiniView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFA7A4A233D56D5004099B7 /* PlayerProfileMiniView.xib */; };
 		4DFA7A4D233D579E004099B7 /* PlayerWinnerCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFA7A4C233D579E004099B7 /* PlayerWinnerCellView.xib */; };
-		4DFA7A4F233D5840004099B7 /* PlayerTaxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFA7A4E233D5840004099B7 /* PlayerTaxView.xib */; };
+		4DFA7A4F233D5840004099B7 /* PlayerTaxReportView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFA7A4E233D5840004099B7 /* PlayerTaxReportView.xib */; };
 		4DFA7A51233D58A2004099B7 /* DieCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFA7A50233D58A2004099B7 /* DieCellView.xib */; };
-		4DFA7A53233D58F7004099B7 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFA7A52233D58F7004099B7 /* CardView.xib */; };
+		4DFA7A53233D58F7004099B7 /* SingleCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFA7A52233D58F7004099B7 /* SingleCardView.xib */; };
 		4DFF75282336067400C7CC24 /* EY+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF75262336067400C7CC24 /* EY+ViewController.swift */; };
 		4DFF752B2336077400C7CC24 /* Tax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF752A2336077400C7CC24 /* Tax.swift */; };
 		4DFF753123360BA700C7CC24 /* Devices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF752E23360BA600C7CC24 /* Devices.swift */; };
@@ -162,6 +161,7 @@
 		4D6C27692469CDB6005F4AEF /* EY+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Int.swift"; sourceTree = "<group>"; };
 		4D8AB2A0233E21C4009158CB /* EY+Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Notification.swift"; sourceTree = "<group>"; };
 		4D925D74219F4E2D00441733 /* EY+Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Time.swift"; sourceTree = "<group>"; };
+		4D9EBCF72473F5E700648376 /* StackedCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StackedCardView.xib; sourceTree = "<group>"; };
 		4DA3485020812970006DA164 /* EngineYard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EngineYard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA3486420812972006DA164 /* EngineYardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EngineYardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA3486820812972006DA164 /* EngineYardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineYardTests.swift; sourceTree = "<group>"; };
@@ -204,13 +204,11 @@
 		4DF1509121679E0300D39D65 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4DF38E1A233BF6D7003771C3 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		4DF7B4A0244D7BC100814B64 /* RealmWriteAsync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmWriteAsync.swift; sourceTree = "<group>"; };
-		4DFA7A45233D55D9004099B7 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
-		4DFA7A48233D5648004099B7 /* PickPlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickPlayersViewController.swift; sourceTree = "<group>"; };
-		4DFA7A4A233D56D5004099B7 /* PlayerCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerCardView.xib; sourceTree = "<group>"; };
+		4DFA7A4A233D56D5004099B7 /* PlayerProfileMiniView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerProfileMiniView.xib; sourceTree = "<group>"; };
 		4DFA7A4C233D579E004099B7 /* PlayerWinnerCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerWinnerCellView.xib; sourceTree = "<group>"; };
-		4DFA7A4E233D5840004099B7 /* PlayerTaxView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerTaxView.xib; sourceTree = "<group>"; };
+		4DFA7A4E233D5840004099B7 /* PlayerTaxReportView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerTaxReportView.xib; sourceTree = "<group>"; };
 		4DFA7A50233D58A2004099B7 /* DieCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DieCellView.xib; sourceTree = "<group>"; };
-		4DFA7A52233D58F7004099B7 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
+		4DFA7A52233D58F7004099B7 /* SingleCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleCardView.xib; sourceTree = "<group>"; };
 		4DFF75262336067400C7CC24 /* EY+ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EY+ViewController.swift"; sourceTree = "<group>"; };
 		4DFF752A2336077400C7CC24 /* Tax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tax.swift; sourceTree = "<group>"; };
 		4DFF752E23360BA600C7CC24 /* Devices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Devices.swift; sourceTree = "<group>"; };
@@ -448,13 +446,12 @@
 		4DFA7A47233D55DE004099B7 /* Main Menu */ = {
 			isa = PBXGroup;
 			children = (
-				4DFA7A45233D55D9004099B7 /* MainMenuViewController.swift */,
-				4DFA7A48233D5648004099B7 /* PickPlayersViewController.swift */,
-				4DFA7A4A233D56D5004099B7 /* PlayerCardView.xib */,
+				4DFA7A4A233D56D5004099B7 /* PlayerProfileMiniView.xib */,
 				4DFA7A4C233D579E004099B7 /* PlayerWinnerCellView.xib */,
-				4DFA7A4E233D5840004099B7 /* PlayerTaxView.xib */,
+				4DFA7A4E233D5840004099B7 /* PlayerTaxReportView.xib */,
 				4DFA7A50233D58A2004099B7 /* DieCellView.xib */,
-				4DFA7A52233D58F7004099B7 /* CardView.xib */,
+				4DFA7A52233D58F7004099B7 /* SingleCardView.xib */,
+				4D9EBCF72473F5E700648376 /* StackedCardView.xib */,
 			);
 			path = "Main Menu";
 			sourceTree = "<group>";
@@ -546,18 +543,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D111E07233672CE00472BDC /* cardSlide1.wav in Resources */,
-				4DFA7A4B233D56D5004099B7 /* PlayerCardView.xib in Resources */,
+				4DFA7A4B233D56D5004099B7 /* PlayerProfileMiniView.xib in Resources */,
 				4DE127E0233E826C00F84C57 /* Icons.xcassets in Resources */,
 				4DF1509221679E0300D39D65 /* Main.storyboard in Resources */,
-				4DFA7A4F233D5840004099B7 /* PlayerTaxView.xib in Resources */,
+				4DFA7A4F233D5840004099B7 /* PlayerTaxReportView.xib in Resources */,
 				4DAA5BC12471A1B000165829 /* cards-list.json in Resources */,
 				4DFA7A4D233D579E004099B7 /* PlayerWinnerCellView.xib in Resources */,
 				4DA3487D20812A8B006DA164 /* Assets.xcassets in Resources */,
+				4D9EBCF82473F5E700648376 /* StackedCardView.xib in Resources */,
 				4D111E09233672CE00472BDC /* cardSlide8.wav in Resources */,
 				4DFA7A51233D58A2004099B7 /* DieCellView.xib in Resources */,
 				4D111E08233672CE00472BDC /* Birdy_Notification1.wav in Resources */,
 				4D111E06233672CE00472BDC /* Birdy_Note5.wav in Resources */,
-				4DFA7A53233D58F7004099B7 /* CardView.xib in Resources */,
+				4DFA7A53233D58F7004099B7 /* SingleCardView.xib in Resources */,
 				4DA3487E20812A8B006DA164 /* LaunchScreen.storyboard in Resources */,
 				4D111E05233672CE00472BDC /* Art.xcassets in Resources */,
 			);
@@ -621,7 +619,6 @@
 				4DAA5BC32471A24D00165829 /* Hand.swift in Sources */,
 				4DA52369208158A8000FFAAB /* EY+Colors.swift in Sources */,
 				4DFF753323360BA700C7CC24 /* Sounds.swift in Sources */,
-				4DFA7A46233D55D9004099B7 /* MainMenuViewController.swift in Sources */,
 				4D3C17DB2334CF7B0036808F /* ViewController.swift in Sources */,
 				4DAA5BB3247155B600165829 /* Board.swift in Sources */,
 				4DFF753123360BA700C7CC24 /* Devices.swift in Sources */,
@@ -635,7 +632,6 @@
 				4DE5496B246BF76000ADC11C /* EY+String.swift in Sources */,
 				4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */,
 				4D300D8D246EC66F0083AEE1 /* EY+Paths.swift in Sources */,
-				4DFA7A49233D5648004099B7 /* PickPlayersViewController.swift in Sources */,
 				4D3C17D92334CEBD0036808F /* Storyboarded.swift in Sources */,
 				4DAA5BB7247159A900165829 /* Card.swift in Sources */,
 				4D6C276B2469CDD0005F4AEF /* EY+Int.swift in Sources */,
