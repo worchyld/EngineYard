@@ -350,7 +350,7 @@
 				4DA3487B20812A8B006DA164 /* Info.plist */,
 				4D3C17DA2334CF7B0036808F /* ViewController.swift */,
 				4DF38E1A233BF6D7003771C3 /* SecondViewController.swift */,
-				4DFA7A47233D55DE004099B7 /* Main Menu */,
+				4DFA7A47233D55DE004099B7 /* XIBs */,
 			);
 			path = EngineYard_iOS;
 			sourceTree = "<group>";
@@ -443,7 +443,7 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		4DFA7A47233D55DE004099B7 /* Main Menu */ = {
+		4DFA7A47233D55DE004099B7 /* XIBs */ = {
 			isa = PBXGroup;
 			children = (
 				4DFA7A4A233D56D5004099B7 /* PlayerProfileMiniView.xib */,
@@ -453,7 +453,7 @@
 				4DFA7A52233D58F7004099B7 /* SingleCardView.xib */,
 				4D9EBCF72473F5E700648376 /* StackedCardView.xib */,
 			);
-			path = "Main Menu";
+			path = XIBs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
