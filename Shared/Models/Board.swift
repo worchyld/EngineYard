@@ -13,7 +13,7 @@ import Foundation
 // Each position holds a stack/array/collection of cards
 // A position has a `state`
 struct Board {
-    private(set) var positions: [BoardPosition]    
+    private(set) var positions: [BoardPosition]
 
     // Build the board
     // Create board positions
