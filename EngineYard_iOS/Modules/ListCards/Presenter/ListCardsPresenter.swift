@@ -21,13 +21,11 @@ class ListCardsPresenter: ListCardsViewToPresenterProtocol {
 
 //MARK: - Subscribing - ListCards Interactor
 extension ListCardsPresenter: ListCardsInteractorToPresenterProtocol {
-    func employeeListFeed(cardModel: CardResponseModel) {
+    func cardListFetchFeed(cardModel: CardResponseModel) {
         view?.showCards(cardModel: cardModel)
     }
 
-    func employeeListFetchedFailed() {
+    func cardListFetchFailed() {
         view?.showError()
     }
-
-
 }

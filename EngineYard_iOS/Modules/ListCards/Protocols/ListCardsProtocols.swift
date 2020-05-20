@@ -9,32 +9,21 @@
 import Foundation
 import UIKit
 
-/*
-protocol ListCardsPresenterToViewProtocol: class {
-    func showListCards(cardModel: CardResponseModel)
-    func showError()
-}
-
-protocol ListCardsInteractorToPresenterProtocol: class {
-    func cardListFeed(cardModel: CardResponseModel)
-    func cardListFetchedFailed()
-}
-
-protocol ListCardsPresentorToInteractorProtocol: class {
-    var presenter: ListCardsInteractorToPresenterProtocol? {get set}
-    func fetchCardList()
-}*/
-
+// Presenter -> View
 protocol ListCardsPresenterToViewProtocol: class {
     func showCards(cardModel: CardResponseModel)
     func showError()
 }
 
+// Interactor -> Presenter
 protocol ListCardsInteractorToPresenterProtocol: class {
-    func employeeListFeed(cardModel: CardResponseModel)
-    func employeeListFetchedFailed()
+    //func employeeListFeed(cardModel: CardResponseModel)
+    //func employeeListFetchedFailed()
+    func cardListFetchFeed(cardModel: CardResponseModel)
+    func cardListFetchFailed()
 }
 
+// Presenter -> Interactor
 protocol ListCardsPresentorToInteractorProtocol: class {
     var presenter: ListCardsInteractorToPresenterProtocol? {get set}
     func fetchCardList()
@@ -42,6 +31,7 @@ protocol ListCardsPresentorToInteractorProtocol: class {
 
 // -----
 
+// View -> Presenter
 protocol ListCardsViewToPresenterProtocol: class {
     var view: ListCardsPresenterToViewProtocol? {get set}
     var interactor: ListCardsPresentorToInteractorProtocol? {get set}
@@ -49,6 +39,7 @@ protocol ListCardsViewToPresenterProtocol: class {
     func showCardsList()
 }
 
+// Presenter -> Router
 protocol ListCardsPresenterToRouterProtocol: class {
     static func start() -> UIViewController
 }

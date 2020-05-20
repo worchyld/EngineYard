@@ -18,6 +18,6 @@ class ListCardsInteractor: ListCardsPresentorToInteractorProtocol{
 
         let sampleCardResponseModel = CardResponseModel.init(cards: [Card.init(cost: 4, color: .green, generation: .first)])
 
-        self.presenter?.employeeListFeed(cardModel: sampleCardResponseModel)
+        self.presenter?.cardListFetchFeed(cardModel: sampleCardResponseModel)
     }
 }
