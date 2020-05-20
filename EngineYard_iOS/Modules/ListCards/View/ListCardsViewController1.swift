@@ -37,7 +37,7 @@ class ListCardsViewController: UIViewController, Storyboarded {
         }
     }
 
-    lazy var cellReuseId = String(describing: ListCardsViewController.self)
+    lazy var cellReuseId = String(describing: ListCardsViewController.self) + ".cell"
     lazy var tableView: UITableView = {
         let tv = UITableView(frame: self.view.frame, style: .plain)
         tv.delegate = self
