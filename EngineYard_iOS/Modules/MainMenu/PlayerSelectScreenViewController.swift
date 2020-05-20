@@ -96,4 +96,15 @@ extension PlayerSelectScreenViewController: UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        showWinnerScreen()
+    }
+}
+
+extension PlayerSelectScreenViewController {
+    // Just a hack to get it to go the winner screen
+    func showWinnerScreen() {
+        coordinator?.showWinnerScreen()
+    }
 }

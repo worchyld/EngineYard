@@ -9,8 +9,10 @@
 import Foundation
 import UIKit
 
-enum ListOfStoryboards: String {
+
+public enum ListOfStoryboards: String {
     case main = "Main"
+    case winner = "Winner"
 }
 
 protocol Storyboarded {
@@ -25,8 +27,11 @@ extension Storyboarded where Self: UIViewController {
 
         switch storyboardId {
         case .main:
-            storyboard = UIStoryboard(name: ListOfStoryboards.main.rawValue,
-                                      bundle: Bundle.main)
+            storyboard = UIStoryboard(name: ListOfStoryboards.main.rawValue, bundle: Bundle.main)
+
+        case .winner:
+            print ("use winner storyboard")
+            storyboard = UIStoryboard(name: ListOfStoryboards.winner.rawValue, bundle: Bundle.main)
         }
 
         return storyboard.instantiateViewController(withIdentifier: id) as! Self

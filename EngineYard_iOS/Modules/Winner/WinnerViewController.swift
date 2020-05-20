@@ -8,7 +8,7 @@
 
 import UIKit
 
-private struct DummyPlayerViewModel: PlayerProtocol, Identifiable {
+private struct PlayerAvatarViewModel: PlayerProtocol, Identifiable {
     let id: UUID = UUID()
     let name: String
     let cash: Int
@@ -17,30 +17,30 @@ private struct DummyPlayerViewModel: PlayerProtocol, Identifiable {
     var state: Player.State = .none
     var hand: Hand = Hand() // empty hand
 
-    init(name: String, cash: Int = 0, avatar: String = "avt_1") {
+    init(name: String, avatar: String = "avt_1", _ cash: Int = 0) {
         self.name = name
         self.cash = cash
         self.avatar = avatar
     }
 }
 
-extension DummyPlayerViewModel {
-    public static func createDummyPlayers() -> [DummyPlayerViewModel] {
-        var players: [DummyPlayerViewModel] = [
-               DummyPlayerViewModel.init(name: "Alex", cash: 330, avatar: "avt_1"),
-               DummyPlayerViewModel.init(name: "Sarah", cash: 100, avatar: "avt_2"),
-               DummyPlayerViewModel.init(name: "Yanus", cash: 99, avatar: "avt_3"),
-               DummyPlayerViewModel.init(name: "Ted", cash: 329, avatar: "avt_4"),
-               DummyPlayerViewModel.init(name: "Moa", cash: 1, avatar: "avt_5")
-           ]
+extension PlayerAvatarViewModel {
+    public static func createDummyPlayers() -> [PlayerAvatarViewModel] {
+        let avatars = [
+            PlayerAvatarViewModel(name: "Mao", avatar: "avt_1", 330),
+            PlayerAvatarViewModel(name: "Lisa", avatar: "avt_2", 200),
+            PlayerAvatarViewModel(name: "Ronaldo", avatar: "avt_3", 99),
+            PlayerAvatarViewModel(name: "Che", avatar: "avt_4", 1),
+            PlayerAvatarViewModel(name: "Sarah", avatar: "avt_5", 329)
+        ]
 
         // Sort by highest cash
-        players = players.sorted(by: {
-                       (a: DummyPlayerViewModel, b: DummyPlayerViewModel) -> Bool in
+        let sortedByHighestCash = avatars.sorted(by: {
+                       (a: PlayerAvatarViewModel, b: PlayerAvatarViewModel) -> Bool in
                    return (a.cash > b.cash)
                })
 
-        return players
+        return sortedByHighestCash
     }
 }
 
@@ -50,12 +50,22 @@ class WinnerViewController: UIViewController, Storyboarded {
     weak var coordinator: MainCoordinator?
 
     private lazy var cellReuseId = self.theClassName + ".cell"
-    private var players = DummyPlayerViewModel.createDummyPlayers()
+    private var avatars = PlayerAvatarViewModel.createDummyPlayers()
+
+    private lazy var tableView: UITableView = {
+        let tv = UITableView(frame: self.view.frame, style: .plain)
+        tv.delegate = self
+        tv.dataSource = self
+        tv.allowsSelection = false // No selections are further available
+        tv.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseId)
+        return tv
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = "Winner page"
+        self.view.addSubview(tableView)
     }
 }
 
@@ -71,7 +81,7 @@ extension WinnerViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.players.count
+        return self.avatars.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -83,8 +93,60 @@ extension WinnerViewController: UITableViewDelegate, UITableViewDataSource {
 
     func configureCell(cell: UITableViewCell, at indexPath: IndexPath) -> UITableViewCell {
 
+        let index = indexPath.row
+        let player = self.avatars[index]
+        let image = UIImage(named: player.avatar)
+        let imageView = UIImageView(image: image)
+        imageView.frame = CGRect(x: 15, y: 15, width: 64, height: 64)
+        imageView.sizeToFit()
 
+        let nameLabel = UILabel(frame: CGRect(x: 80, y: 32, width: 128, height: 32))
+        nameLabel.text = player.name
+        nameLabel.font = .systemFont(ofSize: 24)
+        nameLabel.textAlignment = .left
+        nameLabel.lineBreakMode = .byTruncatingTail
+        nameLabel.allowsDefaultTighteningForTruncation = true
+        nameLabel.numberOfLines = 1
+
+        let cashLabel: UILabel = {
+            let label = UILabel(frame: CGRect(x: 180, y: 32, width: 128, height: 32))
+            label.text = ("$\(player.cash)")
+            label.textAlignment = .left
+            label.lineBreakMode = .byTruncatingTail
+            label.allowsDefaultTighteningForTruncation = true
+            label.numberOfLines = 1
+            return label
+        }()
+
+
+        //let tWidth = (ScreenSize.SCREEN_WIDTH - 10)
+        let trophyImage = UIImage(named: "trophy")
+        let trophyImageView = UIImageView(image: trophyImage)
+        trophyImageView.frame = CGRect(x: 280, y: 20, width: 40, height: 40)
+        trophyImageView.sizeToFit()
+        trophyImageView.isHidden = true
+        trophyImageView.contentMode = .scaleAspectFit
+
+
+        if (player.cash >= Constants.endGameCashTrigger) {
+            UIView.animate(withDuration: 0.7, delay: 1, options: .curveEaseIn,
+                           animations: {
+                            let flatColor = UIColor.flat(color: .AquaIsland)
+                            cell.backgroundColor = flatColor
+            }, completion: { _ in
+                trophyImageView.isHidden = false
+            })
+        }
+
+        cell.addSubview(imageView)
+        cell.addSubview(nameLabel)
+        cell.addSubview(cashLabel)
+        cell.addSubview(trophyImageView)
 
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
 }

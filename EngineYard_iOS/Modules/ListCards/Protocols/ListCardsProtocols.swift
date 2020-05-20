@@ -17,8 +17,6 @@ protocol ListCardsPresenterToViewProtocol: class {
 
 // Interactor -> Presenter
 protocol ListCardsInteractorToPresenterProtocol: class {
-    //func employeeListFeed(cardModel: CardResponseModel)
-    //func employeeListFetchedFailed()
     func cardListFetchFeed(cardModel: CardResponseModel)
     func cardListFetchFailed()
 }
