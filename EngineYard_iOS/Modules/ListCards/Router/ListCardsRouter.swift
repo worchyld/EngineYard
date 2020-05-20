@@ -15,23 +15,24 @@ class ListCardsRouter: ListCardsPresenterToRouterProtocol {
     static func start() -> UIViewController {
         print ("IN router")
 
-        let view = getStoryboard.instantiateViewController(withIdentifier: "ListCardsViewController") as? ListCardsViewController
+        // Old code
+        //let view = getStoryboard.instantiateViewController(withIdentifier: "ListCardsViewController") as? ListCardsViewController
 
-
+        let view = ListCardsViewController.instantiate()
         let presenter: ListCardsViewToPresenterProtocol & ListCardsInteractorToPresenterProtocol = ListCardsPresenter()
         let interactor: ListCardsPresentorToInteractorProtocol = ListCardsInteractor()
         let router: ListCardsPresenterToRouterProtocol = ListCardsRouter()
 
-        view?.presenter = presenter
+        view.presenter = presenter
         presenter.view = view
         presenter.router = router
         presenter.interactor = interactor
         interactor.presenter = presenter
 
-        return view!
+        return view
     }
 
-    static var getStoryboard: UIStoryboard {
-        return UIStoryboard(name: "Main", bundle: Bundle.main)
-    }
+    //static var getStoryboard: UIStoryboard {
+    //    return UIStoryboard(name: "Main", bundle: Bundle.main)
+    //}
 }

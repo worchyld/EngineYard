@@ -697,6 +697,8 @@
 				4DA5236C208158C8000FFAAB /* EY+Array.swift in Sources */,
 				4DA28E6A2474C9BD00BF0288 /* ListCardsViewController1.swift in Sources */,
 				4DA28E5E2474C73600BF0288 /* ListCardsResponseModel.swift in Sources */,
+				4DA28E5A2474C3EB00BF0288 /* ListCardsInteractor.swift in Sources */,
+				4DA28E602474C75700BF0288 /* ListCardsRouter.swift in Sources */,
 				4DAA5BC92471D5AA00165829 /* Family.swift in Sources */,
 				4DA5236720815885000FFAAB /* Die.swift in Sources */,
 				4D247B37219FFE340004478D /* ObjectCache.swift in Sources */,
@@ -709,12 +711,11 @@
 				4DFF753323360BA700C7CC24 /* Sounds.swift in Sources */,
 				4D9EBCFE2474128A00648376 /* OldListCardsViewController.swift in Sources */,
 				4D3C17DB2334CF7B0036808F /* ViewController.swift in Sources */,
-				4DA28E5A2474C3EB00BF0288 /* ListCardsInteractor.swift in Sources */,
-				4DA28E602474C75700BF0288 /* ListCardsRouter.swift in Sources */,
 				4DAA5BB3247155B600165829 /* Board.swift in Sources */,
 				4DFF753123360BA700C7CC24 /* Devices.swift in Sources */,
 				4DFF75282336067400C7CC24 /* EY+ViewController.swift in Sources */,
 				4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */,
+				4DA28E5C2474C5CF00BF0288 /* ListCardsProtocols.swift in Sources */,
 				4D111E1A2336B20900472BDC /* Player.swift in Sources */,
 				4D5CA50E2337E82400EF9F96 /* GameModel.swift in Sources */,
 				4DE54953246B1EF800ADC11C /* PlayerEntity.swift in Sources */,
@@ -728,7 +729,6 @@
 				4D6C276B2469CDD0005F4AEF /* EY+Int.swift in Sources */,
 				4D8AB2A1233E21C4009158CB /* EY+Notification.swift in Sources */,
 				4D5CA5162337F01300EF9F96 /* Constants.swift in Sources */,
-				4DA28E5C2474C5CF00BF0288 /* ListCardsProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
