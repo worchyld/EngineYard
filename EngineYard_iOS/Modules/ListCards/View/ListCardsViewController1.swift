@@ -37,7 +37,7 @@ class ListCardsViewController: UIViewController, Storyboarded {
         }
     }
 
-    lazy var cellReuseId = String(describing: ListCardsViewController.self) + ".cell"
+    private lazy var cellReuseId = self.theClassName + ".cell"
     lazy var tableView: UITableView = {
         let tv = UITableView(frame: self.view.frame, style: .plain)
         tv.delegate = self
@@ -95,9 +95,7 @@ extension ListCardsViewController: UITableViewDelegate, UITableViewDataSource {
        // Configure the cell...
         return configureCell(cell: cell, at: indexPath)
     }
-}
 
-extension ListCardsViewController {
     func configureCell(cell: UITableViewCell, at indexPath: IndexPath) -> UITableViewCell {
         guard let hasModel = self.model else {
             return cell

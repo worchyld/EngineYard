@@ -40,7 +40,7 @@ class SecondViewController: UIViewController,
     weak var coordinator: MainCoordinator?
 
     private var board: Board?
-    private static let cellReuseId = "myCellId"
+    private lazy var cellReuseId = self.theClassName + ".cell"
 
     lazy var tableView : UITableView = {
         let tv = UITableView(frame: self.view.frame, style: .plain)
@@ -48,8 +48,7 @@ class SecondViewController: UIViewController,
         tv.delegate = self
         tv.dataSource = self
         tv.allowsSelection = true
-        //tv.register(UITableViewCell.self, forCellReuseIdentifier: SecondViewController.cellReuseId)
-        tv.register(CustomCell.self, forCellReuseIdentifier: SecondViewController.cellReuseId)
+        tv.register(CustomCell.self, forCellReuseIdentifier: cellReuseId)
         return tv
     }()
 
@@ -78,7 +77,7 @@ class SecondViewController: UIViewController,
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //let cell = tableView.dequeueReusableCell(withIdentifier: SecondViewController.cellReuseId, for: indexPath) as! CustomCell
-        let cell = CustomCell(style: .subtitle, reuseIdentifier: SecondViewController.cellReuseId)
+        let cell = CustomCell(style: .subtitle, reuseIdentifier: cellReuseId)
 
         // Configure the cell...
         cell.accessoryType = .disclosureIndicator
@@ -102,6 +101,4 @@ class SecondViewController: UIViewController,
         print ("Selected: \(positionAtIndex.description)")
         coordinator?.showListOfCards(position: positionAtIndex)
     }
-
-
 }
