@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4D01FB0C244B73200031BEE9 /* GameModelEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01FB0B244B73200031BEE9 /* GameModelEntity.swift */; };
-		4D111E05233672CE00472BDC /* Art.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D111DFF233672CE00472BDC /* Art.xcassets */; };
 		4D111E06233672CE00472BDC /* Birdy_Note5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D111E01233672CE00472BDC /* Birdy_Note5.wav */; };
 		4D111E07233672CE00472BDC /* cardSlide1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D111E02233672CE00472BDC /* cardSlide1.wav */; };
 		4D111E08233672CE00472BDC /* Birdy_Notification1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D111E03233672CE00472BDC /* Birdy_Notification1.wav */; };
@@ -78,7 +77,6 @@
 		4DACC0BC2441FF0D00466ABE /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4DACC0B62441FECA00466ABE /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4DACC0BD2441FF0D00466ABE /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4DACC0B52441FECA00466ABE /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB448C6219F380900F8507F /* EY+Protocols.swift */; };
-		4DE127E0233E826C00F84C57 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DE127DF233E826C00F84C57 /* Icons.xcassets */; };
 		4DE5494D2469EA0800ADC11C /* TaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE5494C2469EA0800ADC11C /* TaxTests.swift */; };
 		4DE5494F246AEAC200ADC11C /* WalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE5494E246AEAC200ADC11C /* WalletTests.swift */; };
 		4DE54953246B1EF800ADC11C /* PlayerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE54952246B1EF800ADC11C /* PlayerEntity.swift */; };
@@ -146,7 +144,6 @@
 
 /* Begin PBXFileReference section */
 		4D01FB0B244B73200031BEE9 /* GameModelEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModelEntity.swift; sourceTree = "<group>"; };
-		4D111DFF233672CE00472BDC /* Art.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Art.xcassets; sourceTree = "<group>"; };
 		4D111E01233672CE00472BDC /* Birdy_Note5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Note5.wav; sourceTree = "<group>"; };
 		4D111E02233672CE00472BDC /* cardSlide1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardSlide1.wav; sourceTree = "<group>"; };
 		4D111E03233672CE00472BDC /* Birdy_Notification1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Notification1.wav; sourceTree = "<group>"; };
@@ -207,7 +204,6 @@
 		4DACC0B62441FECA00466ABE /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		4DB448C6219F380900F8507F /* EY+Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Protocols.swift"; sourceTree = "<group>"; };
 		4DC3D84423342D8F0066FE9F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4DE127DF233E826C00F84C57 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		4DE5494C2469EA0800ADC11C /* TaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTests.swift; sourceTree = "<group>"; };
 		4DE5494E246AEAC200ADC11C /* WalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTests.swift; sourceTree = "<group>"; };
 		4DE54952246B1EF800ADC11C /* PlayerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEntity.swift; sourceTree = "<group>"; };
@@ -262,19 +258,9 @@
 		4D111DFD233672CE00472BDC /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				4D111DFE233672CE00472BDC /* Music */,
-				4D111DFF233672CE00472BDC /* Art.xcassets */,
-				4DE127DF233E826C00F84C57 /* Icons.xcassets */,
 				4D111E00233672CE00472BDC /* Sounds */,
 			);
 			path = Assets;
-			sourceTree = "<group>";
-		};
-		4D111DFE233672CE00472BDC /* Music */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Music;
 			sourceTree = "<group>";
 		};
 		4D111E00233672CE00472BDC /* Sounds */ = {
@@ -316,9 +302,27 @@
 			path = Realm;
 			sourceTree = "<group>";
 		};
+		4D75AA8524751378008C2672 /* MainMenu */ = {
+			isa = PBXGroup;
+			children = (
+				4D3C17DA2334CF7B0036808F /* ViewController.swift */,
+			);
+			path = MainMenu;
+			sourceTree = "<group>";
+		};
+		4D75AA8624751383008C2672 /* BoardPositions */ = {
+			isa = PBXGroup;
+			children = (
+				4DF38E1A233BF6D7003771C3 /* SecondViewController.swift */,
+			);
+			path = BoardPositions;
+			sourceTree = "<group>";
+		};
 		4DA28E412474B98A00BF0288 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4D75AA8524751378008C2672 /* MainMenu */,
+				4D75AA8624751383008C2672 /* BoardPositions */,
 				4DA28E422474B99A00BF0288 /* ListCards */,
 			);
 			path = Modules;
@@ -380,6 +384,7 @@
 		4DA28E682474C99700BF0288 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4D9EBCFD2474128A00648376 /* OldListCardsViewController.swift */,
 				4DA28E692474C9BD00BF0288 /* ListCardsViewController1.swift */,
 			);
 			path = View;
@@ -432,9 +437,6 @@
 				4DA3487A20812A8B006DA164 /* AppDelegate.swift */,
 				4D3C17DC2334CFCB0036808F /* MainCoordinator.swift */,
 				4DA3487B20812A8B006DA164 /* Info.plist */,
-				4D3C17DA2334CF7B0036808F /* ViewController.swift */,
-				4DF38E1A233BF6D7003771C3 /* SecondViewController.swift */,
-				4D9EBCFD2474128A00648376 /* OldListCardsViewController.swift */,
 				4DFA7A47233D55DE004099B7 /* XIBs */,
 			);
 			path = EngineYard_iOS;
@@ -629,7 +631,6 @@
 			files = (
 				4D111E07233672CE00472BDC /* cardSlide1.wav in Resources */,
 				4DFA7A4B233D56D5004099B7 /* PlayerProfileMiniView.xib in Resources */,
-				4DE127E0233E826C00F84C57 /* Icons.xcassets in Resources */,
 				4DF1509221679E0300D39D65 /* Main.storyboard in Resources */,
 				4DFA7A4F233D5840004099B7 /* PlayerTaxReportView.xib in Resources */,
 				4DAA5BC12471A1B000165829 /* cards-list.json in Resources */,
@@ -642,7 +643,6 @@
 				4D111E06233672CE00472BDC /* Birdy_Note5.wav in Resources */,
 				4DFA7A53233D58F7004099B7 /* SingleCardView.xib in Resources */,
 				4DA3487E20812A8B006DA164 /* LaunchScreen.storyboard in Resources */,
-				4D111E05233672CE00472BDC /* Art.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
