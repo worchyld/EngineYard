@@ -124,7 +124,7 @@ extension WinnerViewController: UITableViewDelegate, UITableViewDataSource {
         let trophyImageView = UIImageView(image: trophyImage)
         trophyImageView.frame = CGRect(x: 280, y: 20, width: 40, height: 40)
         trophyImageView.sizeToFit()
-        trophyImageView.isHidden = true
+        trophyImageView.layer.opacity = 0.0
         trophyImageView.contentMode = .scaleAspectFit
 
 
@@ -133,8 +133,9 @@ extension WinnerViewController: UITableViewDelegate, UITableViewDataSource {
                            animations: {
                             let flatColor = UIColor.flat(color: .AquaIsland)
                             cell.backgroundColor = flatColor
+                            trophyImageView.layer.opacity = 1.0
             }, completion: { _ in
-                trophyImageView.isHidden = false
+
             })
         }
 

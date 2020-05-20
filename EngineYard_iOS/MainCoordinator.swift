@@ -35,6 +35,12 @@ class MainCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: true)
     }
 
+    func showWinnerScreen() {
+        let vc = WinnerViewController.instantiate(ListOfStoryboards.winner)
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
+    }
+
     func showListOfCards(position: BoardPosition) {
         /*
         let vc = ListCardsViewController.instantiate()
