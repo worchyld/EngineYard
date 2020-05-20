@@ -37,8 +37,8 @@ class MainCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: true)
          */
 
-        // Fire ListCardsRouter
-        let vc = ListCardsRouter.start()  //EmployeeRouter.start()
+        // Run: ListCardsRouter
+        let vc = ListCardsRouter.start()
         navigationController.pushViewController(vc, animated: true)
         
     }
