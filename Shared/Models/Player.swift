@@ -9,7 +9,13 @@
 import Foundation
 import GameplayKit
 
-class Player : NSObject, GKGameModelPlayer {
+protocol PlayerProtocol {
+    var playerId: Int { get set }
+    var state: Player.State { get set }
+    var hand: Hand { get }
+}
+
+class Player : NSObject, GKGameModelPlayer, PlayerProtocol {
     enum State: Int {
         case none
         case waiting
