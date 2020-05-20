@@ -30,9 +30,16 @@ class MainCoordinator: Coordinator {
     }
 
     func showListOfCards(position: BoardPosition) {
+        /*
         let vc = ListCardsViewController.instantiate()
         vc.coordinator = self
         vc.position = position
         navigationController.pushViewController(vc, animated: true)
+         */
+
+        // Fire ListCardsRouter
+        let vc = ListCardsRouter.start()  //EmployeeRouter.start()
+        navigationController.pushViewController(vc, animated: true)
+        
     }
 }

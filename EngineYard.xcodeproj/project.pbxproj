@@ -32,6 +32,12 @@
 		4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D925D74219F4E2D00441733 /* EY+Time.swift */; };
 		4D9EBCF82473F5E700648376 /* StackedCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D9EBCF72473F5E700648376 /* StackedCardView.xib */; };
 		4D9EBCFE2474128A00648376 /* ListCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9EBCFD2474128A00648376 /* ListCardsViewController.swift */; };
+		4DA28E5A2474C3EB00BF0288 /* ListCardsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA28E592474C3EB00BF0288 /* ListCardsInteractor.swift */; };
+		4DA28E5C2474C5CF00BF0288 /* ListCardsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA28E5B2474C5CF00BF0288 /* ListCardsProtocols.swift */; };
+		4DA28E5E2474C73600BF0288 /* ListCardsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA28E5D2474C73600BF0288 /* ListCardsResponseModel.swift */; };
+		4DA28E602474C75700BF0288 /* ListCardsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA28E5F2474C75700BF0288 /* ListCardsRouter.swift */; };
+		4DA28E672474C7F900BF0288 /* ListCardsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA28E662474C7F900BF0288 /* ListCardsPresenter.swift */; };
+		4DA28E6A2474C9BD00BF0288 /* ListCardsViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA28E692474C9BD00BF0288 /* ListCardsViewController1.swift */; };
 		4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3486820812972006DA164 /* EngineYardTests.swift */; };
 		4DA3487D20812A8B006DA164 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DA3487520812A8B006DA164 /* Assets.xcassets */; };
 		4DA3487E20812A8B006DA164 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA3487620812A8B006DA164 /* LaunchScreen.storyboard */; };
@@ -164,6 +170,12 @@
 		4D925D74219F4E2D00441733 /* EY+Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Time.swift"; sourceTree = "<group>"; };
 		4D9EBCF72473F5E700648376 /* StackedCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StackedCardView.xib; sourceTree = "<group>"; };
 		4D9EBCFD2474128A00648376 /* ListCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCardsViewController.swift; sourceTree = "<group>"; };
+		4DA28E592474C3EB00BF0288 /* ListCardsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCardsInteractor.swift; sourceTree = "<group>"; };
+		4DA28E5B2474C5CF00BF0288 /* ListCardsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCardsProtocols.swift; sourceTree = "<group>"; };
+		4DA28E5D2474C73600BF0288 /* ListCardsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCardsResponseModel.swift; sourceTree = "<group>"; };
+		4DA28E5F2474C75700BF0288 /* ListCardsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCardsRouter.swift; sourceTree = "<group>"; };
+		4DA28E662474C7F900BF0288 /* ListCardsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCardsPresenter.swift; sourceTree = "<group>"; };
+		4DA28E692474C9BD00BF0288 /* ListCardsViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCardsViewController1.swift; sourceTree = "<group>"; };
 		4DA3485020812970006DA164 /* EngineYard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EngineYard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA3486420812972006DA164 /* EngineYardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EngineYardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA3486820812972006DA164 /* EngineYardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineYardTests.swift; sourceTree = "<group>"; };
@@ -315,8 +327,62 @@
 		4DA28E422474B99A00BF0288 /* ListCards */ = {
 			isa = PBXGroup;
 			children = (
+				4DA28E632474C77100BF0288 /* Entity */,
+				4DA28E622474C76A00BF0288 /* Interactor */,
+				4DA28E652474C7ED00BF0288 /* Presenter */,
+				4DA28E642474C7A000BF0288 /* Protocols */,
+				4DA28E612474C76400BF0288 /* Router */,
+				4DA28E682474C99700BF0288 /* View */,
 			);
 			path = ListCards;
+			sourceTree = "<group>";
+		};
+		4DA28E612474C76400BF0288 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				4DA28E5F2474C75700BF0288 /* ListCardsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		4DA28E622474C76A00BF0288 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				4DA28E592474C3EB00BF0288 /* ListCardsInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		4DA28E632474C77100BF0288 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				4DA28E5D2474C73600BF0288 /* ListCardsResponseModel.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		4DA28E642474C7A000BF0288 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4DA28E5B2474C5CF00BF0288 /* ListCardsProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		4DA28E652474C7ED00BF0288 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				4DA28E662474C7F900BF0288 /* ListCardsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4DA28E682474C99700BF0288 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4DA28E692474C9BD00BF0288 /* ListCardsViewController1.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		4DA3484720812970006DA164 = {
@@ -618,6 +684,7 @@
 			files = (
 				4DF38E1B233BF6D7003771C3 /* SecondViewController.swift in Sources */,
 				4DFF753723360ED300C7CC24 /* Wallet.swift in Sources */,
+				4DA28E672474C7F900BF0288 /* ListCardsPresenter.swift in Sources */,
 				4DE54955246B204000ADC11C /* MachineStates.swift in Sources */,
 				4DAA5BCB2471D97600165829 /* Constants+Expected.swift in Sources */,
 				4D2A4B8C2195DEB300315524 /* EY+ImageView.swift in Sources */,
@@ -628,6 +695,8 @@
 				4DA3488020812A8B006DA164 /* AppDelegate.swift in Sources */,
 				4DAA5BB12470309A00165829 /* Player+Helpers.swift in Sources */,
 				4DA5236C208158C8000FFAAB /* EY+Array.swift in Sources */,
+				4DA28E6A2474C9BD00BF0288 /* ListCardsViewController1.swift in Sources */,
+				4DA28E5E2474C73600BF0288 /* ListCardsResponseModel.swift in Sources */,
 				4DAA5BC92471D5AA00165829 /* Family.swift in Sources */,
 				4DA5236720815885000FFAAB /* Die.swift in Sources */,
 				4D247B37219FFE340004478D /* ObjectCache.swift in Sources */,
@@ -640,6 +709,8 @@
 				4DFF753323360BA700C7CC24 /* Sounds.swift in Sources */,
 				4D9EBCFE2474128A00648376 /* ListCardsViewController.swift in Sources */,
 				4D3C17DB2334CF7B0036808F /* ViewController.swift in Sources */,
+				4DA28E5A2474C3EB00BF0288 /* ListCardsInteractor.swift in Sources */,
+				4DA28E602474C75700BF0288 /* ListCardsRouter.swift in Sources */,
 				4DAA5BB3247155B600165829 /* Board.swift in Sources */,
 				4DFF753123360BA700C7CC24 /* Devices.swift in Sources */,
 				4DFF75282336067400C7CC24 /* EY+ViewController.swift in Sources */,
@@ -657,6 +728,7 @@
 				4D6C276B2469CDD0005F4AEF /* EY+Int.swift in Sources */,
 				4D8AB2A1233E21C4009158CB /* EY+Notification.swift in Sources */,
 				4D5CA5162337F01300EF9F96 /* Constants.swift in Sources */,
+				4DA28E5C2474C5CF00BF0288 /* ListCardsProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

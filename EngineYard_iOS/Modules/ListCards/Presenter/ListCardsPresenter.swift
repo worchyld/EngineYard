@@ -8,19 +8,26 @@
 
 import Foundation
 
-class ListCardsPresenter {
+//MARK: - ListCards Presenter
+class ListCardsPresenter: ListCardsViewToPresenterProtocol {
+    var view: ListCardsPresenterToViewProtocol?
+    var interactor: ListCardsPresentorToInteractorProtocol?
+    var router: ListCardsPresenterToRouterProtocol?
 
-    // MARK: Properties
-
-    weak var view: ListCardsView?
-    var router: ListCardsWireframe?
-    var interactor: ListCardsUseCase?
+    func showCardsList() {
+        interactor?.fetchCardList()
+    }
 }
 
-extension ListCardsPresenter: ListCardsPresentation {
-    // TODO: implement presentation methods
-}
+//MARK: - Subscribing - ListCards Interactor
+extension ListCardsPresenter: ListCardsInteractorToPresenterProtocol {
+    func employeeListFeed(cardModel: CardResponseModel) {
+        view?.showCards(cardModel: cardModel)
+    }
 
-extension ListCardsPresenter: ListCardsInteractorOutput {
-    // TODO: implement interactor output methods
+    func employeeListFetchedFailed() {
+        view?.showError()
+    }
+
+
 }

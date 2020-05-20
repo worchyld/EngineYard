@@ -9,34 +9,29 @@
 import Foundation
 import UIKit
 
-class ListCardsRouter {
+class ListCardsRouter: ListCardsPresenterToRouterProtocol {
+    weak var coordinator: MainCoordinator?
 
-    // MARK: Properties
+    static func start() -> UIViewController {
+        print ("IN router")
 
-    weak var view: UIViewController?
+        let view = getStoryboard.instantiateViewController(withIdentifier: "ListCardsViewController") as? ListCardsViewController
 
-    // MARK: Static methods
 
-    static func setupModule() -> ListCardsViewController {
-        let viewController = UIStoryboard.loadViewController() as ListCardsViewController
-        let presenter = ListCardsPresenter()
-        let router = ListCardsRouter()
-        let interactor = ListCardsInteractor()
+        let presenter: ListCardsViewToPresenterProtocol & ListCardsInteractorToPresenterProtocol = ListCardsPresenter()
+        let interactor: ListCardsPresentorToInteractorProtocol = ListCardsInteractor()
+        let router: ListCardsPresenterToRouterProtocol = ListCardsRouter()
 
-        viewController.presenter =  presenter
-
-        presenter.view = viewController
+        view?.presenter = presenter
+        presenter.view = view
         presenter.router = router
         presenter.interactor = interactor
+        interactor.presenter = presenter
 
-        router.view = viewController
-
-        interactor.output = presenter
-
-        return viewController
+        return view!
     }
-}
 
-extension ListCardsRouter: ListCardsWireframe {
-    // TODO: Implement wireframe methods
+    static var getStoryboard: UIStoryboard {
+        return UIStoryboard(name: "Main", bundle: Bundle.main)
+    }
 }

@@ -10,7 +10,7 @@ import UIKit
 
 fileprivate let cellReuseId: String = "ListCards.CellReuseID"
 
-class ListCardsViewController: UIViewController,
+class OldListCardsViewController: UIViewController,
     Storyboarded, UITableViewDelegate, UITableViewDataSource {
 
     weak var coordinator: MainCoordinator?

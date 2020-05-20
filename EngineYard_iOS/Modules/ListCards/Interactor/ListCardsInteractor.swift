@@ -8,13 +8,12 @@
 
 import Foundation
 
-class ListCardsInteractor {
 
-    // MARK: Properties
+// ListCards Interactor
+class ListCardsInteractor: ListCardsPresentorToInteractorProtocol{
+    var presenter: ListCardsInteractorToPresenterProtocol?
 
-    weak var output: ListCardsInteractorOutput?
-}
-
-extension ListCardsInteractor: ListCardsUseCase {
-    // TODO: Implement use case methods
+    func fetchCardList() {
+        print ("Fetch card list")
+    }
 }
