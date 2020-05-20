@@ -77,7 +77,8 @@ class SecondViewController: UIViewController,
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //let cell = tableView.dequeueReusableCell(withIdentifier: SecondViewController.cellReuseId, for: indexPath) as! CustomCell
-        let cell = CustomCell(style: .subtitle, reuseIdentifier: cellReuseId)
+        //let cell = CustomCell(style: .subtitle, reuseIdentifier: cellReuseId)
+        let cell: CustomCell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath) as! CustomCell
 
         // Configure the cell...
         cell.accessoryType = .disclosureIndicator
