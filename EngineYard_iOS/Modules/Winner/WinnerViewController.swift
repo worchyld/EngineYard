@@ -133,9 +133,11 @@ extension WinnerViewController: UITableViewDelegate, UITableViewDataSource {
                            animations: {
                             let flatColor = UIColor.flat(color: .AquaIsland)
                             cell.backgroundColor = flatColor
-                            trophyImageView.layer.opacity = 1.0
-            }, completion: { _ in
 
+            }, completion: { _ in
+                UIView.animate(withDuration: 1.0, delay: 0.25, options: .curveEaseIn, animations: {
+                    trophyImageView.layer.opacity = 1.0
+                })
             })
         }
 
