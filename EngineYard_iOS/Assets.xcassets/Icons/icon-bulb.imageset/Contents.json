@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "icon-bulb-idea.png",
+      "filename" : "icon-bulb@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "icon-bulb@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "icon-bulb@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

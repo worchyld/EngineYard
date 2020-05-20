@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "trophy.png",
+      "filename" : "die-5.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "trophy@2x.png",
+      "filename" : "die-5@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "trophy@3x.png",
+      "filename" : "die-5@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
