@@ -8,10 +8,10 @@
 
 import UIKit
 
-fileprivate let cellReuseId: String = "ListCards.CellReuseID"
-
 class OldListCardsViewController: UIViewController,
     Storyboarded, UITableViewDelegate, UITableViewDataSource {
+
+    private lazy var cellReuseId = self.theClassName + ".cell"
 
     weak var coordinator: MainCoordinator?
     weak var position: BoardPosition? {
