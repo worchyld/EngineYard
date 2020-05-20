@@ -1,5 +1,5 @@
 //
-//  ListCardsViewController.swift
+//  OldListCardsViewController.swift
 //  EngineYard
 //
 //  Created by Amarjit on 19/05/2020.
@@ -36,6 +36,7 @@ class OldListCardsViewController: UIViewController,
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Cards"
+        self.view.backgroundColor = UIColor.blue
         self.view.addSubview(self.tableView)
     }
 
