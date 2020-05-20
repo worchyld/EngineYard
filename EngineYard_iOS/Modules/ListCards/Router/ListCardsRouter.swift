@@ -15,7 +15,7 @@ class ListCardsRouter: ListCardsPresenterToRouterProtocol {
     static func start() -> UIViewController {
         print ("IN: ListCardsRouter")
 
-        let view = ListCardsViewController.instantiate()
+        let view = ListCardsViewController.instantiate(ListOfStoryboards.main)
         let presenter: ListCardsViewToPresenterProtocol & ListCardsInteractorToPresenterProtocol = ListCardsPresenter()
         let interactor: ListCardsPresentorToInteractorProtocol = ListCardsInteractor()
         let router: ListCardsPresenterToRouterProtocol = ListCardsRouter()

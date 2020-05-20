@@ -18,13 +18,13 @@ class MainCoordinator: Coordinator {
     }
 
     func start() {
-        let vc = MainMenuViewController.instantiate()
+        let vc = MainMenuViewController.instantiate(ListOfStoryboards.main)
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
     }
 
     func showNext() {
-        let vc = SecondViewController.instantiate()
+        let vc = SecondViewController.instantiate(ListOfStoryboards.main)
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }

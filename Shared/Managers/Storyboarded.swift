@@ -9,14 +9,26 @@
 import Foundation
 import UIKit
 
+enum ListOfStoryboards: String {
+    case main = "Main"
+}
+
 protocol Storyboarded {
-    static func instantiate() -> Self
+    static func instantiate(_ storyboardId: ListOfStoryboards) -> Self
 }
 
 extension Storyboarded where Self: UIViewController {
-    static func instantiate() -> Self {
+    static func instantiate(_ storyboardId: ListOfStoryboards) -> Self {
         let id = String(describing: self)
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+
+        var storyboard = UIStoryboard()
+
+        switch storyboardId {
+        case .main:
+            storyboard = UIStoryboard(name: ListOfStoryboards.main.rawValue,
+                                      bundle: Bundle.main)
+        }
+
         return storyboard.instantiateViewController(withIdentifier: id) as! Self
     }
 }
