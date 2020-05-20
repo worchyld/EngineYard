@@ -23,6 +23,12 @@ class MainCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: false)
     }
 
+    func showPlayerSelectScreen() {
+        let vc = PlayerSelectScreenViewController.instantiate(ListOfStoryboards.main)
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
+    }
+
     func showNext() {
         let vc = SecondViewController.instantiate(ListOfStoryboards.main)
         vc.coordinator = self

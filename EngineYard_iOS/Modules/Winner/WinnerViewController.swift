@@ -83,7 +83,7 @@ extension WinnerViewController: UITableViewDelegate, UITableViewDataSource {
 
     func configureCell(cell: UITableViewCell, at indexPath: IndexPath) -> UITableViewCell {
 
-        
+
 
         return cell
     }

@@ -30,6 +30,7 @@
 		4D75AA8A24751A00008C2672 /* Winner.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D75AA8924751A00008C2672 /* Winner.storyboard */; };
 		4D75AA8D24751A77008C2672 /* WinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D75AA8C24751A77008C2672 /* WinnerViewController.swift */; };
 		4D75AA8F247520FE008C2672 /* EY+NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D75AA8E247520FE008C2672 /* EY+NSObject.swift */; };
+		4D75AA9124754195008C2672 /* PlayerSelectScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D75AA9024754195008C2672 /* PlayerSelectScreenViewController.swift */; };
 		4D8AB2A1233E21C4009158CB /* EY+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8AB2A0233E21C4009158CB /* EY+Notification.swift */; };
 		4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D925D74219F4E2D00441733 /* EY+Time.swift */; };
 		4D9EBCF82473F5E700648376 /* StackedCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D9EBCF72473F5E700648376 /* StackedCardView.xib */; };
@@ -169,6 +170,7 @@
 		4D75AA8924751A00008C2672 /* Winner.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Winner.storyboard; sourceTree = "<group>"; };
 		4D75AA8C24751A77008C2672 /* WinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerViewController.swift; sourceTree = "<group>"; };
 		4D75AA8E247520FE008C2672 /* EY+NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+NSObject.swift"; sourceTree = "<group>"; };
+		4D75AA9024754195008C2672 /* PlayerSelectScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSelectScreenViewController.swift; sourceTree = "<group>"; };
 		4D8AB2A0233E21C4009158CB /* EY+Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Notification.swift"; sourceTree = "<group>"; };
 		4D925D74219F4E2D00441733 /* EY+Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Time.swift"; sourceTree = "<group>"; };
 		4D9EBCF72473F5E700648376 /* StackedCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StackedCardView.xib; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				4D3C17DA2334CF7B0036808F /* MainMenuViewController.swift */,
+				4D75AA9024754195008C2672 /* PlayerSelectScreenViewController.swift */,
 			);
 			path = MainMenu;
 			sourceTree = "<group>";
@@ -707,6 +710,7 @@
 				4DAA5BCB2471D97600165829 /* Constants+Expected.swift in Sources */,
 				4D2A4B8C2195DEB300315524 /* EY+ImageView.swift in Sources */,
 				4DAA5BB924715E1D00165829 /* BoardPosition.swift in Sources */,
+				4D75AA9124754195008C2672 /* PlayerSelectScreenViewController.swift in Sources */,
 				4D01FB0C244B73200031BEE9 /* GameModelEntity.swift in Sources */,
 				4DF7B4A1244D7BC100814B64 /* RealmWriteAsync.swift in Sources */,
 				4D3C17D72334CE730036808F /* Coordinator.swift in Sources */,

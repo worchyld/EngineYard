@@ -14,25 +14,28 @@ class MainMenuViewController: UIViewController, Storyboarded {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //setupData()
     }
 
     
     @IBAction func nextBtnPressed(_ sender: Any) {
         #if DEBUG
-            self.goToNextScreen()
+            self.showPlayerSelectScreen()
         #else
         self.showSimpleHUD()
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1000)) {
-            self.goToNextScreen()
+            self.showPlayerSelectScreen()
         }
         #endif
     }
 
-    func goToNextScreen() {
-        coordinator?.showNext()
+    func showPlayerSelectScreen() {
+        coordinator?.showPlayerSelectScreen()
     }
+}
 
+
+// SimpleHUD
+extension MainMenuViewController {
     func showSimpleHUD() {
         let hud = JGProgressHUD(style: .light)
         hud.vibrancyEnabled = true
