@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainMenuViewController.swift
 //  EngineYard
 //
 //  Created by Amarjit on 20/09/2019.
@@ -9,7 +9,7 @@
 import UIKit
 import JGProgressHUD
 
-class ViewController: UIViewController, Storyboarded {
+class MainMenuViewController: UIViewController, Storyboarded {
     weak var coordinator: MainCoordinator?
 
     override func viewDidLoad() {
