@@ -37,3 +37,21 @@ public struct Family {
         static let allRawValues = Family.Generation.first.rawValue...Family.Generation.fifth.rawValue
     }
 }
+
+extension Family.Color {
+    var flatColor: FlatColors {
+        switch self {
+            case .green:
+            return FlatColors.Emerald
+
+            case .blue:
+            return FlatColors.PeterRiver
+
+            case .red:
+            return FlatColors.Alizarin
+
+            case .yellow:
+            return FlatColors.SunFlower
+        }
+    }
+}

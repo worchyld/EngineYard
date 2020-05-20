@@ -31,6 +31,7 @@
 		4D75AA8F247520FE008C2672 /* EY+NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D75AA8E247520FE008C2672 /* EY+NSObject.swift */; };
 		4D75AA9124754195008C2672 /* PlayerSelectScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D75AA9024754195008C2672 /* PlayerSelectScreenViewController.swift */; };
 		4D75AA9224754E2B008C2672 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3C17D82334CEBD0036808F /* Storyboarded.swift */; };
+		4D75AA9424756028008C2672 /* FamilyFlatColorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D75AA9324756028008C2672 /* FamilyFlatColorTest.swift */; };
 		4D8AB2A1233E21C4009158CB /* EY+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8AB2A0233E21C4009158CB /* EY+Notification.swift */; };
 		4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D925D74219F4E2D00441733 /* EY+Time.swift */; };
 		4D9EBCF82473F5E700648376 /* StackedCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D9EBCF72473F5E700648376 /* StackedCardView.xib */; };
@@ -171,6 +172,7 @@
 		4D75AA8C24751A77008C2672 /* WinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerViewController.swift; sourceTree = "<group>"; };
 		4D75AA8E247520FE008C2672 /* EY+NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+NSObject.swift"; sourceTree = "<group>"; };
 		4D75AA9024754195008C2672 /* PlayerSelectScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSelectScreenViewController.swift; sourceTree = "<group>"; };
+		4D75AA9324756028008C2672 /* FamilyFlatColorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyFlatColorTest.swift; sourceTree = "<group>"; };
 		4D8AB2A0233E21C4009158CB /* EY+Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Notification.swift"; sourceTree = "<group>"; };
 		4D925D74219F4E2D00441733 /* EY+Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Time.swift"; sourceTree = "<group>"; };
 		4D9EBCF72473F5E700648376 /* StackedCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StackedCardView.xib; sourceTree = "<group>"; };
@@ -440,6 +442,7 @@
 				4DAA5BBA2471630700165829 /* BoardIntegrityTests.swift */,
 				4DAA5BC62471A5E500165829 /* BoardPositionTests.swift */,
 				4DAA5BC42471A30300165829 /* PlayerHandManagementTests.swift */,
+				4D75AA9324756028008C2672 /* FamilyFlatColorTest.swift */,
 			);
 			path = EngineYardTests;
 			sourceTree = "<group>";
@@ -760,6 +763,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D75AA9424756028008C2672 /* FamilyFlatColorTest.swift in Sources */,
 				4D6C27682469CC2D005F4AEF /* MockPlayerDataTest.swift in Sources */,
 				4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */,
 				4D300D91246EE10E0083AEE1 /* BasicGKGameModelTests.swift in Sources */,
