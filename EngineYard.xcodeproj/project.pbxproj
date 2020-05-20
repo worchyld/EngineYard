@@ -32,6 +32,11 @@
 		4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D925D74219F4E2D00441733 /* EY+Time.swift */; };
 		4D9EBCF82473F5E700648376 /* StackedCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D9EBCF72473F5E700648376 /* StackedCardView.xib */; };
 		4D9EBCFE2474128A00648376 /* ListCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9EBCFD2474128A00648376 /* ListCardsViewController.swift */; };
+		4DA28E3C2474B96C00BF0288 /* Contract in Resources */ = {isa = PBXBuildFile; fileRef = 4DA28E372474B96C00BF0288 /* Contract */; };
+		4DA28E3D2474B96C00BF0288 /* Presenter in Resources */ = {isa = PBXBuildFile; fileRef = 4DA28E382474B96C00BF0288 /* Presenter */; };
+		4DA28E3E2474B96C00BF0288 /* View in Resources */ = {isa = PBXBuildFile; fileRef = 4DA28E392474B96C00BF0288 /* View */; };
+		4DA28E3F2474B96C00BF0288 /* Interactor in Resources */ = {isa = PBXBuildFile; fileRef = 4DA28E3A2474B96C00BF0288 /* Interactor */; };
+		4DA28E402474B96C00BF0288 /* Router in Resources */ = {isa = PBXBuildFile; fileRef = 4DA28E3B2474B96C00BF0288 /* Router */; };
 		4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3486820812972006DA164 /* EngineYardTests.swift */; };
 		4DA3487D20812A8B006DA164 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DA3487520812A8B006DA164 /* Assets.xcassets */; };
 		4DA3487E20812A8B006DA164 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA3487620812A8B006DA164 /* LaunchScreen.storyboard */; };
@@ -164,6 +169,11 @@
 		4D925D74219F4E2D00441733 /* EY+Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Time.swift"; sourceTree = "<group>"; };
 		4D9EBCF72473F5E700648376 /* StackedCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StackedCardView.xib; sourceTree = "<group>"; };
 		4D9EBCFD2474128A00648376 /* ListCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCardsViewController.swift; sourceTree = "<group>"; };
+		4DA28E372474B96C00BF0288 /* Contract */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Contract; sourceTree = "<group>"; };
+		4DA28E382474B96C00BF0288 /* Presenter */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Presenter; sourceTree = "<group>"; };
+		4DA28E392474B96C00BF0288 /* View */ = {isa = PBXFileReference; lastKnownFileType = folder; path = View; sourceTree = "<group>"; };
+		4DA28E3A2474B96C00BF0288 /* Interactor */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Interactor; sourceTree = "<group>"; };
+		4DA28E3B2474B96C00BF0288 /* Router */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Router; sourceTree = "<group>"; };
 		4DA3485020812970006DA164 /* EngineYard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EngineYard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA3486420812972006DA164 /* EngineYardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EngineYardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA3486820812972006DA164 /* EngineYardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineYardTests.swift; sourceTree = "<group>"; };
@@ -304,6 +314,26 @@
 			path = Realm;
 			sourceTree = "<group>";
 		};
+		4DA28E412474B98A00BF0288 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				4DA28E422474B99A00BF0288 /* ListCards */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		4DA28E422474B99A00BF0288 /* ListCards */ = {
+			isa = PBXGroup;
+			children = (
+				4DA28E372474B96C00BF0288 /* Contract */,
+				4DA28E382474B96C00BF0288 /* Presenter */,
+				4DA28E392474B96C00BF0288 /* View */,
+				4DA28E3A2474B96C00BF0288 /* Interactor */,
+				4DA28E3B2474B96C00BF0288 /* Router */,
+			);
+			path = ListCards;
+			sourceTree = "<group>";
+		};
 		4DA3484720812970006DA164 = {
 			isa = PBXGroup;
 			children = (
@@ -344,6 +374,7 @@
 		4DA3487320812A8B006DA164 /* EngineYard_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				4DA28E412474B98A00BF0288 /* Modules */,
 				4DA3487520812A8B006DA164 /* Assets.xcassets */,
 				4DA3487620812A8B006DA164 /* LaunchScreen.storyboard */,
 				4DF1509121679E0300D39D65 /* Main.storyboard */,
@@ -548,8 +579,11 @@
 				4D111E07233672CE00472BDC /* cardSlide1.wav in Resources */,
 				4DFA7A4B233D56D5004099B7 /* PlayerProfileMiniView.xib in Resources */,
 				4DE127E0233E826C00F84C57 /* Icons.xcassets in Resources */,
+				4DA28E3D2474B96C00BF0288 /* Presenter in Resources */,
 				4DF1509221679E0300D39D65 /* Main.storyboard in Resources */,
+				4DA28E3E2474B96C00BF0288 /* View in Resources */,
 				4DFA7A4F233D5840004099B7 /* PlayerTaxReportView.xib in Resources */,
+				4DA28E402474B96C00BF0288 /* Router in Resources */,
 				4DAA5BC12471A1B000165829 /* cards-list.json in Resources */,
 				4DFA7A4D233D579E004099B7 /* PlayerWinnerCellView.xib in Resources */,
 				4DA3487D20812A8B006DA164 /* Assets.xcassets in Resources */,
@@ -560,7 +594,9 @@
 				4D111E06233672CE00472BDC /* Birdy_Note5.wav in Resources */,
 				4DFA7A53233D58F7004099B7 /* SingleCardView.xib in Resources */,
 				4DA3487E20812A8B006DA164 /* LaunchScreen.storyboard in Resources */,
+				4DA28E3F2474B96C00BF0288 /* Interactor in Resources */,
 				4D111E05233672CE00472BDC /* Art.xcassets in Resources */,
+				4DA28E3C2474B96C00BF0288 /* Contract in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
