@@ -15,5 +15,9 @@ class ListCardsInteractor: ListCardsPresentorToInteractorProtocol{
 
     func fetchCardList() {
         print ("Fetch card list")
+
+        let sampleCardResponseModel = CardResponseModel.init(cards: [Card.init(cost: 4, color: .green, generation: .first)])
+
+        self.presenter?.employeeListFeed(cardModel: sampleCardResponseModel)
     }
 }
