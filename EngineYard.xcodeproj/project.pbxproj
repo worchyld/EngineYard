@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4D01FB0C244B73200031BEE9 /* GameModelEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01FB0B244B73200031BEE9 /* GameModelEntity.swift */; };
+		4D08FAFC24767DD300E3296C /* Board+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D08FAFB24767DD300E3296C /* Board+Create.swift */; };
+		4D08FAFE24767E1400E3296C /* Card+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D08FAFD24767E1400E3296C /* Card+Create.swift */; };
 		4D111E06233672CE00472BDC /* Birdy_Note5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D111E01233672CE00472BDC /* Birdy_Note5.wav */; };
 		4D111E07233672CE00472BDC /* cardSlide1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D111E02233672CE00472BDC /* cardSlide1.wav */; };
 		4D111E08233672CE00472BDC /* Birdy_Notification1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D111E03233672CE00472BDC /* Birdy_Notification1.wav */; };
@@ -149,6 +151,8 @@
 
 /* Begin PBXFileReference section */
 		4D01FB0B244B73200031BEE9 /* GameModelEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModelEntity.swift; sourceTree = "<group>"; };
+		4D08FAFB24767DD300E3296C /* Board+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Board+Create.swift"; sourceTree = "<group>"; };
+		4D08FAFD24767E1400E3296C /* Card+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Create.swift"; sourceTree = "<group>"; };
 		4D111E01233672CE00472BDC /* Birdy_Note5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Note5.wav; sourceTree = "<group>"; };
 		4D111E02233672CE00472BDC /* cardSlide1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardSlide1.wav; sourceTree = "<group>"; };
 		4D111E03233672CE00472BDC /* Birdy_Notification1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Notification1.wav; sourceTree = "<group>"; };
@@ -536,6 +540,8 @@
 				4DFF752A2336077400C7CC24 /* Tax.swift */,
 				4DFF753623360ED300C7CC24 /* Wallet.swift */,
 				4DAA5BB2247155B600165829 /* Board.swift */,
+				4D08FAFB24767DD300E3296C /* Board+Create.swift */,
+				4D08FAFD24767E1400E3296C /* Card+Create.swift */,
 				4DAA5BB824715E1D00165829 /* BoardPosition.swift */,
 				4DAA5BC82471D5AA00165829 /* Family.swift */,
 				4DAA5BB6247159A900165829 /* Card.swift */,
@@ -727,6 +733,7 @@
 				4DA28E602474C75700BF0288 /* ListCardsRouter.swift in Sources */,
 				4DAA5BC92471D5AA00165829 /* Family.swift in Sources */,
 				4D75AA8F247520FE008C2672 /* EY+NSObject.swift in Sources */,
+				4D08FAFE24767E1400E3296C /* Card+Create.swift in Sources */,
 				4DA5236720815885000FFAAB /* Die.swift in Sources */,
 				4D247B37219FFE340004478D /* ObjectCache.swift in Sources */,
 				4D3C17DD2334CFCB0036808F /* MainCoordinator.swift in Sources */,
@@ -746,6 +753,7 @@
 				4DA28E5C2474C5CF00BF0288 /* ListCardsProtocols.swift in Sources */,
 				4D111E1A2336B20900472BDC /* Player.swift in Sources */,
 				4D5CA50E2337E82400EF9F96 /* GameModel.swift in Sources */,
+				4D08FAFC24767DD300E3296C /* Board+Create.swift in Sources */,
 				4DE54953246B1EF800ADC11C /* PlayerEntity.swift in Sources */,
 				4DED36742465865600CB7D72 /* RealmHelper.swift in Sources */,
 				4DFF752B2336077400C7CC24 /* Tax.swift in Sources */,
