@@ -65,8 +65,6 @@
 		4DAA5BCB2471D97600165829 /* Constants+Expected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA5BCA2471D97600165829 /* Constants+Expected.swift */; };
 		4DACC0A22441E5C500466ABE /* JGProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC09C2441E5C500466ABE /* JGProgressHUD.framework */; };
 		4DACC0A32441E5C500466ABE /* JGProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC09C2441E5C500466ABE /* JGProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4DACC0A42441E5C500466ABE /* EasyTipView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC09D2441E5C500466ABE /* EasyTipView.framework */; };
-		4DACC0A52441E5C500466ABE /* EasyTipView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC09D2441E5C500466ABE /* EasyTipView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4DACC0A62441E5C500466ABE /* FontAwesome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC09E2441E5C500466ABE /* FontAwesome.framework */; };
 		4DACC0A72441E5C500466ABE /* FontAwesome.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC09E2441E5C500466ABE /* FontAwesome.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4DACC0A82441E5C500466ABE /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC09F2441E5C500466ABE /* Haneke.framework */; };
@@ -77,12 +75,6 @@
 		4DACC0AD2441E5C500466ABE /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC0A12441E5C500466ABE /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4DACC0B22441E80400466ABE /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC0A12441E5C500466ABE /* RealmSwift.framework */; };
 		4DACC0B32441E80400466ABE /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC0A02441E5C500466ABE /* Realm.framework */; };
-		4DACC0B72441FECA00466ABE /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC0B52441FECA00466ABE /* Quick.framework */; };
-		4DACC0B82441FECA00466ABE /* Quick.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC0B52441FECA00466ABE /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4DACC0B92441FECA00466ABE /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC0B62441FECA00466ABE /* Nimble.framework */; };
-		4DACC0BA2441FECA00466ABE /* Nimble.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC0B62441FECA00466ABE /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4DACC0BC2441FF0D00466ABE /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4DACC0B62441FECA00466ABE /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4DACC0BD2441FF0D00466ABE /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4DACC0B52441FECA00466ABE /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB448C6219F380900F8507F /* EY+Protocols.swift */; };
 		4DE5494D2469EA0800ADC11C /* TaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE5494C2469EA0800ADC11C /* TaxTests.swift */; };
 		4DE5494F246AEAC200ADC11C /* WalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE5494E246AEAC200ADC11C /* WalletTests.swift */; };
@@ -127,11 +119,8 @@
 				4DACC0A92441E5C500466ABE /* Haneke.framework in Embed Frameworks */,
 				4DACC0A32441E5C500466ABE /* JGProgressHUD.framework in Embed Frameworks */,
 				4DACC0AD2441E5C500466ABE /* RealmSwift.framework in Embed Frameworks */,
-				4DACC0BA2441FECA00466ABE /* Nimble.framework in Embed Frameworks */,
-				4DACC0A52441E5C500466ABE /* EasyTipView.framework in Embed Frameworks */,
 				4DACC0A72441E5C500466ABE /* FontAwesome.framework in Embed Frameworks */,
 				4DACC0AB2441E5C500466ABE /* Realm.framework in Embed Frameworks */,
-				4DACC0B82441FECA00466ABE /* Quick.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,8 +131,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4DACC0BC2441FF0D00466ABE /* Nimble.framework in CopyFiles */,
-				4DACC0BD2441FF0D00466ABE /* Quick.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -151,6 +138,7 @@
 
 /* Begin PBXFileReference section */
 		4D01FB0B244B73200031BEE9 /* GameModelEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModelEntity.swift; sourceTree = "<group>"; };
+		4D02CC4B247AEBE100536B32 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		4D08FAFB24767DD300E3296C /* Board+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Board+Create.swift"; sourceTree = "<group>"; };
 		4D08FAFD24767E1400E3296C /* Card+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Create.swift"; sourceTree = "<group>"; };
 		4D111E01233672CE00472BDC /* Birdy_Note5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Note5.wav; sourceTree = "<group>"; };
@@ -209,13 +197,10 @@
 		4DAA5BC82471D5AA00165829 /* Family.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Family.swift; sourceTree = "<group>"; };
 		4DAA5BCA2471D97600165829 /* Constants+Expected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+Expected.swift"; sourceTree = "<group>"; };
 		4DACC09C2441E5C500466ABE /* JGProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JGProgressHUD.framework; path = Carthage/Build/iOS/JGProgressHUD.framework; sourceTree = "<group>"; };
-		4DACC09D2441E5C500466ABE /* EasyTipView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EasyTipView.framework; path = Carthage/Build/iOS/EasyTipView.framework; sourceTree = "<group>"; };
 		4DACC09E2441E5C500466ABE /* FontAwesome.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FontAwesome.framework; path = Carthage/Build/iOS/FontAwesome.framework; sourceTree = "<group>"; };
 		4DACC09F2441E5C500466ABE /* Haneke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Haneke.framework; path = Carthage/Build/iOS/Haneke.framework; sourceTree = "<group>"; };
 		4DACC0A02441E5C500466ABE /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		4DACC0A12441E5C500466ABE /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
-		4DACC0B52441FECA00466ABE /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
-		4DACC0B62441FECA00466ABE /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		4DB448C6219F380900F8507F /* EY+Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Protocols.swift"; sourceTree = "<group>"; };
 		4DC3D84423342D8F0066FE9F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DE5494C2469EA0800ADC11C /* TaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTests.swift; sourceTree = "<group>"; };
@@ -249,11 +234,8 @@
 				4DACC0A82441E5C500466ABE /* Haneke.framework in Frameworks */,
 				4DACC0A22441E5C500466ABE /* JGProgressHUD.framework in Frameworks */,
 				4DACC0AC2441E5C500466ABE /* RealmSwift.framework in Frameworks */,
-				4DACC0B92441FECA00466ABE /* Nimble.framework in Frameworks */,
-				4DACC0A42441E5C500466ABE /* EasyTipView.framework in Frameworks */,
 				4DACC0A62441E5C500466ABE /* FontAwesome.framework in Frameworks */,
 				4DACC0AA2441E5C500466ABE /* Realm.framework in Frameworks */,
-				4DACC0B72441FECA00466ABE /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,9 +489,7 @@
 		4DACC09B2441E5C500466ABE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4DACC0B62441FECA00466ABE /* Nimble.framework */,
-				4DACC0B52441FECA00466ABE /* Quick.framework */,
-				4DACC09D2441E5C500466ABE /* EasyTipView.framework */,
+				4D02CC4B247AEBE100536B32 /* XCTest.framework */,
 				4DACC09E2441E5C500466ABE /* FontAwesome.framework */,
 				4DACC09F2441E5C500466ABE /* Haneke.framework */,
 				4DACC09C2441E5C500466ABE /* JGProgressHUD.framework */,
@@ -987,7 +967,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.silentflute.EngineYardTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EngineYard.app/EngineYard";
 			};
 			name = Debug;
@@ -1012,7 +992,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.silentflute.EngineYardTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EngineYard.app/EngineYard";
 			};
 			name = Release;

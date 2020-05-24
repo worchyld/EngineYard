@@ -20,6 +20,20 @@
                ReferencedContainer = "container:EngineYard.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4DA3486320812972006DA164"
+               BuildableName = "EngineYardTests.xctest"
+               BlueprintName = "EngineYardTests"
+               ReferencedContainer = "container:EngineYard.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

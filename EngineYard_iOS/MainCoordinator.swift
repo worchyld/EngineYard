@@ -11,7 +11,7 @@ import UIKit
 
 class MainCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = [Coordinator]()
-    var navigationController: UINavigationController
+    weak var navigationController: UINavigationController?
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -20,25 +20,25 @@ class MainCoordinator: Coordinator {
     func start() {
         let vc = MainMenuViewController.instantiate(ListOfStoryboards.main)
         vc.coordinator = self
-        navigationController.pushViewController(vc, animated: false)
+        navigationController?.pushViewController(vc, animated: false)
     }
 
     func showPlayerSelectScreen() {
         let vc = PlayerSelectScreenViewController.instantiate(ListOfStoryboards.main)
         vc.coordinator = self
-        navigationController.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
 
     func showNext() {
         let vc = SecondViewController.instantiate(ListOfStoryboards.main)
         vc.coordinator = self
-        navigationController.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
 
     func showWinnerScreen() {
         let vc = WinnerViewController.instantiate(ListOfStoryboards.winner)
         vc.coordinator = self
-        navigationController.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
 
     func showListOfCards(position: BoardPosition) {
@@ -51,7 +51,7 @@ class MainCoordinator: Coordinator {
 
         // Run: ListCardsRouter
         let vc = ListCardsRouter.start()
-        navigationController.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
         
     }
 }
