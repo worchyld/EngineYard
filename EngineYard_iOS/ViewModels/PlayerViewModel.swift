@@ -24,14 +24,15 @@ struct PlayerViewModel: Identifiable {
 }
 
 extension PlayerViewModel {
+    // Use generated players for rapid prototyping
     static func create() -> [PlayerViewModel] {
         let players: [PlayerViewModel] = {
             let avatars = [
-                PlayerViewModel(name: "Mao", avatar: "avt_1"),
-                PlayerViewModel(name: "Lisa", avatar: "avt_2"),
-                PlayerViewModel(name: "Ronaldo", avatar: "avt_3"),
-                PlayerViewModel(name: "Che", avatar: "avt_4"),
-                PlayerViewModel(name: "Sarah", avatar: "avt_5"),
+                PlayerViewModel(name: "Mao", cash: 330, avatar: "avt_1"),
+                PlayerViewModel(name: "Lisa", cash: 200, avatar: "avt_2"),
+                PlayerViewModel(name: "Ronaldo", cash: 99, avatar: "avt_3"),
+                PlayerViewModel(name: "Che", cash: 1, avatar: "avt_4"),
+                PlayerViewModel(name: "Sarah", cash: 329, avatar: "avt_5")
             ]
             return avatars
         }()

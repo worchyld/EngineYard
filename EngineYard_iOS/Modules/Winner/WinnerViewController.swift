@@ -12,13 +12,7 @@ struct WinnerViewModel {
     let players: [PlayerViewModel]
 
     init() {
-        let players = [
-            PlayerViewModel.init(name: "Mao", cash: 330, avatar: "avt_1"),
-            PlayerViewModel.init(name: "Lisa", cash: 200, avatar: "avt_2"),
-            PlayerViewModel.init(name: "Ronaldo", cash: 99, avatar: "avt_3"),
-            PlayerViewModel.init(name: "Che", cash: 1, avatar: "avt_4"),
-            PlayerViewModel.init(name: "Sarah", cash: 329, avatar: "avt_5")
-        ]
+        let players = PlayerViewModel.create() // Use generated players for rapid prototyping
 
         let sortedByHighestCash = {
             return players.sorted(by: {
