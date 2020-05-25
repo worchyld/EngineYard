@@ -8,39 +8,26 @@
 
 import UIKit
 
-private struct PlayerAvatarViewModel: PlayerProtocol, Identifiable {
-    let id: UUID = UUID()
-    let name: String
-    let cash: Int
-    let avatar: String
-    var playerId: Int = 0
-    var state: Player.State = .none
-    var hand: Hand = Hand() // empty hand
+struct WinnerViewModel {
+    let players: [PlayerViewModel]
 
-    init(name: String, avatar: String = "avt_1", _ cash: Int = 0) {
-        self.name = name
-        self.cash = cash
-        self.avatar = avatar
-    }
-}
-
-extension PlayerAvatarViewModel {
-    public static func createDummyPlayers() -> [PlayerAvatarViewModel] {
-        let avatars = [
-            PlayerAvatarViewModel(name: "Mao", avatar: "avt_1", 330),
-            PlayerAvatarViewModel(name: "Lisa", avatar: "avt_2", 200),
-            PlayerAvatarViewModel(name: "Ronaldo", avatar: "avt_3", 99),
-            PlayerAvatarViewModel(name: "Che", avatar: "avt_4", 1),
-            PlayerAvatarViewModel(name: "Sarah", avatar: "avt_5", 329)
+    init() {
+        let players = [
+            PlayerViewModel.init(name: "Mao", cash: 330, avatar: "avt_1"),
+            PlayerViewModel.init(name: "Lisa", cash: 200, avatar: "avt_2"),
+            PlayerViewModel.init(name: "Ronaldo", cash: 99, avatar: "avt_3"),
+            PlayerViewModel.init(name: "Che", cash: 1, avatar: "avt_4"),
+            PlayerViewModel.init(name: "Sarah", cash: 329, avatar: "avt_5")
         ]
 
-        // Sort by highest cash
-        let sortedByHighestCash = avatars.sorted(by: {
-                       (a: PlayerAvatarViewModel, b: PlayerAvatarViewModel) -> Bool in
-                   return (a.cash > b.cash)
-               })
+        let sortedByHighestCash = {
+            return players.sorted(by: {
+                (a: PlayerViewModel, b: PlayerViewModel) -> Bool in
+                    return (a.cash > b.cash)
+            })
+        }()
 
-        return sortedByHighestCash
+        self.players = sortedByHighestCash
     }
 }
 
@@ -50,7 +37,7 @@ class WinnerViewController: UIViewController, Storyboarded {
     weak var coordinator: MainCoordinator?
 
     private lazy var cellReuseId = self.theClassName + ".cell"
-    private var avatars = PlayerAvatarViewModel.createDummyPlayers()
+    private let viewModel = WinnerViewModel()
 
     private lazy var tableView: UITableView = {
         let tv = UITableView(frame: self.view.frame, style: .plain)
@@ -81,7 +68,7 @@ extension WinnerViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.avatars.count
+        return self.viewModel.players.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -94,7 +81,7 @@ extension WinnerViewController: UITableViewDelegate, UITableViewDataSource {
     func configureCell(cell: UITableViewCell, at indexPath: IndexPath) -> UITableViewCell {
 
         let index = indexPath.row
-        let player = self.avatars[index]
+        let player = self.viewModel.players[index]
         let image = UIImage(named: player.avatar)
         let imageView = UIImageView(image: image)
         imageView.frame = CGRect(x: 15, y: 15, width: 64, height: 64)

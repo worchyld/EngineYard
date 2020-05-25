@@ -8,29 +8,6 @@
 
 import UIKit
 
-// Lets the player select a player
-// Currently uses a tableview for rapid prototyping
-private struct PlayerViewModel: Identifiable {
-    let id: UUID = UUID()
-    let avatar: String
-    let name: String
-}
-extension PlayerViewModel {
-    static func create() -> [PlayerViewModel] {
-        let players: [PlayerViewModel] = {
-            let avatars = [
-                PlayerViewModel(avatar: "avt_1", name: "Mao"),
-                PlayerViewModel(avatar: "avt_2", name: "Lisa"),
-                PlayerViewModel(avatar: "avt_3", name: "Ronaldo"),
-                PlayerViewModel(avatar: "avt_4", name: "Che"),
-                PlayerViewModel(avatar: "avt_5", name: "Sarah"),
-            ]
-            return avatars
-        }()
-        return players
-    }
-}
-
 class PlayerSelectScreenViewController: UIViewController, Storyboarded, ReusableView {
     weak var coordinator: MainCoordinator?
 
