@@ -1,5 +1,5 @@
 //
-//  ObjectCache.swift
+//  NumberFormatCache.swift
 //  EngineYard
 //
 //  Created by Amarjit on 17/11/2018.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ObjectCache {
+struct NumberFormatCache {
     static let currencyRateFormatter: NumberFormatter = {
         var numberFormatter = NumberFormatter()
         numberFormatter.locale = Locale(identifier: "en_US")

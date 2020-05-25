@@ -15,30 +15,37 @@ private struct PlayerViewModel: Identifiable {
     let avatar: String
     let name: String
 }
+extension PlayerViewModel {
+    static func create() -> [PlayerViewModel] {
+        let players: [PlayerViewModel] = {
+            let avatars = [
+                PlayerViewModel(avatar: "avt_1", name: "Mao"),
+                PlayerViewModel(avatar: "avt_2", name: "Lisa"),
+                PlayerViewModel(avatar: "avt_3", name: "Ronaldo"),
+                PlayerViewModel(avatar: "avt_4", name: "Che"),
+                PlayerViewModel(avatar: "avt_5", name: "Sarah"),
+            ]
+            return avatars
+        }()
+        return players
+    }
+}
 
-class PlayerSelectScreenViewController: UIViewController, Storyboarded {
+class PlayerSelectScreenViewController: UIViewController, Storyboarded, ReusableView {
     weak var coordinator: MainCoordinator?
 
-    private lazy var cellReuseId = self.theClassName + ".cell"
+    static var reuseIdentifier = "CellID"
+
     private lazy var tableView: UITableView = {
         let tv = UITableView(frame: self.view.frame, style: .plain)
         tv.delegate = self
         tv.dataSource = self
         tv.allowsSelection = true
-        tv.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseId)
+        tv.register(UITableViewCell.self, forCellReuseIdentifier: PlayerSelectScreenViewController.reuseIdentifier)
         return tv
     }()
 
-    private var players: [PlayerViewModel] = {
-        let avatars = [
-            PlayerViewModel(avatar: "avt_1", name: "Mao"),
-            PlayerViewModel(avatar: "avt_2", name: "Lisa"),
-            PlayerViewModel(avatar: "avt_3", name: "Ronaldo"),
-            PlayerViewModel(avatar: "avt_4", name: "Che"),
-            PlayerViewModel(avatar: "avt_5", name: "Sarah"),
-        ]
-        return avatars
-    }()
+    private let players = PlayerViewModel.create()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +71,7 @@ extension PlayerSelectScreenViewController: UITableViewDelegate, UITableViewData
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath)
+       let cell = tableView.dequeueReusableCell(withIdentifier: PlayerSelectScreenViewController.reuseIdentifier, for: indexPath)
 
        // Configure the cell...
         return configureCell(cell: cell, at: indexPath)
