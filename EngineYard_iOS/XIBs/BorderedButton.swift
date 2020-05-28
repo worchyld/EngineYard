@@ -8,24 +8,30 @@
 
 import UIKit
 
-@IBDesignable
+//@IBDesignable
 class BorderedButton: UIButton {
+    private let highlightedColor: CGColor = UIColor.red.cgColor
+    private let selectedColor: CGColor = UIColor.blue.cgColor
+    private let normalColor: CGColor = UIColor.white.cgColor
+    private let disabledColor: CGColor = UIColor.lightGray.cgColor
 
-    @IBInspectable var borderColor: UIColor = UIColor.white {
-        didSet {
-            self.setNeedsDisplay()
-        }
-    }
-    @IBInspectable var selectedBorderColor : UIColor = UIColor.blue {
-        didSet {
-            self.setNeedsDisplay()
-        }
-    }
-    @IBInspectable var highlightedBorderColor : UIColor = UIColor.systemRed {
-        didSet {
-            self.setNeedsDisplay()
-        }
-    }
+
+//    @IBInspectable var borderColor: UIColor = UIColor.white {
+//        didSet {
+//            self.setNeedsDisplay()
+//        }
+//    }
+//    @IBInspectable var selectedBorderColor : UIColor = UIColor.blue {
+//        didSet {
+//            self.setNeedsDisplay()
+//        }
+//    }
+//    @IBInspectable var highlightedBorderColor : UIColor = UIColor.systemRed {
+//        didSet {
+//            self.setNeedsDisplay()
+//        }
+//    }
+
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,6 +44,7 @@ class BorderedButton: UIButton {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.setupButton()
+        self.setNeedsDisplay()
     }
 
     override func prepareForInterfaceBuilder() {
@@ -50,11 +57,6 @@ class BorderedButton: UIButton {
         self.setTitleColor(.white, for: .normal)
         self.setTitleColor(.lightGray, for: .disabled)
         self.setTitleColor(.red, for: .highlighted)
-
-
-        self.layer.borderWidth = 2.5
-        self.layer.cornerRadius = 8.0
-        self.layer.masksToBounds = true
         self.titleLabel?.textAlignment = .center
     }
 
@@ -62,10 +64,10 @@ class BorderedButton: UIButton {
     override var isSelected: Bool {
         didSet {
             if isSelected {
-                layer.borderColor = selectedBorderColor.cgColor
+                layer.borderColor = selectedColor
             }
             else {
-                layer.borderColor = borderColor.cgColor
+                layer.borderColor = normalColor
             }
         }
     }
@@ -73,11 +75,11 @@ class BorderedButton: UIButton {
     override var isEnabled: Bool {
         didSet {
             if isEnabled {
-                layer.borderColor = UIColor.blue.cgColor //enabledBorderColor.cgColor
+                layer.borderColor = normalColor
                 layer.opacity = 1.0
             }
             else {
-                layer.borderColor = UIColor.lightGray.cgColor
+                layer.borderColor = disabledColor
                 layer.opacity = 0.5
             }
         }
@@ -86,20 +88,29 @@ class BorderedButton: UIButton {
     override var isHighlighted: Bool {
         didSet {
             if isHighlighted {
-                layer.borderColor = highlightedBorderColor.cgColor
+                layer.borderColor = highlightedColor
             }
-//            else {
-//                layer.borderColor = UIColor.white.cgColor
-//            }
+            else {
+                layer.borderColor = normalColor
+            }
         }
     }
 
-    /*
+
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
         // Drawing code
+
+        self.layer.borderWidth = 2.5
+        self.layer.cornerRadius = 8.0
+        self.layer.masksToBounds = true
+
+        if !isEnabled {
+            layer.borderColor = disabledColor
+            layer.opacity = 0.5
+        }
     }
-    */
+
 
 }
