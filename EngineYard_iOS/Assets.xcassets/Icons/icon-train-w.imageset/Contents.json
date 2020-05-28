@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "icon-train.png",
+      "filename" : "icon-train-w.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "icon-train@2x.png",
+      "filename" : "icon-train-w@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "icon-train@3x.png",
+      "filename" : "icon-train-w@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

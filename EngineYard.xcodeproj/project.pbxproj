@@ -258,6 +258,7 @@
 		4D111DFD233672CE00472BDC /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				4D597BA4248055D000185CC5 /* Fonts */,
 				4D111E00233672CE00472BDC /* Sounds */,
 			);
 			path = Assets;
@@ -290,6 +291,13 @@
 				4D6C27642469CA97005F4AEF /* Realm */,
 			);
 			path = Store;
+			sourceTree = "<group>";
+		};
+		4D597BA4248055D000185CC5 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		4D664864247B902500BD1790 /* ViewModels */ = {
