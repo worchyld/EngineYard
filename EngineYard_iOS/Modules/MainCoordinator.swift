@@ -20,6 +20,7 @@ class MainCoordinator: Coordinator {
     func start() {
         let vc = MainMenuViewController.instantiate(ListOfStoryboards.main)
         vc.coordinator = self
+        navigationController?.setNavigationBarHidden(true, animated: false)
         navigationController?.pushViewController(vc, animated: false)
     }
 

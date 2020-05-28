@@ -11,45 +11,21 @@ import UIKit
 @IBDesignable
 class BorderedButton: UIButton {
 
-    /*
-    @IBInspectable var borderWidth: CGFloat = 0.0 {
+    @IBInspectable var borderColor: UIColor = UIColor.white {
         didSet {
-            self.layer.borderWidth = borderWidth
+            self.setNeedsDisplay()
         }
     }
-
-    @IBInspectable var borderColor: UIColor = UIColor.clear {
+    @IBInspectable var selectedBorderColor : UIColor = UIColor.blue {
         didSet {
-            self.layer.borderColor = borderColor.cgColor
+            self.setNeedsDisplay()
         }
     }
-
-    @IBInspectable var cornerRadius: CGFloat = 0.0 {
+    @IBInspectable var highlightedBorderColor : UIColor = UIColor.systemRed {
         didSet {
-            self.layer.cornerRadius = cornerRadius
+            self.setNeedsDisplay()
         }
     }
-    */
-
-    @IBInspectable var shadowColor: UIColor = UIColor.clear {
-        didSet {
-            self.layer.shadowColor = shadowColor.cgColor
-        }
-    }
-
-    @IBInspectable var shadowOffset: CGSize = .zero {
-        didSet {
-            self.layer.shadowOffset = shadowOffset
-        }
-    }
-
-    /*
-    @IBInspectable var shadowOpacity: Float = 0.0 {
-        didSet {
-            self.layer.shadowOpacity = shadowOpacity
-        }
-    }
-     */
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -71,18 +47,52 @@ class BorderedButton: UIButton {
     // MARK: Setup button
 
     private func setupButton() {
-        self.layer.borderColor = UIColor.white.cgColor
+        self.setTitleColor(.white, for: .normal)
+        self.setTitleColor(.lightGray, for: .disabled)
+        self.setTitleColor(.red, for: .highlighted)
+
+
         self.layer.borderWidth = 2.5
         self.layer.cornerRadius = 8.0
         self.layer.masksToBounds = true
-        self.setTitleColor(.white, for: UIControl.State.normal)
-        self.setTitleColor(.systemBlue, for: .selected)
-        self.setTitleColor(.systemBlue, for: .highlighted)
-        self.setTitleColor(.systemBlue, for: .focused)
-        self.setTitleColor(.darkGray, for: .disabled)
-        self.sizeToFit()
+        self.titleLabel?.textAlignment = .center
     }
 
+
+    override var isSelected: Bool {
+        didSet {
+            if isSelected {
+                layer.borderColor = selectedBorderColor.cgColor
+            }
+            else {
+                layer.borderColor = borderColor.cgColor
+            }
+        }
+    }
+
+    override var isEnabled: Bool {
+        didSet {
+            if isEnabled {
+                layer.borderColor = UIColor.blue.cgColor //enabledBorderColor.cgColor
+                layer.opacity = 1.0
+            }
+            else {
+                layer.borderColor = UIColor.lightGray.cgColor
+                layer.opacity = 0.5
+            }
+        }
+    }
+
+    override var isHighlighted: Bool {
+        didSet {
+            if isHighlighted {
+                layer.borderColor = highlightedBorderColor.cgColor
+            }
+//            else {
+//                layer.borderColor = UIColor.white.cgColor
+//            }
+        }
+    }
 
     /*
     // Only override draw() if you perform custom drawing.
