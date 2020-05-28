@@ -76,6 +76,7 @@
 		4DACC0AD2441E5C500466ABE /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC0A12441E5C500466ABE /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4DACC0B22441E80400466ABE /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC0A12441E5C500466ABE /* RealmSwift.framework */; };
 		4DACC0B32441E80400466ABE /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC0A02441E5C500466ABE /* Realm.framework */; };
+		4DAE26EA247FEC1B007C338E /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAE26E9247FEC1B007C338E /* BorderedButton.swift */; };
 		4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB448C6219F380900F8507F /* EY+Protocols.swift */; };
 		4DE5494D2469EA0800ADC11C /* TaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE5494C2469EA0800ADC11C /* TaxTests.swift */; };
 		4DE5494F246AEAC200ADC11C /* WalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE5494E246AEAC200ADC11C /* WalletTests.swift */; };
@@ -203,6 +204,7 @@
 		4DACC09F2441E5C500466ABE /* Haneke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Haneke.framework; path = Carthage/Build/iOS/Haneke.framework; sourceTree = "<group>"; };
 		4DACC0A02441E5C500466ABE /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		4DACC0A12441E5C500466ABE /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		4DAE26E9247FEC1B007C338E /* BorderedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
 		4DB448C6219F380900F8507F /* EY+Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Protocols.swift"; sourceTree = "<group>"; };
 		4DC3D84423342D8F0066FE9F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DE5494C2469EA0800ADC11C /* TaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTests.swift; sourceTree = "<group>"; };
@@ -553,6 +555,7 @@
 		4DFA7A47233D55DE004099B7 /* XIBs */ = {
 			isa = PBXGroup;
 			children = (
+				4DAE26E9247FEC1B007C338E /* BorderedButton.swift */,
 				4DFA7A4A233D56D5004099B7 /* PlayerProfileMiniView.xib */,
 				4DFA7A4C233D579E004099B7 /* PlayerWinnerCellView.xib */,
 				4DFA7A4E233D5840004099B7 /* PlayerTaxReportView.xib */,
@@ -741,6 +744,7 @@
 				4DAA5BB3247155B600165829 /* Board.swift in Sources */,
 				4DFF753123360BA700C7CC24 /* Devices.swift in Sources */,
 				4DFF75282336067400C7CC24 /* EY+ViewController.swift in Sources */,
+				4DAE26EA247FEC1B007C338E /* BorderedButton.swift in Sources */,
 				4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */,
 				4DA28E5C2474C5CF00BF0288 /* ListCardsProtocols.swift in Sources */,
 				4D111E1A2336B20900472BDC /* Player.swift in Sources */,

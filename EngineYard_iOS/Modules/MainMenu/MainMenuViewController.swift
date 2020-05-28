@@ -12,12 +12,20 @@ import JGProgressHUD
 class MainMenuViewController: UIViewController, Storyboarded {
     weak var coordinator: MainCoordinator?
 
+    @IBOutlet weak var imageViewIcon: UIImageView!
+    @IBOutlet weak var labelHeadline: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
     
-    @IBAction func nextBtnPressed(_ sender: Any) {
+    @IBAction func handleButtonPress(_ sender: UIButton) {
+        let tag = sender.tag
+        print ("Tag: \(tag) pressed")
+    }
+
+    func showPlayerSelectScreen() {
+        /*
         #if DEBUG
             self.showPlayerSelectScreen()
         #else
@@ -25,10 +33,7 @@ class MainMenuViewController: UIViewController, Storyboarded {
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1000)) {
             self.showPlayerSelectScreen()
         }
-        #endif
-    }
-
-    func showPlayerSelectScreen() {
+        #endif*/
         coordinator?.showPlayerSelectScreen()
     }
 }
