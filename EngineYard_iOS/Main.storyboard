@@ -16,6 +16,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-train-w" translatesAutoresizingMaskIntoConstraints="NO" id="wq1-BA-WTI" userLabel="TrainIcon">
+                                <rect key="frame" x="39" y="86" width="50" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="9at-cQ-8vf"/>
+                                    <constraint firstAttribute="width" constant="50" id="KNG-OY-6yg"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EngineYard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbR-4I-FqX">
                                 <rect key="frame" x="39" y="143" width="191" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
@@ -41,13 +48,6 @@
                                     <action selector="handleButtonPress:" destination="dtp-UK-UAx" eventType="touchUpInside" id="f1b-gh-F5m"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-train-w" translatesAutoresizingMaskIntoConstraints="NO" id="wq1-BA-WTI">
-                                <rect key="frame" x="39" y="86" width="50" height="42"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="9at-cQ-8vf"/>
-                                    <constraint firstAttribute="width" constant="50" id="KNG-OY-6yg"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mp-9S-ixp" customClass="BorderedButton" customModule="EngineYard" customModuleProvider="target">
                                 <rect key="frame" x="40" y="372" width="295" height="40"/>
                                 <state key="normal" title="Credits"/>
@@ -81,6 +81,9 @@
                     <connections>
                         <outlet property="imageViewIcon" destination="wq1-BA-WTI" id="FY9-j5-VEg"/>
                         <outlet property="labelHeadline" destination="sbR-4I-FqX" id="chB-9P-d3I"/>
+                        <outletCollection property="bordedButtonCollection" destination="HsV-NB-Rsd" collectionClass="NSMutableArray" id="miO-HX-e91"/>
+                        <outletCollection property="bordedButtonCollection" destination="B4G-cQ-BdW" collectionClass="NSMutableArray" id="Uo3-lL-Xla"/>
+                        <outletCollection property="bordedButtonCollection" destination="7mp-9S-ixp" collectionClass="NSMutableArray" id="zlW-84-4ji"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nb8-Vj-QNS" userLabel="First Responder" sceneMemberID="firstResponder"/>

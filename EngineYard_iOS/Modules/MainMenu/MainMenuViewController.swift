@@ -14,6 +14,7 @@ class MainMenuViewController: UIViewController, Storyboarded {
 
     @IBOutlet weak var imageViewIcon: UIImageView!
     @IBOutlet weak var labelHeadline: UILabel!
+    @IBOutlet var bordedButtonCollection: [BorderedButton]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
