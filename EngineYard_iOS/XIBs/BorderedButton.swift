@@ -19,11 +19,6 @@ class BorderedButton: UIButton {
             self.setNeedsDisplay()
         }
     }
-    @IBInspectable var selectedBorderColor : UIColor = UIColor.blue {
-        didSet {
-            self.setNeedsDisplay()
-        }
-    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
