@@ -9,29 +9,27 @@
 import Foundation
 import UIKit
 
-
-public enum ListOfStoryboards: String {
+public enum Storyboard: String {
     case main = "Main"
     case winner = "Winner"
 }
 
 protocol Storyboarded {
-    static func instantiate(_ storyboardId: ListOfStoryboards) -> Self
+    static func instantiate(_ storyboardId: Storyboard) -> Self
 }
 
 extension Storyboarded where Self: UIViewController {
-    static func instantiate(_ storyboardId: ListOfStoryboards) -> Self {
+    static func instantiate(_ storyboardId: Storyboard) -> Self {
         let id = String(describing: self)
 
         var storyboard = UIStoryboard()
 
         switch storyboardId {
         case .main:
-            storyboard = UIStoryboard(name: ListOfStoryboards.main.rawValue, bundle: Bundle.main)
+            storyboard = UIStoryboard(name: Storyboard.main.rawValue, bundle: Bundle.main)
 
         case .winner:
-            print ("use winner storyboard")
-            storyboard = UIStoryboard(name: ListOfStoryboards.winner.rawValue, bundle: Bundle.main)
+            storyboard = UIStoryboard(name: Storyboard.winner.rawValue, bundle: Bundle.main)
         }
 
         return storyboard.instantiateViewController(withIdentifier: id) as! Self

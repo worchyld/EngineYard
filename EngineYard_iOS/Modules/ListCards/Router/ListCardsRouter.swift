@@ -10,12 +10,11 @@ import Foundation
 import UIKit
 
 class ListCardsRouter: ListCardsPresenterToRouterProtocol {
-    weak var coordinator: MainCoordinator? // would like in a protocol
-
+    
     static func start() -> UIViewController {
         print ("IN: ListCardsRouter")
 
-        let view = ListCardsViewController.instantiate(ListOfStoryboards.main)
+        let view = ListCardsViewController.instantiate(Storyboard.main)
         let presenter: ListCardsViewToPresenterProtocol & ListCardsInteractorToPresenterProtocol = ListCardsPresenter()
         let interactor: ListCardsPresentorToInteractorProtocol = ListCardsInteractor()
         let router: ListCardsPresenterToRouterProtocol = ListCardsRouter()

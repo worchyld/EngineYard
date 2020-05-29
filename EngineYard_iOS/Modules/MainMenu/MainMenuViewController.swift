@@ -35,7 +35,6 @@ class MainMenuViewController: UIViewController, Storyboarded {
             self.showPlayerSelectScreen()
         }
         #endif*/
-        coordinator?.showPlayerSelectScreen()
     }
 }
 

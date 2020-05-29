@@ -18,41 +18,10 @@ class MainCoordinator: Coordinator {
     }
 
     func start() {
-        let vc = MainMenuViewController.instantiate(ListOfStoryboards.main)
+        let vc = MainMenuViewController.instantiate(Storyboard.main)
         vc.coordinator = self
         navigationController?.setNavigationBarHidden(true, animated: false)
         navigationController?.pushViewController(vc, animated: false)
     }
 
-    func showPlayerSelectScreen() {
-        let vc = PlayerSelectScreenViewController.instantiate(ListOfStoryboards.main)
-        vc.coordinator = self
-        navigationController?.pushViewController(vc, animated: true)
-    }
-
-    func showNext() {
-        let vc = SecondViewController.instantiate(ListOfStoryboards.main)
-        vc.coordinator = self
-        navigationController?.pushViewController(vc, animated: true)
-    }
-
-    func showWinnerScreen() {
-        let vc = WinnerViewController.instantiate(ListOfStoryboards.winner)
-        vc.coordinator = self
-        navigationController?.pushViewController(vc, animated: true)
-    }
-
-    func showListOfCards(position: BoardPosition) {
-        /*
-        let vc = ListCardsViewController.instantiate()
-        vc.coordinator = self
-        vc.position = position
-        navigationController.pushViewController(vc, animated: true)
-         */
-
-        // Run: ListCardsRouter
-        let vc = ListCardsRouter.start()
-        navigationController?.pushViewController(vc, animated: true)
-        
-    }
 }

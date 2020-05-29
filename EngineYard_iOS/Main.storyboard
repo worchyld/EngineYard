@@ -90,40 +90,10 @@
             </objects>
             <point key="canvasLocation" x="848.79999999999995" y="233.43328335832086"/>
         </scene>
-        <!--Second View Controller-->
-        <scene sceneID="1js-R0-lYJ">
-            <objects>
-                <viewController storyboardIdentifier="SecondViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="n1c-pL-FfM" customClass="SecondViewController" customModule="EngineYard" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="p6H-SG-auR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.80000001190000003" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <viewLayoutGuide key="safeArea" id="2fl-b4-cta"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KgA-fx-Itd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1820" y="518"/>
-        </scene>
-        <!--List Cards View Controller-->
-        <scene sceneID="mHW-YC-PlI">
-            <objects>
-                <viewController storyboardIdentifier="ListCardsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GSp-HF-Frb" customClass="ListCardsViewController" customModule="EngineYard" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="XrJ-cI-dBi">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="8N6-Zh-S6B"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ufi-tn-NDC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2513" y="512"/>
-        </scene>
-        <!--Player Select Screen View Controller-->
+        <!--Select Player View Controller-->
         <scene sceneID="WA5-Nn-uxJ">
             <objects>
-                <viewController storyboardIdentifier="PlayerSelectScreenViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EEG-aJ-xMS" customClass="PlayerSelectScreenViewController" customModule="EngineYard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectPlayerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EEG-aJ-xMS" customClass="SelectPlayerViewController" customModule="EngineYard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jcg-gV-EyG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ai3-QS-0dO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1614" y="-172"/>
+            <point key="canvasLocation" x="1684" y="235"/>
         </scene>
     </scenes>
     <resources>

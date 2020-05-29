@@ -1,5 +1,5 @@
 //
-//  PlayerSelectScreenViewController.swift
+//  SelectPlayerViewController.swift
 //  EngineYard
 //
 //  Created by Amarjit on 20/05/2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlayerSelectScreenViewController: UIViewController, Storyboarded, ReusableView {
+class SelectPlayerViewController: UIViewController, Storyboarded, ReusableView {
     weak var coordinator: MainCoordinator?
 
     static var reuseIdentifier = "CellID"
@@ -18,7 +18,7 @@ class PlayerSelectScreenViewController: UIViewController, Storyboarded, Reusable
         tv.delegate = self
         tv.dataSource = self
         tv.allowsSelection = true
-        tv.register(UITableViewCell.self, forCellReuseIdentifier: PlayerSelectScreenViewController.reuseIdentifier)
+        tv.register(UITableViewCell.self, forCellReuseIdentifier: SelectPlayerViewController.reuseIdentifier)
         return tv
     }()
 
@@ -35,7 +35,7 @@ class PlayerSelectScreenViewController: UIViewController, Storyboarded, Reusable
 
 // :UITableView delegate extension
 
-extension PlayerSelectScreenViewController: UITableViewDelegate, UITableViewDataSource {
+extension SelectPlayerViewController: UITableViewDelegate, UITableViewDataSource {
 
     // MARK: - Table view data source
 
@@ -48,7 +48,7 @@ extension PlayerSelectScreenViewController: UITableViewDelegate, UITableViewData
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       let cell = tableView.dequeueReusableCell(withIdentifier: PlayerSelectScreenViewController.reuseIdentifier, for: indexPath)
+       let cell = tableView.dequeueReusableCell(withIdentifier: SelectPlayerViewController.reuseIdentifier, for: indexPath)
 
        // Configure the cell...
         return configureCell(cell: cell, at: indexPath)
@@ -82,13 +82,6 @@ extension PlayerSelectScreenViewController: UITableViewDelegate, UITableViewData
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        showWinnerScreen()
-    }
-}
-
-extension PlayerSelectScreenViewController {
-    // Just a hack to get it to go the winner screen
-    func showWinnerScreen() {
-        coordinator?.showWinnerScreen()
+        print ("didSelect: \(indexPath.row)")
     }
 }

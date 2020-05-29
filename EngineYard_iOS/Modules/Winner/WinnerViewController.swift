@@ -27,9 +27,7 @@ struct WinnerViewModel {
 
 // Shows a winner from a collection of dummy players in a tableview
 
-class WinnerViewController: UIViewController, Storyboarded {
-    weak var coordinator: MainCoordinator?
-
+class WinnerViewController: UIViewController, Storyboarded, ReusableView {
     private lazy var cellReuseId = self.theClassName + ".cell"
     private let viewModel = WinnerViewModel()
 
