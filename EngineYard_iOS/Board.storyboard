@@ -11,7 +11,7 @@
         <!--Board View Controller-->
         <scene sceneID="Fve-1g-xqu">
             <objects>
-                <viewController id="TIy-Ew-J54" customClass="BoardViewController" customModule="EngineYard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BoardViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TIy-Ew-J54" customClass="BoardViewController" customModule="EngineYard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RtZ-RN-qMm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
