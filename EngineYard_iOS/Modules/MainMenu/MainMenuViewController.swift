@@ -24,7 +24,11 @@ class MainMenuViewController: UIViewController, Storyboarded {
         let tag = sender.tag
         print ("Tag: \(tag) pressed")
     }
+}
 
+
+// SimpleHUD -- #TODO
+extension MainMenuViewController {
     func showPlayerSelectScreen() {
         /*
         #if DEBUG
@@ -36,11 +40,7 @@ class MainMenuViewController: UIViewController, Storyboarded {
         }
         #endif*/
     }
-}
 
-
-// SimpleHUD
-extension MainMenuViewController {
     func showSimpleHUD() {
         let hud = JGProgressHUD(style: .light)
         hud.vibrancyEnabled = true
