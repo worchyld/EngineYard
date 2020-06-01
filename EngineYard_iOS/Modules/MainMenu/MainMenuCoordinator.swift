@@ -41,11 +41,8 @@ class MainMenuCoordinator : Coordinator {
             navigationController.setNavigationBarHidden(false, animated: true)
             navigationController.pushViewController(vc, animated: true)
             return
+
         }
     }
-
-    func didFinish() {
-        print ("didFinish")
-        parentCoordinator?.childDidFinish(self)
-    }
+    
 }
