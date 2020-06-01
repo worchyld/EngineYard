@@ -10,7 +10,7 @@ import UIKit
 import JGProgressHUD
 
 class MainMenuViewController: UIViewController, Storyboarded {
-    weak var coordinator: MainCoordinator?
+    weak var coordinator: MainMenuCoordinator?
 
     @IBOutlet weak var imageViewIcon: UIImageView!
     @IBOutlet weak var labelHeadline: UILabel!
@@ -19,11 +19,19 @@ class MainMenuViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     @IBAction func handleButtonPress(_ sender: UIButton) {
         let tag = sender.tag
         print ("Tag: \(tag) pressed")
+
+        self.coordinator?.handleRoute(.selectPlayer)
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        hideNavigationBar(animated: animated)
+    }
+
 }
 
 

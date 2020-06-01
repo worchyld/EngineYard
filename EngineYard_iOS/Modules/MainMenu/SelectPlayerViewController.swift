@@ -9,7 +9,7 @@
 import UIKit
 
 class SelectPlayerViewController: UIViewController, Storyboarded, ReusableView {
-    weak var coordinator: MainCoordinator?
+    weak var coordinator: MainMenuCoordinator?
 
     static var reuseIdentifier = "CellID"
 
@@ -30,8 +30,6 @@ class SelectPlayerViewController: UIViewController, Storyboarded, ReusableView {
         self.view.addSubview(self.tableView)
     }
 }
-
-
 
 // :UITableView delegate extension
 
@@ -83,5 +81,7 @@ extension SelectPlayerViewController: UITableViewDelegate, UITableViewDataSource
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print ("didSelect: \(indexPath.row)")
+
+        coordinator?.handleRoute(.startGame)
     }
 }
