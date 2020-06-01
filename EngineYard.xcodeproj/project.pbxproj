@@ -79,6 +79,8 @@
 		4DACC0B32441E80400466ABE /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC0A02441E5C500466ABE /* Realm.framework */; };
 		4DAE26EA247FEC1B007C338E /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAE26E9247FEC1B007C338E /* BorderedButton.swift */; };
 		4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB448C6219F380900F8507F /* EY+Protocols.swift */; };
+		4DC5E55B2484FDE000BB3A6D /* MainMenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC5E55A2484FDE000BB3A6D /* MainMenuCoordinator.swift */; };
+		4DC5E55D2484FDEC00BB3A6D /* BoardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC5E55C2484FDEC00BB3A6D /* BoardCoordinator.swift */; };
 		4DE5494D2469EA0800ADC11C /* TaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE5494C2469EA0800ADC11C /* TaxTests.swift */; };
 		4DE5494F246AEAC200ADC11C /* WalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE5494E246AEAC200ADC11C /* WalletTests.swift */; };
 		4DE54953246B1EF800ADC11C /* PlayerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE54952246B1EF800ADC11C /* PlayerEntity.swift */; };
@@ -208,6 +210,8 @@
 		4DAE26E9247FEC1B007C338E /* BorderedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
 		4DB448C6219F380900F8507F /* EY+Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Protocols.swift"; sourceTree = "<group>"; };
 		4DC3D84423342D8F0066FE9F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DC5E55A2484FDE000BB3A6D /* MainMenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCoordinator.swift; sourceTree = "<group>"; };
+		4DC5E55C2484FDEC00BB3A6D /* BoardCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardCoordinator.swift; sourceTree = "<group>"; };
 		4DE5494C2469EA0800ADC11C /* TaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTests.swift; sourceTree = "<group>"; };
 		4DE5494E246AEAC200ADC11C /* WalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTests.swift; sourceTree = "<group>"; };
 		4DE54952246B1EF800ADC11C /* PlayerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEntity.swift; sourceTree = "<group>"; };
@@ -278,6 +282,7 @@
 		4D127FAE2481993A00247DBD /* Board */ = {
 			isa = PBXGroup;
 			children = (
+				4DC5E55C2484FDEC00BB3A6D /* BoardCoordinator.swift */,
 				4D127FB124819C7000247DBD /* BoardViewController.swift */,
 			);
 			path = Board;
@@ -328,6 +333,7 @@
 		4D75AA8524751378008C2672 /* MainMenu */ = {
 			isa = PBXGroup;
 			children = (
+				4DC5E55A2484FDE000BB3A6D /* MainMenuCoordinator.swift */,
 				4D3C17DA2334CF7B0036808F /* MainMenuViewController.swift */,
 				4D75AA9024754195008C2672 /* SelectPlayerViewController.swift */,
 			);
@@ -727,7 +733,9 @@
 				4D664866247B903B00BD1790 /* PlayerViewModel.swift in Sources */,
 				4DF7B4A1244D7BC100814B64 /* RealmWriteAsync.swift in Sources */,
 				4D3C17D72334CE730036808F /* Coordinator.swift in Sources */,
+				4DC5E55B2484FDE000BB3A6D /* MainMenuCoordinator.swift in Sources */,
 				4DA3488020812A8B006DA164 /* AppDelegate.swift in Sources */,
+				4DC5E55D2484FDEC00BB3A6D /* BoardCoordinator.swift in Sources */,
 				4DAA5BB12470309A00165829 /* Player+Helpers.swift in Sources */,
 				4DA5236C208158C8000FFAAB /* EY+Array.swift in Sources */,
 				4DA28E6A2474C9BD00BF0288 /* ListCardsViewController1.swift in Sources */,

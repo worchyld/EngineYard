@@ -9,7 +9,7 @@
 import UIKit
 
 class SelectPlayerViewController: UIViewController, Storyboarded, ReusableView {
-    weak var coordinator: MainCoordinator?
+    weak var coordinator: MainMenuCoordinator?
 
     static var reuseIdentifier = "CellID"
 

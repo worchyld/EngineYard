@@ -10,7 +10,7 @@ import UIKit
 import JGProgressHUD
 
 class MainMenuViewController: UIViewController, Storyboarded {
-    weak var coordinator: MainCoordinator?
+    weak var coordinator: MainMenuCoordinator?
 
     @IBOutlet weak var imageViewIcon: UIImageView!
     @IBOutlet weak var labelHeadline: UILabel!
