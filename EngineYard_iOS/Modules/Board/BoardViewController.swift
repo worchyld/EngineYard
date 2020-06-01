@@ -16,6 +16,8 @@ class BoardViewController: UIViewController, Storyboarded {
 
         self.title = "Board"
         self.view.backgroundColor = .systemPink
+
+        self.coordinator?.parentCoordinator?.printCoordinators()
     }
 
 }

@@ -12,6 +12,7 @@ import UIKit
 enum MainMenuRoute {
     case mainMenu
     case selectPlayer
+    case startGame
 }
 
 class MainMenuCoordinator : Coordinator {
@@ -38,10 +39,13 @@ class MainMenuCoordinator : Coordinator {
         case .selectPlayer:
             let vc = SelectPlayerViewController.instantiate(StoryboardRef.main)
             vc.coordinator = self
-            navigationController.setNavigationBarHidden(false, animated: true)
             navigationController.pushViewController(vc, animated: true)
             return
 
+        case .startGame:
+            self.parentCoordinator?.childDidFinish(self)
+            self.parentCoordinator?.handleRoute(.play)
+            return
         }
     }
     

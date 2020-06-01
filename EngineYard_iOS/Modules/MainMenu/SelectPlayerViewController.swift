@@ -82,7 +82,6 @@ extension SelectPlayerViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print ("didSelect: \(indexPath.row)")
 
-        //coordinator?.didFinish()
-        //coordinator?.beginGame()
+        coordinator?.handleRoute(.startGame)
     }
 }
