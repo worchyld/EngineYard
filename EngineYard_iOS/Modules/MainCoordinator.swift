@@ -24,8 +24,21 @@ class MainCoordinator: Coordinator {
         child.start()
     }
 
-    func childDidFinish() {
+    func showBoard() {
+        let child = BoardCoordinator(navigationController: navigationController)
+        child.parentCoordinator = self
+        childCoordinators.append(child)
+        child.start()
+    }
+
+    func childDidFinish(_ child: Coordinator?) {
         print ("childDidFinish")
+        for (index, element) in childCoordinators.enumerated() {
+            if element === child {
+                childCoordinators.remove(at: index)
+                break
+            }
+        }
     }
 
 }

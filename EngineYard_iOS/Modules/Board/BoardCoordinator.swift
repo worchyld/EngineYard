@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class BoardCoordinator : Coordinator {
+    weak var parentCoordinator: MainCoordinator?
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
 

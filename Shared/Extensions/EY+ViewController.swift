@@ -46,3 +46,19 @@ extension UIViewController {
     }
 
 }
+
+protocol Drawable {
+    var viewController: UIViewController? { get }
+}
+
+extension UIViewController: Drawable {
+    var viewController: UIViewController? { return self }
+}
+
+typealias NavigationBackClosure = (() -> ())
+
+protocol RouterProtocol: class {
+    func push(_ drawable: Drawable, isAnimated: Bool, onNavigateBack: NavigationBackClosure?)
+    func pop(_ isAnimated: Bool)
+    func popToRoot(_ isAnimated: Bool)
+}

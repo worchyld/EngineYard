@@ -45,6 +45,7 @@ class MainMenuCoordinator : Coordinator {
     }
 
     func didFinish() {
-        parentCoordinator?.childDidFinish()
+        print ("didFinish")
+        parentCoordinator?.childDidFinish(self)
     }
 }

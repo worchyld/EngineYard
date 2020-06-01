@@ -31,8 +31,6 @@ class SelectPlayerViewController: UIViewController, Storyboarded, ReusableView {
     }
 }
 
-
-
 // :UITableView delegate extension
 
 extension SelectPlayerViewController: UITableViewDelegate, UITableViewDataSource {
