@@ -15,8 +15,13 @@ enum MainMenuRoute {
 }
 
 class MainMenuCoordinator : Coordinator {
+    weak var parentCoordinator: MainCoordinator?
     var childCoordinators = [Coordinator]()
-    var navigationController: UINavigationController?
+    var navigationController: UINavigationController
+
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
 
     func start() {
         handleRoute(.mainMenu)
@@ -27,16 +32,19 @@ class MainMenuCoordinator : Coordinator {
         case .mainMenu:
             let vc = MainMenuViewController.instantiate(StoryboardRef.main)
             vc.coordinator = self
-            navigationController?.setNavigationBarHidden(true, animated: false)
-            navigationController?.pushViewController(vc, animated: false)
+            navigationController.pushViewController(vc, animated: false)
             return
 
         case .selectPlayer:
             let vc = SelectPlayerViewController.instantiate(StoryboardRef.main)
             vc.coordinator = self
-            navigationController?.setNavigationBarHidden(false, animated: true)
-            navigationController?.pushViewController(vc, animated: false)
+            navigationController.setNavigationBarHidden(false, animated: true)
+            navigationController.pushViewController(vc, animated: true)
             return
         }
+    }
+
+    func didFinish() {
+        parentCoordinator?.childDidFinish()
     }
 }

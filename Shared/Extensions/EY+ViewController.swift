@@ -32,3 +32,17 @@ extension UIViewController {
 //        self.present(alertController, animated: true, completion: nil)
 //    }
 }
+
+extension UIViewController {
+    func hideNavigationBar(animated: Bool){
+        // Hide the navigation bar on the this view controller
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+
+    }
+
+    func showNavigationBar(animated: Bool) {
+        // Show the navigation bar on other view controllers
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+
+}

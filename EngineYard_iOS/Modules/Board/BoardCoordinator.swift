@@ -11,12 +11,16 @@ import UIKit
 
 class BoardCoordinator : Coordinator {
     var childCoordinators = [Coordinator]()
-    var navigationController: UINavigationController?
+    var navigationController: UINavigationController
+
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
 
     func start() {
         let vc = BoardViewController.instantiate(StoryboardRef.board)
         vc.coordinator = self
-        navigationController?.setNavigationBarHidden(true, animated: true)
-        navigationController?.pushViewController(vc, animated: false)
+        navigationController.setNavigationBarHidden(true, animated: true)
+        navigationController.pushViewController(vc, animated: false)
     }
 }

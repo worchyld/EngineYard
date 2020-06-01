@@ -19,11 +19,19 @@ class MainMenuViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     @IBAction func handleButtonPress(_ sender: UIButton) {
         let tag = sender.tag
         print ("Tag: \(tag) pressed")
+
+        self.coordinator?.handleRoute(.selectPlayer)
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        hideNavigationBar(animated: animated)
+    }
+
 }
 
 
