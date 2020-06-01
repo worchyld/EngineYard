@@ -39,6 +39,10 @@ class MainCoordinator: Coordinator {
                 break
             }
         }
+
+        for (index, element) in childCoordinators.enumerated() {
+            print ("index: \(index), \(element as Any)")
+        }
     }
 
 }
