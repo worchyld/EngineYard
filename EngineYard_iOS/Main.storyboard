@@ -81,9 +81,9 @@
                     <connections>
                         <outlet property="imageViewIcon" destination="wq1-BA-WTI" id="FY9-j5-VEg"/>
                         <outlet property="labelHeadline" destination="sbR-4I-FqX" id="chB-9P-d3I"/>
-                        <outletCollection property="bordedButtonCollection" destination="HsV-NB-Rsd" collectionClass="NSMutableArray" id="miO-HX-e91"/>
-                        <outletCollection property="bordedButtonCollection" destination="B4G-cQ-BdW" collectionClass="NSMutableArray" id="Uo3-lL-Xla"/>
-                        <outletCollection property="bordedButtonCollection" destination="7mp-9S-ixp" collectionClass="NSMutableArray" id="zlW-84-4ji"/>
+                        <outletCollection property="borderedButtonCollection" destination="HsV-NB-Rsd" collectionClass="NSMutableArray" id="q3o-6k-6N4"/>
+                        <outletCollection property="borderedButtonCollection" destination="B4G-cQ-BdW" collectionClass="NSMutableArray" id="2Uo-ZE-cAQ"/>
+                        <outletCollection property="borderedButtonCollection" destination="7mp-9S-ixp" collectionClass="NSMutableArray" id="eS8-Op-JnK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nb8-Vj-QNS" userLabel="First Responder" sceneMemberID="firstResponder"/>

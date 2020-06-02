@@ -25,7 +25,7 @@ class BoardCoordinator : Coordinator {
         vc.coordinator = self
         vc.viewModel = BoardViewModel.init(board: board)
 
-        navigationController.setNavigationBarHidden(true, animated: true)
+        navigationController.setNavigationBarHidden(false, animated: true)
         navigationController.pushViewController(vc, animated: true)
     }
 }

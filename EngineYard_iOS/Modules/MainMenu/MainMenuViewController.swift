@@ -14,7 +14,7 @@ class MainMenuViewController: UIViewController, Storyboarded {
 
     @IBOutlet weak var imageViewIcon: UIImageView!
     @IBOutlet weak var labelHeadline: UILabel!
-    @IBOutlet var bordedButtonCollection: [BorderedButton]!
+    @IBOutlet var borderedButtonCollection: [BorderedButton]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +25,6 @@ class MainMenuViewController: UIViewController, Storyboarded {
         print ("Tag: \(tag) pressed")
 
         self.coordinator?.handleRoute(.selectPlayer)
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        hideNavigationBar(animated: animated)
     }
 
 }
