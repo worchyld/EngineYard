@@ -2,77 +2,31 @@
 //  WalletTests.swift
 //  EngineYardTests
 //
-//  Created by Amarjit on 15/04/2018.
-//  Copyright © 2018 Amarjit. All rights reserved.
+//  Created by Amarjit on 12/05/2020.
+//  Copyright © 2020 Amarjit. All rights reserved.
 //
 
 import XCTest
 
 @testable import EngineYard
 
-class WalletTests: EngineYardTests {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
+class WalletTests: XCTestCase {
 
-    func testCredit() {
-        let w = Wallet()
-        XCTAssertThrowsError(try w.credit(amount: -100)) { error in
-            XCTAssertEqual(error as? WalletError, WalletError.mustBePositive)
-        }
-
-        XCTAssertTrue(w.balance == 0)
-
-        XCTAssertNoThrow(try w.credit(amount: 100), "Balance: \(w.description)")
-
+    func testInitializeWallet() {
+        let w = Wallet(balance: 100)
         XCTAssertTrue(w.balance == 100)
     }
 
-
-    func testDebit() {
-        let w = Wallet()
-
-        XCTAssertTrue(w.balance == 0)
-
-        XCTAssertThrowsError(try w.debit(amount: -100)) { error in
-            XCTAssertEqual(error as? WalletError, WalletError.mustBePositive)
-        }
-
-        XCTAssertThrowsError(try w.debit(amount: 100)) { error in
-            XCTAssertEqual(error as? WalletError, WalletError.notEnoughFunds)
-        }
-
+    func testCreditWallet() {
+        let w = Wallet(balance: 100)
         XCTAssertNoThrow(try w.credit(amount: 100))
-
-        
-        // debit > balance should throw error
-        XCTAssertThrowsError(try w.debit(amount: 101)) { error in
-            XCTAssertEqual(error as? WalletError, WalletError.notEnoughFunds)
-        }
-
-        // debit $1 should not throw error
-        XCTAssertNoThrow(try w.debit(amount: 1))
-
-        // balance should be 100-1 = $99
-        XCTAssertTrue(w.balance == 99)
+        XCTAssertTrue(w.balance == 200)
     }
 
-    func testGameGoalAchieved() {
-        let cash = [0,299,300,329,330,331]
-
-        let reachedGoal = cash.filter({
-            return (Rules.isGameEndConditionMet($0))
-        })
-
-        XCTAssertTrue(reachedGoal.count == 2)
+    func testDebitWallet() {
+        let w = Wallet(balance: 100)
+        let _ = try! w.credit(amount: 150)
+        XCTAssertNoThrow(try w.debit(amount: 50))
+        XCTAssertTrue(w.balance == 200)
     }
- 
-    
 }

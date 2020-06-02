@@ -13,7 +13,7 @@ extension BidirectionalCollection where Iterator.Element: Equatable {
     typealias Element = Self.Iterator.Element
 
     func after(_ item: Element, loop: Bool = false) -> Element? {
-        if let itemIndex = self.index(of: item) {
+        if let itemIndex = self.firstIndex(of: item) {
             let lastItem: Bool = (index(after:itemIndex) == endIndex)
             if loop && lastItem {
                 return self.first
@@ -27,7 +27,7 @@ extension BidirectionalCollection where Iterator.Element: Equatable {
     }
 
     func before(_ item: Element, loop: Bool = false) -> Element? {
-        if let itemIndex = self.index(of: item) {
+        if let itemIndex = self.firstIndex(of: item) {
             let firstItem: Bool = (itemIndex == startIndex)
             if loop && firstItem {
                 return self.last
@@ -57,9 +57,7 @@ extension MutableCollection {
             swapAt(firstUnshuffled, i)
         }
     }
-}
 
-extension Sequence {
     /// Returns an array with the contents of this sequence, shuffled.
     func shuffled() -> [Element] {
         var result = Array(self)
@@ -76,3 +74,20 @@ extension Collection where Indices.Iterator.Element == Index {
     }
 }
 
+
+extension Array where Element: Hashable {
+    func difference(from other: [Element]) -> [Element] {
+        let thisSet = Set(self)
+        let otherSet = Set(other)
+        return Array(thisSet.symmetricDifference(otherSet))
+    }
+}
+extension Array {
+    mutating func mutateEach(by transform: (inout Element) throws -> Void) rethrows {
+        self = try map { el in
+            var el = el
+            try transform(&el)
+            return el
+        }
+     }
+}
