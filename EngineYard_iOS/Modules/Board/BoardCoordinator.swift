@@ -19,8 +19,12 @@ class BoardCoordinator : Coordinator {
     }
 
     func start() {
+        let board = Board()
+
         let vc = BoardViewController.instantiate(StoryboardRef.board)
         vc.coordinator = self
+        vc.viewModel = BoardViewModel.init(board: board)
+
         navigationController.setNavigationBarHidden(true, animated: true)
         navigationController.pushViewController(vc, animated: true)
     }

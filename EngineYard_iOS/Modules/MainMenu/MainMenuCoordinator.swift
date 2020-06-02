@@ -33,7 +33,7 @@ class MainMenuCoordinator : Coordinator {
         case .mainMenu:
             let vc = MainMenuViewController.instantiate(StoryboardRef.main)
             vc.coordinator = self
-            navigationController.pushViewController(vc, animated: false)
+            navigationController.pushViewController(vc, animated: true)
             return
 
         case .selectPlayer:
