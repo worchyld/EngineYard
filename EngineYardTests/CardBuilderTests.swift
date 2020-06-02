@@ -74,6 +74,18 @@ class CardBuilderTests: XCTestCase {
         XCTAssertTrue(found == expected.results, "Mismatch in expectations. Found: \(found), Expected \(expected)")
     }
 
+    func testQtyOfSecondGenerationCardsIsCorrect() {
+        // run report
+        let cards = Card.build()
+        let generation = Family.Generation.second
+        let expected = Expected.init(color: nil , generation: generation)
+
+        let found = self.filter(cards, for: generation).count
+
+        XCTAssertTrue(found == expected.results, "Mismatch in expectations. Found: \(found), Expected \(expected)")
+    }
+
+
     // MARK: (PRIVATE) functions
     // Helpers for filtering cards
 
