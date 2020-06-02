@@ -25,8 +25,38 @@ class CardBuilderTests: XCTestCase {
 
     func testNumberOfGreenCards() {
         let cards = Card.build()
-        let expected = Expected.init(color: .green, generation: nil)
         let color = Family.Color.green
+        let expected = Expected.init(color: color, generation: nil)
+
+        let found = self.getAllCardsThatMatch(cards, color: color).count
+
+        XCTAssertTrue(found == expected.results, "Mismatch in expectations. Found: \(found), Expected \(expected)")
+    }
+
+    func testNumberOfRedCards() {
+        let cards = Card.build()
+        let color = Family.Color.red
+        let expected = Expected.init(color: color, generation: nil)
+
+        let found = self.getAllCardsThatMatch(cards, color: color).count
+
+        XCTAssertTrue(found == expected.results, "Mismatch in expectations. Found: \(found), Expected \(expected)")
+    }
+
+    func testNumberOfYellowCards() {
+        let cards = Card.build()
+        let color = Family.Color.yellow
+        let expected = Expected.init(color: color, generation: nil)
+
+        let found = self.getAllCardsThatMatch(cards, color: color).count
+
+        XCTAssertTrue(found == expected.results, "Mismatch in expectations. Found: \(found), Expected \(expected)")
+    }
+
+    func testNumberOfBlueCards() {
+        let cards = Card.build()
+        let color = Family.Color.blue
+        let expected = Expected.init(color: color, generation: nil)
 
         let found = self.getAllCardsThatMatch(cards, color: color).count
 
