@@ -110,11 +110,14 @@ public struct Expected {
 
     public var results: Int {
         if ((color != nil) && (generation != nil)) {
+            print ("Found: \(totalCardsForColorAndGeneration)")
             return totalCardsForColorAndGeneration
         }
         else if ((color == nil) && (generation != nil)) {
+            print ("Found: \(totalCardsForGeneration)")
             return totalCardsForGeneration
         } else if ((color != nil) && (generation == nil)) {
+            print ("Found: \(totalCardsForColor)")
             return totalCardsForColor
         }
         else {
