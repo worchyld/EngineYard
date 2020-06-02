@@ -155,9 +155,8 @@
 			children = (
 				4D10C61A2486DF3A00238508 /* Sounds */,
 				4DA1C13C2486EC8B004C4121 /* Extensions */,
-				4DA1C1412486ED12004C4121 /* NumberFormatCache.swift */,
+				4DA1C1492486EE33004C4121 /* Helpers */,
 				4D10C6152486DC4700238508 /* Constants.swift */,
-				4DA1C1382486EC3D004C4121 /* Die.swift */,
 				4D10C60F2486D6CC00238508 /* Family.swift */,
 				4D10C60B2486D41700238508 /* Card.swift */,
 				4D10C60D2486D68C00238508 /* Card+Builder.swift */,
@@ -189,6 +188,15 @@
 				4DA1C1472486EDE3004C4121 /* EY+Date.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4DA1C1492486EE33004C4121 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4DA1C1412486ED12004C4121 /* NumberFormatCache.swift */,
+				4DA1C1382486EC3D004C4121 /* Die.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
