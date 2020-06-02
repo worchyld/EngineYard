@@ -61,6 +61,7 @@
 		4D10C57B2486D08400238508 = {
 			isa = PBXGroup;
 			children = (
+				4D10C60A2486D3EB00238508 /* Shared */,
 				4D10C5862486D08400238508 /* EngineYard */,
 				4D10C59D2486D08500238508 /* EngineYardTests */,
 				4D10C5852486D08400238508 /* Products */,
@@ -105,6 +106,13 @@
 				4D10C5A02486D08500238508 /* Info.plist */,
 			);
 			path = EngineYardTests;
+			sourceTree = "<group>";
+		};
+		4D10C60A2486D3EB00238508 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
