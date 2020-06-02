@@ -9,13 +9,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    let cards: [Card]
+
     var body: some View {
-        Text("Hello, World!")
+        Text("We see: \(cards.count)")
     }
 }
 
+#if DEBUG
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(cards: Card.build())
     }
 }
+#endif
