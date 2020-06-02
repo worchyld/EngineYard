@@ -14,6 +14,10 @@
 		4D10C5912486D08500238508 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D10C5902486D08500238508 /* Preview Assets.xcassets */; };
 		4D10C5942486D08500238508 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D10C5922486D08500238508 /* LaunchScreen.storyboard */; };
 		4D10C59F2486D08500238508 /* EngineYardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D10C59E2486D08500238508 /* EngineYardTests.swift */; };
+		4D10C60C2486D41700238508 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D10C60B2486D41700238508 /* Card.swift */; };
+		4D10C60E2486D68C00238508 /* Card+Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D10C60D2486D68C00238508 /* Card+Builder.swift */; };
+		4D10C6102486D6CC00238508 /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D10C60F2486D6CC00238508 /* Family.swift */; };
+		4D10C6122486DB1B00238508 /* CardBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D10C6112486DB1B00238508 /* CardBuilderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,10 @@
 		4D10C59A2486D08500238508 /* EngineYardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EngineYardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D10C59E2486D08500238508 /* EngineYardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineYardTests.swift; sourceTree = "<group>"; };
 		4D10C5A02486D08500238508 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D10C60B2486D41700238508 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		4D10C60D2486D68C00238508 /* Card+Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Builder.swift"; sourceTree = "<group>"; };
+		4D10C60F2486D6CC00238508 /* Family.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Family.swift; sourceTree = "<group>"; };
+		4D10C6112486DB1B00238508 /* CardBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBuilderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				4D10C59E2486D08500238508 /* EngineYardTests.swift */,
+				4D10C6112486DB1B00238508 /* CardBuilderTests.swift */,
 				4D10C5A02486D08500238508 /* Info.plist */,
 			);
 			path = EngineYardTests;
@@ -111,6 +120,9 @@
 		4D10C60A2486D3EB00238508 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				4D10C60F2486D6CC00238508 /* Family.swift */,
+				4D10C60B2486D41700238508 /* Card.swift */,
+				4D10C60D2486D68C00238508 /* Card+Builder.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -218,7 +230,10 @@
 			files = (
 				4D10C5882486D08400238508 /* AppDelegate.swift in Sources */,
 				4D10C58A2486D08400238508 /* SceneDelegate.swift in Sources */,
+				4D10C60E2486D68C00238508 /* Card+Builder.swift in Sources */,
 				4D10C58C2486D08400238508 /* ContentView.swift in Sources */,
+				4D10C60C2486D41700238508 /* Card.swift in Sources */,
+				4D10C6102486D6CC00238508 /* Family.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D10C59F2486D08500238508 /* EngineYardTests.swift in Sources */,
+				4D10C6122486DB1B00238508 /* CardBuilderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
