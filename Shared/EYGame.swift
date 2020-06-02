@@ -16,20 +16,20 @@ class EYGame { }
 extension EYGame {
     static func buildBoard() -> Board{
         let board: [BoardSpace] = [
-            BoardSpace(0, .green     , .first, 3),
-            BoardSpace(1, .red       , .first,  3),
-            BoardSpace(2, .yellow    , .first,  2),
-            BoardSpace(3, .blue      , .first,  1),
-            BoardSpace(4, .green     , .second,  4),
-            BoardSpace(5, .red       , .second,  3),
-            BoardSpace(6, .yellow    , .second,  3),
-            BoardSpace(7, .green     , .third,  4),
-            BoardSpace(8, .blue      , .second,  2),
-            BoardSpace(9, .red       , .third,  4),
-            BoardSpace(10, .green    , .fourth,  5),
-            BoardSpace(11, .yellow   , .third,  3),
-            BoardSpace(12, .red      , .fourth, 4),
-            BoardSpace(13, .green    , .fifth,  5)
+            BoardSpace(4, .green     , .first, 3),
+            BoardSpace(8, .red       , .first,  3),
+            BoardSpace(12, .yellow   , .first,  2),
+            BoardSpace(16, .blue     , .first,  1),
+            BoardSpace(20, .green    , .second,  4),
+            BoardSpace(24, .red      , .second,  3),
+            BoardSpace(28, .yellow   , .second,  3),
+            BoardSpace(32, .green    , .third,  4),
+            BoardSpace(36, .blue     , .second,  2),
+            BoardSpace(40, .red      , .third,  4),
+            BoardSpace(44, .green    , .fourth,  5),
+            BoardSpace(48, .yellow   , .third,  3),
+            BoardSpace(52, .red      , .fourth, 4),
+            BoardSpace(56, .green    , .fifth,  5)
         ]
         return board
     }
