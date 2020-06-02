@@ -14,7 +14,7 @@ enum CardState: Int, CaseIterable {
 
 // Each board space holds a collection of cards
 struct BoardSpace: Identifiable {
-    let id: Int
+    let id: UUID = UUID()
     let color: Family.Color
     let generation: Family.Generation
     var deck: [Card] = [Card]()
@@ -22,8 +22,7 @@ struct BoardSpace: Identifiable {
     let cost: Int
     let orderCapacity: Int // Capacity of dice array
 
-    init(id: Int = 0, cost: Int, color: Family.Color, generation: Family.Generation, orderCapacity: Int) {
-        self.id = id
+    init(_ cost: Int, _ color: Family.Color, _ generation: Family.Generation, _ orderCapacity: Int) {
         self.cost = cost
         self.color = color
         self.generation = generation
