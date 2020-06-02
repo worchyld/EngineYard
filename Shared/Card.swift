@@ -11,18 +11,24 @@ import Foundation
 struct Card : Identifiable {
     let id: UUID = UUID()
     let cost: Int
-    let family: Family
+    let color: Family.Color
+    let generation: Family.Generation
 
     init(cost: Int, color: Family.Color, generation: Family.Generation) {
         self.cost = cost
-        self.family = Family.init(color: color, generation: generation)
+        self.color = color
+        self.generation = generation
     }
 }
 
-// MARK - Lookup variables
+
+
+
+// MARK - Extensions
+
 extension Card {
     var name: String {
-        return "\(self.family.color).\(self.family.generation)"
+        return "\(color).\(generation)"
     }
 
     var productionCost: Int {
@@ -43,6 +49,6 @@ extension Card: Equatable {
 
 extension Card: CustomStringConvertible {
     var description: String {
-        return ("\(self.id), \(self.name), $\(self.cost), \(self.family as Any)")
+        return ("\(self.id), \(self.name), $\(self.cost), \(self.color), \(self.generation)")
     }
 }

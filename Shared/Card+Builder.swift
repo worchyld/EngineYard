@@ -8,11 +8,13 @@
 
 import Foundation
 
-// Builds an array of Cards
+// Builds an array of Cards used in the game
 extension Card {
+
     static func build() -> [Card] {
 
          let cards = [
+            
             // Green.first (x4)
             Card.init(cost: 4, color: .green, generation: .first),
             Card.init(cost: 4, color: .green, generation: .first),

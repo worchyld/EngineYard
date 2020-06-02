@@ -18,6 +18,14 @@
 		4D10C60E2486D68C00238508 /* Card+Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D10C60D2486D68C00238508 /* Card+Builder.swift */; };
 		4D10C6102486D6CC00238508 /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D10C60F2486D6CC00238508 /* Family.swift */; };
 		4D10C6122486DB1B00238508 /* CardBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D10C6112486DB1B00238508 /* CardBuilderTests.swift */; };
+		4D10C6162486DC4700238508 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D10C6152486DC4700238508 /* Constants.swift */; };
+		4D10C6182486DCF200238508 /* BoardSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D10C6172486DCF200238508 /* BoardSpace.swift */; };
+		4D10C61F2486DF3A00238508 /* Birdy_Note5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D10C61B2486DF3A00238508 /* Birdy_Note5.wav */; };
+		4D10C6202486DF3A00238508 /* cardSlide1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D10C61C2486DF3A00238508 /* cardSlide1.wav */; };
+		4D10C6212486DF3A00238508 /* Birdy_Notification1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D10C61D2486DF3A00238508 /* Birdy_Notification1.wav */; };
+		4D10C6222486DF3A00238508 /* cardSlide8.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D10C61E2486DF3A00238508 /* cardSlide8.wav */; };
+		4D10C6242486E12000238508 /* Card+Expectations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D10C6232486E12000238508 /* Card+Expectations.swift */; };
+		4DC84CEE2486E43E002A48DE /* EYGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC84CED2486E43E002A48DE /* EYGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +54,14 @@
 		4D10C60D2486D68C00238508 /* Card+Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Builder.swift"; sourceTree = "<group>"; };
 		4D10C60F2486D6CC00238508 /* Family.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Family.swift; sourceTree = "<group>"; };
 		4D10C6112486DB1B00238508 /* CardBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBuilderTests.swift; sourceTree = "<group>"; };
+		4D10C6152486DC4700238508 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4D10C6172486DCF200238508 /* BoardSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardSpace.swift; sourceTree = "<group>"; };
+		4D10C61B2486DF3A00238508 /* Birdy_Note5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Note5.wav; sourceTree = "<group>"; };
+		4D10C61C2486DF3A00238508 /* cardSlide1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardSlide1.wav; sourceTree = "<group>"; };
+		4D10C61D2486DF3A00238508 /* Birdy_Notification1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Notification1.wav; sourceTree = "<group>"; };
+		4D10C61E2486DF3A00238508 /* cardSlide8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardSlide8.wav; sourceTree = "<group>"; };
+		4D10C6232486E12000238508 /* Card+Expectations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Expectations.swift"; sourceTree = "<group>"; };
+		4DC84CED2486E43E002A48DE /* EYGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EYGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				4D10C59E2486D08500238508 /* EngineYardTests.swift */,
+				4D10C6232486E12000238508 /* Card+Expectations.swift */,
 				4D10C6112486DB1B00238508 /* CardBuilderTests.swift */,
 				4D10C5A02486D08500238508 /* Info.plist */,
 			);
@@ -120,11 +137,26 @@
 		4D10C60A2486D3EB00238508 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				4D10C61A2486DF3A00238508 /* Sounds */,
+				4D10C6152486DC4700238508 /* Constants.swift */,
 				4D10C60F2486D6CC00238508 /* Family.swift */,
 				4D10C60B2486D41700238508 /* Card.swift */,
 				4D10C60D2486D68C00238508 /* Card+Builder.swift */,
+				4D10C6172486DCF200238508 /* BoardSpace.swift */,
+				4DC84CED2486E43E002A48DE /* EYGame.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		4D10C61A2486DF3A00238508 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				4D10C61B2486DF3A00238508 /* Birdy_Note5.wav */,
+				4D10C61C2486DF3A00238508 /* cardSlide1.wav */,
+				4D10C61D2486DF3A00238508 /* Birdy_Notification1.wav */,
+				4D10C61E2486DF3A00238508 /* cardSlide8.wav */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,9 +240,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D10C6222486DF3A00238508 /* cardSlide8.wav in Resources */,
+				4D10C6212486DF3A00238508 /* Birdy_Notification1.wav in Resources */,
 				4D10C5942486D08500238508 /* LaunchScreen.storyboard in Resources */,
 				4D10C5912486D08500238508 /* Preview Assets.xcassets in Resources */,
 				4D10C58E2486D08500238508 /* Assets.xcassets in Resources */,
+				4D10C6202486DF3A00238508 /* cardSlide1.wav in Resources */,
+				4D10C61F2486DF3A00238508 /* Birdy_Note5.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,12 +264,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D10C6182486DCF200238508 /* BoardSpace.swift in Sources */,
 				4D10C5882486D08400238508 /* AppDelegate.swift in Sources */,
 				4D10C58A2486D08400238508 /* SceneDelegate.swift in Sources */,
 				4D10C60E2486D68C00238508 /* Card+Builder.swift in Sources */,
 				4D10C58C2486D08400238508 /* ContentView.swift in Sources */,
+				4DC84CEE2486E43E002A48DE /* EYGame.swift in Sources */,
 				4D10C60C2486D41700238508 /* Card.swift in Sources */,
 				4D10C6102486D6CC00238508 /* Family.swift in Sources */,
+				4D10C6162486DC4700238508 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +282,7 @@
 			files = (
 				4D10C59F2486D08500238508 /* EngineYardTests.swift in Sources */,
 				4D10C6122486DB1B00238508 /* CardBuilderTests.swift in Sources */,
+				4D10C6242486E12000238508 /* Card+Expectations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
