@@ -40,12 +40,6 @@
 		4D8AB2A1233E21C4009158CB /* EY+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8AB2A0233E21C4009158CB /* EY+Notification.swift */; };
 		4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D925D74219F4E2D00441733 /* EY+Time.swift */; };
 		4D9EBCF82473F5E700648376 /* StackedCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D9EBCF72473F5E700648376 /* StackedCardView.xib */; };
-		4DA28E5A2474C3EB00BF0288 /* ListCardsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA28E592474C3EB00BF0288 /* ListCardsInteractor.swift */; };
-		4DA28E5C2474C5CF00BF0288 /* ListCardsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA28E5B2474C5CF00BF0288 /* ListCardsProtocols.swift */; };
-		4DA28E5E2474C73600BF0288 /* ListCardsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA28E5D2474C73600BF0288 /* ListCardsResponseModel.swift */; };
-		4DA28E602474C75700BF0288 /* ListCardsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA28E5F2474C75700BF0288 /* ListCardsRouter.swift */; };
-		4DA28E672474C7F900BF0288 /* ListCardsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA28E662474C7F900BF0288 /* ListCardsPresenter.swift */; };
-		4DA28E6A2474C9BD00BF0288 /* ListCardsViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA28E692474C9BD00BF0288 /* ListCardsViewController1.swift */; };
 		4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3486820812972006DA164 /* EngineYardTests.swift */; };
 		4DA3487D20812A8B006DA164 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DA3487520812A8B006DA164 /* Assets.xcassets */; };
 		4DA3487E20812A8B006DA164 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA3487620812A8B006DA164 /* LaunchScreen.storyboard */; };
@@ -53,6 +47,10 @@
 		4DA5236720815885000FFAAB /* Die.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5236620815885000FFAAB /* Die.swift */; };
 		4DA52369208158A8000FFAAB /* EY+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA52368208158A8000FFAAB /* EY+Colors.swift */; };
 		4DA5236C208158C8000FFAAB /* EY+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5236B208158C8000FFAAB /* EY+Array.swift */; };
+		4DA65C082487A5DF008EE639 /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA65C072487A5DF008EE639 /* CardDetailViewController.swift */; };
+		4DA65C0A2487A617008EE639 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA65C092487A617008EE639 /* CardViewModel.swift */; };
+		4DA65C0C2487A765008EE639 /* CardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA65C0B2487A765008EE639 /* CardListViewController.swift */; };
+		4DA65C0E2487A7F3008EE639 /* CardListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA65C0D2487A7F3008EE639 /* CardListViewModel.swift */; };
 		4DA92C212156874500AD19B7 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		4DAA5BB12470309A00165829 /* Player+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA5BB02470309A00165829 /* Player+Helpers.swift */; };
 		4DAA5BB3247155B600165829 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA5BB2247155B600165829 /* Board.swift */; };
@@ -175,12 +173,6 @@
 		4D8AB2A0233E21C4009158CB /* EY+Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Notification.swift"; sourceTree = "<group>"; };
 		4D925D74219F4E2D00441733 /* EY+Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Time.swift"; sourceTree = "<group>"; };
 		4D9EBCF72473F5E700648376 /* StackedCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StackedCardView.xib; sourceTree = "<group>"; };
-		4DA28E592474C3EB00BF0288 /* ListCardsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCardsInteractor.swift; sourceTree = "<group>"; };
-		4DA28E5B2474C5CF00BF0288 /* ListCardsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCardsProtocols.swift; sourceTree = "<group>"; };
-		4DA28E5D2474C73600BF0288 /* ListCardsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCardsResponseModel.swift; sourceTree = "<group>"; };
-		4DA28E5F2474C75700BF0288 /* ListCardsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCardsRouter.swift; sourceTree = "<group>"; };
-		4DA28E662474C7F900BF0288 /* ListCardsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCardsPresenter.swift; sourceTree = "<group>"; };
-		4DA28E692474C9BD00BF0288 /* ListCardsViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCardsViewController1.swift; sourceTree = "<group>"; };
 		4DA3485020812970006DA164 /* EngineYard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EngineYard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA3486420812972006DA164 /* EngineYardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EngineYardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA3486820812972006DA164 /* EngineYardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineYardTests.swift; sourceTree = "<group>"; };
@@ -191,6 +183,10 @@
 		4DA5236620815885000FFAAB /* Die.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Die.swift; sourceTree = "<group>"; };
 		4DA52368208158A8000FFAAB /* EY+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Colors.swift"; sourceTree = "<group>"; };
 		4DA5236B208158C8000FFAAB /* EY+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Array.swift"; sourceTree = "<group>"; };
+		4DA65C072487A5DF008EE639 /* CardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
+		4DA65C092487A617008EE639 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		4DA65C0B2487A765008EE639 /* CardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListViewController.swift; sourceTree = "<group>"; };
+		4DA65C0D2487A7F3008EE639 /* CardListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListViewModel.swift; sourceTree = "<group>"; };
 		4DAA5BB02470309A00165829 /* Player+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player+Helpers.swift"; sourceTree = "<group>"; };
 		4DAA5BB2247155B600165829 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		4DAA5BB6247159A900165829 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -284,6 +280,8 @@
 			children = (
 				4DB64EBA248525F000B9BE28 /* BoardCoordinator.swift */,
 				4D127FB124819C7000247DBD /* BoardViewController.swift */,
+				4DA65C0B2487A765008EE639 /* CardListViewController.swift */,
+				4DA65C072487A5DF008EE639 /* CardDetailViewController.swift */,
 			);
 			path = Board;
 			sourceTree = "<group>";
@@ -317,6 +315,8 @@
 			isa = PBXGroup;
 			children = (
 				4D664865247B903B00BD1790 /* PlayerViewModel.swift */,
+				4DA65C0D2487A7F3008EE639 /* CardListViewModel.swift */,
+				4DA65C092487A617008EE639 /* CardViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -355,71 +355,9 @@
 				4D3C17D82334CEBD0036808F /* Storyboarded.swift */,
 				4D75AA8524751378008C2672 /* MainMenu */,
 				4D127FAE2481993A00247DBD /* Board */,
-				4DA28E422474B99A00BF0288 /* ListCards */,
 				4D75AA8B24751A0D008C2672 /* Winner */,
 			);
 			path = Modules;
-			sourceTree = "<group>";
-		};
-		4DA28E422474B99A00BF0288 /* ListCards */ = {
-			isa = PBXGroup;
-			children = (
-				4DA28E632474C77100BF0288 /* Entity */,
-				4DA28E622474C76A00BF0288 /* Interactor */,
-				4DA28E652474C7ED00BF0288 /* Presenter */,
-				4DA28E642474C7A000BF0288 /* Protocols */,
-				4DA28E612474C76400BF0288 /* Router */,
-				4DA28E682474C99700BF0288 /* View */,
-			);
-			path = ListCards;
-			sourceTree = "<group>";
-		};
-		4DA28E612474C76400BF0288 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				4DA28E5F2474C75700BF0288 /* ListCardsRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		4DA28E622474C76A00BF0288 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				4DA28E592474C3EB00BF0288 /* ListCardsInteractor.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		4DA28E632474C77100BF0288 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				4DA28E5D2474C73600BF0288 /* ListCardsResponseModel.swift */,
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		4DA28E642474C7A000BF0288 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				4DA28E5B2474C5CF00BF0288 /* ListCardsProtocols.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		4DA28E652474C7ED00BF0288 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				4DA28E662474C7F900BF0288 /* ListCardsPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		4DA28E682474C99700BF0288 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				4DA28E692474C9BD00BF0288 /* ListCardsViewController1.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		4DA3484720812970006DA164 = {
@@ -723,7 +661,6 @@
 			files = (
 				4D75AA9224754E2B008C2672 /* Storyboarded.swift in Sources */,
 				4DFF753723360ED300C7CC24 /* Wallet.swift in Sources */,
-				4DA28E672474C7F900BF0288 /* ListCardsPresenter.swift in Sources */,
 				4DE54955246B204000ADC11C /* MachineStates.swift in Sources */,
 				4DAA5BCB2471D97600165829 /* Constants+Expected.swift in Sources */,
 				4D2A4B8C2195DEB300315524 /* EY+ImageView.swift in Sources */,
@@ -734,14 +671,12 @@
 				4DF7B4A1244D7BC100814B64 /* RealmWriteAsync.swift in Sources */,
 				4D3C17D72334CE730036808F /* Coordinator.swift in Sources */,
 				4DC5E55B2484FDE000BB3A6D /* MainMenuCoordinator.swift in Sources */,
+				4DA65C082487A5DF008EE639 /* CardDetailViewController.swift in Sources */,
 				4DA3488020812A8B006DA164 /* AppDelegate.swift in Sources */,
 				4DB64EBB248525F000B9BE28 /* BoardCoordinator.swift in Sources */,
 				4DAA5BB12470309A00165829 /* Player+Helpers.swift in Sources */,
+				4DA65C0C2487A765008EE639 /* CardListViewController.swift in Sources */,
 				4DA5236C208158C8000FFAAB /* EY+Array.swift in Sources */,
-				4DA28E6A2474C9BD00BF0288 /* ListCardsViewController1.swift in Sources */,
-				4DA28E5E2474C73600BF0288 /* ListCardsResponseModel.swift in Sources */,
-				4DA28E5A2474C3EB00BF0288 /* ListCardsInteractor.swift in Sources */,
-				4DA28E602474C75700BF0288 /* ListCardsRouter.swift in Sources */,
 				4DAA5BC92471D5AA00165829 /* Family.swift in Sources */,
 				4D75AA8F247520FE008C2672 /* EY+NSObject.swift in Sources */,
 				4D08FAFE24767E1400E3296C /* Card+Create.swift in Sources */,
@@ -762,11 +697,12 @@
 				4DFF75282336067400C7CC24 /* EY+ViewController.swift in Sources */,
 				4DAE26EA247FEC1B007C338E /* BorderedButton.swift in Sources */,
 				4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */,
-				4DA28E5C2474C5CF00BF0288 /* ListCardsProtocols.swift in Sources */,
 				4D111E1A2336B20900472BDC /* Player.swift in Sources */,
 				4D5CA50E2337E82400EF9F96 /* GameModel.swift in Sources */,
+				4DA65C0E2487A7F3008EE639 /* CardListViewModel.swift in Sources */,
 				4D08FAFC24767DD300E3296C /* Board+Create.swift in Sources */,
 				4DE54953246B1EF800ADC11C /* PlayerEntity.swift in Sources */,
+				4DA65C0A2487A617008EE639 /* CardViewModel.swift in Sources */,
 				4DED36742465865600CB7D72 /* RealmHelper.swift in Sources */,
 				4DFF752B2336077400C7CC24 /* Tax.swift in Sources */,
 				4DE5496B246BF76000ADC11C /* EY+String.swift in Sources */,

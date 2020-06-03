@@ -23,5 +23,35 @@
             </objects>
             <point key="canvasLocation" x="88" y="49"/>
         </scene>
+        <!--Card List View Controller-->
+        <scene sceneID="ayC-wd-JRx">
+            <objects>
+                <viewController storyboardIdentifier="CardListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uaP-XX-x8D" customClass="CardListViewController" customModule="EngineYard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MGV-NZ-Jzr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="aEi-do-ZFD"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6oT-kj-upu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="834" y="51"/>
+        </scene>
+        <!--Card Detail View Controller-->
+        <scene sceneID="f4W-3k-ZsV">
+            <objects>
+                <viewController storyboardIdentifier="CardDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PGJ-4B-cMH" customClass="CardDetailViewController" customModule="EngineYard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MB5-vr-T0N">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="fy1-SY-4pj"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y43-Hq-wg4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1513" y="54"/>
+        </scene>
     </scenes>
 </document>

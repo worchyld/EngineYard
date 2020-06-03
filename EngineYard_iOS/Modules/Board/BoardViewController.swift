@@ -9,13 +9,18 @@
 import UIKit
 
 struct BoardViewModel {
-    var board: Board?
+    let board: Board!
 
     init(board: Board) {
         self.board = board
     }
+
+    func getPosition(at index: Int) -> BoardPosition {
+        return self.board.positions[index]
+    }
 }
 
+// Show all decks (cards in their position)
 class BoardViewController: UIViewController, Storyboarded, ReusableView {
     weak var coordinator: BoardCoordinator?
     var viewModel: BoardViewModel!
@@ -36,7 +41,7 @@ class BoardViewController: UIViewController, Storyboarded, ReusableView {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "Cards"
+        self.title = "Decks"
         self.view.addSubview(tableView)
 
         // : Debug
@@ -68,6 +73,16 @@ extension BoardViewController : UITableViewDelegate, UITableViewDataSource {
         // Configure the cell...
         return configure(cell, at: indexPath)
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print ("didSelect: \(indexPath.row)")
+
+        let position = viewModel.getPosition(at: indexPath.row)
+
+        print ("you selected position: \(position.name)")
+
+        coordinator?.showCardList(position: position)
+    }
 }
 
 extension BoardViewController {
@@ -83,4 +98,6 @@ extension BoardViewController {
 
         return cell
     }
+
+    
 }
