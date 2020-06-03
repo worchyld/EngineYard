@@ -13,9 +13,14 @@ import UIKit
 class CardDetailViewController: UIViewController, Storyboarded {
     weak var coordinator: BoardCoordinator?
     var viewModel: CardViewModel!
+    private weak var cardView: CardView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Card view"
+
+        let customView = CardView().loadNib() as! CardView
+        customView.frame = self.view.frame
+        view.addSubview(customView)
     }
 }

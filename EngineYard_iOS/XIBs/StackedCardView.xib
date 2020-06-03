@@ -7,9 +7,28 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardView" customModule="EngineYard" customModuleProvider="target">
+            <connections>
+                <outlet property="buyButton" destination="7kn-L5-Moh" id="RHe-3g-xXc"/>
+                <outlet property="costLabel" destination="6i2-Yy-XG9" id="tHe-8o-CC1"/>
+                <outlet property="generationLabel" destination="h1t-eJ-pjk" id="YfX-fU-x6Y"/>
+                <outlet property="incomeLabel" destination="Gqo-By-eIo" id="4qd-c4-Dhg"/>
+                <outlet property="nameLabel" destination="ura-iy-4ur" id="6Yg-VM-22g"/>
+                <outlet property="ordersLabel" destination="XHf-T1-Xdg" id="FE3-Yp-eIk"/>
+                <outlet property="productionLabel" destination="h1t-eJ-pjk" id="6vL-9T-byf"/>
+                <outlet property="trainIconView" destination="lMb-Ga-7kD" id="6QS-W6-tUs"/>
+                <outletCollection property="iconSidebarCollection" destination="7z6-Ug-eNt" collectionClass="NSMutableArray" id="y8l-0I-ZHk"/>
+                <outletCollection property="iconSidebarCollection" destination="080-eB-m97" collectionClass="NSMutableArray" id="iFX-P4-gOy"/>
+                <outletCollection property="iconSidebarCollection" destination="Np1-jY-cXZ" collectionClass="NSMutableArray" id="ChN-R4-apX"/>
+                <outletCollection property="diceImageViewCollection" destination="jzU-8L-dfW" collectionClass="NSMutableArray" id="2ZU-Cu-j9P"/>
+                <outletCollection property="diceImageViewCollection" destination="D1n-OI-B6c" collectionClass="NSMutableArray" id="WSV-CD-A4L"/>
+                <outletCollection property="diceImageViewCollection" destination="sun-9g-cSV" collectionClass="NSMutableArray" id="mio-lf-Mb6"/>
+                <outletCollection property="diceImageViewCollection" destination="jtr-Gv-ffy" collectionClass="NSMutableArray" id="i1E-Wi-NJC"/>
+                <outletCollection property="diceImageViewCollection" destination="8H9-8z-muu" collectionClass="NSMutableArray" id="pYg-Ne-tqk"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" restorationIdentifier="CardView" translatesAutoresizingMaskIntoConstraints="NO" id="iN0-l3-epB" userLabel="cardView" customClass="CardView" customModule="EngineYard" customModuleProvider="target">
+        <view contentMode="scaleToFill" restorationIdentifier="CardView" translatesAutoresizingMaskIntoConstraints="NO" id="iN0-l3-epB" userLabel="cardView">
             <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Z32-Ic-eJ7">
@@ -199,9 +218,6 @@
                                             <rect key="frame" x="0.0" y="52.5" width="150" height="52.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <state key="normal" title="Buy $99"/>
-                                            <connections>
-                                                <action selector="buyButtonDidPress:" destination="iN0-l3-epB" eventType="touchUpInside" id="khL-IY-aGz"/>
-                                            </connections>
                                         </button>
                                     </subviews>
                                 </stackView>
@@ -239,24 +255,6 @@
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <connections>
-                <outlet property="buyButton" destination="7kn-L5-Moh" id="bjf-zf-fhr"/>
-                <outlet property="costLabel" destination="6i2-Yy-XG9" id="VLH-0p-YUY"/>
-                <outlet property="generationLabel" destination="2ni-F2-pVY" id="IMH-Gv-8K1"/>
-                <outlet property="incomeLabel" destination="Gqo-By-eIo" id="aD9-rh-soc"/>
-                <outlet property="nameLabel" destination="ura-iy-4ur" id="93L-1F-Ofo"/>
-                <outlet property="ordersLabel" destination="XHf-T1-Xdg" id="D1c-HU-wAR"/>
-                <outlet property="productionLabel" destination="h1t-eJ-pjk" id="Wwu-sR-c8F"/>
-                <outlet property="trainIconView" destination="lMb-Ga-7kD" id="IA5-cD-XWR"/>
-                <outletCollection property="iconSidebarCollection" destination="7z6-Ug-eNt" collectionClass="NSMutableArray" id="b9c-7z-G9r"/>
-                <outletCollection property="iconSidebarCollection" destination="080-eB-m97" collectionClass="NSMutableArray" id="EC9-WS-646"/>
-                <outletCollection property="iconSidebarCollection" destination="Np1-jY-cXZ" collectionClass="NSMutableArray" id="fmf-k4-BTt"/>
-                <outletCollection property="diceImageViewCollection" destination="jzU-8L-dfW" collectionClass="NSMutableArray" id="YhC-J0-2fk"/>
-                <outletCollection property="diceImageViewCollection" destination="D1n-OI-B6c" collectionClass="NSMutableArray" id="uIU-Z4-4o6"/>
-                <outletCollection property="diceImageViewCollection" destination="sun-9g-cSV" collectionClass="NSMutableArray" id="dtz-b8-bc7"/>
-                <outletCollection property="diceImageViewCollection" destination="jtr-Gv-ffy" collectionClass="NSMutableArray" id="724-F3-Fnf"/>
-                <outletCollection property="diceImageViewCollection" destination="8H9-8z-muu" collectionClass="NSMutableArray" id="dwf-iK-7Xo"/>
-            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="141.29464285714286"/>
         </view>
     </objects>
