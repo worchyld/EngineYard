@@ -18,11 +18,20 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ojV-Fv-1yR" userLabel="cardHeader">
                             <rect key="frame" x="0.0" y="0.0" width="150" height="95"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-train" id="lMb-Ga-7kD">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JVd-kz-ARl">
                                     <rect key="frame" x="15" y="15" width="25" height="25"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
-                                </imageView>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-train" id="lMb-Ga-7kD">
+                                            <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="25" id="hIS-Eh-IRk"/>
+                                        <constraint firstAttribute="width" constant="25" id="zxg-uB-4wg"/>
+                                    </constraints>
+                                </view>
                                 <view clipsSubviews="YES" contentMode="scaleToFill" id="Um7-ag-P1c" userLabel="NameView">
                                     <rect key="frame" x="8" y="55" width="124" height="33"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -128,7 +137,12 @@
                             </subviews>
                             <color key="backgroundColor" red="0.56078431370000004" green="0.76078431369999999" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
+                                <constraint firstItem="Um7-ag-P1c" firstAttribute="top" secondItem="JVd-kz-ARl" secondAttribute="bottom" constant="15" id="2Uq-jJ-hDD"/>
+                                <constraint firstItem="JVd-kz-ARl" firstAttribute="top" secondItem="ojV-Fv-1yR" secondAttribute="top" constant="15" id="8tu-Tm-AbE"/>
+                                <constraint firstItem="JVd-kz-ARl" firstAttribute="leading" secondItem="ojV-Fv-1yR" secondAttribute="leading" constant="15" id="Qou-cf-8lA"/>
+                                <constraint firstItem="JVd-kz-ARl" firstAttribute="leading" secondItem="ojV-Fv-1yR" secondAttribute="leading" constant="15" id="Wmf-6c-dSe"/>
                                 <constraint firstAttribute="height" constant="95" id="XQM-BH-0eQ"/>
+                                <constraint firstItem="Um7-ag-P1c" firstAttribute="leading" secondItem="JVd-kz-ARl" secondAttribute="leading" id="rIU-UQ-Vs8"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UBU-ez-rp1" userLabel="cardBody">
@@ -141,23 +155,28 @@
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="52.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="eG9-Cs-EVK">
-                                                    <rect key="frame" x="10" y="22" width="135" height="32"/>
+                                                <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="eG9-Cs-EVK">
+                                                    <rect key="frame" x="10" y="22" width="130" height="32"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="die-1" translatesAutoresizingMaskIntoConstraints="NO" id="jzU-8L-dfW">
-                                                            <rect key="frame" x="0.0" y="0.0" width="23" height="32"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="21" height="32"/>
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
                                                         </imageView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="die-2" translatesAutoresizingMaskIntoConstraints="NO" id="D1n-OI-B6c">
-                                                            <rect key="frame" x="28" y="0.0" width="23" height="32"/>
+                                                            <rect key="frame" x="27" y="0.0" width="21.5" height="32"/>
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
                                                         </imageView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" image="die-3" translatesAutoresizingMaskIntoConstraints="NO" id="sun-9g-cSV">
-                                                            <rect key="frame" x="56" y="0.0" width="23" height="32"/>
+                                                            <rect key="frame" x="54.5" y="0.0" width="21" height="32"/>
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
                                                         </imageView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFit" image="die-4" translatesAutoresizingMaskIntoConstraints="NO" id="jtr-Gv-ffy">
-                                                            <rect key="frame" x="84" y="0.0" width="23" height="32"/>
+                                                            <rect key="frame" x="81.5" y="0.0" width="21.5" height="32"/>
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
                                                         </imageView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="die-5" translatesAutoresizingMaskIntoConstraints="NO" id="8H9-8z-muu">
-                                                            <rect key="frame" x="112" y="0.0" width="23" height="32"/>
+                                                            <rect key="frame" x="109" y="0.0" width="21" height="32"/>
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
                                                         </imageView>
                                                     </subviews>
                                                 </stackView>
@@ -172,7 +191,7 @@
                                                 <constraint firstItem="XHf-T1-Xdg" firstAttribute="leading" secondItem="cZf-MV-tkD" secondAttribute="leading" constant="10" id="Acv-n4-5Aa"/>
                                                 <constraint firstItem="eG9-Cs-EVK" firstAttribute="top" secondItem="XHf-T1-Xdg" secondAttribute="bottom" constant="5" id="N4b-mm-K9E"/>
                                                 <constraint firstItem="XHf-T1-Xdg" firstAttribute="top" secondItem="cZf-MV-tkD" secondAttribute="top" constant="5" id="eHr-p3-Qdn"/>
-                                                <constraint firstAttribute="trailing" secondItem="eG9-Cs-EVK" secondAttribute="trailing" constant="5" id="rPM-dk-y6B"/>
+                                                <constraint firstAttribute="trailing" secondItem="eG9-Cs-EVK" secondAttribute="trailing" constant="10" id="rPM-dk-y6B"/>
                                                 <constraint firstItem="XHf-T1-Xdg" firstAttribute="leading" secondItem="eG9-Cs-EVK" secondAttribute="leading" id="vFj-kd-irK"/>
                                             </constraints>
                                         </view>
