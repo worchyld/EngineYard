@@ -176,6 +176,70 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="359" y="88"/>
         </view>
+        <view clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" id="p7M-Wr-Xsg" userLabel="cogView">
+            <rect key="frame" x="0.0" y="0.0" width="59" height="28"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="XNQ-Nj-HwW">
+                    <rect key="frame" x="4.5" y="4" width="50.5" height="20"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-cog" translatesAutoresizingMaskIntoConstraints="NO" id="G1W-8h-H0p">
+                            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="20" id="P6G-h2-hBo"/>
+                                <constraint firstAttribute="height" constant="20" id="wUX-kS-AFm"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$99" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i6W-z1-oas">
+                            <rect key="frame" x="24" y="0.0" width="26.5" height="20"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="XNQ-Nj-HwW" firstAttribute="centerY" secondItem="p7M-Wr-Xsg" secondAttribute="centerY" id="YKt-E9-dK4"/>
+                <constraint firstItem="XNQ-Nj-HwW" firstAttribute="centerX" secondItem="p7M-Wr-Xsg" secondAttribute="centerX" id="nBa-rl-hQm"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="368.84057971014494" y="147.99107142857142"/>
+        </view>
+        <view clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" id="fBU-tP-JGu" userLabel="coinsView">
+            <rect key="frame" x="0.0" y="0.0" width="59" height="28"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ubr-4v-nz1">
+                    <rect key="frame" x="4.5" y="4" width="50.5" height="20"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-coins" translatesAutoresizingMaskIntoConstraints="NO" id="xRM-Vq-fzy">
+                            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="20" id="RLZ-go-A4L"/>
+                                <constraint firstAttribute="height" constant="20" id="c6c-K2-yd5"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$99" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmT-0t-QhR">
+                            <rect key="frame" x="24" y="0.0" width="26.5" height="20"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="ubr-4v-nz1" firstAttribute="centerY" secondItem="fBU-tP-JGu" secondAttribute="centerY" id="PaP-o0-NVh"/>
+                <constraint firstItem="ubr-4v-nz1" firstAttribute="centerX" secondItem="fBU-tP-JGu" secondAttribute="centerX" id="k6j-Gc-TF2"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="371.73913043478262" y="211.60714285714286"/>
+        </view>
     </objects>
     <resources>
         <image name="die-1" width="32" height="32"/>
@@ -183,6 +247,8 @@
         <image name="die-3" width="32" height="32"/>
         <image name="die-4" width="32" height="32"/>
         <image name="die-5" width="32" height="32"/>
+        <image name="icon-cog" width="32" height="32"/>
+        <image name="icon-coins" width="32" height="32"/>
         <image name="icon-design" width="32" height="32"/>
         <image name="icon-train" width="50" height="33.5"/>
     </resources>
