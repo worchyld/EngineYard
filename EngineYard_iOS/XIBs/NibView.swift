@@ -1,63 +1,47 @@
 //
 //  NibView.swift
-//  EngineYard
+//  NibView
 //
-//  Created by Amarjit on 03/06/2020.
-//  Copyright © 2020 Amarjit. All rights reserved.
+//  Created by Domas on 10/02/2017.
+//  Copyright © 2016 Trafi. All rights reserved.
 //
 
-import Foundation
+#if canImport(NibView)
+import NibView #endif
 import UIKit
 
-class NibView: UIView {
-    var view: UIView!
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+open class NibView: UIView, NibLoadable {
 
-        // Setup view from .xib file
-        xibSetup()
+    open class var nibName: String {
+        return String(describing: self)
     }
 
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-
-        // Setup view from .xib file
-        xibSetup()
+    open override func awakeAfter(using aDecoder: NSCoder) -> Any? {
+        return nibLoader.awakeAfter(using: aDecoder, super.awakeAfter(using: aDecoder))
     }
-}
-private extension NibView {
 
-    func xibSetup() {
-        backgroundColor = UIColor.clear
-        view = loadNib()
-        
-        guard let view = view else {
-            return
+    // MARK: - Interface builder
+
+    #if TARGET_INTERFACE_BUILDER
+
+        public override init(frame: CGRect) {
+            super.init(frame: frame)
+            nibLoader.initWithFrame()
         }
 
-        // use bounds not frame or it'll be offset
-        view.frame = bounds
-        // Adding custom subview on top of our view
-        addSubview(view)
+        public required init?(coder aDecoder: NSCoder) {
+            super.init(coder: aDecoder)
+        }
 
+        open override func prepareForInterfaceBuilder() {
+            super.prepareForInterfaceBuilder()
+            nibLoader.prepareForInterfaceBuilder()
+        }
 
-        view.translatesAutoresizingMaskIntoConstraints = false
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[childView]|",
-                                                      options: [],
-                                                      metrics: nil,
-                                                      views: ["childView": view]))
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[childView]|",
-                                                      options: [],
-                                                      metrics: nil,
-                                                      views: ["childView": view]))
-    }
-}
-extension UIView {
-    /** Loads instance from nib with the same name. */
-    func loadNib() -> UIView {
-        let bundle = Bundle(for: type(of: self))
-        let nibName = type(of: self).description().components(separatedBy: ".").last!
-        let nib = UINib(nibName: nibName, bundle: bundle)
-        return nib.instantiate(withOwner: self, options: nil).first as! UIView
-    }
+        open override func setValue(_ value: Any?, forKeyPath keyPath: String) {
+            super.setValue(value, forKeyPath: keyPath)
+            nibLoader.setValue(value, forKeyPath: keyPath)
+        }
+
+    #endif
 }
