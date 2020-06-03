@@ -59,7 +59,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="137.68115942028987" y="141.29464285714286"/>
         </view>
-        <view userInteractionEnabled="NO" contentMode="scaleToFill" id="iwV-bK-x08">
+        <view userInteractionEnabled="NO" contentMode="scaleToFill" id="iwV-bK-x08" userLabel="productionCostView">
             <rect key="frame" x="0.0" y="0.0" width="85" height="40"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -90,7 +90,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="444.20289855072468" y="75"/>
         </view>
-        <view userInteractionEnabled="NO" contentMode="scaleToFill" id="WGg-NN-CFF">
+        <view userInteractionEnabled="NO" contentMode="scaleToFill" id="WGg-NN-CFF" userLabel="costView">
             <rect key="frame" x="0.0" y="0.0" width="85" height="40"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -121,7 +121,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="674.63768115942037" y="75"/>
         </view>
-        <view contentMode="scaleToFill" id="cZf-MV-tkD">
+        <view contentMode="scaleToFill" id="cZf-MV-tkD" userLabel="ordersView">
             <rect key="frame" x="0.0" y="0.0" width="185" height="42"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -169,7 +169,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="507.97101449275368" y="212.94642857142856"/>
         </view>
-        <view userInteractionEnabled="NO" contentMode="scaleToFill" id="RNA-cB-to1">
+        <view userInteractionEnabled="NO" contentMode="scaleToFill" id="RNA-cB-to1" userLabel="coinsView">
             <rect key="frame" x="0.0" y="0.0" width="85" height="40"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -200,7 +200,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="506.52173913043481" y="140.625"/>
         </view>
-        <view contentMode="scaleToFill" id="Um7-ag-P1c">
+        <view contentMode="scaleToFill" id="Um7-ag-P1c" userLabel="NameView">
             <rect key="frame" x="0.0" y="0.0" width="185" height="57"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -229,7 +229,7 @@
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="516.66666666666674" y="340.51339285714283"/>
+            <point key="canvasLocation" x="391" y="278"/>
         </view>
     </objects>
     <resources>
