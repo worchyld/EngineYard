@@ -199,6 +199,9 @@
                                             <rect key="frame" x="0.0" y="52.5" width="150" height="52.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <state key="normal" title="Buy $99"/>
+                                            <connections>
+                                                <action selector="buyButtonDidPress:" destination="iN0-l3-epB" eventType="touchUpInside" id="khL-IY-aGz"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </stackView>
@@ -236,89 +239,25 @@
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="buyButton" destination="7kn-L5-Moh" id="bjf-zf-fhr"/>
+                <outlet property="costLabel" destination="6i2-Yy-XG9" id="VLH-0p-YUY"/>
+                <outlet property="generationLabel" destination="2ni-F2-pVY" id="IMH-Gv-8K1"/>
+                <outlet property="incomeLabel" destination="Gqo-By-eIo" id="aD9-rh-soc"/>
+                <outlet property="nameLabel" destination="ura-iy-4ur" id="93L-1F-Ofo"/>
+                <outlet property="ordersLabel" destination="XHf-T1-Xdg" id="D1c-HU-wAR"/>
+                <outlet property="productionLabel" destination="h1t-eJ-pjk" id="Wwu-sR-c8F"/>
+                <outlet property="trainIconView" destination="lMb-Ga-7kD" id="IA5-cD-XWR"/>
+                <outletCollection property="iconSidebarCollection" destination="7z6-Ug-eNt" collectionClass="NSMutableArray" id="b9c-7z-G9r"/>
+                <outletCollection property="iconSidebarCollection" destination="080-eB-m97" collectionClass="NSMutableArray" id="EC9-WS-646"/>
+                <outletCollection property="iconSidebarCollection" destination="Np1-jY-cXZ" collectionClass="NSMutableArray" id="fmf-k4-BTt"/>
+                <outletCollection property="diceImageViewCollection" destination="jzU-8L-dfW" collectionClass="NSMutableArray" id="YhC-J0-2fk"/>
+                <outletCollection property="diceImageViewCollection" destination="D1n-OI-B6c" collectionClass="NSMutableArray" id="uIU-Z4-4o6"/>
+                <outletCollection property="diceImageViewCollection" destination="sun-9g-cSV" collectionClass="NSMutableArray" id="dtz-b8-bc7"/>
+                <outletCollection property="diceImageViewCollection" destination="jtr-Gv-ffy" collectionClass="NSMutableArray" id="724-F3-Fnf"/>
+                <outletCollection property="diceImageViewCollection" destination="8H9-8z-muu" collectionClass="NSMutableArray" id="dwf-iK-7Xo"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="141.29464285714286"/>
-        </view>
-        <view contentMode="scaleToFill" id="VL4-aU-g29" userLabel="iconsView">
-            <rect key="frame" x="0.0" y="0.0" width="65" height="85"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="T1n-RP-RPk">
-                    <rect key="frame" x="7.5" y="5" width="50.5" height="72"/>
-                    <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="iBw-mw-5k3">
-                            <rect key="frame" x="0.0" y="0.0" width="50.5" height="20"/>
-                            <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-design" translatesAutoresizingMaskIntoConstraints="NO" id="Wvj-l8-idt">
-                                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="20" id="VEL-Og-Y1J"/>
-                                        <constraint firstAttribute="width" constant="20" id="xaz-06-kuu"/>
-                                    </constraints>
-                                </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$99" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uR0-M2-M6e">
-                                    <rect key="frame" x="24" y="0.0" width="26.5" height="20"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="20" id="ogs-FL-KHJ"/>
-                            </constraints>
-                        </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="XNQ-Nj-HwW">
-                            <rect key="frame" x="0.0" y="26" width="50.5" height="20"/>
-                            <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-cog" translatesAutoresizingMaskIntoConstraints="NO" id="G1W-8h-H0p">
-                                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="20" id="P6G-h2-hBo"/>
-                                        <constraint firstAttribute="height" constant="20" id="wUX-kS-AFm"/>
-                                    </constraints>
-                                </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$99" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i6W-z1-oas">
-                                    <rect key="frame" x="24" y="0.0" width="26.5" height="20"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="20" id="5VX-91-exQ"/>
-                            </constraints>
-                        </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ubr-4v-nz1">
-                            <rect key="frame" x="0.0" y="52" width="50.5" height="20"/>
-                            <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-coins" translatesAutoresizingMaskIntoConstraints="NO" id="xRM-Vq-fzy">
-                                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="20" id="RLZ-go-A4L"/>
-                                        <constraint firstAttribute="height" constant="20" id="c6c-K2-yd5"/>
-                                    </constraints>
-                                </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$99" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmT-0t-QhR">
-                                    <rect key="frame" x="24" y="0.0" width="26.5" height="20"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="20" id="A0a-tz-dLm"/>
-                            </constraints>
-                        </stackView>
-                    </subviews>
-                </stackView>
-            </subviews>
-            <constraints>
-                <constraint firstItem="T1n-RP-RPk" firstAttribute="centerX" secondItem="VL4-aU-g29" secondAttribute="centerX" id="6bD-3t-gzT"/>
-                <constraint firstItem="T1n-RP-RPk" firstAttribute="top" secondItem="VL4-aU-g29" secondAttribute="top" constant="5" id="Zdg-Xb-vM4"/>
-            </constraints>
-            <nil key="simulatedTopBarMetrics"/>
-            <nil key="simulatedBottomBarMetrics"/>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="455.79710144927537" y="52.566964285714285"/>
         </view>
     </objects>
     <resources>
