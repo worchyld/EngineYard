@@ -169,30 +169,6 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="507.97101449275368" y="212.94642857142856"/>
         </view>
-        <view contentMode="scaleToFill" id="pxg-j3-iux">
-            <rect key="frame" x="0.0" y="0.0" width="185" height="55"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fifth Generation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hnz-0v-tHR">
-                    <rect key="frame" x="8" y="33" width="170" height="18"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Green.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOx-PO-bDx">
-                    <rect key="frame" x="7" y="0.0" width="170" height="34"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-            </subviews>
-            <nil key="simulatedTopBarMetrics"/>
-            <nil key="simulatedBottomBarMetrics"/>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="510.86956521739137" y="274.88839285714283"/>
-        </view>
         <view userInteractionEnabled="NO" contentMode="scaleToFill" id="RNA-cB-to1">
             <rect key="frame" x="0.0" y="0.0" width="85" height="40"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -223,6 +199,37 @@
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="506.52173913043481" y="140.625"/>
+        </view>
+        <view contentMode="scaleToFill" id="Um7-ag-P1c">
+            <rect key="frame" x="0.0" y="0.0" width="185" height="57"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eFR-he-5zZ">
+                    <rect key="frame" x="5" y="0.0" width="110.5" height="51.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ura-iy-4ur">
+                            <rect key="frame" x="0.0" y="0.0" width="110.5" height="33.5"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fifth Generation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ni-F2-pVY">
+                            <rect key="frame" x="0.0" y="33.5" width="110.5" height="18"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="eFR-he-5zZ" firstAttribute="leading" secondItem="Um7-ag-P1c" secondAttribute="leading" constant="5" id="ckC-9x-1FH"/>
+                <constraint firstItem="eFR-he-5zZ" firstAttribute="top" secondItem="Um7-ag-P1c" secondAttribute="top" id="hdS-yT-PVq"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="516.66666666666674" y="340.51339285714283"/>
         </view>
     </objects>
     <resources>
