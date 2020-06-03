@@ -51,6 +51,7 @@
 		4DA65C0A2487A617008EE639 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA65C092487A617008EE639 /* CardViewModel.swift */; };
 		4DA65C0C2487A765008EE639 /* CardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA65C0B2487A765008EE639 /* CardListViewController.swift */; };
 		4DA65C0E2487A7F3008EE639 /* CardListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA65C0D2487A7F3008EE639 /* CardListViewModel.swift */; };
+		4DA65C102487D1E2008EE639 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA65C0F2487D1E2008EE639 /* CardView.swift */; };
 		4DA92C212156874500AD19B7 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		4DAA5BB12470309A00165829 /* Player+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA5BB02470309A00165829 /* Player+Helpers.swift */; };
 		4DAA5BB3247155B600165829 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA5BB2247155B600165829 /* Board.swift */; };
@@ -187,6 +188,7 @@
 		4DA65C092487A617008EE639 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		4DA65C0B2487A765008EE639 /* CardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListViewController.swift; sourceTree = "<group>"; };
 		4DA65C0D2487A7F3008EE639 /* CardListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListViewModel.swift; sourceTree = "<group>"; };
+		4DA65C0F2487D1E2008EE639 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		4DAA5BB02470309A00165829 /* Player+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player+Helpers.swift"; sourceTree = "<group>"; };
 		4DAA5BB2247155B600165829 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		4DAA5BB6247159A900165829 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -512,6 +514,7 @@
 				4DFA7A4C233D579E004099B7 /* PlayerWinnerCellView.xib */,
 				4DFA7A4E233D5840004099B7 /* PlayerTaxReportView.xib */,
 				4DFA7A50233D58A2004099B7 /* DieCellView.xib */,
+				4DA65C0F2487D1E2008EE639 /* CardView.swift */,
 				4DFA7A52233D58F7004099B7 /* SingleCardView.xib */,
 				4D9EBCF72473F5E700648376 /* StackedCardView.xib */,
 			);
@@ -687,6 +690,7 @@
 				4D5CA5182337FC6900EF9F96 /* ErrorCode.swift in Sources */,
 				4D127FB224819C7000247DBD /* BoardViewController.swift in Sources */,
 				4D75AA8D24751A77008C2672 /* WinnerViewController.swift in Sources */,
+				4DA65C102487D1E2008EE639 /* CardView.swift in Sources */,
 				4DFF753223360BA700C7CC24 /* Fonts.swift in Sources */,
 				4DAA5BC32471A24D00165829 /* Hand.swift in Sources */,
 				4DA52369208158A8000FFAAB /* EY+Colors.swift in Sources */,
