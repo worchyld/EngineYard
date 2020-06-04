@@ -24,7 +24,6 @@
 		4D300D91246EE10E0083AEE1 /* BasicGKGameModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D300D90246EE10E0083AEE1 /* BasicGKGameModelTests.swift */; };
 		4D3A32D42488B1A700837161 /* NewCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A32D32488B1A700837161 /* NewCardView.swift */; };
 		4D3A32D62488D6CB00837161 /* UIStackView+BGColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A32D52488D6CB00837161 /* UIStackView+BGColor.swift */; };
-		4D3A32D92488F20D00837161 /* CardFamilyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A32D72488F20D00837161 /* CardFamilyTableViewCell.swift */; };
 		4D3A32DE2488F34E00837161 /* CostStackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D3A32DD2488F34E00837161 /* CostStackView.xib */; };
 		4D3A32E02488F38A00837161 /* ProductionStackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D3A32DF2488F38A00837161 /* ProductionStackView.xib */; };
 		4D3A32E22488F40000837161 /* IncomeStackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D3A32E12488F40000837161 /* IncomeStackView.xib */; };
@@ -47,7 +46,9 @@
 		4D75AA9224754E2B008C2672 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3C17D82334CEBD0036808F /* Storyboarded.swift */; };
 		4D75AA9424756028008C2672 /* FamilyFlatColorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D75AA9324756028008C2672 /* FamilyFlatColorTest.swift */; };
 		4D7E37C7248918E200EA7D59 /* IconTrainImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E37C6248918E200EA7D59 /* IconTrainImageView.swift */; };
-		4D7E37CB2489257C00EA7D59 /* CardFamilyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D7E37CA2489257C00EA7D59 /* CardFamilyTableViewCell.xib */; };
+		4D7E37CE24892A0000EA7D59 /* CardFamilyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E37CC24892A0000EA7D59 /* CardFamilyTableViewCell.swift */; };
+		4D7E37CF24892A0000EA7D59 /* CardFamilyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D7E37CD24892A0000EA7D59 /* CardFamilyTableViewCell.xib */; };
+		4D7E37D124892A5E00EA7D59 /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E37D024892A5E00EA7D59 /* UIView+Anchor.swift */; };
 		4D807E962488517A00E7A05F /* NewCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D807E952488517A00E7A05F /* NewCardView.xib */; };
 		4D8AB2A1233E21C4009158CB /* EY+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8AB2A0233E21C4009158CB /* EY+Notification.swift */; };
 		4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D925D74219F4E2D00441733 /* EY+Time.swift */; };
@@ -174,7 +175,6 @@
 		4D300D90246EE10E0083AEE1 /* BasicGKGameModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicGKGameModelTests.swift; sourceTree = "<group>"; };
 		4D3A32D32488B1A700837161 /* NewCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardView.swift; sourceTree = "<group>"; };
 		4D3A32D52488D6CB00837161 /* UIStackView+BGColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+BGColor.swift"; sourceTree = "<group>"; };
-		4D3A32D72488F20D00837161 /* CardFamilyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFamilyTableViewCell.swift; sourceTree = "<group>"; };
 		4D3A32DD2488F34E00837161 /* CostStackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CostStackView.xib; sourceTree = "<group>"; };
 		4D3A32DF2488F38A00837161 /* ProductionStackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductionStackView.xib; sourceTree = "<group>"; };
 		4D3A32E12488F40000837161 /* IncomeStackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncomeStackView.xib; sourceTree = "<group>"; };
@@ -197,7 +197,9 @@
 		4D75AA9024754195008C2672 /* SelectPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlayerViewController.swift; sourceTree = "<group>"; };
 		4D75AA9324756028008C2672 /* FamilyFlatColorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyFlatColorTest.swift; sourceTree = "<group>"; };
 		4D7E37C6248918E200EA7D59 /* IconTrainImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTrainImageView.swift; sourceTree = "<group>"; };
-		4D7E37CA2489257C00EA7D59 /* CardFamilyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardFamilyTableViewCell.xib; sourceTree = "<group>"; };
+		4D7E37CC24892A0000EA7D59 /* CardFamilyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFamilyTableViewCell.swift; sourceTree = "<group>"; };
+		4D7E37CD24892A0000EA7D59 /* CardFamilyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardFamilyTableViewCell.xib; sourceTree = "<group>"; };
+		4D7E37D024892A5E00EA7D59 /* UIView+Anchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
 		4D807E952488517A00E7A05F /* NewCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewCardView.xib; sourceTree = "<group>"; };
 		4D8AB2A0233E21C4009158CB /* EY+Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Notification.swift"; sourceTree = "<group>"; };
 		4D925D74219F4E2D00441733 /* EY+Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Time.swift"; sourceTree = "<group>"; };
@@ -314,11 +316,11 @@
 			children = (
 				4DB64EBA248525F000B9BE28 /* BoardCoordinator.swift */,
 				4D127FB124819C7000247DBD /* CardFamiliesViewController.swift */,
-				4D3A32D72488F20D00837161 /* CardFamilyTableViewCell.swift */,
-				4D7E37CA2489257C00EA7D59 /* CardFamilyTableViewCell.xib */,
 				4DA65C0B2487A765008EE639 /* CardListViewController.swift */,
 				4DA65C072487A5DF008EE639 /* CardDetailViewController.swift */,
 				4D7E37C6248918E200EA7D59 /* IconTrainImageView.swift */,
+				4D7E37CC24892A0000EA7D59 /* CardFamilyTableViewCell.swift */,
+				4D7E37CD24892A0000EA7D59 /* CardFamilyTableViewCell.xib */,
 			);
 			path = Board;
 			sourceTree = "<group>";
@@ -514,6 +516,7 @@
 				4D300D8B246EBF470083AEE1 /* EY+Paths.swift */,
 				4D75AA8E247520FE008C2672 /* EY+NSObject.swift */,
 				4D3A32D52488D6CB00837161 /* UIStackView+BGColor.swift */,
+				4D7E37D024892A5E00EA7D59 /* UIView+Anchor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -689,7 +692,7 @@
 				4DFA7A51233D58A2004099B7 /* DieCellView.xib in Resources */,
 				4D111E08233672CE00472BDC /* Birdy_Notification1.wav in Resources */,
 				4D75AA8A24751A00008C2672 /* Winner.storyboard in Resources */,
-				4D7E37CB2489257C00EA7D59 /* CardFamilyTableViewCell.xib in Resources */,
+				4D7E37CF24892A0000EA7D59 /* CardFamilyTableViewCell.xib in Resources */,
 				4D111E06233672CE00472BDC /* Birdy_Note5.wav in Resources */,
 				4DFA7A53233D58F7004099B7 /* OLDCardView.xib in Resources */,
 				4DA3487E20812A8B006DA164 /* LaunchScreen.storyboard in Resources */,
@@ -773,10 +776,12 @@
 				4DFF75282336067400C7CC24 /* EY+ViewController.swift in Sources */,
 				4DAE26EA247FEC1B007C338E /* BorderedButton.swift in Sources */,
 				4D3A32D62488D6CB00837161 /* UIStackView+BGColor.swift in Sources */,
+				4D7E37CE24892A0000EA7D59 /* CardFamilyTableViewCell.swift in Sources */,
 				4DE6A15E24883F4C00B59934 /* NibLoadable.swift in Sources */,
 				4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */,
 				4D3A32D42488B1A700837161 /* NewCardView.swift in Sources */,
 				4D111E1A2336B20900472BDC /* Player.swift in Sources */,
+				4D7E37D124892A5E00EA7D59 /* UIView+Anchor.swift in Sources */,
 				4D5CA50E2337E82400EF9F96 /* GameModel.swift in Sources */,
 				4D3A32EC2488F77400837161 /* TrainNameStackView.swift in Sources */,
 				4DA65C0E2487A7F3008EE639 /* CardListViewModel.swift in Sources */,
@@ -784,7 +789,6 @@
 				4DE6A1662488489D00B59934 /* CardView.swift in Sources */,
 				4DE54953246B1EF800ADC11C /* PlayerEntity.swift in Sources */,
 				4DA65C0A2487A617008EE639 /* CardViewModel.swift in Sources */,
-				4D3A32D92488F20D00837161 /* CardFamilyTableViewCell.swift in Sources */,
 				4DED36742465865600CB7D72 /* RealmHelper.swift in Sources */,
 				4DE6A1642488443600B59934 /* NibView.swift in Sources */,
 				4DFF752B2336077400C7CC24 /* Tax.swift in Sources */,

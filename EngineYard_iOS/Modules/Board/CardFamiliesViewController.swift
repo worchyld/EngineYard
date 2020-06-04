@@ -69,17 +69,17 @@ extension CardFamiliesViewController : UITableViewDelegate, UITableViewDataSourc
         //let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath)
         let cell: CardFamilyTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath) as! CardFamilyTableViewCell
 
-        cell.viewModel = self.viewModelForCell(at: indexPath)
+        //cell.viewModel = self.viewModelForCell(at: indexPath)
         cell.layoutIfNeeded()
 
         return cell
     }
-
-    private func viewModelForCell(at indexPath: IndexPath) -> CardFamilyViewModel {
-        let position = self.viewModel.board.positions[indexPath.row]
-        let viewModel = CardFamilyViewModel(with: position)
-        return viewModel
-    }
+//
+//    private func viewModelForCell(at indexPath: IndexPath) -> CardFamilyViewModel {
+//        let position = self.viewModel.board.positions[indexPath.row]
+//        let viewModel = CardFamilyViewModel(with: position)
+//        return viewModel
+//    }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print ("didSelect: \(indexPath.row)")
