@@ -31,7 +31,8 @@ class BoardCoordinator : Coordinator {
         let board = Board()
         self.game = Game.init(board: board)
 
-        let vc = BoardViewController.instantiate(StoryboardRef.board)
+        // Show all card families
+        let vc = CardFamiliesViewController.instantiate(StoryboardRef.board)
         vc.coordinator = self
         vc.viewModel = BoardViewModel.init(board: board)
 

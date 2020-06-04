@@ -47,14 +47,9 @@ extension CardListViewController : UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath)
-        let cell: CardFamilyTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier)
-            as! CardFamilyTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)
 
         let card = self.viewModel.cards[indexPath.row]
-        cell.card = card
-        cell.backgroundColor = UIColor.red
-
         print ("\(card.name), $\(card.cost), \(card.color), \(card.generation)")
 
         return cell

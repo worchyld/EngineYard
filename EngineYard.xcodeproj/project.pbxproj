@@ -16,7 +16,7 @@
 		4D111E09233672CE00472BDC /* cardSlide8.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D111E04233672CE00472BDC /* cardSlide8.wav */; };
 		4D111E1A2336B20900472BDC /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D111E182336B20900472BDC /* Player.swift */; };
 		4D127FB024819C4D00247DBD /* Board.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D127FAF24819C4D00247DBD /* Board.storyboard */; };
-		4D127FB224819C7000247DBD /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D127FB124819C7000247DBD /* BoardViewController.swift */; };
+		4D127FB224819C7000247DBD /* CardFamiliesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D127FB124819C7000247DBD /* CardFamiliesViewController.swift */; };
 		4D247B37219FFE340004478D /* NumberFormatCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D247B36219FFE340004478D /* NumberFormatCache.swift */; };
 		4D2A4B8C2195DEB300315524 /* EY+ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2A4B8B2195DEB300315524 /* EY+ImageView.swift */; };
 		4D300D8D246EC66F0083AEE1 /* EY+Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D300D8B246EBF470083AEE1 /* EY+Paths.swift */; };
@@ -166,7 +166,7 @@
 		4D111E04233672CE00472BDC /* cardSlide8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardSlide8.wav; sourceTree = "<group>"; };
 		4D111E182336B20900472BDC /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		4D127FAF24819C4D00247DBD /* Board.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Board.storyboard; sourceTree = "<group>"; };
-		4D127FB124819C7000247DBD /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
+		4D127FB124819C7000247DBD /* CardFamiliesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFamiliesViewController.swift; sourceTree = "<group>"; };
 		4D247B36219FFE340004478D /* NumberFormatCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatCache.swift; sourceTree = "<group>"; };
 		4D2A4B8B2195DEB300315524 /* EY+ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+ImageView.swift"; sourceTree = "<group>"; };
 		4D300D8B246EBF470083AEE1 /* EY+Paths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Paths.swift"; sourceTree = "<group>"; };
@@ -313,9 +313,9 @@
 			isa = PBXGroup;
 			children = (
 				4DB64EBA248525F000B9BE28 /* BoardCoordinator.swift */,
-				4D127FB124819C7000247DBD /* BoardViewController.swift */,
-				4DA65C0B2487A765008EE639 /* CardListViewController.swift */,
+				4D127FB124819C7000247DBD /* CardFamiliesViewController.swift */,
 				4D3A32D72488F20D00837161 /* CardFamilyTableViewCell.swift */,
+				4DA65C0B2487A765008EE639 /* CardListViewController.swift */,
 				4DA65C072487A5DF008EE639 /* CardDetailViewController.swift */,
 			);
 			path = Board;
@@ -744,7 +744,7 @@
 				4DED36762465866100CB7D72 /* SoundManager.swift in Sources */,
 				4D5CA5182337FC6900EF9F96 /* ErrorCode.swift in Sources */,
 				4D3A32EE2488F8DD00837161 /* IconTrainImageView.swift in Sources */,
-				4D127FB224819C7000247DBD /* BoardViewController.swift in Sources */,
+				4D127FB224819C7000247DBD /* CardFamiliesViewController.swift in Sources */,
 				4D75AA8D24751A77008C2672 /* WinnerViewController.swift in Sources */,
 				4DFF753223360BA700C7CC24 /* Fonts.swift in Sources */,
 				4DE6A16224883FB100B59934 /* NibViewController.swift in Sources */,

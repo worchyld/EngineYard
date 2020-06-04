@@ -1,5 +1,5 @@
 //
-//  BoardViewController.swift
+//  CardFamiliesViewController.swift
 //  EngineYard
 //
 //  Created by Amarjit on 29/05/2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct BoardViewModel {
+public struct BoardViewModel {
     let board: Board!
 
     init(board: Board) {
@@ -20,14 +20,14 @@ struct BoardViewModel {
     }
 }
 
-// Show all decks (cards in their position)
-class BoardViewController: UIViewController, Storyboarded, ReusableView {
+// Show all decks/card families
+class CardFamiliesViewController: UIViewController, Storyboarded, ReusableView {
     weak var coordinator: BoardCoordinator?
     var viewModel: BoardViewModel!
     static var reuseIdentifier: String = "BoardViewCellID"
 
     var cellReuseId: String {
-        return BoardViewController.reuseIdentifier
+        return CardFamiliesViewController.reuseIdentifier
     }
 
     private lazy var tableView: UITableView = {
@@ -43,17 +43,13 @@ class BoardViewController: UIViewController, Storyboarded, ReusableView {
 
         self.title = "Decks"
         self.view.addSubview(tableView)
-
-        // : Debug
-        print ("Board: \(viewModel.board as Any)")
-        self.coordinator?.parentCoordinator?.printCoordinators()
     }
 
 }
 
 // MARK: UITableView delegate methods
 
-extension BoardViewController : UITableViewDelegate, UITableViewDataSource {
+extension CardFamiliesViewController : UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -69,9 +65,11 @@ extension BoardViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath)
 
+        let position = viewModel.board.positions[indexPath.row]
 
-        // Configure the cell...
-        return configure(cell, at: indexPath)
+        print (position.name)
+
+        return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -85,7 +83,9 @@ extension BoardViewController : UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension BoardViewController {
+
+/*
+extension CardFamiliesViewController {
     func configure(_ cell: UITableViewCell, at indexPath: IndexPath) -> UITableViewCell {
         guard let board = self.viewModel.board else {
             return cell
@@ -98,6 +98,5 @@ extension BoardViewController {
 
         return cell
     }
-
-    
 }
+*/

@@ -9,8 +9,8 @@
 import UIKit
 
 class CardFamilyTableViewCell: UITableViewCell {
+    /*
     var card: Card!
-    public static let cellIdentifer = "familyCellID"
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -53,5 +53,5 @@ class CardFamilyTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+    */
 }
