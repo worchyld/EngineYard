@@ -34,7 +34,8 @@ class CardFamiliesViewController: UIViewController, Storyboarded, ReusableView {
         let tv = UITableView(frame: self.view.frame, style: .plain)
         tv.delegate = self
         tv.dataSource = self
-        tv.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseId)
+        //tv.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseId)
+        tv.register( CardFamilyTableViewCell.self, forCellReuseIdentifier: cellReuseId )
         return tv
     }()
 
@@ -63,9 +64,13 @@ extension CardFamiliesViewController : UITableViewDelegate, UITableViewDataSourc
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath)
+        //let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath)
+        let cell: CardFamilyTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath) as! CardFamilyTableViewCell
 
         let position = viewModel.board.positions[indexPath.row]
+        
+        cell.boardPosition = position
+        cell.layoutIfNeeded()
 
         print (position.name)
 
@@ -81,6 +86,15 @@ extension CardFamiliesViewController : UITableViewDelegate, UITableViewDataSourc
 
         coordinator?.showCardList(position: position)
     }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
+
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
+
 }
 
 
