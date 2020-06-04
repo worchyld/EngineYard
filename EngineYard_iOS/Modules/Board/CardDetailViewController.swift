@@ -17,5 +17,19 @@ class CardDetailViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Card view"
+
+        let nib = CardDetailView.nib()
+        let customView = nib.instantiate(withOwner: nil, options: nil).first as! UIView
+
+        self.view.addSubview(customView)
+
+        NSLayoutConstraint.activate([
+                   customView.topAnchor.constraint(equalTo: self.view.topAnchor),
+                   customView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+                   customView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+                   customView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+               ])
+
+
     }
 }
