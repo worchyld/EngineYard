@@ -58,6 +58,7 @@ class FamilyTableViewCell: UITableViewCell {
 
         let bgColor = UIColor.flat(color: position.color.flatColor)
         self.backgroundColor = bgColor
+        self.alpha = 0.75
         
         self.nameLabel?.text = viewModel.name
         self.generationLabel?.text = String(describing: viewModel.generation).capitalizingFirstLetter()

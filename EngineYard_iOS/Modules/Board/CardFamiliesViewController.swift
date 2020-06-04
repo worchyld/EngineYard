@@ -34,8 +34,8 @@ class CardFamiliesViewController: UIViewController, Storyboarded {
         tv.delegate = self
         tv.dataSource = self
         tv.register(FamilyTableViewCell.nib(), forCellReuseIdentifier: FamilyTableViewCell.reuseIdentifier)
-        tv.rowHeight = 60 //UITableView.automaticDimension
-        tv.estimatedRowHeight = 60
+        tv.rowHeight = 70 //UITableView.automaticDimension
+        tv.estimatedRowHeight = 70
         return tv
     }()
 
