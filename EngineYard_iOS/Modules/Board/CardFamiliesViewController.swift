@@ -78,12 +78,7 @@ extension CardFamiliesViewController : UITableViewDelegate, UITableViewDataSourc
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print ("didSelect: \(indexPath.row)")
-
         let position = viewModel.getPosition(at: indexPath.row)
-
-        print ("you selected position: \(position.name)")
-
         coordinator?.showCardList(position: position)
     }
 }

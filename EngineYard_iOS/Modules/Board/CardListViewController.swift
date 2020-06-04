@@ -63,8 +63,6 @@ extension CardListViewController : UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print ("didSelect: \(indexPath.row)")
-
         let card = viewModel.cards[indexPath.row]
         self.coordinator?.showSingleCard(card)
     }
