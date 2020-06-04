@@ -32,7 +32,7 @@ class CardFamiliesViewController: UIViewController, Storyboarded {
     private lazy var tableView: UITableView = {
         let tv = UITableView(frame: self.view.frame, style: .plain)
         tv.delegate = self
-        tv.dataSource = self        
+        tv.dataSource = self
         tv.register(FamilyTableViewCell.nib(), forCellReuseIdentifier: FamilyTableViewCell.reuseIdentifier)
         tv.rowHeight = 60 //UITableView.automaticDimension
         tv.estimatedRowHeight = 60
@@ -69,9 +69,7 @@ extension CardFamiliesViewController : UITableViewDelegate, UITableViewDataSourc
         let position = self.viewModel.board.positions[indexPath.row]
 
         cell.configure(with: position)
-
         cell.layoutIfNeeded()
-
 
         return cell
     }
