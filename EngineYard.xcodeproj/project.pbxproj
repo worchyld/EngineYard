@@ -47,6 +47,7 @@
 		4D75AA9224754E2B008C2672 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3C17D82334CEBD0036808F /* Storyboarded.swift */; };
 		4D75AA9424756028008C2672 /* FamilyFlatColorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D75AA9324756028008C2672 /* FamilyFlatColorTest.swift */; };
 		4D7E37C7248918E200EA7D59 /* IconTrainImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E37C6248918E200EA7D59 /* IconTrainImageView.swift */; };
+		4D7E37CB2489257C00EA7D59 /* CardFamilyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D7E37CA2489257C00EA7D59 /* CardFamilyTableViewCell.xib */; };
 		4D807E962488517A00E7A05F /* NewCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D807E952488517A00E7A05F /* NewCardView.xib */; };
 		4D8AB2A1233E21C4009158CB /* EY+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8AB2A0233E21C4009158CB /* EY+Notification.swift */; };
 		4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D925D74219F4E2D00441733 /* EY+Time.swift */; };
@@ -196,6 +197,7 @@
 		4D75AA9024754195008C2672 /* SelectPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlayerViewController.swift; sourceTree = "<group>"; };
 		4D75AA9324756028008C2672 /* FamilyFlatColorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyFlatColorTest.swift; sourceTree = "<group>"; };
 		4D7E37C6248918E200EA7D59 /* IconTrainImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTrainImageView.swift; sourceTree = "<group>"; };
+		4D7E37CA2489257C00EA7D59 /* CardFamilyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardFamilyTableViewCell.xib; sourceTree = "<group>"; };
 		4D807E952488517A00E7A05F /* NewCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewCardView.xib; sourceTree = "<group>"; };
 		4D8AB2A0233E21C4009158CB /* EY+Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Notification.swift"; sourceTree = "<group>"; };
 		4D925D74219F4E2D00441733 /* EY+Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Time.swift"; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 				4DB64EBA248525F000B9BE28 /* BoardCoordinator.swift */,
 				4D127FB124819C7000247DBD /* CardFamiliesViewController.swift */,
 				4D3A32D72488F20D00837161 /* CardFamilyTableViewCell.swift */,
+				4D7E37CA2489257C00EA7D59 /* CardFamilyTableViewCell.xib */,
 				4DA65C0B2487A765008EE639 /* CardListViewController.swift */,
 				4DA65C072487A5DF008EE639 /* CardDetailViewController.swift */,
 				4D7E37C6248918E200EA7D59 /* IconTrainImageView.swift */,
@@ -380,6 +383,35 @@
 				4D75AA8C24751A77008C2672 /* WinnerViewController.swift */,
 			);
 			path = Winner;
+			sourceTree = "<group>";
+		};
+		4D7E37C82489244500EA7D59 /* NibLoadable */ = {
+			isa = PBXGroup;
+			children = (
+				4DE6A15D24883F4C00B59934 /* NibLoadable.swift */,
+				4DE6A15F24883F8100B59934 /* NibLoader.swift */,
+				4DE6A16124883FB100B59934 /* NibViewController.swift */,
+				4DE6A1632488443600B59934 /* NibView.swift */,
+			);
+			path = NibLoadable;
+			sourceTree = "<group>";
+		};
+		4D7E37C92489246300EA7D59 /* CardXIBs */ = {
+			isa = PBXGroup;
+			children = (
+				4DE6A1652488489D00B59934 /* CardView.swift */,
+				4D9EBCF72473F5E700648376 /* CardView.xib */,
+				4D3A32D32488B1A700837161 /* NewCardView.swift */,
+				4D807E952488517A00E7A05F /* NewCardView.xib */,
+				4DFA7A52233D58F7004099B7 /* OLDCardView.xib */,
+				4D3A32DD2488F34E00837161 /* CostStackView.xib */,
+				4D3A32DF2488F38A00837161 /* ProductionStackView.xib */,
+				4D3A32E12488F40000837161 /* IncomeStackView.xib */,
+				4D3A32EB2488F77400837161 /* TrainNameStackView.swift */,
+				4D3A32E32488F43600837161 /* TrainNameStackView.xib */,
+				4D3A32E52488F48A00837161 /* DiceStackView.xib */,
+			);
+			path = CardXIBs;
 			sourceTree = "<group>";
 		};
 		4DA28E412474B98A00BF0288 /* Modules */ = {
@@ -542,26 +574,13 @@
 		4DFA7A47233D55DE004099B7 /* XIBs */ = {
 			isa = PBXGroup;
 			children = (
+				4D7E37C82489244500EA7D59 /* NibLoadable */,
+				4D7E37C92489246300EA7D59 /* CardXIBs */,
 				4DAE26E9247FEC1B007C338E /* BorderedButton.swift */,
 				4DFA7A4A233D56D5004099B7 /* PlayerProfileMiniView.xib */,
 				4DFA7A4C233D579E004099B7 /* PlayerWinnerCellView.xib */,
 				4DFA7A4E233D5840004099B7 /* PlayerTaxReportView.xib */,
 				4DFA7A50233D58A2004099B7 /* DieCellView.xib */,
-				4DE6A1652488489D00B59934 /* CardView.swift */,
-				4D9EBCF72473F5E700648376 /* CardView.xib */,
-				4D3A32D32488B1A700837161 /* NewCardView.swift */,
-				4D807E952488517A00E7A05F /* NewCardView.xib */,
-				4DFA7A52233D58F7004099B7 /* OLDCardView.xib */,
-				4DE6A15D24883F4C00B59934 /* NibLoadable.swift */,
-				4DE6A15F24883F8100B59934 /* NibLoader.swift */,
-				4DE6A16124883FB100B59934 /* NibViewController.swift */,
-				4DE6A1632488443600B59934 /* NibView.swift */,
-				4D3A32DD2488F34E00837161 /* CostStackView.xib */,
-				4D3A32DF2488F38A00837161 /* ProductionStackView.xib */,
-				4D3A32E12488F40000837161 /* IncomeStackView.xib */,
-				4D3A32EB2488F77400837161 /* TrainNameStackView.swift */,
-				4D3A32E32488F43600837161 /* TrainNameStackView.xib */,
-				4D3A32E52488F48A00837161 /* DiceStackView.xib */,
 			);
 			path = XIBs;
 			sourceTree = "<group>";
@@ -670,6 +689,7 @@
 				4DFA7A51233D58A2004099B7 /* DieCellView.xib in Resources */,
 				4D111E08233672CE00472BDC /* Birdy_Notification1.wav in Resources */,
 				4D75AA8A24751A00008C2672 /* Winner.storyboard in Resources */,
+				4D7E37CB2489257C00EA7D59 /* CardFamilyTableViewCell.xib in Resources */,
 				4D111E06233672CE00472BDC /* Birdy_Note5.wav in Resources */,
 				4DFA7A53233D58F7004099B7 /* OLDCardView.xib in Resources */,
 				4DA3487E20812A8B006DA164 /* LaunchScreen.storyboard in Resources */,

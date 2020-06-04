@@ -45,6 +45,7 @@ class CardFamiliesViewController: UIViewController, Storyboarded, ReusableView {
 
         self.title = "Decks"
         self.view.addSubview(tableView)
+        
     }
 
 }
