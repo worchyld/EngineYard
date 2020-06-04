@@ -21,20 +21,20 @@ public struct BoardViewModel {
 }
 
 // Show all decks/card families
-class CardFamiliesViewController: UIViewController, Storyboarded, ReusableView {
+class CardFamiliesViewController: UIViewController, Storyboarded {
     weak var coordinator: BoardCoordinator?
     var viewModel: BoardViewModel!
-    static var reuseIdentifier: String = "BoardViewCellID"
 
-    var cellReuseId: String {
-        return "cellID"
+    var cellReuseIdentifier: String {
+        return FamilyTableViewCell.reuseIdentifier
     }
 
     private lazy var tableView: UITableView = {
         let tv = UITableView(frame: self.view.frame, style: .plain)
         tv.delegate = self
         tv.dataSource = self
-        tv.register( CardFamilyTableViewCell.self, forCellReuseIdentifier: cellReuseId )
+        //tv.register( FamilyTableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier )
+        tv.register(FamilyTableViewCell.nib(), forCellReuseIdentifier: FamilyTableViewCell.reuseIdentifier)
         tv.rowHeight = UITableView.automaticDimension
         tv.estimatedRowHeight = 60
         return tv
@@ -66,19 +66,16 @@ extension CardFamiliesViewController : UITableViewDelegate, UITableViewDataSourc
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath)
-        let cell: CardFamilyTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath) as! CardFamilyTableViewCell
+//        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath)
+        let cell: FamilyTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! FamilyTableViewCell
 
-        cell.viewModel = self.viewModelForCell(at: indexPath)
+        // Setup view model for cell
+        //let _ = self.viewModel.board.positions[indexPath.row]
+        
         cell.layoutIfNeeded()
 
-        return cell
-    }
 
-    private func viewModelForCell(at indexPath: IndexPath) -> CardFamilyViewModel {
-        let position = self.viewModel.board.positions[indexPath.row]
-        let viewModel = CardFamilyViewModel(with: position)
-        return viewModel
+        return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -90,24 +87,5 @@ extension CardFamiliesViewController : UITableViewDelegate, UITableViewDataSourc
 
         coordinator?.showCardList(position: position)
     }
-
-
 }
 
-
-/*
-extension CardFamiliesViewController {
-    func configure(_ cell: UITableViewCell, at indexPath: IndexPath) -> UITableViewCell {
-        guard let board = self.viewModel.board else {
-            return cell
-        }
-
-        let position = board.positions[indexPath.row]
-
-        cell.textLabel?.text = position.name
-        cell.detailTextLabel?.text = "Cards: \(position.cards.count)"
-
-        return cell
-    }
-}
-*/
