@@ -68,7 +68,6 @@ extension CardFamiliesViewController : UITableViewDelegate, UITableViewDataSourc
         // Setup view model for cell
         let position = self.viewModel.board.positions[indexPath.row]
         guard let card = position.cards.first else {
-            print ("No cards found")
             return cell
         }
 

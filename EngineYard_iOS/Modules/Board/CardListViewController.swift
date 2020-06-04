@@ -23,9 +23,8 @@ class CardListViewController: UIViewController, Storyboarded {
         let tv = UITableView(frame: self.view.frame, style: .plain)
         tv.delegate = self
         tv.dataSource = self
-        //tv.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         tv.register(FamilyTableViewCell.nib(), forCellReuseIdentifier: FamilyTableViewCell.reuseIdentifier)
-        tv.rowHeight = 70 //UITableView.automaticDimension
+        tv.rowHeight = 70
         tv.estimatedRowHeight = 70
         return tv
     }()
@@ -50,13 +49,15 @@ extension CardListViewController : UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)
         let cell: FamilyTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! FamilyTableViewCell
 
+
+        // Setup view model for cell
         let card = self.viewModel.cards[indexPath.row]
-        print ("\(card.name), $\(card.cost), \(card.color), \(card.generation)")
 
         cell.configure(with: card)
+        cell.layoutIfNeeded()
+
 
         return cell
     }
