@@ -32,7 +32,7 @@ class FamilyTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    struct FamilyViewModel {
+    private struct FamilyViewModel {
         private (set) var name: String
         private (set) var cost: Int
         private (set) var generation: Family.Generation
@@ -49,9 +49,30 @@ class FamilyTableViewCell: UITableViewCell {
             return cache.string(from: number) ?? "NaN"
         }()
     }
+    
 
+    private var cardViewModel: CardViewModel!
 
-    func configure(with position: BoardPosition) {
+    func configure(with card: Card) {
+        let bgColor = UIColor.flat(color: card.color.flatColor)
+        self.backgroundColor = bgColor
+        self.alpha = 0.75
+
+        let number: NSNumber = NSNumber(value: card.cost)
+        let cache = NumberFormatCache.currencyRateFormatter
+        let formattedCash: String = cache.string(from: number) ?? "NaN"
+
+        self.nameLabel?.text = String(describing: card.color).capitalizingFirstLetter()
+        self.generationLabel?.text = String(describing: card.generation).capitalizingFirstLetter()
+        self.costLabel?.text = formattedCash
+
+        self.nameLabel?.sizeToFit()
+        self.generationLabel?.sizeToFit()
+        self.costLabel?.sizeToFit()
+    }
+
+    // Old version
+    private func configure(with position: BoardPosition) {
         var viewModel = FamilyViewModel.init(name: position.name,
                                              cost: position.cost,
                                              generation: position.generation)

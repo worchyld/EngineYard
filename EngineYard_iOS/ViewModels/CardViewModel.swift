@@ -10,7 +10,7 @@ import Foundation
 
 // Card view model for a single card
 struct CardViewModel {
-    let card: Card
+    private (set) var card: Card
 
     init(card: Card) {
         self.card = card

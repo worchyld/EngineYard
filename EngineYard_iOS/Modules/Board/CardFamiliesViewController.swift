@@ -34,7 +34,7 @@ class CardFamiliesViewController: UIViewController, Storyboarded {
         tv.delegate = self
         tv.dataSource = self
         tv.register(FamilyTableViewCell.nib(), forCellReuseIdentifier: FamilyTableViewCell.reuseIdentifier)
-        tv.rowHeight = 70 //UITableView.automaticDimension
+        tv.rowHeight = 70
         tv.estimatedRowHeight = 70
         return tv
     }()
@@ -67,8 +67,12 @@ extension CardFamiliesViewController : UITableViewDelegate, UITableViewDataSourc
 
         // Setup view model for cell
         let position = self.viewModel.board.positions[indexPath.row]
+        guard let card = position.cards.first else {
+            print ("No cards found")
+            return cell
+        }
 
-        cell.configure(with: position)
+        cell.configure(with: card)
         cell.layoutIfNeeded()
 
         return cell
