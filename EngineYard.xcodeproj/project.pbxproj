@@ -29,7 +29,6 @@
 		4D3A32E22488F40000837161 /* IncomeStackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D3A32E12488F40000837161 /* IncomeStackView.xib */; };
 		4D3A32E42488F43600837161 /* TrainNameStackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D3A32E32488F43600837161 /* TrainNameStackView.xib */; };
 		4D3A32E62488F48A00837161 /* DiceStackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D3A32E52488F48A00837161 /* DiceStackView.xib */; };
-		4D3A32EC2488F77400837161 /* TrainNameStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A32EB2488F77400837161 /* TrainNameStackView.swift */; };
 		4D3C17D72334CE730036808F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3C17D62334CE730036808F /* Coordinator.swift */; };
 		4D3C17DB2334CF7B0036808F /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3C17DA2334CF7B0036808F /* MainMenuViewController.swift */; };
 		4D3C17DD2334CFCB0036808F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3C17DC2334CFCB0036808F /* MainCoordinator.swift */; };
@@ -38,6 +37,7 @@
 		4D5CA5182337FC6900EF9F96 /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CA5172337FC6900EF9F96 /* ErrorCode.swift */; };
 		4D602C5A2489623A00B73F27 /* FamilyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D602C582489623A00B73F27 /* FamilyTableViewCell.swift */; };
 		4D602C5B2489623A00B73F27 /* FamilyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D602C592489623A00B73F27 /* FamilyTableViewCell.xib */; };
+		4D602C5D248988A900B73F27 /* CardDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D602C5C248988A900B73F27 /* CardDetailView.xib */; };
 		4D664866247B903B00BD1790 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D664865247B903B00BD1790 /* PlayerViewModel.swift */; };
 		4D6C27682469CC2D005F4AEF /* MockPlayerDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6C27672469CC2D005F4AEF /* MockPlayerDataTest.swift */; };
 		4D6C276B2469CDD0005F4AEF /* EY+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6C27692469CDB6005F4AEF /* EY+Int.swift */; };
@@ -172,7 +172,6 @@
 		4D3A32E12488F40000837161 /* IncomeStackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncomeStackView.xib; sourceTree = "<group>"; };
 		4D3A32E32488F43600837161 /* TrainNameStackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrainNameStackView.xib; sourceTree = "<group>"; };
 		4D3A32E52488F48A00837161 /* DiceStackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiceStackView.xib; sourceTree = "<group>"; };
-		4D3A32EB2488F77400837161 /* TrainNameStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainNameStackView.swift; sourceTree = "<group>"; };
 		4D3C17D62334CE730036808F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		4D3C17D82334CEBD0036808F /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		4D3C17DA2334CF7B0036808F /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +181,7 @@
 		4D5CA5172337FC6900EF9F96 /* ErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCode.swift; sourceTree = "<group>"; };
 		4D602C582489623A00B73F27 /* FamilyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyTableViewCell.swift; sourceTree = "<group>"; };
 		4D602C592489623A00B73F27 /* FamilyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FamilyTableViewCell.xib; sourceTree = "<group>"; };
+		4D602C5C248988A900B73F27 /* CardDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardDetailView.xib; sourceTree = "<group>"; };
 		4D664865247B903B00BD1790 /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
 		4D6C27672469CC2D005F4AEF /* MockPlayerDataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPlayerDataTest.swift; sourceTree = "<group>"; };
 		4D6C27692469CDB6005F4AEF /* EY+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Int.swift"; sourceTree = "<group>"; };
@@ -378,9 +378,9 @@
 				4D3A32DD2488F34E00837161 /* CostStackView.xib */,
 				4D3A32DF2488F38A00837161 /* ProductionStackView.xib */,
 				4D3A32E12488F40000837161 /* IncomeStackView.xib */,
-				4D3A32EB2488F77400837161 /* TrainNameStackView.swift */,
 				4D3A32E32488F43600837161 /* TrainNameStackView.xib */,
 				4D3A32E52488F48A00837161 /* DiceStackView.xib */,
+				4D602C5C248988A900B73F27 /* CardDetailView.xib */,
 			);
 			path = CardXIBs;
 			sourceTree = "<group>";
@@ -645,6 +645,7 @@
 				4D111E07233672CE00472BDC /* cardSlide1.wav in Resources */,
 				4DFA7A4B233D56D5004099B7 /* PlayerProfileMiniView.xib in Resources */,
 				4DF1509221679E0300D39D65 /* Main.storyboard in Resources */,
+				4D602C5D248988A900B73F27 /* CardDetailView.xib in Resources */,
 				4D3A32E42488F43600837161 /* TrainNameStackView.xib in Resources */,
 				4D602C5B2489623A00B73F27 /* FamilyTableViewCell.xib in Resources */,
 				4DFA7A4F233D5840004099B7 /* PlayerTaxReportView.xib in Resources */,
@@ -746,7 +747,6 @@
 				4D111E1A2336B20900472BDC /* Player.swift in Sources */,
 				4D7E37D124892A5E00EA7D59 /* UIView+Anchor.swift in Sources */,
 				4D5CA50E2337E82400EF9F96 /* GameModel.swift in Sources */,
-				4D3A32EC2488F77400837161 /* TrainNameStackView.swift in Sources */,
 				4DA65C0E2487A7F3008EE639 /* CardListViewModel.swift in Sources */,
 				4D08FAFC24767DD300E3296C /* Board+Create.swift in Sources */,
 				4DE54953246B1EF800ADC11C /* PlayerEntity.swift in Sources */,
