@@ -20,16 +20,4 @@ class CardDetailViewController: UIViewController, NibViewController, Storyboarde
         super.viewDidLoad()
         self.title = "Card view"
     }
-
-    func setup(with cardView: CardView) {
-        //ui.nameLabel.text = cardView.nameLabel?.text
-        //ui.generationLabel.text = cardView.generationLabel?.text
-        let card = self.viewModel.card
-        cardView.nameLabel.text = self.viewModel.card.name
-        cardView.generationLabel.text = String(describing: card.generation)
-        cardView.costLabel.text = String(describing: "$\(card.cost)")
-        cardView.productionLabel.text = ("$\(card.productionCost)")
-        cardView.incomeLabel.text = ("$\(card.income)")
-        cardView.buyBtn.setTitle("Buy $\(card.cost)", for: UIControl.State.normal)
-    }
 }

@@ -46,8 +46,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Urb-n5-toG" customClass="CardView" customModule="EngineYard" customModuleProvider="target">
-                                <rect key="frame" x="112.5" y="119" width="150" height="200"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1d6-py-Vq0" customClass="CardView" customModule="EngineYard" customModuleProvider="target">
+                                <rect key="frame" x="48" y="96" width="240" height="287"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
@@ -58,7 +58,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y43-Hq-wg4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1513" y="54"/>
+            <point key="canvasLocation" x="1512.8" y="53.523238380809602"/>
         </scene>
     </scenes>
 </document>
