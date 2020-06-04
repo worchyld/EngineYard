@@ -66,10 +66,10 @@ class FamilyTableViewCell: UITableViewCell {
         self.nameLabel?.sizeToFit()
         self.generationLabel?.sizeToFit()
         self.costLabel?.sizeToFit()
-
     }
 
-    func configure(with name: String, generation: Family.Generation, cost: Int) {
+    // Not used
+    private func configure(with name: String, generation: Family.Generation, cost: Int) {
         var viewModel = FamilyViewModel.init(name: name, cost: cost, generation: generation)
 
         self.nameLabel?.text = viewModel.name
