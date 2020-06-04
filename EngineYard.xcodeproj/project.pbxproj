@@ -38,6 +38,7 @@
 		4D602C5A2489623A00B73F27 /* FamilyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D602C582489623A00B73F27 /* FamilyTableViewCell.swift */; };
 		4D602C5B2489623A00B73F27 /* FamilyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D602C592489623A00B73F27 /* FamilyTableViewCell.xib */; };
 		4D602C5D248988A900B73F27 /* CardDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D602C5C248988A900B73F27 /* CardDetailView.xib */; };
+		4D602C5F2489B58500B73F27 /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D602C5E2489B58500B73F27 /* CardDetailView.swift */; };
 		4D664866247B903B00BD1790 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D664865247B903B00BD1790 /* PlayerViewModel.swift */; };
 		4D6C27682469CC2D005F4AEF /* MockPlayerDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6C27672469CC2D005F4AEF /* MockPlayerDataTest.swift */; };
 		4D6C276B2469CDD0005F4AEF /* EY+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6C27692469CDB6005F4AEF /* EY+Int.swift */; };
@@ -182,6 +183,7 @@
 		4D602C582489623A00B73F27 /* FamilyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyTableViewCell.swift; sourceTree = "<group>"; };
 		4D602C592489623A00B73F27 /* FamilyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FamilyTableViewCell.xib; sourceTree = "<group>"; };
 		4D602C5C248988A900B73F27 /* CardDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardDetailView.xib; sourceTree = "<group>"; };
+		4D602C5E2489B58500B73F27 /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
 		4D664865247B903B00BD1790 /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
 		4D6C27672469CC2D005F4AEF /* MockPlayerDataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPlayerDataTest.swift; sourceTree = "<group>"; };
 		4D6C27692469CDB6005F4AEF /* EY+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Int.swift"; sourceTree = "<group>"; };
@@ -380,6 +382,7 @@
 				4D3A32E12488F40000837161 /* IncomeStackView.xib */,
 				4D3A32E32488F43600837161 /* TrainNameStackView.xib */,
 				4D3A32E52488F48A00837161 /* DiceStackView.xib */,
+				4D602C5E2489B58500B73F27 /* CardDetailView.swift */,
 				4D602C5C248988A900B73F27 /* CardDetailView.xib */,
 			);
 			path = CardXIBs;
@@ -712,6 +715,7 @@
 				4D75AA9124754195008C2672 /* SelectPlayerViewController.swift in Sources */,
 				4D01FB0C244B73200031BEE9 /* GameModelEntity.swift in Sources */,
 				4D664866247B903B00BD1790 /* PlayerViewModel.swift in Sources */,
+				4D602C5F2489B58500B73F27 /* CardDetailView.swift in Sources */,
 				4DF7B4A1244D7BC100814B64 /* RealmWriteAsync.swift in Sources */,
 				4D3C17D72334CE730036808F /* Coordinator.swift in Sources */,
 				4DC5E55B2484FDE000BB3A6D /* MainMenuCoordinator.swift in Sources */,
