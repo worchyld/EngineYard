@@ -17,20 +17,20 @@ extension Board {
     static public func create() -> [BoardPosition] {
 
         let positions = [
-            BoardPosition.init(0, color: .green, generation: .first, orderCapacity: 3),
-            BoardPosition.init(1, color: .red, generation: .first, orderCapacity: 3),
-            BoardPosition.init(2, color: .yellow, generation: .first, orderCapacity: 2),
-            BoardPosition.init(3, color: .blue, generation: .first, orderCapacity: 1),
-            BoardPosition.init(4, color: .green, generation: .second, orderCapacity: 4),
-            BoardPosition.init(5, color: .red, generation: .second, orderCapacity: 3),
-            BoardPosition.init(6, color: .yellow, generation: .second, orderCapacity: 3),
-            BoardPosition.init(7, color: .green, generation: .third, orderCapacity: 4),
-            BoardPosition.init(8, color: .blue, generation: .second, orderCapacity: 2),
-            BoardPosition.init(9, color: .red, generation: .third, orderCapacity: 4),
-            BoardPosition.init(10, color: .green, generation: .fourth, orderCapacity: 5),
-            BoardPosition.init(11, color: .yellow, generation: .third, orderCapacity: 3),
-            BoardPosition.init(12, color: .red, generation: .fourth, orderCapacity: 4),
-            BoardPosition.init(13, color: .green, generation: .fifth, orderCapacity: 5)
+            BoardPosition.init(0, cost: 4, color: .green, generation: .first, orderCapacity: 3),
+            BoardPosition.init(1, cost: 8, color: .red, generation: .first, orderCapacity: 3),
+            BoardPosition.init(2, cost: 12, color: .yellow, generation: .first, orderCapacity: 2),
+            BoardPosition.init(3, cost: 16, color: .blue, generation: .first, orderCapacity: 1),
+            BoardPosition.init(4, cost: 20, color: .green, generation: .second, orderCapacity: 4),
+            BoardPosition.init(5, cost: 24, color: .red, generation: .second, orderCapacity: 3),
+            BoardPosition.init(6, cost: 28, color: .yellow, generation: .second, orderCapacity: 3),
+            BoardPosition.init(7, cost: 32, color: .green, generation: .third, orderCapacity: 4),
+            BoardPosition.init(8, cost: 36, color: .blue, generation: .second, orderCapacity: 2),
+            BoardPosition.init(9, cost: 40, color: .red, generation: .third, orderCapacity: 4),
+            BoardPosition.init(10, cost: 44, color: .green, generation: .fourth, orderCapacity: 5),
+            BoardPosition.init(11, cost: 48, color: .yellow, generation: .third, orderCapacity: 3),
+            BoardPosition.init(12, cost: 52, color: .red, generation: .fourth, orderCapacity: 4),
+            BoardPosition.init(13, cost: 54, color: .green, generation: .fifth, orderCapacity: 5)
         ]
 
         let cards = Card.createAllCards()

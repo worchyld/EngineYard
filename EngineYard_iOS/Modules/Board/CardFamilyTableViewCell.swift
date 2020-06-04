@@ -10,10 +10,25 @@ import UIKit
 
 struct CardFamilyViewModel {
     let name: String
-    let generation: String
+    let color: String
     let cost: String
+    let generation: String
     let production: String
     let income: String
+
+    init(with position: BoardPosition) {
+        self.name = String(describing: position.name)
+        self.color = String(describing: position.color)
+        self.generation = String(describing: position.generation)
+        self.cost = "$" + String(describing: position.cost)
+
+        let card = Card.init(cost: position.cost,
+                             color: position.color,
+                             generation: position.generation)
+
+        self.production = "$" + String(describing: card.income)
+        self.income = "$" + String(describing: card.income)
+    }
 }
 
 class CardFamilyTableViewCell: UITableViewCell {
