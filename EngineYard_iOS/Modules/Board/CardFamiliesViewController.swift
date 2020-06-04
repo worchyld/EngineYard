@@ -27,7 +27,7 @@ class CardFamiliesViewController: UIViewController, Storyboarded, ReusableView {
     static var reuseIdentifier: String = "BoardViewCellID"
 
     var cellReuseId: String {
-        return CardFamiliesViewController.reuseIdentifier
+        return "cellID"
     }
 
     private lazy var tableView: UITableView = {
@@ -70,6 +70,10 @@ extension CardFamiliesViewController : UITableViewDelegate, UITableViewDataSourc
         let cell: CardFamilyTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath) as! CardFamilyTableViewCell
 
         //cell.viewModel = self.viewModelForCell(at: indexPath)
+
+        cell.nameLabel.text = "Name"
+
+
         cell.layoutIfNeeded()
 
         return cell
