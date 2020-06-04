@@ -11,7 +11,9 @@ import UIKit
 
 // Show a single card
 class CardDetailViewController: UIViewController, NibViewController, Storyboarded {
-    typealias ViewType = CardView
+    typealias ViewType = NewCardView
+
+    @IBOutlet weak var cardView: NewCardView!
 
     weak var coordinator: BoardCoordinator?
     var viewModel: CardViewModel!
@@ -19,5 +21,6 @@ class CardDetailViewController: UIViewController, NibViewController, Storyboarde
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Card view"
+        self.cardView.layoutIfNeeded()
     }
 }

@@ -11,6 +11,8 @@ import UIKit
 
 @IBDesignable class NewCardView: NibView {
 
+    @IBOutlet weak var headerStackView: UIStackView!
+
     override func layoutSubviews() {
          super.layoutSubviews()
          //manually set subview frames here
@@ -23,21 +25,7 @@ import UIKit
         subView.layer.shadowOffset = .zero
         subView.layer.shadowRadius = 1.0
         insertSubview(subView, at: 0)
-        
 
-//        let backgroundView = UIView()
-//        backgroundView.backgroundColor = UIColor.purple
-//        backgroundView.translatesAutoresizingMaskIntoConstraints = false
-//
-//        // put background view as the most background subviews of stack view
-//        headerStackView.insertSubview(backgroundView, at: 0)
-//
-//        // pin the background view edge to the stack view edge
-//        NSLayoutConstraint.activate([
-//            backgroundView.leadingAnchor.constraint(equalTo: headerStackView.leadingAnchor),
-//            backgroundView.trailingAnchor.constraint(equalTo: headerStackView.trailingAnchor),
-//            backgroundView.topAnchor.constraint(equalTo: headerStackView.topAnchor),
-//            backgroundView.bottomAnchor.constraint(equalTo: headerStackView.bottomAnchor)
-//        ])
+        self.headerStackView.addBackground(color: .flat(color: .OceanGreen))
     }
 }
