@@ -10,12 +10,11 @@ import Foundation
 import UIKit
 
 // Listing cards within a group/family
-class CardListViewController: UIViewController, Storyboarded, ReusableView {
+class CardListViewController: UIViewController, Storyboarded {
     weak var coordinator: BoardCoordinator?
-    static var reuseIdentifier: String = "CardListCell"
 
-    var cellReuseId: String {
-        return CardListViewController.reuseIdentifier
+    var cellReuseIdentifier: String {
+        return "ListCardID"
     }
 
     var viewModel: CardListViewModel!
@@ -24,7 +23,7 @@ class CardListViewController: UIViewController, Storyboarded, ReusableView {
         let tv = UITableView(frame: self.view.frame, style: .plain)
         tv.delegate = self
         tv.dataSource = self
-        tv.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseId)
+        tv.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         return tv
     }()
 
@@ -48,11 +47,15 @@ extension CardListViewController : UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath)
+//        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath)
+        let cell: CardFamilyTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier)
+            as! CardFamilyTableViewCell
 
         let card = self.viewModel.cards[indexPath.row]
+        cell.card = card
+        cell.backgroundColor = UIColor.red
 
-        cell.textLabel?.text = ("\(card.name), $\(card.cost), \(card.color), \(card.generation)")
+        print ("\(card.name), $\(card.cost), \(card.color), \(card.generation)")
 
         return cell
     }

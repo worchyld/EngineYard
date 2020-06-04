@@ -25,13 +25,14 @@
 		4D3A32D42488B1A700837161 /* NewCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A32D32488B1A700837161 /* NewCardView.swift */; };
 		4D3A32D62488D6CB00837161 /* UIStackView+BGColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A32D52488D6CB00837161 /* UIStackView+BGColor.swift */; };
 		4D3A32D92488F20D00837161 /* CardFamilyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A32D72488F20D00837161 /* CardFamilyTableViewCell.swift */; };
-		4D3A32DA2488F20D00837161 /* CardFamilyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D3A32D82488F20D00837161 /* CardFamilyTableViewCell.xib */; };
-		4D3A32DC2488F24200837161 /* IconTrainImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D3A32DB2488F24200837161 /* IconTrainImageView.xib */; };
 		4D3A32DE2488F34E00837161 /* CostStackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D3A32DD2488F34E00837161 /* CostStackView.xib */; };
 		4D3A32E02488F38A00837161 /* ProductionStackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D3A32DF2488F38A00837161 /* ProductionStackView.xib */; };
 		4D3A32E22488F40000837161 /* IncomeStackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D3A32E12488F40000837161 /* IncomeStackView.xib */; };
 		4D3A32E42488F43600837161 /* TrainNameStackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D3A32E32488F43600837161 /* TrainNameStackView.xib */; };
 		4D3A32E62488F48A00837161 /* DiceStackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D3A32E52488F48A00837161 /* DiceStackView.xib */; };
+		4D3A32EA2488F6FC00837161 /* IconTrainImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D3A32E92488F6FC00837161 /* IconTrainImageView.xib */; };
+		4D3A32EC2488F77400837161 /* TrainNameStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A32EB2488F77400837161 /* TrainNameStackView.swift */; };
+		4D3A32EE2488F8DD00837161 /* IconTrainImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A32ED2488F8DD00837161 /* IconTrainImageView.swift */; };
 		4D3C17D72334CE730036808F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3C17D62334CE730036808F /* Coordinator.swift */; };
 		4D3C17DB2334CF7B0036808F /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3C17DA2334CF7B0036808F /* MainMenuViewController.swift */; };
 		4D3C17DD2334CFCB0036808F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3C17DC2334CFCB0036808F /* MainCoordinator.swift */; };
@@ -174,13 +175,14 @@
 		4D3A32D32488B1A700837161 /* NewCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardView.swift; sourceTree = "<group>"; };
 		4D3A32D52488D6CB00837161 /* UIStackView+BGColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+BGColor.swift"; sourceTree = "<group>"; };
 		4D3A32D72488F20D00837161 /* CardFamilyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFamilyTableViewCell.swift; sourceTree = "<group>"; };
-		4D3A32D82488F20D00837161 /* CardFamilyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardFamilyTableViewCell.xib; sourceTree = "<group>"; };
-		4D3A32DB2488F24200837161 /* IconTrainImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IconTrainImageView.xib; sourceTree = "<group>"; };
 		4D3A32DD2488F34E00837161 /* CostStackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CostStackView.xib; sourceTree = "<group>"; };
 		4D3A32DF2488F38A00837161 /* ProductionStackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductionStackView.xib; sourceTree = "<group>"; };
 		4D3A32E12488F40000837161 /* IncomeStackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncomeStackView.xib; sourceTree = "<group>"; };
 		4D3A32E32488F43600837161 /* TrainNameStackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrainNameStackView.xib; sourceTree = "<group>"; };
 		4D3A32E52488F48A00837161 /* DiceStackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiceStackView.xib; sourceTree = "<group>"; };
+		4D3A32E92488F6FC00837161 /* IconTrainImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IconTrainImageView.xib; sourceTree = "<group>"; };
+		4D3A32EB2488F77400837161 /* TrainNameStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainNameStackView.swift; sourceTree = "<group>"; };
+		4D3A32ED2488F8DD00837161 /* IconTrainImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTrainImageView.swift; sourceTree = "<group>"; };
 		4D3C17D62334CE730036808F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		4D3C17D82334CEBD0036808F /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		4D3C17DA2334CF7B0036808F /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
@@ -313,9 +315,8 @@
 				4DB64EBA248525F000B9BE28 /* BoardCoordinator.swift */,
 				4D127FB124819C7000247DBD /* BoardViewController.swift */,
 				4DA65C0B2487A765008EE639 /* CardListViewController.swift */,
-				4DA65C072487A5DF008EE639 /* CardDetailViewController.swift */,
 				4D3A32D72488F20D00837161 /* CardFamilyTableViewCell.swift */,
-				4D3A32D82488F20D00837161 /* CardFamilyTableViewCell.xib */,
+				4DA65C072487A5DF008EE639 /* CardDetailViewController.swift */,
 			);
 			path = Board;
 			sourceTree = "<group>";
@@ -556,10 +557,12 @@
 				4DE6A15F24883F8100B59934 /* NibLoader.swift */,
 				4DE6A16124883FB100B59934 /* NibViewController.swift */,
 				4DE6A1632488443600B59934 /* NibView.swift */,
-				4D3A32DB2488F24200837161 /* IconTrainImageView.xib */,
+				4D3A32ED2488F8DD00837161 /* IconTrainImageView.swift */,
+				4D3A32E92488F6FC00837161 /* IconTrainImageView.xib */,
 				4D3A32DD2488F34E00837161 /* CostStackView.xib */,
 				4D3A32DF2488F38A00837161 /* ProductionStackView.xib */,
 				4D3A32E12488F40000837161 /* IncomeStackView.xib */,
+				4D3A32EB2488F77400837161 /* TrainNameStackView.swift */,
 				4D3A32E32488F43600837161 /* TrainNameStackView.xib */,
 				4D3A32E52488F48A00837161 /* DiceStackView.xib */,
 			);
@@ -664,7 +667,6 @@
 				4D3A32E02488F38A00837161 /* ProductionStackView.xib in Resources */,
 				4D127FB024819C4D00247DBD /* Board.storyboard in Resources */,
 				4D807E962488517A00E7A05F /* NewCardView.xib in Resources */,
-				4D3A32DC2488F24200837161 /* IconTrainImageView.xib in Resources */,
 				4DA3487D20812A8B006DA164 /* Assets.xcassets in Resources */,
 				4D9EBCF82473F5E700648376 /* CardView.xib in Resources */,
 				4D111E09233672CE00472BDC /* cardSlide8.wav in Resources */,
@@ -673,9 +675,9 @@
 				4D75AA8A24751A00008C2672 /* Winner.storyboard in Resources */,
 				4D111E06233672CE00472BDC /* Birdy_Note5.wav in Resources */,
 				4DFA7A53233D58F7004099B7 /* OLDCardView.xib in Resources */,
+				4D3A32EA2488F6FC00837161 /* IconTrainImageView.xib in Resources */,
 				4DA3487E20812A8B006DA164 /* LaunchScreen.storyboard in Resources */,
 				4D3A32E22488F40000837161 /* IncomeStackView.xib in Resources */,
-				4D3A32DA2488F20D00837161 /* CardFamilyTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -741,6 +743,7 @@
 				4D3C17DD2334CFCB0036808F /* MainCoordinator.swift in Sources */,
 				4DED36762465866100CB7D72 /* SoundManager.swift in Sources */,
 				4D5CA5182337FC6900EF9F96 /* ErrorCode.swift in Sources */,
+				4D3A32EE2488F8DD00837161 /* IconTrainImageView.swift in Sources */,
 				4D127FB224819C7000247DBD /* BoardViewController.swift in Sources */,
 				4D75AA8D24751A77008C2672 /* WinnerViewController.swift in Sources */,
 				4DFF753223360BA700C7CC24 /* Fonts.swift in Sources */,
@@ -759,6 +762,7 @@
 				4D3A32D42488B1A700837161 /* NewCardView.swift in Sources */,
 				4D111E1A2336B20900472BDC /* Player.swift in Sources */,
 				4D5CA50E2337E82400EF9F96 /* GameModel.swift in Sources */,
+				4D3A32EC2488F77400837161 /* TrainNameStackView.swift in Sources */,
 				4DA65C0E2487A7F3008EE639 /* CardListViewModel.swift in Sources */,
 				4D08FAFC24767DD300E3296C /* Board+Create.swift in Sources */,
 				4DE6A1662488489D00B59934 /* CardView.swift in Sources */,
