@@ -27,7 +27,7 @@ public struct Family {
         static let allRawValues = Family.Color.green.rawValue...Family.Color.blue.rawValue
     }
 
-    public enum Generation: Int, CaseIterable {
+    enum Generation: Int, CaseIterable {
         case first = 1
         case second
         case third
@@ -35,12 +35,6 @@ public struct Family {
         case fifth
 
         static let allRawValues = Family.Generation.first.rawValue...Family.Generation.fifth.rawValue
-    }
-}
-
-extension Family.Color: CustomStringConvertible {
-    var description: String {
-        return "\(type(of: self))"
     }
 }
 

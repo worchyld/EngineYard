@@ -32,71 +32,18 @@ class FamilyTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    private struct FamilyViewModel {
-        private (set) var name: String
-        private (set) var cost: Int
-        private (set) var generation: Family.Generation
-
-        init(name: String, cost: Int, generation: Family.Generation) {
-            self.name = name
-            self.cost = cost
-            self.generation = generation
-        }
-
-        public lazy var formattedCost: String = {
-            let number: NSNumber = NSNumber(value: self.cost)
-            let cache = NumberFormatCache.currencyRateFormatter
-            return cache.string(from: number) ?? "NaN"
-        }()
-    }
-    
-
-    private var cardViewModel: CardViewModel!
-
     func configure(with card: Card) {
         let bgColor = UIColor.flat(color: card.color.flatColor)
         self.backgroundColor = bgColor
-        self.alpha = 0.75
+        self.layer.opacity = 0.65
 
         let number: NSNumber = NSNumber(value: card.cost)
         let cache = NumberFormatCache.currencyRateFormatter
         let formattedCash: String = cache.string(from: number) ?? "NaN"
 
-        self.nameLabel?.text = String(describing: card.color).capitalizingFirstLetter()
-        self.generationLabel?.text = String(describing: card.generation).capitalizingFirstLetter()
+        self.nameLabel?.text = "\(card.name)".capitalizingFirstLetter()
+        self.generationLabel?.text = "\(card.generation)".capitalizingFirstLetter() + " Generation"
         self.costLabel?.text = formattedCash
-
-        self.nameLabel?.sizeToFit()
-        self.generationLabel?.sizeToFit()
-        self.costLabel?.sizeToFit()
-    }
-
-    // Old version
-    private func configure(with position: BoardPosition) {
-        var viewModel = FamilyViewModel.init(name: position.name,
-                                             cost: position.cost,
-                                             generation: position.generation)
-
-        let bgColor = UIColor.flat(color: position.color.flatColor)
-        self.backgroundColor = bgColor
-        self.alpha = 0.75
-        
-        self.nameLabel?.text = viewModel.name
-        self.generationLabel?.text = String(describing: viewModel.generation).capitalizingFirstLetter()
-        self.costLabel?.text = viewModel.formattedCost
-
-        self.nameLabel?.sizeToFit()
-        self.generationLabel?.sizeToFit()
-        self.costLabel?.sizeToFit()
-    }
-
-    // Not used
-    private func configure(with name: String, generation: Family.Generation, cost: Int) {
-        var viewModel = FamilyViewModel.init(name: name, cost: cost, generation: generation)
-
-        self.nameLabel?.text = viewModel.name
-        self.generationLabel?.text = String(describing: viewModel.generation).capitalizingFirstLetter()
-        self.costLabel?.text = viewModel.formattedCost
 
         self.nameLabel?.sizeToFit()
         self.generationLabel?.sizeToFit()
