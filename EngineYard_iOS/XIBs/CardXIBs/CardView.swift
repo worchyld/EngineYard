@@ -1,40 +1,31 @@
 //
-//  CardView.swift
+//  NewCardView.swift
 //  EngineYard
 //
-//  Created by Amarjit on 03/06/2020.
+//  Created by Amarjit on 04/06/2020.
 //  Copyright © 2020 Amarjit. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class CardView:  UIView  {
+class CardView: UIView {
 
-    @IBOutlet weak var trainIcon: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var headerStackView: UIStackView!
 
-    @IBOutlet weak var generationLabel: UILabel!
+    override func layoutSubviews() {
+         super.layoutSubviews()
+         //manually set subview frames here
+        let subView = UIView(frame: bounds)
+        subView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        subView.layer.cornerRadius = 6.0
+        subView.backgroundColor = UIColor.white
+        subView.layer.shadowColor = UIColor.systemGray.cgColor
+        subView.layer.shadowOpacity = 1.0
+        subView.layer.shadowOffset = .zero
+        subView.layer.shadowRadius = 1.0
+        insertSubview(subView, at: 0)
 
-    @IBOutlet weak var costLabel: UILabel!
-
-    @IBOutlet weak var productionLabel: UILabel!
-
-    @IBOutlet weak var incomeLabel: UILabel!
-
-    @IBOutlet weak var buyBtn: UIButton!
-
-    @IBAction func btnBuyDidPress(_ sender: UIButton) {
+        self.headerStackView.addBackground(color: .flat(color: .OceanGreen))
     }
-    @IBOutlet var diceCollection: [UIImageView]!
-
-    @IBOutlet weak var orderLabel: UILabel!
-
-    @IBOutlet weak var designIcon: UIImageView!
-
-    @IBOutlet weak var cogIcon: UIImageView!
-
-    @IBOutlet weak var coinsIcon: UIImageView!
-
-
 }

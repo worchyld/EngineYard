@@ -22,7 +22,7 @@
 		4D300D8D246EC66F0083AEE1 /* EY+Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D300D8B246EBF470083AEE1 /* EY+Paths.swift */; };
 		4D300D8F246EDF880083AEE1 /* RealmGameModelSaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D300D8E246EDF880083AEE1 /* RealmGameModelSaveTests.swift */; };
 		4D300D91246EE10E0083AEE1 /* BasicGKGameModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D300D90246EE10E0083AEE1 /* BasicGKGameModelTests.swift */; };
-		4D3A32D42488B1A700837161 /* NewCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A32D32488B1A700837161 /* NewCardView.swift */; };
+		4D3A32D42488B1A700837161 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A32D32488B1A700837161 /* CardView.swift */; };
 		4D3A32D62488D6CB00837161 /* UIStackView+BGColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A32D52488D6CB00837161 /* UIStackView+BGColor.swift */; };
 		4D3A32DE2488F34E00837161 /* CostStackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D3A32DD2488F34E00837161 /* CostStackView.xib */; };
 		4D3A32E02488F38A00837161 /* ProductionStackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D3A32DF2488F38A00837161 /* ProductionStackView.xib */; };
@@ -48,7 +48,7 @@
 		4D75AA9224754E2B008C2672 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3C17D82334CEBD0036808F /* Storyboarded.swift */; };
 		4D75AA9424756028008C2672 /* FamilyFlatColorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D75AA9324756028008C2672 /* FamilyFlatColorTest.swift */; };
 		4D7E37D124892A5E00EA7D59 /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E37D024892A5E00EA7D59 /* UIView+Anchor.swift */; };
-		4D807E962488517A00E7A05F /* NewCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D807E952488517A00E7A05F /* NewCardView.xib */; };
+		4D807E962488517A00E7A05F /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D807E952488517A00E7A05F /* CardView.xib */; };
 		4D8AB2A1233E21C4009158CB /* EY+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8AB2A0233E21C4009158CB /* EY+Notification.swift */; };
 		4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D925D74219F4E2D00441733 /* EY+Time.swift */; };
 		4DA3486920812972006DA164 /* EngineYardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3486820812972006DA164 /* EngineYardTests.swift */; };
@@ -169,7 +169,7 @@
 		4D300D8B246EBF470083AEE1 /* EY+Paths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Paths.swift"; sourceTree = "<group>"; };
 		4D300D8E246EDF880083AEE1 /* RealmGameModelSaveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmGameModelSaveTests.swift; sourceTree = "<group>"; };
 		4D300D90246EE10E0083AEE1 /* BasicGKGameModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicGKGameModelTests.swift; sourceTree = "<group>"; };
-		4D3A32D32488B1A700837161 /* NewCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardView.swift; sourceTree = "<group>"; };
+		4D3A32D32488B1A700837161 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		4D3A32D52488D6CB00837161 /* UIStackView+BGColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+BGColor.swift"; sourceTree = "<group>"; };
 		4D3A32DD2488F34E00837161 /* CostStackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CostStackView.xib; sourceTree = "<group>"; };
 		4D3A32DF2488F38A00837161 /* ProductionStackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductionStackView.xib; sourceTree = "<group>"; };
@@ -195,7 +195,7 @@
 		4D75AA9024754195008C2672 /* SelectPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlayerViewController.swift; sourceTree = "<group>"; };
 		4D75AA9324756028008C2672 /* FamilyFlatColorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyFlatColorTest.swift; sourceTree = "<group>"; };
 		4D7E37D024892A5E00EA7D59 /* UIView+Anchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
-		4D807E952488517A00E7A05F /* NewCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewCardView.xib; sourceTree = "<group>"; };
+		4D807E952488517A00E7A05F /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		4D8AB2A0233E21C4009158CB /* EY+Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Notification.swift"; sourceTree = "<group>"; };
 		4D925D74219F4E2D00441733 /* EY+Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Time.swift"; sourceTree = "<group>"; };
 		4DA3485020812970006DA164 /* EngineYard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EngineYard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -392,8 +392,8 @@
 		4D7E37C92489246300EA7D59 /* CardXIBs */ = {
 			isa = PBXGroup;
 			children = (
-				4D3A32D32488B1A700837161 /* NewCardView.swift */,
-				4D807E952488517A00E7A05F /* NewCardView.xib */,
+				4D3A32D32488B1A700837161 /* CardView.swift */,
+				4D807E952488517A00E7A05F /* CardView.xib */,
 				4D3A32DD2488F34E00837161 /* CostStackView.xib */,
 				4D3A32DF2488F38A00837161 /* ProductionStackView.xib */,
 				4D3A32E12488F40000837161 /* IncomeStackView.xib */,
@@ -674,7 +674,7 @@
 				4D3A32E62488F48A00837161 /* DiceStackView.xib in Resources */,
 				4D3A32E02488F38A00837161 /* ProductionStackView.xib in Resources */,
 				4D127FB024819C4D00247DBD /* Board.storyboard in Resources */,
-				4D807E962488517A00E7A05F /* NewCardView.xib in Resources */,
+				4D807E962488517A00E7A05F /* CardView.xib in Resources */,
 				4DA3487D20812A8B006DA164 /* Assets.xcassets in Resources */,
 				4D111E09233672CE00472BDC /* cardSlide8.wav in Resources */,
 				4DFA7A51233D58A2004099B7 /* DieCellView.xib in Resources */,
@@ -764,7 +764,7 @@
 				4D3A32D62488D6CB00837161 /* UIStackView+BGColor.swift in Sources */,
 				4DE6A15E24883F4C00B59934 /* NibLoadable.swift in Sources */,
 				4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */,
-				4D3A32D42488B1A700837161 /* NewCardView.swift in Sources */,
+				4D3A32D42488B1A700837161 /* CardView.swift in Sources */,
 				4D111E1A2336B20900472BDC /* Player.swift in Sources */,
 				4D7E37D124892A5E00EA7D59 /* UIView+Anchor.swift in Sources */,
 				4D5CA50E2337E82400EF9F96 /* GameModel.swift in Sources */,
