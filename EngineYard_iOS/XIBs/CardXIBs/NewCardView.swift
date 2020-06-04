@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-@IBDesignable class NewCardView: NibView {
+class NewCardView: UIView {
 
     @IBOutlet weak var headerStackView: UIStackView!
 

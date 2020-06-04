@@ -45,19 +45,9 @@
                     <view key="view" contentMode="scaleToFill" id="MB5-vr-T0N">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1d6-py-Vq0" customClass="NewCardView" customModule="EngineYard" customModuleProvider="target">
-                                <rect key="frame" x="48" y="96" width="171" height="200"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="fy1-SY-4pj"/>
                     </view>
-                    <connections>
-                        <outlet property="cardView" destination="1d6-py-Vq0" id="2P2-uf-RMa"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y43-Hq-wg4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

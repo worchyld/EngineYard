@@ -109,7 +109,6 @@
 		4DFA7A4D233D579E004099B7 /* PlayerWinnerCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFA7A4C233D579E004099B7 /* PlayerWinnerCellView.xib */; };
 		4DFA7A4F233D5840004099B7 /* PlayerTaxReportView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFA7A4E233D5840004099B7 /* PlayerTaxReportView.xib */; };
 		4DFA7A51233D58A2004099B7 /* DieCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFA7A50233D58A2004099B7 /* DieCellView.xib */; };
-		4DFA7A53233D58F7004099B7 /* OLDCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFA7A52233D58F7004099B7 /* OLDCardView.xib */; };
 		4DFF75282336067400C7CC24 /* EY+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF75262336067400C7CC24 /* EY+ViewController.swift */; };
 		4DFF752B2336077400C7CC24 /* Tax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF752A2336077400C7CC24 /* Tax.swift */; };
 		4DFF753123360BA700C7CC24 /* Devices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF752E23360BA600C7CC24 /* Devices.swift */; };
@@ -255,7 +254,6 @@
 		4DFA7A4C233D579E004099B7 /* PlayerWinnerCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerWinnerCellView.xib; sourceTree = "<group>"; };
 		4DFA7A4E233D5840004099B7 /* PlayerTaxReportView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerTaxReportView.xib; sourceTree = "<group>"; };
 		4DFA7A50233D58A2004099B7 /* DieCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DieCellView.xib; sourceTree = "<group>"; };
-		4DFA7A52233D58F7004099B7 /* OLDCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OLDCardView.xib; sourceTree = "<group>"; };
 		4DFF75262336067400C7CC24 /* EY+ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EY+ViewController.swift"; sourceTree = "<group>"; };
 		4DFF752A2336077400C7CC24 /* Tax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tax.swift; sourceTree = "<group>"; };
 		4DFF752E23360BA600C7CC24 /* Devices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Devices.swift; sourceTree = "<group>"; };
@@ -402,7 +400,6 @@
 				4D9EBCF72473F5E700648376 /* CardView.xib */,
 				4D3A32D32488B1A700837161 /* NewCardView.swift */,
 				4D807E952488517A00E7A05F /* NewCardView.xib */,
-				4DFA7A52233D58F7004099B7 /* OLDCardView.xib */,
 				4D3A32DD2488F34E00837161 /* CostStackView.xib */,
 				4D3A32DF2488F38A00837161 /* ProductionStackView.xib */,
 				4D3A32E12488F40000837161 /* IncomeStackView.xib */,
@@ -691,7 +688,6 @@
 				4D111E08233672CE00472BDC /* Birdy_Notification1.wav in Resources */,
 				4D75AA8A24751A00008C2672 /* Winner.storyboard in Resources */,
 				4D111E06233672CE00472BDC /* Birdy_Note5.wav in Resources */,
-				4DFA7A53233D58F7004099B7 /* OLDCardView.xib in Resources */,
 				4DA3487E20812A8B006DA164 /* LaunchScreen.storyboard in Resources */,
 				4D3A32E22488F40000837161 /* IncomeStackView.xib in Resources */,
 			);
