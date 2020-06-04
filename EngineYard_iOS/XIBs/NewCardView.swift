@@ -10,15 +10,13 @@ import Foundation
 import UIKit
 
 @IBDesignable class NewCardView: NibView {
-    
-    @IBOutlet weak var headerStackView: UIStackView!
 
     override func layoutSubviews() {
          super.layoutSubviews()
          //manually set subview frames here
         let subView = UIView(frame: bounds)
         subView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        subView.layer.cornerRadius = 8.0
+        subView.layer.cornerRadius = 6.0
         subView.backgroundColor = UIColor.white
         subView.layer.shadowColor = UIColor.systemGray.cgColor
         subView.layer.shadowOpacity = 1.0

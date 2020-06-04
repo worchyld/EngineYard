@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-@IBDesignable class CardView:  NibView {
+class CardView:  UIView  {
 
     @IBOutlet weak var trainIcon: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!

@@ -13,8 +13,8 @@
             <rect key="frame" x="0.0" y="0.0" width="166" height="210"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="MXM-3e-5Ix">
-                    <rect key="frame" x="8" y="8" width="150.5" height="200"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="MXM-3e-5Ix">
+                    <rect key="frame" x="7.5" y="8" width="150.5" height="200"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-15" id="5fA-ra-wuU">
                             <rect key="frame" x="0.0" y="0.0" width="150.5" height="85"/>
@@ -188,12 +188,15 @@
                 </stackView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="MXM-3e-5Ix" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="ARy-OT-ng2"/>
+                <constraint firstAttribute="trailing" secondItem="MXM-3e-5Ix" secondAttribute="trailing" constant="8" id="e3B-Tn-fKs"/>
+                <constraint firstItem="MXM-3e-5Ix" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="7.5" id="mDr-Z9-O2c"/>
+                <constraint firstAttribute="bottom" secondItem="MXM-3e-5Ix" secondAttribute="bottom" constant="2" id="w9v-of-omk"/>
+            </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <connections>
-                <outlet property="headerStackView" destination="5fA-ra-wuU" id="be6-Kb-U4g"/>
-            </connections>
             <point key="canvasLocation" x="-149.27536231884059" y="15.401785714285714"/>
         </view>
     </objects>
