@@ -33,9 +33,8 @@ class FamilyTableViewCell: UITableViewCell {
     }
 
     func configure(with card: Card) {
-        let bgColor = UIColor.flat(color: card.color.flatColor)
+        let bgColor = UIColor.flat(color: card.color.flatColor, alpha: 0.45)
         self.backgroundColor = bgColor
-        self.layer.opacity = 0.65
 
         let number: NSNumber = NSNumber(value: card.cost)
         let cache = NumberFormatCache.currencyRateFormatter
