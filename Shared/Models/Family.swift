@@ -38,6 +38,12 @@ public struct Family {
     }
 }
 
+extension Family.Color: CustomStringConvertible {
+    var description: String {
+        return "\(type(of: self))"
+    }
+}
+
 extension Family.Color {
     var flatColor: FlatColors {
         switch self {
