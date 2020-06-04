@@ -8,7 +8,22 @@
 
 import UIKit
 
+struct CardFamilyViewModel {
+    let name: String
+    let generation: String
+    let cost: String
+    let production: String
+    let income: String
+}
+
 class CardFamilyTableViewCell: UITableViewCell {
+    var viewModel: CardFamilyViewModel!
+
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var generationLabel: UILabel!
+    @IBOutlet weak var costLabel: UILabel!
+    @IBOutlet weak var productionLabel: UILabel!
+    @IBOutlet weak var incomeLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
