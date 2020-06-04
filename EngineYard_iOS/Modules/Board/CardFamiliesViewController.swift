@@ -32,20 +32,17 @@ class CardFamiliesViewController: UIViewController, Storyboarded {
     private lazy var tableView: UITableView = {
         let tv = UITableView(frame: self.view.frame, style: .plain)
         tv.delegate = self
-        tv.dataSource = self
-        //tv.register( FamilyTableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier )
+        tv.dataSource = self        
         tv.register(FamilyTableViewCell.nib(), forCellReuseIdentifier: FamilyTableViewCell.reuseIdentifier)
-        tv.rowHeight = UITableView.automaticDimension
+        tv.rowHeight = 60 //UITableView.automaticDimension
         tv.estimatedRowHeight = 60
         return tv
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.title = "Decks"
         self.view.addSubview(tableView)
-        
     }
 
 }
@@ -66,18 +63,12 @@ extension CardFamiliesViewController : UITableViewDelegate, UITableViewDataSourc
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath)
         let cell: FamilyTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! FamilyTableViewCell
 
         // Setup view model for cell
         let position = self.viewModel.board.positions[indexPath.row]
 
-        
-
-        /*
-        cell.configure(with: String(describing: position.color).capitalizingFirstLetter(),
-                       generation: position.generation,
-                       cost: position.cost)*/
+        cell.configure(with: position)
 
         cell.layoutIfNeeded()
 
