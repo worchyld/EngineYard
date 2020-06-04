@@ -8,37 +8,6 @@
 
 import UIKit
 
-
-struct FamilyViewModel {
-    let nameTxt: String
-    let colorTxt: String
-    let costTxt: String
-    let generationTxt: String
-    let productionTxt: String
-    let incomeTxt: String
-
-    init(with position: BoardPosition) {
-        let cache = NumberFormatCache.currencyRateFormatter
-
-        self.nameTxt = String(describing: position.name)
-        self.colorTxt = String(describing: position.color)
-        self.generationTxt = String(describing: position.generation)
-
-        let card = Card.init(cost: position.cost,
-                             color: position.color,
-                             generation: position.generation)
-
-        let numberCost = NSNumber(value: card.cost)
-        let numberProduction = NSNumber(value: card.productionCost)
-        let numberIncome = NSNumber(value: card.income)
-
-        // Cash display text
-        self.costTxt = cache.string(from: numberCost) ?? "N/A"
-        self.productionTxt = cache.string(from: numberProduction) ?? "N/A"
-        self.incomeTxt = cache.string(from: numberIncome) ?? "N/A"
-    }
-}
-
 class FamilyTableViewCell: UITableViewCell {
     @IBOutlet weak var iconTrainImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -63,18 +32,52 @@ class FamilyTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func configure() {
-        self.nameLabel?.text = "Name"
-        self.generationLabel?.text = "Generation"
-        self.costLabel?.text = "Cost"
+    struct FamilyViewModel {
+        private (set) var name: String
+        private (set) var cost: Int
+        private (set) var generation: Family.Generation
+
+        init(name: String, cost: Int, generation: Family.Generation) {
+            self.name = name
+            self.cost = cost
+            self.generation = generation
+        }
+
+        public lazy var formattedCost: String = {
+            let number: NSNumber = NSNumber(value: self.cost)
+            let cache = NumberFormatCache.currencyRateFormatter
+            return cache.string(from: number) ?? "NaN"
+        }()
+    }
+
+
+    func configure(with position: BoardPosition) {
+        var viewModel = FamilyViewModel.init(name: position.name,
+                                             cost: position.cost,
+                                             generation: position.generation)
+
+        let bgColor = UIColor.flat(color: position.color.flatColor)
+        self.backgroundColor = bgColor
+        
+        self.nameLabel?.text = viewModel.name
+        self.generationLabel?.text = String(describing: viewModel.generation).capitalizingFirstLetter()
+        self.costLabel?.text = viewModel.formattedCost
 
         self.nameLabel?.sizeToFit()
         self.generationLabel?.sizeToFit()
         self.costLabel?.sizeToFit()
 
-        //self.productionLabel.text = viewModel.productionTxt
-        //self.incomeLabel.text = viewModel.incomeTxt
-        //self.productionLabel.sizeToFit()
-        //self.incomeLabel.sizeToFit()
+    }
+
+    func configure(with name: String, generation: Family.Generation, cost: Int) {
+        var viewModel = FamilyViewModel.init(name: name, cost: cost, generation: generation)
+
+        self.nameLabel?.text = viewModel.name
+        self.generationLabel?.text = String(describing: viewModel.generation).capitalizingFirstLetter()
+        self.costLabel?.text = viewModel.formattedCost
+
+        self.nameLabel?.sizeToFit()
+        self.generationLabel?.sizeToFit()
+        self.costLabel?.sizeToFit()
     }
 }

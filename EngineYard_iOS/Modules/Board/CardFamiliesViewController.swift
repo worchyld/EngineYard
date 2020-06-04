@@ -70,8 +70,15 @@ extension CardFamiliesViewController : UITableViewDelegate, UITableViewDataSourc
         let cell: FamilyTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! FamilyTableViewCell
 
         // Setup view model for cell
-        //let _ = self.viewModel.board.positions[indexPath.row]
+        let position = self.viewModel.board.positions[indexPath.row]
+
         
+
+        /*
+        cell.configure(with: String(describing: position.color).capitalizingFirstLetter(),
+                       generation: position.generation,
+                       cost: position.cost)*/
+
         cell.layoutIfNeeded()
 
 
