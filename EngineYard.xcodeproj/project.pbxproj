@@ -95,10 +95,6 @@
 		4DE54953246B1EF800ADC11C /* PlayerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE54952246B1EF800ADC11C /* PlayerEntity.swift */; };
 		4DE54955246B204000ADC11C /* MachineStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE54954246B204000ADC11C /* MachineStates.swift */; };
 		4DE5496B246BF76000ADC11C /* EY+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE5496A246BF76000ADC11C /* EY+String.swift */; };
-		4DE6A15E24883F4C00B59934 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE6A15D24883F4C00B59934 /* NibLoadable.swift */; };
-		4DE6A16024883F8100B59934 /* NibLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE6A15F24883F8100B59934 /* NibLoader.swift */; };
-		4DE6A16224883FB100B59934 /* NibViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE6A16124883FB100B59934 /* NibViewController.swift */; };
-		4DE6A1642488443600B59934 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE6A1632488443600B59934 /* NibView.swift */; };
 		4DED36742465865600CB7D72 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DED36732465865500CB7D72 /* RealmHelper.swift */; };
 		4DED36762465866100CB7D72 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DED36752465866100CB7D72 /* SoundManager.swift */; };
 		4DF1509221679E0300D39D65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1509121679E0300D39D65 /* Main.storyboard */; };
@@ -238,10 +234,6 @@
 		4DE54952246B1EF800ADC11C /* PlayerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEntity.swift; sourceTree = "<group>"; };
 		4DE54954246B204000ADC11C /* MachineStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineStates.swift; sourceTree = "<group>"; };
 		4DE5496A246BF76000ADC11C /* EY+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+String.swift"; sourceTree = "<group>"; };
-		4DE6A15D24883F4C00B59934 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
-		4DE6A15F24883F8100B59934 /* NibLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoader.swift; sourceTree = "<group>"; };
-		4DE6A16124883FB100B59934 /* NibViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibViewController.swift; sourceTree = "<group>"; };
-		4DE6A1632488443600B59934 /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
 		4DED36732465865500CB7D72 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		4DED36752465866100CB7D72 /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		4DF1509121679E0300D39D65 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -376,17 +368,6 @@
 				4D75AA8C24751A77008C2672 /* WinnerViewController.swift */,
 			);
 			path = Winner;
-			sourceTree = "<group>";
-		};
-		4D7E37C82489244500EA7D59 /* NibLoadable */ = {
-			isa = PBXGroup;
-			children = (
-				4DE6A15D24883F4C00B59934 /* NibLoadable.swift */,
-				4DE6A15F24883F8100B59934 /* NibLoader.swift */,
-				4DE6A16124883FB100B59934 /* NibViewController.swift */,
-				4DE6A1632488443600B59934 /* NibView.swift */,
-			);
-			path = NibLoadable;
 			sourceTree = "<group>";
 		};
 		4D7E37C92489246300EA7D59 /* CardXIBs */ = {
@@ -565,7 +546,6 @@
 		4DFA7A47233D55DE004099B7 /* XIBs */ = {
 			isa = PBXGroup;
 			children = (
-				4D7E37C82489244500EA7D59 /* NibLoadable */,
 				4D7E37C92489246300EA7D59 /* CardXIBs */,
 				4DAE26E9247FEC1B007C338E /* BorderedButton.swift */,
 				4DFA7A4A233D56D5004099B7 /* PlayerProfileMiniView.xib */,
@@ -752,7 +732,6 @@
 				4D127FB224819C7000247DBD /* CardFamiliesViewController.swift in Sources */,
 				4D75AA8D24751A77008C2672 /* WinnerViewController.swift in Sources */,
 				4DFF753223360BA700C7CC24 /* Fonts.swift in Sources */,
-				4DE6A16224883FB100B59934 /* NibViewController.swift in Sources */,
 				4DAA5BC32471A24D00165829 /* Hand.swift in Sources */,
 				4DA52369208158A8000FFAAB /* EY+Colors.swift in Sources */,
 				4DFF753323360BA700C7CC24 /* Sounds.swift in Sources */,
@@ -762,7 +741,6 @@
 				4DFF75282336067400C7CC24 /* EY+ViewController.swift in Sources */,
 				4DAE26EA247FEC1B007C338E /* BorderedButton.swift in Sources */,
 				4D3A32D62488D6CB00837161 /* UIStackView+BGColor.swift in Sources */,
-				4DE6A15E24883F4C00B59934 /* NibLoadable.swift in Sources */,
 				4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */,
 				4D3A32D42488B1A700837161 /* CardView.swift in Sources */,
 				4D111E1A2336B20900472BDC /* Player.swift in Sources */,
@@ -774,11 +752,9 @@
 				4DE54953246B1EF800ADC11C /* PlayerEntity.swift in Sources */,
 				4DA65C0A2487A617008EE639 /* CardViewModel.swift in Sources */,
 				4DED36742465865600CB7D72 /* RealmHelper.swift in Sources */,
-				4DE6A1642488443600B59934 /* NibView.swift in Sources */,
 				4DFF752B2336077400C7CC24 /* Tax.swift in Sources */,
 				4DE5496B246BF76000ADC11C /* EY+String.swift in Sources */,
 				4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */,
-				4DE6A16024883F8100B59934 /* NibLoader.swift in Sources */,
 				4D300D8D246EC66F0083AEE1 /* EY+Paths.swift in Sources */,
 				4DAA5BB7247159A900165829 /* Card.swift in Sources */,
 				4D6C276B2469CDD0005F4AEF /* EY+Int.swift in Sources */,
