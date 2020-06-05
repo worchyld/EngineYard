@@ -63,9 +63,14 @@ class CardDetailViewController: UIViewController, Storyboarded {
         let customView = CardDetailView.instantiate()
 
         self.view.addSubview(customView)
+
+        if #available(iOS 11.0, *) {
+            customView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 45).isActive = true
+        } else {
+            customView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 45).isActive = true
+        }
+
         NSLayoutConstraint.activate([
-            customView.topAnchor.constraint(equalTo: self.view.topAnchor),
-            customView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
             customView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             customView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
         ])
@@ -90,8 +95,8 @@ class CardDetailViewController: UIViewController, Storyboarded {
         detailView.incomeLabel?.text = self.formattedIncome ?? "NaN"
 
         detailView.btnBuyBtnCollection.forEach { (btn) in
-            btn.borderColor = UIColor.systemBlue
-            btn.setTitleColor(.systemBlue, for: UIControl.State.normal)
+            btn.borderColor = UIColor.white
+            btn.setTitleColor(.white, for: UIControl.State.normal)
             btn.setTitleColor(.systemGray, for: UIControl.State.disabled)
         }
     }
