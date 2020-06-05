@@ -12,7 +12,9 @@ struct ContentView: View {
     let cards: [Card]
 
     var body: some View {
-        Text("We see: \(cards.count)")
+        List(cards) { card in
+            Text(card.name)
+       }
     }
 }
 
