@@ -33,6 +33,7 @@ extension UIView {
 }
 
 class CardDetailView: UIView {
+    @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var generationLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!

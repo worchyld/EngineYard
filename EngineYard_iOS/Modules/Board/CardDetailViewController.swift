@@ -79,7 +79,8 @@ class CardDetailViewController: UIViewController, Storyboarded {
             return
         }
 
-        detailView.backgroundColor = bgColor
+        //detailView.backgroundColor = bgColor
+        detailView.headerView.backgroundColor = bgColor
 
         detailView.nameLabel?.text = "\(card.name)".capitalizingFirstLetter()
         detailView.generationLabel?.text = "\(card.generation)".capitalizingFirstLetter() + " Generation"
