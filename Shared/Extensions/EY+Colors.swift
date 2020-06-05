@@ -9,17 +9,29 @@
 
 import Foundation
 import UIKit
+//
+//public extension UInt {
+//    func convertToUIColor() -> UIColor {
+//        return UIColor(
+//            red: CGFloat((self & 0xFF0000) >> 16) / 255.0,
+//            green: CGFloat((self & 0x00FF00) >> 8) / 255.0,
+//            blue: CGFloat(self & 0x0000FF) / 255.0,
+//            alpha: CGFloat(1.0)
+//        )
+//    }
+//}
 
 public extension UInt {
-    func convertToUIColor() -> UIColor {
+    func convertToUIColor(alpha: CGFloat = 1.0) -> UIColor {
         return UIColor(
             red: CGFloat((self & 0xFF0000) >> 16) / 255.0,
             green: CGFloat((self & 0x00FF00) >> 8) / 255.0,
             blue: CGFloat(self & 0x0000FF) / 255.0,
-            alpha: CGFloat(1.0)
+            alpha: CGFloat(alpha)
         )
     }
 }
+
 
 public enum FlatColors {
     case Turquoise,
@@ -252,8 +264,13 @@ var colors: Dictionary<FlatColors, UInt> = [
 ];
 
 public extension UIColor {
-    class func flat(color: FlatColors) -> UIColor {
+//    class func flat(color: FlatColors) -> UIColor {
+//        let selected: UInt = UInt(colors[color]!)
+//        return selected.convertToUIColor()
+//    }
+
+    class func flat(color: FlatColors, alpha: CGFloat = 1.0) -> UIColor {
         let selected: UInt = UInt(colors[color]!)
-        return selected.convertToUIColor()
+        return selected.convertToUIColor(alpha: alpha)
     }
 }

@@ -12,7 +12,7 @@ struct WinnerViewModel {
     let players: [PlayerViewModel]
 
     init() {
-        let players = PlayerViewModel.create() // Use generated players for rapid prototyping
+        let players = PlayerViewModel.build() // Use generated players for rapid prototyping
 
         let sortedByHighestCash = {
             return players.sorted(by: {

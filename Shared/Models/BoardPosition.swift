@@ -15,6 +15,7 @@ class BoardPosition: Identifiable, FamilyProtocol {
     var name: String {
         return ("\(self.color).\(self.generation)")
     }
+    let cost: Int
     let orderCapacity: Int
     var cards: [Card] = [Card]()
     var dice: [Int] // orders go here
@@ -24,9 +25,10 @@ class BoardPosition: Identifiable, FamilyProtocol {
     }
     var state: BoardPosition.State = .unavailable
 
-    init(_ id: Int = 0, color: Family.Color, generation: Family.Generation, orderCapacity: Int) {
+    init(_ id: Int = 0, cost: Int, color: Family.Color, generation: Family.Generation, orderCapacity: Int) {
         self.id = id
         self.color = color
+        self.cost = cost
         self.generation = generation
         self.orderCapacity = orderCapacity
         self.dice = [Int]()

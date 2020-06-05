@@ -27,7 +27,7 @@ public struct Family {
         static let allRawValues = Family.Color.green.rawValue...Family.Color.blue.rawValue
     }
 
-    public enum Generation: Int, CaseIterable {
+    enum Generation: Int, CaseIterable {
         case first = 1
         case second
         case third

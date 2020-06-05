@@ -22,7 +22,7 @@ class SelectPlayerViewController: UIViewController, Storyboarded, ReusableView {
         return tv
     }()
 
-    private let players = PlayerViewModel.create()
+    private let players = PlayerViewModel.build()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,6 +81,8 @@ extension SelectPlayerViewController: UITableViewDelegate, UITableViewDataSource
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print ("didSelect: \(indexPath.row)")
+
+        print ("The selection is not handled yet")
 
         coordinator?.handleRoute(.startGame)
     }

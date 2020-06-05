@@ -23,7 +23,7 @@ struct Card: Identifiable, FamilyProtocol {
          return Int( floor(Double(productionCost / 2)) )
     }
     var name: String {
-        return "\(self.color).\(self.generation)"
+        return "\(self.color).\(self.generation.rawValue)"
     }
 
     init(cost: Int, color: Family.Color, generation: Family.Generation) {
@@ -41,6 +41,7 @@ extension Card: Equatable {
 
 extension Card: CustomStringConvertible {
     var description: String {
-        return ("\(self.id), \(self.name), $\(self.cost), \(self.color), \(self.generation)")
+        //return ("\(self.id), \(self.name), $\(self.cost), \(self.color), \(self.generation)")
+        return (self.name)
     }
 }
