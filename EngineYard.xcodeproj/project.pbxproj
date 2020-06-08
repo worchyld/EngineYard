@@ -38,6 +38,8 @@
 		4DA1C14D2486F43E004C4121 /* TaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C14C2486F43E004C4121 /* TaxTests.swift */; };
 		4DA1C14F2486FC12004C4121 /* Deck+Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C14E2486FC12004C4121 /* Deck+Builder.swift */; };
 		4DC84CEE2486E43E002A48DE /* EYGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC84CED2486E43E002A48DE /* EYGame.swift */; };
+		4DDDD3F7248E924E00A2DA86 /* CardFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDDD3F6248E924E00A2DA86 /* CardFilterTests.swift */; };
+		4DDDD3F9248E935700A2DA86 /* Card+Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDDD3F8248E935700A2DA86 /* Card+Filter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +88,8 @@
 		4DA1C14C2486F43E004C4121 /* TaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTests.swift; sourceTree = "<group>"; };
 		4DA1C14E2486FC12004C4121 /* Deck+Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+Builder.swift"; sourceTree = "<group>"; };
 		4DC84CED2486E43E002A48DE /* EYGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EYGame.swift; sourceTree = "<group>"; };
+		4DDDD3F6248E924E00A2DA86 /* CardFilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFilterTests.swift; sourceTree = "<group>"; };
+		4DDDD3F8248E935700A2DA86 /* Card+Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Filter.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,7 @@
 				4D10C59E2486D08500238508 /* EngineYardTests.swift */,
 				4D10C6232486E12000238508 /* Card+Expectations.swift */,
 				4D10C6112486DB1B00238508 /* CardBuilderTests.swift */,
+				4DDDD3F6248E924E00A2DA86 /* CardFilterTests.swift */,
 				4D6F8B6D248E8CFB0079BC27 /* DeckBuilderTests.swift */,
 				4DA1C14C2486F43E004C4121 /* TaxTests.swift */,
 				4D10C5A02486D08500238508 /* Info.plist */,
@@ -170,6 +175,7 @@
 				4D10C60F2486D6CC00238508 /* Family.swift */,
 				4D10C60B2486D41700238508 /* Card.swift */,
 				4D10C60D2486D68C00238508 /* Card+Builder.swift */,
+				4DDDD3F8248E935700A2DA86 /* Card+Filter.swift */,
 				4D10C6172486DCF200238508 /* Deck.swift */,
 				4DA1C14E2486FC12004C4121 /* Deck+Builder.swift */,
 				4DC84CED2486E43E002A48DE /* EYGame.swift */,
@@ -331,6 +337,7 @@
 				4DC84CEE2486E43E002A48DE /* EYGame.swift in Sources */,
 				4D10C60C2486D41700238508 /* Card.swift in Sources */,
 				4D10C6102486D6CC00238508 /* Family.swift in Sources */,
+				4DDDD3F9248E935700A2DA86 /* Card+Filter.swift in Sources */,
 				4DA1C1392486EC3D004C4121 /* Die.swift in Sources */,
 				4DA1C14B2486F3FC004C4121 /* Tax.swift in Sources */,
 				4DA1C1482486EDE3004C4121 /* EY+Date.swift in Sources */,
@@ -347,6 +354,7 @@
 				4DA1C14D2486F43E004C4121 /* TaxTests.swift in Sources */,
 				4D10C6122486DB1B00238508 /* CardBuilderTests.swift in Sources */,
 				4D10C6242486E12000238508 /* Card+Expectations.swift in Sources */,
+				4DDDD3F7248E924E00A2DA86 /* CardFilterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

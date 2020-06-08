@@ -15,8 +15,9 @@ enum DeckState: Int, CaseIterable {
 // The board is a collection of `decks`, each holding a collection of `cards`
 class Deck: Identifiable, FamilyDelegate {
     let id: UUID = UUID()
-    let color: Family.Color
-    let generation: Family.Generation
+    let family: Family
+    var color: Family.Color { return self.family.color }
+    var generation: Family.Generation { return self.family.generation }
     let cost: Int
     let orderCapacity: Int // Capacity of dice array
     var cards: [Card] = [Card]()
@@ -25,8 +26,9 @@ class Deck: Identifiable, FamilyDelegate {
 
     init(_ cost: Int, _ color: Family.Color, _ generation: Family.Generation, _ orderCapacity: Int) {
         self.cost = cost
-        self.color = color
-        self.generation = generation
+        //self.color = color
+        //self.generation = generation
+        self.family = Family(color: color, generation: generation)
         self.orderCapacity = orderCapacity
     }
 }

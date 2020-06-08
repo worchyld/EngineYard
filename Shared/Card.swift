@@ -11,13 +11,15 @@ import Foundation
 struct Card : Identifiable, FamilyDelegate {
     let id: UUID = UUID()
     let cost: Int
-    var color: Family.Color
-    var generation: Family.Generation
+    let family: Family
+    var color: Family.Color { return self.family.color }
+    var generation: Family.Generation { return self.family.generation }
 
     init(cost: Int, color: Family.Color, generation: Family.Generation) {
         self.cost = cost
-        self.color = color
-        self.generation = generation
+        //self.color = color
+        //self.generation = generation
+        self.family = Family(color: color, generation: generation)
     }
 }
 

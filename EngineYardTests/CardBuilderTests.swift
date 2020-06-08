@@ -28,7 +28,8 @@ class CardBuilderTests: XCTestCase {
         let color = Family.Color.green
         let expected = Expected.init(color: color, generation: nil)
 
-        let found = self.filter(cards, for: color).count
+        //let found = self.filter(cards, for: color).count
+        let found = Card.filter(cards: cards, matching: (color: color, generation: nil)).count
 
         XCTAssertTrue(found == expected.results, "Mismatch in expectations. Found: \(found), Expected \(expected)")
     }
@@ -38,7 +39,7 @@ class CardBuilderTests: XCTestCase {
         let color = Family.Color.red
         let expected = Expected.init(color: color, generation: nil)
 
-        let found = self.filter(cards, for: color).count
+        let found = Card.filter(cards: cards, matching: (color: color, generation: nil)).count
 
         XCTAssertTrue(found == expected.results, "Mismatch in expectations. Found: \(found), Expected \(expected)")
     }
@@ -48,7 +49,7 @@ class CardBuilderTests: XCTestCase {
         let color = Family.Color.yellow
         let expected = Expected.init(color: color, generation: nil)
 
-        let found = self.filter(cards, for: color).count
+        let found = Card.filter(cards: cards, matching: (color: color, generation: nil)).count
 
         XCTAssertTrue(found == expected.results, "Mismatch in expectations. Found: \(found), Expected \(expected)")
     }
@@ -58,7 +59,7 @@ class CardBuilderTests: XCTestCase {
         let color = Family.Color.blue
         let expected = Expected.init(color: color, generation: nil)
 
-        let found = self.filter(cards, for: color).count
+        let found = Card.filter(cards: cards, matching: (color: color, generation: nil)).count
 
         XCTAssertTrue(found == expected.results, "Mismatch in expectations. Found: \(found), Expected \(expected)")
     }
@@ -69,7 +70,7 @@ class CardBuilderTests: XCTestCase {
         let generation = Family.Generation.first
         let expected = Expected.init(color: nil , generation: generation)
 
-        let found = self.filter(cards, for: generation).count
+        let found = Card.filter(cards: cards, matching: (color: nil, generation: generation)).count
 
         XCTAssertTrue(found == expected.results, "Mismatch in expectations. Found: \(found), Expected \(expected)")
     }
@@ -80,7 +81,7 @@ class CardBuilderTests: XCTestCase {
         let generation = Family.Generation.second
         let expected = Expected.init(color: nil , generation: generation)
 
-        let found = self.filter(cards, for: generation).count
+        let found = Card.filter(cards: cards, matching: (color: nil, generation: generation)).count
 
         XCTAssertTrue(found == expected.results, "Mismatch in expectations. Found: \(found), Expected \(expected)")
     }
@@ -91,7 +92,7 @@ class CardBuilderTests: XCTestCase {
         let generation = Family.Generation.third
         let expected = Expected.init(color: nil , generation: generation)
 
-        let found = self.filter(cards, for: generation).count
+        let found = Card.filter(cards: cards, matching: (color: nil, generation: generation)).count
 
         XCTAssertTrue(found == expected.results, "Mismatch in expectations. Found: \(found), Expected \(expected)")
     }
@@ -102,7 +103,7 @@ class CardBuilderTests: XCTestCase {
         let generation = Family.Generation.fourth
         let expected = Expected.init(color: nil , generation: generation)
 
-        let found = self.filter(cards, for: generation).count
+        let found = Card.filter(cards: cards, matching: (color: nil, generation: generation)).count
 
         XCTAssertTrue(found == expected.results, "Mismatch in expectations. Found: \(found), Expected \(expected)")
     }
@@ -113,54 +114,9 @@ class CardBuilderTests: XCTestCase {
         let generation = Family.Generation.fifth
         let expected = Expected.init(color: nil , generation: generation)
 
-        let found = self.filter(cards, for: generation).count
+        let found = Card.filter(cards: cards, matching: (color: nil, generation: generation)).count
 
         XCTAssertTrue(found == expected.results, "Mismatch in expectations. Found: \(found), Expected \(expected)")
     }
 
-
-    // MARK: (PRIVATE) functions
-    // Helpers for filtering cards
-
-    private func filter(_ cards: [Card], for color: Family.Color) -> [Card] {
-
-        let filtered = cards.filter { (c: Card) -> Bool in
-            return (c.color == color)
-        }.sorted { (a: Card, b: Card) -> Bool in
-            return (
-                (a.color.rawValue < b.color.rawValue) &&
-                (a.cost < b.cost)
-            )
-        }
-
-        return filtered
-    }
-
-    private func filter(_ cards: [Card], for generation: Family.Generation) -> [Card] {
-
-        let filtered = cards.filter { (c: Card) -> Bool in
-            return (c.generation == generation)
-        }.sorted { (a: Card, b: Card) -> Bool in
-            return (
-                (a.generation.rawValue < b.generation.rawValue) &&
-                (a.cost < b.cost)
-            )
-        }
-        return filtered
-    }
-
-    /*
-    public func getAllCardsThatMatch(generation: Family.Generation) -> [Card] {
-        let cards = self.getAllCards()
-
-        let results = cards.filter { (c: Card) -> Bool in
-            return (c.generation == generation)
-        }.sorted { (a: Card, b: Card) -> Bool in
-            return (
-                (a.generation.rawValue < b.generation.rawValue) &&
-                (a.cost < b.cost)
-            )
-        }
-        return results
-    }*/
 }

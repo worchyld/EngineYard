@@ -17,7 +17,10 @@ protocol FamilyDelegate {
 // A family is considered a color (Int) and a generation (Int)
 // IE: Green 1st Generation, Red 2nd Generation, etc
 
-public struct Family {
+public struct Family: FamilyDelegate {
+    var color: Family.Color
+    var generation: Family.Generation
+
     public enum Color: Int, CaseIterable {
         case green = 1
         case red
