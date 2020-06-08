@@ -15,7 +15,7 @@ class BoardBuilderTests: XCTestCase {
     var board: Board!
 
     override func setUpWithError() throws {
-        guard let board = EYGame.loadInitialBoard() else {
+        guard let board = EngineYardGame.loadInitialBoard() else {
             XCTFail("No board created")
             return
         }

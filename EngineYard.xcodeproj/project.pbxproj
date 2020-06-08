@@ -38,7 +38,7 @@
 		4DA1C14B2486F3FC004C4121 /* Tax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C14A2486F3FC004C4121 /* Tax.swift */; };
 		4DA1C14D2486F43E004C4121 /* TaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C14C2486F43E004C4121 /* TaxTests.swift */; };
 		4DA1C14F2486FC12004C4121 /* Deck+Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C14E2486FC12004C4121 /* Deck+Builder.swift */; };
-		4DC84CEE2486E43E002A48DE /* EYGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC84CED2486E43E002A48DE /* EYGame.swift */; };
+		4DC84CEE2486E43E002A48DE /* EngineYardGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC84CED2486E43E002A48DE /* EngineYardGame.swift */; };
 		4DDDD3F7248E924E00A2DA86 /* CardFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDDD3F6248E924E00A2DA86 /* CardFilterTests.swift */; };
 		4DDDD3F9248E935700A2DA86 /* Card+Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDDD3F8248E935700A2DA86 /* Card+Filter.swift */; };
 /* End PBXBuildFile section */
@@ -89,7 +89,7 @@
 		4DA1C14A2486F3FC004C4121 /* Tax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tax.swift; sourceTree = "<group>"; };
 		4DA1C14C2486F43E004C4121 /* TaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTests.swift; sourceTree = "<group>"; };
 		4DA1C14E2486FC12004C4121 /* Deck+Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+Builder.swift"; sourceTree = "<group>"; };
-		4DC84CED2486E43E002A48DE /* EYGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EYGame.swift; sourceTree = "<group>"; };
+		4DC84CED2486E43E002A48DE /* EngineYardGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineYardGame.swift; sourceTree = "<group>"; };
 		4DDDD3F6248E924E00A2DA86 /* CardFilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFilterTests.swift; sourceTree = "<group>"; };
 		4DDDD3F8248E935700A2DA86 /* Card+Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Filter.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -181,7 +181,7 @@
 				4DDDD3F8248E935700A2DA86 /* Card+Filter.swift */,
 				4D10C6172486DCF200238508 /* Deck.swift */,
 				4DA1C14E2486FC12004C4121 /* Deck+Builder.swift */,
-				4DC84CED2486E43E002A48DE /* EYGame.swift */,
+				4DC84CED2486E43E002A48DE /* EngineYardGame.swift */,
 				4DA1C14A2486F3FC004C4121 /* Tax.swift */,
 			);
 			path = Shared;
@@ -337,7 +337,7 @@
 				4DA1C1442486ED8C004C4121 /* EY+FlatColor.swift in Sources */,
 				4D10C60E2486D68C00238508 /* Card+Builder.swift in Sources */,
 				4D10C58C2486D08400238508 /* ContentView.swift in Sources */,
-				4DC84CEE2486E43E002A48DE /* EYGame.swift in Sources */,
+				4DC84CEE2486E43E002A48DE /* EngineYardGame.swift in Sources */,
 				4D10C60C2486D41700238508 /* Card.swift in Sources */,
 				4D10C6102486D6CC00238508 /* Family.swift in Sources */,
 				4DDDD3F9248E935700A2DA86 /* Card+Filter.swift in Sources */,
