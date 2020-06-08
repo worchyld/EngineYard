@@ -18,9 +18,8 @@ class CardFilterTests: XCTestCase {
 
     func testFilteredCards() {
         let cards = Card.build()
-        let expected = Expected(color: .green, generation: nil)
+        let expected = 20
         let filtered = Card.filter(cards: cards, matching: (color: .green, generation: nil))
-        XCTAssertTrue(filtered.count == expected.results)
-
+        XCTAssertTrue(filtered.count == expected)
     }
 }

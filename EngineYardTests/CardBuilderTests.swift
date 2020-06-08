@@ -28,7 +28,6 @@ class CardBuilderTests: XCTestCase {
         let color = Family.Color.green
         let expected = Expected.init(color: color, generation: nil)
 
-        //let found = self.filter(cards, for: color).count
         let found = Card.filter(cards: cards, matching: (color: color, generation: nil)).count
 
         XCTAssertTrue(found == expected.results, "Mismatch in expectations. Found: \(found), Expected \(expected)")

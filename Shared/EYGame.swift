@@ -8,7 +8,7 @@
 
 import Foundation
 
-// The board is a collection of 14 'spaces'.  Each space holds cards
+// The board is a collection of 14 'decks/spaces'.  Each space holds cards
 typealias Board = [Deck?]
 
 class EYGame { }
@@ -18,16 +18,19 @@ extension EYGame {
         let decks = Deck.build()
         let cards = Card.build()
 
-        var board: Board?
+        var board: Board?   // = [Deck?]([Deck?](repeating: nil, count:  14))
+
 
         // Walk through each position in the board then add the cards to that array
+
         //self.positions.mutateEach { (position) in
-        //    position.cards = Board.get(cards: cards, whereColor: position.color, whereGeneration: position.generation)
+        //    #body
         //}
-//        decks.forEach { (deck) in
-//            deck.cards = Card.filter(cards: cards, whereColor: deck.color, whereGeneration: deck.generation)
-//        }
-//        board = decks
+
+        decks.forEach { (deck: Deck) in
+            deck.cards = Card.filter(cards: cards, matching: (color: deck.color, generation: deck.generation))
+        }
+        board = decks
 
         return board
     }

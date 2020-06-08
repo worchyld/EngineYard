@@ -8,10 +8,6 @@
 
 import Foundation
 
-enum DeckState: Int, CaseIterable {
-   case unavailable, existing, old, obsolete
-}
-
 // The board is a collection of `decks`, each holding a collection of `cards`
 class Deck: Identifiable, FamilyDelegate {
     let id: UUID = UUID()
@@ -22,7 +18,11 @@ class Deck: Identifiable, FamilyDelegate {
     let orderCapacity: Int // Capacity of dice array
     var cards: [Card] = [Card]()
     var dice: [Int] = [Int]()
-    var state: DeckState = DeckState.unavailable
+
+    enum State: Int, CaseIterable {
+       case unavailable, existing, old, obsolete
+    }
+    var state: Deck.State = Deck.State.unavailable
 
     init(_ cost: Int, _ color: Family.Color, _ generation: Family.Generation, _ orderCapacity: Int) {
         self.cost = cost

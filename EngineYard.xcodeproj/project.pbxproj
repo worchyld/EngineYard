@@ -25,6 +25,7 @@
 		4D10C6212486DF3A00238508 /* Birdy_Notification1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D10C61D2486DF3A00238508 /* Birdy_Notification1.wav */; };
 		4D10C6222486DF3A00238508 /* cardSlide8.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D10C61E2486DF3A00238508 /* cardSlide8.wav */; };
 		4D10C6242486E12000238508 /* Card+Expectations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D10C6232486E12000238508 /* Card+Expectations.swift */; };
+		4D66EBC6248ED12B005DE7F0 /* BoardBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66EBC5248ED12B005DE7F0 /* BoardBuilderTests.swift */; };
 		4D6F8B6E248E8CFB0079BC27 /* DeckBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6F8B6D248E8CFB0079BC27 /* DeckBuilderTests.swift */; };
 		4DA1C1392486EC3D004C4121 /* Die.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C1382486EC3D004C4121 /* Die.swift */; };
 		4DA1C13B2486EC77004C4121 /* EY+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C13A2486EC77004C4121 /* EY+Int.swift */; };
@@ -75,6 +76,7 @@
 		4D10C61D2486DF3A00238508 /* Birdy_Notification1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Notification1.wav; sourceTree = "<group>"; };
 		4D10C61E2486DF3A00238508 /* cardSlide8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardSlide8.wav; sourceTree = "<group>"; };
 		4D10C6232486E12000238508 /* Card+Expectations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Expectations.swift"; sourceTree = "<group>"; };
+		4D66EBC5248ED12B005DE7F0 /* BoardBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardBuilderTests.swift; sourceTree = "<group>"; };
 		4D6F8B6D248E8CFB0079BC27 /* DeckBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckBuilderTests.swift; sourceTree = "<group>"; };
 		4DA1C1382486EC3D004C4121 /* Die.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Die.swift; sourceTree = "<group>"; };
 		4DA1C13A2486EC77004C4121 /* EY+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Int.swift"; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				4D10C6112486DB1B00238508 /* CardBuilderTests.swift */,
 				4DDDD3F6248E924E00A2DA86 /* CardFilterTests.swift */,
 				4D6F8B6D248E8CFB0079BC27 /* DeckBuilderTests.swift */,
+				4D66EBC5248ED12B005DE7F0 /* BoardBuilderTests.swift */,
 				4DA1C14C2486F43E004C4121 /* TaxTests.swift */,
 				4D10C5A02486D08500238508 /* Info.plist */,
 			);
@@ -354,6 +357,7 @@
 				4DA1C14D2486F43E004C4121 /* TaxTests.swift in Sources */,
 				4D10C6122486DB1B00238508 /* CardBuilderTests.swift in Sources */,
 				4D10C6242486E12000238508 /* Card+Expectations.swift in Sources */,
+				4D66EBC6248ED12B005DE7F0 /* BoardBuilderTests.swift in Sources */,
 				4DDDD3F7248E924E00A2DA86 /* CardFilterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
