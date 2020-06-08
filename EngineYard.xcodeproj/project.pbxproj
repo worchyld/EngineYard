@@ -19,7 +19,7 @@
 		4D10C6102486D6CC00238508 /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D10C60F2486D6CC00238508 /* Family.swift */; };
 		4D10C6122486DB1B00238508 /* CardBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D10C6112486DB1B00238508 /* CardBuilderTests.swift */; };
 		4D10C6162486DC4700238508 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D10C6152486DC4700238508 /* Constants.swift */; };
-		4D10C6182486DCF200238508 /* BoardSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D10C6172486DCF200238508 /* BoardSpace.swift */; };
+		4D10C6182486DCF200238508 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D10C6172486DCF200238508 /* Deck.swift */; };
 		4D10C61F2486DF3A00238508 /* Birdy_Note5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D10C61B2486DF3A00238508 /* Birdy_Note5.wav */; };
 		4D10C6202486DF3A00238508 /* cardSlide1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D10C61C2486DF3A00238508 /* cardSlide1.wav */; };
 		4D10C6212486DF3A00238508 /* Birdy_Notification1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D10C61D2486DF3A00238508 /* Birdy_Notification1.wav */; };
@@ -35,7 +35,7 @@
 		4DA1C1482486EDE3004C4121 /* EY+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C1472486EDE3004C4121 /* EY+Date.swift */; };
 		4DA1C14B2486F3FC004C4121 /* Tax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C14A2486F3FC004C4121 /* Tax.swift */; };
 		4DA1C14D2486F43E004C4121 /* TaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C14C2486F43E004C4121 /* TaxTests.swift */; };
-		4DA1C14F2486FC12004C4121 /* BoardSpace+Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C14E2486FC12004C4121 /* BoardSpace+Builder.swift */; };
+		4DA1C14F2486FC12004C4121 /* Deck+Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C14E2486FC12004C4121 /* Deck+Builder.swift */; };
 		4DC84CEE2486E43E002A48DE /* EYGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC84CED2486E43E002A48DE /* EYGame.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,7 +66,7 @@
 		4D10C60F2486D6CC00238508 /* Family.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Family.swift; sourceTree = "<group>"; };
 		4D10C6112486DB1B00238508 /* CardBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBuilderTests.swift; sourceTree = "<group>"; };
 		4D10C6152486DC4700238508 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		4D10C6172486DCF200238508 /* BoardSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardSpace.swift; sourceTree = "<group>"; };
+		4D10C6172486DCF200238508 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		4D10C61B2486DF3A00238508 /* Birdy_Note5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Note5.wav; sourceTree = "<group>"; };
 		4D10C61C2486DF3A00238508 /* cardSlide1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardSlide1.wav; sourceTree = "<group>"; };
 		4D10C61D2486DF3A00238508 /* Birdy_Notification1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Notification1.wav; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 		4DA1C1472486EDE3004C4121 /* EY+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Date.swift"; sourceTree = "<group>"; };
 		4DA1C14A2486F3FC004C4121 /* Tax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tax.swift; sourceTree = "<group>"; };
 		4DA1C14C2486F43E004C4121 /* TaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTests.swift; sourceTree = "<group>"; };
-		4DA1C14E2486FC12004C4121 /* BoardSpace+Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BoardSpace+Builder.swift"; sourceTree = "<group>"; };
+		4DA1C14E2486FC12004C4121 /* Deck+Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+Builder.swift"; sourceTree = "<group>"; };
 		4DC84CED2486E43E002A48DE /* EYGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EYGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,8 +167,8 @@
 				4D10C60F2486D6CC00238508 /* Family.swift */,
 				4D10C60B2486D41700238508 /* Card.swift */,
 				4D10C60D2486D68C00238508 /* Card+Builder.swift */,
-				4D10C6172486DCF200238508 /* BoardSpace.swift */,
-				4DA1C14E2486FC12004C4121 /* BoardSpace+Builder.swift */,
+				4D10C6172486DCF200238508 /* Deck.swift */,
+				4DA1C14E2486FC12004C4121 /* Deck+Builder.swift */,
 				4DC84CED2486E43E002A48DE /* EYGame.swift */,
 				4DA1C14A2486F3FC004C4121 /* Tax.swift */,
 			);
@@ -313,9 +313,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D10C6182486DCF200238508 /* BoardSpace.swift in Sources */,
+				4D10C6182486DCF200238508 /* Deck.swift in Sources */,
 				4D10C5882486D08400238508 /* AppDelegate.swift in Sources */,
-				4DA1C14F2486FC12004C4121 /* BoardSpace+Builder.swift in Sources */,
+				4DA1C14F2486FC12004C4121 /* Deck+Builder.swift in Sources */,
 				4DA1C13E2486ECC9004C4121 /* EY+String.swift in Sources */,
 				4DA1C1462486EDC0004C4121 /* EY+FileManager.swift in Sources */,
 				4DA1C13B2486EC77004C4121 /* EY+Int.swift in Sources */,

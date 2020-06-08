@@ -9,7 +9,7 @@
 import Foundation
 
 // The board is a collection of 14 spaces.  Each space holds cards
-typealias Board = [BoardSpace?]
+typealias Board = [Deck?]
 
 class EYGame { }
 

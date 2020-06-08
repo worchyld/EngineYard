@@ -1,5 +1,5 @@
 //
-//  BoardSpace.swift
+//  Deck.swift
 //  EngineYard
 //
 //  Created by Amarjit on 02/06/2020.
@@ -8,19 +8,20 @@
 
 import Foundation
 
-enum CardState: Int, CaseIterable {
+enum DeckState: Int, CaseIterable {
    case unavailable, existing, old, obsolete
 }
 
-// Each board space holds a collection of cards
-struct BoardSpace: Identifiable {
+// The board is a collection of `decks`, each holding a collection of `cards`
+class Deck: Identifiable {
     let id: UUID = UUID()
     let color: Family.Color
     let generation: Family.Generation
-    var deck: [Card] = [Card]()
-    var dice: [Int] = [Int]()
     let cost: Int
     let orderCapacity: Int // Capacity of dice array
+    var cards: [Card] = [Card]()
+    var dice: [Int] = [Int]()
+    var state: DeckState = .unavailable
 
     init(_ cost: Int, _ color: Family.Color, _ generation: Family.Generation, _ orderCapacity: Int) {
         self.cost = cost
@@ -30,8 +31,8 @@ struct BoardSpace: Identifiable {
     }
 }
 
-extension BoardSpace : CustomDebugStringConvertible {
+extension Deck : CustomDebugStringConvertible {
     var debugDescription: String {
-        return ("id: \(id), color: \(color), \(generation) capacity: \(orderCapacity), # cards:\(deck.count)")
+        return ("id: \(id), color: \(color), \(generation) capacity: \(orderCapacity), # cards:\(cards.count)")
     }
 }
