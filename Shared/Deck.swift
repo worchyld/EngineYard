@@ -13,7 +13,7 @@ enum DeckState: Int, CaseIterable {
 }
 
 // The board is a collection of `decks`, each holding a collection of `cards`
-class Deck: Identifiable {
+class Deck: Identifiable, FamilyDelegate {
     let id: UUID = UUID()
     let color: Family.Color
     let generation: Family.Generation

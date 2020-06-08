@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct Card : Identifiable {
+struct Card : Identifiable, FamilyDelegate {
     let id: UUID = UUID()
     let cost: Int
-    let color: Family.Color
-    let generation: Family.Generation
+    var color: Family.Color
+    var generation: Family.Generation
 
     init(cost: Int, color: Family.Color, generation: Family.Generation) {
         self.cost = cost
@@ -20,8 +20,6 @@ struct Card : Identifiable {
         self.generation = generation
     }
 }
-
-
 
 
 // MARK - Extensions

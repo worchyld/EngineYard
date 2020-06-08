@@ -18,11 +18,16 @@ extension EYGame {
         let decks = Deck.build()
         let cards = Card.build()
 
-        // Fill each deck with the cards
-        //   as defined by each deck
         var board: Board?
 
-        
+        // Walk through each position in the board then add the cards to that array
+        //self.positions.mutateEach { (position) in
+        //    position.cards = Board.get(cards: cards, whereColor: position.color, whereGeneration: position.generation)
+        //}
+        decks.forEach { (deck) in
+            deck.cards = Card.filter(cards: cards, whereColor: deck.color, whereGeneration: deck.generation)
+        }
+        board = decks
 
         return board
     }

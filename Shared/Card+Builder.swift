@@ -90,3 +90,16 @@ extension Card {
         return cards
     }
 }
+
+// Filter functions
+
+extension Card {
+    public static func filter(cards: [Card], whereColor: Family.Color, whereGeneration: Family.Generation) -> [Card] {
+        let results = cards.filter { (c: Card) -> Bool in
+            return (c.color == whereColor) && (c.generation == whereGeneration)
+        }.sorted { (a: Card, b: Card) -> Bool in
+            return (a.cost < b.cost)
+        }
+        return results
+    }
+}
