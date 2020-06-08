@@ -18,12 +18,12 @@ class CardBuilderTests: XCTestCase {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
-    func testDidBuildCards() {
+    func testCardsBuiltEquals43() {
         let cards = Card.build()
         XCTAssertTrue(cards.count == Expected.totalCardsInGame)
     }
 
-    func testNumberOfGreenCards() {
+    func testGreenCardsEquals20() {
         let cards = Card.build()
         let color = Family.Color.green
         let expected = Expected.init(color: color, generation: nil)
@@ -33,7 +33,7 @@ class CardBuilderTests: XCTestCase {
         XCTAssertTrue(found == expected.results, "Mismatch in expectations. Found: \(found), Expected \(expected)")
     }
 
-    func testNumberOfRedCards() {
+    func testRedCardsEquals13() {
         let cards = Card.build()
         let color = Family.Color.red
         let expected = Expected.init(color: color, generation: nil)
@@ -43,7 +43,7 @@ class CardBuilderTests: XCTestCase {
         XCTAssertTrue(found == expected.results, "Mismatch in expectations. Found: \(found), Expected \(expected)")
     }
 
-    func testNumberOfYellowCards() {
+    func testYellowCardsEquals7() {
         let cards = Card.build()
         let color = Family.Color.yellow
         let expected = Expected.init(color: color, generation: nil)
@@ -53,7 +53,7 @@ class CardBuilderTests: XCTestCase {
         XCTAssertTrue(found == expected.results, "Mismatch in expectations. Found: \(found), Expected \(expected)")
     }
 
-    func testNumberOfBlueCards() {
+    func testBlueCardsEquals3() {
         let cards = Card.build()
         let color = Family.Color.blue
         let expected = Expected.init(color: color, generation: nil)
@@ -63,7 +63,7 @@ class CardBuilderTests: XCTestCase {
         XCTAssertTrue(found == expected.results, "Mismatch in expectations. Found: \(found), Expected \(expected)")
     }
 
-    func testQtyOfFirstGenerationCardsIsCorrect() {
+    func test1stGenerationEquals10() {
         // run report
         let cards = Card.build()
         let generation = Family.Generation.first
@@ -74,7 +74,7 @@ class CardBuilderTests: XCTestCase {
         XCTAssertTrue(found == expected.results, "Mismatch in expectations. Found: \(found), Expected \(expected)")
     }
 
-    func testQtyOfSecondGenerationCardsIsCorrect() {
+    func test2ndGenerationEquals11() {
         // run report
         let cards = Card.build()
         let generation = Family.Generation.second
@@ -85,7 +85,7 @@ class CardBuilderTests: XCTestCase {
         XCTAssertTrue(found == expected.results, "Mismatch in expectations. Found: \(found), Expected \(expected)")
     }
 
-    func testQtyOfThirdGenerationCardsIsCorrect() {
+    func test3rdGenerationEquals10() {
         // run report
         let cards = Card.build()
         let generation = Family.Generation.third
@@ -96,7 +96,7 @@ class CardBuilderTests: XCTestCase {
         XCTAssertTrue(found == expected.results, "Mismatch in expectations. Found: \(found), Expected \(expected)")
     }
 
-    func testQtyOfFourthGenerationCardsIsCorrect() {
+    func test4thGenerationEquals8() {
         // run report
         let cards = Card.build()
         let generation = Family.Generation.fourth
@@ -107,7 +107,7 @@ class CardBuilderTests: XCTestCase {
         XCTAssertTrue(found == expected.results, "Mismatch in expectations. Found: \(found), Expected \(expected)")
     }
 
-    func testQtyOfFifthGenerationCardsIsCorrect() {
+    func test5thGenerationEquals4() {
         // run report
         let cards = Card.build()
         let generation = Family.Generation.fifth
