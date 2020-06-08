@@ -11,7 +11,9 @@ import Foundation
 // The board is a collection of 14 'decks/spaces'.  Each space holds cards
 typealias Board = [Deck?]
 
-class EngineYardGame { }
+class EngineYardGame {
+    var board: Board?
+}
 
 extension EngineYardGame {
     static func loadInitialBoard() -> Board? {
