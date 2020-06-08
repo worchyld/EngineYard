@@ -14,5 +14,16 @@ typealias Board = [Deck?]
 class EYGame { }
 
 extension EYGame {
+    static func loadInitialBoard() -> Board? {
+        let decks = Deck.build()
+        let cards = Card.build()
 
+        // Fill each deck with the cards
+        //   as defined by each deck
+        var board: Board?
+
+        
+
+        return board
+    }
 }
