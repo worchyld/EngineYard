@@ -13,6 +13,7 @@ import Foundation
 extension Deck {
     static func build() -> [Deck] {
         let decks: [Deck] = [
+            // cost, name, generation, capacity
             Deck(4, .green     , .first, 3),
             Deck(8, .red       , .first,  3),
             Deck(12, .yellow   , .first,  2),

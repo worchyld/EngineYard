@@ -21,7 +21,7 @@ class Deck: Identifiable {
     let orderCapacity: Int // Capacity of dice array
     var cards: [Card] = [Card]()
     var dice: [Int] = [Int]()
-    var state: DeckState = .unavailable
+    var state: DeckState = DeckState.unavailable
 
     init(_ cost: Int, _ color: Family.Color, _ generation: Family.Generation, _ orderCapacity: Int) {
         self.cost = cost
