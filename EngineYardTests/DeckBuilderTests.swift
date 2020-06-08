@@ -19,7 +19,8 @@ class DeckBuilderTests: XCTestCase {
     }
 
     func testBuildDecksEquals14() {
-        
+        let decks = Deck.build()
+        XCTAssertTrue(decks.count == Expected.totalDecksInGame)
     }
 
 }
