@@ -181,8 +181,8 @@
 				4DDDD3F8248E935700A2DA86 /* Card+Filter.swift */,
 				4D10C6172486DCF200238508 /* Deck.swift */,
 				4DA1C14E2486FC12004C4121 /* Deck+Builder.swift */,
-				4DC84CED2486E43E002A48DE /* EngineYardGame.swift */,
 				4DA1C14A2486F3FC004C4121 /* Tax.swift */,
+				4DC84CED2486E43E002A48DE /* EngineYardGame.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
