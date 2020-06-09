@@ -13,11 +13,16 @@ import Foundation
 
 class OrderBook {
     private let capacity: Int
-    var orders: [OrderType] = [OrderType]()
+    var orders: [OrderCategory] = [OrderCategory]()
 
-    enum OrderType {
-        case existing(_ orders: [Int])
-        case completed(_ orders: [Int])
+    enum OrderType: Int, CaseIterable {
+        case existingOrder
+        case completedOrder
+    }
+
+    enum OrderCategory {
+        case existing(_ order: Int)
+        case completed(_ order: Int)
     }
 
     /*
@@ -36,9 +41,33 @@ class OrderBook {
     init(capacity: Int = 0) {
         self.capacity = capacity
     }
+}
 
-    func add(orderType: OrderType) {
-        self.orders.append(orderType)
+extension OrderBook {
+    enum OrderBookError : Error {
+        case ordersAreFull
+        case unknownOrderType(type: OrderType)
     }
+
+    func add(_ type: OrderType? = .existingOrder) throws  {
+        guard !isFull else {
+            throw OrderBookError.ordersAreFull
+        }
+
+        let value = Order.generate()
+
+        switch type {
+        case .existingOrder:
+            let order = OrderCategory.existing(value)
+            self.orders.append(order)
+        case .completedOrder:
+            let order = OrderCategory.completed(value)
+            self.orders.append(order)
+
+        case .none:
+            throw OrderBookError.unknownOrderType(type: type!)
+        }
+    }
+
 }
 

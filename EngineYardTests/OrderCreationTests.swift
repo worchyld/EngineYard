@@ -56,5 +56,23 @@ class OrderCreationTests: XCTestCase {
         XCTAssertTrue(orderBook.orders.count == 0)
     }
 
+    func testCanAddSingleOrderToFirstDeck() {
+        guard let firstDeck = self.testCanGetFirstDeck() else {
+            XCTFail("No first deck found")
+            return
+        }
+
+        let orderBook = OrderBook.init(capacity: firstDeck.orderCapacity)
+
+        XCTAssertNoThrow(
+            //try orderBook.add(orderType: .existing(nil))
+            try orderBook.add(.existingOrder)
+        )
+
+        XCTAssertTrue(orderBook.orders.count == 1)
+
+        )
+    }
+
 
 }

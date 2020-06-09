@@ -21,13 +21,13 @@ struct Order {
     var state: Order.State = .unowned
 
     init(_ state: Order.State = .existingOrder) {
-        self.value = self.generate()
+        self.value = Order.generate()
         self.state = state
     }
 }
 
 extension Order {
-    func generate() -> Int {
+    public static func generate() -> Int {
         return Die.roll
     }
 }
