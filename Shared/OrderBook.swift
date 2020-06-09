@@ -13,7 +13,6 @@ enum OrderBookError : Error {
     case unknownOrderState(_ state: Order.State?)
 }
 
-
 // OrderBook holds reference to orders and
 //  manages the ability to add, move, remove orders
 
@@ -56,6 +55,15 @@ extension OrderBook {
         else {
             throw OrderBookError.unknownOrderState(hasState)
         }
+    }
+
+    func clear() {
+        self.orders.removeAll(keepingCapacity: true)
+    }
+
+    // convert the order to a state
+    func transfer(order: Order, to: Order.State) {
+        
     }
 }
 

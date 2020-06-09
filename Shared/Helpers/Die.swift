@@ -10,11 +10,8 @@ import Foundation
 import GameplayKit
 
 // Simple die randomizer
-protocol Rollable {
-    static var roll: Int { get }
-}
 
-struct Die: Equatable, Rollable {
+struct Die: Equatable {
     public static var roll: Int {
         if #available(iOS 9, *) {
             let d6 = GKRandomDistribution.d6()
@@ -26,4 +23,3 @@ struct Die: Equatable, Rollable {
         }
     }
 }
-

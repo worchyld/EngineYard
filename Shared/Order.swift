@@ -17,17 +17,17 @@ struct Order {
         case existingOrder   // Defined by manual as `existingOrders`
         case completedOrder  // Defined by manual as `customerBase`
     }
-    var value: Int?
-    var state: Order.State = .unowned
+    private(set) var value: Int?
+    private(set) var state: Order.State = .unowned
 
     init(_ state: Order.State = .existingOrder) {
-        self.value = Order.generate()
+        self.value = Die.roll
         self.state = state
     }
 }
 
 extension Order {
-    public static func generate() -> Int {
-        return Die.roll
+    mutating func setState(state: Order.State) {
+        self.state = state
     }
 }
