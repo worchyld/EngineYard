@@ -22,7 +22,8 @@ class OrderBookTests: XCTestCase {
     }
 
     func testOrderBookHasSingleOrder() {
-        let orderBook = OrderBook.init(capacity: 3)
+        let capacity = 3
+        let orderBook = OrderBook.init(capacity: capacity)
         XCTAssertNoThrow(
             try orderBook.add(.existingOrder)
         )
@@ -34,6 +35,29 @@ class OrderBookTests: XCTestCase {
         }
 
         XCTAssertTrue(orders.count == 1)
+        XCTAssertTrue(orders.capacity == capacity)
+    }
+
+    func testOrderBookCannotExceedCapacity() {
+        let capacity = 3
+        let orderBook = OrderBook.init(capacity: capacity)
+
+        for _ in 0...(capacity - 1) {
+            XCTAssertNoThrow(
+                try orderBook.add(.existingOrder)
+            )
+        }
+
+        XCTAssertThrowsError(
+            try orderBook.add(.existingOrder)
+        )
+
+        guard let orders = orderBook.orders else {
+            XCTFail("Orders do not exist")
+            return
+        }
+
+        XCTAssertTrue(orders.count == capacity)
     }
     
 
