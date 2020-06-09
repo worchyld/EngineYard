@@ -17,7 +17,7 @@ class Deck: Identifiable, FamilyDelegate {
     let cost: Int
     let orderCapacity: Int // Capacity of dice array
     var cards: [Card] = [Card]()
-    var dice: [Int] = [Int]()
+    var orders: [Int]?
 
     enum State: Int, CaseIterable {
        case unavailable, existing, old, obsolete
@@ -30,11 +30,5 @@ class Deck: Identifiable, FamilyDelegate {
         //self.generation = generation
         self.family = Family(color: color, generation: generation)
         self.orderCapacity = orderCapacity
-    }
-}
-
-extension Deck : CustomDebugStringConvertible {
-    var debugDescription: String {
-        return ("id: \(id), color: \(color), \(generation) capacity: \(orderCapacity), # cards:\(cards.count)")
     }
 }
