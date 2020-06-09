@@ -65,13 +65,17 @@ class OrderCreationTests: XCTestCase {
         let orderBook = OrderBook.init(capacity: firstDeck.orderCapacity)
 
         XCTAssertNoThrow(
-            //try orderBook.add(orderType: .existing(nil))
-            try orderBook.add(.existingOrder)
+            try orderBook.add()
         )
 
         XCTAssertTrue(orderBook.orders.count == 1)
 
-        )
+        guard let firstOrder = orderBook.orders.first else {
+            XCTFail("No first order")
+            return
+        }
+
+        XCTAssertNotNil(firstOrder.value)
     }
 
 

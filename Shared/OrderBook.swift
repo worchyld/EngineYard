@@ -13,16 +13,10 @@ import Foundation
 
 class OrderBook {
     private let capacity: Int
-    var orders: [OrderCategory] = [OrderCategory]()
+    var orders: [Order] = [Order]()
 
-    enum OrderType: Int, CaseIterable {
-        case existingOrder
-        case completedOrder
-    }
-
-    enum OrderCategory {
-        case existing(_ order: Int)
-        case completed(_ order: Int)
+    init(capacity: Int) {
+        self.capacity = capacity
     }
 
     /*
@@ -38,36 +32,33 @@ class OrderBook {
         return false
     }
 
-    init(capacity: Int = 0) {
-        self.capacity = capacity
-    }
-}
 
-extension OrderBook {
     enum OrderBookError : Error {
         case ordersAreFull
-        case unknownOrderType(type: OrderType)
+        case unknownOrderState(_ state: Order.State?)
     }
 
-    func add(_ type: OrderType? = .existingOrder) throws  {
+
+    func add(_ state: Order.State? = .existingOrder) throws  {
         guard !isFull else {
             throw OrderBookError.ordersAreFull
         }
+        guard let hasState = state else {
+            throw OrderBookError.unknownOrderState(state)
+        }
 
-        let value = Order.generate()
-
-        switch type {
+        switch hasState {
         case .existingOrder:
-            let order = OrderCategory.existing(value)
-            self.orders.append(order)
-        case .completedOrder:
-            let order = OrderCategory.completed(value)
+            let order = Order.init(.existingOrder)
             self.orders.append(order)
 
-        case .none:
-            throw OrderBookError.unknownOrderType(type: type!)
+        case .completedOrder:
+            let order = Order.init(.completedOrder)
+            self.orders.append(order)
+
+        default:
+            throw OrderBookError.unknownOrderState(hasState)
         }
     }
 
 }
-

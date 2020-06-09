@@ -9,7 +9,7 @@
 import Foundation
 import GameplayKit
 
-// Simple die roll
+// Simple die randomizer
 
 struct Die: Equatable {
     public static var roll: Int {
