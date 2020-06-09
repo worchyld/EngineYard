@@ -20,7 +20,7 @@ class OrderBook {
     }
 
     /*
-     The current number of dice for a locomotive type and generation
+     The current number of dice/orders for a locomotive type and generation
       is determined by the number of dice in the `Customer Base` (completedOrder) boxes
         added to any in the `Existing Orders` (existingOrder) boxes.
      */
