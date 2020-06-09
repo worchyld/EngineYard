@@ -33,5 +33,15 @@ class OrderCreationTests: XCTestCase {
         XCTAssertTrue(orderValue > 0 && orderValue < 7)
     }
 
+    func testDidChangeOrderState() {
+        var order = Order()
+        XCTAssertTrue(order.state == .existingOrder)
+
+        // Change the state to completed
+        order.setState(state: .completedOrder)
+
+        XCTAssertTrue(order.state == .completedOrder)
+    }
+
 
 }

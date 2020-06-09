@@ -102,6 +102,27 @@ class OrderBookTests: XCTestCase {
         XCTAssertTrue(firstDeck.orderCapacity == orderBook.orders.count)
     }
 
+
+    func testChangeOrderState() {
+        guard let firstDeck = self.testCanGetFirstDeck() else {
+            XCTFail("No first deck found")
+            return
+        }
+
+        let orderBook = OrderBook.init(capacity: firstDeck.orderCapacity)
+        XCTAssertNoThrow( try orderBook.add() )
+
+        guard var firstOrder = orderBook.orders.first else {
+            XCTFail("No first order")
+            return
+        }
+
+        XCTAssertTrue(firstOrder.state == .existingOrder)
+
+        orderBook.transfer(order: &firstOrder, to: .completedOrder)
+
+        XCTAssertTrue(firstOrder.state == .completedOrder)
+    }
     
 
 }
