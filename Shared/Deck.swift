@@ -15,9 +15,9 @@ class Deck: Identifiable, FamilyDelegate {
     var color: Family.Color { return self.family.color }
     var generation: Family.Generation { return self.family.generation }
     let cost: Int
-    let orderCapacity: Int // Capacity of dice array
     var cards: [Card] = [Card]()
-    var orders: [Int]?
+    let orderCapacity: Int // Capacity of orders array
+    var orders: [Order]?
 
     enum State: Int, CaseIterable {
        case unavailable, existing, old, obsolete
@@ -26,8 +26,6 @@ class Deck: Identifiable, FamilyDelegate {
 
     init(_ cost: Int, _ color: Family.Color, _ generation: Family.Generation, _ orderCapacity: Int) {
         self.cost = cost
-        //self.color = color
-        //self.generation = generation
         self.family = Family(color: color, generation: generation)
         self.orderCapacity = orderCapacity
     }
