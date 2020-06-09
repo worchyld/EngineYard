@@ -48,8 +48,14 @@ class OrderBookTests: XCTestCase {
             )
         }
 
+        // Shouldn't be able to add a `existingOrder` when full
         XCTAssertThrowsError(
             try orderBook.add(.existingOrder)
+        )
+
+        // Shouldn't be able to add a `completedOrder` when full
+        XCTAssertThrowsError(
+            try orderBook.add(.completedOrder)
         )
 
         guard let orders = orderBook.orders else {
