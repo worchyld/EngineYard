@@ -102,6 +102,33 @@ class OrderBookTests: XCTestCase {
         XCTAssertTrue(orders.count == capacity)
         XCTAssertTrue(orderBook.isFull)
     }
-    
+
+    func testDidChangeOrderStateToCompleted() {
+        let capacity = 3
+        let orderBook = OrderBook.init(capacity: capacity)
+
+        XCTAssertNoThrow(
+            try orderBook.add(.existingOrder)
+        )
+
+        guard let orders = orderBook.orders else {
+            XCTFail("Orders do not exist")
+            return
+        }
+
+        XCTAssertTrue(orders.count == 1)
+
+        guard var firstOrder = orders.first else {
+            XCTFail("No first order found")
+            return
+        }
+        XCTAssertTrue(firstOrder.state == .existingOrder)
+
+        XCTAssertNoThrow(
+            try orderBook.transfer(order: &firstOrder, to: .completedOrder)
+        )
+
+        XCTAssertTrue(firstOrder.state == .completedOrder)
+    }
 
 }

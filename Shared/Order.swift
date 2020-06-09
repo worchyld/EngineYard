@@ -32,7 +32,7 @@ struct Order {
 }
 
 extension Order {
-    mutating func setState(to state: Order.State) {
+    mutating func setState(to state: Order.State) {        
         self.state = state
     }
     internal mutating func setValue(_ value: Int) throws {

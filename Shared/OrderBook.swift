@@ -44,6 +44,7 @@ extension OrderBook {
         self.orders?.reserveCapacity(capacity)
     }
 
+    // add an order
     func add(_ orderState: Order.State = .existingOrder) throws {
         guard (orderState == .existingOrder || orderState == .completedOrder) else {
             throw OrderBookError.orderCannotBe(orderState)
@@ -56,5 +57,14 @@ extension OrderBook {
         }
         let order: Order = Order(orderState)
         self.orders?.append(order)
+    }
+
+    // transfer an order from one state to another
+    func transfer(order: inout Order, to state: Order.State) throws {
+        guard (state == .existingOrder || state == .completedOrder) else {
+            throw OrderBookError.orderCannotBe(state)
+        }
+
+        order.setState(to: state)
     }
 }
