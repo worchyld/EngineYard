@@ -53,7 +53,7 @@ class BoardBuilderTests: XCTestCase {
 
         let _ = board.map() { d in
             XCTAssertTrue(d?.state == Deck.State.unavailable)
-            XCTAssertNil(d?.orders)
+            XCTAssertTrue(d?.orders.count == 0)
         }
     }
 

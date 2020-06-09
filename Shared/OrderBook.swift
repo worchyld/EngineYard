@@ -13,61 +13,25 @@ enum OrderBookError : Error {
     case unknownOrderState(_ state: Order.State?)
 }
 
-// OrderBook holds reference to orders and
-//  manages the ability to add, move, remove orders
-
+// A proxy-style pattern to add, remove orders to/from a deck
 class OrderBook {
-    private let capacity: Int
-    var orders: [Order] = [Order]()
+    let capacity: Int
+    var orders: [Order]?
 
-    init(capacity: Int) {
+    init(capacity: Int, orders: [Order]? = nil) {
         self.capacity = capacity
+        self.orders = orders
     }
 }
 
 extension OrderBook {
-    /*
-     The current number of dice/orders for a locomotive type and generation
-      is determined by the number of dice in the `Customer Base` (completedOrder) boxes
-        added to any in the `Existing Orders` (existingOrder) boxes.
-     */
     var isFull : Bool {
-        guard (orders.count < capacity) else {
+        guard let hasOrders = self.orders else {
+            return false
+        }
+        guard (hasOrders.count < capacity) else {
             return true
         }
-
         return false
-    }
-
-    // Add an order
-    func add(_ state: Order.State? = .existingOrder) throws  {
-        guard !isFull else {
-            throw OrderBookError.ordersAreFull
-        }
-        guard let hasState = state else {
-            throw OrderBookError.unknownOrderState(state)
-        }
-
-        if (hasState != .unowned) {
-            let order = Order.init(hasState)
-            self.orders.append(order)
-        }
-        else {
-            throw OrderBookError.unknownOrderState(hasState)
-        }
-    }
-
-    func clear() {
-        self.orders.removeAll(keepingCapacity: true)
-    }
-
-    func transfer(order: inout Order, to state: Order.State) {
-        order.setState(state: state)
-    }
-}
-
-extension OrderBook : CustomDebugStringConvertible {
-    var debugDescription: String {
-        return ("order: \(self.orders)")
     }
 }
