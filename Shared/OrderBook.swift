@@ -9,6 +9,8 @@
 import Foundation
 
 enum OrderBookError : Error {
+    case undefinedOrderBook
+    case orderCannotBe(_ state: Order.State)
     case ordersAreFull
     case unknownOrderState(_ state: Order.State?)
 }
@@ -33,5 +35,26 @@ extension OrderBook {
             return true
         }
         return false
+    }
+}
+
+extension OrderBook {
+    private func initializeOrders() {
+        self.orders = [Order]()
+        self.orders?.reserveCapacity(capacity)
+    }
+
+    func add(_ orderState: Order.State = .existingOrder) throws {
+        guard (orderState == .existingOrder || orderState == .completedOrder) else {
+            throw OrderBookError.orderCannotBe(orderState)
+        }
+        guard !isFull else {
+            throw OrderBookError.ordersAreFull
+        }
+        if (self.orders == nil) {
+            initializeOrders()
+        }
+        let order: Order = Order(orderState)
+        self.orders?.append(order)
     }
 }

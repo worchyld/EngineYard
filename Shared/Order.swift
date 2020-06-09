@@ -35,7 +35,7 @@ extension Order {
     mutating func setState(to state: Order.State) {
         self.state = state
     }
-    mutating func setValue(_ value: Int) throws {
+    internal mutating func setValue(_ value: Int) throws {
         guard value >= 0 else {
             throw IntError.cannotBeNegative
         }
