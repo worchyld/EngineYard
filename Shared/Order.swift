@@ -32,12 +32,24 @@ extension Order {
     }
 }
 
+/*
+ The current number of dice for a locomotive type and generation
+  is determined by the number of dice in the Customer Base (sold) boxes
+    added to any in the Existing Orders (existingOrder) boxes.
+ */
+
 extension Order {
     static func canAdd(_ state: Order.State = .existingOrder, to deck: Deck) -> Bool {
         let capacity = deck.orderCapacity
 
-        
+        guard let orders = deck.orders else {
+            return true
+        }
 
-        return true
+        guard (orders.count < capacity) else {
+            return true
+        }
+
+        return false
     }
 }

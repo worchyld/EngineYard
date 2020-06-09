@@ -170,8 +170,8 @@
 				4DDDD3F6248E924E00A2DA86 /* CardFilterTests.swift */,
 				4D6F8B6D248E8CFB0079BC27 /* DeckBuilderTests.swift */,
 				4D66EBC5248ED12B005DE7F0 /* BoardBuilderTests.swift */,
-				4DA1C14C2486F43E004C4121 /* TaxTests.swift */,
 				4D66EBCD248F8937005DE7F0 /* OrderCreationTests.swift */,
+				4DA1C14C2486F43E004C4121 /* TaxTests.swift */,
 				4D10C5A02486D08500238508 /* Info.plist */,
 			);
 			path = EngineYardTests;

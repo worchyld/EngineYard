@@ -31,14 +31,19 @@ class OrderCreationTests: XCTestCase {
             XCTFail("No board defined")
             return
         }
-        guard let firstDeck = board.first else {
+        guard let deck = board.first else {
+            XCTFail("No deck found")
+            return
+        }
+        guard let firstDeck = deck else {
             XCTFail("No first deck found")
             return
         }
-        XCTAssertNotNil(firstDeck)
-        XCTAssertNil(firstDeck?.orders)
+        XCTAssertNotNil(deck)
+        XCTAssertNil(firstDeck.orders)
 
-        
+        let result = Order.canAdd(.existingOrder, to: firstDeck)
+        XCTAssertTrue(result)
     }
 
 }
