@@ -61,9 +61,9 @@ extension OrderBook {
         self.orders.removeAll(keepingCapacity: true)
     }
 
-    // convert the order to a state
-    func transfer(order: Order, to: Order.State) {
-        
+    func transfer(order: Order, to state: Order.State) {
+        var order = order
+        order.setState(state: state)
     }
 }
 
