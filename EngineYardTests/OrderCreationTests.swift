@@ -76,7 +76,38 @@ class OrderCreationTests: XCTestCase {
         }
 
         XCTAssertNotNil(firstOrder.value)
+
+        print (orderBook.orders)
     }
 
+    func testCanFillToCapacityOfFirstDeck() {
+        guard let firstDeck = self.testCanGetFirstDeck() else {
+            XCTFail("No first deck found")
+            return
+        }
+
+        let orderBook = OrderBook.init(capacity: firstDeck.orderCapacity)
+        XCTAssertTrue(orderBook.orders.count == 0)
+
+        // Force fill the capacity
+        for index in 0...(firstDeck.orderCapacity - 1) {
+            do {
+                try orderBook.add()
+            }
+            catch {
+                print (error)
+                XCTFail("Failed at: \(index), \(error as Any), capacity: \(firstDeck.orderCapacity)")
+            }
+        }
+
+        XCTAssertTrue(firstDeck.orderCapacity == orderBook.orders.count)
+
+        // Try to add 1 more order, should fail
+        XCTAssertThrowsError(
+            try orderBook.add()
+        )
+
+        XCTAssertTrue(firstDeck.orderCapacity == orderBook.orders.count)
+    }
 
 }

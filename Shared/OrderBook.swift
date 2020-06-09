@@ -62,3 +62,9 @@ class OrderBook {
     }
 
 }
+
+extension OrderBook : CustomDebugStringConvertible {
+    var debugDescription: String {
+        return ("order: \(self.orders)")
+    }
+}
