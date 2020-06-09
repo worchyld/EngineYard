@@ -16,8 +16,9 @@ class Deck: Identifiable, FamilyDelegate {
     var generation: Family.Generation { return self.family.generation }
     let cost: Int
     var cards: [Card] = [Card]()
+
     let orderCapacity: Int // Capacity of orders array
-    var orders: [Order]?
+    private(set) var orders: [Order]?
 
     enum State: Int, CaseIterable {
        case unavailable, existing, old, obsolete
@@ -28,5 +29,7 @@ class Deck: Identifiable, FamilyDelegate {
         self.cost = cost
         self.family = Family(color: color, generation: generation)
         self.orderCapacity = orderCapacity
+        self.orders?.reserveCapacity(orderCapacity)
+        //self.orders = Array<Order?>(repeating: nil, count: orderCapacity)
     }
 }

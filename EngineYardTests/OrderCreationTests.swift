@@ -26,24 +26,35 @@ class OrderCreationTests: XCTestCase {
         XCTAssertTrue(order.state.rawValue == Order.State.existingOrder.rawValue)
     }
 
-    func testCanAddExistingOrderToFirstDeck() {
+    func testCanGetFirstDeck() -> Deck? {
         guard let board = self.board else {
             XCTFail("No board defined")
-            return
+            return nil
         }
         guard let deck = board.first else {
             XCTFail("No deck found")
-            return
+            return nil
         }
         guard let firstDeck = deck else {
             XCTFail("No first deck found")
+            return nil
+        }
+        XCTAssertNotNil(self.board)
+        XCTAssertNotNil(deck)
+        return firstDeck
+    }
+
+    func testFirstDeckHasNoOrders() {
+        guard let firstDeck = self.testCanGetFirstDeck() else {
+            XCTFail("No first deck found")
             return
         }
-        XCTAssertNotNil(deck)
         XCTAssertNil(firstDeck.orders)
 
-        let result = Order.canAdd(.existingOrder, to: firstDeck)
-        XCTAssertTrue(result)
+        let orderBook = OrderBook.init(capacity: firstDeck.orderCapacity)
+        XCTAssertFalse( orderBook.isFull )
+        XCTAssertTrue(orderBook.orders.count == 0)
     }
+
 
 }

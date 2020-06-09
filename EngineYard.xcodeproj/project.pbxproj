@@ -30,6 +30,7 @@
 		4D66EBCA248F836E005DE7F0 /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66EBC9248F836E005DE7F0 /* Hand.swift */; };
 		4D66EBCC248F846B005DE7F0 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66EBCB248F846B005DE7F0 /* Order.swift */; };
 		4D66EBCE248F8937005DE7F0 /* OrderCreationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66EBCD248F8937005DE7F0 /* OrderCreationTests.swift */; };
+		4D66EBD0248F9778005DE7F0 /* OrderBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66EBCF248F9778005DE7F0 /* OrderBook.swift */; };
 		4D6F8B6E248E8CFB0079BC27 /* DeckBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6F8B6D248E8CFB0079BC27 /* DeckBuilderTests.swift */; };
 		4DA1C1392486EC3D004C4121 /* Die.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C1382486EC3D004C4121 /* Die.swift */; };
 		4DA1C13B2486EC77004C4121 /* EY+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C13A2486EC77004C4121 /* EY+Int.swift */; };
@@ -85,6 +86,7 @@
 		4D66EBC9248F836E005DE7F0 /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
 		4D66EBCB248F846B005DE7F0 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		4D66EBCD248F8937005DE7F0 /* OrderCreationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCreationTests.swift; sourceTree = "<group>"; };
+		4D66EBCF248F9778005DE7F0 /* OrderBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBook.swift; sourceTree = "<group>"; };
 		4D6F8B6D248E8CFB0079BC27 /* DeckBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckBuilderTests.swift; sourceTree = "<group>"; };
 		4DA1C1382486EC3D004C4121 /* Die.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Die.swift; sourceTree = "<group>"; };
 		4DA1C13A2486EC77004C4121 /* EY+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Int.swift"; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				4DDDD3F8248E935700A2DA86 /* Card+Filter.swift */,
 				4D10C6172486DCF200238508 /* Deck.swift */,
 				4DA1C14E2486FC12004C4121 /* Deck+Builder.swift */,
+				4D66EBCF248F9778005DE7F0 /* OrderBook.swift */,
 				4D66EBCB248F846B005DE7F0 /* Order.swift */,
 				4DA1C14A2486F3FC004C4121 /* Tax.swift */,
 				4D66EBC7248F8147005DE7F0 /* Player.swift */,
@@ -338,6 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D10C6182486DCF200238508 /* Deck.swift in Sources */,
+				4D66EBD0248F9778005DE7F0 /* OrderBook.swift in Sources */,
 				4D10C5882486D08400238508 /* AppDelegate.swift in Sources */,
 				4DA1C14F2486FC12004C4121 /* Deck+Builder.swift in Sources */,
 				4DA1C13E2486ECC9004C4121 /* EY+String.swift in Sources */,
