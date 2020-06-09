@@ -20,8 +20,14 @@ struct Order {
     var value: Int?
     var state: Order.State = .unowned
 
-    init(value: Int, _ state: Order.State = .existingOrder) {
-        self.value = value
+    init(_ state: Order.State = .existingOrder) {
+        self.value = self.generateOrder()
         self.state = state
+    }
+}
+
+extension Order {
+    func generateOrder() -> Int {
+        return Die.roll
     }
 }

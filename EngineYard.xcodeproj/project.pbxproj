@@ -29,6 +29,7 @@
 		4D66EBC8248F8147005DE7F0 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66EBC7248F8147005DE7F0 /* Player.swift */; };
 		4D66EBCA248F836E005DE7F0 /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66EBC9248F836E005DE7F0 /* Hand.swift */; };
 		4D66EBCC248F846B005DE7F0 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66EBCB248F846B005DE7F0 /* Order.swift */; };
+		4D66EBCE248F8937005DE7F0 /* OrderCreationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66EBCD248F8937005DE7F0 /* OrderCreationTests.swift */; };
 		4D6F8B6E248E8CFB0079BC27 /* DeckBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6F8B6D248E8CFB0079BC27 /* DeckBuilderTests.swift */; };
 		4DA1C1392486EC3D004C4121 /* Die.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C1382486EC3D004C4121 /* Die.swift */; };
 		4DA1C13B2486EC77004C4121 /* EY+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C13A2486EC77004C4121 /* EY+Int.swift */; };
@@ -83,6 +84,7 @@
 		4D66EBC7248F8147005DE7F0 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		4D66EBC9248F836E005DE7F0 /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
 		4D66EBCB248F846B005DE7F0 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		4D66EBCD248F8937005DE7F0 /* OrderCreationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCreationTests.swift; sourceTree = "<group>"; };
 		4D6F8B6D248E8CFB0079BC27 /* DeckBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckBuilderTests.swift; sourceTree = "<group>"; };
 		4DA1C1382486EC3D004C4121 /* Die.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Die.swift; sourceTree = "<group>"; };
 		4DA1C13A2486EC77004C4121 /* EY+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Int.swift"; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				4D6F8B6D248E8CFB0079BC27 /* DeckBuilderTests.swift */,
 				4D66EBC5248ED12B005DE7F0 /* BoardBuilderTests.swift */,
 				4DA1C14C2486F43E004C4121 /* TaxTests.swift */,
+				4D66EBCD248F8937005DE7F0 /* OrderCreationTests.swift */,
 				4D10C5A02486D08500238508 /* Info.plist */,
 			);
 			path = EngineYardTests;
@@ -371,6 +374,7 @@
 				4D10C6242486E12000238508 /* Card+Expectations.swift in Sources */,
 				4D66EBC6248ED12B005DE7F0 /* BoardBuilderTests.swift in Sources */,
 				4DDDD3F7248E924E00A2DA86 /* CardFilterTests.swift in Sources */,
+				4D66EBCE248F8937005DE7F0 /* OrderCreationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
