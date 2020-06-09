@@ -31,3 +31,13 @@ extension Order {
         return Die.roll
     }
 }
+
+extension Order {
+    static func canAdd(_ state: Order.State = .existingOrder, to deck: Deck) -> Bool {
+        let capacity = deck.orderCapacity
+
+        
+
+        return true
+    }
+}
