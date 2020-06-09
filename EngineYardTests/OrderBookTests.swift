@@ -58,6 +58,7 @@ class OrderBookTests: XCTestCase {
         }
 
         XCTAssertTrue(orders.count == capacity)
+        XCTAssertTrue(orderBook.isFull)
     }
     
 
