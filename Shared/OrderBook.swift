@@ -68,13 +68,11 @@ extension OrderBook {
     }
 
     // Reduce an order by a value
-    // If it goes to 0 then, set it to 1 & change state
     func reduce(order: inout Order, by amount: Int) throws {
         do {
             let _ = try order.reduceValue(by: amount)
             if (order.value == 0) {
                 try order.setValue(1)
-                try transfer(order: &order, to: .completedOrder)
             }
         }
         catch {

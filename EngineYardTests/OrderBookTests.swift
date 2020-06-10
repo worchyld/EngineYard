@@ -158,31 +158,4 @@ class OrderBookTests: XCTestCase {
         XCTAssertTrue(firstOrder.value == 5, "Expected: 5, Found: \(firstOrder.value)")
     }
 
-    func testReducingOrderToZeroChangedStateToCompleted() {
-        let capacity = 3
-        let orderBook = OrderBook.init(capacity: capacity)
-
-        XCTAssertNoThrow(
-            try orderBook.add(.existingOrder)
-        )
-
-        XCTAssertNotNil(orderBook.orders)
-        guard let orders = orderBook.orders else {
-            XCTFail("No orders defined")
-            return
-        }
-        guard var firstOrder = orders.first else {
-            XCTFail("No first order defined")
-            return
-        }
-        XCTAssertNoThrow(
-            try firstOrder.setValue(1)
-        )
-        XCTAssertNoThrow(
-            try orderBook.reduce(order: &firstOrder, by: 1)
-        )
-        // should now be 1 because func forces it to be 1
-        XCTAssertTrue(firstOrder.value == 1)
-        XCTAssertTrue(firstOrder.state == .completedOrder)
-    }
 }

@@ -9,6 +9,7 @@
 import Foundation
 
 enum IntError: Error {
+    case cannotBeZero
     case cannotBeNegative
     case resultWillBeNegative(value: Int)
 }
