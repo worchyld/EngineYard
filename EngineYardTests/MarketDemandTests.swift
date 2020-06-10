@@ -54,7 +54,41 @@ class MarketDemandTests: XCTestCase {
             XCTAssertTrue(filtered?.count == 0)
             XCTAssertTrue(exists == 0)
         }
+    }
 
+    func testOneGenerationExists() {
+        guard let board = self.board else {
+            XCTFail("No board")
+            return
+        }
+        guard let firstDeck = board.first else {
+            XCTFail("No first deck found")
+            return
+        }
+        guard let deck = firstDeck else {
+            XCTFail("No deck found")
+            return
+        }
+
+        let order = Order.init()
+        deck.orders.append(order)
+        let mktDemand = MarketDemand.init(board: board)
+
+        for familyColor in Family.Color.allCases.enumerated() {
+            print ("testing: color \(familyColor.element)")
+
+            let filtered = mktDemand.findDecksWithOrders(matching: familyColor.element)
+            let exists = Deck.totalGenerations(in: filtered)
+
+            if (familyColor.element == .green) {
+                XCTAssertTrue(filtered?.count == 1)
+                XCTAssertTrue(exists == 1)
+            }
+            else {
+                XCTAssertTrue(filtered?.count == 0)
+                XCTAssertTrue(exists == 0)
+            }
+        }
     }
 
 }
