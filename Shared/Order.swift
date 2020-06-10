@@ -19,11 +19,11 @@ enum OrderError: Error {
 
 struct Order {
     enum State: Int, CaseIterable {
-        case unowned, existingOrder, completedOrder
+        case existingOrder, completedOrder
     }
 
     private (set) var value: Int
-    var state: Order.State = .unowned
+    var state: Order.State
 
     init(_ state: Order.State = .existingOrder) {
         self.value = Die.roll

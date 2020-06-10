@@ -83,13 +83,6 @@ class OrderTests: XCTestCase {
         )
     }
 
-    func testOrderCannotReduceNilOrder() {
-        var order = Order.init(.unowned)
-        XCTAssertThrowsError(
-            try order.reduceValue(by: 1)
-        )
-    }
-    
     func testOrderCannotReduceCompletedOrder() {
         var order = Order.init(.completedOrder)
         XCTAssertThrowsError(
