@@ -23,15 +23,32 @@ class MarketDemandTests: XCTestCase {
     }
 
     // When board has been initialised
-    func testNumberOfGenerationsExistIsZero() {
-        let mktDemand = MarketDemand()
-        let results = mktDemand.howManyGenerationsExist(of: Family.Color.green, board: self.board)
+    func testGreenGenerationsExistIsZero() {
+        guard let board = self.board else {
+            XCTFail("No board")
+            return
+        }
+
+        let results = Deck.howManyGenerationsExist(in: board, matching: .green)
         XCTAssertTrue(results == 0)
         XCTAssertNotNil(board)
         XCTAssertTrue(board.count == Expected.totalDecksInGame)
     }
 
-    func testNumberOfGenerationsExistingIsOne() {
+    /*
+    func testAllGenerationsExistIsZero() {
+        guard let board = self.board else {
+            XCTFail("No board")
+            return
+        }
+
+        for color in Family.Color.allCases.enumerated() {
+            let results = Deck.howManyGenerationsExist(in: board, matching: color.element)
+            XCTAssertTrue(results == 0)
+        }
+    }
+
+    func testGreenGenerationsExistingIsOne() {
         guard let board = self.board else {
             XCTFail("No board")
             return
@@ -51,11 +68,22 @@ class MarketDemandTests: XCTestCase {
         let order = Order()
         deck.orders.append(order)
 
-        let mktDemand = MarketDemand()
-        let results = mktDemand.howManyGenerationsExist(of: Family.Color.green, board: self.board)
-        XCTAssertTrue(results == 1)
+        let _ = MarketDemand(board: board)
+        let results = Deck.howManyGenerationsExist(in: board, matching: .green)
 
-        XCTAssertTrue(deck.state == .existing) 
-    }
+        XCTAssertTrue(results == 1)
+        XCTAssertTrue(deck.state == .existing)
+
+        for color in Family.Color.allCases.enumerated() {
+            let results = Deck.howManyGenerationsExist(in: board, matching: color.element)
+
+            switch color.element {
+            case .green:
+                XCTAssertTrue(results == 1)
+            default:
+                XCTAssertTrue(results == 0)
+            }
+        }
+    }*/
 
 }
