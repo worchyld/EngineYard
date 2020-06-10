@@ -19,7 +19,11 @@ class Deck: Identifiable, FamilyDelegate {
 
     // Orders
     let orderCapacity: Int
-    var orders: [Order] = [Order]()
+    var orders: [Order] = [Order]() {
+        didSet {
+            changeState(to: .existing)
+        }
+    }
 
     enum State: Int, CaseIterable {
        case unavailable, existing, old, obsolete
@@ -32,5 +36,11 @@ class Deck: Identifiable, FamilyDelegate {
         self.orderCapacity = orderCapacity
         self.orders.reserveCapacity(orderCapacity)
         //self.orders = Array<Order?>(repeating: nil, count: orderCapacity)
+    }
+}
+
+extension Deck {
+    private func changeState(to: Deck.State) {
+        self.state = to
     }
 }

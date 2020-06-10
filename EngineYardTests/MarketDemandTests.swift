@@ -31,4 +31,31 @@ class MarketDemandTests: XCTestCase {
         XCTAssertTrue(board.count == Expected.totalDecksInGame)
     }
 
+    func testNumberOfGenerationsExistingIsOne() {
+        guard let board = self.board else {
+            XCTFail("No board")
+            return
+        }
+        guard let firstDeck = board.first else {
+            XCTFail("No first deck found")
+            return
+        }
+        guard let deck = firstDeck else {
+            XCTFail("No deck found")
+            return
+        }
+        XCTAssertTrue(deck.color == .green)
+
+        XCTAssertTrue(deck.state == .unavailable)
+
+        let order = Order()
+        deck.orders.append(order)
+
+        let mktDemand = MarketDemand()
+        let results = mktDemand.howManyGenerationsExist(of: Family.Color.green, board: self.board)
+        XCTAssertTrue(results == 1)
+
+        XCTAssertTrue(deck.state == .existing) 
+    }
+
 }
