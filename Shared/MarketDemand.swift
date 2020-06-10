@@ -17,6 +17,31 @@ import Foundation
 
 class MarketDemand {
     private var board: Board
+    lazy var decks: [Deck]? = {
+        guard let decks = board as? [Deck] else {
+            return nil
+        }
+        return decks
+    }()
+    private(set) var howManyGenerationsExist: Int = 0
+
+
+//    lazy var marketForPassengerLocomotives: Int = {
+//        let filter = self.marketFor(locomotiveType: .green)
+//        return filter.count
+//    }()
+//    lazy var marketForFastLocomotives: Int = {
+//        let filter = self.marketFor(locomotiveType: .red)
+//        return filter.count
+//    }()
+//    lazy var marketForFreightLocomotives: Int = {
+//        let filter = self.marketFor(locomotiveType: .yellow)
+//        return filter.count
+//    }()
+//    lazy var marketForSpecialLocomotives: Int = {
+//        let filter = self.marketFor(locomotiveType: .blue)
+//        return filter.count
+//    }()
 
     init(board: Board) {
         self.board = board
@@ -27,64 +52,34 @@ class MarketDemand {
     //   boxes or the `completedOrders` (Customer Base) boxes or in both.
 
     func start() {
-        for familyColor in Family.Color.allCases.enumerated() {
-            self.handle(color: familyColor.element)
+    }
+}
+
+extension MarketDemand {
+
+    /* New Existing Orders for marketable locomotives are determined
+     It consists of four steps, each step dedicated to one locomotive type:
+        1. Market for Passenger locomotives (green)
+        2. Market for Fast locomotives (red)
+        3. Market for Freight locomotives (yellow)
+        4. Market for Special locomotives (blue)
+     */
+    internal func marketFor(locomotiveType: Family.Color) -> [Deck] {
+        guard let decks = self.decks else {
+            return [] // empty array
         }
+
+        // Find all decks that match the type & have orders,
+        // sorted by cost & generation ascending
+        let filter = decks.filter { (deck: Deck) -> Bool in
+            return (deck.color == locomotiveType && deck.orders.count > 0)
+        }.sorted { (a: Deck, b: Deck) -> Bool in
+            return ((a.cost < b.cost) && (a.generation.rawValue < b.generation.rawValue))
+        }
+
+        self.howManyGenerationsExist = filter.count
+
+        return filter
     }
 
-    func findDecksWithOrders(matching needle: Family.Color) -> [Deck]? {
-        guard let filteredDecks = Deck.filterOrders(in: board, matching: needle) else {
-            print ("No orders found, do nothing")
-            return nil
-        }
-        return filteredDecks
-    }
-
-    private func handle(color: Family.Color) {
-        print ("handle: \(color as Any)")
-        guard let filteredDecks = self.findDecksWithOrders(matching: color) else {
-            print ("No orders found, do nothing")
-            return
-        }
-        let exists = Deck.totalGenerations(in: filteredDecks)
-        
-        switch exists {
-        case 1: // 1 generation exist
-            handleOneGeneration(decks: filteredDecks)
-
-        case 2: // 2 generations exist
-            handleTwoGenerations(decks: filteredDecks)
-
-        case 3: // 3 generations exist
-            handleThreeGenerations(decks: filteredDecks)
-
-        default:
-            // do nothing
-            return
-        }
-    }
-
-    private func handleOneGeneration(decks: [Deck?]) {
-        guard let decks = decks as? [Deck] else {
-            return
-        }
-
-        print("handleOneGen: \(decks)")
-    }
-
-    private func handleTwoGenerations(decks: [Deck?]) {
-        guard let decks = decks as? [Deck] else {
-            return
-        }
-
-        print("handleTwoGenerations: \(decks)")
-    }
-
-    private func handleThreeGenerations(decks: [Deck?]) {
-        guard let decks = decks as? [Deck] else {
-            return
-        }
-
-        print("handleThreeGenerations: \(decks)")
-    }
 }

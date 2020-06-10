@@ -22,73 +22,21 @@ class MarketDemandTests: XCTestCase {
         self.board = board
     }
 
-    // When board has been initialised
-    func testNoGreenGenerationsExist() {
-        guard let board = self.board else {
-            XCTFail("No board")
-            return
-        }
-
-        let mktDemand = MarketDemand.init(board: board)
-        let filtered = mktDemand.findDecksWithOrders(matching: .green)
-        let exists = Deck.totalGenerations(in: filtered)
-
-        XCTAssertTrue(filtered?.count == 0)
-        XCTAssertTrue(exists == 0)
+    func testLazyDecksVarHasContent() {
+        let mktDemands = MarketDemand.init(board: board)
+        XCTAssertNotNil(mktDemands.decks)
+        XCTAssertTrue(mktDemands.decks?.count == Expected.totalDecksInGame)
     }
 
-    func testNoGenerationsExist() {
-        guard let board = self.board else {
-            XCTFail("No board")
-            return
-        }
-
-        let mktDemand = MarketDemand.init(board: board)
-
-        for familyColor in Family.Color.allCases.enumerated() {
-            print ("testing: color \(familyColor.element)")
-
-            let filtered = mktDemand.findDecksWithOrders(matching: familyColor.element)
-            let exists = Deck.totalGenerations(in: filtered)
-
-            XCTAssertTrue(filtered?.count == 0)
-            XCTAssertTrue(exists == 0)
-        }
+    func testMarketDemandReturnsZeroGenerations() {
+        let mktDemands = MarketDemand.init(board: board)
+        let filter = mktDemands.marketFor(locomotiveType: .green)
+        XCTAssertTrue(filter.count == 0)
+        XCTAssertTrue(mktDemands.howManyGenerationsExist == 0)
     }
 
-    func testOneGenerationExists() {
-        guard let board = self.board else {
-            XCTFail("No board")
-            return
-        }
-        guard let firstDeck = board.first else {
-            XCTFail("No first deck found")
-            return
-        }
-        guard let deck = firstDeck else {
-            XCTFail("No deck found")
-            return
-        }
+    func testAllDecksHaveZeroGenerations() {
+        //let mktDemands = MarketDemand.init(board: board)
 
-        let order = Order.init()
-        deck.orders.append(order)
-        let mktDemand = MarketDemand.init(board: board)
-
-        for familyColor in Family.Color.allCases.enumerated() {
-            print ("testing: color \(familyColor.element)")
-
-            let filtered = mktDemand.findDecksWithOrders(matching: familyColor.element)
-            let exists = Deck.totalGenerations(in: filtered)
-
-            if (familyColor.element == .green) {
-                XCTAssertTrue(filtered?.count == 1)
-                XCTAssertTrue(exists == 1)
-            }
-            else {
-                XCTAssertTrue(filtered?.count == 0)
-                XCTAssertTrue(exists == 0)
-            }
-        }
     }
-
 }

@@ -20,19 +20,20 @@ extension EngineYardGame {
         let decks = Deck.build()
         let cards = Card.build()
 
-        var board: Board?   // = [Deck?]([Deck?](repeating: nil, count:  14))
+        var board = [Deck?]([Deck?](repeating: nil, count:  14))
 
-
-        // Walk through each position in the board then add the cards to that array
-
-        //self.positions.mutateEach { (position) in
-        //    #body
+        // Walk through each position in the board
+        // then add the cards to that array
+        //
+        //decks.forEach { (deck: Deck) in
+        //    deck.cards = Card.filter(cards: cards, matching: (color: deck.color, generation: deck.generation))
         //}
+        //board = decks
 
-        decks.forEach { (deck: Deck) in
+        for (index, deck) in decks.enumerated() {
             deck.cards = Card.filter(cards: cards, matching: (color: deck.color, generation: deck.generation))
+            board[index] = deck
         }
-        board = decks
 
         return board
     }
