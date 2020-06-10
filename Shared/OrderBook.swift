@@ -10,7 +10,6 @@ import Foundation
 
 enum OrderBookError : Error {
     case undefinedOrderBook
-    case orderCannotBe(_ state: Order.State)
     case ordersAreFull
     case unknownOrderState(_ state: Order.State?)
 }
@@ -47,7 +46,7 @@ extension OrderBook {
     // add an order
     func add(_ orderState: Order.State = .existingOrder) throws {
         guard (orderState == .existingOrder || orderState == .completedOrder) else {
-            throw OrderBookError.orderCannotBe(orderState)
+            throw OrderError.orderCannotBe(orderState)
         }
         guard !isFull else {
             throw OrderBookError.ordersAreFull
@@ -62,9 +61,19 @@ extension OrderBook {
     // transfer an order from one state to another
     func transfer(order: inout Order, to state: Order.State) throws {
         guard (state == .existingOrder || state == .completedOrder) else {
-            throw OrderBookError.orderCannotBe(state)
+            throw OrderError.orderCannotBe(state)
         }
 
         order.setState(to: state)
+    }
+
+    // reduce an order by a value
+    func reduce(order: inout Order, by amount: Int) throws {
+        do {
+            let _ = try order.reduceValue(by: amount)
+        }
+        catch {
+            throw error
+        }
     }
 }
