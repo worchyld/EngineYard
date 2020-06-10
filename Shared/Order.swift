@@ -10,11 +10,11 @@ import Foundation
 
 enum IntError: Error {
     case cannotBeNegative
-    case resultWillBeNegative
+    case resultWillBeNegative(value: Int)
 }
 
 enum OrderError: Error {
-    case canOnlyReduceValueOfExistingOrder
+    case orderCannotBe(_ state: Order.State)
 }
 
 struct Order {
@@ -44,17 +44,21 @@ extension Order {
 }
 
 extension Order {
-    mutating func reduceValue(by: Int) throws {
-        guard self.value >= 0 else {
+    mutating func reduceValue(by amount: Int) throws {
+        guard (amount >= 0) else {
             throw IntError.cannotBeNegative
         }
-        guard self.state == .existingOrder else {
-            throw OrderError.canOnlyReduceValueOfExistingOrder
+        guard (self.state == .existingOrder) else {
+            throw OrderError.orderCannotBe(self.state)
         }
         let sum = self.value
-        guard (sum - by >= 0) else {
-            throw IntError.resultWillBeNegative
+        guard (sum - amount >= 0) else {
+            throw IntError.resultWillBeNegative(value: sum)
         }
-        self.value -= by
+        willReduceValue(by: amount)
+    }
+
+    private mutating func willReduceValue(by amount: Int) {
+        self.value -= amount
     }
 }
