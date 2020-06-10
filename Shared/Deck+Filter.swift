@@ -24,8 +24,8 @@ extension Deck {
         return filter
     }
 
-    static func totalGenerations(in decks: [Deck?]) -> Int {
-        guard let decks: [Deck] = decks as? [Deck] else {
+    static func totalGenerations(in decks: [Deck]?) -> Int {
+        guard let decks = decks else {
             return 0
         }
         let total = decks.reduce(0, {

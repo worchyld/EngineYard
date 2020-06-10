@@ -32,9 +32,17 @@ class MarketDemand {
         }
     }
 
+    func findDecksWithOrders(matching needle: Family.Color) -> [Deck]? {
+        guard let filteredDecks = Deck.filterOrders(in: board, matching: needle) else {
+            print ("No orders found, do nothing")
+            return nil
+        }
+        return filteredDecks
+    }
+
     private func handle(color: Family.Color) {
         print ("handle: \(color as Any)")
-        guard let filteredDecks = Deck.filterOrders(in: board, matching: color) else {
+        guard let filteredDecks = self.findDecksWithOrders(matching: color) else {
             print ("No orders found, do nothing")
             return
         }
@@ -42,7 +50,7 @@ class MarketDemand {
         
         switch exists {
         case 1: // 1 generation exist
-            handleOneGeneration( decks: filteredDecks )
+            handleOneGeneration(decks: filteredDecks)
 
         case 2: // 2 generations exist
             handleTwoGenerations(decks: filteredDecks)

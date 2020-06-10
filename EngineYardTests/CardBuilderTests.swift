@@ -118,4 +118,14 @@ class CardBuilderTests: XCTestCase {
         XCTAssertTrue(found == expected.results, "Mismatch in expectations. Found: \(found), Expected \(expected)")
     }
 
+    func testFamilyColorsEquals4() {
+        let allColors = Family.Color.allCases
+        XCTAssertTrue(allColors.count == 4)
+    }
+
+    func testFamilyGenerationsEquals5() {
+        let allGenerations = Family.Generation.allCases
+        XCTAssertTrue(allGenerations.count == 5)
+    }
+
 }
