@@ -36,7 +36,12 @@ class MarketDemandTests: XCTestCase {
     }
 
     func testAllDecksHaveZeroGenerations() {
-        //let mktDemands = MarketDemand.init(board: board)
+        let mktDemands = MarketDemand.init(board: board)
 
+        for element in Family.Color.allCases {
+            let filter = mktDemands.marketFor(locomotiveType: element)
+            XCTAssertTrue(filter.count == 0)
+            XCTAssertTrue(mktDemands.howManyGenerationsExist == 0)
+        }
     }
 }
