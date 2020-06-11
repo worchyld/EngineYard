@@ -44,4 +44,25 @@ class MarketDemandTests: XCTestCase {
             XCTAssertTrue(mktDemands.howManyGenerationsExist == 0)
         }
     }
+
+    func testOneGenerationExists() {
+        guard let loco = board.first else {
+            XCTFail("No locomotive found")
+            return
+        }
+        let order = Order.init()
+        loco?.orders.append(order)
+        XCTAssertTrue(loco?.orders.count == 1)
+
+        let mktDemands = MarketDemand.init(board: board)
+        let greenMkt = mktDemands.marketFor(locomotiveType: .green)
+        let redMkt = mktDemands.marketFor(locomotiveType: .red)
+        let yellowMkt = mktDemands.marketFor(locomotiveType: .yellow)
+        let blueMkt = mktDemands.marketFor(locomotiveType: .blue)
+
+        XCTAssertTrue(greenMkt.count == 1)
+        XCTAssertTrue(redMkt.count == 0)
+        XCTAssertTrue(yellowMkt.count == 0)
+        XCTAssertTrue(blueMkt.count == 0)
+    }
 }
