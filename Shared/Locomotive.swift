@@ -26,6 +26,21 @@ class Locomotive: Identifiable, FamilyDelegate {
             changeState(to: .existing)
         }
     }
+    lazy var existingOrders: [Order] = {
+        return self.orders.filter { (o: Order) -> Bool in
+            return o.state == .existingOrder
+        }
+    }()
+    lazy var completedOrders: [Order] = {
+        return self.orders.filter { (o: Order) -> Bool in
+            return o.state == .completedOrder
+        }
+    }()
+    lazy var initialOrder: Order? = {
+        return self.orders.filter { (o: Order) -> Bool in
+            return o.state == .initialOrder
+        }.first
+    }()
 
     enum State: Int, CaseIterable {
        case unavailable, existing, old, obsolete

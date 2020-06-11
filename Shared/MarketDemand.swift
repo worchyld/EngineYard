@@ -58,13 +58,36 @@ struct GenerationsExist {
         return results
     }
 
-    // A generation exists if it has dice (orders) in
+    // A generation only exists if it has dice (orders) in
     // either `existingOrders` or `customerBase` (sales),
     // `initialOrders` should be `rejected`
     private func marketFor(color: Family.Color) -> [Locomotive] {
 
         // Find all Locomotives that match the type & have orders,
         // sorted by cost & generation ascending
+
+        //let results = locos.filter { !$0.order.isEmpty && $0.order.contains(where: { order in order.state > 0 }) }
+
+        let filter = locos
+            .filter { ($0.color == color) &&
+                    (!$0.orders.isEmpty) &&
+                ($0.orders.contains(where:
+                        { order in
+                            (
+                                (order.state == .existingOrder) ||
+                                (order.state == .completedOrder)
+                            )
+                        })
+                )
+        }
+        .sorted { (a: Locomotive, b: Locomotive) -> Bool in
+            return (
+                (a.cost < b.cost) &&
+                (a.generation.rawValue < b.generation.rawValue)
+            )
+        }
+
+        /*
         let filter = locos.filter { (locomotive: Locomotive) -> Bool in
             return (
                 (locomotive.color == color) &&
@@ -73,6 +96,7 @@ struct GenerationsExist {
         }.sorted { (a: Locomotive, b: Locomotive) -> Bool in
             return ((a.cost < b.cost) && (a.generation.rawValue < b.generation.rawValue))
         }
+        */
 
         return filter
     }
@@ -158,5 +182,3 @@ extension MarketDemand {
 
     }
 }
-
-
