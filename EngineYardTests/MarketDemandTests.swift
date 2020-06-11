@@ -22,12 +22,15 @@ class MarketDemandTests: XCTestCase {
         self.board = board
     }
 
-    func testLazyLocoVarHasContent() {
+    func testMarketDemandFindsNoGenerations() {
         let mktDemands = MarketDemand.init(board: board)
-        XCTAssertNotNil(mktDemands.locos)
-        XCTAssertTrue(mktDemands.locos?.count == Expected.totalLocomotivesInGame)
+        //let filter = mktDemands.marketFor(locomotiveType: .green)
+        let report = mktDemands.runReport(for: .green)
+        print (report?.total as Any)
     }
 
+
+        /*
     func testMarketDemandReturnsZeroGenerations() {
         let mktDemands = MarketDemand.init(board: board)
         let filter = mktDemands.marketFor(locomotiveType: .green)
@@ -103,4 +106,5 @@ class MarketDemandTests: XCTestCase {
         XCTAssertTrue(blueMkt.count == 0)
 
     }
+ */
 }
