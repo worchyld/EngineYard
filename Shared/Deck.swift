@@ -8,7 +8,7 @@
 
 import Foundation
 
-// The board is a collection of `decks`, each holding a collection of `cards`
+// The board is a collection of `Locomotives`; each with cards
 class Deck: Identifiable, FamilyDelegate {
     let id: UUID = UUID()
     let name: String
