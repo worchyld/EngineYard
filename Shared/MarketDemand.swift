@@ -89,31 +89,27 @@ class MarketDemand {
     }
 
     func start(with color: Family.Color) {
-        guard let board = self.board else {
-            return
-        }
-
         let report = self.runReport(for: color)
 
-//        guard let filtered = report.start() else {
-//            return // do nothing
-//        }
-//
-//        let howMany = filtered.count
-//
-//        switch howMany {
-//        case 1:
-//            let results = handleOneGeneration(locos: filtered)
-//            print (results)
-//        case 2:
-//            handleTwoGenerations()
-//        case 3:
-//            handleThreeGenerations()
-//
-//        default:
-//            //print ("do nothing")
-//            return
-//        }
+        guard let filtered = report?.start() else {
+            return // do nothing
+        }
+
+        let howMany = filtered.count
+
+        switch howMany {
+        case 1:
+            let results = handleOneGeneration(locos: filtered)
+            print (results)
+        case 2:
+            handleTwoGenerations()
+        case 3:
+            handleThreeGenerations()
+
+        default:
+            //print ("do nothing")
+            return
+        }
     }
 }
 
