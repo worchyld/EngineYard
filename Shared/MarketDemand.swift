@@ -44,54 +44,59 @@ import Foundation
         e. Repeat this for the newest locomotive
  */
 
-class MarketDemand {
-    struct GenerationsExist {
-        private var color: Family.Color
-        private var locos: [Locomotive]
-        var total: Int = 0
+struct GenerationsExist {
+    private var color: Family.Color
+    private var locos: [Locomotive]
 
-        init(with locomotives: [Locomotive], find color: Family.Color) {
-            self.locos = locomotives
-            self.color = color
-        }
-
-        func start() -> [Locomotive]? {
-            let results = self.marketFor(color: self.color)
-            return results
-        }
-
-        // A generation exists if it has dice (orders) in either existing or customer base
-        private func marketFor(color: Family.Color) -> [Locomotive] {
-            // Find all Locomotives that match the type & have orders,
-            // sorted by cost & generation ascending
-            let filter = locos.filter { (locomotive: Locomotive) -> Bool in
-                return (locomotive.color == color && locomotive.orders.count > 0)
-            }.sorted { (a: Locomotive, b: Locomotive) -> Bool in
-                return ((a.cost < b.cost) && (a.generation.rawValue < b.generation.rawValue))
-            }
-
-            return filter
-        }
+    init(with locomotives: [Locomotive], find color: Family.Color) {
+        self.locos = locomotives
+        self.color = color
     }
 
+    func report() -> [Locomotive]? {
+        let results = self.marketFor(color: self.color)
+        return results
+    }
+
+    // A generation exists if it has dice (orders) in
+    // either `existingOrders` or `customerBase` (sales),
+    // `initialOrders` should be `rejected`
+    private func marketFor(color: Family.Color) -> [Locomotive] {
+
+        // Find all Locomotives that match the type & have orders,
+        // sorted by cost & generation ascending
+        let filter = locos.filter { (locomotive: Locomotive) -> Bool in
+            return (
+                (locomotive.color == color) &&
+                (locomotive.orders.count > 0)
+            )
+        }.sorted { (a: Locomotive, b: Locomotive) -> Bool in
+            return ((a.cost < b.cost) && (a.generation.rawValue < b.generation.rawValue))
+        }
+
+        return filter
+    }
+}
+
+class MarketDemand {
     private var board: Board
 
     init(board: Board) {
         self.board = board
     }
 
-    func runReport(for color: Family.Color) -> GenerationsExist? {
+    func generationsExist(for color: Family.Color) -> GenerationsExist? {
         guard let board = self.board else {
             return nil
         }
-        let report = GenerationsExist.init(with: board, find: color)
-        return report
+        let genExist = GenerationsExist.init(with: board, find: color)
+        return genExist
     }
 
     func start(with color: Family.Color) {
-        let report = self.runReport(for: color)
+        let gens = generationsExist(for: color)
 
-        guard let filtered = report?.start() else {
+        guard let filtered = gens?.report() else {
             return // do nothing
         }
 
@@ -155,26 +160,3 @@ extension MarketDemand {
 }
 
 
-
-/*
-extension MarketDemand {
-    internal func marketFor(locomotiveType: Family.Color) -> [Locomotive] {
-        guard let locos = self.locos else {
-            return [] // empty array
-        }
-
-        // Find all Locomotives that match the type & have orders,
-        // sorted by cost & generation ascending
-        let filter = locos.filter { (locomotive: Locomotive) -> Bool in
-            return (locomotive.color == locomotiveType && locomotive.orders.count > 0)
-        }.sorted { (a: Locomotive, b: Locomotive) -> Bool in
-            return ((a.cost < b.cost) && (a.generation.rawValue < b.generation.rawValue))
-        }
-
-        self.howManyGenerationsExist = filter.count
-
-        return filter
-    }
-
-}
-*/
