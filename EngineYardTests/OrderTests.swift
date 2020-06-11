@@ -23,18 +23,44 @@ class OrderTests: XCTestCase {
         }
     }
 
-    func testOrderDidCreate() {
+    func testInitialOrderDidCreate() {
         let order = Order.init()
-        XCTAssertTrue(order.state == .existingOrder)
+        XCTAssertTrue(order.state == .initialOrder)
         XCTAssertTrue(order.value > 0 && order.value < 7)
     }
 
-    func testOrderDidReduceBy1() {
-        var order = Order.init()
+    func testCannotReduceValueOfCompletedOrder() {
+        var order = Order.init(.completedOrder)
+
+        XCTAssertThrowsError(try order.reduceValue(by: 1)) { error in
+           XCTAssertEqual(error as! OrderError, OrderError.orderCannotBe(.completedOrder))
+        }
+
+    }
+
+    func testCannotReduceValueOfInitialOrder() {
+        var order = Order.init(.initialOrder)
+        XCTAssertThrowsError(try order.reduceValue(by: 1)) { error in
+           XCTAssertEqual(error as! OrderError, OrderError.orderCannotBe(.initialOrder))
+        }
+    }
+
+    func testCanReduceValueOfExistingOrder() {
+        var order = Order.init(.existingOrder)
+        let orderValue = (order.value - 1)
+
+        XCTAssertNoThrow(
+            try order.reduceValue(by: 1)
+        )
+
+        XCTAssertEqual(order.value, orderValue)
+    }
+
+    func testExistingOrderDidReduceBy1() {
+        var order = Order.init(.existingOrder)
         XCTAssertNoThrow(
             try order.setValue(6)
         )
-        XCTAssertTrue(order.state == .existingOrder)
         XCTAssertTrue(order.value == 6)
 
         XCTAssertNoThrow(
@@ -43,8 +69,8 @@ class OrderTests: XCTestCase {
         XCTAssertTrue(order.value == 5)
     }
 
-    func testOrderDidReduceBy5() {
-        var order = Order.init()
+    func testExisitingOrderDidReduceBy5() {
+        var order = Order.init(.existingOrder)
         XCTAssertNoThrow(
             try order.setValue(6)
         )
@@ -55,8 +81,8 @@ class OrderTests: XCTestCase {
         XCTAssertTrue(order.value == 1)
     }
 
-    func testOrderDidReduceToZero() {
-        var order = Order.init()
+    func testExistingOrderDidReduceToZero() {
+        var order = Order.init(.existingOrder)
         XCTAssertNoThrow(
             try order.setValue(2)
         )
@@ -74,7 +100,7 @@ class OrderTests: XCTestCase {
     }
 
     func testOrderCannotGoNegative() {
-        var order = Order.init()
+        var order = Order.init(.existingOrder)
         XCTAssertNoThrow(
             try order.setValue(0)
         )
@@ -83,10 +109,4 @@ class OrderTests: XCTestCase {
         )
     }
 
-    func testOrderCannotReduceCompletedOrder() {
-        var order = Order.init(.completedOrder)
-        XCTAssertThrowsError(
-            try order.reduceValue(by: 1)
-        )
-    }
 }
