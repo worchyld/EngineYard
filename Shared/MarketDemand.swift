@@ -17,31 +17,14 @@ import Foundation
 
 class MarketDemand {
     private var board: Board
+
     lazy var locos: [Locomotive]? = {
-        guard let locos = board as? [Locomotive] else {
+        guard let locos = board as [Locomotive]? else {
             return nil
         }
         return locos
     }()
     private(set) var howManyGenerationsExist: Int = 0
-
-
-//    lazy var marketForPassengerLocomotives: Int = {
-//        let filter = self.marketFor(locomotiveType: .green)
-//        return filter.count
-//    }()
-//    lazy var marketForFastLocomotives: Int = {
-//        let filter = self.marketFor(locomotiveType: .red)
-//        return filter.count
-//    }()
-//    lazy var marketForFreightLocomotives: Int = {
-//        let filter = self.marketFor(locomotiveType: .yellow)
-//        return filter.count
-//    }()
-//    lazy var marketForSpecialLocomotives: Int = {
-//        let filter = self.marketFor(locomotiveType: .blue)
-//        return filter.count
-//    }()
 
     init(board: Board) {
         self.board = board

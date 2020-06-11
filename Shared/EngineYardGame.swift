@@ -8,8 +8,8 @@
 
 import Foundation
 
-// The board is a collection of 14 'spaces'.  Each space holds cards
-typealias Board = [Locomotive?]
+// The board is a collection of 14 'locomotives'.  Each space holds locomotive `cards`
+typealias Board = [Locomotive]?
 
 class EngineYardGame {
     var board: Board?
@@ -20,7 +20,10 @@ extension EngineYardGame {
         let locomotives = Locomotive.build()
         let cards = Card.build()
 
-        var board = [Locomotive?]([Locomotive?](repeating: nil, count:  14))
+        //var board = [Locomotive?]([Locomotive?](repeating: nil, count:  14))
+        guard var board = Board(locomotives) else {
+            return nil
+        }
 
         // Walk through each position in the board
         // then add the cards to that locomotive

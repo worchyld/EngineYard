@@ -65,4 +65,8 @@ class MarketDemandTests: XCTestCase {
         XCTAssertTrue(yellowMkt.count == 0)
         XCTAssertTrue(blueMkt.count == 0)
     }
+
+    func testTwoGenerationsExists() {
+        
+    }
 }
