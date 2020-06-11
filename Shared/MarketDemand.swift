@@ -66,6 +66,7 @@ struct GenerationsExist {
         // Find all Locomotives that match the type & have orders,
         // sorted by cost & generation ascending
 
+        // compact version
         //let results = locos.filter { !$0.order.isEmpty && $0.order.contains(where: { order in order.state > 0 }) }
 
         let filter = locos
@@ -88,6 +89,7 @@ struct GenerationsExist {
         }
 
         /*
+         // OLD VERSION
         let filter = locos.filter { (locomotive: Locomotive) -> Bool in
             return (
                 (locomotive.color == color) &&

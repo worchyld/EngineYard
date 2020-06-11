@@ -64,7 +64,7 @@ class MarketDemandTests: XCTestCase {
         }
     }
 
-    func testMKTDemand_FailIfOrderIsInitial() {
+    func testMKTDemand_IfOrderIsInitial_NoGenerationsExist() {
         let boardRef = self.locomotives
 
         guard let firstLoco = boardRef.first else {
@@ -80,9 +80,38 @@ class MarketDemandTests: XCTestCase {
         XCTAssertTrue(report?.count == 0)
     }
 
-    func testMKTDemand_OneGenerationsExist() {
+    func testMKTDemand_OneGenerationsExist_WhenExistingOrder() {
+        let boardRef = self.locomotives
+
+        guard let firstLoco = boardRef.first else {
+            return
+        }
+
+        let order = Order.init(.existingOrder)
+        firstLoco.orders.append(order)
 
 
+        let gen = GenerationsExist(with: boardRef, find: firstLoco.color)
+        let report = gen.report()
+        XCTAssertNotNil(report)
+        XCTAssertTrue(report?.count == 1)
+    }
+
+    func testMKTDemand_OneGenerationsExist_WhenCompletedOrder() {
+        let boardRef = self.locomotives
+
+        guard let firstLoco = boardRef.first else {
+            return
+        }
+
+        let order = Order.init(.completedOrder)
+        firstLoco.orders.append(order)
+
+
+        let gen = GenerationsExist(with: boardRef, find: firstLoco.color)
+        let report = gen.report()
+        XCTAssertNotNil(report)
+        XCTAssertTrue(report?.count == 1)
     }
 
 

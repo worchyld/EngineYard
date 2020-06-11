@@ -19,9 +19,9 @@ class Locomotive: Identifiable, FamilyDelegate {
     let cost: Int
     var cards: [Card] = [Card]()
 
-    // Orders
+    // Orders ------------- //
     let orderCapacity: Int
-    var orders: [Order] = [Order]() {
+    internal var orders: [Order] = [Order]() {
         didSet {
             changeState(to: .existing)
         }
@@ -41,6 +41,7 @@ class Locomotive: Identifiable, FamilyDelegate {
             return o.state == .initialOrder
         }.first
     }()
+    // -------------------- //
 
     enum State: Int, CaseIterable {
        case unavailable, existing, old, obsolete
