@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum OrderBookError : Error {
+enum OrderBookError : Error, Equatable {
     case undefinedOrderBook
     case ordersAreFull
     case unknownOrderState(_ state: Order.State?)

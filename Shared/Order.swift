@@ -8,25 +8,25 @@
 
 import Foundation
 
-enum IntError: Error {
+enum IntError: Error, Equatable {
     case cannotBeZero
     case cannotBeNegative
     case resultWillBeNegative(value: Int)
 }
 
-enum OrderError: Error {
+enum OrderError: Error, Equatable {
     case orderCannotBe(_ state: Order.State)
 }
 
 struct Order {
     enum State: Int, CaseIterable {
-        case existingOrder, completedOrder
+        case initialOrder, existingOrder, completedOrder
     }
 
     private (set) var value: Int
     var state: Order.State
 
-    init(_ state: Order.State = .existingOrder) {
+    init(_ state: Order.State = .initialOrder) {
         self.value = Die.roll
         self.state = state
     }
@@ -45,6 +45,7 @@ extension Order {
 }
 
 extension Order {
+    // Only existing orders can be reduced in value
     mutating func reduceValue(by amount: Int) throws {
         guard (amount >= 0) else {
             throw IntError.cannotBeNegative
