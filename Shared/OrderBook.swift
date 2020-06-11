@@ -14,7 +14,7 @@ enum OrderBookError : Error {
     case unknownOrderState(_ state: Order.State?)
 }
 
-// A proxy-style pattern to add, remove orders to/from a deck
+// A proxy-style pattern to add, remove orders to/from a locomotive
 class OrderBook {
     let capacity: Int
     var orders: [Order]?

@@ -16,7 +16,7 @@ public struct Expected {
     let generation: Family.Generation?
 
     static let totalCardsInGame = 43
-    static let totalDecksInGame = 14
+    static let totalLocomotivesInGame = 14
 
     private var totalCardsForColor: Int {
         guard let color = self.color else { return 0 }

@@ -1,5 +1,5 @@
 //
-//  Deck.swift
+//  Locomotive.swift
 //  EngineYard
 //
 //  Created by Amarjit on 02/06/2020.
@@ -9,7 +9,7 @@
 import Foundation
 
 // The board is a collection of `Locomotives`; each with cards
-class Deck: Identifiable, FamilyDelegate {
+class Locomotive: Identifiable, FamilyDelegate {
     let id: UUID = UUID()
     let name: String
     let family: Family
@@ -30,7 +30,7 @@ class Deck: Identifiable, FamilyDelegate {
     enum State: Int, CaseIterable {
        case unavailable, existing, old, obsolete
     }
-    var state: Deck.State = Deck.State.unavailable
+    var state: Locomotive.State = Locomotive.State.unavailable
 
     init(_ name: String, _ cost: Int, _ color: Family.Color, _ generation: Family.Generation, _ orderCapacity: Int) {
         self.name = name
@@ -42,8 +42,8 @@ class Deck: Identifiable, FamilyDelegate {
     }
 }
 
-extension Deck {
-    private func changeState(to: Deck.State) {
+extension Locomotive {
+    private func changeState(to: Locomotive.State) {
         self.state = to
     }
 }

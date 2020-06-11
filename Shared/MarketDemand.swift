@@ -17,11 +17,11 @@ import Foundation
 
 class MarketDemand {
     private var board: Board
-    lazy var decks: [Deck]? = {
-        guard let decks = board as? [Deck] else {
+    lazy var locos: [Locomotive]? = {
+        guard let locos = board as? [Locomotive] else {
             return nil
         }
-        return decks
+        return locos
     }()
     private(set) var howManyGenerationsExist: Int = 0
 
@@ -64,16 +64,16 @@ extension MarketDemand {
         3. Market for Freight locomotives (yellow)
         4. Market for Special locomotives (blue)
      */
-    internal func marketFor(locomotiveType: Family.Color) -> [Deck] {
-        guard let decks = self.decks else {
+    internal func marketFor(locomotiveType: Family.Color) -> [Locomotive] {
+        guard let locos = self.locos else {
             return [] // empty array
         }
 
-        // Find all decks that match the type & have orders,
+        // Find all Locomotives that match the type & have orders,
         // sorted by cost & generation ascending
-        let filter = decks.filter { (deck: Deck) -> Bool in
-            return (deck.color == locomotiveType && deck.orders.count > 0)
-        }.sorted { (a: Deck, b: Deck) -> Bool in
+        let filter = locos.filter { (locomotive: Locomotive) -> Bool in
+            return (locomotive.color == locomotiveType && locomotive.orders.count > 0)
+        }.sorted { (a: Locomotive, b: Locomotive) -> Bool in
             return ((a.cost < b.cost) && (a.generation.rawValue < b.generation.rawValue))
         }
 

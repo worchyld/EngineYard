@@ -22,10 +22,10 @@ class MarketDemandTests: XCTestCase {
         self.board = board
     }
 
-    func testLazyDecksVarHasContent() {
+    func testLazyLocoVarHasContent() {
         let mktDemands = MarketDemand.init(board: board)
-        XCTAssertNotNil(mktDemands.decks)
-        XCTAssertTrue(mktDemands.decks?.count == Expected.totalDecksInGame)
+        XCTAssertNotNil(mktDemands.locos)
+        XCTAssertTrue(mktDemands.locos?.count == Expected.totalLocomotivesInGame)
     }
 
     func testMarketDemandReturnsZeroGenerations() {

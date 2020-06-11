@@ -22,12 +22,12 @@ class BoardBuilderTests: XCTestCase {
         self.board = board
     }
 
-    func testInitialBoardHas14Decks() {
+    func testInitialBoardHas14Locomotives() {
         guard let board = self.board else {
             XCTFail("No board defined")
             return
         }
-        XCTAssertTrue(board.count == 14)
+        XCTAssertTrue(board.count == Expected.totalLocomotivesInGame)
     }
 
     func testInitialBoardSpaces() {
@@ -52,7 +52,7 @@ class BoardBuilderTests: XCTestCase {
         XCTAssertTrue(board[13]?.color == .green && board[13]?.generation == .fifth)
 
         let _ = board.map() { d in
-            XCTAssertTrue(d?.state == Deck.State.unavailable)
+            XCTAssertTrue(d?.state == Locomotive.State.unavailable)
             XCTAssertTrue(d?.orders.count == 0)
         }
     }

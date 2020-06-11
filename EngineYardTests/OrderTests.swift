@@ -17,9 +17,9 @@ class OrderTests: XCTestCase {
     }
 
     func testOrdersAreEmpty() {
-        let decks = Deck.build()
-        let _ = decks.map { (d: Deck) -> Void in
-            XCTAssertTrue(d.orders.count == 0)
+        let locomotives = Locomotive.build()
+        let _ = locomotives.map { (loco: Locomotive) -> Void in
+            XCTAssertTrue(loco.orders.count == 0)
         }
     }
 

@@ -1,5 +1,5 @@
 //
-//  DeckBuilderTests.swift
+//  LocomotiveBuilderTests.swift
 //  EngineYardTests
 //
 //  Created by Amarjit on 08/06/2020.
@@ -10,17 +10,17 @@ import XCTest
 
 @testable import EngineYard
 
-// Tests against the `Deck` class
+// Tests against the `Locomotive` Buider extension
 
-class DeckBuilderTests: XCTestCase {
+class LocomotiveBuilderTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
-    func testBuildDecksEquals14() {
-        let decks = Deck.build()
-        XCTAssertTrue(decks.count == Expected.totalDecksInGame)
+    func testTotalLocmotivesBuiltEquals14() {
+        let locomotives = Locomotive.build()
+        XCTAssertTrue(locomotives.count == Expected.totalLocomotivesInGame)
     }
 
  
