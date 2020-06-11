@@ -13,21 +13,21 @@ import Foundation
 extension Deck {
     static func build() -> [Deck] {
         let decks: [Deck] = [
-            // cost, name, generation, capacity
-            Deck(4, .green     , .first, 3),
-            Deck(8, .red       , .first,  3),
-            Deck(12, .yellow   , .first,  2),
-            Deck(16, .blue     , .first,  1),
-            Deck(20, .green    , .second,  4),
-            Deck(24, .red      , .second,  3),
-            Deck(28, .yellow   , .second,  3),
-            Deck(32, .green    , .third,  4),
-            Deck(36, .blue     , .second,  2),
-            Deck(40, .red      , .third,  4),
-            Deck(44, .green    , .fourth,  5),
-            Deck(48, .yellow   , .third,  3),
-            Deck(52, .red      , .fourth, 4),
-            Deck(56, .green    , .fifth,  5)
+            // name,               cost, generation, capacity
+            Deck("General I"        , 4, .green     , .first, 3),
+            Deck("Fast Freight I"   , 8, .red       , .first,  3),
+            Deck("Heavy I"          , 12, .yellow   , .first,  2),
+            Deck("Special"          , 16, .blue     , .first,  1),
+            Deck("General II"       , 20, .green    , .second,  4),
+            Deck("Fast Freight II"  , 24, .red      , .second,  3),
+            Deck("Heavy II"         , 28, .yellow   , .second,  3),
+            Deck("General III"      , 32, .green    , .third,  4),
+            Deck("Special"          , 36, .blue     , .second,  2),
+            Deck("Fast Freight III" , 40, .red      , .third,  4),
+            Deck("General IV"       , 44, .green    , .fourth,  5),
+            Deck("Heavy III"        , 48, .yellow   , .third,  3),
+            Deck("Fast Freight IV"  , 52, .red      , .fourth, 4),
+            Deck("General IV"       , 56, .green    , .fifth,  5)
         ]
         return decks
     }

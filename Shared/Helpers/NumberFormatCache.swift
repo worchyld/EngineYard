@@ -20,4 +20,15 @@ struct NumberFormatCache {
         formatter.alwaysShowsDecimalSeparator = false
         return formatter
     }()
+
+    static let ordinalFormat: NumberFormatter = {
+        let format = NumberFormatter()
+        format.locale = Locale(identifier: "en_US")
+        format.numberStyle = .ordinal
+        format.maximumFractionDigits = 0
+        format.allowsFloats = false
+        format.roundingMode = .ceiling
+        format.alwaysShowsDecimalSeparator = false
+        return format
+    }()
 }

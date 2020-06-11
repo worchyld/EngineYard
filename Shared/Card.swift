@@ -12,13 +12,12 @@ struct Card : Identifiable, FamilyDelegate {
     let id: UUID = UUID()
     let cost: Int
     let family: Family
+    var category: Family.Category { return self.family.category }
     var color: Family.Color { return self.family.color }
     var generation: Family.Generation { return self.family.generation }
 
     init(cost: Int, color: Family.Color, generation: Family.Generation) {
         self.cost = cost
-        //self.color = color
-        //self.generation = generation
         self.family = Family(color: color, generation: generation)
     }
 }
@@ -28,7 +27,7 @@ struct Card : Identifiable, FamilyDelegate {
 
 extension Card {
     var name: String {
-        return "\(color).\(generation)"
+        return "\(self.category.rawValue.capitalizingFirstLetter()) \(self.generation.ordinal ?? "0") Generation"
     }
 
     var productionCost: Int {
