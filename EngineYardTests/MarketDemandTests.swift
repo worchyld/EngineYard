@@ -46,13 +46,16 @@ class MarketDemandTests: XCTestCase {
     }
 
     func testOneGenerationExists() {
-        guard let loco = board.first else {
-            XCTFail("No locomotive found")
+        guard let board = board else {
             return
         }
+        guard let firstLoco = board?.first else {
+            return
+        }
+
         let order = Order.init()
-        loco?.orders.append(order)
-        XCTAssertTrue(loco?.orders.count == 1)
+        firstLoco.orders.append(order)
+        XCTAssertTrue(firstLoco.orders.count == 1)
 
         let mktDemands = MarketDemand.init(board: board)
         let greenMkt = mktDemands.marketFor(locomotiveType: .green)
@@ -67,6 +70,37 @@ class MarketDemandTests: XCTestCase {
     }
 
     func testTwoGenerationsExists() {
-        
+        guard let board = board else {
+            return
+        }
+        guard let greenLocos = board.filtered(on: .green) else {
+            XCTFail("No green locos found")
+            return
+        }
+
+        XCTAssertTrue(greenLocos.count == 5)
+
+        // Only assign orders to the first 2 green locos
+        for (index, element) in greenLocos.enumerated() {
+            if (index < 2) {
+                let order = Order.init()
+                element.orders.append(order)
+            }
+            else {
+                break
+            }
+        }
+
+        let mktDemands = MarketDemand.init(board: board)
+        let greenMkt = mktDemands.marketFor(locomotiveType: .green)
+        let redMkt = mktDemands.marketFor(locomotiveType: .red)
+        let yellowMkt = mktDemands.marketFor(locomotiveType: .yellow)
+        let blueMkt = mktDemands.marketFor(locomotiveType: .blue)
+
+        XCTAssertTrue(greenMkt.count == 2)
+        XCTAssertTrue(redMkt.count == 0)
+        XCTAssertTrue(yellowMkt.count == 0)
+        XCTAssertTrue(blueMkt.count == 0)
+
     }
 }
