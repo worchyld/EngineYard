@@ -10,26 +10,23 @@ import Foundation
 
 struct Card : Identifiable, FamilyDelegate {
     let id: UUID = UUID()
+    let name: String
     let cost: Int
     let family: Family
     var category: Family.Category { return self.family.category }
     var color: Family.Color { return self.family.color }
     var generation: Family.Generation { return self.family.generation }
 
-    init(cost: Int, color: Family.Color, generation: Family.Generation) {
+    init(name: String, cost: Int, color: Family.Color, generation: Family.Generation) {
+        self.name = name
         self.cost = cost
         self.family = Family(color: color, generation: generation)
     }
 }
 
-
 // MARK - Extensions
 
 extension Card {
-    var name: String {
-        return "\(self.category.rawValue.capitalizingFirstLetter()) \(self.generation.ordinal ?? "0") Generation"
-    }
-
     var productionCost: Int {
         guard (self.cost % 4 == 0) else { return 0 }
         return Int( floor(Double(self.cost / 2)) )

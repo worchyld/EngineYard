@@ -79,3 +79,10 @@ extension Family.Generation {
         return cache.string(from: number)
     }
 }
+
+// Description extension
+extension Family : CustomStringConvertible {
+    public var description: String {
+        return "\(self.category.rawValue.capitalizingFirstLetter()) \(self.generation.ordinal ?? "0") Generation"
+    }
+}
