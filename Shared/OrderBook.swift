@@ -45,26 +45,24 @@ extension OrderBook {
 }
 
 extension OrderBook {
+    func filterOrders(for state: Order.State) -> [Order]? {
+        return self.orders?.filter({ return $0.state == state })
+    }
+}
+
+extension OrderBook {
 
     // add an order
     func add(_ orderState: Order.State = .existingOrder) throws {
-//        guard (orderState == .existingOrder || orderState == .completedOrder) else {
-//            throw OrderError.orderCannotBe(orderState)
-//        }
         guard !isFull else {
             throw OrderBookError.ordersAreFull
         }
         if (orderState == .initialOrder) {
-            let initialOrders = self.orders?.filter({ (o: Order) -> Bool in
-                return o.state == .initialOrder
-                })
-
-            if (initialOrders != nil) {
-                guard let initialOrders = initialOrders else {
-                    return
-                }
-                print (initialOrders)
-                throw OrderBookError.alreadyHasInitialOrders(orders: initialOrders)
+            do {
+                try checkForInitialOrders()
+            }
+            catch {
+                throw error
             }
         }
 
@@ -91,6 +89,20 @@ extension OrderBook {
         }
         catch {
             throw error
+        }
+    }
+
+    private func checkForInitialOrders() throws {
+        //let filter = self.orders?.filter({ return $0.state == .initialOrder })
+        let filter = self.filterOrders(for: .initialOrder)
+
+        if (filter != nil) {
+            guard let initialOrders = filter else {
+                return
+            }
+            if ((initialOrders.count > 0) && (initialOrders.isEmpty)) {
+                throw OrderBookError.alreadyHasInitialOrders(orders: initialOrders)
+            }
         }
     }
 }

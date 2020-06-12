@@ -163,16 +163,23 @@ class OrderBookTests: XCTestCase {
         let capacity = 3
         let orderBook = OrderBook.init(capacity: capacity)
 
-        print (orderBook.orders as Any)
+        XCTAssertTrue(orderBook.orders?.count == 0)
 
-        /*
         XCTAssertNoThrow(
             try orderBook.add(.initialOrder)
         )
 
+        XCTAssertTrue(orderBook.orders?.count == 1)
+
+        // check against initial orders
+        let initialOrders = orderBook.filterOrders(for: .initialOrder)
+        XCTAssertNotNil(initialOrders)
+        XCTAssertTrue(initialOrders?.count == 1)
+
+        // Try to add another initial order, should fail
         XCTAssertThrowsError(
             try orderBook.add(.initialOrder)
         )
-        */
+
     }
 }
