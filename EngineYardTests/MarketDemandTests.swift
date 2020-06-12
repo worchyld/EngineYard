@@ -114,83 +114,104 @@ class MarketDemandTests: XCTestCase {
         XCTAssertTrue(report?.count == 1)
     }
 
-
-//        guard let board = board else {
-//            return
-//        }
-//        guard let firstLoco = board?.first else {
-//            return
-//        }
-//
-//        let order = Order.init()
-//        firstLoco.orders.append(order)
-//        XCTAssertTrue(firstLoco.orders.count == 1)
-//
-//        let mktDemands = MarketDemand.init(board: board)
-//        let report = mktDemands.runReport(for: firstLoco.color)
-//        XCTAssertNotNil(report)
-//        XCTAssertTrue(report?.total == 1, "Report finds: \(report?.total as Any)")
-//    }
-
-        /*
-
     func testOneGenerationExists() {
-        guard let board = board else {
-            return
-        }
-        guard let firstLoco = board?.first else {
+        let boardRef = self.locomotives
+
+        guard let firstLoco = boardRef.first else {
             return
         }
 
-        let order = Order.init()
+        let order = Order.init(.existingOrder)
         firstLoco.orders.append(order)
-        XCTAssertTrue(firstLoco.orders.count == 1)
 
-        let mktDemands = MarketDemand.init(board: board)
-        let greenMkt = mktDemands.marketFor(locomotiveType: .green)
-        let redMkt = mktDemands.marketFor(locomotiveType: .red)
-        let yellowMkt = mktDemands.marketFor(locomotiveType: .yellow)
-        let blueMkt = mktDemands.marketFor(locomotiveType: .blue)
+        let greenMkt = GenerationsExist(with: boardRef, find: .green)
+        let redMkt = GenerationsExist(with: boardRef, find: .red)
+        let yellowMkt = GenerationsExist(with: boardRef, find: .blue)
+        let blueMkt = GenerationsExist(with: boardRef, find: .yellow)
 
-        XCTAssertTrue(greenMkt.count == 1)
-        XCTAssertTrue(redMkt.count == 0)
-        XCTAssertTrue(yellowMkt.count == 0)
-        XCTAssertTrue(blueMkt.count == 0)
+        XCTAssertTrue(greenMkt.report()?.count == 1)
+        XCTAssertTrue(redMkt.report()?.count == 0)
+        XCTAssertTrue(yellowMkt.report()?.count == 0)
+        XCTAssertTrue(blueMkt.report()?.count == 0)
     }
 
-    func testTwoGenerationsExists() {
-        guard let board = board else {
-            return
+    func testTwoGenerationsExist() {
+        let boardRef = self.locomotives
+
+        // Get all green generations
+        let filter = boardRef
+            .filter {  return $0.color == .green }
+            .sorted { (a: Locomotive, b: Locomotive) -> Bool in
+                return ((a.cost < b.cost) && (a.generation.rawValue < b.generation.rawValue))
         }
-        guard let greenLocos = board.filtered(on: .green) else {
-            XCTFail("No green locos found")
-            return
+        XCTAssertTrue(filter.count == 5)
+
+        let firstLoco = filter[0]
+        let secondLoco = filter[1]
+
+        XCTAssertTrue(firstLoco.color == .green && firstLoco.generation.rawValue == 1)
+        XCTAssertTrue(secondLoco.color == .green && secondLoco.generation.rawValue == 2)
+        XCTAssertTrue(firstLoco.orders.count == 0)
+        XCTAssertTrue(secondLoco.orders.count == 0)
+
+        let order1 = Order.init(.existingOrder)
+        let order2 = Order.init(.existingOrder)
+
+        firstLoco.orders.append(order1)
+        secondLoco.orders.append(order2)
+
+        let greenMkt = GenerationsExist(with: boardRef, find: .green)
+        let yellowMkt = GenerationsExist(with: boardRef, find: .yellow)
+        let redMkt = GenerationsExist(with: boardRef, find: .red)
+        let blueMkt = GenerationsExist(with: boardRef, find: .blue)
+
+        XCTAssertTrue(greenMkt.report()?.count == 2)
+        XCTAssertTrue(yellowMkt.report()?.count == 0)
+        XCTAssertTrue(redMkt.report()?.count == 0)
+        XCTAssertTrue(blueMkt.report()?.count == 0)
+    }
+
+
+    func testThreeGenerationsExist() {
+        let boardRef = self.locomotives
+
+        // Get all green generations
+        let filter = boardRef
+            .filter {  return $0.color == .green }
+            .sorted { (a: Locomotive, b: Locomotive) -> Bool in
+                return ((a.cost < b.cost) && (a.generation.rawValue < b.generation.rawValue))
         }
+        XCTAssertTrue(filter.count == 5)
 
-        XCTAssertTrue(greenLocos.count == 5)
+        let firstLoco = filter[0]
+        let secondLoco = filter[1]
+        let thirdLoco = filter[2]
 
-        // Only assign orders to the first 2 green locos
-        for (index, element) in greenLocos.enumerated() {
-            if (index < 2) {
-                let order = Order.init()
-                element.orders.append(order)
-            }
-            else {
-                break
-            }
-        }
+        XCTAssertTrue(firstLoco.color == .green && firstLoco.generation.rawValue == 1)
+        XCTAssertTrue(secondLoco.color == .green && secondLoco.generation.rawValue == 2)
+        XCTAssertTrue(thirdLoco.color == .green && thirdLoco.generation.rawValue == 3)
 
-        let mktDemands = MarketDemand.init(board: board)
-        let greenMkt = mktDemands.marketFor(locomotiveType: .green)
-        let redMkt = mktDemands.marketFor(locomotiveType: .red)
-        let yellowMkt = mktDemands.marketFor(locomotiveType: .yellow)
-        let blueMkt = mktDemands.marketFor(locomotiveType: .blue)
+        XCTAssertTrue(firstLoco.orders.count == 0)
+        XCTAssertTrue(secondLoco.orders.count == 0)
+        XCTAssertTrue(thirdLoco.orders.count == 0)
 
-        XCTAssertTrue(greenMkt.count == 2)
-        XCTAssertTrue(redMkt.count == 0)
-        XCTAssertTrue(yellowMkt.count == 0)
-        XCTAssertTrue(blueMkt.count == 0)
+        let order1 = Order.init(.existingOrder)
+        let order2 = Order.init(.existingOrder)
+        let order3 = Order.init(.existingOrder)
+
+        firstLoco.orders.append(order1)
+        secondLoco.orders.append(order2)
+        thirdLoco.orders.append(order3)
+
+        let greenMkt = GenerationsExist(with: boardRef, find: .green)
+        let yellowMkt = GenerationsExist(with: boardRef, find: .yellow)
+        let redMkt = GenerationsExist(with: boardRef, find: .red)
+        let blueMkt = GenerationsExist(with: boardRef, find: .blue)
+
+        XCTAssertTrue(greenMkt.report()?.count == 3)
+        XCTAssertTrue(yellowMkt.report()?.count == 0)
+        XCTAssertTrue(redMkt.report()?.count == 0)
+        XCTAssertTrue(blueMkt.report()?.count == 0)
 
     }
- */
 }
