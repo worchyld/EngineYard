@@ -88,18 +88,6 @@ struct GenerationsExist {
             )
         }
 
-        /*
-         // OLD VERSION
-        let filter = locos.filter { (locomotive: Locomotive) -> Bool in
-            return (
-                (locomotive.color == color) &&
-                (locomotive.orders.count > 0)
-            )
-        }.sorted { (a: Locomotive, b: Locomotive) -> Bool in
-            return ((a.cost < b.cost) && (a.generation.rawValue < b.generation.rawValue))
-        }
-        */
-
         return filter
     }
 }
