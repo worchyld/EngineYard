@@ -100,7 +100,7 @@ extension OrderBook {
             guard let initialOrders = filter else {
                 return
             }
-            if ((initialOrders.count > 0) && (initialOrders.isEmpty)) {
+            if ((initialOrders.count > 0) && (!initialOrders.isEmpty)) {
                 throw OrderBookError.alreadyHasInitialOrders(orders: initialOrders)
             }
         }
