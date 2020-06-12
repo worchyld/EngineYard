@@ -139,11 +139,11 @@ class MarketDemandTests: XCTestCase {
         let boardRef = self.locomotives
 
         // Get all green generations
-        let filter = boardRef
-            .filter {  return $0.color == .green }
-            .sorted { (a: Locomotive, b: Locomotive) -> Bool in
-                return ((a.cost < b.cost) && (a.generation.rawValue < b.generation.rawValue))
+        guard let filter = Locomotive.filter(locomotives: boardRef, on: .green) else {
+            XCTFail("Filter failed")
+            return
         }
+
         XCTAssertTrue(filter.count == 5)
 
         let firstLoco = filter[0]
@@ -176,10 +176,9 @@ class MarketDemandTests: XCTestCase {
         let boardRef = self.locomotives
 
         // Get all green generations
-        let filter = boardRef
-            .filter {  return $0.color == .green }
-            .sorted { (a: Locomotive, b: Locomotive) -> Bool in
-                return ((a.cost < b.cost) && (a.generation.rawValue < b.generation.rawValue))
+         guard let filter = Locomotive.filter(locomotives: boardRef, on: .green) else {
+            XCTFail("Filter failed")
+            return
         }
         XCTAssertTrue(filter.count == 5)
 

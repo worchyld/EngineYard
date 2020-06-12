@@ -9,12 +9,9 @@
 import Foundation
 
 // Filter on the array of locomotives held by the board
-extension Board {
-    func filtered(on color: Family.Color) -> [Locomotive]? {
-        guard let this = self else {
-            return nil
-        }
-        let filtered = this.filter { (locomotive) -> Bool in
+extension Locomotive {
+    public static func filter(locomotives: [Locomotive], on color: Family.Color) -> [Locomotive]? {
+        let filtered = locomotives.filter { (locomotive) -> Bool in
             return locomotive.color == color
         }.sorted { (a: Locomotive, b: Locomotive) -> Bool in
             return ( (a.cost < b.cost) && (a.generation.rawValue < b.generation.rawValue) )
@@ -22,11 +19,8 @@ extension Board {
         return filtered
     }
 
-    func filtered(on generation: Family.Generation) -> [Locomotive]? {
-        guard let this = self else {
-            return nil
-        }
-        let filtered = this.filter { (locomotive) -> Bool in
+    public static func filter(locomotives: [Locomotive], on generation: Family.Generation) -> [Locomotive]? {
+        let filtered = locomotives.filter { (locomotive) -> Bool in
             return locomotive.generation == generation
         }.sorted { (a: Locomotive, b: Locomotive) -> Bool in
             return ( (a.cost < b.cost) && (a.generation.rawValue < b.generation.rawValue) )
