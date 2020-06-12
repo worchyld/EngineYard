@@ -47,13 +47,6 @@ import Foundation
 struct GenerationsExist {
     private var locos: [Locomotive]
 
-    struct Market {
-        let green: Int
-        let red: Int
-        let yellow: Int
-        let blue: Int
-    }
-
     init(with locomotives: [Locomotive]) {
         self.locos = locomotives
     }
