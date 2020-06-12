@@ -45,17 +45,21 @@ import Foundation
  */
 
 struct GenerationsExist {
-    private var color: Family.Color
     private var locos: [Locomotive]
 
-    init(with locomotives: [Locomotive], find color: Family.Color) {
-        self.locos = locomotives
-        self.color = color
+    struct Market {
+        let green: Int
+        let red: Int
+        let yellow: Int
+        let blue: Int
     }
 
-    func report() -> [Locomotive]? {
-        let results = self.marketFor(color: self.color)
-        return results
+    init(with locomotives: [Locomotive]) {
+        self.locos = locomotives
+    }
+
+    func currentMarket(for color: Family.Color) -> [Locomotive]? {
+        return self.marketFor(color: color)
     }
 
     // A generation only exists if it has dice (orders) in
@@ -97,38 +101,6 @@ class MarketDemand {
 
     init(board: Board) {
         self.board = board
-    }
-
-    func generationsExist(for color: Family.Color) -> GenerationsExist? {
-        guard let board = self.board else {
-            return nil
-        }
-        let genExist = GenerationsExist.init(with: board, find: color)
-        return genExist
-    }
-
-    func start(with color: Family.Color) {
-        let gens = generationsExist(for: color)
-
-        guard let filtered = gens?.report() else {
-            return // do nothing
-        }
-
-        let howMany = filtered.count
-
-        switch howMany {
-        case 1:
-            let results = handleOneGeneration(locos: filtered)
-            print (results)
-        case 2:
-            handleTwoGenerations()
-        case 3:
-            handleThreeGenerations()
-
-        default:
-            //print ("do nothing")
-            return
-        }
     }
 }
 
