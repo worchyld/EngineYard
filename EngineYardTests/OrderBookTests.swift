@@ -181,5 +181,7 @@ class OrderBookTests: XCTestCase {
             try orderBook.add(.initialOrder)
         )
 
+        XCTAssertTrue(orderBook.filterOrders(for: .initialOrder)?.count == 1)
+
     }
 }
