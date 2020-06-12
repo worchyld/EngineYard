@@ -48,9 +48,10 @@ class MarketDemandTests: XCTestCase {
         let boardRef = self.locomotives
 
         let gen = GenerationsExist(with: boardRef)
-        let market = gen.currentMarket(for: .green)
-        XCTAssertNotNil(market)
-        XCTAssertTrue(market?.count == 0)
+        let market = gen.currentMarket()
+
+        XCTAssertNotNil(market.green)
+        XCTAssertTrue(market.green?.count == 0)
     }
 
     func testMKTDemand_AllDecksHasNoGenerations() {
@@ -58,8 +59,8 @@ class MarketDemandTests: XCTestCase {
 
         for element in Family.Color.allCases {
             let gen = GenerationsExist(with: boardRef)
-            let market = gen.currentMarket(for: element)
-            XCTAssertNotNil(market)
+
+            let market = gen.findMarket(for: element)
             XCTAssertTrue(market?.count == 0)
         }
     }
@@ -75,9 +76,10 @@ class MarketDemandTests: XCTestCase {
         firstLoco.orders.append(order)
 
         let gen = GenerationsExist(with: boardRef)
-        let market = gen.currentMarket(for: firstLoco.color)
+        let market = gen.currentMarket()
+
         XCTAssertNotNil(market)
-        XCTAssertTrue(market?.count == 0)
+        XCTAssertTrue(market.green?.count == 0)
     }
 
     func testMKTDemand_OneGenerationsExist_WhenExistingOrder() {
@@ -92,9 +94,10 @@ class MarketDemandTests: XCTestCase {
 
 
         let gen = GenerationsExist(with: boardRef)
-        let report = gen.currentMarket(for: firstLoco.color)
-        XCTAssertNotNil(report)
-        XCTAssertTrue(report?.count == 1)
+        let market = gen.currentMarket()
+
+        XCTAssertNotNil(market)
+        XCTAssertTrue(market.green?.count == 1)
     }
 
     func testMKTDemand_OneGenerationsExist_WhenCompletedOrder() {
@@ -107,11 +110,9 @@ class MarketDemandTests: XCTestCase {
         let order = Order.init(.completedOrder)
         firstLoco.orders.append(order)
 
-
         let gen = GenerationsExist(with: boardRef)
-        let report = gen.currentMarket(for: firstLoco.color)
-        XCTAssertNotNil(report)
-        XCTAssertTrue(report?.count == 1)
+        let market = gen.currentMarket()
+        XCTAssertTrue(market.green?.count == 1)
     }
 
     func testOneGenerationExists() {
@@ -124,12 +125,13 @@ class MarketDemandTests: XCTestCase {
         let order = Order.init(.existingOrder)
         firstLoco.orders.append(order)
 
-        let market = GenerationsExist(with: boardRef)
+        let genObj = GenerationsExist(with: boardRef)
+        let market = genObj.currentMarket()
 
-        let greenMkt = market.currentMarket(for: .green)
-        let redMkt = market.currentMarket(for: .red)
-        let blueMkt = market.currentMarket(for: .blue)
-        let yellowMkt = market.currentMarket(for: .yellow)
+        let greenMkt = market.green
+        let redMkt = market.red
+        let blueMkt = market.blue
+        let yellowMkt = market.yellow
 
         XCTAssertTrue(greenMkt?.count == 1)
         XCTAssertTrue(redMkt?.count == 0)
@@ -162,18 +164,18 @@ class MarketDemandTests: XCTestCase {
         firstLoco.orders.append(order1)
         secondLoco.orders.append(order2)
 
+        let gen = GenerationsExist(with: boardRef)
+        let market = gen.currentMarket()
 
-        let market = GenerationsExist(with: boardRef)
+        let greenMkt = market.green?.count
+        let redMkt = market.red?.count
+        let blueMkt = market.blue?.count
+        let yellowMkt = market.yellow?.count
 
-        let greenMkt = market.currentMarket(for: .green)
-        let redMkt = market.currentMarket(for: .red)
-        let blueMkt = market.currentMarket(for: .blue)
-        let yellowMkt = market.currentMarket(for: .yellow)
-
-        XCTAssertTrue(greenMkt?.count == 2)
-        XCTAssertTrue(yellowMkt?.count == 0)
-        XCTAssertTrue(redMkt?.count == 0)
-        XCTAssertTrue(blueMkt?.count == 0)
+        XCTAssertTrue(greenMkt == 2)
+        XCTAssertTrue(yellowMkt == 0)
+        XCTAssertTrue(redMkt == 0)
+        XCTAssertTrue(blueMkt == 0)
     }
 
 
@@ -207,17 +209,18 @@ class MarketDemandTests: XCTestCase {
         secondLoco.orders.append(order2)
         thirdLoco.orders.append(order3)
 
-        let market = GenerationsExist(with: boardRef)
+        let gen = GenerationsExist(with: boardRef)
+        let market = gen.currentMarket()
 
-        let greenMkt = market.currentMarket(for: .green)
-        let redMkt = market.currentMarket(for: .red)
-        let blueMkt = market.currentMarket(for: .blue)
-        let yellowMkt = market.currentMarket(for: .yellow)
+        let greenMkt = market.green?.count
+        let redMkt = market.red?.count
+        let blueMkt = market.blue?.count
+        let yellowMkt = market.yellow?.count
 
-        XCTAssertTrue(greenMkt?.count == 3)
-        XCTAssertTrue(yellowMkt?.count == 0)
-        XCTAssertTrue(redMkt?.count == 0)
-        XCTAssertTrue(blueMkt?.count == 0)
+        XCTAssertTrue(greenMkt == 3)
+        XCTAssertTrue(yellowMkt == 0)
+        XCTAssertTrue(redMkt == 0)
+        XCTAssertTrue(blueMkt == 0)
 
     }
 }

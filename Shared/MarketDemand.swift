@@ -47,18 +47,34 @@ import Foundation
 struct GenerationsExist {
     private var locos: [Locomotive]
 
+    struct Market {
+        var red: [Locomotive]?
+        var green: [Locomotive]?
+        var blue: [Locomotive]?
+        var yellow: [Locomotive]?
+    }
+
     init(with locomotives: [Locomotive]) {
         self.locos = locomotives
     }
 
-    func currentMarket(for color: Family.Color) -> [Locomotive]? {
-        return self.marketFor(color: color)
+    func currentMarket() -> Market {
+        var market = Market()
+        market.green = self.market(for: .green)
+        market.red = self.market(for: .red)
+        market.yellow = self.market(for: .yellow)
+        market.blue = self.market(for: .blue)
+        return market
+    }
+
+    internal func findMarket(for color: Family.Color) -> [Locomotive]? {
+        return self.market(for: color)
     }
 
     // A generation only exists if it has dice (orders) in
     // either `existingOrders` or `customerBase` (sales),
     // `initialOrders` should be `rejected`
-    private func marketFor(color: Family.Color) -> [Locomotive] {
+    private func market(for color: Family.Color) -> [Locomotive]? {
 
         // Find all Locomotives that match the type & have orders,
         // sorted by cost & generation ascending
