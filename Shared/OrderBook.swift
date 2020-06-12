@@ -12,6 +12,7 @@ enum OrderBookError : Error, Equatable {
     case undefinedOrderBook
     case ordersAreFull
     case unknownOrderState(_ state: Order.State?)
+    case alreadyHasInitialOrders(orders: [Order]?)
 }
 
 // A proxy-style pattern to add, remove orders to/from a locomotive
@@ -21,7 +22,13 @@ class OrderBook {
 
     init(capacity: Int, orders: [Order]? = nil) {
         self.capacity = capacity
-        self.orders = orders
+        if (orders == nil) {
+            self.orders = [Order]()
+            self.orders?.reserveCapacity(capacity)
+        }
+        else {
+            self.orders = orders
+        }
     }
 }
 
@@ -38,22 +45,29 @@ extension OrderBook {
 }
 
 extension OrderBook {
-    private func initializeOrders() {
-        self.orders = [Order]()
-        self.orders?.reserveCapacity(capacity)
-    }
 
     // add an order
     func add(_ orderState: Order.State = .existingOrder) throws {
-        guard (orderState == .existingOrder || orderState == .completedOrder) else {
-            throw OrderError.orderCannotBe(orderState)
-        }
+//        guard (orderState == .existingOrder || orderState == .completedOrder) else {
+//            throw OrderError.orderCannotBe(orderState)
+//        }
         guard !isFull else {
             throw OrderBookError.ordersAreFull
         }
-        if (self.orders == nil) {
-            initializeOrders()
+        if (orderState == .initialOrder) {
+            let initialOrders = self.orders?.filter({ (o: Order) -> Bool in
+                return o.state == .initialOrder
+                })
+
+            if (initialOrders != nil) {
+                guard let initialOrders = initialOrders else {
+                    return
+                }
+                print (initialOrders)
+                throw OrderBookError.alreadyHasInitialOrders(orders: initialOrders)
+            }
         }
+
         let order: Order = Order(orderState)
         self.orders?.append(order)
     }

@@ -18,7 +18,9 @@ enum OrderError: Error, Equatable {
     case orderCannotBe(_ state: Order.State)
 }
 
-struct Order {
+struct Order: Identifiable {
+    let id: UUID = UUID()
+
     enum State: Int, CaseIterable {
         case initialOrder, existingOrder, completedOrder
     }
@@ -29,6 +31,12 @@ struct Order {
     init(_ state: Order.State = .initialOrder) {
         self.value = Die.roll
         self.state = state
+    }
+}
+
+extension Order: Equatable {
+    static func == (lhs: Order, rhs: Order) -> Bool {
+        return (lhs.id == rhs.id)
     }
 }
 

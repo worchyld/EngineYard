@@ -64,7 +64,7 @@ class MarketDemandTests: XCTestCase {
         }
     }
 
-    func testMKTDemand_IfOrderIsInitial_NoGenerationsExist() {
+    func testMKTDemand_NoGenerationsExist_WhenInitialOrder() {
         let boardRef = self.locomotives
 
         guard let firstLoco = boardRef.first else {

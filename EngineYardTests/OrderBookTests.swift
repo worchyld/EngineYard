@@ -16,9 +16,9 @@ class OrderBookTests: XCTestCase {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
-    func testOrderBookOrdersAreNil() {
+    func testOrderBookOrdersIsEmpty() {
         let orderBook = OrderBook.init(capacity: 3)
-        XCTAssertNil(orderBook.orders)
+        XCTAssertTrue(((orderBook.orders?.isEmpty) != nil))
     }
 
     func testOrderBookHasSingleOrder() {
@@ -158,4 +158,21 @@ class OrderBookTests: XCTestCase {
         XCTAssertTrue(firstOrder.value == 5, "Expected: 5, Found: \(firstOrder.value)")
     }
 
+
+    func testCanOnlyAddOneInitialOrder() {
+        let capacity = 3
+        let orderBook = OrderBook.init(capacity: capacity)
+
+        print (orderBook.orders as Any)
+
+        /*
+        XCTAssertNoThrow(
+            try orderBook.add(.initialOrder)
+        )
+
+        XCTAssertThrowsError(
+            try orderBook.add(.initialOrder)
+        )
+        */
+    }
 }
