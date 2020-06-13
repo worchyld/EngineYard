@@ -11,6 +11,8 @@ import Foundation
 enum OrderBookError : Error, Equatable {
     case undefinedOrderBook
     case ordersAreFull
+    case noOrdersFound
+    case didNotFindOrdersWithState(_ state: Order.State)
     case unknownOrderState(_ state: Order.State?)
     case alreadyHasInitialOrders(orders: [Order]?)
 }
@@ -69,9 +71,12 @@ extension OrderBook {
         let order: Order = Order(orderState)
         self.orders?.append(order)
     }
+}
+
+extension OrderBook {
 
     // transfer an order from one state to another
-    func transfer(order: inout Order, to state: Order.State) throws {
+    func transfer(order: Order, to state: Order.State) throws {
         guard (state == .existingOrder || state == .completedOrder) else {
             throw OrderError.orderCannotBe(state)
         }
@@ -79,8 +84,21 @@ extension OrderBook {
         order.setState(to: state)
     }
 
+    func transfer(orders: [Order], to state: Order.State) throws {
+        do {
+            try orders.forEach { (order: Order) in
+                try transfer(order: order, to: state)
+            }
+        } catch {
+            throw error
+        }
+    }
+}
+
+extension OrderBook {
+
     // Reduce an order by a value
-    func reduce(order: inout Order, by amount: Int) throws {
+    func reduce(order: Order, by amount: Int) throws {
         do {
             let _ = try order.reduceValue(by: amount)
             if (order.value == 0) {
@@ -91,9 +109,37 @@ extension OrderBook {
             throw error
         }
     }
+}
 
+extension OrderBook {
+
+    // Can only re-roll completed orders
+    func reroll(completedOrders: [Order]) throws -> [Order] {
+        guard (!completedOrders.isEmpty && completedOrders.count > 0) else {
+            throw OrderBookError.noOrdersFound
+        }
+        let filter = completedOrders
+            .filter { $0.state == .completedOrder  }
+
+        guard (filter.count == completedOrders.count) else {
+            throw OrderBookError.didNotFindOrdersWithState(.completedOrder)
+        }
+
+        do {
+             let _ = try completedOrders.forEach { (order: Order) in
+                let value = Die.roll
+                try order.setValue(value)
+            }
+        } catch {
+            throw error
+        }
+
+        return completedOrders
+    }
+}
+
+extension OrderBook {
     private func checkForInitialOrders() throws {
-        //let filter = self.orders?.filter({ return $0.state == .initialOrder })
         let filter = self.filterOrders(for: .initialOrder)
 
         if (filter != nil) {

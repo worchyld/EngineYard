@@ -222,7 +222,7 @@ class MarketDemand {
         switch howMany {
         case 1:
             let results = handleOneGeneration(locos: demand)
-            print ("\n\nRESULTS -- \(results)")
+            print ("\n\nRESULTS -- \(String(describing: results))")
 
         case 2:
             handleTwoGenerations()
@@ -253,22 +253,35 @@ extension MarketDemand {
      Then roll all dice in the Customer Base and place them in the empty
      Existing Order boxes for that locomotive type.
      */
-    func handleOneGeneration(locos: [Locomotive]) -> [Locomotive] {
+    func handleOneGeneration(locos: [Locomotive]) -> [Locomotive]? {
 
         print ("Adding orders...")
+        if (locos.count != 1) {
+            print("too many")
+            return nil
+        }
+
         locos.forEach { (locomotive) in
             print ("Locomotive: \(locomotive.name), \(locomotive.color), \(locomotive.orders)")
+
             let orderBook = OrderBook.init(capacity: locomotive.orderCapacity, orders: locomotive.orders)
-            do {
-                let _ = try orderBook.add(.completedOrder)
-            } catch {
-                print ("error -- \(error as Any)")
+
+            if (!orderBook.isFull) {
+                do {
+                    let _ = try orderBook.add(.completedOrder)
+                } catch {
+                    print ("error -- \(error as Any)")
+                }
+                guard let orderBookOrders = orderBook.orders else {
+                    print ("Can't obtain orderbook proxy orders")
+                    return
+                }
+                locomotive.setOrders(orders: orderBookOrders)
             }
-            guard let orderBookOrders = orderBook.orders else {
-                print ("Can't obtain orderbook proxy orders")
-                return
-            }            
-            locomotive.setOrders(orders: orderBookOrders)
+            else {
+                print("Locomotive is full")
+            }
+
         }
 
         return locos

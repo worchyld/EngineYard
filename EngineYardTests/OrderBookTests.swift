@@ -184,4 +184,15 @@ class OrderBookTests: XCTestCase {
         XCTAssertTrue(orderBook.filterOrders(for: .initialOrder)?.count == 1)
     }
 
+    func testRerollCompletedOrders() {
+        let capacity = 3
+        let orderBook = OrderBook.init(capacity: capacity)
+
+        for _ in 0...(capacity - 1) {
+            XCTAssertNoThrow( try orderBook.add(.completedOrder) )
+        }
+        XCTAssertTrue(orderBook.orders?.count == capacity)
+        XCTAssertTrue(orderBook.filterOrders(for: .completedOrder)?.count == 3)
+
+    }
 }
