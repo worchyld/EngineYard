@@ -35,7 +35,6 @@ class OrderBookTests: XCTestCase {
         }
 
         XCTAssertTrue(orders.count == 1)
-        XCTAssertTrue(orders.capacity == capacity)
     }
 
     func testDidAddMixedOrderTypesToOrderBook() {

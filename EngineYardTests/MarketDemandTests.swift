@@ -57,19 +57,6 @@ class MarketDemandTests: XCTestCase {
         let market = Market.init(with: boardRef)
         let currentMarket = market.currentMarket
         XCTAssertTrue(currentMarket?.count == 0)
-//
-//        for element in Family.Color.allCases {
-//            switch element {
-//            case .green:
-//                XCTAssertTrue(market.green?.count == 0)
-//            case .red:
-//                continue
-//            case .blue:
-//                continue
-//            case .yellow:
-//                continue
-//            }
-//        }
     }
 
     func testMKTDemand_NoGenerationsExist_ForInitialOrder() {

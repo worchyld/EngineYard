@@ -18,7 +18,7 @@ enum OrderError: Error, Equatable {
     case orderCannotBe(_ state: Order.State)
 }
 
-class Order: Identifiable {
+struct Order: Identifiable {
     let id: UUID = UUID()
 
     enum State: Int, CaseIterable {
@@ -41,10 +41,10 @@ extension Order: Equatable {
 }
 
 extension Order {
-    internal func setState(to state: Order.State) {
+    mutating func setState(to state: Order.State) {
         self.state = state
     }
-    internal func setValue(_ value: Int) throws {
+    internal mutating func setValue(_ value: Int) throws {
         guard value >= 0 else {
             throw IntError.cannotBeNegative
         }
@@ -54,7 +54,7 @@ extension Order {
 
 extension Order {
     // Only existing orders can be reduced in value
-    func reduceValue(by amount: Int) throws {
+    mutating func reduceValue(by amount: Int) throws {
         guard (amount >= 0) else {
             throw IntError.cannotBeNegative
         }
@@ -68,7 +68,7 @@ extension Order {
         willReduceValue(by: amount)
     }
 
-    private func willReduceValue(by amount: Int) {
+    private mutating func willReduceValue(by amount: Int) {
         self.value -= amount
     }
 }
