@@ -26,6 +26,8 @@
 		4D10C6222486DF3A00238508 /* cardSlide8.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D10C61E2486DF3A00238508 /* cardSlide8.wav */; };
 		4D10C6242486E12000238508 /* Card+Expectations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D10C6232486E12000238508 /* Card+Expectations.swift */; };
 		4D34A85F2492534D00590EFD /* Locomotive+Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D34A85E2492534D00590EFD /* Locomotive+Filter.swift */; };
+		4D34A8612495637B00590EFD /* Production.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D34A8602495637B00590EFD /* Production.swift */; };
+		4D34A8632495664E00590EFD /* ProductionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D34A8622495664E00590EFD /* ProductionTests.swift */; };
 		4D66EBC6248ED12B005DE7F0 /* BoardBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66EBC5248ED12B005DE7F0 /* BoardBuilderTests.swift */; };
 		4D66EBC8248F8147005DE7F0 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66EBC7248F8147005DE7F0 /* Player.swift */; };
 		4D66EBCA248F836E005DE7F0 /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66EBC9248F836E005DE7F0 /* Hand.swift */; };
@@ -86,6 +88,8 @@
 		4D10C61E2486DF3A00238508 /* cardSlide8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardSlide8.wav; sourceTree = "<group>"; };
 		4D10C6232486E12000238508 /* Card+Expectations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Expectations.swift"; sourceTree = "<group>"; };
 		4D34A85E2492534D00590EFD /* Locomotive+Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locomotive+Filter.swift"; sourceTree = "<group>"; };
+		4D34A8602495637B00590EFD /* Production.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Production.swift; sourceTree = "<group>"; };
+		4D34A8622495664E00590EFD /* ProductionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionTests.swift; sourceTree = "<group>"; };
 		4D66EBC5248ED12B005DE7F0 /* BoardBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardBuilderTests.swift; sourceTree = "<group>"; };
 		4D66EBC7248F8147005DE7F0 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		4D66EBC9248F836E005DE7F0 /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 				4D66EBDB24900D65005DE7F0 /* OrderBookTests.swift */,
 				4DA97CDB2490B97D0053997C /* MarketDemandTests.swift */,
 				4DA1C14C2486F43E004C4121 /* TaxTests.swift */,
+				4D34A8622495664E00590EFD /* ProductionTests.swift */,
 				4D10C5A02486D08500238508 /* Info.plist */,
 			);
 			path = EngineYardTests;
@@ -203,6 +208,7 @@
 				4D10C6172486DCF200238508 /* Locomotive.swift */,
 				4DA1C14E2486FC12004C4121 /* Locomotive+Builder.swift */,
 				4D34A85E2492534D00590EFD /* Locomotive+Filter.swift */,
+				4D34A8602495637B00590EFD /* Production.swift */,
 				4D66EBD5248FE700005DE7F0 /* Order.swift */,
 				4D66EBD7248FF50A005DE7F0 /* OrderBook.swift */,
 				4DA97CD92490B4250053997C /* MarketDemand.swift */,
@@ -357,6 +363,7 @@
 				4DA1C14F2486FC12004C4121 /* Locomotive+Builder.swift in Sources */,
 				4DA1C13E2486ECC9004C4121 /* EY+String.swift in Sources */,
 				4D66EBC8248F8147005DE7F0 /* Player.swift in Sources */,
+				4D34A8612495637B00590EFD /* Production.swift in Sources */,
 				4DA1C1462486EDC0004C4121 /* EY+FileManager.swift in Sources */,
 				4DA1C13B2486EC77004C4121 /* EY+Int.swift in Sources */,
 				4DA1C1422486ED12004C4121 /* NumberFormatCache.swift in Sources */,
@@ -391,6 +398,7 @@
 				4DA1C14D2486F43E004C4121 /* TaxTests.swift in Sources */,
 				4DA97CDC2490B97D0053997C /* MarketDemandTests.swift in Sources */,
 				4D66EBDC24900D65005DE7F0 /* OrderBookTests.swift in Sources */,
+				4D34A8632495664E00590EFD /* ProductionTests.swift in Sources */,
 				4D10C6122486DB1B00238508 /* CardBuilderTests.swift in Sources */,
 				4D10C6242486E12000238508 /* Card+Expectations.swift in Sources */,
 				4D66EBC6248ED12B005DE7F0 /* BoardBuilderTests.swift in Sources */,
