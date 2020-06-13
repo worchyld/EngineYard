@@ -174,17 +174,25 @@ class MarketDemand {
         self.market = Market.init(with: board)
     }
 
-    func demand(for color: Family.Color) {
+    internal func getDemand(for color: Family.Color) -> [Locomotive]? {
         guard let market = self.market else {
             print ("No market object exists")
-            return
+            return nil
         }
         guard let demand = market.demand(for: color) else {
             print ("demand returns nil")
+            return nil
+        }
+        return demand
+    }
+
+
+    func handleGenerations(for color: Family.Color) {
+        guard let demand = getDemand(for: color) else {
+            print ("Demand returns nil")
             return
         }
-
-        let howMany = howManyGenerationsExist(for: demand)
+        let howMany = demand.count
 
         // : HANDLE GENERATIONS
         // : There are 4 cases of existing generations;
