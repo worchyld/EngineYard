@@ -72,3 +72,9 @@ extension Order {
         self.value -= amount
     }
 }
+
+extension Order : CustomStringConvertible {
+    var description: String {
+        return "value: \(self.value), state: \(self.state)"
+    }
+}
