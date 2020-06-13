@@ -28,6 +28,7 @@
 		4D34A85F2492534D00590EFD /* Locomotive+Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D34A85E2492534D00590EFD /* Locomotive+Filter.swift */; };
 		4D34A8612495637B00590EFD /* Production.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D34A8602495637B00590EFD /* Production.swift */; };
 		4D34A8632495664E00590EFD /* ProductionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D34A8622495664E00590EFD /* ProductionTests.swift */; };
+		4D34A865249574AD00590EFD /* HandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D34A864249574AD00590EFD /* HandTests.swift */; };
 		4D66EBC6248ED12B005DE7F0 /* BoardBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66EBC5248ED12B005DE7F0 /* BoardBuilderTests.swift */; };
 		4D66EBC8248F8147005DE7F0 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66EBC7248F8147005DE7F0 /* Player.swift */; };
 		4D66EBCA248F836E005DE7F0 /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66EBC9248F836E005DE7F0 /* Hand.swift */; };
@@ -90,6 +91,7 @@
 		4D34A85E2492534D00590EFD /* Locomotive+Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locomotive+Filter.swift"; sourceTree = "<group>"; };
 		4D34A8602495637B00590EFD /* Production.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Production.swift; sourceTree = "<group>"; };
 		4D34A8622495664E00590EFD /* ProductionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionTests.swift; sourceTree = "<group>"; };
+		4D34A864249574AD00590EFD /* HandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandTests.swift; sourceTree = "<group>"; };
 		4D66EBC5248ED12B005DE7F0 /* BoardBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardBuilderTests.swift; sourceTree = "<group>"; };
 		4D66EBC7248F8147005DE7F0 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		4D66EBC9248F836E005DE7F0 /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				4DA97CDB2490B97D0053997C /* MarketDemandTests.swift */,
 				4DA1C14C2486F43E004C4121 /* TaxTests.swift */,
 				4D34A8622495664E00590EFD /* ProductionTests.swift */,
+				4D34A864249574AD00590EFD /* HandTests.swift */,
 				4D10C5A02486D08500238508 /* Info.plist */,
 			);
 			path = EngineYardTests;
@@ -392,6 +395,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D34A865249574AD00590EFD /* HandTests.swift in Sources */,
 				4D6F8B6E248E8CFB0079BC27 /* LocomotiveBuilderTests.swift in Sources */,
 				4D10C59F2486D08500238508 /* EngineYardTests.swift in Sources */,
 				4D66EBDA248FF9E2005DE7F0 /* OrderTests.swift in Sources */,
