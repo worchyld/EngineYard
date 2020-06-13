@@ -21,11 +21,8 @@ class Locomotive: Identifiable, FamilyDelegate {
 
     // Orders ------------- //
     let orderCapacity: Int
-    internal var orders: [Order] = [Order]() {
-        didSet {
-            changeState(to: .existing)
-        }
-    }
+    private (set) var orders: [Order] = [Order]()
+
     lazy var existingOrders: [Order] = {
         return self.orders.filter { (o: Order) -> Bool in
             return o.state == .existingOrder
@@ -61,5 +58,15 @@ class Locomotive: Identifiable, FamilyDelegate {
 extension Locomotive {
     private func changeState(to: Locomotive.State) {
         self.state = to
+    }
+
+    func setOrders(orders: [Order]) {
+        guard !orders.isEmpty else {
+            return
+        }
+        guard (orders.capacity == self.orderCapacity) else {
+            return
+        }
+        self.orders = orders
     }
 }
