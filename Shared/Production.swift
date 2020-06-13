@@ -25,7 +25,7 @@ struct Production {
 
 extension Production {
     mutating func reset() {
-        self.units = spentUnits
+        self.units += spentUnits
         self.spentUnits = 0
     }
 
@@ -52,7 +52,7 @@ extension Production {
     }
 
     internal mutating func decreaseProduction(by units: Int) {
-        self.spentUnits = self.units
+        self.spentUnits += units
         self.units -= units
     }
 

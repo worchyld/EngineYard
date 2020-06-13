@@ -53,4 +53,28 @@ class ProductionTests: XCTestCase {
         XCTAssertTrue(production.spentUnits == 1, "Spent: \(production.spentUnits)")
     }
 
+    func testProductionDidSpend7Units() {
+         var production = Production()
+         production.add(10)
+
+         XCTAssertNoThrow(try production.canSpend(7))
+         production.decreaseProduction(by: 7)
+
+         XCTAssertTrue(production.units == 3)
+         XCTAssertTrue(production.spentUnits == 7, "Spent: \(production.spentUnits)")
+     }
+
+    func testProductionDidReset() {
+        var production = Production()
+        production.add(10)
+
+        XCTAssertNoThrow(try production.canSpend(7))
+        production.decreaseProduction(by: 7)
+
+        XCTAssertTrue(production.units == 3)
+
+        production.reset()
+        XCTAssertTrue(production.units == 10)
+        XCTAssertTrue(production.spentUnits == 0)
+    }
 }
