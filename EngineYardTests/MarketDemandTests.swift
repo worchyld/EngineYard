@@ -285,4 +285,52 @@ class MarketDemandTests: XCTestCase {
         XCTAssertTrue(market.blue?.count == 0)
         XCTAssertTrue(market.currentMarket?.count == 3)
     }
+
+    // Test 10 locomotives
+    // Expected:
+    //  3 green generations
+    //  3 red generations
+    //  2 blue generations
+    //  2 yellow generations
+    func testTenLocos_HasExpectedMarket() {
+        let boardRef = self.locomotives
+
+        for (index, element) in boardRef.enumerated() {
+            if (index > 9) {
+                break
+            }
+
+            do {
+                let book = OrderBook.init(capacity: element.orderCapacity, orders: element.orders)
+                try book.add(.existingOrder)
+                guard let orders = book.orders else {
+                    XCTFail("No orders")
+                    return
+                }
+                element.setOrders(orders: orders)
+
+                XCTAssertTrue(element.orders.count == 1)
+                XCTAssertTrue(element.existingOrders.count == 1)
+
+            } catch {
+                XCTFail("Error -- \(error as Any)")
+                break
+            }
+        }
+
+        // Test the market
+        // Expected:
+        //  3 green generations
+        //  3 red generations
+        //  2 blue generations
+        //  2 yellow generations
+        let market = Market.init(with: boardRef)
+        
+        XCTAssertTrue(market.green?.count == 3, "Found: \(String(describing: market.green?.count))")
+        XCTAssertTrue(market.red?.count == 3, "Found: \(String(describing: market.red?.count))")
+        XCTAssertTrue(market.blue?.count == 2, "Found: \(String(describing: market.blue?.count))")
+        XCTAssertTrue(market.yellow?.count == 2, "Found: \(String(describing: market.yellow?.count))")
+        XCTAssertTrue(market.currentMarket?.count == 10, "Found: \(String(describing: market.currentMarket?.count))")
+
+    }
 }
