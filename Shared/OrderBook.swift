@@ -20,7 +20,7 @@ enum OrderBookError : Error, Equatable {
 // A proxy-style pattern to add, remove orders to/from a locomotive
 class OrderBook {
     let capacity: Int
-    var orders: [Order]?
+    private (set) var orders: [Order]?
 
     init(capacity: Int, orders: [Order]? = nil) {
         self.capacity = capacity
@@ -76,18 +76,20 @@ extension OrderBook {
 extension OrderBook {
 
     // transfer an order from one state to another
-    func transfer(order: inout Order, to state: Order.State) throws {
+    func transfer(order: inout Order, to state: Order.State) throws -> Order {
         guard (state == .existingOrder || state == .completedOrder) else {
             throw OrderError.orderCannotBe(state)
         }
         order.setState(to: state)
+        return order
     }
 
-    func transfer(orders: [Order], to state: Order.State) throws {
+    func transfer(orders: inout [Order], to state: Order.State) throws {
         do {
-            try orders.forEach { (order: Order) in
-                var order = order
-                try transfer(order: &order, to: state)
+            for (index, element) in orders.enumerated() {
+                var order = element
+                order = try transfer(order: &order, to: state)
+                orders[index] = order
             }
         } catch {
             throw error

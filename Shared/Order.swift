@@ -26,7 +26,7 @@ struct Order: Identifiable {
     }
 
     private (set) var value: Int
-    var state: Order.State
+    private (set) var state: Order.State
 
     init(_ state: Order.State = .initialOrder) {
         self.value = Die.roll
