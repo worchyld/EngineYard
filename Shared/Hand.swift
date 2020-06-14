@@ -15,6 +15,12 @@ enum HandError : Error, Equatable {
     case notAvailable(_ card: Card)
     case cannotFind(_ card: Card)
     case alreadyHaveCardFromThisFamily(_ family: Family)
+    case locomotiveHasNoCards
+    case locomotiveIsOld
+    case locomotiveIsObsolete
+    case locomotiveIsNotAvailable
+    case couldNotPush(_ card: Card)
+    case couldNotPop(_ card: Card)
 }
 
 class Hand {
@@ -37,9 +43,11 @@ class Hand {
 extension Hand {
     func add(_ card: Card) throws {
         do {
-            let ok = try canAdd(card)
-            if ok {
+            if try canAdd(card) {
                 self.push(card)
+            }
+            else {
+                throw HandError.couldNotPush(card)
             }
         } catch {
             throw error
@@ -82,14 +90,17 @@ extension Hand {
 extension Hand {
     func remove(_ card: Card) throws {
         do {
-            let index = try canRemove(card)
+            guard let index = try canRemove(card) else {
+                throw HandError.couldNotPop(card)
+            }
             self.pop(card, at: index)
+
         } catch {
             throw error
         }
     }
 
-    internal func canRemove(_ card: Card) throws -> Int {
+    internal func canRemove(_ card: Card) throws -> Int? {
         // check hand is not empty
         guard (!cards.isEmpty) else {
             throw HandError.handIsEmpty

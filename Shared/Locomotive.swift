@@ -55,6 +55,12 @@ class Locomotive: Identifiable, FamilyDelegate {
     }
 }
 
+extension Locomotive: Equatable {
+    static func == (lhs: Locomotive, rhs: Locomotive) -> Bool {
+        return (lhs.id == rhs.id)
+    }
+}
+
 extension Locomotive {
     private func changeState(to: Locomotive.State) {
         self.state = to

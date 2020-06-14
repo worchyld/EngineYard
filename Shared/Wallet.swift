@@ -11,17 +11,16 @@ import Foundation
 enum WalletError : Error, Equatable {
     case amountMustBePositive
     case notEnoughFunds(_ funds: Int)
+    case undefinedWallet
 }
 
-private protocol CreditDelegate {
+protocol CreditDelegate {
     func credit(_ amount: Int) throws -> Int?
-    func canCredit(_ amount: Int) throws -> Bool
     func handleCredit(_ amount: Int)
 }
 
-private protocol DebitDelegate {
+protocol DebitDelegate {
     func debit(_ amount: Int) throws -> Int?
-    func canDebit(_ amount: Int) throws -> Bool
     func handleDebit(_ amount: Int)
 }
 
@@ -72,7 +71,7 @@ extension Wallet : DebitDelegate {
         }
     }
 
-    func canDebit(_ amount: Int = 0) throws -> Bool {
+    internal func canDebit(_ amount: Int = 0) throws -> Bool {
         guard amount > 0 else {
             throw WalletError.amountMustBePositive
         }
