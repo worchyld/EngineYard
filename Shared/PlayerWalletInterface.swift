@@ -12,8 +12,8 @@ import Foundation
 // wallet proxy which handles credit/debit rules
 
 class PlayerWalletInterface {
-    private var player: Player
-    private var wallet: Wallet
+    private let player: Player
+    private let wallet: Wallet
 
     init(player: Player) {
         self.player = player
@@ -37,6 +37,27 @@ extension PlayerWalletInterface : CreditDelegate {
     }
 
     internal func handleCredit(_ amount: Int) {
+        player.setCash(amount)
+    }
+}
+
+
+extension PlayerWalletInterface : DebitDelegate {
+    func debit(_ amount: Int) throws -> Int? {
+        do {
+            if let balance = try self.wallet.debit(amount) {
+                self.handleDebit(balance)
+                return player.cash
+            }
+            else {
+                throw WalletError.undefinedWallet
+            }
+        } catch {
+            throw error
+        }
+    }
+
+    internal func handleDebit(_ amount: Int) {
         player.setCash(amount)
     }
 }
