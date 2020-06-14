@@ -9,9 +9,11 @@
 import Foundation
 
 enum HandError : Error {
+    case handNotInitialized
     case handIsEmpty
     case alreadyHaveThisCard(_ card: Card)
     case notAvailable(_ card: Card)
+    case cannotFind(_ card: Card)
 }
 
 class Hand {
@@ -38,10 +40,32 @@ extension Hand {
         }
     }
 
+    // #TODO -- Need to check that the card matches certain state
+    //  & deck requirements
+
     internal func canAdd(_ card: Card) throws -> Bool {
+        guard let cards = self.cards else {
+            throw HandError.handNotInitialized
+        }
+
+        // Does the card already exist in player's hand?
+        guard (!cards.contains(card)) else {
+            throw HandError.alreadyHaveThisCard(card)
+        }
+
+        // Can only hold 1 of each family
+        let family = card.family
+
+        let filter = self.cards?.filter({ (c: Card) -> Bool in
+            return (c.family == family)
+        })
+
+        guard (filter?.count == 0) else {
+            throw HandError.alreadyHaveThisCard(card)
+        }
+
         return true
     }
-
 
     private func push(_ card: Card) {
         self.cards?.append(card)
@@ -50,22 +74,38 @@ extension Hand {
 }
 
 extension Hand {
-    func remove(_ card: Card, at index: Int) throws {
+    func remove(_ card: Card) throws {
         do {
-            let ok = try canRemove(card, at: index)
-            if ok {
-                self.push(card)
-            }
+            let index = try canRemove(card)
+            self.pop(card, at: index)
         } catch {
             throw error
         }
     }
 
-    internal func canRemove(_ card: Card, at index: Int) throws -> Bool {
-        return true
+    internal func canRemove(_ card: Card) throws -> Int {
+        // check hand is not empty
+        guard let cards = self.cards else {
+            throw HandError.handNotInitialized
+        }
+        guard (!cards.isEmpty) else {
+            throw HandError.handIsEmpty
+        }
+
+        // does card exist in hand
+        guard (cards.contains(card)) else {
+            throw HandError.cannotFind(card)
+        }
+
+        // try to find first index of the card in array
+        guard let index = cards.firstIndex(of: card) else {
+            throw HandError.cannotFind(card)
+        }
+
+        return index
     }
 
     private func pop(_ card: Card, at index: Int) {
-
+        self.cards?.remove(at: index)
     }
 }

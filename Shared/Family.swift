@@ -56,6 +56,12 @@ public struct Family: FamilyDelegate {
     }
 }
 
+extension Family: Hashable {
+    public static func == (lhs: Family, rhs: Family) -> Bool {
+        return ( (lhs.color == rhs.color) && (lhs.generation == rhs.generation) )
+    }
+}
+
 extension Family.Color {
     var category: Family.Category {
         switch self {
