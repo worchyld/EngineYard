@@ -30,4 +30,41 @@ class WalletTests: XCTestCase {
         }
         XCTAssertTrue(w.balance == 0)
     }
+
+    func testDebitReturns99() {
+        let w = Wallet()
+        XCTAssertNoThrow(try w.credit(100))
+        XCTAssertTrue(w.balance == 100)
+        XCTAssertNoThrow(try w.debit(1))
+        XCTAssertTrue(w.balance == 99)
+    }
+
+    func testCannotDebitNegativeAmount() {
+        let w = Wallet()
+
+        XCTAssertThrowsError(try w.debit(-100)) { error in
+            XCTAssertEqual(error as! WalletError, WalletError.mustBePositive)
+        }
+        XCTAssertTrue(w.balance == 0)
+    }
+
+    func testCannotDebitMoreThanBalance() {
+        let w = Wallet()
+
+        XCTAssertNoThrow(try w.credit(100))
+
+        XCTAssertThrowsError(try w.debit(101)) { error in
+            XCTAssertEqual(error as! WalletError, WalletError.notEnoughFunds(100))
+        }
+        XCTAssertTrue(w.balance == 100)
+    }
+
+    func testCanDebitEqualToBalance() {
+        let w = Wallet()
+
+        XCTAssertNoThrow(try w.credit(100))
+        XCTAssertNoThrow(try w.debit(100))
+
+        XCTAssertTrue(w.balance == 0)
+    }
 }
