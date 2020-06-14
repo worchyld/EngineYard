@@ -17,8 +17,13 @@ struct Production {
     private (set) var units: Int
     private (set) var spentUnits: Int
 
-    init() {
-        self.units = 0
+    init(_ units: Int = 0) {
+        if (units >= 0) {
+            self.units = units
+        }
+        else {
+            self.units = 0
+        }
         self.spentUnits = 0
     }
 }

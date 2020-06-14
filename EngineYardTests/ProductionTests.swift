@@ -77,4 +77,8 @@ class ProductionTests: XCTestCase {
         XCTAssertTrue(production.units == 10)
         XCTAssertTrue(production.spentUnits == 0)
     }
+
+    func testCardProduction() {
+        //let card = Card.init(name: "Test", cost: 4, color: .green, generation: .first)
+    }
 }

@@ -16,13 +16,16 @@ struct Card : Identifiable, FamilyDelegate {
     var category: Family.Category { return self.family.category }
     var color: Family.Color { return self.family.color }
     var generation: Family.Generation { return self.family.generation }
+    private (set) var production: Production
 
     init(name: String, cost: Int, color: Family.Color, generation: Family.Generation) {
         self.name = name
         self.cost = cost
         self.family = Family(color: color, generation: generation)
+        self.production = Production.init()
     }
 }
+
 
 // MARK - Extensions
 
@@ -46,5 +49,11 @@ extension Card: Equatable {
 extension Card: CustomStringConvertible {
     var description: String {
         return ("\(self.id), \(self.name), $\(self.cost), \(self.color), \(self.generation)")
+    }
+}
+
+extension Card {
+    mutating func setProdction(_ production: Production) {
+        self.production = production
     }
 }
