@@ -18,19 +18,24 @@ enum HandError : Error, Equatable {
 }
 
 class Hand {
-    private (set) var cards: [Card]?
+    private (set) var cards: [Card] = [Card]()
+    public var size: Int {
+        return self.cards.count
+    }
+    public var isEmpty: Bool {
+        return self.cards.isEmpty
+    }
 
     init(_ cards: [Card]? = nil) {
+        guard let cards = cards else {
+            return
+        }
         self.cards = cards
     }
 }
 
 extension Hand {
     func add(_ card: Card) throws {
-        if (self.cards == nil) {
-            self.cards = [Card]()
-        }
-
         do {
             let ok = try canAdd(card)
             if ok {
@@ -45,10 +50,6 @@ extension Hand {
     //  & deck requirements
 
     internal func canAdd(_ card: Card) throws -> Bool {
-        guard let cards = self.cards else {
-            return true
-        }
-
         if (cards.isEmpty) {
             return true
         }
@@ -61,11 +62,11 @@ extension Hand {
         // Can only hold 1 of each family
         let family = card.family
 
-        let filter = self.cards?.filter({ (c: Card) -> Bool in
+        let filter = self.cards.filter({ (c: Card) -> Bool in
             return (c.family == family)
         })
 
-        guard (filter?.count == 0) else {
+        guard (filter.count == 0) else {
             throw HandError.alreadyHaveCardFromThisFamily(card.family)
         }
 
@@ -73,7 +74,7 @@ extension Hand {
     }
 
     private func push(_ card: Card) {
-        self.cards?.append(card)
+        self.cards.append(card)
     }
 
 }
@@ -90,9 +91,6 @@ extension Hand {
 
     internal func canRemove(_ card: Card) throws -> Int {
         // check hand is not empty
-        guard let cards = self.cards else {
-            throw HandError.handNotInitialized
-        }
         guard (!cards.isEmpty) else {
             throw HandError.handIsEmpty
         }
@@ -111,6 +109,6 @@ extension Hand {
     }
 
     private func pop(_ card: Card, at index: Int) {
-        self.cards?.remove(at: index)
+        self.cards.remove(at: index)
     }
 }

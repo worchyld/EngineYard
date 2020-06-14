@@ -18,7 +18,8 @@ class HandTests: XCTestCase {
 
     func testHandIsEmpty() {
         let hand = Hand.init()
-        XCTAssertNil(hand.cards)
+        XCTAssertTrue(hand.size == 0)
+        XCTAssertTrue(hand.isEmpty)
     }
 
     func testCanAddCard() {
@@ -43,14 +44,10 @@ class HandTests: XCTestCase {
 
         XCTAssertNoThrow(try hand.add(card))
 
-        guard let handCards = hand.cards else {
-            XCTFail("No hand of cards found")
-            return
-        }
+        XCTAssertFalse(hand.isEmpty)
+        XCTAssertTrue(hand.size == 1)
 
-        XCTAssertTrue(handCards.count == 1)
-
-        let firstCardInHand = handCards.first!
+        let firstCardInHand = hand.cards.first
 
         XCTAssertTrue(firstCardInHand == card)
     }
@@ -64,7 +61,8 @@ class HandTests: XCTestCase {
         let hand = Hand.init()
 
         XCTAssertNoThrow(try hand.add(card))
-        XCTAssertTrue(hand.cards?.count == 1)
+        XCTAssertFalse(hand.cards.isEmpty)
+        XCTAssertTrue(hand.cards.count == 1)
 
         XCTAssertThrowsError(try hand.add(card)) { error in
             XCTAssertEqual(error as! HandError, HandError.duplicateCardFound)
@@ -85,12 +83,46 @@ class HandTests: XCTestCase {
         let hand = Hand.init()
 
         XCTAssertNoThrow(try hand.add(firstCard))
-        XCTAssertTrue(hand.cards?.count == 1)
+        XCTAssertFalse(hand.isEmpty)
+        XCTAssertTrue(hand.cards.count == 1)
 
         XCTAssertThrowsError(try hand.add(secondCard)) { error in
             let family = Family.init(color: .green, generation: .first)
             XCTAssertEqual(error as! HandError, HandError.alreadyHaveCardFromThisFamily( family ))
         }
+    }
+
+    func testCanAddCardFromDifferentGenerationButSameColor() {
+        let cards = Card.build()
+
+        let green1stGen = cards.filter { (c: Card) -> Bool in
+            return (c.color == .green && c.generation == .first)
+        }.first
+
+        let green2ndGen = cards.filter { (c: Card) -> Bool in
+            return (c.color == .green && c.generation == .second)
+        }.first
+
+        XCTAssertNotNil(green1stGen)
+        XCTAssertNotNil(green2ndGen)
+
+        guard let card1 = green1stGen else {
+            XCTFail("No card found")
+            return
+        }
+
+        guard let card2 = green2ndGen else {
+            XCTFail("No card found")
+            return
+        }
+
+        let hand = Hand.init()
+        XCTAssertNoThrow( try hand.add(card1) )
+        XCTAssertNoThrow( try hand.add(card2) )
+
+        XCTAssertNotNil(hand.cards)
+        XCTAssertFalse(hand.isEmpty)
+        XCTAssertTrue(hand.cards.count == 2)
     }
 
 }
