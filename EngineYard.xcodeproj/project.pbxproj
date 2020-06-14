@@ -20,7 +20,6 @@
 		4D247B37219FFE340004478D /* NumberFormatCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D247B36219FFE340004478D /* NumberFormatCache.swift */; };
 		4D2A4B8C2195DEB300315524 /* EY+ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2A4B8B2195DEB300315524 /* EY+ImageView.swift */; };
 		4D300D8D246EC66F0083AEE1 /* EY+Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D300D8B246EBF470083AEE1 /* EY+Paths.swift */; };
-		4D300D8F246EDF880083AEE1 /* RealmGameModelSaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D300D8E246EDF880083AEE1 /* RealmGameModelSaveTests.swift */; };
 		4D300D91246EE10E0083AEE1 /* BasicGKGameModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D300D90246EE10E0083AEE1 /* BasicGKGameModelTests.swift */; };
 		4D3A32D42488B1A700837161 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A32D32488B1A700837161 /* CardView.swift */; };
 		4D3A32D62488D6CB00837161 /* UIStackView+BGColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A32D52488D6CB00837161 /* UIStackView+BGColor.swift */; };
@@ -75,18 +74,6 @@
 		4DAA5BC72471A5E500165829 /* BoardPositionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA5BC62471A5E500165829 /* BoardPositionTests.swift */; };
 		4DAA5BC92471D5AA00165829 /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA5BC82471D5AA00165829 /* Family.swift */; };
 		4DAA5BCB2471D97600165829 /* Constants+Expected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA5BCA2471D97600165829 /* Constants+Expected.swift */; };
-		4DACC0A22441E5C500466ABE /* JGProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC09C2441E5C500466ABE /* JGProgressHUD.framework */; };
-		4DACC0A32441E5C500466ABE /* JGProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC09C2441E5C500466ABE /* JGProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4DACC0A62441E5C500466ABE /* FontAwesome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC09E2441E5C500466ABE /* FontAwesome.framework */; };
-		4DACC0A72441E5C500466ABE /* FontAwesome.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC09E2441E5C500466ABE /* FontAwesome.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4DACC0A82441E5C500466ABE /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC09F2441E5C500466ABE /* Haneke.framework */; };
-		4DACC0A92441E5C500466ABE /* Haneke.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC09F2441E5C500466ABE /* Haneke.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4DACC0AA2441E5C500466ABE /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC0A02441E5C500466ABE /* Realm.framework */; };
-		4DACC0AB2441E5C500466ABE /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC0A02441E5C500466ABE /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4DACC0AC2441E5C500466ABE /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC0A12441E5C500466ABE /* RealmSwift.framework */; };
-		4DACC0AD2441E5C500466ABE /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC0A12441E5C500466ABE /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4DACC0B22441E80400466ABE /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC0A12441E5C500466ABE /* RealmSwift.framework */; };
-		4DACC0B32441E80400466ABE /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DACC0A02441E5C500466ABE /* Realm.framework */; };
 		4DAE26EA247FEC1B007C338E /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAE26E9247FEC1B007C338E /* BorderedButton.swift */; };
 		4DB448C7219F380900F8507F /* EY+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB448C6219F380900F8507F /* EY+Protocols.swift */; };
 		4DB64EBB248525F000B9BE28 /* BoardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB64EBA248525F000B9BE28 /* BoardCoordinator.swift */; };
@@ -96,10 +83,8 @@
 		4DE54953246B1EF800ADC11C /* PlayerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE54952246B1EF800ADC11C /* PlayerEntity.swift */; };
 		4DE54955246B204000ADC11C /* MachineStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE54954246B204000ADC11C /* MachineStates.swift */; };
 		4DE5496B246BF76000ADC11C /* EY+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE5496A246BF76000ADC11C /* EY+String.swift */; };
-		4DED36742465865600CB7D72 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DED36732465865500CB7D72 /* RealmHelper.swift */; };
 		4DED36762465866100CB7D72 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DED36752465866100CB7D72 /* SoundManager.swift */; };
 		4DF1509221679E0300D39D65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1509121679E0300D39D65 /* Main.storyboard */; };
-		4DF7B4A1244D7BC100814B64 /* RealmWriteAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF7B4A0244D7BC100814B64 /* RealmWriteAsync.swift */; };
 		4DFA7A4B233D56D5004099B7 /* PlayerProfileMiniView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFA7A4A233D56D5004099B7 /* PlayerProfileMiniView.xib */; };
 		4DFA7A4D233D579E004099B7 /* PlayerWinnerCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFA7A4C233D579E004099B7 /* PlayerWinnerCellView.xib */; };
 		4DFA7A4F233D5840004099B7 /* PlayerTaxReportView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFA7A4E233D5840004099B7 /* PlayerTaxReportView.xib */; };
@@ -129,11 +114,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4DACC0A92441E5C500466ABE /* Haneke.framework in Embed Frameworks */,
-				4DACC0A32441E5C500466ABE /* JGProgressHUD.framework in Embed Frameworks */,
-				4DACC0AD2441E5C500466ABE /* RealmSwift.framework in Embed Frameworks */,
-				4DACC0A72441E5C500466ABE /* FontAwesome.framework in Embed Frameworks */,
-				4DACC0AB2441E5C500466ABE /* Realm.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,7 +144,6 @@
 		4D247B36219FFE340004478D /* NumberFormatCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatCache.swift; sourceTree = "<group>"; };
 		4D2A4B8B2195DEB300315524 /* EY+ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+ImageView.swift"; sourceTree = "<group>"; };
 		4D300D8B246EBF470083AEE1 /* EY+Paths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Paths.swift"; sourceTree = "<group>"; };
-		4D300D8E246EDF880083AEE1 /* RealmGameModelSaveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmGameModelSaveTests.swift; sourceTree = "<group>"; };
 		4D300D90246EE10E0083AEE1 /* BasicGKGameModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicGKGameModelTests.swift; sourceTree = "<group>"; };
 		4D3A32D32488B1A700837161 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		4D3A32D52488D6CB00837161 /* UIStackView+BGColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+BGColor.swift"; sourceTree = "<group>"; };
@@ -221,11 +200,6 @@
 		4DAA5BC62471A5E500165829 /* BoardPositionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardPositionTests.swift; sourceTree = "<group>"; };
 		4DAA5BC82471D5AA00165829 /* Family.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Family.swift; sourceTree = "<group>"; };
 		4DAA5BCA2471D97600165829 /* Constants+Expected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+Expected.swift"; sourceTree = "<group>"; };
-		4DACC09C2441E5C500466ABE /* JGProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JGProgressHUD.framework; path = Carthage/Build/iOS/JGProgressHUD.framework; sourceTree = "<group>"; };
-		4DACC09E2441E5C500466ABE /* FontAwesome.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FontAwesome.framework; path = Carthage/Build/iOS/FontAwesome.framework; sourceTree = "<group>"; };
-		4DACC09F2441E5C500466ABE /* Haneke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Haneke.framework; path = Carthage/Build/iOS/Haneke.framework; sourceTree = "<group>"; };
-		4DACC0A02441E5C500466ABE /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
-		4DACC0A12441E5C500466ABE /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		4DAE26E9247FEC1B007C338E /* BorderedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
 		4DB448C6219F380900F8507F /* EY+Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Protocols.swift"; sourceTree = "<group>"; };
 		4DB64EBA248525F000B9BE28 /* BoardCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardCoordinator.swift; sourceTree = "<group>"; };
@@ -236,10 +210,8 @@
 		4DE54952246B1EF800ADC11C /* PlayerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEntity.swift; sourceTree = "<group>"; };
 		4DE54954246B204000ADC11C /* MachineStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineStates.swift; sourceTree = "<group>"; };
 		4DE5496A246BF76000ADC11C /* EY+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+String.swift"; sourceTree = "<group>"; };
-		4DED36732465865500CB7D72 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		4DED36752465866100CB7D72 /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		4DF1509121679E0300D39D65 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		4DF7B4A0244D7BC100814B64 /* RealmWriteAsync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmWriteAsync.swift; sourceTree = "<group>"; };
 		4DFA7A4A233D56D5004099B7 /* PlayerProfileMiniView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerProfileMiniView.xib; sourceTree = "<group>"; };
 		4DFA7A4C233D579E004099B7 /* PlayerWinnerCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerWinnerCellView.xib; sourceTree = "<group>"; };
 		4DFA7A4E233D5840004099B7 /* PlayerTaxReportView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerTaxReportView.xib; sourceTree = "<group>"; };
@@ -257,11 +229,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DACC0A82441E5C500466ABE /* Haneke.framework in Frameworks */,
-				4DACC0A22441E5C500466ABE /* JGProgressHUD.framework in Frameworks */,
-				4DACC0AC2441E5C500466ABE /* RealmSwift.framework in Frameworks */,
-				4DACC0A62441E5C500466ABE /* FontAwesome.framework in Frameworks */,
-				4DACC0AA2441E5C500466ABE /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,8 +236,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DACC0B22441E80400466ABE /* RealmSwift.framework in Frameworks */,
-				4DACC0B32441E80400466ABE /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,8 +313,6 @@
 		4D6C27642469CA97005F4AEF /* Realm */ = {
 			isa = PBXGroup;
 			children = (
-				4DED36732465865500CB7D72 /* RealmHelper.swift */,
-				4DF7B4A0244D7BC100814B64 /* RealmWriteAsync.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -429,7 +392,6 @@
 				4DE5494C2469EA0800ADC11C /* TaxTests.swift */,
 				4DE5494E246AEAC200ADC11C /* WalletTests.swift */,
 				4D300D90246EE10E0083AEE1 /* BasicGKGameModelTests.swift */,
-				4D300D8E246EDF880083AEE1 /* RealmGameModelSaveTests.swift */,
 				4DAA5BBA2471630700165829 /* BoardIntegrityTests.swift */,
 				4DAA5BC62471A5E500165829 /* BoardPositionTests.swift */,
 				4DAA5BC42471A30300165829 /* PlayerHandManagementTests.swift */,
@@ -497,11 +459,6 @@
 			isa = PBXGroup;
 			children = (
 				4D02CC4B247AEBE100536B32 /* XCTest.framework */,
-				4DACC09E2441E5C500466ABE /* FontAwesome.framework */,
-				4DACC09F2441E5C500466ABE /* Haneke.framework */,
-				4DACC09C2441E5C500466ABE /* JGProgressHUD.framework */,
-				4DACC0A02441E5C500466ABE /* Realm.framework */,
-				4DACC0A12441E5C500466ABE /* RealmSwift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -688,8 +645,6 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -697,7 +652,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage outdated --xcode-warnings\n/usr/local/bin/carthage copy-frameworks\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -716,7 +671,6 @@
 				4D01FB0C244B73200031BEE9 /* GameModelEntity.swift in Sources */,
 				4D664866247B903B00BD1790 /* PlayerViewModel.swift in Sources */,
 				4D602C5F2489B58500B73F27 /* CardDetailView.swift in Sources */,
-				4DF7B4A1244D7BC100814B64 /* RealmWriteAsync.swift in Sources */,
 				4D3C17D72334CE730036808F /* Coordinator.swift in Sources */,
 				4DC5E55B2484FDE000BB3A6D /* MainMenuCoordinator.swift in Sources */,
 				4DA65C082487A5DF008EE639 /* CardDetailViewController.swift in Sources */,
@@ -755,7 +709,6 @@
 				4D08FAFC24767DD300E3296C /* Board+Create.swift in Sources */,
 				4DE54953246B1EF800ADC11C /* PlayerEntity.swift in Sources */,
 				4DA65C0A2487A617008EE639 /* CardViewModel.swift in Sources */,
-				4DED36742465865600CB7D72 /* RealmHelper.swift in Sources */,
 				4DFF752B2336077400C7CC24 /* Tax.swift in Sources */,
 				4DE5496B246BF76000ADC11C /* EY+String.swift in Sources */,
 				4D925D75219F4E2D00441733 /* EY+Time.swift in Sources */,
@@ -781,7 +734,6 @@
 				4DE5494F246AEAC200ADC11C /* WalletTests.swift in Sources */,
 				4DA92C212156874500AD19B7 /* (null) in Sources */,
 				4DAA5BBB2471630700165829 /* BoardIntegrityTests.swift in Sources */,
-				4D300D8F246EDF880083AEE1 /* RealmGameModelSaveTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -927,10 +879,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A48R25Y4D5;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = EngineYard_iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -950,10 +899,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A48R25Y4D5;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = EngineYard_iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -974,10 +920,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A48R25Y4D5;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = EngineYardTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -999,10 +942,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A48R25Y4D5;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = EngineYardTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
