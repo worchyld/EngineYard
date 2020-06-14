@@ -8,10 +8,10 @@
 
 import Foundation
 
-enum HandError : Error {
+enum HandError : Error, Equatable {
     case handNotInitialized
     case handIsEmpty
-    case alreadyHaveThisCard(_ card: Card)
+    case duplicateCardFound
     case notAvailable(_ card: Card)
     case cannotFind(_ card: Card)
 }
@@ -45,12 +45,16 @@ extension Hand {
 
     internal func canAdd(_ card: Card) throws -> Bool {
         guard let cards = self.cards else {
-            throw HandError.handNotInitialized
+            return true
+        }
+
+        if (cards.isEmpty) {
+            return true
         }
 
         // Does the card already exist in player's hand?
         guard (!cards.contains(card)) else {
-            throw HandError.alreadyHaveThisCard(card)
+            throw HandError.duplicateCardFound
         }
 
         // Can only hold 1 of each family
@@ -61,7 +65,7 @@ extension Hand {
         })
 
         guard (filter?.count == 0) else {
-            throw HandError.alreadyHaveThisCard(card)
+            throw HandError.duplicateCardFound
         }
 
         return true
