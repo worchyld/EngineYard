@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import GameKit
+import GameplayKit
 
 class Player : NSObject, GKGameModelPlayer, Identifiable {
     var playerId: Int
