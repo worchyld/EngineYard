@@ -9,8 +9,7 @@
 import Foundation
 
 enum WalletError : Error, Equatable {
-    case mustBePositive
-    case resultWillBeNegative
+    case amountMustBePositive
     case notEnoughFunds(_ funds: Int)
 }
 
@@ -49,7 +48,7 @@ extension Wallet : CreditDelegate {
 
     internal func canCredit(_ amount: Int = 0) throws -> Bool {
         guard amount > 0 else {
-            throw WalletError.mustBePositive
+            throw WalletError.amountMustBePositive
         }
         return true
     }
@@ -75,13 +74,13 @@ extension Wallet : DebitDelegate {
 
     func canDebit(_ amount: Int = 0) throws -> Bool {
         guard amount > 0 else {
-            throw WalletError.mustBePositive
+            throw WalletError.amountMustBePositive
         }
         guard (self.balance >= amount) else {
             throw WalletError.notEnoughFunds(self.balance)
         }
         guard ((self.balance - amount) >= 0) else {
-            throw WalletError.resultWillBeNegative
+            throw WalletError.notEnoughFunds(self.balance)
         }
 
         return true

@@ -26,7 +26,7 @@ class WalletTests: XCTestCase {
         let w = Wallet()
 
         XCTAssertThrowsError(try w.credit(-100)) { error in
-            XCTAssertEqual(error as! WalletError, WalletError.mustBePositive)
+            XCTAssertEqual(error as! WalletError, WalletError.amountMustBePositive)
         }
         XCTAssertTrue(w.balance == 0)
     }
@@ -43,7 +43,7 @@ class WalletTests: XCTestCase {
         let w = Wallet()
 
         XCTAssertThrowsError(try w.debit(-100)) { error in
-            XCTAssertEqual(error as! WalletError, WalletError.mustBePositive)
+            XCTAssertEqual(error as! WalletError, WalletError.amountMustBePositive)
         }
         XCTAssertTrue(w.balance == 0)
     }
@@ -67,4 +67,36 @@ class WalletTests: XCTestCase {
 
         XCTAssertTrue(w.balance == 0)
     }
+
+    func testCanAffordFullBalance() {
+        let w = Wallet()
+
+        XCTAssertNoThrow(try w.credit(100))
+        XCTAssertNoThrow(try w.canAfford(100))
+        XCTAssertTrue(try w.canAfford(100))
+    }
+
+    func testCannotAffordNegativeAmount() {
+        let w = Wallet()
+
+        XCTAssertNoThrow(try w.credit(100))
+
+        XCTAssertThrowsError(try w.debit(-10)) { error in
+            XCTAssertEqual(error as! WalletError, WalletError.amountMustBePositive)
+        }
+        XCTAssertTrue(w.balance == 100)
+    }
+
+    func testCannotAffordMoreThanBalance() {
+        let w = Wallet()
+
+        XCTAssertNoThrow(try w.credit(100))
+
+        XCTAssertThrowsError(try w.debit(101)) { error in
+            XCTAssertEqual(error as! WalletError, WalletError.notEnoughFunds(100))
+        }
+        XCTAssertTrue(w.balance == 100)
+    }
+
+
 }
