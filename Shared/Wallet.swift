@@ -14,6 +14,18 @@ enum WalletError : Error, Equatable {
     case notEnoughFunds(_ funds: Int)
 }
 
+private protocol CreditDelegate {
+    func credit(_ amount: Int) throws -> Int?
+    func canCredit(_ amount: Int) throws -> Bool
+    func handleCredit(_ amount: Int)
+}
+
+private protocol DebitDelegate {
+    func debit(_ amount: Int) throws -> Int?
+    func canDebit(_ amount: Int) throws -> Bool
+    func handleDebit(_ amount: Int)
+}
+
 class Wallet {
     private(set) var balance: Int = 0
 
@@ -24,7 +36,7 @@ class Wallet {
 
 // MARK: Credit
 
-extension Wallet {
+extension Wallet : CreditDelegate {
     func credit(_ amount: Int = 0) throws -> Int? {
         do {
             let _ = try canCredit(amount)
@@ -42,7 +54,7 @@ extension Wallet {
         return true
     }
 
-    private func handleCredit(_ amount: Int = 0) {
+    internal func handleCredit(_ amount: Int = 0) {
         self.balance += amount
     }
 }
@@ -50,9 +62,15 @@ extension Wallet {
 
 // MARK: Debit
 
-extension Wallet {
-    func debit(_ amount: Int = 0) -> Int {
-        return self.balance
+extension Wallet : DebitDelegate {
+    func debit(_ amount: Int = 0) throws -> Int? {
+        do {
+            let _ = try canDebit(amount)
+            handleDebit(amount)
+            return self.balance
+        } catch {
+            throw error
+        }
     }
 
     func canDebit(_ amount: Int = 0) throws -> Bool {
@@ -69,7 +87,7 @@ extension Wallet {
         return true
     }
 
-    private func handleDebit(_ amount: Int = 0) {
+    internal func handleDebit(_ amount: Int = 0) {
         self.balance -= amount
     }
 }
