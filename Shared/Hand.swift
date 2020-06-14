@@ -14,6 +14,7 @@ enum HandError : Error, Equatable {
     case duplicateCardFound
     case notAvailable(_ card: Card)
     case cannotFind(_ card: Card)
+    case alreadyHaveCardFromThisFamily(_ family: Family)
 }
 
 class Hand {
@@ -65,7 +66,7 @@ extension Hand {
         })
 
         guard (filter?.count == 0) else {
-            throw HandError.duplicateCardFound
+            throw HandError.alreadyHaveCardFromThisFamily(card.family)
         }
 
         return true

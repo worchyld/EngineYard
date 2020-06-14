@@ -71,6 +71,26 @@ class HandTests: XCTestCase {
         }
     }
 
-    
+    func testCannotAddCardFromExactSameFamily() {
+        let cards = Card.build()
+
+        let greenCards = cards.filter { $0.color == .green && $0.generation == .first && $0.cost == 4 }
+
+        XCTAssertFalse(greenCards.isEmpty)
+        XCTAssertTrue(greenCards.count == 4)
+
+        let firstCard = greenCards[0]
+        let secondCard = greenCards[1]
+
+        let hand = Hand.init()
+
+        XCTAssertNoThrow(try hand.add(firstCard))
+        XCTAssertTrue(hand.cards?.count == 1)
+
+        XCTAssertThrowsError(try hand.add(secondCard)) { error in
+            let family = Family.init(color: .green, generation: .first)
+            XCTAssertEqual(error as! HandError, HandError.alreadyHaveCardFromThisFamily( family ))
+        }
+    }
 
 }
