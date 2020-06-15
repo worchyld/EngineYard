@@ -264,7 +264,8 @@ extension MarketDemand {
         locos.forEach { (locomotive) in
             print ("Locomotive: \(locomotive.name), \(locomotive.color), \(locomotive.orders)")
 
-            let orderBook = OrderBook.init(capacity: locomotive.orderCapacity, orders: locomotive.orders)
+            /*
+            let orderBook = OrderBook.init(capacity: locomotive.orderCapacity)
 
             if (!orderBook.isFull) {
                 do {
@@ -272,15 +273,12 @@ extension MarketDemand {
                 } catch {
                     print ("error -- \(error as Any)")
                 }
-                guard let orderBookOrders = orderBook.orders else {
-                    print ("Can't obtain orderbook proxy orders")
-                    return
-                }
-                locomotive.setOrders(orders: orderBookOrders)
+                locomotive.setOrders(from: orderBook)
             }
             else {
                 print("Locomotive is full")
             }
+             */
 
         }
 

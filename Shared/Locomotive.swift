@@ -66,13 +66,10 @@ extension Locomotive {
         self.state = to
     }
 
-    func setOrders(orders: [Order]) {
-        guard !orders.isEmpty else {
+    internal func setOrders(from orderBook: OrderBook) {
+        guard ((!orderBook.isEmpty) && (orderBook.orders.count > 0 && orderBook.orders.count <= self.orderCapacity)) else {
             return
         }
-        guard (orders.capacity == self.orderCapacity) else {
-            return
-        }
-        self.orders = orders
+        self.orders = orderBook.orders
     }
 }

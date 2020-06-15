@@ -30,7 +30,7 @@ class OrderTests: XCTestCase {
     }
 
     func testCannotReduceValueOfCompletedOrder() {
-        var order = Order.init(.completedOrder)
+        let order = Order.init(.completedOrder)
 
         XCTAssertThrowsError(try order.reduceValue(by: 1)) { error in
            XCTAssertEqual(error as! OrderError, OrderError.orderCannotBe(.completedOrder))
@@ -39,14 +39,14 @@ class OrderTests: XCTestCase {
     }
 
     func testCannotReduceValueOfInitialOrder() {
-        var order = Order.init(.initialOrder)
+        let order = Order.init(.initialOrder)
         XCTAssertThrowsError(try order.reduceValue(by: 1)) { error in
            XCTAssertEqual(error as! OrderError, OrderError.orderCannotBe(.initialOrder))
         }
     }
 
     func testCanReduceValueOfExistingOrder() {
-        var order = Order.init(.existingOrder)
+        let order = Order.init(.existingOrder)
         let orderValue = (order.value - 1)
 
         XCTAssertNoThrow(
@@ -57,7 +57,7 @@ class OrderTests: XCTestCase {
     }
 
     func testExistingOrderDidReduceBy1() {
-        var order = Order.init(.existingOrder)
+        let order = Order.init(.existingOrder)
         XCTAssertNoThrow(
             try order.setValue(6)
         )
@@ -70,7 +70,7 @@ class OrderTests: XCTestCase {
     }
 
     func testExisitingOrderDidReduceBy5() {
-        var order = Order.init(.existingOrder)
+        let order = Order.init(.existingOrder)
         XCTAssertNoThrow(
             try order.setValue(6)
         )
@@ -82,7 +82,7 @@ class OrderTests: XCTestCase {
     }
 
     func testExistingOrderDidReduceToZero() {
-        var order = Order.init(.existingOrder)
+        let order = Order.init(.existingOrder)
         XCTAssertNoThrow(
             try order.setValue(2)
         )
@@ -100,7 +100,7 @@ class OrderTests: XCTestCase {
     }
 
     func testOrderCannotGoNegative() {
-        var order = Order.init(.existingOrder)
+        let order = Order.init(.existingOrder)
         XCTAssertNoThrow(
             try order.setValue(0)
         )

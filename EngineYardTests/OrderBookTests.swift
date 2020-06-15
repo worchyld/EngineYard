@@ -18,7 +18,8 @@ class OrderBookTests: XCTestCase {
 
     func testOrderBookOrdersIsEmpty() {
         let orderBook = OrderBook.init(capacity: 3)
-        XCTAssertTrue(((orderBook.orders?.isEmpty) != nil))
+        XCTAssertTrue(orderBook.isEmpty)
+        XCTAssertTrue(orderBook.orders.count == 0)
     }
 
     func testOrderBookHasSingleOrder() {
@@ -28,13 +29,7 @@ class OrderBookTests: XCTestCase {
             try orderBook.add(.existingOrder)
         )
         XCTAssertNotNil(orderBook.orders)
-
-        guard let orders = orderBook.orders else {
-            XCTFail("Orders do not exist")
-            return
-        }
-
-        XCTAssertTrue(orders.count == 1)
+        XCTAssertTrue(orderBook.count == 1)
     }
 
     func testDidAddMixedOrderTypesToOrderBook() {
@@ -53,18 +48,14 @@ class OrderBookTests: XCTestCase {
             try orderBook.add(.completedOrder)
         )
 
-        guard let orders = orderBook.orders else {
-            XCTFail("No orders")
-            return
-        }
+        XCTAssertFalse(orderBook.orders.isEmpty)
+        XCTAssertTrue(orderBook.count == 3)
 
-        XCTAssertTrue(orders.count == 3)
-
-        let totalExistingOrders = orders.filter { (order: Order) -> Bool in
+        let totalExistingOrders = orderBook.orders.filter { (order: Order) -> Bool in
             return (order.state == .existingOrder)
         }.count
 
-        let totalCompletedOrders = orders.filter { (order: Order) -> Bool in
+        let totalCompletedOrders = orderBook.orders.filter { (order: Order) -> Bool in
             return (order.state == .completedOrder)
         }.count
 
@@ -93,12 +84,7 @@ class OrderBookTests: XCTestCase {
             try orderBook.add(.completedOrder)
         )
 
-        guard let orders = orderBook.orders else {
-            XCTFail("Orders do not exist")
-            return
-        }
-
-        XCTAssertTrue(orders.count == capacity)
+        XCTAssertTrue(orderBook.count == capacity)
         XCTAssertTrue(orderBook.isFull)
     }
 
@@ -110,21 +96,16 @@ class OrderBookTests: XCTestCase {
             try orderBook.add(.existingOrder)
         )
 
-        guard let orders = orderBook.orders else {
-            XCTFail("Orders do not exist")
-            return
-        }
+        XCTAssertTrue(orderBook.count == 1)
 
-        XCTAssertTrue(orders.count == 1)
-
-        guard var firstOrder = orders.first else {
+        guard let firstOrder = orderBook.orders.first else {
             XCTFail("No first order found")
             return
         }
         XCTAssertTrue(firstOrder.state == .existingOrder)
 
         XCTAssertNoThrow(
-            try orderBook.transfer(order: &firstOrder, to: .completedOrder)
+            try orderBook.transfer(order: firstOrder, to: .completedOrder)
         )
 
         XCTAssertTrue(firstOrder.state == .completedOrder)
@@ -138,12 +119,10 @@ class OrderBookTests: XCTestCase {
             try orderBook.add(.existingOrder)
         )
 
-        XCTAssertNotNil(orderBook.orders)
-        guard let orders = orderBook.orders else {
-            XCTFail("No orders defined")
-            return
-        }
-        guard var firstOrder = orders.first else {
+        XCTAssertTrue(!orderBook.isEmpty)
+        XCTAssertTrue(orderBook.orders.count == 1)
+
+        guard let firstOrder = orderBook.orders.first else {
             XCTFail("No first order defined")
             return
         }
@@ -152,7 +131,7 @@ class OrderBookTests: XCTestCase {
         )
         XCTAssertTrue(firstOrder.value == 6)
         XCTAssertNoThrow(
-            try orderBook.reduce(order: &firstOrder, by: 1)
+            try orderBook.reduce(order: firstOrder, by: 1)
         )
         XCTAssertTrue(firstOrder.value == 5, "Expected: 5, Found: \(firstOrder.value)")
     }
@@ -162,13 +141,15 @@ class OrderBookTests: XCTestCase {
         let capacity = 3
         let orderBook = OrderBook.init(capacity: capacity)
 
-        XCTAssertTrue(orderBook.orders?.count == 0)
+        XCTAssertTrue(orderBook.isEmpty)
+        XCTAssertTrue(orderBook.orders.count == 0)
 
         XCTAssertNoThrow(
             try orderBook.add(.initialOrder)
         )
 
-        XCTAssertTrue(orderBook.orders?.count == 1)
+        XCTAssertFalse(orderBook.isEmpty)
+        XCTAssertTrue(orderBook.orders.count == 1)
 
         // check against initial orders
         let initialOrders = orderBook.filterOrders(for: .initialOrder)
@@ -190,7 +171,7 @@ class OrderBookTests: XCTestCase {
         for _ in 0...(capacity - 1) {
             XCTAssertNoThrow( try orderBook.add(.completedOrder) )
         }
-        XCTAssertTrue(orderBook.orders?.count == capacity)
+        XCTAssertTrue(orderBook.orders.count == capacity)
         XCTAssertTrue(orderBook.filterOrders(for: .completedOrder)?.count == 3)
 
     }
