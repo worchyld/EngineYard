@@ -68,7 +68,7 @@ class MarketDemandTests: XCTestCase {
 
         XCTAssertTrue(orderBook.count == 1, "\(orderBook.count)")
 
-        firstLoco.setOrders(from: orderBook)
+        firstLoco.updateOrders(from: orderBook)
         XCTAssertTrue(firstLoco.orders.count == 1, "\(orderBook.count)")
 
         XCTAssertEqual(firstLoco.orders.count, orderBook.orders.count)
@@ -98,7 +98,7 @@ class MarketDemandTests: XCTestCase {
         XCTAssertTrue(firstLoco.orders.count == 0)
         XCTAssertFalse(orderBook.isFull)
 
-        firstLoco.setOrders(from: orderBook)
+        firstLoco.updateOrders(from: orderBook)
 
         XCTAssertEqual(firstLoco.orders.count, orderBook.orders.count)
     }
@@ -121,7 +121,7 @@ class MarketDemandTests: XCTestCase {
 
 
         XCTAssertTrue(orderBook.orders.count == 1)
-        firstLoco.setOrders(from: orderBook)
+        firstLoco.updateOrders(from: orderBook)
         XCTAssertTrue(firstLoco.orders.count == 1)
         XCTAssertEqual(firstLoco.orders.count, orderBook.orders.count)
 
@@ -145,7 +145,7 @@ class MarketDemandTests: XCTestCase {
         )
 
         XCTAssertTrue(orderBook.orders.count == 1)
-        firstLoco.setOrders(from: orderBook)
+        firstLoco.updateOrders(from: orderBook)
         XCTAssertTrue(firstLoco.orders.count == 1)
         XCTAssertEqual(firstLoco.orders.count, orderBook.orders.count)
 
@@ -185,8 +185,8 @@ class MarketDemandTests: XCTestCase {
         XCTAssertTrue( orderBook1.orders.count == 1 )
         XCTAssertTrue( orderBook2.orders.count == 1 )
 
-        firstLoco.setOrders(from: orderBook1)
-        secondLoco.setOrders(from: orderBook2)
+        firstLoco.updateOrders(from: orderBook1)
+        secondLoco.updateOrders(from: orderBook2)
 
         XCTAssertTrue(firstLoco.orders.count == 1)
         XCTAssertTrue(secondLoco.orders.count == 1)
@@ -235,9 +235,9 @@ class MarketDemandTests: XCTestCase {
         XCTAssertTrue( orderBook2.orders.count == 1 )
         XCTAssertTrue( orderBook3.orders.count == 1 )
 
-        firstLoco.setOrders(from: orderBook1)
-        secondLoco.setOrders(from: orderBook2)
-        thirdLoco.setOrders(from: orderBook3)
+        firstLoco.updateOrders(from: orderBook1)
+        secondLoco.updateOrders(from: orderBook2)
+        thirdLoco.updateOrders(from: orderBook3)
 
         XCTAssertTrue(firstLoco.orders.count == 1)
         XCTAssertTrue(secondLoco.orders.count == 1)
@@ -270,7 +270,7 @@ class MarketDemandTests: XCTestCase {
             do {
                 let book = OrderBook.init(capacity: element.orderCapacity, orders: element.orders)
                 try book.add(.existingOrder)
-                element.setOrders(from: book)
+                element.updateOrders(from: book)
 
                 XCTAssertTrue(element.orders.count == 1)
                 XCTAssertTrue(element.existingOrders.count == 1)
