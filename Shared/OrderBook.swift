@@ -20,35 +20,36 @@ enum OrderBookError : Error, Equatable {
 // A proxy-style pattern to add, remove orders to/from a locomotive
 class OrderBook {
     let capacity: Int
-    private (set) var orders: [Order]?
+    private (set) var orders: [Order] = [Order]()
 
+    public var isEmpty: Bool {
+        return self.orders.isEmpty
+    }
+    public var count: Int {
+        return self.orders.count
+    }
+
+    // Orders can be overridden to check against capacity & other rules
     init(capacity: Int, orders: [Order]? = nil) {
         self.capacity = capacity
-        if (orders == nil) {
-            self.orders = [Order]()
-            self.orders?.reserveCapacity(capacity)
-        }
-        else {
-            self.orders = orders
+        if let orders = orders {
+            self.setOrders(orders)
         }
     }
 }
 
 extension OrderBook {
     var isFull : Bool {
-        guard let hasOrders = self.orders else {
+        guard (orders.count >= capacity) else {
             return false
         }
-        guard (hasOrders.count < capacity) else {
-            return true
-        }
-        return false
+        return true
     }
 }
 
 extension OrderBook {
     func filterOrders(for state: Order.State) -> [Order]? {
-        return self.orders?.filter({ return $0.state == state })
+        return self.orders.filter({ return $0.state == state })
     }
 }
 
@@ -59,6 +60,7 @@ extension OrderBook {
         guard !isFull else {
             throw OrderBookError.ordersAreFull
         }
+        
         if (orderState == .initialOrder) {
             do {
                 try checkForInitialOrders()
@@ -68,15 +70,16 @@ extension OrderBook {
             }
         }
 
+
         let order: Order = Order(orderState)
-        self.orders?.append(order)
+        self.orders.append(order)
     }
 }
 
 extension OrderBook {
 
     // transfer an order from one state to another
-    func transfer(order: inout Order, to state: Order.State) throws -> Order {
+    func transfer(order: Order, to state: Order.State) throws -> Order {
         guard (state == .existingOrder || state == .completedOrder) else {
             throw OrderError.orderCannotBe(state)
         }
@@ -84,12 +87,11 @@ extension OrderBook {
         return order
     }
 
-    func transfer(orders: inout [Order], to state: Order.State) throws {
+    func transfer(orders: [Order], to state: Order.State) throws {
         do {
-            for (index, element) in orders.enumerated() {
-                var order = element
-                order = try transfer(order: &order, to: state)
-                orders[index] = order
+            for order in orders {
+                var order = order
+                order = try transfer(order: order, to: state)
             }
         } catch {
             throw error
@@ -100,7 +102,7 @@ extension OrderBook {
 extension OrderBook {
 
     // Reduce an order by a value
-    func reduce(order: inout Order, by amount: Int) throws {
+    func reduce(order: Order, by amount: Int) throws {
         do {
             let _ = try order.reduceValue(by: amount)
             if (order.value == 0) {
@@ -110,6 +112,18 @@ extension OrderBook {
         catch {
             throw error
         }
+    }
+}
+
+extension OrderBook {
+    func setOrders(_ orders: [Order]) {
+        guard (!orders.isEmpty) else {
+            return
+        }
+        guard ((orders.count > 0) && (orders.count <= self.capacity)) else {
+            return
+        }
+        self.orders = orders
     }
 }
 

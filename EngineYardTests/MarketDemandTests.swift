@@ -46,17 +46,12 @@ class MarketDemandTests: XCTestCase {
 
     func testMKT_GreenHasNoGenerations() {
         let boardRef = self.locomotives
+
+        // Market should be empty
         let market = Market.init(with: boardRef)
         let currentMarket = market.currentMarket
         XCTAssertTrue(currentMarket?.count == 0)
         XCTAssertTrue(market.green?.count == 0)
-    }
-
-    func testMKT_NoGenerationsExist() {
-        let boardRef = self.locomotives
-        let market = Market.init(with: boardRef)
-        let currentMarket = market.currentMarket
-        XCTAssertTrue(currentMarket?.count == 0)
     }
 
     func testMKTDemand_NoGenerationsExist_ForInitialOrder() {
@@ -71,12 +66,12 @@ class MarketDemandTests: XCTestCase {
             try orderBook.add(.initialOrder)
         )
 
-        guard let orderBookOrders = orderBook.orders else {
-            XCTFail("orderbook orders fail")
-            return
-        }
+        XCTAssertTrue(orderBook.count == 1, "\(orderBook.count)")
 
-        firstLoco.setOrders(orders: orderBookOrders)
+        firstLoco.setOrders(from: orderBook)
+        XCTAssertTrue(firstLoco.orders.count == 1, "\(orderBook.count)")
+
+        XCTAssertEqual(firstLoco.orders.count, orderBook.orders.count)
 
         let market = Market.init(with: boardRef)
         let currentMarket = market.currentMarket
@@ -84,32 +79,28 @@ class MarketDemandTests: XCTestCase {
         XCTAssertTrue(currentMarket?.count == 0)
     }
 
-
     func testMKTDemand_OneGenerationsExist_ForExistingOrder() {
         let boardRef = self.locomotives
-
         guard let firstLoco = boardRef.first else {
+            XCTFail("No first loco found")
             return
         }
+        let capacity = firstLoco.orderCapacity
 
-        let orderBook = OrderBook.init(capacity: firstLoco.orderCapacity, orders: firstLoco.orders)
+        let orderBook = OrderBook.init(capacity: capacity, orders: firstLoco.orders)
+        XCTAssertTrue(orderBook.isEmpty)
+
         XCTAssertNoThrow(
             try orderBook.add(.existingOrder)
         )
 
-        guard let orderBookOrders = orderBook.orders else {
-            XCTFail("orderbook orders fail")
-            return
-        }
+        XCTAssertTrue(orderBook.orders.count == 1)
+        XCTAssertTrue(firstLoco.orders.count == 0)
+        XCTAssertFalse(orderBook.isFull)
 
-        XCTAssertTrue(orderBookOrders.count == 1)
-        firstLoco.setOrders(orders: orderBookOrders)
-        XCTAssertTrue(firstLoco.orders.count == 1)
+        firstLoco.setOrders(from: orderBook)
 
-        let market = Market.init(with: boardRef)
-
-        XCTAssertTrue(market.green?.count == 1)
-        XCTAssertTrue(market.currentMarket?.count == 1)
+        XCTAssertEqual(firstLoco.orders.count, orderBook.orders.count)
     }
 
     func testMKTDemand_OneGenerationsExist_ForCompletedOrder() {
@@ -124,14 +115,15 @@ class MarketDemandTests: XCTestCase {
             try orderBook.add(.completedOrder)
         )
 
-        guard let orderBookOrders = orderBook.orders else {
-            XCTFail("orderbook orders fail")
-            return
-        }
+        XCTAssertTrue(orderBook.orders.count == 1)
+        XCTAssertFalse(orderBook.isEmpty)
+        XCTAssertFalse(orderBook.isFull)
 
-        XCTAssertTrue(orderBookOrders.count == 1)
-        firstLoco.setOrders(orders: orderBookOrders)
+
+        XCTAssertTrue(orderBook.orders.count == 1)
+        firstLoco.setOrders(from: orderBook)
         XCTAssertTrue(firstLoco.orders.count == 1)
+        XCTAssertEqual(firstLoco.orders.count, orderBook.orders.count)
 
         let market = Market.init(with: boardRef)
 
@@ -146,22 +138,19 @@ class MarketDemandTests: XCTestCase {
             return
         }
 
-        let orderBook = OrderBook.init(capacity: firstLoco.orderCapacity, orders: firstLoco.orders)
+        let orderBook = OrderBook.init(capacity: firstLoco.orderCapacity)
+        
         XCTAssertNoThrow(
             try orderBook.add(.existingOrder)
         )
 
-        guard let orderBookOrders = orderBook.orders else {
-            XCTFail("orderbook orders fail")
-            return
-        }
-
-        XCTAssertTrue(orderBookOrders.count == 1)
-        firstLoco.setOrders(orders: orderBookOrders)
+        XCTAssertTrue(orderBook.orders.count == 1)
+        firstLoco.setOrders(from: orderBook)
         XCTAssertTrue(firstLoco.orders.count == 1)
+        XCTAssertEqual(firstLoco.orders.count, orderBook.orders.count)
 
+        // Get market, expected: green to have 1 generation existing
         let market = Market.init(with: boardRef)
-
         XCTAssertTrue(market.green?.count == 1)
         XCTAssertTrue(market.red?.count == 0)
         XCTAssertTrue(market.yellow?.count == 0)
@@ -193,33 +182,24 @@ class MarketDemandTests: XCTestCase {
 
         XCTAssertNoThrow( try orderBook1.add( .existingOrder) )
         XCTAssertNoThrow( try orderBook2.add( .existingOrder) )
-        XCTAssertTrue( orderBook1.orders?.count == 1 )
-        XCTAssertTrue( orderBook2.orders?.count == 1 )
+        XCTAssertTrue( orderBook1.orders.count == 1 )
+        XCTAssertTrue( orderBook2.orders.count == 1 )
 
-        guard let oBook1 = orderBook1.orders else {
-            XCTFail("OrderBook failed")
-            return
-        }
-        guard let oBook2 = orderBook2.orders else {
-            XCTFail("OrderBook failed")
-            return
-        }
-
-        firstLoco.setOrders(orders: oBook1)
-        secondLoco.setOrders(orders: oBook2)
+        firstLoco.setOrders(from: orderBook1)
+        secondLoco.setOrders(from: orderBook2)
 
         XCTAssertTrue(firstLoco.orders.count == 1)
         XCTAssertTrue(secondLoco.orders.count == 1)
 
         // Test the market, should find 2 green generations
         let market = Market.init(with: boardRef)
-
         XCTAssertTrue(market.green?.count == 2)
         XCTAssertTrue(market.red?.count == 0)
         XCTAssertTrue(market.yellow?.count == 0)
         XCTAssertTrue(market.blue?.count == 0)
         XCTAssertTrue(market.currentMarket?.count == 2)
     }
+
 
     func testThreeGenerationsExist() {
         let boardRef = self.locomotives
@@ -251,26 +231,13 @@ class MarketDemandTests: XCTestCase {
         XCTAssertNoThrow( try orderBook2.add( .existingOrder) )
         XCTAssertNoThrow( try orderBook3.add( .existingOrder) )
 
-        XCTAssertTrue( orderBook1.orders?.count == 1 )
-        XCTAssertTrue( orderBook2.orders?.count == 1 )
-        XCTAssertTrue( orderBook3.orders?.count == 1 )
+        XCTAssertTrue( orderBook1.orders.count == 1 )
+        XCTAssertTrue( orderBook2.orders.count == 1 )
+        XCTAssertTrue( orderBook3.orders.count == 1 )
 
-        guard let oBook1 = orderBook1.orders else {
-            XCTFail("OrderBook failed")
-            return
-        }
-        guard let oBook2 = orderBook2.orders else {
-            XCTFail("OrderBook failed")
-            return
-        }
-        guard let oBook3 = orderBook3.orders else {
-            XCTFail("OrderBook failed")
-            return
-        }
-
-        firstLoco.setOrders(orders: oBook1)
-        secondLoco.setOrders(orders: oBook2)
-        thirdLoco.setOrders(orders: oBook3)
+        firstLoco.setOrders(from: orderBook1)
+        secondLoco.setOrders(from: orderBook2)
+        thirdLoco.setOrders(from: orderBook3)
 
         XCTAssertTrue(firstLoco.orders.count == 1)
         XCTAssertTrue(secondLoco.orders.count == 1)
@@ -278,13 +245,13 @@ class MarketDemandTests: XCTestCase {
 
         // Test the market, should find 3 green generations
         let market = Market.init(with: boardRef)
-
         XCTAssertTrue(market.green?.count == 3)
         XCTAssertTrue(market.red?.count == 0)
         XCTAssertTrue(market.yellow?.count == 0)
         XCTAssertTrue(market.blue?.count == 0)
         XCTAssertTrue(market.currentMarket?.count == 3)
     }
+
 
     // Test 10 locomotives
     // Expected:
@@ -303,11 +270,7 @@ class MarketDemandTests: XCTestCase {
             do {
                 let book = OrderBook.init(capacity: element.orderCapacity, orders: element.orders)
                 try book.add(.existingOrder)
-                guard let orders = book.orders else {
-                    XCTFail("No orders")
-                    return
-                }
-                element.setOrders(orders: orders)
+                element.setOrders(from: book)
 
                 XCTAssertTrue(element.orders.count == 1)
                 XCTAssertTrue(element.existingOrders.count == 1)
@@ -325,12 +288,11 @@ class MarketDemandTests: XCTestCase {
         //  2 blue generations
         //  2 yellow generations
         let market = Market.init(with: boardRef)
-        
         XCTAssertTrue(market.green?.count == 3, "Found: \(String(describing: market.green?.count))")
         XCTAssertTrue(market.red?.count == 3, "Found: \(String(describing: market.red?.count))")
         XCTAssertTrue(market.blue?.count == 2, "Found: \(String(describing: market.blue?.count))")
         XCTAssertTrue(market.yellow?.count == 2, "Found: \(String(describing: market.yellow?.count))")
         XCTAssertTrue(market.currentMarket?.count == 10, "Found: \(String(describing: market.currentMarket?.count))")
-
     }
+
 }
