@@ -65,11 +65,24 @@ extension Locomotive {
     private func changeState(to: Locomotive.State) {
         self.state = to
     }
+}
 
-    internal func setOrders(from orderBook: OrderBook) {
+extension Locomotive: UpdateOrdersDelegate {
+    internal func updateOrders(from book: OrderBook) {
+        guard ((!book.isEmpty) && (book.orders.count > 0 && book.orders.count <= self.orderCapacity)) else {
+            return
+        }
+        self.orders = book.orders
+    }
+}
+
+/*
+extension Locomotive : UpdateOrdersDelegate {
+    internal func updateOrders(from orderBook: OrderBook) {
         guard ((!orderBook.isEmpty) && (orderBook.orders.count > 0 && orderBook.orders.count <= self.orderCapacity)) else {
             return
         }
         self.orders = orderBook.orders
     }
 }
+*/

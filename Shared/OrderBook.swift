@@ -17,9 +17,15 @@ enum OrderBookError : Error, Equatable {
     case alreadyHasInitialOrders(orders: [Order]?)
 }
 
+protocol UpdateOrdersDelegate: AnyObject {
+    func updateOrders(from book: OrderBook)
+}
+
 // A proxy-style pattern to add, remove orders to/from a locomotive
 class OrderBook {
-    let capacity: Int
+    private weak var delegate: UpdateOrdersDelegate?
+
+    private let capacity: Int
     private (set) var orders: [Order] = [Order]()
 
     public var isEmpty: Bool {
@@ -33,8 +39,18 @@ class OrderBook {
     init(capacity: Int, orders: [Order]? = nil) {
         self.capacity = capacity
         if let orders = orders {
-            self.setOrders(orders)
+            guard (!orders.isEmpty) else {
+                return
+            }
+            guard ((orders.count > 0) && (orders.count <= self.capacity)) else {
+                return
+            }
+            self.orders = orders
         }
+    }
+
+    func setDelegate(delegate: UpdateOrdersDelegate) {
+        self.delegate = delegate
     }
 }
 
@@ -50,6 +66,12 @@ extension OrderBook {
 extension OrderBook {
     func filterOrders(for state: Order.State) -> [Order]? {
         return self.orders.filter({ return $0.state == state })
+    }
+}
+
+extension OrderBook {
+    func updateOrders() {
+        self.delegate?.updateOrders(from: self)
     }
 }
 
@@ -112,18 +134,6 @@ extension OrderBook {
         catch {
             throw error
         }
-    }
-}
-
-extension OrderBook {
-    func setOrders(_ orders: [Order]) {
-        guard (!orders.isEmpty) else {
-            return
-        }
-        guard ((orders.count > 0) && (orders.count <= self.capacity)) else {
-            return
-        }
-        self.orders = orders
     }
 }
 
