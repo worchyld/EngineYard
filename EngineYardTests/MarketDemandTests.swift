@@ -308,4 +308,8 @@ class MarketDemandTests: XCTestCase {
         XCTAssertTrue(market.currentMarket?.count == 10, "Found: \(String(describing: market.currentMarket?.count))")
     }
 
+    func testRerollOrders() {
+        
+    }
+
 }

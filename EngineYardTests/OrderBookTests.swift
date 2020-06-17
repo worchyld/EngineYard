@@ -131,7 +131,7 @@ class OrderBookTests: XCTestCase {
         )
         XCTAssertTrue(firstOrder.value == 6)
         XCTAssertNoThrow(
-            try orderBook.reduce(order: firstOrder, by: 1)
+            try orderBook.decrease(order: firstOrder, by: 1)
         )
         XCTAssertTrue(firstOrder.value == 5, "Expected: 5, Found: \(firstOrder.value)")
     }

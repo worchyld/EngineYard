@@ -12,7 +12,7 @@ enum OrderBookError : Error, Equatable {
     case undefinedOrderBook
     case ordersAreFull
     case noOrdersFound
-    case didNotFindOrdersWithState(_ state: Order.State)
+    case noOrdersWithState(_ state: Order.State)
     case unknownOrderState(_ state: Order.State?)
     case alreadyHasInitialOrders(orders: [Order]?)
 }
@@ -123,8 +123,8 @@ extension OrderBook {
 
 extension OrderBook {
 
-    // Reduce an order by a value
-    func reduce(order: Order, by amount: Int) throws {
+    // Decrease an order by a value
+    func decrease(order: Order, by amount: Int) throws {
         do {
             let _ = try order.reduceValue(by: amount)
             if (order.value == 0) {
@@ -141,29 +141,28 @@ extension OrderBook {
 
     // Can only re-roll completed orders
     func reroll(completedOrders: [Order]) throws -> [Order] {
+        guard (!completedOrders.isEmpty && completedOrders.count > 0) else {
+            throw OrderBookError.noOrdersFound
+        }
+        let filter = completedOrders
+            .filter { $0.state == .completedOrder  }
+
+        guard (filter.count == completedOrders.count) else {
+            throw OrderBookError.noOrdersWithState(.completedOrder)
+        }
+
+        do {
+             let _ = try completedOrders.forEach { (order: Order) in
+                print ("current value -- \(order.value)")
+                let value = Die.roll
+                print ("rolled die -- \(value)")
+                try order.setValue(value)
+            }
+        } catch {
+            throw error
+        }
+
         return completedOrders
-//        guard (!completedOrders.isEmpty && completedOrders.count > 0) else {
-//            throw OrderBookError.noOrdersFound
-//        }
-//        let filter = completedOrders
-//            .filter { $0.state == .completedOrder  }
-//
-//        guard (filter.count == completedOrders.count) else {
-//            throw OrderBookError.didNotFindOrdersWithState(.completedOrder)
-//        }
-//
-//        do {
-//             let _ = try completedOrders.forEach { (order: Order) in
-//                print ("current value -- \(order.value)")
-//                let value = Die.roll
-//                print ("Rolled die -- \(value)")
-//                try order.setValue(value)
-//            }
-//        } catch {
-//            throw error
-//        }
-//
-//        return completedOrders
     }
 }
 
