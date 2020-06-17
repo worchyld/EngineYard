@@ -17,10 +17,20 @@ class FamilyTests: XCTestCase {
     }
 
     func testColorIsEquatable() {
-        let color1 = Family.init(color: .green, generation: .first)
-        let color2 = Family.init(color: .green, generation: .first)
+        let color1 = LocomotiveGroup.init(color: .green, generation: .first)
+        let color2 = LocomotiveGroup.init(color: .green, generation: .first)
 
         XCTAssertEqual(color1, color2)
+    }
+
+    func testGroupDescription() {
+        let color1 = LocomotiveGroup.init(color: .green, generation: .first)
+        XCTAssertTrue(color1.description == "Green 1st Generation", "\(color1.description)")
+    }
+
+    func testLocomotiveGroupDescription() {
+        let loco = Locomotive.init("Green.1", 4, .green, .first, 4)
+        XCTAssertTrue(loco.group.description == "Green 1st Generation", "\(loco.group.description)")
     }
 
 }

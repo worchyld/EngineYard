@@ -12,9 +12,15 @@ import Foundation
 class Locomotive: Identifiable {
     let id: UUID = UUID()
     let name: String
-    let family: Family
+    let group: LocomotiveGroup
     let cost: Int
     var cards: [Card] = [Card]()
+
+    lazy var formattedCost: String? = {
+        let cache = NumberFormatCache.currencyRateFormatter
+        let number = NSNumber(integerLiteral: self.cost)
+        return cache.string(from: number)
+    }()
 
     // Orders ------------- //
     let orderCapacity: Int
@@ -42,19 +48,29 @@ class Locomotive: Identifiable {
     }
     var state: Locomotive.State = Locomotive.State.unavailable
 
-    init(_ name: String, _ cost: Int, _ color: Family.Color, _ generation: Family.Generation, _ orderCapacity: Int) {
+    init(_ name: String, _ cost: Int, _ color: Locomotive.Color, _ generation: Locomotive.Generation, _ orderCapacity: Int) {
         self.name = name
         self.cost = cost
-        self.family = Family(color: color, generation: generation)
+        self.group = LocomotiveGroup(color: color, generation: generation)
         self.orderCapacity = orderCapacity
         self.orders.reserveCapacity(orderCapacity)
         //self.orders = Array<Order?>(repeating: nil, count: orderCapacity)
     }
 }
 
-extension Locomotive: FamilyDelegate {
-    var color: Family.Color { return self.family.color }
-    var generation: Family.Generation { return self.family.generation }
+extension Locomotive : CustomStringConvertible {
+    var description: String {
+        var outputtedCost = "NaN"
+        if let formattedCost = formattedCost {
+            outputtedCost = formattedCost
+        }
+        return ("\(name), \(outputtedCost), \(group), orders: \(orders)")
+    }
+}
+
+extension Locomotive: LocomotiveGroupDelegate {
+    var color: Locomotive.Color { return self.group.color }
+    var generation: Locomotive.Generation { return self.group.generation }
 }
 
 extension Locomotive: Equatable {

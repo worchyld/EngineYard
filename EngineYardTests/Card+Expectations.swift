@@ -7,13 +7,14 @@
 //
 
 import Foundation
-import EngineYard
+
+@testable import EngineYard
 
 // Used for internal board integrity tests
 
 public struct Expected {
-    let color: Family.Color?
-    let generation: Family.Generation?
+    let color: Locomotive.Color?
+    let generation: Locomotive.Generation?
 
     static let totalCardsInGame = 43
     static let totalLocomotivesInGame = 14

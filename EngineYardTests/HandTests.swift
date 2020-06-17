@@ -87,8 +87,8 @@ class HandTests: XCTestCase {
         XCTAssertTrue(hand.cards.count == 1)
 
         XCTAssertThrowsError(try hand.add(secondCard)) { error in
-            let family = Family.init(color: .green, generation: .first)
-            XCTAssertEqual(error as! HandError, HandError.alreadyHaveCardFromThisFamily( family ))
+            let group = LocomotiveGroup.init(color: .green, generation: .first)
+            XCTAssertEqual(error as! HandError, HandError.alreadyHaveCardFromThisGroup(group) )
         }
     }
 

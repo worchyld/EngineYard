@@ -25,7 +25,7 @@ class CardBuilderTests: XCTestCase {
 
     func testGreenCardsEquals20() {
         let cards = Card.build()
-        let color = Family.Color.green
+        let color = Locomotive.Color.green
         let expected = Expected.init(color: color, generation: nil)
 
         let found = Card.filter(cards: cards, matching: (color: color, generation: nil)).count
@@ -35,7 +35,7 @@ class CardBuilderTests: XCTestCase {
 
     func testRedCardsEquals13() {
         let cards = Card.build()
-        let color = Family.Color.red
+        let color = Locomotive.Color.red
         let expected = Expected.init(color: color, generation: nil)
 
         let found = Card.filter(cards: cards, matching: (color: color, generation: nil)).count
@@ -45,7 +45,7 @@ class CardBuilderTests: XCTestCase {
 
     func testYellowCardsEquals7() {
         let cards = Card.build()
-        let color = Family.Color.yellow
+        let color = Locomotive.Color.yellow
         let expected = Expected.init(color: color, generation: nil)
 
         let found = Card.filter(cards: cards, matching: (color: color, generation: nil)).count
@@ -55,7 +55,7 @@ class CardBuilderTests: XCTestCase {
 
     func testBlueCardsEquals3() {
         let cards = Card.build()
-        let color = Family.Color.blue
+        let color = Locomotive.Color.blue
         let expected = Expected.init(color: color, generation: nil)
 
         let found = Card.filter(cards: cards, matching: (color: color, generation: nil)).count
@@ -66,7 +66,7 @@ class CardBuilderTests: XCTestCase {
     func test1stGenerationEquals10() {
         // run report
         let cards = Card.build()
-        let generation = Family.Generation.first
+        let generation = Locomotive.Generation.first
         let expected = Expected.init(color: nil , generation: generation)
 
         let found = Card.filter(cards: cards, matching: (color: nil, generation: generation)).count
@@ -77,7 +77,7 @@ class CardBuilderTests: XCTestCase {
     func test2ndGenerationEquals11() {
         // run report
         let cards = Card.build()
-        let generation = Family.Generation.second
+        let generation = Locomotive.Generation.second
         let expected = Expected.init(color: nil , generation: generation)
 
         let found = Card.filter(cards: cards, matching: (color: nil, generation: generation)).count
@@ -88,7 +88,7 @@ class CardBuilderTests: XCTestCase {
     func test3rdGenerationEquals10() {
         // run report
         let cards = Card.build()
-        let generation = Family.Generation.third
+        let generation = Locomotive.Generation.third
         let expected = Expected.init(color: nil , generation: generation)
 
         let found = Card.filter(cards: cards, matching: (color: nil, generation: generation)).count
@@ -99,7 +99,7 @@ class CardBuilderTests: XCTestCase {
     func test4thGenerationEquals8() {
         // run report
         let cards = Card.build()
-        let generation = Family.Generation.fourth
+        let generation = Locomotive.Generation.fourth
         let expected = Expected.init(color: nil , generation: generation)
 
         let found = Card.filter(cards: cards, matching: (color: nil, generation: generation)).count
@@ -110,7 +110,7 @@ class CardBuilderTests: XCTestCase {
     func test5thGenerationEquals4() {
         // run report
         let cards = Card.build()
-        let generation = Family.Generation.fifth
+        let generation = Locomotive.Generation.fifth
         let expected = Expected.init(color: nil , generation: generation)
 
         let found = Card.filter(cards: cards, matching: (color: nil, generation: generation)).count
@@ -119,12 +119,12 @@ class CardBuilderTests: XCTestCase {
     }
 
     func testFamilyColorsEquals4() {
-        let allColors = Family.Color.allCases
+        let allColors = Locomotive.Color.allCases
         XCTAssertTrue(allColors.count == 4)
     }
 
     func testFamilyGenerationsEquals5() {
-        let allGenerations = Family.Generation.allCases
+        let allGenerations = Locomotive.Generation.allCases
         XCTAssertTrue(allGenerations.count == 5)
     }
 

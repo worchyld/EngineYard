@@ -13,7 +13,7 @@ import Foundation
 extension Card {
 
     // matches on equality
-    public static func filter(cards: [Card], matching: (color: Family.Color?, generation: Family.Generation?)) -> [Card] {
+    public static func filter(cards: [Card], matching: (color: Locomotive.Color?, generation: Locomotive.Generation?)) -> [Card] {
         if (matching.color == nil) && (matching.generation == nil) {
             return []
         }

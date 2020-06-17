@@ -10,7 +10,7 @@ import Foundation
 
 // Filter on the array of locomotives held by the board
 extension Locomotive {
-    public static func filter(locomotives: [Locomotive], on color: Family.Color) -> [Locomotive]? {
+    public static func filter(locomotives: [Locomotive], on color: Locomotive.Color) -> [Locomotive]? {
         let filtered = locomotives.filter { (locomotive) -> Bool in
             return locomotive.color == color
         }.sorted { (a: Locomotive, b: Locomotive) -> Bool in
@@ -19,7 +19,7 @@ extension Locomotive {
         return filtered
     }
 
-    public static func filter(locomotives: [Locomotive], on generation: Family.Generation) -> [Locomotive]? {
+    public static func filter(locomotives: [Locomotive], on generation: Locomotive.Generation) -> [Locomotive]? {
         let filtered = locomotives.filter { (locomotive) -> Bool in
             return locomotive.generation == generation
         }.sorted { (a: Locomotive, b: Locomotive) -> Bool in

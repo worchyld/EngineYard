@@ -16,7 +16,7 @@
 		4D10C59F2486D08500238508 /* EngineYardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D10C59E2486D08500238508 /* EngineYardTests.swift */; };
 		4D10C60C2486D41700238508 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D10C60B2486D41700238508 /* Card.swift */; };
 		4D10C60E2486D68C00238508 /* Card+Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D10C60D2486D68C00238508 /* Card+Builder.swift */; };
-		4D10C6102486D6CC00238508 /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D10C60F2486D6CC00238508 /* Family.swift */; };
+		4D10C6102486D6CC00238508 /* Locomotive+Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D10C60F2486D6CC00238508 /* Locomotive+Group.swift */; };
 		4D10C6122486DB1B00238508 /* CardBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D10C6112486DB1B00238508 /* CardBuilderTests.swift */; };
 		4D10C6162486DC4700238508 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D10C6152486DC4700238508 /* Constants.swift */; };
 		4D10C6182486DCF200238508 /* Locomotive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D10C6172486DCF200238508 /* Locomotive.swift */; };
@@ -85,7 +85,7 @@
 		4D10C5A02486D08500238508 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D10C60B2486D41700238508 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		4D10C60D2486D68C00238508 /* Card+Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Builder.swift"; sourceTree = "<group>"; };
-		4D10C60F2486D6CC00238508 /* Family.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Family.swift; sourceTree = "<group>"; };
+		4D10C60F2486D6CC00238508 /* Locomotive+Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locomotive+Group.swift"; sourceTree = "<group>"; };
 		4D10C6112486DB1B00238508 /* CardBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBuilderTests.swift; sourceTree = "<group>"; };
 		4D10C6152486DC4700238508 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4D10C6172486DCF200238508 /* Locomotive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locomotive.swift; sourceTree = "<group>"; };
@@ -220,12 +220,12 @@
 				4DA1C13C2486EC8B004C4121 /* Extensions */,
 				4DA1C1492486EE33004C4121 /* Helpers */,
 				4D10C6152486DC4700238508 /* Constants.swift */,
-				4D10C60F2486D6CC00238508 /* Family.swift */,
 				4D10C60B2486D41700238508 /* Card.swift */,
 				4D10C60D2486D68C00238508 /* Card+Builder.swift */,
 				4DDDD3F8248E935700A2DA86 /* Card+Filter.swift */,
 				4D10C6172486DCF200238508 /* Locomotive.swift */,
 				4DA1C14E2486FC12004C4121 /* Locomotive+Builder.swift */,
+				4D10C60F2486D6CC00238508 /* Locomotive+Group.swift */,
 				4D34A85E2492534D00590EFD /* Locomotive+Filter.swift */,
 				4D34A8602495637B00590EFD /* Production.swift */,
 				4D66EBD5248FE700005DE7F0 /* Order.swift */,
@@ -400,7 +400,7 @@
 				4D34A85F2492534D00590EFD /* Locomotive+Filter.swift in Sources */,
 				4D66EBCA248F836E005DE7F0 /* Hand.swift in Sources */,
 				4D10C60C2486D41700238508 /* Card.swift in Sources */,
-				4D10C6102486D6CC00238508 /* Family.swift in Sources */,
+				4D10C6102486D6CC00238508 /* Locomotive+Group.swift in Sources */,
 				4DDDD3F9248E935700A2DA86 /* Card+Filter.swift in Sources */,
 				4D66EBD6248FE700005DE7F0 /* Order.swift in Sources */,
 				4DA1C1392486EC3D004C4121 /* Die.swift in Sources */,
