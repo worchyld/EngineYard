@@ -75,14 +75,3 @@ extension Locomotive: UpdateOrdersDelegate {
         self.orders = book.orders
     }
 }
-
-/*
-extension Locomotive : UpdateOrdersDelegate {
-    internal func updateOrders(from orderBook: OrderBook) {
-        guard ((!orderBook.isEmpty) && (orderBook.orders.count > 0 && orderBook.orders.count <= self.orderCapacity)) else {
-            return
-        }
-        self.orders = orderBook.orders
-    }
-}
-*/
