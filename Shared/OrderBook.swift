@@ -18,7 +18,7 @@ enum OrderBookError : Error, Equatable {
 }
 
 protocol UpdateOrdersDelegate: AnyObject {
-    func updateOrders(from book: OrderBook)
+    func updateLocomotiveOrders(from book: OrderBook)
 }
 
 // A proxy-style pattern to add, remove orders to/from a locomotive
@@ -33,6 +33,12 @@ class OrderBook {
     }
     public var count: Int {
         return self.orders.count
+    }
+
+    init(with locomotive: Locomotive) {
+        self.capacity = locomotive.orderCapacity
+        self.orders = locomotive.orders
+        self.delegate = locomotive
     }
 
     // Orders can be overridden to check against capacity & other rules
@@ -71,7 +77,7 @@ extension OrderBook {
 
 extension OrderBook {
     func updateOrders() {
-        self.delegate?.updateOrders(from: self)
+        self.delegate?.updateLocomotiveOrders(from: self)
     }
 }
 
@@ -140,19 +146,19 @@ extension OrderBook {
 extension OrderBook {
 
     // Can only re-roll completed orders
-    func reroll(completedOrders: [Order]) throws -> [Order] {
-        guard (!completedOrders.isEmpty && completedOrders.count > 0) else {
-            throw OrderBookError.noOrdersFound
-        }
-        let filter = completedOrders
-            .filter { $0.state == .completedOrder  }
+    func rerollCompletedOrders() throws {
 
-        guard (filter.count == completedOrders.count) else {
+        guard (!orders.isEmpty && orders.count > 0) else {
+            throw OrderBookError.noOrdersFound            
+        }
+        let filter = orders
+            .filter { $0.state == .completedOrder }
+        if (filter.isEmpty || filter.count == 0) {
             throw OrderBookError.noOrdersWithState(.completedOrder)
         }
 
         do {
-             let _ = try completedOrders.forEach { (order: Order) in
+             let _ = try filter.forEach { (order: Order) in
                 print ("current value -- \(order.value)")
                 let value = Die.roll
                 print ("rolled die -- \(value)")
@@ -162,7 +168,6 @@ extension OrderBook {
             throw error
         }
 
-        return completedOrders
     }
 }
 

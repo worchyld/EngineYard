@@ -41,6 +41,12 @@ class Locomotive: Identifiable {
             return o.state == .initialOrder
         }.first
     }()
+    var isFull: Bool {
+        guard (orders.count >= orderCapacity) else {
+            return false
+        }
+        return true
+    }
     // -------------------- //
 
     enum State: Int, CaseIterable {
@@ -86,7 +92,7 @@ extension Locomotive {
 }
 
 extension Locomotive: UpdateOrdersDelegate {
-    internal func updateOrders(from book: OrderBook) {
+    internal func updateLocomotiveOrders(from book: OrderBook) {
         guard ((!book.isEmpty) && (book.orders.count > 0 && book.orders.count <= self.orderCapacity)) else {
             return
         }

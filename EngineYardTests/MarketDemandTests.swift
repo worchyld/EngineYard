@@ -309,7 +309,23 @@ class MarketDemandTests: XCTestCase {
     }
 
     func testRerollOrders() {
+        let boardRef = self.locomotives
+        guard let firstLoco = boardRef.first else {
+            XCTFail("No first loco found")
+            return
+        }
         
+        let book = OrderBook.init(with: firstLoco)
+        XCTAssertNoThrow( try book.add( .completedOrder) )
+        XCTAssertTrue(book.orders.count == 1)
+        XCTAssertTrue(firstLoco.orders.count == 0)
+        book.updateOrders()
+        XCTAssertTrue(firstLoco.orders.count == 1)
+        XCTAssertTrue(firstLoco.existingOrders.count == 0)
+        XCTAssertTrue(firstLoco.completedOrders.count == 1)
+        XCTAssertNil(firstLoco.initialOrder)
+        
+        //book.reroll(completedOrders: <#T##[Order]#>)
     }
 
 }
