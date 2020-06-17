@@ -152,7 +152,7 @@ class OrderBookTests: XCTestCase {
         XCTAssertTrue(orderBook.orders.count == 1)
 
         // check against initial orders
-        let initialOrders = orderBook.filterOrders(for: .initialOrder)
+        let initialOrders = orderBook.filter(on: .initialOrder)
         XCTAssertNotNil(initialOrders)
         XCTAssertTrue(initialOrders?.count == 1)
 
@@ -161,7 +161,7 @@ class OrderBookTests: XCTestCase {
             try orderBook.add(.initialOrder)
         )
 
-        XCTAssertTrue(orderBook.filterOrders(for: .initialOrder)?.count == 1)
+        XCTAssertTrue(orderBook.filter(on: .initialOrder)?.count == 1)
     }
 
     func testRerollCompletedOrders() {
@@ -172,7 +172,31 @@ class OrderBookTests: XCTestCase {
             XCTAssertNoThrow( try orderBook.add(.completedOrder) )
         }
         XCTAssertTrue(orderBook.orders.count == capacity)
-        XCTAssertTrue(orderBook.filterOrders(for: .completedOrder)?.count == 3)
+        XCTAssertTrue(orderBook.filter(on: .completedOrder)?.count == capacity)
+        XCTAssertTrue(orderBook.filter(on: .initialOrder)?.count == 0)
+        XCTAssertTrue(orderBook.filter(on: .existingOrder)?.count == 0)
 
+        XCTAssertNoThrow(try orderBook.rerollCompletedOrders())
+        XCTAssertTrue(orderBook.filter(on: .completedOrder)?.count == capacity)
+        XCTAssertTrue(orderBook.orders.count == capacity)
+        XCTAssertTrue(orderBook.isFull)
+        XCTAssertFalse(orderBook.isEmpty)
+    }
+
+    func testRerollAndTransfer() {
+        let capacity = 3
+        let orderBook = OrderBook.init(capacity: capacity)
+
+        for _ in 0...(capacity - 1) {
+            XCTAssertNoThrow( try orderBook.add(.completedOrder) )
+        }
+
+        XCTAssertNoThrow(try orderBook.rerollCompletedOrders())
+        XCTAssertNoThrow(try orderBook.transferCompletedOrdersToExisting())
+
+        XCTAssertTrue(orderBook.orders.count == capacity)
+        XCTAssertTrue(orderBook.filter(on: .completedOrder)?.count == 0)
+        XCTAssertTrue(orderBook.filter(on: .initialOrder)?.count == 0)
+        XCTAssertTrue(orderBook.filter(on: .existingOrder)?.count == capacity)
     }
 }
