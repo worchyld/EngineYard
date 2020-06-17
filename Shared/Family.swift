@@ -9,7 +9,6 @@
 import Foundation
 
 protocol FamilyDelegate {
-    var category: Family.Category { get }
     var color: Family.Color { get }
     var generation: Family.Generation { get }
 }
@@ -19,16 +18,8 @@ protocol FamilyDelegate {
 // IE: Green 1st Generation, Red 2nd Generation, etc
 
 public struct Family: FamilyDelegate {
-    var category: Family.Category
     var color: Family.Color
     var generation: Family.Generation
-
-    public enum Category: String {
-        case passenger // maps to green
-        case freight // maps to yellow
-        case fast // maps to red
-        case special // maps to blue
-    }
 
     public enum Color: Int, CaseIterable {
         case green = 1
@@ -52,30 +43,21 @@ public struct Family: FamilyDelegate {
     init(color: Family.Color, generation: Family.Generation) {
         self.color = color
         self.generation = generation
-        self.category = color.category
     }
 }
 
 extension Family: Hashable {
-    public static func == (lhs: Family, rhs: Family) -> Bool {
-        return ( (lhs.color == rhs.color) && (lhs.generation == rhs.generation) )
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(color.hashValue)
+        hasher.combine(generation.hashValue)
     }
 }
 
-extension Family.Color {
-    var category: Family.Category {
-        switch self {
-        case .green:
-            return .passenger
-        case .yellow:
-            return .freight
-        case .red:
-            return .fast
-        case .blue:
-            return .special
-        }
-    }
-}
+//extension Family: Equatable {
+////    public static func == (lhs: Family, rhs: Family) -> Bool {
+////        return ( (lhs.color == rhs.color) && (lhs.generation == rhs.generation) )
+////    }
+//}
 
 // Ordinal description extension
 extension Family.Generation {
@@ -89,6 +71,8 @@ extension Family.Generation {
 // Description extension
 extension Family : CustomStringConvertible {
     public var description: String {
-        return "\(self.category.rawValue.capitalizingFirstLetter()) \(self.generation.ordinal ?? "0") Generation"
+        let colorAsString = String(describing: self.color)
+        let generationAsString = String(describing: self.generation.ordinal ?? "0" ) + " Generation"
+        return colorAsString + generationAsString
     }
 }

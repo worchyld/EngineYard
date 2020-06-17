@@ -9,13 +9,10 @@
 import Foundation
 
 // The board is a collection of `Locomotives`; each with cards
-class Locomotive: Identifiable, FamilyDelegate {
+class Locomotive: Identifiable {
     let id: UUID = UUID()
     let name: String
     let family: Family
-    var category: Family.Category { return self.family.category }
-    var color: Family.Color { return self.family.color }
-    var generation: Family.Generation { return self.family.generation }
     let cost: Int
     var cards: [Card] = [Card]()
 
@@ -53,6 +50,11 @@ class Locomotive: Identifiable, FamilyDelegate {
         self.orders.reserveCapacity(orderCapacity)
         //self.orders = Array<Order?>(repeating: nil, count: orderCapacity)
     }
+}
+
+extension Locomotive: FamilyDelegate {
+    var color: Family.Color { return self.family.color }
+    var generation: Family.Generation { return self.family.generation }
 }
 
 extension Locomotive: Equatable {

@@ -8,14 +8,11 @@
 
 import Foundation
 
-struct Card : Identifiable, FamilyDelegate {
+struct Card : Identifiable {
     let id: UUID = UUID()
     let name: String
     let cost: Int
     let family: Family
-    var category: Family.Category { return self.family.category }
-    var color: Family.Color { return self.family.color }
-    var generation: Family.Generation { return self.family.generation }
     private (set) var production: Production
 
     init(name: String, cost: Int, color: Family.Color, generation: Family.Generation) {
@@ -26,8 +23,12 @@ struct Card : Identifiable, FamilyDelegate {
     }
 }
 
-
 // MARK - Extensions
+
+extension Card : FamilyDelegate {
+    var color: Family.Color { return self.family.color }
+    var generation: Family.Generation { return self.family.generation }
+}
 
 extension Card {
     var productionCost: Int {
