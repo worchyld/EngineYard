@@ -73,7 +73,7 @@ class Market {
         //self.currentMarket = findMarket()
     }
 
-    func demand(for color: Family.Color) -> [Locomotive]? {
+    func demand(for color: Locomotive.Color) -> [Locomotive]? {
         var filter: [Locomotive]?
 
         switch color {
@@ -93,7 +93,7 @@ class Market {
 
     // Not used but kept for now
     /*
-    private func market(for color: Family.Color) -> [Locomotive]? {
+    private func market(for color: Locomotive.Color) -> [Locomotive]? {
         // Find all Locomotives that match the type & have orders,
         // sorted by cost & generation ascending
 
@@ -174,7 +174,7 @@ class MarketDemand {
         self.market = Market.init(with: board)
     }
 
-    internal func getDemand(for color: Family.Color) -> [Locomotive]? {
+    internal func getDemand(for color: Locomotive.Color) -> [Locomotive]? {
         guard let market = self.market else {
             print ("No market object exists")
             return nil
@@ -187,7 +187,7 @@ class MarketDemand {
     }
 
 
-    func handleGenerations(for color: Family.Color) {
+    func handleGenerations(for color: Locomotive.Color) {
         guard let demand = getDemand(for: color) else {
             print ("Demand returns nil")
             return

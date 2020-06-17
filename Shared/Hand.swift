@@ -14,7 +14,7 @@ enum HandError : Error, Equatable {
     case duplicateCardFound
     case notAvailable(_ card: Card)
     case cannotFind(_ card: Card)
-    case alreadyHaveCardFromThisFamily(_ family: Family)
+    case alreadyHaveCardFromThisGroup(_ group: LocomotiveGroup)
     case locomotiveHasNoCards
     case locomotiveIsOld
     case locomotiveIsObsolete
@@ -68,14 +68,16 @@ extension Hand {
         }
 
         // Can only hold 1 of each family
-        let family = card.family
+        let group = card.group
 
         let filter = self.cards.filter({ (c: Card) -> Bool in
-            return (c.family == family)
+            return (c.group == group)
         })
 
         guard (filter.count == 0) else {
-            throw HandError.alreadyHaveCardFromThisFamily(card.family)
+            //throw HandError.alreadyHaveCardFromThisFamily(card.family)
+            let group = card.group
+            throw HandError.alreadyHaveCardFromThisGroup(group)
         }
 
         return true
