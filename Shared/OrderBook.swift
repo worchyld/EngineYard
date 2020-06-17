@@ -159,15 +159,12 @@ extension OrderBook {
 
         do {
              let _ = try filter.forEach { (order: Order) in
-                print ("current value -- \(order.value)")
                 let value = Die.roll
-                print ("rolled die -- \(value)")
                 try order.setValue(value)
             }
         } catch {
             throw error
         }
-
     }
 }
 

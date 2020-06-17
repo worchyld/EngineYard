@@ -325,7 +325,13 @@ class MarketDemandTests: XCTestCase {
         XCTAssertTrue(firstLoco.completedOrders.count == 1)
         XCTAssertNil(firstLoco.initialOrder)
         
-        //book.reroll(completedOrders: <#T##[Order]#>)
+        XCTAssertNoThrow( try book.rerollCompletedOrders() )
+        book.updateOrders()
+        XCTAssertTrue(firstLoco.orders.count == 1)
+        XCTAssertTrue(firstLoco.existingOrders.count == 0)
+        XCTAssertTrue(firstLoco.completedOrders.count == 1)
+        XCTAssertNil(firstLoco.initialOrder)
+
     }
 
 }
