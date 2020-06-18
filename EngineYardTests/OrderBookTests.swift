@@ -199,4 +199,51 @@ class OrderBookTests: XCTestCase {
         XCTAssertTrue(orderBook.filter(on: .initialOrder)?.count == 0)
         XCTAssertTrue(orderBook.filter(on: .existingOrder)?.count == capacity)
     }
+
+    func testRerollAndTransferInitialStateFails() {
+        let capacity = 3
+        let orderBook = OrderBook.init(capacity: capacity)
+
+        // Should only add 1 initial order
+        for index in 0...(capacity - 1) {
+            if (index == 0) {
+                XCTAssertNoThrow( try orderBook.add(.initialOrder) )
+            }
+            else {
+                XCTAssertThrowsError(try orderBook.add(.initialOrder)) { error in
+                    XCTAssertEqual(error as! OrderBookError, OrderBookError.alreadyHasInitialOrder)
+                }
+            }
+        }
+
+        // Expected: .completedOrder
+        XCTAssertThrowsError(try orderBook.rerollCompletedOrders()) { error in
+           XCTAssertEqual(error as! OrderBookError, OrderBookError.noOrdersWithState(.completedOrder))
+        }
+
+        // Expected: .completedOrder
+        XCTAssertThrowsError(try orderBook.transferCompletedOrdersToExisting()) { error in
+           XCTAssertEqual(error as! OrderBookError, OrderBookError.noOrdersWithState(.completedOrder))
+        }
+    }
+
+    func testRerollAndTransferExistingStateFails() {
+        let capacity = 3
+        let orderBook = OrderBook.init(capacity: capacity)
+
+        // Should only add 1 initial order
+        for _ in 0...(capacity - 1) {
+            XCTAssertNoThrow( try orderBook.add(.existingOrder) )
+        }
+
+        // Expected: .completedOrder
+        XCTAssertThrowsError(try orderBook.rerollCompletedOrders()) { error in
+           XCTAssertEqual(error as! OrderBookError, OrderBookError.noOrdersWithState(.completedOrder))
+        }
+
+        // Expected: .completedOrder
+        XCTAssertThrowsError(try orderBook.transferCompletedOrdersToExisting()) { error in
+           XCTAssertEqual(error as! OrderBookError, OrderBookError.noOrdersWithState(.completedOrder))
+        }
+    }
 }

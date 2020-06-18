@@ -14,7 +14,7 @@ enum OrderBookError : Error, Equatable {
     case noOrdersFound
     case noOrdersWithState(_ state: Order.State)
     case unknownOrderState(_ state: Order.State?)
-    case alreadyHasInitialOrders(orders: [Order]?)
+    case alreadyHasInitialOrder
 }
 
 protocol UpdateOrdersDelegate: AnyObject {
@@ -107,19 +107,18 @@ extension OrderBook {
 extension OrderBook {
 
     // transfer an order from one state to another
-    func transfer(order: Order, to state: Order.State) throws -> Order {
+    func transfer(order: Order, to state: Order.State) throws {
         guard (state == .existingOrder || state == .completedOrder) else {
             throw OrderError.orderCannotBe(state)
         }
         order.setState(to: state)
-        return order
     }
 
     func transfer(orders: [Order], to state: Order.State) throws {
         do {
             for order in orders {
-                var order = order
-                order = try transfer(order: order, to: state)
+                //var order = order
+                try transfer(order: order, to: state)
             }
         } catch {
             throw error
@@ -166,13 +165,15 @@ extension OrderBook {
 }
 
 extension OrderBook {
-    func transferCompletedOrdersToExisting() throws -> [Order] {
+    func transferCompletedOrdersToExisting() throws {
         guard let filter = self.filter(on: .completedOrder) else {
             throw OrderBookError.noOrdersWithState(.completedOrder)
         }
+        guard (filter.count > 0) else {
+            throw OrderBookError.noOrdersWithState(.completedOrder)
+        }
         do {
-            let result = try filter.map { try transfer(order: $0, to: .existingOrder)  }
-            return result
+            let _ = try filter.map { try transfer(order: $0, to: .existingOrder)  }
         }
         catch {
             throw error
@@ -189,7 +190,7 @@ extension OrderBook {
                 return
             }
             if ((initialOrders.count > 0) && (!initialOrders.isEmpty)) {
-                throw OrderBookError.alreadyHasInitialOrders(orders: initialOrders)
+                throw OrderBookError.alreadyHasInitialOrder
             }
         }
     }
