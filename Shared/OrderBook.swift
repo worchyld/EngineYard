@@ -244,7 +244,6 @@ extension OrderBook {
 
     internal func pruneOrders() {
         guard let ordersToPrune = self.getOrdersToPrune() else {
-            print ("No orders to prune")
             return
         }
 
