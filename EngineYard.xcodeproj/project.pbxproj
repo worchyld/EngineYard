@@ -63,6 +63,8 @@
 		4DEFB9EF249BA0FA0006138A /* RerollOrdersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEFB9EE249BA0FA0006138A /* RerollOrdersTests.swift */; };
 		4DEFB9F1249BB3D40006138A /* RustingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEFB9F0249BB3D40006138A /* RustingTests.swift */; };
 		4DEFB9F3249BB4010006138A /* RustingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEFB9F2249BB4010006138A /* RustingProtocol.swift */; };
+		4DEFB9F5249BEB550006138A /* LocomotiveLivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEFB9F4249BEB550006138A /* LocomotiveLivery.swift */; };
+		4DEFB9F7249BEBDE0006138A /* LocomotiveGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEFB9F6249BEBDE0006138A /* LocomotiveGeneration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +138,8 @@
 		4DEFB9EE249BA0FA0006138A /* RerollOrdersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RerollOrdersTests.swift; sourceTree = "<group>"; };
 		4DEFB9F0249BB3D40006138A /* RustingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RustingTests.swift; sourceTree = "<group>"; };
 		4DEFB9F2249BB4010006138A /* RustingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RustingProtocol.swift; sourceTree = "<group>"; };
+		4DEFB9F4249BEB550006138A /* LocomotiveLivery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocomotiveLivery.swift; sourceTree = "<group>"; };
+		4DEFB9F6249BEBDE0006138A /* LocomotiveGeneration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocomotiveGeneration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +240,8 @@
 				4DDDD3F8248E935700A2DA86 /* Card+Filter.swift */,
 				4D10C6172486DCF200238508 /* Locomotive.swift */,
 				4DA1C14E2486FC12004C4121 /* Locomotive+Builder.swift */,
+				4DEFB9F4249BEB550006138A /* LocomotiveLivery.swift */,
+				4DEFB9F6249BEBDE0006138A /* LocomotiveGeneration.swift */,
 				4D10C60F2486D6CC00238508 /* Locomotive+Group.swift */,
 				4D34A85E2492534D00590EFD /* Locomotive+Filter.swift */,
 				4D34A8602495637B00590EFD /* Production.swift */,
@@ -392,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D10C6182486DCF200238508 /* Locomotive.swift in Sources */,
+				4DEFB9F7249BEBDE0006138A /* LocomotiveGeneration.swift in Sources */,
 				4D10C5882486D08400238508 /* AppDelegate.swift in Sources */,
 				4DA1C14F2486FC12004C4121 /* Locomotive+Builder.swift in Sources */,
 				4DA1C13E2486ECC9004C4121 /* EY+String.swift in Sources */,
@@ -409,6 +416,7 @@
 				4D10C60E2486D68C00238508 /* Card+Builder.swift in Sources */,
 				4D10C58C2486D08400238508 /* ContentView.swift in Sources */,
 				4DC84CEE2486E43E002A48DE /* EngineYardGame.swift in Sources */,
+				4DEFB9F5249BEB550006138A /* LocomotiveLivery.swift in Sources */,
 				4D34A85F2492534D00590EFD /* Locomotive+Filter.swift in Sources */,
 				4D66EBCA248F836E005DE7F0 /* Hand.swift in Sources */,
 				4D10C60C2486D41700238508 /* Card.swift in Sources */,
