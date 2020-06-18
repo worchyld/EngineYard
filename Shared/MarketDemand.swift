@@ -70,7 +70,6 @@ class Market {
 
     init(with locomotives: [Locomotive]) {
         self.locos = locomotives
-        //self.currentMarket = findMarket()
     }
 
     func demand(for color: Locomotive.Color) -> [Locomotive]? {
@@ -89,39 +88,6 @@ class Market {
 
         return filter
     }
-
-
-    // Not used but kept for now
-    /*
-    private func market(for color: Locomotive.Color) -> [Locomotive]? {
-        // Find all Locomotives that match the type & have orders,
-        // sorted by cost & generation ascending
-
-        // compact version
-        //let results = locos.filter { !$0.order.isEmpty && $0.order.contains(where: { order in order.state > 0 }) }
-
-        let filter = locos
-            .filter { ($0.color == color) &&
-                    (!$0.orders.isEmpty) &&
-                ($0.orders.contains(where:
-                        { order in
-                            (
-                                (order.state == .existingOrder) ||
-                                (order.state == .completedOrder)
-                            )
-                        })
-                )
-        }
-        .sorted { (a: Locomotive, b: Locomotive) -> Bool in
-            return (
-                (a.color.rawValue < b.color.rawValue) &&
-                (a.cost < b.cost) &&
-                (a.generation.rawValue < b.generation.rawValue)
-            )
-        }
-
-        return filter
-    }*/
 
     // : Get the current market of locomotives
     // A generation exists if it has dice (orders) in either
@@ -254,12 +220,6 @@ extension MarketDemand {
      Existing Order boxes for that locomotive type.
      */
     func handleOneGeneration(locos: [Locomotive]) -> [Locomotive]? {
-
-        print ("Adding orders...")
-        if (locos.count != 1) {
-            print("too many")
-            return nil
-        }
 
         locos.forEach { (locomotive) in
             print ("Locomotive: \(locomotive.name), \(locomotive.color), \(locomotive.orders)")
