@@ -162,7 +162,7 @@ extension OrderBook {
                 throw OrderBookError.noOrdersFoundWithState(.completedOrder)
             }
             if (filter.isEmpty || filter.count == 0) {
-                throw OrderBookError.noOrdersFound
+                return // Don't do anything if its empty
             }
 
             let _ = try filter.forEach { (order: Order) in
@@ -183,7 +183,7 @@ extension OrderBook {
             throw OrderBookError.noOrdersFoundWithState(.completedOrder)
         }
         guard (filter.count > 0) else {
-            throw OrderBookError.noOrdersFoundWithState(.completedOrder)
+            return // do nothing if its empty
         }
         do {
             let _ = try filter.map { try transfer(order: $0, to: .existingOrder)  }

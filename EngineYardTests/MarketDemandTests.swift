@@ -407,9 +407,8 @@ class MarketDemandTests: XCTestCase {
 
         XCTAssertNoThrow( try mktDemand.handleGenerations(for: demand) )
 
-        /*
         XCTAssertTrue(firstLoco.state == .old)
-        XCTAssertTrue(firstLoco.orders.count == 0)
+        XCTAssertTrue(firstLoco.orders.count == 0, "\(firstLoco.orders.count)")
         XCTAssertTrue(secondLoco.orders.count == 1)
 
         let firstLocoExisting = firstLoco.orders.filter{ return $0.state == .existingOrder }
@@ -421,12 +420,12 @@ class MarketDemandTests: XCTestCase {
         let secondLocoInitial = firstLoco.orders.filter{ return $0.state == .initialOrder }
 
         XCTAssertTrue(firstLocoExisting.count == 0)
-        XCTAssertTrue(firstLocoCompleted.count == 0)
+        XCTAssertTrue(firstLocoCompleted.count == 0, "\(firstLocoCompleted.count)")
         XCTAssertTrue(firstLocoInitial.count == 0)
         XCTAssertTrue(secondLocoExisting.count == 0)
         XCTAssertTrue(secondLocoCompleted.count == 1)
         XCTAssertTrue(secondLocoInitial.count == 0)
-        */
+
 
     }
 
