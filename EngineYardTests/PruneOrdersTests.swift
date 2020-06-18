@@ -91,6 +91,18 @@ class PruneOrdersTests: XCTestCase {
         XCTAssertTrue(orderBook.isEmpty)
     }
 
+    func testDidNotPruneWhenEmptyOrders() {
+        let capacity = 3
+        let orderBook = OrderBook.init(capacity: capacity)
+        XCTAssertTrue(orderBook.orders.count == 0)
+
+        // Get pruneable orders, expect 0 or nil
+        XCTAssertNil( orderBook.getOrdersToPrune() )
+
+        // If we fire pruneOrders, expect nothing to happen
+        orderBook.pruneOrders()
+    }
+
     func testDidNotPruneInitialOrder() {
         let capacity = 3
         let orderBook = OrderBook.init(capacity: capacity)
