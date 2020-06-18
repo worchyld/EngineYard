@@ -509,8 +509,17 @@ class MarketDemandTests: XCTestCase {
         XCTAssertTrue(thirdLocoCompleted.count == 0)
         XCTAssertTrue(thirdLocoInitial.count == 0)
 
-        for loco in filter {
-            print (loco.description)
+        let postMarket = MarketDemand.init(board: boardRef)
+        guard let demandData = postMarket.demand else {
+            XCTFail("No demand found")
+            return
+        }
+
+        XCTAssertTrue(postMarket.getDemand(for: .green)?.count == 2)
+        XCTAssertTrue(postMarket.demand?.count == 2)
+
+        for item in demandData {
+            print (item.description)
         }
     }
 }
