@@ -49,10 +49,12 @@ class Locomotive: Identifiable {
     }
     // -------------------- //
 
+    /*
     enum State: Int, CaseIterable {
        case unavailable, existing, old, obsolete
     }
     var state: Locomotive.State = Locomotive.State.unavailable
+     */
 
     init(_ name: String, _ cost: Int, _ color: Locomotive.Color, _ generation: Locomotive.Generation, _ orderCapacity: Int) {
         self.name = name
@@ -82,12 +84,6 @@ extension Locomotive: LocomotiveGroupDelegate {
 extension Locomotive: Equatable {
     static func == (lhs: Locomotive, rhs: Locomotive) -> Bool {
         return (lhs.id == rhs.id)
-    }
-}
-
-extension Locomotive {
-    private func changeState(to: Locomotive.State) {
-        self.state = to
     }
 }
 
