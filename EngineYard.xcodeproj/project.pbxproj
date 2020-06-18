@@ -59,6 +59,8 @@
 		4DC84CEE2486E43E002A48DE /* EngineYardGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC84CED2486E43E002A48DE /* EngineYardGame.swift */; };
 		4DDDD3F7248E924E00A2DA86 /* CardFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDDD3F6248E924E00A2DA86 /* CardFilterTests.swift */; };
 		4DDDD3F9248E935700A2DA86 /* Card+Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDDD3F8248E935700A2DA86 /* Card+Filter.swift */; };
+		4DEFB9ED249BA0A00006138A /* PruneOrdersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEFB9EC249BA0A00006138A /* PruneOrdersTests.swift */; };
+		4DEFB9EF249BA0FA0006138A /* RerollOrdersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEFB9EE249BA0FA0006138A /* RerollOrdersTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +130,8 @@
 		4DC84CED2486E43E002A48DE /* EngineYardGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineYardGame.swift; sourceTree = "<group>"; };
 		4DDDD3F6248E924E00A2DA86 /* CardFilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFilterTests.swift; sourceTree = "<group>"; };
 		4DDDD3F8248E935700A2DA86 /* Card+Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Filter.swift"; sourceTree = "<group>"; };
+		4DEFB9EC249BA0A00006138A /* PruneOrdersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PruneOrdersTests.swift; sourceTree = "<group>"; };
+		4DEFB9EE249BA0FA0006138A /* RerollOrdersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RerollOrdersTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +206,8 @@
 				4D66EBC5248ED12B005DE7F0 /* BoardBuilderTests.swift */,
 				4D66EBD9248FF9E2005DE7F0 /* OrderTests.swift */,
 				4D66EBDB24900D65005DE7F0 /* OrderBookTests.swift */,
+				4DEFB9EE249BA0FA0006138A /* RerollOrdersTests.swift */,
+				4DEFB9EC249BA0A00006138A /* PruneOrdersTests.swift */,
 				4DA97CDB2490B97D0053997C /* MarketDemandTests.swift */,
 				4DA1C14C2486F43E004C4121 /* TaxTests.swift */,
 				4D34A8622495664E00590EFD /* ProductionTests.swift */,
@@ -418,6 +424,7 @@
 			files = (
 				4D51E5FE2499539300A91B93 /* HandTests.swift in Sources */,
 				4D49D2652499FDDD000E857F /* FamilyTests.swift in Sources */,
+				4DEFB9EF249BA0FA0006138A /* RerollOrdersTests.swift in Sources */,
 				4D6F8B6E248E8CFB0079BC27 /* LocomotiveBuilderTests.swift in Sources */,
 				4D10C59F2486D08500238508 /* EngineYardTests.swift in Sources */,
 				4D66EBDA248FF9E2005DE7F0 /* OrderTests.swift in Sources */,
@@ -429,6 +436,7 @@
 				4D34A8692495A27800590EFD /* WalletTests.swift in Sources */,
 				4D10C6122486DB1B00238508 /* CardBuilderTests.swift in Sources */,
 				4D10C6242486E12000238508 /* Card+Expectations.swift in Sources */,
+				4DEFB9ED249BA0A00006138A /* PruneOrdersTests.swift in Sources */,
 				4D66EBC6248ED12B005DE7F0 /* BoardBuilderTests.swift in Sources */,
 				4DDDD3F7248E924E00A2DA86 /* CardFilterTests.swift in Sources */,
 			);
