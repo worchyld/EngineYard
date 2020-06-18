@@ -221,28 +221,20 @@ extension MarketDemand {
      */
     func handleOneGeneration(locos: [Locomotive]) -> [Locomotive]? {
 
-        locos.forEach { (locomotive) in
-            print ("Locomotive: \(locomotive.name), \(locomotive.color), \(locomotive.orders)")
+        do {
+            try locos.forEach { (locomotive) in
+                print ("Locomotive: \(locomotive.name), \(locomotive.color), \(locomotive.orders)")
 
-            /*
-            let orderBook = OrderBook.init(capacity: locomotive.orderCapacity)
-
-            if (!orderBook.isFull) {
-                do {
-                    let _ = try orderBook.add(.completedOrder)
-                } catch {
-                    print ("error -- \(error as Any)")
-                }
-                locomotive.setOrders(from: orderBook)
+                let book = OrderBook.init(with: locomotive)
+                let _ = try book.add(.completedOrder)
+                book.updateOrders()
             }
-            else {
-                print("Locomotive is full")
-            }
-             */
 
+            return locos
+        } catch {
+            print (error)
+            return nil
         }
-
-        return locos
     }
 }
 
