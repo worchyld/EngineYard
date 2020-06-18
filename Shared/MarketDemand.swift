@@ -266,6 +266,7 @@ extension MarketDemand {
                     try book.rerollCompletedOrders()
                     try book.transferCompletedOrdersToExisting()
                     book.updateOrders()
+                    locomotive.setState(state: .old)
                 }
             }
             catch {

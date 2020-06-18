@@ -52,7 +52,7 @@ class Locomotive: Identifiable {
     enum State: Int, CaseIterable {
        case unavailable, existing, old, obsolete
     }
-    var state: Locomotive.State = Locomotive.State.unavailable
+    private(set) var state: Locomotive.State = Locomotive.State.unavailable
 
     init(_ name: String, _ cost: Int, _ color: Locomotive.Color, _ generation: Locomotive.Generation, _ orderCapacity: Int) {
         self.name = name
@@ -85,6 +85,14 @@ extension Locomotive: Equatable {
     }
 }
 
+extension Locomotive {
+    // needs refactoring
+    func setState(state: Locomotive.State) {
+        self.state = state
+    }
+}
+
+// Replace existing orders array from the one used by `orderBook`
 extension Locomotive: UpdateOrdersDelegate {
     internal func updateLocomotiveOrders(from book: OrderBook) {
         guard ((!book.isEmpty) && (book.orders.count > 0 && book.orders.count <= self.orderCapacity)) else {

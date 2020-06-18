@@ -172,7 +172,6 @@ class MarketDemandTests: XCTestCase {
            XCTFail("Filter failed")
            return
         }
-
         XCTAssertTrue(filter.count == 5)
 
         let firstLoco = filter[0]
@@ -362,6 +361,73 @@ class MarketDemandTests: XCTestCase {
         XCTAssertTrue( firstLoco.completedOrders.count == 0 )
         XCTAssertNil( firstLoco.initialOrder )
         XCTAssertFalse( firstLoco.isFull )
+    }
+
+    func testHandleTwoGenerations() {
+        let boardRef = self.locomotives
+
+        // Get all green generations
+        guard let filter = Locomotive.filter(locomotives: boardRef, on: .green) else {
+           XCTFail("Filter failed")
+           return
+        }
+        XCTAssertTrue(filter.count == 5)
+
+        let firstLoco = filter[0]
+        let secondLoco = filter[1]
+
+        XCTAssertTrue(firstLoco.orders.count == 0)
+        XCTAssertTrue(secondLoco.orders.count == 0)
+
+        // force add 1 completedOrder to each
+        let book1 = OrderBook(with: firstLoco)
+        let book2 = OrderBook(with: secondLoco)
+
+        XCTAssertNoThrow(try book1.add( .completedOrder))
+        XCTAssertNoThrow(try book2.add( .completedOrder))
+        XCTAssertTrue(book1.orders.count == 1)
+        XCTAssertTrue(book2.orders.count == 1)
+        XCTAssertTrue(book1.filter(on: .completedOrder)?.count == 1)
+        XCTAssertTrue(book2.filter(on: .completedOrder)?.count == 1)
+
+        book1.updateOrders()
+        book2.updateOrders()
+
+        XCTAssertTrue(firstLoco.orders.count == 1)
+        XCTAssertTrue(secondLoco.orders.count == 1)
+
+        let mktDemand = MarketDemand.init(board: boardRef)
+        guard let demand = mktDemand.demand else {
+            XCTAssertThrowsError("demand is nil")
+            return
+        }
+        XCTAssertTrue(demand.count == 2)
+
+        print(demand as Any)
+
+        XCTAssertNoThrow( try mktDemand.handleGenerations(for: demand) )
+
+        /*
+        XCTAssertTrue(firstLoco.state == .old)
+        XCTAssertTrue(firstLoco.orders.count == 0)
+        XCTAssertTrue(secondLoco.orders.count == 1)
+
+        let firstLocoExisting = firstLoco.orders.filter{ return $0.state == .existingOrder }
+        let firstLocoCompleted = firstLoco.orders.filter{ return $0.state == .completedOrder }
+        let firstLocoInitial = firstLoco.orders.filter{ return $0.state == .initialOrder }
+
+        let secondLocoExisting = firstLoco.orders.filter{ return $0.state == .existingOrder }
+        let secondLocoCompleted = firstLoco.orders.filter{ return $0.state == .completedOrder }
+        let secondLocoInitial = firstLoco.orders.filter{ return $0.state == .initialOrder }
+
+        XCTAssertTrue(firstLocoExisting.count == 0)
+        XCTAssertTrue(firstLocoCompleted.count == 0)
+        XCTAssertTrue(firstLocoInitial.count == 0)
+        XCTAssertTrue(secondLocoExisting.count == 0)
+        XCTAssertTrue(secondLocoCompleted.count == 1)
+        XCTAssertTrue(secondLocoInitial.count == 0)
+        */
+
     }
 
 }

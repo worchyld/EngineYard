@@ -162,7 +162,7 @@ extension OrderBook {
                 throw OrderBookError.noOrdersFoundWithState(.completedOrder)
             }
             if (filter.isEmpty || filter.count == 0) {
-                throw OrderBookError.noOrdersFoundWithState(.completedOrder)
+                throw OrderBookError.noOrdersFound
             }
 
             let _ = try filter.forEach { (order: Order) in
