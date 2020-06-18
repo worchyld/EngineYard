@@ -193,13 +193,14 @@ class MarketDemand {
                 try handleOneGeneration(locos: locos)
 
             case 2:
-                handleTwoGenerations(locos: locos)
+                try handleTwoGenerations(locos: locos)
 
             case 3:
                 handleThreeGenerations()
 
             default:
                 print ("Do nothing for this type")
+                break
             }
         } catch {
             throw error
