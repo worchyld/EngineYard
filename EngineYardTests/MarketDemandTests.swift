@@ -331,7 +331,37 @@ class MarketDemandTests: XCTestCase {
         XCTAssertTrue(firstLoco.existingOrders.count == 0)
         XCTAssertTrue(firstLoco.completedOrders.count == 1)
         XCTAssertNil(firstLoco.initialOrder)
+    }
 
+    func testHandleOneGeneration() {
+        let boardRef = self.locomotives
+        guard let firstLoco = boardRef.first else {
+            XCTFail("No first loco found")
+            return
+        }
+
+        let book = OrderBook.init(with: firstLoco)
+        XCTAssertNoThrow( try book.add( .existingOrder) )
+        XCTAssertTrue(book.orders.count == 1)
+        book.updateOrders()
+
+        let mktDemand = MarketDemand.init(board: boardRef)
+        guard let demand = mktDemand.demand else {
+            XCTAssertThrowsError("demand is nil")
+            return
+        }
+        XCTAssertTrue(demand.count == 1)
+        let mktDemandForColor = mktDemand.getDemand(for: firstLoco.color)
+        XCTAssertNotNil(mktDemandForColor)
+        XCTAssertEqual(mktDemandForColor, demand)
+        XCTAssertEqual(mktDemandForColor?.count, demand.count)
+
+        XCTAssertNoThrow( try mktDemand.handleGenerations(for: demand) )
+        XCTAssertTrue( firstLoco.orders.count == 2 )
+        XCTAssertTrue( firstLoco.existingOrders.count == 2 )
+        XCTAssertTrue( firstLoco.completedOrders.count == 0 )
+        XCTAssertNil( firstLoco.initialOrder )
+        XCTAssertFalse( firstLoco.isFull )
     }
 
 }

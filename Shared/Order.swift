@@ -65,10 +65,10 @@ extension Order {
         guard (sum - amount >= 0) else {
             throw IntError.resultWillBeNegative(value: sum)
         }
-        willReduceValue(by: amount)
+        willDecreaseValue(by: amount)
     }
 
-    private func willReduceValue(by amount: Int) {
+    private func willDecreaseValue(by amount: Int) {
         self.value -= amount
     }
 }

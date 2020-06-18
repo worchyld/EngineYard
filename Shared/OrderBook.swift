@@ -98,9 +98,18 @@ extension OrderBook {
             }
         }
 
-
         let order: Order = Order(orderState)
+        self.push(order: order)
+    }
+}
+
+extension OrderBook {
+    private func push(order: Order) {
         self.orders.append(order)
+    }
+
+    private func pop(order: Order, at index: Int) {
+        self.orders.remove(at: index)
     }
 }
 
@@ -197,5 +206,60 @@ extension OrderBook {
                 throw OrderBookError.alreadyHasInitialOrder
             }
         }
+    }
+}
+
+extension OrderBook {
+    // Remove 1 order from salesPool if exist
+    // If no orders exist, remove from existingOrders
+    internal func getOrdersToPrune() -> [Order]? {
+        var ordersToPrune = [Order]()
+
+        // Can't prune if it has `initalOrder`
+        if let initialOrders = self.filter(on: .initialOrder) {
+            guard (initialOrders.count == 0) else {
+                return nil
+            }
+        }
+
+        // Find `completedOrders`
+        if let completedOrders = self.filter(on: .completedOrder) {
+            ordersToPrune = completedOrders
+        }
+
+        if (ordersToPrune.count == 0) {
+            // Find `existingOrders`
+            guard let existingOrders = self.filter(on: .existingOrder) else {
+                return nil
+            }
+            guard (existingOrders.count > 0) else {
+                return nil
+            }
+
+            ordersToPrune = existingOrders
+        }
+
+        return ordersToPrune
+    }
+
+    internal func pruneOrders() {
+        guard let ordersToPrune = self.getOrdersToPrune() else {
+            print ("No orders to prune")
+            return
+        }
+
+        guard (ordersToPrune.count > 0) else {
+            return
+        }
+
+        guard let firstOrderToPrune = ordersToPrune.first else {
+            return
+        }
+
+        guard let index = self.orders.firstIndex(of: firstOrderToPrune) else {
+            return
+        }
+
+        self.pop(order: firstOrderToPrune, at: index)
     }
 }
