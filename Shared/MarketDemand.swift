@@ -197,7 +197,7 @@ class MarketDemand {
                 try handleTwoGenerations(locos: locos)
 
             case 3:
-                handleThreeGenerations()
+                try handleThreeGenerations(locos: locos)
 
             default:
                 print ("Do nothing for this type")
@@ -302,7 +302,62 @@ extension MarketDemand {
 }
 
 extension MarketDemand {
-    func handleThreeGenerations() {
+    /*
+    iii. Three generations exists.
+        a. Start with oldest locomotive.
+        b. Remove all dice from customer base and existing orders
+        c. This locomotive is marked as obsolote
+        d. Move to next oldest, add 1 die to customer base if required
+        e. Repeat this for the newest locomotive
+     */
+    func handleThreeGenerations(locos: [Locomotive]) throws {
+        let locos = locos.sorted(by: { (a: Locomotive, b: Locomotive) -> Bool in
+            return ((a.cost < b.cost) && (a.generation.rawValue < b.generation.rawValue))
+        })
 
+        if (locos.count == 3) {
+            do {
+                guard let firstLoco = locos.first else {
+                    throw MarketDemandError.noLocomotiveFound
+                }
+                guard let middleLoco = locos[safe: 1] else {
+                    throw MarketDemandError.noLocomotiveFound
+                }
+                guard let youngestLoco = locos.last else {
+                    throw MarketDemandError.noLocomotiveFound
+                }
+
+                // Start with oldest generation
+                // a. Remove all orders regardless of what they are
+                // b. Mark as obsolote, demand is nil
+                let book1 = OrderBook.init(with: firstLoco)
+                book1.removeAll()
+                book1.updateOrders()
+                firstLoco.setState(state: .obsolete)
+
+                // Middle generation
+                // a. Add 1 die to completedOrders (if possible)
+                // b. Re-roll all completedOrders
+                // c. Move all completedOrders -> existingOrders
+                let book2 = OrderBook.init(with: middleLoco)
+                try book2.add(.completedOrder)
+                try book2.rerollCompletedOrders()
+                try book2.transferCompletedOrdersToExisting()
+                book2.updateOrders()
+
+                // Youngest generation
+                // a. Add 1 die to completedOrders (if possible)
+                // b. Re-roll all completedOrders
+                // c. Move all completedOrders -> existingOrders
+                let book3 = OrderBook.init(with: youngestLoco)
+                try book3.add(.completedOrder)
+                try book3.rerollCompletedOrders()
+                try book3.transferCompletedOrdersToExisting()
+                book3.updateOrders()
+            }
+            catch {
+                throw error
+            }
+        }
     }
 }

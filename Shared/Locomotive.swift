@@ -61,7 +61,7 @@ class Locomotive: Identifiable {
 
 extension Locomotive : CustomStringConvertible {
     var description: String {
-        return ("\(name), $\(cost), \(group), orders: \(orders)")
+        return ("\(name), $\(cost), \(group), state: \(self.state), orders: \(orders)")
     }
 }
 

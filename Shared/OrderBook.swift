@@ -114,6 +114,12 @@ extension OrderBook {
 }
 
 extension OrderBook {
+    func removeAll() {
+        self.orders.removeAll()
+    }
+}
+
+extension OrderBook {
 
     // transfer an order from one state to another
     func transfer(order: Order, to state: Order.State) throws {
@@ -166,10 +172,8 @@ extension OrderBook {
             }
 
             let _ = try filter.forEach { (order: Order) in
-                print ("current value -- \(order.value)")
                 let value = Die.roll
                 try order.setValue(value)
-                print (".. new value -- \(order.value)")
             }
         } catch {
             throw error
