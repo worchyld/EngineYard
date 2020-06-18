@@ -12,7 +12,7 @@ enum OrderBookError : Error, Equatable {
     case undefinedOrderBook
     case ordersAreFull
     case noOrdersFound
-    case noOrdersWithState(_ state: Order.State)
+    case noOrdersFoundWithState(_ state: Order.State)
     case unknownOrderState(_ state: Order.State?)
     case alreadyHasInitialOrder
 }
@@ -130,7 +130,11 @@ extension OrderBook {
     // Decrease an order by a value
     func decrease(order: Order, by amount: Int) throws {
         do {
-            let _ = try order.reduceValue(by: amount)
+            guard (order.state == .existingOrder) else {
+                throw OrderBookError.noOrdersFoundWithState(.existingOrder)
+            }
+
+            let _ = try order.decreaseValue(by: amount)
             if (order.value == 0) {
                 try order.setValue(1)
             }
@@ -146,10 +150,10 @@ extension OrderBook {
     func rerollCompletedOrders() throws {
         do {
             guard let filter = self.filter(on: .completedOrder) else {
-                throw OrderBookError.noOrdersWithState(.completedOrder)
+                throw OrderBookError.noOrdersFoundWithState(.completedOrder)
             }
             if (filter.isEmpty || filter.count == 0) {
-                throw OrderBookError.noOrdersWithState(.completedOrder)
+                throw OrderBookError.noOrdersFoundWithState(.completedOrder)
             }
 
             let _ = try filter.forEach { (order: Order) in
@@ -167,10 +171,10 @@ extension OrderBook {
 extension OrderBook {
     func transferCompletedOrdersToExisting() throws {
         guard let filter = self.filter(on: .completedOrder) else {
-            throw OrderBookError.noOrdersWithState(.completedOrder)
+            throw OrderBookError.noOrdersFoundWithState(.completedOrder)
         }
         guard (filter.count > 0) else {
-            throw OrderBookError.noOrdersWithState(.completedOrder)
+            throw OrderBookError.noOrdersFoundWithState(.completedOrder)
         }
         do {
             let _ = try filter.map { try transfer(order: $0, to: .existingOrder)  }

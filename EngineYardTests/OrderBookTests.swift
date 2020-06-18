@@ -218,12 +218,12 @@ class OrderBookTests: XCTestCase {
 
         // Expected: .completedOrder
         XCTAssertThrowsError(try orderBook.rerollCompletedOrders()) { error in
-           XCTAssertEqual(error as! OrderBookError, OrderBookError.noOrdersWithState(.completedOrder))
+           XCTAssertEqual(error as! OrderBookError, OrderBookError.noOrdersFoundWithState(.completedOrder))
         }
 
         // Expected: .completedOrder
         XCTAssertThrowsError(try orderBook.transferCompletedOrdersToExisting()) { error in
-           XCTAssertEqual(error as! OrderBookError, OrderBookError.noOrdersWithState(.completedOrder))
+           XCTAssertEqual(error as! OrderBookError, OrderBookError.noOrdersFoundWithState(.completedOrder))
         }
     }
 
@@ -238,12 +238,12 @@ class OrderBookTests: XCTestCase {
 
         // Expected: .completedOrder
         XCTAssertThrowsError(try orderBook.rerollCompletedOrders()) { error in
-           XCTAssertEqual(error as! OrderBookError, OrderBookError.noOrdersWithState(.completedOrder))
+           XCTAssertEqual(error as! OrderBookError, OrderBookError.noOrdersFoundWithState(.completedOrder))
         }
 
         // Expected: .completedOrder
         XCTAssertThrowsError(try orderBook.transferCompletedOrdersToExisting()) { error in
-           XCTAssertEqual(error as! OrderBookError, OrderBookError.noOrdersWithState(.completedOrder))
+           XCTAssertEqual(error as! OrderBookError, OrderBookError.noOrdersFoundWithState(.completedOrder))
         }
     }
 }

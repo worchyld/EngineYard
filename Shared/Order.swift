@@ -54,7 +54,7 @@ extension Order {
 
 extension Order {
     // Only existing orders can be reduced in value
-    func reduceValue(by amount: Int) throws {
+    func decreaseValue(by amount: Int) throws {
         guard (amount >= 0) else {
             throw IntError.cannotBeNegative
         }
