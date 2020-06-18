@@ -252,15 +252,23 @@ extension MarketDemand {
 //      - Newer generation: Re-roll all salespool dice and move back to `existingOrders`
 //
 extension MarketDemand {
-    func handleTwoGenerations(locos: [Locomotive]) {
+    func handleTwoGenerations(locos: [Locomotive]) throws {
         let locos = locos.sorted(by: { (a: Locomotive, b: Locomotive) -> Bool in
             return ((a.cost < b.cost) && (a.generation.rawValue < b.generation.rawValue))
         })
 
         if (locos.count == 2) {
-            for loco in locos {
-                let book = OrderBook.init(with: loco)
-                book.pruneSingleOrder()
+            do {
+                try locos.forEach { (locomotive) in
+                    let book = OrderBook.init(with: locomotive)
+                    book.pruneSingleOrder()
+                    try book.rerollCompletedOrders()
+                    try book.transferCompletedOrdersToExisting()
+                    book.updateOrders()
+                }
+            }
+            catch {
+                throw error
             }
         }
     }
