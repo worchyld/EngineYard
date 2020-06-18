@@ -61,6 +61,8 @@
 		4DDDD3F9248E935700A2DA86 /* Card+Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDDD3F8248E935700A2DA86 /* Card+Filter.swift */; };
 		4DEFB9ED249BA0A00006138A /* PruneOrdersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEFB9EC249BA0A00006138A /* PruneOrdersTests.swift */; };
 		4DEFB9EF249BA0FA0006138A /* RerollOrdersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEFB9EE249BA0FA0006138A /* RerollOrdersTests.swift */; };
+		4DEFB9F1249BB3D40006138A /* RustingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEFB9F0249BB3D40006138A /* RustingTests.swift */; };
+		4DEFB9F3249BB4010006138A /* RustingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEFB9F2249BB4010006138A /* RustingProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +134,8 @@
 		4DDDD3F8248E935700A2DA86 /* Card+Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Filter.swift"; sourceTree = "<group>"; };
 		4DEFB9EC249BA0A00006138A /* PruneOrdersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PruneOrdersTests.swift; sourceTree = "<group>"; };
 		4DEFB9EE249BA0FA0006138A /* RerollOrdersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RerollOrdersTests.swift; sourceTree = "<group>"; };
+		4DEFB9F0249BB3D40006138A /* RustingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RustingTests.swift; sourceTree = "<group>"; };
+		4DEFB9F2249BB4010006138A /* RustingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RustingProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +219,7 @@
 				4D34A8682495A27800590EFD /* WalletTests.swift */,
 				4D34A86A2495A61D00590EFD /* WinnerTests.swift */,
 				4D10C5A02486D08500238508 /* Info.plist */,
+				4DEFB9F0249BB3D40006138A /* RustingTests.swift */,
 			);
 			path = EngineYardTests;
 			sourceTree = "<group>";
@@ -241,6 +246,7 @@
 				4D66EBC7248F8147005DE7F0 /* Player.swift */,
 				4D66EBC9248F836E005DE7F0 /* Hand.swift */,
 				4D34A86624959D8B00590EFD /* Wallet.swift */,
+				4DEFB9F2249BB4010006138A /* RustingProtocol.swift */,
 				4DC84CED2486E43E002A48DE /* EngineYardGame.swift */,
 			);
 			path = Shared;
@@ -412,6 +418,7 @@
 				4DA1C1392486EC3D004C4121 /* Die.swift in Sources */,
 				4DA1C14B2486F3FC004C4121 /* Tax.swift in Sources */,
 				4DA1C1482486EDE3004C4121 /* EY+Date.swift in Sources */,
+				4DEFB9F3249BB4010006138A /* RustingProtocol.swift in Sources */,
 				4D10C6162486DC4700238508 /* Constants.swift in Sources */,
 				4D49D2672499FE2C000E857F /* EY+Identifier.swift in Sources */,
 				4D49D2632499F9D9000E857F /* AvatarView.swift in Sources */,
@@ -436,6 +443,7 @@
 				4D34A8692495A27800590EFD /* WalletTests.swift in Sources */,
 				4D10C6122486DB1B00238508 /* CardBuilderTests.swift in Sources */,
 				4D10C6242486E12000238508 /* Card+Expectations.swift in Sources */,
+				4DEFB9F1249BB3D40006138A /* RustingTests.swift in Sources */,
 				4DEFB9ED249BA0A00006138A /* PruneOrdersTests.swift in Sources */,
 				4D66EBC6248ED12B005DE7F0 /* BoardBuilderTests.swift in Sources */,
 				4DDDD3F7248E924E00A2DA86 /* CardFilterTests.swift in Sources */,
