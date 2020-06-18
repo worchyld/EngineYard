@@ -49,12 +49,10 @@ class Locomotive: Identifiable {
     }
     // -------------------- //
 
-    /*
     enum State: Int, CaseIterable {
        case unavailable, existing, old, obsolete
     }
     var state: Locomotive.State = Locomotive.State.unavailable
-     */
 
     init(_ name: String, _ cost: Int, _ color: Locomotive.Color, _ generation: Locomotive.Generation, _ orderCapacity: Int) {
         self.name = name
