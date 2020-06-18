@@ -8,8 +8,6 @@
 
 import Foundation
 
-typealias Livery = Locomotive.Color
-
 extension Locomotive {
     public enum Color: Int, CaseIterable {
         case green = 1, red, yellow, blue
