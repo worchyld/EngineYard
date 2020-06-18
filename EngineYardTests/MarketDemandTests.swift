@@ -409,24 +409,23 @@ class MarketDemandTests: XCTestCase {
 
         XCTAssertTrue(firstLoco.state == .old)
         XCTAssertTrue(firstLoco.orders.count == 0, "\(firstLoco.orders.count)")
-        XCTAssertTrue(secondLoco.orders.count == 1)
+        XCTAssertTrue(secondLoco.orders.count == 2, "\(secondLoco.orders.count)")
 
         let firstLocoExisting = firstLoco.orders.filter{ return $0.state == .existingOrder }
         let firstLocoCompleted = firstLoco.orders.filter{ return $0.state == .completedOrder }
         let firstLocoInitial = firstLoco.orders.filter{ return $0.state == .initialOrder }
 
-        let secondLocoExisting = firstLoco.orders.filter{ return $0.state == .existingOrder }
-        let secondLocoCompleted = firstLoco.orders.filter{ return $0.state == .completedOrder }
-        let secondLocoInitial = firstLoco.orders.filter{ return $0.state == .initialOrder }
+        let secondLocoExisting = secondLoco.orders.filter{ return $0.state == .existingOrder }
+        let secondLocoCompleted = secondLoco.orders.filter{ return $0.state == .completedOrder }
+        let secondLocoInitial = secondLoco.orders.filter{ return $0.state == .initialOrder }
 
         XCTAssertTrue(firstLocoExisting.count == 0)
         XCTAssertTrue(firstLocoCompleted.count == 0, "\(firstLocoCompleted.count)")
         XCTAssertTrue(firstLocoInitial.count == 0)
-        XCTAssertTrue(secondLocoExisting.count == 0)
-        XCTAssertTrue(secondLocoCompleted.count == 1)
+
+        XCTAssertTrue(secondLocoExisting.count == 2, "\(secondLocoExisting.count)")
+        XCTAssertTrue(secondLocoCompleted.count == 0)
         XCTAssertTrue(secondLocoInitial.count == 0)
-
-
     }
 
 }

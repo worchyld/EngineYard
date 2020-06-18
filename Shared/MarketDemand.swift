@@ -51,6 +51,7 @@ A. Determine how many generations exist for each locomotive color
 
 enum MarketDemandError : Error, Equatable {
     case noDemandFound
+    case noLocomotiveFound
 }
 
 class Market {
@@ -260,14 +261,38 @@ extension MarketDemand {
 
         if (locos.count == 2) {
             do {
-                try locos.forEach { (locomotive) in
-                    let book = OrderBook.init(with: locomotive)
-                    book.pruneSingleOrder()
-                    try book.rerollCompletedOrders()
-                    try book.transferCompletedOrdersToExisting()
-                    book.updateOrders()
-                    locomotive.setState(state: .old)
+                // Start with oldest:
+                // a. Prune 1 order
+                // b. Re-roll dice in completedOrders
+                // c. Move dice back to existingOrders
+                // d. Mark as `old`
+
+                guard let oldestLoco = locos.first else {
+                    throw MarketDemandError.noLocomotiveFound
                 }
+                guard let newerLoco = locos.last else {
+                    throw MarketDemandError.noLocomotiveFound
+                }
+
+                let book1 = OrderBook.init(with: oldestLoco)
+                book1.pruneSingleOrder()  // a
+                try book1.rerollCompletedOrders() // b
+                try book1.transferCompletedOrdersToExisting() // c
+                oldestLoco.setState(state: .old) // d
+                book1.updateOrders()
+
+                // with newer locomotive:
+                // a. Check if at capacity
+                // b. If not: add 1 die to completedOrders
+                // c. Re-roll all dice in completedOrders
+                // d. Transfer all orders back to existingOrders
+
+                let book2 = OrderBook.init(with: newerLoco)
+                try book2.add(.completedOrder) // a & b
+                try book2.rerollCompletedOrders() // c
+                try book2.transferCompletedOrdersToExisting() // d
+                book2.updateOrders()
+
             }
             catch {
                 throw error

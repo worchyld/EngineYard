@@ -16,11 +16,6 @@ class Locomotive: Identifiable {
     let cost: Int
     var cards: [Card] = [Card]()
 
-    lazy var formattedCost: String? = {
-        let cache = NumberFormatCache.currencyRateFormatter
-        let number = NSNumber(integerLiteral: self.cost)
-        return cache.string(from: number)
-    }()
 
     // Orders ------------- //
     let orderCapacity: Int
@@ -66,11 +61,7 @@ class Locomotive: Identifiable {
 
 extension Locomotive : CustomStringConvertible {
     var description: String {
-        var outputtedCost = "NaN"
-        if let formattedCost = formattedCost {
-            outputtedCost = formattedCost
-        }
-        return ("\(name), \(outputtedCost), \(group), orders: \(orders)")
+        return ("\(name), $\(cost), \(group), orders: \(orders)")
     }
 }
 
@@ -95,7 +86,7 @@ extension Locomotive {
 // Replace existing orders array from the one used by `orderBook`
 extension Locomotive: UpdateOrdersDelegate {
     internal func updateLocomotiveOrders(from book: OrderBook) {
-        guard ((!book.isEmpty) && (book.orders.count > 0 && book.orders.count <= self.orderCapacity)) else {
+        guard (book.orders.count <= self.orderCapacity) else {
             return
         }
         self.orders = book.orders
