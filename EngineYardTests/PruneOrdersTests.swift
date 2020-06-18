@@ -86,7 +86,7 @@ class PruneOrdersTests: XCTestCase {
         XCTAssertTrue(orderBook.orders.count == 1)
         XCTAssertTrue(orderBook.filter(on: .completedOrder)?.count == 1)
 
-        orderBook.pruneOrders()
+        orderBook.pruneSingleOrder()
         XCTAssertTrue(orderBook.orders.count == 0)
         XCTAssertTrue(orderBook.isEmpty)
     }
@@ -100,7 +100,7 @@ class PruneOrdersTests: XCTestCase {
         XCTAssertNil( orderBook.getOrdersToPrune() )
 
         // If we fire pruneOrders, expect nothing to happen
-        orderBook.pruneOrders()
+        orderBook.pruneSingleOrder()
     }
 
     func testDidNotPruneInitialOrder() {
@@ -112,7 +112,7 @@ class PruneOrdersTests: XCTestCase {
         XCTAssertTrue(orderBook.orders.count == 1)
         XCTAssertTrue(orderBook.filter(on: .initialOrder)?.count == 1)
 
-        orderBook.pruneOrders()
+        orderBook.pruneSingleOrder()
         XCTAssertTrue(orderBook.orders.count == 1)
         XCTAssertFalse(orderBook.isEmpty)
     }
@@ -126,7 +126,7 @@ class PruneOrdersTests: XCTestCase {
         XCTAssertTrue(orderBook.orders.count == 1)
         XCTAssertTrue(orderBook.filter(on: .existingOrder)?.count == 1)
 
-        orderBook.pruneOrders()
+        orderBook.pruneSingleOrder()
         XCTAssertTrue(orderBook.orders.count == 0)
         XCTAssertTrue(orderBook.isEmpty)
     }
@@ -167,7 +167,7 @@ class PruneOrdersTests: XCTestCase {
             XCTAssertEqual(completedOrder, prunableOrder)
         }
 
-        orderBook.pruneOrders()
+        orderBook.pruneSingleOrder()
 
         let existingOrders = orderBook.filter(on: .existingOrder)
         let completedOrders = orderBook.filter(on: .completedOrder)

@@ -209,6 +209,8 @@ extension OrderBook {
     }
 }
 
+// MARK: PRUNE functions
+
 extension OrderBook {
     // Remove 1 order from salesPool if exist
     // If no orders exist, remove from existingOrders
@@ -242,7 +244,7 @@ extension OrderBook {
         return ordersToPrune
     }
 
-    internal func pruneOrders() {
+    internal func pruneSingleOrder() {
         guard let ordersToPrune = self.getOrdersToPrune() else {
             return
         }

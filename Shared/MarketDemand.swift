@@ -260,7 +260,7 @@ extension MarketDemand {
         if (locos.count == 2) {
             for loco in locos {
                 let book = OrderBook.init(with: loco)
-                book.pruneOrders()
+                book.pruneSingleOrder()
             }
         }
     }
