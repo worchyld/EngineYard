@@ -51,20 +51,20 @@ A. Determine how many generations exist for each locomotive color
 class Market {
     private let locos: [Locomotive]
 
-    lazy var currentMarket: [Locomotive]? = {
-        return findMarket()
+    lazy var demand: [Locomotive]? = {
+        return getCurrentMarket()
     }()
     lazy var green: [Locomotive]? = {
-        return currentMarket?.filter({ $0.color == .green })
+        return demand?.filter({ $0.color == .green })
     }()
     lazy var blue: [Locomotive]? = {
-        return currentMarket?.filter({ $0.color == .blue })
+        return demand?.filter({ $0.color == .blue })
     }()
     lazy var yellow: [Locomotive]? = {
-        return currentMarket?.filter({ $0.color == .yellow })
+        return demand?.filter({ $0.color == .yellow })
     }()
     lazy var red: [Locomotive]? = {
-        return currentMarket?.filter({ $0.color == .red })
+        return demand?.filter({ $0.color == .red })
     }()
 
 
@@ -97,7 +97,7 @@ class Market {
     //       and orders is not empty
     //      sorted by cost, generation, color raw values ascending
     //
-    internal func findMarket() -> [Locomotive] {
+    internal func getCurrentMarket() -> [Locomotive] {
         print ("Attemping filter: findMarket()")
 
         let filter = locos

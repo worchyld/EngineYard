@@ -49,7 +49,7 @@ class MarketDemandTests: XCTestCase {
 
         // Market should be empty
         let market = Market.init(with: boardRef)
-        let currentMarket = market.currentMarket
+        let currentMarket = market.demand
         XCTAssertTrue(currentMarket?.count == 0)
         XCTAssertTrue(market.green?.count == 0)
     }
@@ -76,7 +76,7 @@ class MarketDemandTests: XCTestCase {
         XCTAssertEqual(firstLoco.orders.count, book.orders.count)
 
         let market = Market.init(with: boardRef)
-        let currentMarket = market.currentMarket
+        let currentMarket = market.demand
 
         XCTAssertTrue(currentMarket?.count == 0)
     }
@@ -132,7 +132,7 @@ class MarketDemandTests: XCTestCase {
 
         let market = Market.init(with: boardRef)
         XCTAssertTrue(market.green?.count == 1)
-        XCTAssertTrue(market.currentMarket?.count == 1)
+        XCTAssertTrue(market.demand?.count == 1)
     }
 
     func testOneGenerationExists() {
@@ -161,7 +161,7 @@ class MarketDemandTests: XCTestCase {
         XCTAssertTrue(market.red?.count == 0)
         XCTAssertTrue(market.yellow?.count == 0)
         XCTAssertTrue(market.blue?.count == 0)
-        XCTAssertTrue(market.currentMarket?.count == 1)
+        XCTAssertTrue(market.demand?.count == 1)
     }
 
     func testTwoGenerationsExist() {
@@ -205,7 +205,7 @@ class MarketDemandTests: XCTestCase {
         XCTAssertTrue(market.red?.count == 0)
         XCTAssertTrue(market.yellow?.count == 0)
         XCTAssertTrue(market.blue?.count == 0)
-        XCTAssertTrue(market.currentMarket?.count == 2)
+        XCTAssertTrue(market.demand?.count == 2)
     }
 
 
@@ -261,7 +261,7 @@ class MarketDemandTests: XCTestCase {
         XCTAssertTrue(market.red?.count == 0)
         XCTAssertTrue(market.yellow?.count == 0)
         XCTAssertTrue(market.blue?.count == 0)
-        XCTAssertTrue(market.currentMarket?.count == 3)
+        XCTAssertTrue(market.demand?.count == 3)
     }
 
 
@@ -305,7 +305,7 @@ class MarketDemandTests: XCTestCase {
         XCTAssertTrue(market.red?.count == 3, "Found: \(String(describing: market.red?.count))")
         XCTAssertTrue(market.blue?.count == 2, "Found: \(String(describing: market.blue?.count))")
         XCTAssertTrue(market.yellow?.count == 2, "Found: \(String(describing: market.yellow?.count))")
-        XCTAssertTrue(market.currentMarket?.count == 10, "Found: \(String(describing: market.currentMarket?.count))")
+        XCTAssertTrue(market.demand?.count == 10, "Found: \(String(describing: market.demand?.count))")
     }
 
     func testRerollOrders() {
