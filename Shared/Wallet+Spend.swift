@@ -9,19 +9,6 @@
 import Foundation
 
 // Wallet implementing SpendingDelegates
-extension Wallet : ValidateFundsDelegate & ValidatePositiveDelegate {
-    func checkHasFunds(amount: Int) throws {
-        guard (cash - amount).isPositive else {
-            throw SpendingError.notEnoughFunds(amount)
-        }
-    }
-    func checkPositive(amount: Int) throws {
-        guard (amount).isPositive else {
-            throw SpendingError.mustBePositive(amount)
-        }
-    }
-
-}
 
 
 extension Wallet : WillSpendDelegate {
@@ -31,17 +18,6 @@ extension Wallet : WillSpendDelegate {
         try checkHasFunds(amount: amount)
 
         self.cash -= amount
-
-        return self.cash
-    }
-}
-
-extension Wallet : WillCreditDelegate {
-
-    mutating func credit(amount: Int) throws -> Int {
-        try checkPositive(amount: amount)
-
-        self.cash += amount
 
         return self.cash
     }
