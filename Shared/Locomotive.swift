@@ -16,11 +16,6 @@ class Locomotive: Identifiable {
     let cost: Int
     var cards: [Card] = [Card]()
 
-    lazy var formattedCost: String? = {
-        let cache = NumberFormatCache.currencyRateFormatter
-        let number = NSNumber(integerLiteral: self.cost)
-        return cache.string(from: number)
-    }()
 
     // Orders ------------- //
     let orderCapacity: Int
@@ -41,12 +36,18 @@ class Locomotive: Identifiable {
             return o.state == .initialOrder
         }.first
     }()
+    var isFull: Bool {
+        guard (orders.count >= orderCapacity) else {
+            return false
+        }
+        return true
+    }
     // -------------------- //
 
     enum State: Int, CaseIterable {
        case unavailable, existing, old, obsolete
     }
-    var state: Locomotive.State = Locomotive.State.unavailable
+    private(set) var state: Locomotive.State = Locomotive.State.unavailable
 
     init(_ name: String, _ cost: Int, _ color: Locomotive.Color, _ generation: Locomotive.Generation, _ orderCapacity: Int) {
         self.name = name
@@ -60,11 +61,7 @@ class Locomotive: Identifiable {
 
 extension Locomotive : CustomStringConvertible {
     var description: String {
-        var outputtedCost = "NaN"
-        if let formattedCost = formattedCost {
-            outputtedCost = formattedCost
-        }
-        return ("\(name), \(outputtedCost), \(group), orders: \(orders)")
+        return ("\(name), $\(cost), \(group), state: \(self.state), orders: \(orders)")
     }
 }
 
@@ -80,14 +77,16 @@ extension Locomotive: Equatable {
 }
 
 extension Locomotive {
-    private func changeState(to: Locomotive.State) {
-        self.state = to
+    // needs refactoring
+    func setState(state: Locomotive.State) {
+        self.state = state
     }
 }
 
+// Replace existing orders array from the one used by `orderBook`
 extension Locomotive: UpdateOrdersDelegate {
-    internal func updateOrders(from book: OrderBook) {
-        guard ((!book.isEmpty) && (book.orders.count > 0 && book.orders.count <= self.orderCapacity)) else {
+    internal func updateLocomotiveOrders(from book: OrderBook) {
+        guard (book.orders.count <= self.orderCapacity) else {
             return
         }
         self.orders = book.orders

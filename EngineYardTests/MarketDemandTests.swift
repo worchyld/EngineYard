@@ -49,7 +49,7 @@ class MarketDemandTests: XCTestCase {
 
         // Market should be empty
         let market = Market.init(with: boardRef)
-        let currentMarket = market.currentMarket
+        let currentMarket = market.demand
         XCTAssertTrue(currentMarket?.count == 0)
         XCTAssertTrue(market.green?.count == 0)
     }
@@ -76,7 +76,7 @@ class MarketDemandTests: XCTestCase {
         XCTAssertEqual(firstLoco.orders.count, book.orders.count)
 
         let market = Market.init(with: boardRef)
-        let currentMarket = market.currentMarket
+        let currentMarket = market.demand
 
         XCTAssertTrue(currentMarket?.count == 0)
     }
@@ -132,7 +132,7 @@ class MarketDemandTests: XCTestCase {
 
         let market = Market.init(with: boardRef)
         XCTAssertTrue(market.green?.count == 1)
-        XCTAssertTrue(market.currentMarket?.count == 1)
+        XCTAssertTrue(market.demand?.count == 1)
     }
 
     func testOneGenerationExists() {
@@ -161,7 +161,7 @@ class MarketDemandTests: XCTestCase {
         XCTAssertTrue(market.red?.count == 0)
         XCTAssertTrue(market.yellow?.count == 0)
         XCTAssertTrue(market.blue?.count == 0)
-        XCTAssertTrue(market.currentMarket?.count == 1)
+        XCTAssertTrue(market.demand?.count == 1)
     }
 
     func testTwoGenerationsExist() {
@@ -172,7 +172,6 @@ class MarketDemandTests: XCTestCase {
            XCTFail("Filter failed")
            return
         }
-
         XCTAssertTrue(filter.count == 5)
 
         let firstLoco = filter[0]
@@ -205,7 +204,7 @@ class MarketDemandTests: XCTestCase {
         XCTAssertTrue(market.red?.count == 0)
         XCTAssertTrue(market.yellow?.count == 0)
         XCTAssertTrue(market.blue?.count == 0)
-        XCTAssertTrue(market.currentMarket?.count == 2)
+        XCTAssertTrue(market.demand?.count == 2)
     }
 
 
@@ -261,7 +260,7 @@ class MarketDemandTests: XCTestCase {
         XCTAssertTrue(market.red?.count == 0)
         XCTAssertTrue(market.yellow?.count == 0)
         XCTAssertTrue(market.blue?.count == 0)
-        XCTAssertTrue(market.currentMarket?.count == 3)
+        XCTAssertTrue(market.demand?.count == 3)
     }
 
 
@@ -305,7 +304,222 @@ class MarketDemandTests: XCTestCase {
         XCTAssertTrue(market.red?.count == 3, "Found: \(String(describing: market.red?.count))")
         XCTAssertTrue(market.blue?.count == 2, "Found: \(String(describing: market.blue?.count))")
         XCTAssertTrue(market.yellow?.count == 2, "Found: \(String(describing: market.yellow?.count))")
-        XCTAssertTrue(market.currentMarket?.count == 10, "Found: \(String(describing: market.currentMarket?.count))")
+        XCTAssertTrue(market.demand?.count == 10, "Found: \(String(describing: market.demand?.count))")
     }
 
+    func testRerollOrders() {
+        let boardRef = self.locomotives
+        guard let firstLoco = boardRef.first else {
+            XCTFail("No first loco found")
+            return
+        }
+        
+        let book = OrderBook.init(with: firstLoco)
+        XCTAssertNoThrow( try book.add( .completedOrder) )
+        XCTAssertTrue(book.orders.count == 1)
+        XCTAssertTrue(firstLoco.orders.count == 0)
+        book.updateOrders()
+        XCTAssertTrue(firstLoco.orders.count == 1)
+        XCTAssertTrue(firstLoco.existingOrders.count == 0)
+        XCTAssertTrue(firstLoco.completedOrders.count == 1)
+        XCTAssertNil(firstLoco.initialOrder)
+        
+        XCTAssertNoThrow( try book.rerollCompletedOrders() )
+        book.updateOrders()
+        XCTAssertTrue(firstLoco.orders.count == 1)
+        XCTAssertTrue(firstLoco.existingOrders.count == 0)
+        XCTAssertTrue(firstLoco.completedOrders.count == 1)
+        XCTAssertNil(firstLoco.initialOrder)
+    }
+
+    func testHandleOneGeneration() {
+        let boardRef = self.locomotives
+        guard let firstLoco = boardRef.first else {
+            XCTFail("No first loco found")
+            return
+        }
+
+        let book = OrderBook.init(with: firstLoco)
+        XCTAssertNoThrow( try book.add( .existingOrder) )
+        XCTAssertTrue(book.orders.count == 1)
+        book.updateOrders()
+
+        let mktDemand = MarketDemand.init(board: boardRef)
+        guard let demand = mktDemand.demand else {
+            XCTAssertThrowsError("demand is nil")
+            return
+        }
+        XCTAssertTrue(demand.count == 1)
+        let mktDemandForColor = mktDemand.getDemand(for: firstLoco.color)
+        XCTAssertNotNil(mktDemandForColor)
+        XCTAssertEqual(mktDemandForColor, demand)
+        XCTAssertEqual(mktDemandForColor?.count, demand.count)
+
+        XCTAssertNoThrow( try mktDemand.handleGenerations(for: demand) )
+        XCTAssertTrue( firstLoco.orders.count == 2 )
+        XCTAssertTrue( firstLoco.existingOrders.count == 2 )
+        XCTAssertTrue( firstLoco.completedOrders.count == 0 )
+        XCTAssertNil( firstLoco.initialOrder )
+        XCTAssertFalse( firstLoco.isFull )
+    }
+
+    func testHandleTwoGenerations() {
+        let boardRef = self.locomotives
+
+        // Get all green generations
+        guard let filter = Locomotive.filter(locomotives: boardRef, on: .green) else {
+           XCTFail("Filter failed")
+           return
+        }
+        XCTAssertTrue(filter.count == 5)
+
+        let firstLoco = filter[0]
+        let secondLoco = filter[1]
+
+        XCTAssertTrue(firstLoco.orders.count == 0)
+        XCTAssertTrue(secondLoco.orders.count == 0)
+
+        // force add 1 completedOrder to each
+        let book1 = OrderBook(with: firstLoco)
+        let book2 = OrderBook(with: secondLoco)
+
+        XCTAssertNoThrow(try book1.add( .completedOrder))
+        XCTAssertNoThrow(try book2.add( .completedOrder))
+        XCTAssertTrue(book1.orders.count == 1)
+        XCTAssertTrue(book2.orders.count == 1)
+        XCTAssertTrue(book1.filter(on: .completedOrder)?.count == 1)
+        XCTAssertTrue(book2.filter(on: .completedOrder)?.count == 1)
+
+        book1.updateOrders()
+        book2.updateOrders()
+
+        XCTAssertTrue(firstLoco.orders.count == 1)
+        XCTAssertTrue(secondLoco.orders.count == 1)
+
+        let mktDemand = MarketDemand.init(board: boardRef)
+        guard let demand = mktDemand.demand else {
+            XCTAssertThrowsError("demand is nil")
+            return
+        }
+        XCTAssertTrue(demand.count == 2)
+
+        print(demand as Any)
+
+        XCTAssertNoThrow( try mktDemand.handleGenerations(for: demand) )
+
+        XCTAssertTrue(firstLoco.state == .old)
+        XCTAssertTrue(firstLoco.orders.count == 0, "\(firstLoco.orders.count)")
+        XCTAssertTrue(secondLoco.orders.count == 2, "\(secondLoco.orders.count)")
+
+        let firstLocoExisting = firstLoco.orders.filter{ return $0.state == .existingOrder }
+        let firstLocoCompleted = firstLoco.orders.filter{ return $0.state == .completedOrder }
+        let firstLocoInitial = firstLoco.orders.filter{ return $0.state == .initialOrder }
+
+        let secondLocoExisting = secondLoco.orders.filter{ return $0.state == .existingOrder }
+        let secondLocoCompleted = secondLoco.orders.filter{ return $0.state == .completedOrder }
+        let secondLocoInitial = secondLoco.orders.filter{ return $0.state == .initialOrder }
+
+        XCTAssertTrue(firstLocoExisting.count == 0)
+        XCTAssertTrue(firstLocoCompleted.count == 0, "\(firstLocoCompleted.count)")
+        XCTAssertTrue(firstLocoInitial.count == 0)
+
+        XCTAssertTrue(secondLocoExisting.count == 2, "\(secondLocoExisting.count)")
+        XCTAssertTrue(secondLocoCompleted.count == 0)
+        XCTAssertTrue(secondLocoInitial.count == 0)
+    }
+
+    func testHandleThreeGenerations() {
+        let boardRef = self.locomotives
+
+        // Get all green generations
+        guard let filter = Locomotive.filter(locomotives: boardRef, on: .green) else {
+           XCTFail("Filter failed")
+           return
+        }
+        XCTAssertTrue(filter.count == 5)
+
+        let firstLoco = filter[0]
+        let secondLoco = filter[1]
+        let thirdLoco = filter[2]
+
+        XCTAssertTrue(firstLoco.orders.count == 0)
+        XCTAssertTrue(secondLoco.orders.count == 0)
+        XCTAssertTrue(thirdLoco.orders.count == 0)
+
+        // force add 1 completedOrder to each
+        let book1 = OrderBook(with: firstLoco)
+        let book2 = OrderBook(with: secondLoco)
+        let book3 = OrderBook(with: thirdLoco)
+
+        XCTAssertNoThrow(try book1.add( .completedOrder))
+        XCTAssertNoThrow(try book2.add( .completedOrder))
+        XCTAssertNoThrow(try book3.add( .completedOrder))
+        XCTAssertTrue(book1.orders.count == 1)
+        XCTAssertTrue(book2.orders.count == 1)
+        XCTAssertTrue(book3.orders.count == 1)
+        XCTAssertTrue(book1.filter(on: .completedOrder)?.count == 1)
+        XCTAssertTrue(book2.filter(on: .completedOrder)?.count == 1)
+        XCTAssertTrue(book3.filter(on: .completedOrder)?.count == 1)
+
+        book1.updateOrders()
+        book2.updateOrders()
+        book3.updateOrders()
+
+        XCTAssertTrue(firstLoco.orders.count == 1)
+        XCTAssertTrue(secondLoco.orders.count == 1)
+        XCTAssertTrue(thirdLoco.orders.count == 1)
+
+        let mktDemand = MarketDemand.init(board: boardRef)
+        guard let demand = mktDemand.demand else {
+            XCTAssertThrowsError("demand is nil")
+            return
+        }
+        XCTAssertTrue(demand.count == 3)
+
+        print(demand as Any)
+
+        XCTAssertNoThrow( try mktDemand.handleGenerations(for: demand) )
+
+        XCTAssertTrue(firstLoco.state == .obsolete)
+        XCTAssertTrue(firstLoco.orders.count == 0, "\(firstLoco.orders.count)")
+        XCTAssertTrue(secondLoco.orders.count == 2, "\(secondLoco.orders.count)")
+        XCTAssertTrue(thirdLoco.orders.count == 2, "\(thirdLoco.orders.count)")
+
+        let firstLocoExisting = firstLoco.orders.filter{ return $0.state == .existingOrder }
+        let firstLocoCompleted = firstLoco.orders.filter{ return $0.state == .completedOrder }
+        let firstLocoInitial = firstLoco.orders.filter{ return $0.state == .initialOrder }
+
+        let secondLocoExisting = secondLoco.orders.filter{ return $0.state == .existingOrder }
+        let secondLocoCompleted = secondLoco.orders.filter{ return $0.state == .completedOrder }
+        let secondLocoInitial = secondLoco.orders.filter{ return $0.state == .initialOrder }
+
+        let thirdLocoExisting = thirdLoco.orders.filter{ return $0.state == .existingOrder }
+        let thirdLocoCompleted = thirdLoco.orders.filter{ return $0.state == .completedOrder }
+        let thirdLocoInitial = thirdLoco.orders.filter{ return $0.state == .initialOrder }
+
+        XCTAssertTrue(firstLocoExisting.count == 0)
+        XCTAssertTrue(firstLocoCompleted.count == 0, "\(firstLocoCompleted.count)")
+        XCTAssertTrue(firstLocoInitial.count == 0)
+
+        XCTAssertTrue(secondLocoExisting.count == 2, "\(secondLocoExisting.count)")
+        XCTAssertTrue(secondLocoCompleted.count == 0)
+        XCTAssertTrue(secondLocoInitial.count == 0)
+
+        XCTAssertTrue(thirdLocoExisting.count == 2, "\(thirdLocoExisting.count)")
+        XCTAssertTrue(thirdLocoCompleted.count == 0)
+        XCTAssertTrue(thirdLocoInitial.count == 0)
+
+        let postMarket = MarketDemand.init(board: boardRef)
+        guard let demandData = postMarket.demand else {
+            XCTFail("No demand found")
+            return
+        }
+
+        XCTAssertTrue(postMarket.getDemand(for: .green)?.count == 2)
+        XCTAssertTrue(postMarket.demand?.count == 2)
+
+        for item in demandData {
+            print (item.description)
+        }
+    }
 }

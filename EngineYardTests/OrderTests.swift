@@ -32,7 +32,7 @@ class OrderTests: XCTestCase {
     func testCannotReduceValueOfCompletedOrder() {
         let order = Order.init(.completedOrder)
 
-        XCTAssertThrowsError(try order.reduceValue(by: 1)) { error in
+        XCTAssertThrowsError(try order.decreaseValue(by: 1)) { error in
            XCTAssertEqual(error as! OrderError, OrderError.orderCannotBe(.completedOrder))
         }
 
@@ -40,7 +40,7 @@ class OrderTests: XCTestCase {
 
     func testCannotReduceValueOfInitialOrder() {
         let order = Order.init(.initialOrder)
-        XCTAssertThrowsError(try order.reduceValue(by: 1)) { error in
+        XCTAssertThrowsError(try order.decreaseValue(by: 1)) { error in
            XCTAssertEqual(error as! OrderError, OrderError.orderCannotBe(.initialOrder))
         }
     }
@@ -50,7 +50,7 @@ class OrderTests: XCTestCase {
         let orderValue = (order.value - 1)
 
         XCTAssertNoThrow(
-            try order.reduceValue(by: 1)
+            try order.decreaseValue(by: 1)
         )
 
         XCTAssertEqual(order.value, orderValue)
@@ -64,7 +64,7 @@ class OrderTests: XCTestCase {
         XCTAssertTrue(order.value == 6)
 
         XCTAssertNoThrow(
-            try order.reduceValue(by: 1)
+            try order.decreaseValue(by: 1)
         )
         XCTAssertTrue(order.value == 5)
     }
@@ -75,7 +75,7 @@ class OrderTests: XCTestCase {
             try order.setValue(6)
         )
         XCTAssertNoThrow(
-            try order.reduceValue(by: 5)
+            try order.decreaseValue(by: 5)
         )
 
         XCTAssertTrue(order.value == 1)
@@ -87,13 +87,13 @@ class OrderTests: XCTestCase {
             try order.setValue(2)
         )
         XCTAssertNoThrow(
-            try order.reduceValue(by: 1)
+            try order.decreaseValue(by: 1)
         )
 
         XCTAssertTrue(order.value == 1)
 
         XCTAssertNoThrow(
-            try order.reduceValue(by: 1)
+            try order.decreaseValue(by: 1)
         )
 
         XCTAssertTrue(order.value == 0)
@@ -105,7 +105,7 @@ class OrderTests: XCTestCase {
             try order.setValue(0)
         )
         XCTAssertThrowsError(
-            try order.reduceValue(by: 1)
+            try order.decreaseValue(by: 1)
         )
     }
 

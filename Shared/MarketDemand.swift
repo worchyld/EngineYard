@@ -48,80 +48,48 @@ import Foundation
 A. Determine how many generations exist for each locomotive color
    - A generation exists if it has dice (orders) in either existing or customer base
 */
+
+enum MarketDemandError : Error, Equatable {
+    case noDemandFound
+    case noLocomotiveFound
+}
+
 class Market {
     private let locos: [Locomotive]
 
-    lazy var currentMarket: [Locomotive]? = {
-        return findMarket()
+    lazy var demand: [Locomotive]? = {
+        return getCurrentMarket()
     }()
     lazy var green: [Locomotive]? = {
-        return currentMarket?.filter({ $0.color == .green })
+        return demand?.filter({ $0.color == .green })
     }()
     lazy var blue: [Locomotive]? = {
-        return currentMarket?.filter({ $0.color == .blue })
+        return demand?.filter({ $0.color == .blue })
     }()
     lazy var yellow: [Locomotive]? = {
-        return currentMarket?.filter({ $0.color == .yellow })
+        return demand?.filter({ $0.color == .yellow })
     }()
     lazy var red: [Locomotive]? = {
-        return currentMarket?.filter({ $0.color == .red })
+        return demand?.filter({ $0.color == .red })
     }()
 
 
     init(with locomotives: [Locomotive]) {
         self.locos = locomotives
-        //self.currentMarket = findMarket()
     }
 
     func demand(for color: Locomotive.Color) -> [Locomotive]? {
-        var filter: [Locomotive]?
-
         switch color {
         case .green:
-            filter = self.green
+            return self.green
         case .red:
-            filter = self.red
+            return self.red
         case .yellow:
-            filter = self.yellow
+            return self.yellow
         case .blue:
-            filter = self.blue
+            return self.blue
         }
-
-        return filter
     }
-
-
-    // Not used but kept for now
-    /*
-    private func market(for color: Locomotive.Color) -> [Locomotive]? {
-        // Find all Locomotives that match the type & have orders,
-        // sorted by cost & generation ascending
-
-        // compact version
-        //let results = locos.filter { !$0.order.isEmpty && $0.order.contains(where: { order in order.state > 0 }) }
-
-        let filter = locos
-            .filter { ($0.color == color) &&
-                    (!$0.orders.isEmpty) &&
-                ($0.orders.contains(where:
-                        { order in
-                            (
-                                (order.state == .existingOrder) ||
-                                (order.state == .completedOrder)
-                            )
-                        })
-                )
-        }
-        .sorted { (a: Locomotive, b: Locomotive) -> Bool in
-            return (
-                (a.color.rawValue < b.color.rawValue) &&
-                (a.cost < b.cost) &&
-                (a.generation.rawValue < b.generation.rawValue)
-            )
-        }
-
-        return filter
-    }*/
 
     // : Get the current market of locomotives
     // A generation exists if it has dice (orders) in either
@@ -131,7 +99,7 @@ class Market {
     //       and orders is not empty
     //      sorted by cost, generation, color raw values ascending
     //
-    internal func findMarket() -> [Locomotive] {
+    internal func getCurrentMarket() -> [Locomotive] {
         print ("Attemping filter: findMarket()")
 
         let filter = locos
@@ -164,6 +132,9 @@ class Market {
 class MarketDemand {
     private var board: Board?
     private var market: Market?
+    lazy var demand: [Locomotive]? = {
+        return self.market?.demand
+    }()
 
     init(board: Board) {
         guard let board = board else {
@@ -176,7 +147,6 @@ class MarketDemand {
 
     internal func getDemand(for color: Locomotive.Color) -> [Locomotive]? {
         guard let market = self.market else {
-            print ("No market object exists")
             return nil
         }
         guard let demand = market.demand(for: color) else {
@@ -187,10 +157,9 @@ class MarketDemand {
     }
 
 
-    func handleGenerations(for color: Locomotive.Color) {
-        guard let demand = getDemand(for: color) else {
-            print ("Demand returns nil")
-            return
+    func handleGenerations(for locos:[Locomotive]) throws {
+        guard let demand = self.demand else {
+            throw MarketDemandError.noDemandFound
         }
         let howMany = demand.count
 
@@ -219,21 +188,24 @@ class MarketDemand {
         //      - Newest generation: Repeat the above 2 steps
         //      - Middle/Newest state are unchanged
 
-        switch howMany {
-        case 1:
-            let results = handleOneGeneration(locos: demand)
-            print ("\n\nRESULTS -- \(String(describing: results))")
+        do {
+            switch howMany {
+            case 1:
+                try handleOneGeneration(locos: locos)
 
-        case 2:
-            handleTwoGenerations()
+            case 2:
+                try handleTwoGenerations(locos: locos)
 
-        case 3:
-            handleThreeGenerations()
+            case 3:
+                try handleThreeGenerations(locos: locos)
 
-        default:
-            print ("Do nothing")
+            default:
+                print ("Do nothing for this type")
+                break
+            }
+        } catch {
+            throw error
         }
-
     }
 
     private func howManyGenerationsExist(for market: [Locomotive]) -> Int {
@@ -253,47 +225,139 @@ extension MarketDemand {
      Then roll all dice in the Customer Base and place them in the empty
      Existing Order boxes for that locomotive type.
      */
-    func handleOneGeneration(locos: [Locomotive]) -> [Locomotive]? {
-
-        print ("Adding orders...")
-        if (locos.count != 1) {
-            print("too many")
-            return nil
-        }
-
-        locos.forEach { (locomotive) in
-            print ("Locomotive: \(locomotive.name), \(locomotive.color), \(locomotive.orders)")
-
-            /*
-            let orderBook = OrderBook.init(capacity: locomotive.orderCapacity)
-
-            if (!orderBook.isFull) {
-                do {
-                    let _ = try orderBook.add(.completedOrder)
-                } catch {
-                    print ("error -- \(error as Any)")
+    func handleOneGeneration(locos: [Locomotive]) throws {
+        if (locos.count == 1) {
+            do {
+                try locos.forEach { (locomotive) in
+                    if (!locomotive.isFull) {
+                        let book = OrderBook.init(with: locomotive)
+                        try book.add(.completedOrder)
+                        try book.rerollCompletedOrders()
+                        try book.transferCompletedOrdersToExisting()
+                        book.updateOrders()
+                    }
                 }
-                locomotive.setOrders(from: orderBook)
+            } catch {
+                throw error
             }
-            else {
-                print("Locomotive is full")
-            }
-             */
-
         }
+    }
+}
 
-        return locos
+// (C) 2 generations exist
+//      - Older generation: Remove 1 die from salesPool
+//      -> If no dice in salesPool, remove 1 die from ordersPool
+//
+//      - Older generation: Reroll dice in sales, move back to orders
+//      - Older generation: Mark as `old`
+//      - Newer generation: Where possible; add 1 die to the salespool
+//      - Newer generation: Re-roll all salespool dice and move back to `existingOrders`
+//
+extension MarketDemand {
+    func handleTwoGenerations(locos: [Locomotive]) throws {
+        let locos = locos.sorted(by: { (a: Locomotive, b: Locomotive) -> Bool in
+            return ((a.cost < b.cost) && (a.generation.rawValue < b.generation.rawValue))
+        })
+
+        if (locos.count == 2) {
+            do {
+                // Start with oldest:
+                // a. Prune 1 order
+                // b. Re-roll dice in completedOrders
+                // c. Move dice back to existingOrders
+                // d. Mark as `old`
+
+                guard let oldestLoco = locos.first else {
+                    throw MarketDemandError.noLocomotiveFound
+                }
+                guard let newerLoco = locos.last else {
+                    throw MarketDemandError.noLocomotiveFound
+                }
+
+                let book1 = OrderBook.init(with: oldestLoco)
+                book1.pruneSingleOrder()  // a
+                try book1.rerollCompletedOrders() // b
+                try book1.transferCompletedOrdersToExisting() // c
+                oldestLoco.setState(state: .old) // d
+                book1.updateOrders()
+
+                // with newer locomotive:
+                // a. Check if at capacity
+                // b. If not: add 1 die to completedOrders
+                // c. Re-roll all dice in completedOrders
+                // d. Transfer all orders back to existingOrders
+
+                let book2 = OrderBook.init(with: newerLoco)
+                try book2.add(.completedOrder) // a & b
+                try book2.rerollCompletedOrders() // c
+                try book2.transferCompletedOrdersToExisting() // d
+                book2.updateOrders()
+
+            }
+            catch {
+                throw error
+            }
+        }
     }
 }
 
 extension MarketDemand {
-    func handleTwoGenerations() {
+    /*
+    iii. Three generations exists.
+        a. Start with oldest locomotive.
+        b. Remove all dice from customer base and existing orders
+        c. This locomotive is marked as obsolote
+        d. Move to next oldest, add 1 die to customer base if required
+        e. Repeat this for the newest locomotive
+     */
+    func handleThreeGenerations(locos: [Locomotive]) throws {
+        let locos = locos.sorted(by: { (a: Locomotive, b: Locomotive) -> Bool in
+            return ((a.cost < b.cost) && (a.generation.rawValue < b.generation.rawValue))
+        })
 
-    }
-}
+        if (locos.count == 3) {
+            do {
+                guard let firstLoco = locos.first else {
+                    throw MarketDemandError.noLocomotiveFound
+                }
+                guard let middleLoco = locos[safe: 1] else {
+                    throw MarketDemandError.noLocomotiveFound
+                }
+                guard let youngestLoco = locos.last else {
+                    throw MarketDemandError.noLocomotiveFound
+                }
 
-extension MarketDemand {
-    func handleThreeGenerations() {
+                // Start with oldest generation
+                // a. Remove all orders regardless of what they are
+                // b. Mark as obsolote, demand is nil
+                let book1 = OrderBook.init(with: firstLoco)
+                book1.removeAll()
+                book1.updateOrders()
+                firstLoco.setState(state: .obsolete)
 
+                // Middle generation
+                // a. Add 1 die to completedOrders (if possible)
+                // b. Re-roll all completedOrders
+                // c. Move all completedOrders -> existingOrders
+                let book2 = OrderBook.init(with: middleLoco)
+                try book2.add(.completedOrder)
+                try book2.rerollCompletedOrders()
+                try book2.transferCompletedOrdersToExisting()
+                book2.updateOrders()
+
+                // Youngest generation
+                // a. Add 1 die to completedOrders (if possible)
+                // b. Re-roll all completedOrders
+                // c. Move all completedOrders -> existingOrders
+                let book3 = OrderBook.init(with: youngestLoco)
+                try book3.add(.completedOrder)
+                try book3.rerollCompletedOrders()
+                try book3.transferCompletedOrdersToExisting()
+                book3.updateOrders()
+            }
+            catch {
+                throw error
+            }
+        }
     }
 }

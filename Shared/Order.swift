@@ -54,7 +54,7 @@ extension Order {
 
 extension Order {
     // Only existing orders can be reduced in value
-    func reduceValue(by amount: Int) throws {
+    func decreaseValue(by amount: Int) throws {
         guard (amount >= 0) else {
             throw IntError.cannotBeNegative
         }
@@ -65,10 +65,10 @@ extension Order {
         guard (sum - amount >= 0) else {
             throw IntError.resultWillBeNegative(value: sum)
         }
-        willReduceValue(by: amount)
+        willDecreaseValue(by: amount)
     }
 
-    private func willReduceValue(by amount: Int) {
+    private func willDecreaseValue(by amount: Int) {
         self.value -= amount
     }
 }
