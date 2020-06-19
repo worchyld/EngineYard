@@ -53,14 +53,6 @@ class WalletCreditTests: XCTestCase {
         var w = Wallet(cash)
 
         XCTAssertNoThrow( try w.credit(amount: amount) )
-
-        /*
-        XCTAssertThrowsError(try w.credit(amount: amount)) { error in
-            XCTAssertEqual(error as! SpendingError, SpendingError.mustBePositive(amount))
-        }
-        */
-
         XCTAssertEqual( w.cash , 11 )
-
     }
 }
