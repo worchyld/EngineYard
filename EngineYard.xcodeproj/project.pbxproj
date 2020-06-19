@@ -35,7 +35,7 @@
 		4D51E5FE2499539300A91B93 /* HandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D51E5FD2499539300A91B93 /* HandTests.swift */; };
 		4D54250C249D5B16004B97A8 /* Spender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D54250B249D5B16004B97A8 /* Spender.swift */; };
 		4D54250E249D62C3004B97A8 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D54250D249D62C3004B97A8 /* Wallet.swift */; };
-		4D542510249D6358004B97A8 /* Wallet+Spending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D54250F249D6358004B97A8 /* Wallet+Spending.swift */; };
+		4D542510249D6358004B97A8 /* Wallet+Spend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D54250F249D6358004B97A8 /* Wallet+Spend.swift */; };
 		4D542512249D638B004B97A8 /* SpendingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D542511249D638B004B97A8 /* SpendingTests.swift */; };
 		4D66EBC6248ED12B005DE7F0 /* BoardBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66EBC5248ED12B005DE7F0 /* BoardBuilderTests.swift */; };
 		4D66EBC8248F8147005DE7F0 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66EBC7248F8147005DE7F0 /* Player.swift */; };
@@ -112,7 +112,7 @@
 		4D51E5FD2499539300A91B93 /* HandTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandTests.swift; sourceTree = "<group>"; };
 		4D54250B249D5B16004B97A8 /* Spender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spender.swift; sourceTree = "<group>"; };
 		4D54250D249D62C3004B97A8 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
-		4D54250F249D6358004B97A8 /* Wallet+Spending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Wallet+Spending.swift"; sourceTree = "<group>"; };
+		4D54250F249D6358004B97A8 /* Wallet+Spend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Wallet+Spend.swift"; sourceTree = "<group>"; };
 		4D542511249D638B004B97A8 /* SpendingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingTests.swift; sourceTree = "<group>"; };
 		4D66EBC5248ED12B005DE7F0 /* BoardBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardBuilderTests.swift; sourceTree = "<group>"; };
 		4D66EBC7248F8147005DE7F0 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -258,7 +258,7 @@
 				4D66EBC9248F836E005DE7F0 /* Hand.swift */,
 				4DC84CED2486E43E002A48DE /* EngineYardGame.swift */,
 				4D54250D249D62C3004B97A8 /* Wallet.swift */,
-				4D54250F249D6358004B97A8 /* Wallet+Spending.swift */,
+				4D54250F249D6358004B97A8 /* Wallet+Spend.swift */,
 				4D54250B249D5B16004B97A8 /* Spender.swift */,
 			);
 			path = Shared;
@@ -427,7 +427,7 @@
 				4D66EBCA248F836E005DE7F0 /* Hand.swift in Sources */,
 				4D10C60C2486D41700238508 /* Card.swift in Sources */,
 				4D10C6102486D6CC00238508 /* Locomotive+Group.swift in Sources */,
-				4D542510249D6358004B97A8 /* Wallet+Spending.swift in Sources */,
+				4D542510249D6358004B97A8 /* Wallet+Spend.swift in Sources */,
 				4DDDD3F9248E935700A2DA86 /* Card+Filter.swift in Sources */,
 				4D66EBD6248FE700005DE7F0 /* Order.swift in Sources */,
 				4D54250C249D5B16004B97A8 /* Spender.swift in Sources */,

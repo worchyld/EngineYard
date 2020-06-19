@@ -25,11 +25,21 @@ extension SpendingError : LocalizedError {
     }
 }
 
-protocol ValidateSpendingDelegate {
+protocol ValidateFundsDelegate {
     func checkHasFunds(amount: Int) throws
+}
+
+protocol ValidatePositiveDelegate {
     func checkPositive(amount: Int) throws
 }
 
 protocol WillSpendDelegate {
     mutating func spend(amount: Int) throws -> Int
+}
+
+
+// credit
+
+protocol WillCreditDelegate {
+    mutating func credit(amount: Int) throws -> Int
 }
