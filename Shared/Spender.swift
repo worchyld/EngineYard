@@ -33,13 +33,14 @@ protocol ValidatePositiveDelegate {
     func checkPositive(amount: Int) throws
 }
 
+
+// spend
 protocol WillSpendDelegate {
     mutating func spend(amount: Int) throws -> Int
 }
 
 
 // credit
-
 protocol WillCreditDelegate {
     mutating func credit(amount: Int) throws -> Int
 }
