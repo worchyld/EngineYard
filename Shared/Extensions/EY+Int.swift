@@ -16,3 +16,12 @@ extension Int {
         return 1 + Int(arc4random_uniform(maximum))
     }
 }
+
+extension Int {
+    var isPositive: Bool {
+        return (self > 0)
+    }
+    var isNegative: Bool {
+        return (self < 0)
+    }
+}
