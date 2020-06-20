@@ -62,6 +62,9 @@
 		4DA97CDC2490B97D0053997C /* MarketDemandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA97CDB2490B97D0053997C /* MarketDemandTests.swift */; };
 		4DC84CEE2486E43E002A48DE /* EngineYardGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC84CED2486E43E002A48DE /* EngineYardGame.swift */; };
 		4DCCB963249D7390000320F0 /* Production.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCB962249D7390000320F0 /* Production.swift */; };
+		4DCCB965249DC554000320F0 /* Production+Credit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCB964249DC554000320F0 /* Production+Credit.swift */; };
+		4DCCB967249DC579000320F0 /* Production+Validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCB966249DC579000320F0 /* Production+Validate.swift */; };
+		4DCCB96B249DC8D4000320F0 /* Production+Spend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCB96A249DC8D4000320F0 /* Production+Spend.swift */; };
 		4DDDD3F7248E924E00A2DA86 /* CardFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDDD3F6248E924E00A2DA86 /* CardFilterTests.swift */; };
 		4DDDD3F9248E935700A2DA86 /* Card+Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDDD3F8248E935700A2DA86 /* Card+Filter.swift */; };
 		4DEFB9ED249BA0A00006138A /* PruneOrdersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEFB9EC249BA0A00006138A /* PruneOrdersTests.swift */; };
@@ -141,6 +144,9 @@
 		4DA97CDB2490B97D0053997C /* MarketDemandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDemandTests.swift; sourceTree = "<group>"; };
 		4DC84CED2486E43E002A48DE /* EngineYardGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineYardGame.swift; sourceTree = "<group>"; };
 		4DCCB962249D7390000320F0 /* Production.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Production.swift; sourceTree = "<group>"; };
+		4DCCB964249DC554000320F0 /* Production+Credit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Production+Credit.swift"; sourceTree = "<group>"; };
+		4DCCB966249DC579000320F0 /* Production+Validate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Production+Validate.swift"; sourceTree = "<group>"; };
+		4DCCB96A249DC8D4000320F0 /* Production+Spend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Production+Spend.swift"; sourceTree = "<group>"; };
 		4DDDD3F6248E924E00A2DA86 /* CardFilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFilterTests.swift; sourceTree = "<group>"; };
 		4DDDD3F8248E935700A2DA86 /* Card+Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Filter.swift"; sourceTree = "<group>"; };
 		4DEFB9EC249BA0A00006138A /* PruneOrdersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PruneOrdersTests.swift; sourceTree = "<group>"; };
@@ -256,6 +262,9 @@
 				4D66EBD5248FE700005DE7F0 /* Order.swift */,
 				4D66EBD7248FF50A005DE7F0 /* OrderBook.swift */,
 				4DCCB962249D7390000320F0 /* Production.swift */,
+				4DCCB96A249DC8D4000320F0 /* Production+Spend.swift */,
+				4DCCB966249DC579000320F0 /* Production+Validate.swift */,
+				4DCCB964249DC554000320F0 /* Production+Credit.swift */,
 				4DA97CD92490B4250053997C /* MarketDemand.swift */,
 				4DA1C14A2486F3FC004C4121 /* Tax.swift */,
 				4D66EBC7248F8147005DE7F0 /* Player.swift */,
@@ -422,6 +431,7 @@
 				4DA1C1422486ED12004C4121 /* NumberFormatCache.swift in Sources */,
 				4DA1C1402486ECF3004C4121 /* Sounds.swift in Sources */,
 				4D10C58A2486D08400238508 /* SceneDelegate.swift in Sources */,
+				4DCCB96B249DC8D4000320F0 /* Production+Spend.swift in Sources */,
 				4D66EBD8248FF50B005DE7F0 /* OrderBook.swift in Sources */,
 				4DCCB963249D7390000320F0 /* Production.swift in Sources */,
 				4DA1C1442486ED8C004C4121 /* EY+FlatColor.swift in Sources */,
@@ -432,6 +442,7 @@
 				4DEFB9F5249BEB550006138A /* LocomotiveLivery.swift in Sources */,
 				4D34A85F2492534D00590EFD /* Locomotive+Filter.swift in Sources */,
 				4D66EBCA248F836E005DE7F0 /* Hand.swift in Sources */,
+				4DCCB965249DC554000320F0 /* Production+Credit.swift in Sources */,
 				4D10C60C2486D41700238508 /* Card.swift in Sources */,
 				4D542516249D708F004B97A8 /* Wallet+Credit.swift in Sources */,
 				4D10C6102486D6CC00238508 /* Locomotive+Group.swift in Sources */,
@@ -442,6 +453,7 @@
 				4DA1C1392486EC3D004C4121 /* Die.swift in Sources */,
 				4DA1C14B2486F3FC004C4121 /* Tax.swift in Sources */,
 				4DA1C1482486EDE3004C4121 /* EY+Date.swift in Sources */,
+				4DCCB967249DC579000320F0 /* Production+Validate.swift in Sources */,
 				4D10C6162486DC4700238508 /* Constants.swift in Sources */,
 				4D49D2672499FE2C000E857F /* EY+Identifier.swift in Sources */,
 				4D49D2632499F9D9000E857F /* AvatarView.swift in Sources */,
