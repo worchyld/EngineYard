@@ -22,14 +22,3 @@ final class Production : Identifiable, SpendingDelegate, CreditDelegate {
         self.units = units
     }
 }
-
-
-
-
-/*
-extension Production {
-    public static func builder(units: Int = 0) -> Production {
-        return Production(units: units)
-    }
-}
-*/
