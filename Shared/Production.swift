@@ -8,14 +8,10 @@
 
 import Foundation
 
-protocol ResetProductionDelegate {
-    func reset(production: inout Production)
-}
-
-final class Production : Identifiable, SpendingDelegate, CreditDelegate {
+class Production : Identifiable {
     let id: UUID
-    var units: Int
-    internal var spent: Int = 0
+    let units: Int
+    let spent: Int = 0
 
     init(_ id: UUID = UUID(), units: Int = 0) {
         self.id = id
