@@ -49,7 +49,7 @@ class WalletTests: XCTestCase {
     // Cannot go negative
     func testWallet_SpendMoreThanCashOnHand_Fails() {
         let wallet = Wallet.init(100)
-        var interactor = WalletInteractor(wallet: wallet)
+        let interactor = WalletInteractor(wallet: wallet)
 
         let spend = 101
         XCTAssertThrowsError(try interactor.debit(amount: spend) ) { error in
@@ -59,7 +59,7 @@ class WalletTests: XCTestCase {
 
     func testWallet_DidSpend10Coins() {
         let wallet = Wallet.init(100)
-        var interactor = WalletInteractor(wallet: wallet)
+        let interactor = WalletInteractor(wallet: wallet)
 
         let amount = 10
 
@@ -69,7 +69,7 @@ class WalletTests: XCTestCase {
 
     func testWallet_CannotCreditNegative() {
         let wallet = Wallet.init(100)
-        var interactor = WalletInteractor(wallet: wallet)
+        let interactor = WalletInteractor(wallet: wallet)
 
         let amount = -10
 
@@ -80,7 +80,7 @@ class WalletTests: XCTestCase {
 
     func testWallet_CannotCreditZero() {
         let wallet = Wallet.init(100)
-        var interactor = WalletInteractor(wallet: wallet)
+        let interactor = WalletInteractor(wallet: wallet)
 
         let amount = 0
 
@@ -91,7 +91,7 @@ class WalletTests: XCTestCase {
 
     func testWallet_DidCredit5Coins() {
         let wallet = Wallet.init(100)
-        var interactor = WalletInteractor(wallet: wallet)
+        let interactor = WalletInteractor(wallet: wallet)
 
         let amount = 5
         XCTAssertNoThrow( try interactor.credit(amount: amount) )
