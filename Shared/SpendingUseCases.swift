@@ -11,12 +11,12 @@ import Foundation
 // MARK: Spend Use Case
 
 protocol SpendUseCase {
-    mutating func spend(amount: Int) throws
+    mutating func spend(amount: Int) throws -> Int
 }
 
 protocol ValidateSpendUseCase {
-    func checkFunds(amount: Int) throws 
-    func checkPositive(amount: Int) throws
+    func checkFunds(amount: Int) throws -> Bool
+    func checkPositive(amount: Int) throws -> Bool
     func canSpend(amount: Int) throws -> Bool
 }
 
@@ -29,6 +29,8 @@ protocol ValidateSpendUseCase {
 enum SpendingError : Error, Equatable {
     case mustBePositive(_ amount: Int)
     case notEnoughFunds(_ amount: Int)
+    case cannotSpend(_ amount: Int)
+    case invalidAmount
 }
 
 // spending: localized error
@@ -40,6 +42,12 @@ extension SpendingError : LocalizedError {
 
         case let .notEnoughFunds(amount):
             return "Cannot spend #{\(amount)}"
+
+        case let .cannotSpend(amount):
+            return "Cannot spend #{\(amount)}"
+
+        case .invalidAmount:
+            return "Invalid amount"
         }
     }
 }

@@ -21,8 +21,46 @@ class WalletTests: XCTestCase {
     }
 
     func testWallet_SpendZero_Fails() {
-        //let wallet = Wallet.init(100)
-        
+        let wallet = Wallet.init(100)
+        var debitor = WalletSpendingInteractor(wallet: wallet)
+
+        let spend = 0
+
+        XCTAssertThrowsError(try debitor.debit(amount: spend) ) { error in
+            XCTAssertEqual(error as! SpendingError, SpendingError.mustBePositive(spend) )
+        }
+    }
+
+    func testWallet_SpendNegative_Fails() {
+        let wallet = Wallet.init(100)
+        var debitor = WalletSpendingInteractor(wallet: wallet)
+
+        let spend = -1
+
+        XCTAssertThrowsError(try debitor.debit(amount: spend) ) { error in
+            XCTAssertEqual(error as! SpendingError, SpendingError.mustBePositive(spend) )
+        }
+    }
+
+    func testWallet_SpendMoreThanCashOnHand_Fails() {
+        let wallet = Wallet.init(100)
+        var debitor = WalletSpendingInteractor(wallet: wallet)
+
+        let spend = 101
+        XCTAssertThrowsError(try debitor.debit(amount: spend) ) { error in
+            XCTAssertEqual(error as! SpendingError, SpendingError.notEnoughFunds(spend) )
+        }
+    }
+
+    func testWallet_DidSpend10Coins() {
+        let wallet = Wallet.init(100)
+        var debitor = WalletSpendingInteractor(wallet: wallet)
+
+        let spend = 10
+
+        XCTAssertNoThrow( try debitor.debit(amount: spend) )
+
+        //XCTAssertTrue(wallet.cash == 90)
     }
 
 }
