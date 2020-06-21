@@ -31,13 +31,21 @@ class TestCodableSpace: XCTestCase {
             return
         }
 
+//        do {
+//            let response = try data.decoded() as Response
+//            print (response)
+//        }
+//        catch {
+//            XCTFail(error.localizedDescription)
+//        }
+
         self.parseJSON(from: data) { (response, error) in
             if (error != nil) {
-                print (error?.localizedDescription as Any)
+                XCTFail(error!.localizedDescription)
                 return
             }
             guard let hasResponse = response else {
-                print ("response invalid")
+                XCTFail("response invalid")
                 return
             }
             XCTAssertEqual(hasResponse.spaces?.count, 14)
