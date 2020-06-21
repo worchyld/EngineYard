@@ -23,6 +23,13 @@ struct WalletSpendingInteractor: WalletSpendingInteractorUseCase {
     }
 
     mutating func debit(amount: Int) throws {
-        //try delegate?.spend(amount: amount)
+        guard let cash = try delegate?.spend(amount: amount) else {
+            return
+        }
+        updateCash(amount: cash)
+    }
+
+    private func updateCash(amount: Int) {
+        self.wallet.cash = amount
     }
 }

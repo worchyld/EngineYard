@@ -11,7 +11,7 @@ import Foundation
 /** Wallet is an interface/interactor for a player's cash **/
 
 final class Wallet {
-    private(set) var cash: Int
+    var cash: Int
 
     init(_ cash: Int = 0) {
         self.cash = cash

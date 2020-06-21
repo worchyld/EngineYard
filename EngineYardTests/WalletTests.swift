@@ -20,7 +20,7 @@ class WalletTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    /*
+
     func testWallet_SpendZero_Fails() {
         let wallet = Wallet.init(100)
         var debitor = WalletSpendingInteractor(wallet: wallet)
@@ -30,7 +30,10 @@ class WalletTests: XCTestCase {
         XCTAssertThrowsError(try debitor.debit(amount: spend) ) { error in
             XCTAssertEqual(error as! SpendingError, SpendingError.mustBePositive(spend) )
         }
+
+        XCTAssertTrue(wallet.cash == 100)
     }
+
 
     func testWallet_SpendNegative_Fails() {
         let wallet = Wallet.init(100)
@@ -43,6 +46,7 @@ class WalletTests: XCTestCase {
         }
     }
 
+    // Cannot go negative
     func testWallet_SpendMoreThanCashOnHand_Fails() {
         let wallet = Wallet.init(100)
         var debitor = WalletSpendingInteractor(wallet: wallet)
@@ -60,8 +64,6 @@ class WalletTests: XCTestCase {
         let spend = 10
 
         XCTAssertNoThrow( try debitor.debit(amount: spend) )
-
-        //XCTAssertTrue(wallet.cash == 90)
+        XCTAssertTrue(wallet.cash == 90)
     }
-*/
 }
