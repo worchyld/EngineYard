@@ -26,8 +26,8 @@ protocol ValidateCreditUseCase {
 }
 
 struct WalletCreditInteractor : WalletCreditInteractorUseCase {
-    var wallet: Wallet
-    var delegate: CreditDelegate?
+    internal var wallet: Wallet
+    internal var delegate: CreditDelegate?
 
     init(wallet: Wallet) {
         self.wallet = wallet
@@ -48,7 +48,7 @@ struct WalletCreditInteractor : WalletCreditInteractorUseCase {
 }
 
 struct Creditor : CreditDelegate {
-    var value: Int
+    internal var value: Int
 
     mutating func credit(amount: Int) throws -> Int {
         guard try checkPositive(amount: amount) else {

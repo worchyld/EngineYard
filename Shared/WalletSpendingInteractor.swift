@@ -14,8 +14,8 @@ protocol WalletSpendingInteractorUseCase {
 }
 
 struct WalletSpendingInteractor: WalletSpendingInteractorUseCase {
-    var wallet: Wallet
-    var delegate: SpendingDelegate?
+    internal var wallet: Wallet
+    internal var delegate: SpendingDelegate?
 
     init(wallet: Wallet) {
         self.wallet = wallet

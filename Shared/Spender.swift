@@ -13,7 +13,7 @@ protocol SpendingDelegate : SpendUseCase, ValidateSpendUseCase {
 }
 
 struct Spender : SpendingDelegate {
-    var value: Int
+    internal var value: Int
 
     init(value: Int = 0) {
         self.value = value
