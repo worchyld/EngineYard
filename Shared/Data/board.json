@@ -49,20 +49,20 @@
         }
     },
     "spaces": [
-        "green.first",
-        "red.first",
-        "yellow.first",
-        "blue.first",
-        "green.second",
-        "red.second",
-        "yellow.second",
-        "green.third",
-        "blue.second",
-        "red.third",
-        "green.fourth",
-        "yellow.third",
-        "red.fourth",
-        "green.fifth"
+        {"space": "green.first"},
+        {"space": "red.first"},
+        {"space": "yellow.first"},
+        {"space": "blue.first"},
+        {"space": "green.second"},
+        {"space": "red.second"},
+        {"space": "yellow.second"},
+        {"space": "green.third"},
+        {"space": "blue.second"},
+        {"space": "red.third"},
+        {"space": "green.fourth"},
+        {"space": "yellow.third"},
+        {"space": "red.fourth"},
+        {"space": "green.fifth"}
     ],
     "locomotives": [
         {

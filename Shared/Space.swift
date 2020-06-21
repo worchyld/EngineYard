@@ -12,5 +12,7 @@ import Foundation
 // Each space holds a `LocomotiveFactory` (AKA: Factory)
 // Each `factory` holds multiple `Locomotive` (AKA Card)
 
-class Space {
+// MARK: - Space
+struct Space: Codable {
+    var space: String?
 }
