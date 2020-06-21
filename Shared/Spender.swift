@@ -8,7 +8,9 @@
 
 import Foundation
 
-protocol SpendingUseCases : SpendUseCase, ValidateSpendUseCase { }
+protocol SpendingUseCases : SpendUseCase, ValidateSpendUseCase {
+    var value: Int { get }
+}
 
 struct Spender : SpendingUseCases {
     var value: Int

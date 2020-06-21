@@ -8,8 +8,6 @@
 
 import Foundation
 
-/** Wallet is an interface/interactor for a player's cash **/
-
 final class Wallet {
     var cash: Int
 
