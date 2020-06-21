@@ -14,7 +14,7 @@ protocol WalletUseCases: SpendingUseCase, ValidateSpendingUseCase {
     var cash: Int { get }
 }
 
-class Wallet {
+final class Wallet {
     internal var cash: Int
 
     init(_ cash: Int = 0) {
