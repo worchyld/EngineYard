@@ -35,8 +35,6 @@
 		4D51E5FE2499539300A91B93 /* HandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D51E5FD2499539300A91B93 /* HandTests.swift */; };
 		4D54250C249D5B16004B97A8 /* SpendingUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D54250B249D5B16004B97A8 /* SpendingUseCases.swift */; };
 		4D54250E249D62C3004B97A8 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D54250D249D62C3004B97A8 /* Wallet.swift */; };
-		4D542512249D638B004B97A8 /* WalletSpendingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D542511249D638B004B97A8 /* WalletSpendingTests.swift */; };
-		4D54251A249D70F5004B97A8 /* WalletCreditTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D542519249D70F5004B97A8 /* WalletCreditTests.swift */; };
 		4D66EBC6248ED12B005DE7F0 /* BoardBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66EBC5248ED12B005DE7F0 /* BoardBuilderTests.swift */; };
 		4D66EBC8248F8147005DE7F0 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66EBC7248F8147005DE7F0 /* Player.swift */; };
 		4D66EBCA248F836E005DE7F0 /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66EBC9248F836E005DE7F0 /* Hand.swift */; };
@@ -112,8 +110,6 @@
 		4D51E5FD2499539300A91B93 /* HandTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandTests.swift; sourceTree = "<group>"; };
 		4D54250B249D5B16004B97A8 /* SpendingUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingUseCases.swift; sourceTree = "<group>"; };
 		4D54250D249D62C3004B97A8 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
-		4D542511249D638B004B97A8 /* WalletSpendingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletSpendingTests.swift; sourceTree = "<group>"; };
-		4D542519249D70F5004B97A8 /* WalletCreditTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCreditTests.swift; sourceTree = "<group>"; };
 		4D66EBC5248ED12B005DE7F0 /* BoardBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardBuilderTests.swift; sourceTree = "<group>"; };
 		4D66EBC7248F8147005DE7F0 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		4D66EBC9248F836E005DE7F0 /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
@@ -228,8 +224,6 @@
 				4DEFB9F0249BB3D40006138A /* RustingTests.swift */,
 				4D6BA939249D41A200167E68 /* IntTests.swift */,
 				4D3BE040249FAD34009C203E /* SpendingUseCaseTest.swift */,
-				4D542511249D638B004B97A8 /* WalletSpendingTests.swift */,
-				4D542519249D70F5004B97A8 /* WalletCreditTests.swift */,
 			);
 			path = EngineYardTests;
 			sourceTree = "<group>";
@@ -452,10 +446,8 @@
 				4DA1C14D2486F43E004C4121 /* TaxTests.swift in Sources */,
 				4DA97CDC2490B97D0053997C /* MarketDemandTests.swift in Sources */,
 				4D34A86B2495A61D00590EFD /* WinnerTests.swift in Sources */,
-				4D54251A249D70F5004B97A8 /* WalletCreditTests.swift in Sources */,
 				4D66EBDC24900D65005DE7F0 /* OrderBookTests.swift in Sources */,
 				4D10C6122486DB1B00238508 /* CardBuilderTests.swift in Sources */,
-				4D542512249D638B004B97A8 /* WalletSpendingTests.swift in Sources */,
 				4D3BE041249FAD34009C203E /* SpendingUseCaseTest.swift in Sources */,
 				4D10C6242486E12000238508 /* Card+Expectations.swift in Sources */,
 				4DEFB9F1249BB3D40006138A /* RustingTests.swift in Sources */,
