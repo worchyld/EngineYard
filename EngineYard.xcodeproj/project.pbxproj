@@ -27,6 +27,8 @@
 		4D10C6242486E12000238508 /* Card+Expectations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D10C6232486E12000238508 /* Card+Expectations.swift */; };
 		4D34A85F2492534D00590EFD /* Locomotive+Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D34A85E2492534D00590EFD /* Locomotive+Filter.swift */; };
 		4D34A86B2495A61D00590EFD /* WinnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D34A86A2495A61D00590EFD /* WinnerTests.swift */; };
+		4D3BE041249FAD34009C203E /* SpendingUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE040249FAD34009C203E /* SpendingUseCaseTest.swift */; };
+		4D3BE043249FAF1E009C203E /* SpendingInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE042249FAF1E009C203E /* SpendingInterface.swift */; };
 		4D49D2632499F9D9000E857F /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D49D2622499F9D9000E857F /* AvatarView.swift */; };
 		4D49D2652499FDDD000E857F /* FamilyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D49D2642499FDDD000E857F /* FamilyTests.swift */; };
 		4D49D2672499FE2C000E857F /* EY+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D49D2662499FE2C000E857F /* EY+Identifier.swift */; };
@@ -102,6 +104,8 @@
 		4D10C6232486E12000238508 /* Card+Expectations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Expectations.swift"; sourceTree = "<group>"; };
 		4D34A85E2492534D00590EFD /* Locomotive+Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locomotive+Filter.swift"; sourceTree = "<group>"; };
 		4D34A86A2495A61D00590EFD /* WinnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerTests.swift; sourceTree = "<group>"; };
+		4D3BE040249FAD34009C203E /* SpendingUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingUseCaseTest.swift; sourceTree = "<group>"; };
+		4D3BE042249FAF1E009C203E /* SpendingInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingInterface.swift; sourceTree = "<group>"; };
 		4D49D2622499F9D9000E857F /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		4D49D2642499FDDD000E857F /* FamilyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyTests.swift; sourceTree = "<group>"; };
 		4D49D2662499FE2C000E857F /* EY+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Identifier.swift"; sourceTree = "<group>"; };
@@ -223,6 +227,7 @@
 				4D10C5A02486D08500238508 /* Info.plist */,
 				4DEFB9F0249BB3D40006138A /* RustingTests.swift */,
 				4D6BA939249D41A200167E68 /* IntTests.swift */,
+				4D3BE040249FAD34009C203E /* SpendingUseCaseTest.swift */,
 				4D542511249D638B004B97A8 /* WalletSpendingTests.swift */,
 				4D542519249D70F5004B97A8 /* WalletCreditTests.swift */,
 			);
@@ -253,6 +258,7 @@
 				4D66EBC9248F836E005DE7F0 /* Hand.swift */,
 				4DC84CED2486E43E002A48DE /* EngineYardGame.swift */,
 				4D54250D249D62C3004B97A8 /* Wallet.swift */,
+				4D3BE042249FAF1E009C203E /* SpendingInterface.swift */,
 				4D54250B249D5B16004B97A8 /* SpendingUseCases.swift */,
 			);
 			path = Shared;
@@ -421,6 +427,7 @@
 				4D10C60C2486D41700238508 /* Card.swift in Sources */,
 				4D10C6102486D6CC00238508 /* Locomotive+Group.swift in Sources */,
 				4DDDD3F9248E935700A2DA86 /* Card+Filter.swift in Sources */,
+				4D3BE043249FAF1E009C203E /* SpendingInterface.swift in Sources */,
 				4D66EBD6248FE700005DE7F0 /* Order.swift in Sources */,
 				4D54250C249D5B16004B97A8 /* SpendingUseCases.swift in Sources */,
 				4DA1C1392486EC3D004C4121 /* Die.swift in Sources */,
@@ -449,6 +456,7 @@
 				4D66EBDC24900D65005DE7F0 /* OrderBookTests.swift in Sources */,
 				4D10C6122486DB1B00238508 /* CardBuilderTests.swift in Sources */,
 				4D542512249D638B004B97A8 /* WalletSpendingTests.swift in Sources */,
+				4D3BE041249FAD34009C203E /* SpendingUseCaseTest.swift in Sources */,
 				4D10C6242486E12000238508 /* Card+Expectations.swift in Sources */,
 				4DEFB9F1249BB3D40006138A /* RustingTests.swift in Sources */,
 				4DEFB9ED249BA0A00006138A /* PruneOrdersTests.swift in Sources */,
