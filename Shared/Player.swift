@@ -12,7 +12,7 @@ import GameplayKit
 class Player : NSObject, GKGameModelPlayer, Identifiable {
     var playerId: Int
     let name: String
-    private(set) var cash: Int
+    var cash: Int
     let avatar: String
 
     enum State: Int, CaseIterable {
@@ -22,7 +22,6 @@ class Player : NSObject, GKGameModelPlayer, Identifiable {
     }
 
     private(set) var state: Player.State = .waiting
-    private(set) var hand: [Card] = [Card]()
 
     init(playerId: Int = 0, name: String, cash: Int, avatar: String) {
         self.playerId = playerId
@@ -35,23 +34,5 @@ class Player : NSObject, GKGameModelPlayer, Identifiable {
 extension Player {
     static func == (lhs: Player, rhs: Player) -> Bool {
         return (lhs.playerId == rhs.playerId)
-    }
-}
-
-extension Player {
-    func setHand(cards: [Card]) {
-        self.hand = cards
-    }
-}
-
-extension Player {
-    func setCash(_ cash: Int) {
-        self.cash = cash
-    }
-}
-
-extension Player {
-    func setState(_ state: Player.State) {
-        self.state = state
     }
 }
