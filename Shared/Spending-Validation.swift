@@ -19,5 +19,3 @@ protocol Validate_CanSpendUseCase {
 protocol Validate_PositiveUseCase {
     func checkPositive(amount: Int) throws -> Bool
 }
-
-
