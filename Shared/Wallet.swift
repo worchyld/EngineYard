@@ -8,6 +8,8 @@
 
 import Foundation
 
+/** Wallet is an interface/interactor for a player's cash **/
+
 protocol WalletUseCases: SpendingUseCase, ValidateSpendingUseCase {
     var cash: Int { get }
 }
