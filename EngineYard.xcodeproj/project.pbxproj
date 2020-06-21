@@ -61,7 +61,6 @@
 		4DA97CDA2490B4250053997C /* MarketDemand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA97CD92490B4250053997C /* MarketDemand.swift */; };
 		4DA97CDC2490B97D0053997C /* MarketDemandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA97CDB2490B97D0053997C /* MarketDemandTests.swift */; };
 		4DC84CEE2486E43E002A48DE /* EngineYardGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC84CED2486E43E002A48DE /* EngineYardGame.swift */; };
-		4DCCB963249D7390000320F0 /* Production.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCB962249D7390000320F0 /* Production.swift */; };
 		4DDDD3F7248E924E00A2DA86 /* CardFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDDD3F6248E924E00A2DA86 /* CardFilterTests.swift */; };
 		4DDDD3F9248E935700A2DA86 /* Card+Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDDD3F8248E935700A2DA86 /* Card+Filter.swift */; };
 		4DEFB9ED249BA0A00006138A /* PruneOrdersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEFB9EC249BA0A00006138A /* PruneOrdersTests.swift */; };
@@ -140,7 +139,6 @@
 		4DA97CD92490B4250053997C /* MarketDemand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDemand.swift; sourceTree = "<group>"; };
 		4DA97CDB2490B97D0053997C /* MarketDemandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDemandTests.swift; sourceTree = "<group>"; };
 		4DC84CED2486E43E002A48DE /* EngineYardGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineYardGame.swift; sourceTree = "<group>"; };
-		4DCCB962249D7390000320F0 /* Production.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Production.swift; sourceTree = "<group>"; };
 		4DDDD3F6248E924E00A2DA86 /* CardFilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFilterTests.swift; sourceTree = "<group>"; };
 		4DDDD3F8248E935700A2DA86 /* Card+Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Filter.swift"; sourceTree = "<group>"; };
 		4DEFB9EC249BA0A00006138A /* PruneOrdersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PruneOrdersTests.swift; sourceTree = "<group>"; };
@@ -255,7 +253,6 @@
 				4D34A85E2492534D00590EFD /* Locomotive+Filter.swift */,
 				4D66EBD5248FE700005DE7F0 /* Order.swift */,
 				4D66EBD7248FF50A005DE7F0 /* OrderBook.swift */,
-				4DCCB962249D7390000320F0 /* Production.swift */,
 				4DA97CD92490B4250053997C /* MarketDemand.swift */,
 				4DA1C14A2486F3FC004C4121 /* Tax.swift */,
 				4D66EBC7248F8147005DE7F0 /* Player.swift */,
@@ -423,7 +420,6 @@
 				4DA1C1402486ECF3004C4121 /* Sounds.swift in Sources */,
 				4D10C58A2486D08400238508 /* SceneDelegate.swift in Sources */,
 				4D66EBD8248FF50B005DE7F0 /* OrderBook.swift in Sources */,
-				4DCCB963249D7390000320F0 /* Production.swift in Sources */,
 				4DA1C1442486ED8C004C4121 /* EY+FlatColor.swift in Sources */,
 				4DA97CDA2490B4250053997C /* MarketDemand.swift in Sources */,
 				4D10C60E2486D68C00238508 /* Card+Builder.swift in Sources */,

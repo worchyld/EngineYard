@@ -14,10 +14,17 @@ struct Card : Identifiable {
     let cost: Int
     let group: LocomotiveGroup
 
+    struct Production {
+        var units: Int
+        var spent: Int
+    }
+    var production: Production
+
     init(name: String, cost: Int, color: Locomotive.Color, generation: Locomotive.Generation) {
         self.name = name
         self.cost = cost
         self.group = LocomotiveGroup(color: color, generation: generation)
+        self.production = Production(units: 0, spent: 0)
     }
 }
 

@@ -10,7 +10,6 @@ import Foundation
 
 // MARK: Spending delegate
 protocol SpendingDelegate : WillSpendDelegate & ValidateFundsDelegate & ValidatePositiveDelegate {}
-protocol CreditDelegate : WillCreditDelegate & ValidateFundsDelegate & ValidatePositiveDelegate {}
 
 // spend delegate
 protocol WillSpendDelegate {
