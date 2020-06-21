@@ -27,26 +27,12 @@ extension Spender : SpendUseCase {
         }
         value -= amount
         return value
-
-        /*
-        do {
-            if (try canSpend(amount: amount)) {
-                value -= amount
-                return value
-            }
-            else {
-                throw SpendingError.cannotSpend(amount)
-            }
-        } catch {
-            throw error
-        }*/
     }
 }
 
 // MARK: `ValidationSpendingUseCase` Implementation
 
 extension Spender : ValidateSpendUseCase {
-
 
     func canSpend(amount: Int) throws -> Bool {
         guard try checkPositive(amount: amount) else {
@@ -59,7 +45,7 @@ extension Spender : ValidateSpendUseCase {
     }
 
     func checkFunds(amount: Int) throws -> Bool {
-        guard (value - amount).isPositive else {
+        guard ((value - amount) >= 0) else {
             throw SpendingError.notEnoughFunds(amount)
         }
         return true

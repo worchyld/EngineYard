@@ -20,6 +20,7 @@ class WalletTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+    /*
     func testWallet_SpendZero_Fails() {
         let wallet = Wallet.init(100)
         var debitor = WalletSpendingInteractor(wallet: wallet)
@@ -62,5 +63,5 @@ class WalletTests: XCTestCase {
 
         //XCTAssertTrue(wallet.cash == 90)
     }
-
+*/
 }

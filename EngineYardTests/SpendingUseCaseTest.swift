@@ -77,5 +77,14 @@ class SpendingUseCaseTest: XCTestCase {
         }
     }
 
+    func testDidSpend_5CoinsEqualsZero() {
+        var spender = Spender.init(value: 5)
+        let amount = 5
+
+        XCTAssertNoThrow( try spender.spend(amount: amount) )
+
+        XCTAssertEqual( spender.value, 0 )
+    }
+
 
 }
