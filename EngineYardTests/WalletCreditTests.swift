@@ -20,6 +20,7 @@ class WalletCreditTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+    /*
     func testAddNegativeValue_ShouldFail() {
         let cash = 10
         let amount = -1
@@ -55,4 +56,5 @@ class WalletCreditTests: XCTestCase {
         XCTAssertNoThrow( try w.credit(amount: amount) )
         XCTAssertEqual( w.cash , 11 )
     }
+ */
 }

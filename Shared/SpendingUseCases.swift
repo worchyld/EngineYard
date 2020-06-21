@@ -1,5 +1,5 @@
 //
-//  Spender.swift
+//  SpendingUseCases.swift
 //  EngineYard
 //
 //  Created by Amarjit on 19/06/2020.
@@ -8,31 +8,21 @@
 
 import Foundation
 
-// MARK: Spending delegate
-protocol SpendingDelegate : WillSpendDelegate & ValidateFundsDelegate & ValidatePositiveDelegate {}
+// MARK: Spending Use Cases
 
-// spend delegate
-protocol WillSpendDelegate {
-    mutating func spend(amount: Int) throws -> Int
+protocol SpendingUseCase {
+    func spend(amount: Int) throws
+    func canSpend(amount: Int) throws -> Bool
 }
 
-// credit delegate
-protocol WillCreditDelegate {
-    mutating func credit(amount: Int) throws -> Int
-}
-
-// validation delegates
-protocol ValidateFundsDelegate {
-    func checkHasFunds(amount: Int) throws
-}
-
-protocol ValidatePositiveDelegate {
+protocol ValidateSpendingUseCase {
+    func checkFunds(amount: Int) throws 
     func checkPositive(amount: Int) throws
 }
 
 // MARK: Spending errors
 
-// spending error
+// Spending error
 enum SpendingError : Error, Equatable {
     case mustBePositive(_ amount: Int)
     case notEnoughFunds(_ amount: Int)
@@ -50,3 +40,4 @@ extension SpendingError : LocalizedError {
         }
     }
 }
+
