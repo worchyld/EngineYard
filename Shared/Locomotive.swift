@@ -1,5 +1,5 @@
 //
-//  Factory.swift
+//  Locomotive.swift
 //  EngineYardTests
 //
 //  Created by Amarjit on 21/06/2020.
@@ -8,6 +8,7 @@
 
 import Foundation
 
-class Factory {
-    
+typealias Card = Locomotive
+
+class Locomotive {
 }
