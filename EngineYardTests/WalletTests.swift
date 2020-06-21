@@ -21,6 +21,8 @@ class WalletTests: XCTestCase {
     }
 
 
+    /*
+
     func testWallet_SpendZero_Fails() {
         let wallet = Wallet.init(100)
         var debitor = WalletSpendingInteractor(wallet: wallet)
@@ -128,4 +130,5 @@ class WalletTests: XCTestCase {
         XCTAssertNoThrow( try w.credit(amount: amount) )
         XCTAssertEqual(wallet.cash, 105)
     }
+ */
 }

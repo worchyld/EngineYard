@@ -1,5 +1,5 @@
 //
-//  SpendingUseCases.swift
+//  Spending-Errors.swift
 //  EngineYard
 //
 //  Created by Amarjit on 19/06/2020.
@@ -7,21 +7,6 @@
 //
 
 import Foundation
-
-// MARK: Spend Use Case
-
-protocol SpendUseCase {
-    mutating func spend(amount: Int) throws -> Int
-}
-
-protocol ValidateSpendUseCase {
-    func checkFunds(amount: Int) throws -> Bool
-    func checkPositive(amount: Int) throws -> Bool
-    func canSpend(amount: Int) throws -> Bool
-}
-
-
-
 
 // MARK: Spending errors
 

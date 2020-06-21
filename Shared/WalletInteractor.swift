@@ -18,7 +18,7 @@ class WalletInteractor {
     }
 
     func credit(amount: Int) throws {
-        creditDelegate = Creditor(value: self.wallet.cash)
+        creditDelegate = Creditor(self.wallet.cash)
 
         guard let amount = try creditDelegate?.credit(amount: amount) else {
             return
@@ -28,7 +28,7 @@ class WalletInteractor {
     }
 
     func debit(amount: Int) throws {
-        self.debitDelegate = Spender(value: self.wallet.cash)
+        self.debitDelegate = Spender(self.wallet.cash)
 
         guard let amount = try debitDelegate?.spend(amount: amount) else {
             return

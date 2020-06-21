@@ -8,15 +8,29 @@
 
 import Foundation
 
-protocol SpendingDelegate : SpendUseCase, ValidateSpendUseCase {
-    var value: Int { get }
+protocol SpendingDelegate : SpendUseCase, Validate_CanSpendUseCase {
+    var balance: Int { get }
 }
 
-struct Spender : SpendingDelegate {
-    internal var value: Int
+// MARK: Spend Use Case
 
-    init(value: Int = 0) {
-        self.value = value
+protocol SpendUseCase {
+    mutating func spend(amount: Int) throws -> Int
+}
+
+// MARK: `Spender`
+
+// conforms to spending delegate
+struct Spender : SpendingDelegate {
+    internal var balance: Int
+
+    init(_ balance: Int = 0) {
+        self.balance = balance
+    }
+
+    private mutating func didSpend(_ amount: Int = 0) -> Int {
+        self.balance -= amount
+        return self.balance
     }
 }
 
@@ -27,14 +41,20 @@ extension Spender : SpendUseCase {
         guard try canSpend(amount: amount) else {
             throw SpendingError.cannotSpend(amount)
         }
-        value -= amount
-        return value
+
+        return willSpend(amount: amount)
+    }
+
+    mutating func willSpend(amount: Int) -> Int {
+        return self.didSpend(amount)
     }
 }
 
+
+
 // MARK: `ValidationSpendingUseCase` Implementation
 
-extension Spender : ValidateSpendUseCase {
+extension Spender : Validate_CanSpendUseCase & Validate_PositiveUseCase {
 
     func canSpend(amount: Int) throws -> Bool {
         guard try checkPositive(amount: amount) else {
@@ -47,7 +67,7 @@ extension Spender : ValidateSpendUseCase {
     }
 
     func checkFunds(amount: Int) throws -> Bool {
-        guard ((value - amount) >= 0) else {
+        guard ((balance - amount) >= 0) else {
             throw SpendingError.notEnoughFunds(amount)
         }
         return true

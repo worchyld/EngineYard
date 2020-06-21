@@ -48,7 +48,7 @@ class SpendingUseCaseTest: XCTestCase {
 
 
     func testCannotSpend() {
-        let spender = Spender(value: 3)
+        let spender = Spender(3)
 
         XCTAssertThrowsError(try spender.canSpend(amount: 5) ) { error in
             XCTAssertEqual(error as! SpendingError, SpendingError.notEnoughFunds(5) )
@@ -56,13 +56,13 @@ class SpendingUseCaseTest: XCTestCase {
     }
 
     func testCanSpend() {
-        let spender = Spender(value: 3)
+        let spender = Spender(3)
         XCTAssertNoThrow( try spender.canSpend(amount: 2) )
 
     }
 
     func testCanSpend_FailsOnZero() {
-        let spender = Spender(value: 3)
+        let spender = Spender(3)
 
         XCTAssertThrowsError(try spender.canSpend(amount: 0) ) { error in
             XCTAssertEqual(error as! SpendingError, SpendingError.mustBePositive(0) )
@@ -70,7 +70,7 @@ class SpendingUseCaseTest: XCTestCase {
     }
 
     func testSpendMoreThanFunds_Fails() {
-        let spender = Spender.init(value: 3)
+        let spender = Spender.init(3)
 
         XCTAssertThrowsError(try spender.canSpend(amount: 5) ) { error in
             XCTAssertEqual(error as! SpendingError, SpendingError.notEnoughFunds(5) )
@@ -78,12 +78,12 @@ class SpendingUseCaseTest: XCTestCase {
     }
 
     func testDidSpend_5CoinsEqualsZero() {
-        var spender = Spender.init(value: 5)
+        var spender = Spender.init(5)
         let amount = 5
 
         XCTAssertNoThrow( try spender.spend(amount: amount) )
 
-        XCTAssertEqual( spender.value, 0 )
+        XCTAssertEqual( spender.balance, 0 )
     }
 
 
