@@ -10,12 +10,12 @@ import Foundation
 
 protocol WalletSpendingInteractorUseCase {
     var wallet : Wallet { get }
-    var delegate : SpendingUseCases? { get }
+    var delegate : SpendingDelegate? { get }
 }
 
 struct WalletSpendingInteractor: WalletSpendingInteractorUseCase {
     var wallet: Wallet
-    var delegate: SpendingUseCases?
+    var delegate: SpendingDelegate?
 
     init(wallet: Wallet) {
         self.wallet = wallet

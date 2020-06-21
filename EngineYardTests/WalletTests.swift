@@ -97,4 +97,35 @@ class WalletTests: XCTestCase {
         XCTAssertNoThrow( try creditor.credit(amount: amount) )
         XCTAssertEqual( wallet.cash , 105)
     }
+
+    func testWallet_CannotDebitZero() {
+        let wallet = Wallet.init(100)
+        let w = WalletInteractor(wallet: wallet)
+
+        let amount = 0
+
+        XCTAssertThrowsError(try w.debit(amount: amount) ) { error in
+            XCTAssertEqual(error as! SpendingError, SpendingError.mustBePositive(amount) )
+        }
+    }
+
+    func testWallet_DidDebit() {
+        let wallet = Wallet.init(100)
+        let w = WalletInteractor(wallet: wallet)
+
+        let amount = 5
+
+        XCTAssertNoThrow( try w.debit(amount: amount) )
+        XCTAssertEqual(wallet.cash, 95)
+    }
+
+    func testWallet_DidCredit() {
+        let wallet = Wallet.init(100)
+        let w = WalletInteractor(wallet: wallet)
+
+        let amount = 5
+
+        XCTAssertNoThrow( try w.credit(amount: amount) )
+        XCTAssertEqual(wallet.cash, 105)
+    }
 }

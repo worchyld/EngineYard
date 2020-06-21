@@ -32,6 +32,7 @@
 		4D3BE045249FB96E009C203E /* WalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE044249FB96E009C203E /* WalletTests.swift */; };
 		4D3BE047249FC424009C203E /* WalletSpendingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE046249FC424009C203E /* WalletSpendingInteractor.swift */; };
 		4D3BE049249FCBEF009C203E /* WalletCreditInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE048249FCBEF009C203E /* WalletCreditInteractor.swift */; };
+		4D3BE04B249FD07C009C203E /* WalletInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE04A249FD07C009C203E /* WalletInteractor.swift */; };
 		4D49D2632499F9D9000E857F /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D49D2622499F9D9000E857F /* AvatarView.swift */; };
 		4D49D2652499FDDD000E857F /* FamilyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D49D2642499FDDD000E857F /* FamilyTests.swift */; };
 		4D49D2672499FE2C000E857F /* EY+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D49D2662499FE2C000E857F /* EY+Identifier.swift */; };
@@ -110,6 +111,7 @@
 		4D3BE044249FB96E009C203E /* WalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTests.swift; sourceTree = "<group>"; };
 		4D3BE046249FC424009C203E /* WalletSpendingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletSpendingInteractor.swift; sourceTree = "<group>"; };
 		4D3BE048249FCBEF009C203E /* WalletCreditInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCreditInteractor.swift; sourceTree = "<group>"; };
+		4D3BE04A249FD07C009C203E /* WalletInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletInteractor.swift; sourceTree = "<group>"; };
 		4D49D2622499F9D9000E857F /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		4D49D2642499FDDD000E857F /* FamilyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyTests.swift; sourceTree = "<group>"; };
 		4D49D2662499FE2C000E857F /* EY+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Identifier.swift"; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				4D66EBC9248F836E005DE7F0 /* Hand.swift */,
 				4DC84CED2486E43E002A48DE /* EngineYardGame.swift */,
 				4D54250D249D62C3004B97A8 /* Wallet.swift */,
+				4D3BE04A249FD07C009C203E /* WalletInteractor.swift */,
 				4D3BE048249FCBEF009C203E /* WalletCreditInteractor.swift */,
 				4D3BE046249FC424009C203E /* WalletSpendingInteractor.swift */,
 				4D3BE042249FAF1E009C203E /* Spender.swift */,
@@ -435,6 +438,7 @@
 				4D66EBD6248FE700005DE7F0 /* Order.swift in Sources */,
 				4D3BE049249FCBEF009C203E /* WalletCreditInteractor.swift in Sources */,
 				4D54250C249D5B16004B97A8 /* SpendingUseCases.swift in Sources */,
+				4D3BE04B249FD07C009C203E /* WalletInteractor.swift in Sources */,
 				4DA1C1392486EC3D004C4121 /* Die.swift in Sources */,
 				4DA1C14B2486F3FC004C4121 /* Tax.swift in Sources */,
 				4DA1C1482486EDE3004C4121 /* EY+Date.swift in Sources */,

@@ -8,13 +8,13 @@
 
 import Foundation
 
-protocol CreditUseCases : CreditUseCase, ValidateCreditUseCase {
+protocol CreditDelegate : CreditUseCase, ValidateCreditUseCase {
     var value: Int { get }
 }
 
 protocol WalletCreditInteractorUseCase {
     var wallet : Wallet { get }
-    var delegate : CreditUseCases? { get }
+    var delegate : CreditDelegate? { get }
 }
 
 protocol CreditUseCase {
@@ -27,7 +27,7 @@ protocol ValidateCreditUseCase {
 
 struct WalletCreditInteractor : WalletCreditInteractorUseCase {
     var wallet: Wallet
-    var delegate: CreditUseCases?
+    var delegate: CreditDelegate?
 
     init(wallet: Wallet) {
         self.wallet = wallet
@@ -47,7 +47,7 @@ struct WalletCreditInteractor : WalletCreditInteractorUseCase {
     }
 }
 
-struct Creditor : CreditUseCases {
+struct Creditor : CreditDelegate {
     var value: Int
 
     mutating func credit(amount: Int) throws -> Int {

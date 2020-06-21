@@ -8,11 +8,11 @@
 
 import Foundation
 
-protocol SpendingUseCases : SpendUseCase, ValidateSpendUseCase {
+protocol SpendingDelegate : SpendUseCase, ValidateSpendUseCase {
     var value: Int { get }
 }
 
-struct Spender : SpendingUseCases {
+struct Spender : SpendingDelegate {
     var value: Int
 
     init(value: Int = 0) {
