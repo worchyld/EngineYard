@@ -10,17 +10,36 @@ import Foundation
 
 /** Wallet is an interface/interactor for a player's cash **/
 
-protocol WalletUseCases: SpendingUseCase, ValidateSpendingUseCase {
-    var cash: Int { get }
-}
-
 final class Wallet {
-    internal var cash: Int
+    private(set) var cash: Int
 
     init(_ cash: Int = 0) {
         self.cash = cash
     }
 }
+
+
+protocol WalletSpendingInteractorUseCase {
+    var wallet : Wallet { get }
+    var delegate : SpendingUseCases? { get }
+}
+
+struct WalletSpendingInterface: WalletSpendingInteractorUseCase {
+    var wallet: Wallet
+    var delegate: SpendingUseCases?
+
+    init(wallet: Wallet) {
+        self.wallet = wallet
+        self.delegate = SpendingInterface()
+    }
+
+    mutating func debit(amount: Int) throws {
+        try delegate?.spend(amount: amount)
+    }
+}
+
+
+
 
 /*
 // MARK: `SpendingUseCase` Implementation

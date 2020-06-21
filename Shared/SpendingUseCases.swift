@@ -8,17 +8,20 @@
 
 import Foundation
 
-// MARK: Spending Use Cases
+// MARK: Spend Use Case
 
-protocol SpendingUseCase {
+protocol SpendUseCase {
     mutating func spend(amount: Int) throws
 }
 
-protocol ValidateSpendingUseCase {
+protocol ValidateSpendUseCase {
     func checkFunds(amount: Int) throws 
     func checkPositive(amount: Int) throws
     func canSpend(amount: Int) throws -> Bool
 }
+
+
+
 
 // MARK: Spending errors
 

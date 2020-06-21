@@ -21,6 +21,7 @@ class WalletTests: XCTestCase {
     }
 
     func testWallet_SpendZero_Fails() {
+        //let wallet = Wallet.init(100)
         
     }
 

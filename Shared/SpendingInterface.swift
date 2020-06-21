@@ -8,7 +8,9 @@
 
 import Foundation
 
-struct SpendingInterface {
+protocol SpendingUseCases : SpendUseCase, ValidateSpendUseCase { }
+
+struct SpendingInterface : SpendingUseCases {
     var value: Int
 
     init(value: Int = 0) {
@@ -18,7 +20,7 @@ struct SpendingInterface {
 
 // MARK: `SpendingUseCase` Implementation
 
-extension SpendingInterface : SpendingUseCase {
+extension SpendingInterface : SpendUseCase {
     mutating func spend(amount: Int) throws {
         if try canSpend(amount: amount) {
             value -= amount
@@ -28,7 +30,7 @@ extension SpendingInterface : SpendingUseCase {
 
 // MARK: `ValidationSpendingUseCase` Implementation
 
-extension SpendingInterface : ValidateSpendingUseCase {
+extension SpendingInterface : ValidateSpendUseCase {
     func canSpend(amount: Int) throws -> Bool {
         try checkPositive(amount: amount)
         try checkFunds(amount: amount)
