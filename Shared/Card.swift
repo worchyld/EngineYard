@@ -13,13 +13,18 @@ struct Card : Identifiable {
     let name: String
     let cost: Int
     let group: LocomotiveGroup
-    private (set) var production: Production
+
+    struct Production {
+        var units: Int
+        var spent: Int
+    }
+    var production: Production
 
     init(name: String, cost: Int, color: Locomotive.Color, generation: Locomotive.Generation) {
         self.name = name
         self.cost = cost
         self.group = LocomotiveGroup(color: color, generation: generation)
-        self.production = Production.init()
+        self.production = Production(units: 0, spent: 0)
     }
 }
 
@@ -50,11 +55,5 @@ extension Card: Equatable {
 extension Card: CustomStringConvertible {
     var description: String {
         return ("\(self.id), \(self.name), $\(self.cost), \(self.color), \(self.generation)")
-    }
-}
-
-extension Card {
-    mutating func setProdction(_ production: Production) {
-        self.production = production
     }
 }
