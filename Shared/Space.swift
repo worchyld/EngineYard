@@ -12,7 +12,11 @@ import Foundation
 // Each space holds a `LocomotiveFactory` (AKA: Factory)
 // Each `factory` holds multiple `Locomotive` (AKA Card)
 
+struct Response: Codable {
+    let spaces: [Space]?
+}
+
 // MARK: - Space
 struct Space: Codable {
-    var space: String?
+    let space: String?
 }
