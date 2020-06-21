@@ -14,7 +14,7 @@ protocol WalletUseCases: SpendingUseCase, ValidateSpendingUseCase {
     var cash: Int { get }
 }
 
-class Wallet : WalletUseCases {
+class Wallet {
     internal var cash: Int
 
     init(_ cash: Int = 0) {
@@ -22,6 +22,7 @@ class Wallet : WalletUseCases {
     }
 }
 
+/*
 // MARK: `SpendingUseCase` Implementation
 
 extension Wallet : SpendingUseCase {
@@ -53,3 +54,4 @@ extension Wallet : ValidateSpendingUseCase {
         }
     }
 }
+*/
