@@ -19,4 +19,9 @@ struct Response: Codable {
 // MARK: - Space
 struct Space: Codable {
     let space: String?
+    var factory: Factory?
+
+    enum CodingKeys: String, CodingKey {
+        case space = "space"
+    }
 }
