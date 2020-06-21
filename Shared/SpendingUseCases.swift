@@ -11,18 +11,18 @@ import Foundation
 // MARK: Spending Use Cases
 
 protocol SpendingUseCase {
-    func spend(amount: Int) throws
-    func canSpend(amount: Int) throws -> Bool
+    mutating func spend(amount: Int) throws
 }
 
 protocol ValidateSpendingUseCase {
     func checkFunds(amount: Int) throws 
     func checkPositive(amount: Int) throws
+    func canSpend(amount: Int) throws -> Bool
 }
 
 // MARK: Spending errors
 
-// Spending error
+// spending errors
 enum SpendingError : Error, Equatable {
     case mustBePositive(_ amount: Int)
     case notEnoughFunds(_ amount: Int)
