@@ -1,4 +1,53 @@
 {
+    "_meta": {
+        "board-spaces": 14,
+        "cards": {
+            "total": 43,
+            "colors": {
+                "green": 20,
+                "red": 13,
+                "yellow": 7,
+                "blue": 3
+            },
+            "generations": {
+                "first": {
+                    "total": 10,
+                    "green": 4,
+                    "red": 3,
+                    "blue": 1,
+                    "yellow": 2
+                },
+                "second": {
+                    "total": 11,
+                    "green": 4,
+                    "red": 3,
+                    "blue": 2,
+                    "yellow": 2
+                },
+                "third": {
+                    "total": 10,
+                    "green": 4,
+                    "red": 3,
+                    "blue": 0,
+                    "yellow": 3
+                },
+                "fourth": {
+                    "total": 8,
+                    "green": 4,
+                    "red": 4,
+                    "blue": 0,
+                    "yellow": 0
+                },
+                "fifth": {
+                    "total": 4,
+                    "green": 4,
+                    "red": 0,
+                    "blue": 0,
+                    "yellow": 0
+                }
+            }
+        }
+    },
     "spaces": [
         "green.first",
         "red.first",
