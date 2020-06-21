@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct Wallet {
-    internal var cash: Int
+final class Wallet {
+    var cash: Int
 
     init(_ cash: Int = 0) {
         self.cash = cash
