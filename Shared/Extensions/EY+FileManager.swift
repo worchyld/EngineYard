@@ -10,6 +10,15 @@ import Foundation
 
 // FileManager extensions
 
+public enum FileManagerError : Error {
+    case invalidPath( _ path: String)
+    case invalidURL( _ url: URL)
+    case fileNotFound( _ filename: String)
+    case couldNotLoadFile(_ filename: String)
+    case couldNotSaveFile(_ filename: String)
+    case fileHasNoData
+}
+
 extension FileManager {
     class func documentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)

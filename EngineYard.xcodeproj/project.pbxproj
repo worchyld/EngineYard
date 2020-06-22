@@ -24,6 +24,8 @@
 		4D1C72F524A0F6B0009CAA3A /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1C72F424A0F6B0009CAA3A /* Board.swift */; };
 		4D1C72F724A0FDC5009CAA3A /* GameLocalDataAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1C72F624A0FDC5009CAA3A /* GameLocalDataAPI.swift */; };
 		4D1C72FB24A13AB5009CAA3A /* TestGameLocalDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1C72FA24A13AB5009CAA3A /* TestGameLocalDataFetch.swift */; };
+		4D1C72FD24A16C54009CAA3A /* LocalFileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1C72FC24A16C54009CAA3A /* LocalFileProvider.swift */; };
+		4D1C72FF24A16EAA009CAA3A /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1C72FE24A16EAA009CAA3A /* AsyncOperation.swift */; };
 		4D238C3B24A00D060031E3EE /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE05E249FF1E1009C203E /* Factory.swift */; };
 		4D238C3C24A00D0C0031E3EE /* Locomotive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE060249FF23C009C203E /* Locomotive.swift */; };
 		4D238C4924A051240031E3EE /* MetaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D238C4824A051240031E3EE /* MetaTests.swift */; };
@@ -93,6 +95,8 @@
 		4D1C72F424A0F6B0009CAA3A /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		4D1C72F624A0FDC5009CAA3A /* GameLocalDataAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLocalDataAPI.swift; sourceTree = "<group>"; };
 		4D1C72FA24A13AB5009CAA3A /* TestGameLocalDataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGameLocalDataFetch.swift; sourceTree = "<group>"; };
+		4D1C72FC24A16C54009CAA3A /* LocalFileProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileProvider.swift; sourceTree = "<group>"; };
+		4D1C72FE24A16EAA009CAA3A /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
 		4D238C3D24A046B30031E3EE /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
 		4D238C4624A050C00031E3EE /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		4D238C4824A051240031E3EE /* MetaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaTests.swift; sourceTree = "<group>"; };
@@ -225,6 +229,7 @@
 				4D3BE04A249FD07C009C203E /* WalletInteractor.swift */,
 				4D1C72F424A0F6B0009CAA3A /* Board.swift */,
 				4D1C72F624A0FDC5009CAA3A /* GameLocalDataAPI.swift */,
+				4D1C72FC24A16C54009CAA3A /* LocalFileProvider.swift */,
 				4D3BE052249FE0F7009C203E /* Creditor */,
 				4D3BE051249FE0DE009C203E /* Spending */,
 				4D238C4524A0505D0031E3EE /* JSONParsing */,
@@ -300,6 +305,7 @@
 			children = (
 				4DA1C1412486ED12004C4121 /* NumberFormatCache.swift */,
 				4DA1C1382486EC3D004C4121 /* Die.swift */,
+				4D1C72FE24A16EAA009CAA3A /* AsyncOperation.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -414,6 +420,7 @@
 				4D10C5882486D08400238508 /* AppDelegate.swift in Sources */,
 				4D54250E249D62C3004B97A8 /* Wallet.swift in Sources */,
 				4D238C5324A095230031E3EE /* EY+CaseIterable.swift in Sources */,
+				4D1C72FF24A16EAA009CAA3A /* AsyncOperation.swift in Sources */,
 				4DC20053249FFECD00E0B4D8 /* Space.swift in Sources */,
 				4DA1C13E2486ECC9004C4121 /* EY+String.swift in Sources */,
 				4D66EBC8248F8147005DE7F0 /* Player.swift in Sources */,
@@ -443,6 +450,7 @@
 				4DA1C1482486EDE3004C4121 /* EY+Date.swift in Sources */,
 				4D3BE04D249FDBB4009C203E /* Spending-Validation.swift in Sources */,
 				4D10C6162486DC4700238508 /* Constants.swift in Sources */,
+				4D1C72FD24A16C54009CAA3A /* LocalFileProvider.swift in Sources */,
 				4D49D2672499FE2C000E857F /* EY+Identifier.swift in Sources */,
 				4D1C72F324A0F323009CAA3A /* Rusting.swift in Sources */,
 				4D49D2632499F9D9000E857F /* AvatarView.swift in Sources */,
