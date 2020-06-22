@@ -1,0 +1,13 @@
+//
+//  Generation.swift
+//  EngineYardTests
+//
+//  Created by Amarjit on 22/06/2020.
+//  Copyright © 2020 Amarjit. All rights reserved.
+//
+
+import Foundation
+
+enum Generation: Int, CaseIterable {
+    case first = 1, second, third, fourth, fifth
+}
