@@ -22,10 +22,11 @@
 		4D10C6222486DF3A00238508 /* cardSlide8.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D10C61E2486DF3A00238508 /* cardSlide8.wav */; };
 		4D238C3B24A00D060031E3EE /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE05E249FF1E1009C203E /* Factory.swift */; };
 		4D238C3C24A00D0C0031E3EE /* Locomotive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE060249FF23C009C203E /* Locomotive.swift */; };
-		4D238C3E24A046B30031E3EE /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D238C3D24A046B30031E3EE /* Meta.swift */; };
 		4D238C4324A04EB00031E3EE /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D238C4124A04DFA0031E3EE /* JSONParser.swift */; };
 		4D238C4424A04EB70031E3EE /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D238C3F24A047500031E3EE /* DataLoader.swift */; };
-		4D238C4724A050C00031E3EE /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D238C4624A050C00031E3EE /* Response.swift */; };
+		4D238C4924A051240031E3EE /* MetaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D238C4824A051240031E3EE /* MetaTests.swift */; };
+		4D238C4A24A051880031E3EE /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D238C4624A050C00031E3EE /* Response.swift */; };
+		4D238C4B24A051C20031E3EE /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D238C3D24A046B30031E3EE /* Meta.swift */; };
 		4D34A86B2495A61D00590EFD /* WinnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D34A86A2495A61D00590EFD /* WinnerTests.swift */; };
 		4D3BE041249FAD34009C203E /* SpendingUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE040249FAD34009C203E /* SpendingUseCaseTest.swift */; };
 		4D3BE043249FAF1E009C203E /* Spender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE042249FAF1E009C203E /* Spender.swift */; };
@@ -86,6 +87,7 @@
 		4D238C3F24A047500031E3EE /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		4D238C4124A04DFA0031E3EE /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		4D238C4624A050C00031E3EE /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		4D238C4824A051240031E3EE /* MetaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaTests.swift; sourceTree = "<group>"; };
 		4D34A86A2495A61D00590EFD /* WinnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerTests.swift; sourceTree = "<group>"; };
 		4D3BE040249FAD34009C203E /* SpendingUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingUseCaseTest.swift; sourceTree = "<group>"; };
 		4D3BE042249FAF1E009C203E /* Spender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spender.swift; sourceTree = "<group>"; };
@@ -187,7 +189,7 @@
 				4D6BA939249D41A200167E68 /* IntTests.swift */,
 				4D3BE040249FAD34009C203E /* SpendingUseCaseTest.swift */,
 				4D05D20024A002CB001E5C19 /* TestCodableSpace.swift */,
-				4D238C3D24A046B30031E3EE /* Meta.swift */,
+				4D238C4824A051240031E3EE /* MetaTests.swift */,
 			);
 			path = EngineYardTests;
 			sourceTree = "<group>";
@@ -231,6 +233,7 @@
 			children = (
 				4D238C3F24A047500031E3EE /* DataLoader.swift */,
 				4D238C4124A04DFA0031E3EE /* JSONParser.swift */,
+				4D238C3D24A046B30031E3EE /* Meta.swift */,
 				4D238C4624A050C00031E3EE /* Response.swift */,
 			);
 			path = JSONParsing;
@@ -399,6 +402,7 @@
 				4D3BE04F249FDC05009C203E /* Creditor-Validation.swift in Sources */,
 				4DA1C1462486EDC0004C4121 /* EY+FileManager.swift in Sources */,
 				4D238C3C24A00D0C0031E3EE /* Locomotive.swift in Sources */,
+				4D238C4B24A051C20031E3EE /* Meta.swift in Sources */,
 				4DA1C13B2486EC77004C4121 /* EY+Int.swift in Sources */,
 				4DA1C1422486ED12004C4121 /* NumberFormatCache.swift in Sources */,
 				4DA1C1402486ECF3004C4121 /* Sounds.swift in Sources */,
@@ -410,6 +414,7 @@
 				4D54250C249D5B16004B97A8 /* Spending-Errors.swift in Sources */,
 				4D3BE04B249FD07C009C203E /* WalletInteractor.swift in Sources */,
 				4D238C3B24A00D060031E3EE /* Factory.swift in Sources */,
+				4D238C4A24A051880031E3EE /* Response.swift in Sources */,
 				4D238C4324A04EB00031E3EE /* JSONParser.swift in Sources */,
 				4DA1C1392486EC3D004C4121 /* Die.swift in Sources */,
 				4DA1C14B2486F3FC004C4121 /* Tax.swift in Sources */,
@@ -430,8 +435,7 @@
 				4D3BE05A249FF05E009C203E /* WalletTests.swift in Sources */,
 				4D10C59F2486D08500238508 /* EngineYardTests.swift in Sources */,
 				4DA1C14D2486F43E004C4121 /* TaxTests.swift in Sources */,
-				4D238C4724A050C00031E3EE /* Response.swift in Sources */,
-				4D238C3E24A046B30031E3EE /* Meta.swift in Sources */,
+				4D238C4924A051240031E3EE /* MetaTests.swift in Sources */,
 				4D34A86B2495A61D00590EFD /* WinnerTests.swift in Sources */,
 				4D3BE041249FAD34009C203E /* SpendingUseCaseTest.swift in Sources */,
 				4D6BA93A249D41A200167E68 /* IntTests.swift in Sources */,
