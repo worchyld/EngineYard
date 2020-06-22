@@ -9,5 +9,5 @@
 import Foundation
 
 enum Rusting : Int, Codable, CaseIterable {
-    case notavailable = 0, available
+    case none = 0, rusting, rusted
 }
