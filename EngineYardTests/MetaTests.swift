@@ -22,7 +22,7 @@ class MetaTests: XCTestCase {
 
     func testMetaResponse() {
 
-        let bundle = Bundle(for: type(of: self))
+       //s let bundle = Bundle(for: type(of: self))
 //
 //        do {
 //            guard let data = try DataLoader.loadData(using: bundle, filename: "board.json") else {
