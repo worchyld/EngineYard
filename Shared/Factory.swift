@@ -8,6 +8,10 @@
 
 import Foundation
 
-class Factory {
-    
+// MARK: - Factory
+struct Factory: Codable {
+    var id, ref, avatar: String?
+    var cost, livery, generation, initialOrder: Int?
+    var existingOrders, completedOrders, cards: [JSONAny]?
+    var state, orderCapacity: Int?
 }
