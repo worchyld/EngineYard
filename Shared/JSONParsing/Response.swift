@@ -10,11 +10,12 @@ import Foundation
 
 struct Response: Codable {
     var meta: Meta?
+    var factories: [Factory]?
     var spaces: [Space]?
     var locomotives: [Locomotive]?
 
     enum CodingKeys: String, CodingKey {
         case meta = "_meta"
-        case spaces, locomotives
+        case factories, spaces, locomotives
     }
 }
