@@ -20,20 +20,20 @@ struct Meta: Codable {
     // MARK: - Cards
     struct Cards: Codable {
         var total: Int?
-        var colors: Meta.Colors?
+        var liveries: Meta.Liveries?
         var generations: Meta.Generations?
     }
 
-    // MARK: - Colors
-    struct Colors: Codable {
+    // MARK: - Colors/Liveries
+    struct Liveries: Codable {
         var green, red, yellow, blue: Int?
         var total: Int?
     }
 
     // MARK: - Generations
     struct Generations: Codable {
-        var first, second, third, fourth: Meta.Colors?
-        var fifth: Meta.Colors?
+        var first, second, third, fourth: Meta.Liveries?
+        var fifth: Meta.Liveries?
     }
 }
 

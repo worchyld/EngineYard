@@ -50,10 +50,10 @@ class MetaTests: XCTestCase {
         XCTAssertEqual(meta.boardSpaces, 14)
         XCTAssertEqual(meta.cards?.total, 43)
         // color meta
-        XCTAssertEqual(meta.cards?.colors?.green, 20)
-        XCTAssertEqual(meta.cards?.colors?.red, 13)
-        XCTAssertEqual(meta.cards?.colors?.yellow, 7)
-        XCTAssertEqual(meta.cards?.colors?.blue, 3)
+        XCTAssertEqual(meta.cards?.liveries?.green, 20)
+        XCTAssertEqual(meta.cards?.liveries?.red, 13)
+        XCTAssertEqual(meta.cards?.liveries?.yellow, 7)
+        XCTAssertEqual(meta.cards?.liveries?.blue, 3)
         // first generation meta
         XCTAssertEqual(meta.cards?.generations?.first?.total, 10)
         XCTAssertEqual(meta.cards?.generations?.first?.green, 4)

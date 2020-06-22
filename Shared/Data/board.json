@@ -3,7 +3,7 @@
         "board-spaces": 14,
         "cards": {
             "total": 43,
-            "colors": {
+            "liveries": {
                 "green": 20,
                 "red": 13,
                 "yellow": 7,
@@ -71,7 +71,7 @@
             "name": "Green.first (x4)",
             "avatar": "green-1.png",
             "cost": 4,
-            "color": 1,
+            "livery": 1,
             "generation": 1
         },
         {
@@ -80,7 +80,7 @@
             "name": "Green.first (x4)",
             "avatar": "green-1.png",
             "cost": 4,
-            "color": 1,
+            "livery": 1,
             "generation": 1
         },
         {
@@ -89,7 +89,7 @@
             "name": "Green.first (x4)",
             "avatar": "green-1.png",
             "cost": 4,
-            "color": 1,
+            "livery": 1,
             "generation": 1
         },
         {
@@ -98,7 +98,7 @@
             "name": "Green.first (x4)",
             "avatar": "green-1.png",
             "cost": 4,
-            "color": 1,
+            "livery": 1,
             "generation": 1
         },
         {
@@ -107,7 +107,7 @@
             "name": "Red.first (x3)",
             "avatar": "red-1.png",
             "cost": 8,
-            "color": 2,
+            "livery": 2,
             "generation": 1
         },
         {
@@ -116,7 +116,7 @@
             "name": "Red.first (x3)",
             "avatar": "red-1.png",
             "cost": 8,
-            "color": 2,
+            "livery": 2,
             "generation": 1
         },
         {
@@ -125,7 +125,7 @@
             "name": "Red.first (x3)",
             "avatar": "red-1.png",
             "cost": 8,
-            "color": 2,
+            "livery": 2,
             "generation": 1
         },
         {
@@ -134,7 +134,7 @@
             "name": "Yellow.first (x2)",
             "avatar": "yellow-1.png",
             "cost": 12,
-            "color": 3,
+            "livery": 3,
             "generation": 1
         },
         {
@@ -143,7 +143,7 @@
             "name": "Yellow.first (x2)",
             "avatar": "yellow-1.png",
             "cost": 12,
-            "color": 3,
+            "livery": 3,
             "generation": 1
         },
         {
@@ -152,7 +152,7 @@
             "name": "Blue.first (x1)",
             "avatar": "blue-1.png",
             "cost": 16,
-            "color": 4,
+            "livery": 4,
             "generation": 1
         },
         {
@@ -161,7 +161,7 @@
             "name": "Green.second (x4)",
             "avatar": "green-2.png",
             "cost": 20,
-            "color": 1,
+            "livery": 1,
             "generation": 2
         },
         {
@@ -170,7 +170,7 @@
             "name": "Green.second (x4)",
             "avatar": "green-2.png",
             "cost": 20,
-            "color": 1,
+            "livery": 1,
             "generation": 2
         },
         {
@@ -179,7 +179,7 @@
             "name": "Green.second (x4)",
             "avatar": "green-2.png",
             "cost": 20,
-            "color": 1,
+            "livery": 1,
             "generation": 2
         },
         {
@@ -188,7 +188,7 @@
             "name": "Green.second (x4)",
             "avatar": "green-2.png",
             "cost": 20,
-            "color": 1,
+            "livery": 1,
             "generation": 2
         },
         {
@@ -197,7 +197,7 @@
             "name": "Red.second (x3)",
             "avatar": "red-2.png",
             "cost": 24,
-            "color": 2,
+            "livery": 2,
             "generation": 2
         },
         {
@@ -206,7 +206,7 @@
             "name": "Red.second (x3)",
             "avatar": "red-2.png",
             "cost": 24,
-            "color": 2,
+            "livery": 2,
             "generation": 2
         },
         {
@@ -215,7 +215,7 @@
             "name": "Red.second (x3)",
             "avatar": "red-2.png",
             "cost": 24,
-            "color": 2,
+            "livery": 2,
             "generation": 2
         },
         {
@@ -224,7 +224,7 @@
             "name": "Yellow.second (x3)",
             "avatar": "yellow-2.png",
             "cost": 28,
-            "color": 3,
+            "livery": 3,
             "generation": 2
         },
         {
@@ -233,7 +233,7 @@
             "name": "Yellow.second (x3)",
             "avatar": "yellow-2.png",
             "cost": 28,
-            "color": 3,
+            "livery": 3,
             "generation": 2
         },
         {
@@ -242,7 +242,7 @@
             "name": "Green.third (x4)",
             "avatar": "green-3.png",
             "cost": 32,
-            "color": 1,
+            "livery": 1,
             "generation": 3
         },
         {
@@ -251,7 +251,7 @@
             "name": "Green.third (x4)",
             "avatar": "green-3.png",
             "cost": 32,
-            "color": 1,
+            "livery": 1,
             "generation": 3
         },
         {
@@ -260,7 +260,7 @@
             "name": "Green.third (x4)",
             "avatar": "green-3.png",
             "cost": 32,
-            "color": 1,
+            "livery": 1,
             "generation": 3
         },
         {
@@ -269,7 +269,7 @@
             "name": "Green.third (x4)",
             "avatar": "green-3.png",
             "cost": 32,
-            "color": 1,
+            "livery": 1,
             "generation": 3
         },
         {
@@ -278,7 +278,7 @@
             "name": "Blue.second (x2)",
             "avatar": "blue-2.png",
             "cost": 36,
-            "color": 4,
+            "livery": 4,
             "generation": 2
         },
         {
@@ -287,7 +287,7 @@
             "name": "Blue.second (x2)",
             "avatar": "blue-2.png",
             "cost": 36,
-            "color": 4,
+            "livery": 4,
             "generation": 2
         },
         {
@@ -296,7 +296,7 @@
             "name": "Red.third (x3)",
             "avatar": "red-3.png",
             "cost": 40,
-            "color": 2,
+            "livery": 2,
             "generation": 3
         },
         {
@@ -305,7 +305,7 @@
             "name": "Red.third (x3)",
             "avatar": "red-3.png",
             "cost": 40,
-            "color": 2,
+            "livery": 2,
             "generation": 3
         },
         {
@@ -314,7 +314,7 @@
             "name": "Red.third (x3)",
             "avatar": "red-3.png",
             "cost": 40,
-            "color": 2,
+            "livery": 2,
             "generation": 3
         },
         {
@@ -323,7 +323,7 @@
             "name": "Green.fourth (x4)",
             "avatar": "green-4.png",
             "cost": 44,
-            "color": 1,
+            "livery": 1,
             "generation": 4
         },
         {
@@ -332,7 +332,7 @@
             "name": "Green.fourth (x4)",
             "avatar": "green-4.png",
             "cost": 44,
-            "color": 1,
+            "livery": 1,
             "generation": 4
         },
         {
@@ -341,7 +341,7 @@
             "name": "Green.fourth (x4)",
             "avatar": "green-4.png",
             "cost": 44,
-            "color": 1,
+            "livery": 1,
             "generation": 4
         },
         {
@@ -350,7 +350,7 @@
             "name": "Green.fourth (x4)",
             "avatar": "green-4.png",
             "cost": 44,
-            "color": 1,
+            "livery": 1,
             "generation": 4
         },
         {
@@ -359,7 +359,7 @@
             "name": "Yellow.third (x3)",
             "avatar": "yellow-3.png",
             "cost": 48,
-            "color": 3,
+            "livery": 3,
             "generation": 3
         },
         {
@@ -368,7 +368,7 @@
             "name": "Yellow.third (x3)",
             "avatar": "yellow-3.png",
             "cost": 48,
-            "color": 3,
+            "livery": 3,
             "generation": 3
         },
         {
@@ -377,7 +377,7 @@
             "name": "Yellow.third (x3)",
             "avatar": "yellow-3.png",
             "cost": 48,
-            "color": 3,
+            "livery": 3,
             "generation": 3
         },
         {
@@ -386,7 +386,7 @@
             "name": "Red.fourth (x4)",
             "avatar": "red-4.png",
             "cost": 52,
-            "color": 2,
+            "livery": 2,
             "generation": 4
         },
         {
@@ -395,7 +395,7 @@
             "name": "Red.fourth (x4)",
             "avatar": "red-4.png",
             "cost": 52,
-            "color": 2,
+            "livery": 2,
             "generation": 4
         },
         {
@@ -404,7 +404,7 @@
             "name": "Red.fourth (x4)",
             "avatar": "red-4.png",
             "cost": 52,
-            "color": 2,
+            "livery": 2,
             "generation": 4
         },
         {
@@ -413,7 +413,7 @@
             "name": "Red.fourth (x4)",
             "avatar": "red-4.png",
             "cost": 52,
-            "color": 2,
+            "livery": 2,
             "generation": 4
         },
         {
@@ -422,7 +422,7 @@
             "name": "Green.fifth (x4)",
             "avatar": "green-5.png",
             "cost": 56,
-            "color": 1,
+            "livery": 1,
             "generation": 5
         },
         {
@@ -431,7 +431,7 @@
             "name": "Green.fifth (x4)",
             "avatar": "green-5.png",
             "cost": 56,
-            "color": 1,
+            "livery": 1,
             "generation": 5
         },
         {
@@ -440,7 +440,7 @@
             "name": "Green.fifth (x4)",
             "avatar": "green-5.png",
             "cost": 56,
-            "color": 1,
+            "livery": 1,
             "generation": 5
         },
         {
@@ -449,7 +449,7 @@
             "name": "Green.fifth (x4)",
             "avatar": "green-5.png",
             "cost": 56,
-            "color": 1,
+            "livery": 1,
             "generation": 5
         }
     ]
