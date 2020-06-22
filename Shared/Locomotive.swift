@@ -11,8 +11,14 @@ import Foundation
 typealias Card = Locomotive
 
 // MARK: - Locomotive
-struct Locomotive: Codable {
+struct Locomotive: Codable, Identifiable {
     let id, ref, name, avatar: String
     let cost: Int, generation: Generation
     let livery: Livery
+}
+
+extension Locomotive {
+    static func == (lhs: Locomotive, rhs: Locomotive) -> Bool {
+        return (lhs.id == rhs.id)
+    }
 }

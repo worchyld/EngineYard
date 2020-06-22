@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct Factory: Codable {
+// Locomotive factory
+struct Factory: Codable, Identifiable {
     var id, ref, avatar: String?
     var cost, initialOrder: Int?
     var existingOrders, completedOrders: [Int?]
@@ -18,4 +19,11 @@ struct Factory: Codable {
     var generation: Generation?
     var rusting: Rusting?
     var orderCapacity: Int?
+}
+
+
+extension Factory {
+    static func == (lhs: Factory, rhs: Factory) -> Bool {
+        return (lhs.id == rhs.id)
+    }
 }

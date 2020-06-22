@@ -10,7 +10,7 @@ import Foundation
 
 struct DataLoader {
 
-    public static func loadData(using bundle: Bundle, filename: String) -> Data? {
+    public static func loadData(using bundle: Bundle, filename: String) throws -> Data? {
         DataLoader.debugInfo(bundle: bundle)
 
         if let url = bundle.url(forResource: filename, withExtension: nil) {
@@ -18,7 +18,7 @@ struct DataLoader {
                 let data = try Data(contentsOf: url)
                 return data
             } catch {
-                print("error:\(error)")
+                throw error
             }
         }
         return nil
