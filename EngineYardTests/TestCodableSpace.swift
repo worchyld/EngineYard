@@ -37,7 +37,7 @@ class TestCodableSpace: XCTestCase {
             return
         }
 
-        self.parseJSON(from: data) { (response, error) in
+        JSONParser.decodeJSON(from: data) { (response, error) in
             if (error != nil) {
                 XCTFail(error!.localizedDescription)
                 return
@@ -50,21 +50,5 @@ class TestCodableSpace: XCTestCase {
             return
         }
     }
-
-
-
-    func parseJSON(from data: Data, completionBlock: @escaping (Response?, Error?) -> ()) {
-        let decoder = JSONDecoder.init()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        decoder.dateDecodingStrategy = .secondsSince1970
-
-        do {
-            let jsonResponse = try decoder.decode(Response.self, from: data)
-            completionBlock(jsonResponse, nil)
-        } catch {
-            completionBlock(nil, error)
-        }
-    }
-
 
 }

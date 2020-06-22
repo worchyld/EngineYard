@@ -25,6 +25,8 @@ struct DataLoader {
     }
 
     private static func debugInfo(bundle: Bundle) {
+        #if DEBUG
+
         print ("\n\n--Bundle debug----")
         print ("bundle path: \(bundle.bundlePath)")
         print ("bundle loaded: \(bundle.isLoaded)")
@@ -32,5 +34,7 @@ struct DataLoader {
         print ("Preferred localisations: \(bundle.preferredLocalizations)")
         print ("Dev Localisation: \(bundle.developmentLocalization as Any)")
         print ("----------------\n\n")
+
+        #endif
     }
 }
