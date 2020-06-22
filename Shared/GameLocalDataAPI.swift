@@ -11,30 +11,61 @@ import Foundation
 protocol GameLocalDataAPIInputProtocol: class {
     func fetchFixtures() throws
 }
+protocol HandleResponseDelegate: class {
+    func handleResponse(result: Result<Response, Error> )
+}
 
-class GameLocalDataAPI: GameLocalDataAPIInputProtocol {
+class GameLocalDataAPI: GameLocalDataAPIInputProtocol, HandleResponseDelegate {
 
-    private var resourceInfo: ResourceInfo
+    private weak var delegate: HandleResponseDelegate!
 
-    struct ResourceInfo {
-        let bundle: Bundle
-        let resource: String
-        let resourceType: String?
-
-        init(bundle: Bundle = Bundle.main, resource: String = "board.json", resourceType: String? = nil) {
-            self.bundle = bundle
-            self.resource = resource
-            self.resourceType = resourceType
-        }
+    struct Config {
+       var bundle: Bundle
+       var resource: String
+       var ofType: String?
     }
+    var config: Config?
 
-    init(resourceInfo: ResourceInfo) {
-        self.resourceInfo = resourceInfo
+    init(config: Config) {
+        self.delegate = self
+        self.config = config
     }
 
     func fetchFixtures() throws {
-        GameLocalDataAPI.debugInfo(bundle: resourceInfo.bundle)
+        guard let config = config else {
+            throw NSError(domain: "Config missing", code: 0, userInfo: nil)
+        }
 
+        GameLocalDataAPI.debugInfo(bundle: config.bundle)
+
+        if let url = config.bundle.url(forResource: config.resource, withExtension: config.ofType) {
+
+            let fileProvider = LocalFileProvider()
+
+            fileProvider.requestLocalFile(from: url) { (result) in
+                switch result {
+                case .success(let data):
+                    print ("Response -->> \(data)")
+
+                    self.getJSONResponse(from: data
+                                       , completionHandler: { result in
+
+                                       self.delegate.handleResponse(result: result)
+                    })
+
+
+                case .failure(let error):
+                    print ("Error -->> \(error.localizedDescription) ")
+
+                }
+            }
+
+        }
+        else {
+            throw FileManagerError.couldNotLoadFile(config.resource)
+        }
+
+        /*
         if let path = resourceInfo.bundle.path(forResource: resourceInfo.resource, ofType: resourceInfo.resourceType) {
 
             do {
@@ -43,26 +74,29 @@ class GameLocalDataAPI: GameLocalDataAPIInputProtocol {
 
                 print(data as Any)
 
-
                 getJSONResponse(from: data
                     , completionHandler: { result in
 
-                        switch result {
-                        case .success(let response):
-                            print ("Response -->> \(response)")
-                        case .failure(let error):
-                            print ("Error -->> \(error.localizedDescription) ")
-                        }
+                    self.delegate.handleResponse(result: result)
                 })
-
 
             } catch {
                 throw error
             }
+        } */
+    }
+
+    func handleResponse(result: Result<Response, Error> ) {
+        switch result {
+        case .success(let response):
+            print ("Response -->> \(response)")
+
+        case .failure(let error):
+            print ("Error -->> \(error.localizedDescription) ")
         }
     }
 
-    private func getJSONResponse(from data: Data, completionHandler: @escaping((Result<Response, Error>)) -> ())  {
+    private func getJSONResponse(from data: Data, completionHandler: @escaping((Result<Response, Error>)) -> ()) {
 
         do {
             let decoder = JSONDecoder()
