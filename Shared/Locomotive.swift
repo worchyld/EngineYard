@@ -12,8 +12,7 @@ typealias Card = Locomotive
 
 // MARK: - Locomotive
 struct Locomotive: Codable {
-    var id, ref, name, avatar: String
-    var cost: Int, generation: Int
-    var livery: Livery
-
+    let id, ref, name, avatar: String
+    let cost: Int, generation: Generation
+    let livery: Livery
 }
