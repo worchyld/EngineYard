@@ -48,12 +48,6 @@
             }
         }
     },
-    "liveries": {
-        "green": 1,
-        "red": 2,
-        "yellow": 3,
-        "blue": 4
-    },
     "factories": [
         {
             "id": "7a24a713-c0aa-4498-ba2f-3c8b51089bee",
