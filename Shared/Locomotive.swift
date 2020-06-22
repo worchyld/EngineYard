@@ -10,5 +10,8 @@ import Foundation
 
 typealias Card = Locomotive
 
-class Locomotive {
+// MARK: - Locomotive
+struct Locomotive: Codable {
+    var id, ref, name, avatar: String?
+    var cost, color, generation: Int?
 }

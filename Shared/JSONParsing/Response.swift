@@ -9,5 +9,12 @@
 import Foundation
 
 struct Response: Codable {
-    let spaces: [Space]?
+    var meta: Meta?
+    var spaces: [Space]?
+    var locomotives: [Locomotive]?
+
+    enum CodingKeys: String, CodingKey {
+        case meta = "_meta"
+        case spaces, locomotives
+    }
 }
