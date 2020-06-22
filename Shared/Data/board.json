@@ -61,7 +61,8 @@
             "existingOrders": [],
             "completedOrders": [],
             "cards": [],
-            "state": 0,
+            "available": false,
+            "rusting": 0,
             "orderCapacity": 3
         },
         {
@@ -75,7 +76,8 @@
             "existingOrders": [],
             "completedOrders": [],
             "cards": [],
-            "state": 0,
+            "available": false,
+            "rusting": 0,
             "orderCapacity": 3
         },
         {
@@ -89,7 +91,8 @@
             "existingOrders": [],
             "completedOrders": [],
             "cards": [],
-            "state": 0,
+            "available": false,
+            "rusting": 0,
             "orderCapacity": 2
         },
         {
@@ -103,7 +106,8 @@
             "existingOrders": [],
             "completedOrders": [],
             "cards": [],
-            "state": 0,
+            "available": false,
+            "rusting": 0,
             "orderCapacity": 1
         },
         {
@@ -117,7 +121,8 @@
             "existingOrders": [],
             "completedOrders": [],
             "cards": [],
-            "state": 0,
+            "available": false,
+            "rusting": 0,
             "orderCapacity": 4
         },
         {
@@ -131,7 +136,8 @@
             "existingOrders": [],
             "completedOrders": [],
             "cards": [],
-            "state": 0,
+            "available": false,
+            "rusting": 0,
             "orderCapacity": 3
         },
         {
@@ -145,7 +151,8 @@
             "existingOrders": [],
             "completedOrders": [],
             "cards": [],
-            "state": 0,
+            "available": false,
+            "rusting": 0,
             "orderCapacity": 3
         },
         {
@@ -159,7 +166,8 @@
             "existingOrders": [],
             "completedOrders": [],
             "cards": [],
-            "state": 0,
+            "available": false,
+            "rusting": 0,
             "orderCapacity": 4
         },
         {
@@ -173,7 +181,8 @@
             "existingOrders": [],
             "completedOrders": [],
             "cards": [],
-            "state": 0,
+            "available": false,
+            "rusting": 0,
             "orderCapacity": 2
         },
         {
@@ -187,7 +196,8 @@
             "existingOrders": [],
             "completedOrders": [],
             "cards": [],
-            "state": 0,
+            "available": false,
+            "rusting": 0,
             "orderCapacity": 4
         },
         {
@@ -201,7 +211,8 @@
             "existingOrders": [],
             "completedOrders": [],
             "cards": [],
-            "state": 0,
+            "available": false,
+            "rusting": 0,
             "orderCapacity": 5
         },
         {
@@ -215,7 +226,8 @@
             "existingOrders": [],
             "completedOrders": [],
             "cards": [],
-            "state": 0,
+            "available": false,
+            "rusting": 0,
             "orderCapacity": 3
         },
         {
@@ -229,7 +241,8 @@
             "existingOrders": [],
             "completedOrders": [],
             "cards": [],
-            "state": 0,
+            "available": false,
+            "rusting": 0,
             "orderCapacity": 4
         },
         {
@@ -243,7 +256,8 @@
             "existingOrders": [],
             "completedOrders": [],
             "cards": [],
-            "state": 0,
+            "rusting": 0,
+            "available": false,
             "orderCapacity": 5
         }
     ],
