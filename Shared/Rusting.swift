@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Obsolescence
 enum Rusting : Int, Codable, CaseIterable {
     case none = 0, rusting, rusted
 }
