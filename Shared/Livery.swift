@@ -8,33 +8,58 @@
 
 import Foundation
 
-enum Livery : Int, CaseIterable, Codable {
-    case green = 1, red, blue, yellow
-}
+enum Livery : Codable {
+    case green, red, blue, yellow
 
-extension Livery {
-    enum CodingKeys: Int, CodingKey {
+    private enum RawValue: Int, Codable, CaseIterable {
+        case green = 1, red , yellow, blue
+    }
+
+    private enum CodingKeys: Int, CodingKey {
         case green, red, blue, yellow
     }
-}
-
-extension Livery {
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let key = container.allKeys.first
 
-        print (key as Any)
-
         switch key {
         case .green:
-            self = try container.decode(Livery.self, forKey: .green)
+            self = .green
+        case .red:
+            self = .red
+        case .yellow:
+            self = .yellow
+        case .blue:
+            self = .blue
+
         default:
             throw DecodingError.dataCorrupted(
                 DecodingError.Context(
                     codingPath: container.codingPath,
-                    debugDescription: "Unabled to decode enum."
+                    debugDescription: "Error -- Unabled to decode."
                 )
             )
         }
     }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+
+        switch self {
+        case .green:
+            try container.encode(RawValue.green)
+        case .red:
+            try container.encode(RawValue.red)
+        case .yellow:
+            try container.encode(RawValue.yellow)
+        case .blue:
+            try container.encode(RawValue.blue)
+//        default:
+//            let context = EncodingError.Context(codingPath: encoder.codingPath, debugDescription: "Invalid value")
+//            throw EncodingError.invalidValue(self, context)
+        }
+
+    }
+
 }

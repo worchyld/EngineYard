@@ -12,10 +12,12 @@ typealias Card = Locomotive
 
 // MARK: - Locomotive
 struct Locomotive: Codable {
-    var id, ref, name, avatar: String?
-    var cost: Int?, livery, generation: Int?
+    var id, ref, name, avatar: String
+    var cost: Int, generation: Int
+    var livery: Livery?
 
-    enum CodingKeys: CodingKey {
-        case id, ref, name, avatar, cost, livery, generation
+    private enum CodingKeys: CodingKey {
+        case id, ref, name, avatar, cost, generation
+        case livery = "livery"
     }
 }

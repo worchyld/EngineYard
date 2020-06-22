@@ -24,6 +24,10 @@ class MetaTests: XCTestCase {
             XCTFail("No data found")
             return
         }
+        guard data.count > 0 else {
+            XCTFail("No data found")
+            return
+        }
 
         JSONParser.decodeJSON(from: data) { (response, error) in
             if (error != nil) {
