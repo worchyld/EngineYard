@@ -8,15 +8,21 @@
 
 import Foundation
 
+enum Livery: Int, Codable {
+    case green = 1, red, blue, yellow
+}
+
+
+/*
 enum Livery : Codable {
     case green, red, blue, yellow
 
     private enum RawValue: Int, Codable, CaseIterable {
-        case green = 1, red , yellow, blue
+        case green = 1, red, yellow, blue
     }
 
     private enum CodingKeys: Int, CodingKey {
-        case green, red, blue, yellow
+        case green = 1, red, blue, yellow
     }
     
     init(from decoder: Decoder) throws {
@@ -63,3 +69,4 @@ enum Livery : Codable {
     }
 
 }
+*/

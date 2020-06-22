@@ -31,6 +31,8 @@
 		4D238C5124A059F90031E3EE /* Generation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D238C4F24A059430031E3EE /* Generation.swift */; };
 		4D238C5324A095230031E3EE /* EY+CaseIterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D238C5224A095230031E3EE /* EY+CaseIterable.swift */; };
 		4D238C5524A0BAD00031E3EE /* TestJSONLocomotives.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D238C5424A0BAD00031E3EE /* TestJSONLocomotives.swift */; };
+		4D238C5624A0CDE80031E3EE /* board.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D3BE05C249FF1C4009C203E /* board.json */; };
+		4D238C5824A0CF0C0031E3EE /* board.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D3BE05C249FF1C4009C203E /* board.json */; };
 		4D34A86B2495A61D00590EFD /* WinnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D34A86A2495A61D00590EFD /* WinnerTests.swift */; };
 		4D3BE041249FAD34009C203E /* SpendingUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE040249FAD34009C203E /* SpendingUseCaseTest.swift */; };
 		4D3BE043249FAF1E009C203E /* Spender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE042249FAF1E009C203E /* Spender.swift */; };
@@ -39,7 +41,6 @@
 		4D3BE04D249FDBB4009C203E /* Spending-Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE04C249FDBB4009C203E /* Spending-Validation.swift */; };
 		4D3BE04F249FDC05009C203E /* Creditor-Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE04E249FDC05009C203E /* Creditor-Validation.swift */; };
 		4D3BE05A249FF05E009C203E /* WalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE059249FF05E009C203E /* WalletTests.swift */; };
-		4D3BE05D249FF1C4009C203E /* board.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D3BE05C249FF1C4009C203E /* board.json */; };
 		4D49D2632499F9D9000E857F /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D49D2622499F9D9000E857F /* AvatarView.swift */; };
 		4D49D2672499FE2C000E857F /* EY+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D49D2662499FE2C000E857F /* EY+Identifier.swift */; };
 		4D54250C249D5B16004B97A8 /* Spending-Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D54250B249D5B16004B97A8 /* Spending-Errors.swift */; };
@@ -383,6 +384,7 @@
 			files = (
 				4D10C6222486DF3A00238508 /* cardSlide8.wav in Resources */,
 				4D10C6212486DF3A00238508 /* Birdy_Notification1.wav in Resources */,
+				4D238C5624A0CDE80031E3EE /* board.json in Resources */,
 				4D10C5942486D08500238508 /* LaunchScreen.storyboard in Resources */,
 				4D10C5912486D08500238508 /* Preview Assets.xcassets in Resources */,
 				4D10C58E2486D08500238508 /* Assets.xcassets in Resources */,
@@ -395,7 +397,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D3BE05D249FF1C4009C203E /* board.json in Resources */,
+				4D238C5824A0CF0C0031E3EE /* board.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -45,7 +45,7 @@ class TestJSONLocomotives: XCTestCase {
             }
 
             locomotives.forEach { (loco) in
-                print (loco.name, loco.ref, loco.avatar, loco.cost, loco.livery, loco.generation)
+                print (loco.name as Any, loco.ref as Any, loco.avatar as Any, loco.cost as Any, loco.livery as Any, loco.generation as Any)
             }
 
             return
