@@ -8,6 +8,6 @@
 
 import Foundation
 
-enum Generation: Int, CaseIterable {
+enum Generation: Int, Codable, CaseIterable {
     case first = 1, second, third, fourth, fifth
 }
