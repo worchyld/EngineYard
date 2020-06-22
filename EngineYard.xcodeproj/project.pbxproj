@@ -23,6 +23,8 @@
 		4D238C3A24A00AE30031E3EE /* EY+Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D238C3924A00AE30031E3EE /* EY+Encodable.swift */; };
 		4D238C3B24A00D060031E3EE /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE05E249FF1E1009C203E /* Factory.swift */; };
 		4D238C3C24A00D0C0031E3EE /* Locomotive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE060249FF23C009C203E /* Locomotive.swift */; };
+		4D238C3E24A046B30031E3EE /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D238C3D24A046B30031E3EE /* Meta.swift */; };
+		4D238C4024A047500031E3EE /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D238C3F24A047500031E3EE /* DataLoader.swift */; };
 		4D34A86B2495A61D00590EFD /* WinnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D34A86A2495A61D00590EFD /* WinnerTests.swift */; };
 		4D3BE041249FAD34009C203E /* SpendingUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE040249FAD34009C203E /* SpendingUseCaseTest.swift */; };
 		4D3BE043249FAF1E009C203E /* Spender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE042249FAF1E009C203E /* Spender.swift */; };
@@ -80,6 +82,8 @@
 		4D10C61D2486DF3A00238508 /* Birdy_Notification1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Notification1.wav; sourceTree = "<group>"; };
 		4D10C61E2486DF3A00238508 /* cardSlide8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardSlide8.wav; sourceTree = "<group>"; };
 		4D238C3924A00AE30031E3EE /* EY+Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Encodable.swift"; sourceTree = "<group>"; };
+		4D238C3D24A046B30031E3EE /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
+		4D238C3F24A047500031E3EE /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		4D34A86A2495A61D00590EFD /* WinnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerTests.swift; sourceTree = "<group>"; };
 		4D3BE040249FAD34009C203E /* SpendingUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingUseCaseTest.swift; sourceTree = "<group>"; };
 		4D3BE042249FAF1E009C203E /* Spender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spender.swift; sourceTree = "<group>"; };
@@ -181,6 +185,7 @@
 				4D6BA939249D41A200167E68 /* IntTests.swift */,
 				4D3BE040249FAD34009C203E /* SpendingUseCaseTest.swift */,
 				4D05D20024A002CB001E5C19 /* TestCodableSpace.swift */,
+				4D238C3D24A046B30031E3EE /* Meta.swift */,
 			);
 			path = EngineYardTests;
 			sourceTree = "<group>";
@@ -202,6 +207,7 @@
 				4D3BE04A249FD07C009C203E /* WalletInteractor.swift */,
 				4D3BE052249FE0F7009C203E /* Creditor */,
 				4D3BE051249FE0DE009C203E /* Spending */,
+				4D238C3F24A047500031E3EE /* DataLoader.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -412,9 +418,11 @@
 				4D3BE05A249FF05E009C203E /* WalletTests.swift in Sources */,
 				4D10C59F2486D08500238508 /* EngineYardTests.swift in Sources */,
 				4DA1C14D2486F43E004C4121 /* TaxTests.swift in Sources */,
+				4D238C3E24A046B30031E3EE /* Meta.swift in Sources */,
 				4D34A86B2495A61D00590EFD /* WinnerTests.swift in Sources */,
 				4D3BE041249FAD34009C203E /* SpendingUseCaseTest.swift in Sources */,
 				4D6BA93A249D41A200167E68 /* IntTests.swift in Sources */,
+				4D238C4024A047500031E3EE /* DataLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

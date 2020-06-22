@@ -17,7 +17,11 @@ class TestCodableSpace: XCTestCase {
     }
 
     func testLocalFileHasData() {
-        guard let data = loadData(from: "board.json") else {
+
+        let bundle = Bundle(for: type(of: self))
+        let dataLoader = DataLoader.loadData(using: bundle, filename: "board.json")
+
+        guard let data = dataLoader else {
             XCTFail("No data found")
             return
         }
@@ -25,19 +29,13 @@ class TestCodableSpace: XCTestCase {
     }
 
     func testLocalJSON() {
+        let bundle = Bundle(for: type(of: self))
+        let dataLoader = DataLoader.loadData(using: bundle, filename: "board.json")
 
-        guard let data = loadData(from: "board.json") else {
+        guard let data = dataLoader else {
             XCTFail("No data found")
             return
         }
-
-//        do {
-//            let response = try data.decoded() as Response
-//            print (response)
-//        }
-//        catch {
-//            XCTFail(error.localizedDescription)
-//        }
 
         self.parseJSON(from: data) { (response, error) in
             if (error != nil) {
@@ -54,21 +52,6 @@ class TestCodableSpace: XCTestCase {
     }
 
 
-    func loadData(from filename: String) -> Data? {
-
-        let bundle = Bundle(for: type(of: self))
-        debugInfo(bundle: bundle)
-
-        if let url = bundle.url(forResource: filename, withExtension: nil) {
-            do {
-                let data = try Data(contentsOf: url)
-                return data
-            } catch {
-                print("error:\(error)")
-            }
-        }
-        return nil
-    }
 
     func parseJSON(from data: Data, completionBlock: @escaping (Response?, Error?) -> ()) {
         let decoder = JSONDecoder.init()
@@ -81,16 +64,6 @@ class TestCodableSpace: XCTestCase {
         } catch {
             completionBlock(nil, error)
         }
-    }
-
-    func debugInfo(bundle: Bundle) {
-        print ("\n\n--Bundle debug----")
-        print ("bundle path: \(bundle.bundlePath)")
-        print ("bundle loaded: \(bundle.isLoaded)")
-        print ("Identifier:  \(bundle.bundleIdentifier as Any)")
-        print ("Preferred localisations: \(bundle.preferredLocalizations)")
-        print ("Dev Localisation: \(bundle.developmentLocalization as Any)")
-        print ("----------------\n\n")
     }
 
 
