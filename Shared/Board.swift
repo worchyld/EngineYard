@@ -35,25 +35,6 @@ extension TrainGame {
         let board = [Space?](repeating: nil, count: 14)
 
 
-        do {
-            let bundle = Bundle.main
-            guard let data = try DataLoader.loadData(using: bundle, filename: "board.json") else {
-                throw GameDataError.invalidData
-            }
-
-            JSONParser.decodeJSON(from: data) { (response, error) in
-                if let error = error {
-                    print (error)
-                }
-                else {
-                    print (response as Any)
-                }
-            }
-
-        } catch {
-            throw error
-        }
-
 
         return board
     }
