@@ -22,10 +22,9 @@ class TestGameLocalDataFetch: XCTestCase {
 
     func testCanLoadData() {
         let bundle = Bundle(for: type(of: self))
-        let resource = "board.json"
+        
 
-        let resourceInfo = GameLocalDataAPI.ResourceInfo.init(bundle: bundle,
-                                                              resource: resource, resourceType: nil)
+        let resourceInfo = GameLocalDataAPI.ResourceInfo.init(bundle: bundle)
 
         let api = GameLocalDataAPI.init(resourceInfo: resourceInfo)
         XCTAssertNoThrow(
