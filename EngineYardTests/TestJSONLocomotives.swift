@@ -22,34 +22,41 @@ class TestJSONLocomotives: XCTestCase {
 
     func testLoadLocomotivesFromJSON() {
         let bundle = Bundle(for: type(of: self))
-        let dataLoader = DataLoader.loadData(using: bundle, filename: "board.json")
 
-        guard let data = dataLoader else {
-            XCTFail("No data found")
+        XCTAssertNoThrow( try DataLoader.loadData(using: bundle, filename: "board.json") )
+        do {
+            guard let data = try DataLoader.loadData(using: bundle, filename: "board.json") else {
+                XCTFail("no data")
+                return
+            }
+
+            JSONParser.decodeJSON(from: data) { (response, error) in
+                if (error != nil) {
+                    XCTFail(error!.localizedDescription)
+                    return
+                }
+                guard let hasResponse = response else {
+                    XCTFail("response invalid")
+                    return
+                }
+
+                guard let locomotives = hasResponse.locomotives else {
+                    XCTFail("No locomotives")
+                    return
+                }
+
+                locomotives.forEach { (loco) in
+                    print (loco.name as Any, loco.ref as Any, loco.avatar as Any, loco.cost as Any, loco.livery as Any, loco.generation as Any)
+                }
+
+                return
+            }
+
+        } catch {
+            XCTFail(error.localizedDescription)
             return
         }
 
-        JSONParser.decodeJSON(from: data) { (response, error) in
-            if (error != nil) {
-                XCTFail(error!.localizedDescription)
-                return
-            }
-            guard let hasResponse = response else {
-                XCTFail("response invalid")
-                return
-            }
-
-            guard let locomotives = hasResponse.locomotives else {
-                XCTFail("No locomotives")
-                return
-            }
-
-            locomotives.forEach { (loco) in
-                print (loco.name as Any, loco.ref as Any, loco.avatar as Any, loco.cost as Any, loco.livery as Any, loco.generation as Any)
-            }
-
-            return
-        }
     }
 
     
