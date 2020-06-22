@@ -8,10 +8,14 @@
 
 import Foundation
 
-// MARK: - Factory
 struct Factory: Codable {
     var id, ref, avatar: String?
-    var cost, livery, generation, initialOrder: Int?
-    var existingOrders, completedOrders, cards: [JSONAny]?
-    var state, orderCapacity: Int?
+    var cost, initialOrder: Int?
+    var existingOrders, completedOrders: [Int?]
+    var cards: [Locomotive?]?
+    var available: Bool?
+    var livery: Livery?
+    var generation: Generation?
+    var rusting: Rusting?
+    var orderCapacity: Int?
 }
