@@ -13,10 +13,17 @@ import Foundation
 // Each `factory` holds multiple `Locomotive` (AKA Card)
 
 // MARK: - Space
-struct Space: Codable {
-    let space: String?
+struct Space: Codable, Identifiable {
+    let id: String
+    let name: String?
 
     enum CodingKeys: String, CodingKey {
-        case space = "space"
+        case id, name = "name"
+    }
+}
+
+extension Space {
+    static func == (lhs: Space, rhs: Space) -> Bool {
+        return (lhs.id == rhs.id)
     }
 }
