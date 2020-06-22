@@ -76,6 +76,19 @@
             "state": 0
         },
         {
+            "id": "4633a625-4d0e-48c7-abf2-d2682b24ae18",
+            "ref": "factory.yellow.first",
+            "avatar": "yellow-1.png",
+            "cost": 12,
+            "livery": 3,
+            "generation": 1,
+            "initialOrder": 0,
+            "existingOrders": [],
+            "completedOrders": [],
+            "cards": [],
+            "state": 0
+        },
+        {
             "id": "af2d4cb1-ccdf-40c4-b009-af030d2d657a",
             "ref": "factory.blue.first",
             "avatar": "blue-1.png",
