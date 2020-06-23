@@ -37,8 +37,6 @@
 		4D238C5624A0CDE80031E3EE /* board.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D3BE05C249FF1C4009C203E /* board.json */; };
 		4D238C5824A0CF0C0031E3EE /* board.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D3BE05C249FF1C4009C203E /* board.json */; };
 		4D34A86B2495A61D00590EFD /* WinnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D34A86A2495A61D00590EFD /* WinnerTests.swift */; };
-		4D3BE041249FAD34009C203E /* SpendingUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE040249FAD34009C203E /* SpendingUseCaseTest.swift */; };
-		4D3BE043249FAF1E009C203E /* Spender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE042249FAF1E009C203E /* Spender.swift */; };
 		4D3BE04B249FD07C009C203E /* WalletHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE04A249FD07C009C203E /* WalletHandler.swift */; };
 		4D3BE04D249FDBB4009C203E /* Spending-Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE04C249FDBB4009C203E /* Spending-Validation.swift */; };
 		4D3BE05A249FF05E009C203E /* WalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE059249FF05E009C203E /* WalletTests.swift */; };
@@ -102,8 +100,6 @@
 		4D238C4F24A059430031E3EE /* Generation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generation.swift; sourceTree = "<group>"; };
 		4D238C5224A095230031E3EE /* EY+CaseIterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+CaseIterable.swift"; sourceTree = "<group>"; };
 		4D34A86A2495A61D00590EFD /* WinnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerTests.swift; sourceTree = "<group>"; };
-		4D3BE040249FAD34009C203E /* SpendingUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingUseCaseTest.swift; sourceTree = "<group>"; };
-		4D3BE042249FAF1E009C203E /* Spender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spender.swift; sourceTree = "<group>"; };
 		4D3BE04A249FD07C009C203E /* WalletHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletHandler.swift; sourceTree = "<group>"; };
 		4D3BE04C249FDBB4009C203E /* Spending-Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Spending-Validation.swift"; sourceTree = "<group>"; };
 		4D3BE059249FF05E009C203E /* WalletTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletTests.swift; sourceTree = "<group>"; };
@@ -198,7 +194,6 @@
 				4D34A86A2495A61D00590EFD /* WinnerTests.swift */,
 				4D10C5A02486D08500238508 /* Info.plist */,
 				4D6BA939249D41A200167E68 /* IntTests.swift */,
-				4D3BE040249FAD34009C203E /* SpendingUseCaseTest.swift */,
 				4D1C72FA24A13AB5009CAA3A /* TestGameLocalDataFetch.swift */,
 				4D238C4824A051240031E3EE /* MetaTests.swift */,
 			);
@@ -248,7 +243,6 @@
 		4D3BE051249FE0DE009C203E /* Spending */ = {
 			isa = PBXGroup;
 			children = (
-				4D3BE042249FAF1E009C203E /* Spender.swift */,
 				4D54250B249D5B16004B97A8 /* Spending-Errors.swift */,
 				4D3BE04C249FDBB4009C203E /* Spending-Validation.swift */,
 			);
@@ -413,7 +407,6 @@
 				4D10C58A2486D08400238508 /* SceneDelegate.swift in Sources */,
 				4DA1C1442486ED8C004C4121 /* EY+FlatColor.swift in Sources */,
 				4D10C58C2486D08400238508 /* ContentView.swift in Sources */,
-				4D3BE043249FAF1E009C203E /* Spender.swift in Sources */,
 				4D238C4E24A058B40031E3EE /* Livery.swift in Sources */,
 				4D54250C249D5B16004B97A8 /* Spending-Errors.swift in Sources */,
 				4D3BE04B249FD07C009C203E /* WalletHandler.swift in Sources */,
@@ -443,7 +436,6 @@
 				4DA1C14D2486F43E004C4121 /* TaxTests.swift in Sources */,
 				4D238C4924A051240031E3EE /* MetaTests.swift in Sources */,
 				4D34A86B2495A61D00590EFD /* WinnerTests.swift in Sources */,
-				4D3BE041249FAD34009C203E /* SpendingUseCaseTest.swift in Sources */,
 				4D6BA93A249D41A200167E68 /* IntTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

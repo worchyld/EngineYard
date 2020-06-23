@@ -11,9 +11,12 @@ import Foundation
 // MARK: Spending Validation protocols
 // Can be used in other areas
 
-protocol Validate_CanSpendUseCase {
+protocol SpendUseCase {
+    mutating func spend(amount: Int) throws -> Int
+}
+
+protocol Validate_Spending {
     func canSpend(amount: Int) throws -> Bool
-    func checkFunds(amount: Int) throws -> Bool
 }
 
 protocol Validate_PositiveUseCase {

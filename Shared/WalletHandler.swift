@@ -50,14 +50,14 @@ extension WalletHandler : CreditUseCase {
     }
 }
 
-extension WalletHandler : DebitUseCase {
+extension WalletHandler : DebitUseCase, Validate_Spending {
     func debit(_ amount: Int) throws {
-        if try canDebit(amount) {
+        if try canSpend(amount: amount) {
             self.wallet.cash -= amount
         }
     }
 
-    private func canDebit(_ amount: Int) throws -> Bool {
+    internal func canSpend(amount: Int) throws -> Bool {
         guard amount.isPositive else {
             throw SpendingError.mustBePositive(amount)
         }
@@ -70,6 +70,7 @@ extension WalletHandler : DebitUseCase {
 
         return true
     }
+
 }
 
 /**
