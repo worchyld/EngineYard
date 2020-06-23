@@ -10,13 +10,6 @@ import Foundation
 
 typealias Board = [Space?]
 
-enum GameDataError : Error {
-    case invalidGame
-    case invalidData
-    case couldNotLoadFile(_ filename: String)
-    case couldNotSaveFile(_ filename: String)
-}
-
 class TrainGame {
     var board: Board?
 
@@ -25,7 +18,7 @@ class TrainGame {
             self.board = board
         }
         else {
-            throw GameDataError.invalidGame
+            print ("Error occurred")
         }
     }
 }
