@@ -57,7 +57,7 @@ class GameLocalDataAPI: GameLocalDataAPIInputProtocol, HandleResponseDelegate {
 
         }
         else {
-            throw FileManagerError.couldNotLoadFile(config.resource)
+            throw FileError.couldNotLoadFile(config.resource)
         }
 
     }

@@ -10,13 +10,16 @@ import Foundation
 
 // FileManager extensions
 
-public enum FileManagerError : Error {
+public enum FileError : Error {
     case invalidPath( _ path: String)
     case invalidURL( _ url: URL)
     case fileNotFound( _ filename: String)
     case couldNotLoadFile(_ filename: String)
     case couldNotSaveFile(_ filename: String)
     case fileHasNoData
+    case notFound
+    case permissionDenied
+    case unknownFormat
 }
 
 extension FileManager {

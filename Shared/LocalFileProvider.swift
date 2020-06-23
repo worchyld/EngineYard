@@ -25,7 +25,7 @@ struct LocalFileProvider: RequestLocalFile {
                 let data = try Data(contentsOf: url, options: .mappedIfSafe)
 
                 guard (data.count > 0) else {
-                    let error = FileManagerError.fileHasNoData
+                    let error = FileError.fileHasNoData
                     DispatchQueue.main.async { completion( Result.failure(error) )}
                     return
                 }
