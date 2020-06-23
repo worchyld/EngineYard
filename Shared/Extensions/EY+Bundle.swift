@@ -71,7 +71,6 @@ extension Bundle {
         }
 
         guard let data = try? Data(contentsOf: url) else {
-            //fatalError("Failed to load \(file) from bundle.")
             throw BundleError.cannotLoad(file)
         }
 
@@ -82,23 +81,18 @@ extension Bundle {
         do {
             return try decoder.decode(T.self, from: data)
         } catch DecodingError.keyNotFound(let key, let context) {
-            //fatalError("Failed to decode \(file) from bundle due to missing key '\(key.stringValue)' not found – \(context.debugDescription)")
             throw BundleError.failedToDecode(file, context: "Missing key: \(key.stringValue) - Context: \(context.debugDescription)")
 
         } catch DecodingError.typeMismatch(_, let context) {
-            //fatalError("Failed to decode \(file) from bundle due to type mismatch – \(context.debugDescription)")
             throw BundleError.failedToDecode(file, context: "Mismatch: \(context.debugDescription)")
 
         } catch DecodingError.valueNotFound(let type, let context) {
-            //fatalError("Failed to decode \(file) from bundle due to missing \(type) value – \(context.debugDescription)")
             throw BundleError.failedToDecode(file, context: "Missing type: \(type) -- \(context.debugDescription)")
 
         } catch DecodingError.dataCorrupted(_) {
-            //fatalError("Failed to decode \(file) from bundle because it appears to be invalid JSON")
             throw BundleError.failedToDecode(file, context: "Data corrupted - Invalid JSON")
 
         } catch {
-            //fatalError("Failed to decode \(file) from bundle: \(error.localizedDescription)")
             throw BundleError.failedToDecode(file, context: error.localizedDescription)
         }
     }
