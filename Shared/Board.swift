@@ -14,11 +14,16 @@ class TrainGame {
     var board: Board?
 
     func start() throws {
-        if let board = try TrainGame.loadInitialBoard() {
-            self.board = board
-        }
-        else {
-            print ("Error occurred")
+        do {
+            if let board = try TrainGame.loadInitialBoard() {
+                self.board = board
+            }
+            else {
+                throw NSError(domain: "Board could not be initialised", code: 0, userInfo: nil)
+            }
+
+        } catch {
+            throw error
         }
     }
 }
