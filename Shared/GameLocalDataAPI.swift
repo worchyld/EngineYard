@@ -40,41 +40,12 @@ class GameLocalDataAPI: GameLocalDataAPIInputProtocol, HandleResponseDelegate {
 
         if let url = config.bundle.url(forResource: config.resource, withExtension: config.ofType) {
 
-            let fileProvider = LocalFileProvider()
-
-            fileProvider.requestLocalFile(from: url) { (result) in
-                switch result {
-                case .success(let data):
-                    print ("Response -->> \(data)")
-
-                    self.getJSONResponse(from: data
-                                       , completionHandler: { result in
-
-                                       self.delegate.handleResponse(result: result)
-                    })
-
-
-                case .failure(let error):
-                    print ("Error -->> \(error.localizedDescription) ")
-
-                }
-            }
-
-        }
-        else {
-            throw FileManagerError.couldNotLoadFile(config.resource)
-        }
-
-        /*
-        if let path = resourceInfo.bundle.path(forResource: resourceInfo.resource, ofType: resourceInfo.resourceType) {
-
             do {
-                let url = URL(fileURLWithPath: path)
                 let data = try Data(contentsOf: url, options: .mappedIfSafe)
 
                 print(data as Any)
 
-                getJSONResponse(from: data
+                decodeJSONResponse(from: data
                     , completionHandler: { result in
 
                     self.delegate.handleResponse(result: result)
@@ -83,7 +54,12 @@ class GameLocalDataAPI: GameLocalDataAPIInputProtocol, HandleResponseDelegate {
             } catch {
                 throw error
             }
-        } */
+
+        }
+        else {
+            throw FileManagerError.couldNotLoadFile(config.resource)
+        }
+
     }
 
     func handleResponse(result: Result<Response, Error> ) {
@@ -96,7 +72,30 @@ class GameLocalDataAPI: GameLocalDataAPIInputProtocol, HandleResponseDelegate {
         }
     }
 
-    private func getJSONResponse(from data: Data, completionHandler: @escaping((Result<Response, Error>)) -> ()) {
+    // not used yet
+    private func useFileProvider(url: URL) {
+        let fileProvider = LocalFileProvider()
+
+        fileProvider.requestLocalFile(from: url) { (result) in
+            switch result {
+            case .success(let data):
+                print ("Response -->> \(data)")
+
+                self.decodeJSONResponse(from: data
+                                   , completionHandler: { result in
+
+                                   self.delegate.handleResponse(result: result)
+                })
+
+
+            case .failure(let error):
+                print ("Error -->> \(error.localizedDescription) ")
+
+            }
+        }
+    }
+
+    private func decodeJSONResponse(from data: Data, completionHandler: @escaping((Result<Response, Error>)) -> ()) {
 
         do {
             let decoder = JSONDecoder()
