@@ -20,26 +20,14 @@ class TestGameLocalDataFetch: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testLocalFileProvider() {
+    func testlocaldataLoader() {
         let bundle = Bundle(for: type(of: self))
-        guard let url = bundle.url(forResource: "board.json", withExtension: nil) else {
-            XCTFail("No url provided")
-            return
+        let api = GameLocalDataAPI()
+        do {
+            try api.fetchFixtures(from: bundle)
         }
-
-        let fileProvider = LocalFileProvider()
-
-        fileProvider.requestLocalFile(from: url) { (result) in
-            switch result {
-            case .success(let data):
-                print ("Response -->> \(data)")
-                XCTAssertTrue(data.count > 0)
-                
-            case .failure(let error):
-                print ("Error -->> \(error.localizedDescription) ")
-                XCTFail(error.localizedDescription)
-            }
+        catch {
+            XCTFail(error.localizedDescription)
         }
     }
-
 }
