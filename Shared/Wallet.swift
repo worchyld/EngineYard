@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class Wallet {
+struct Wallet {
     var cash: Int
 
     init(_ cash: Int = 0) {
