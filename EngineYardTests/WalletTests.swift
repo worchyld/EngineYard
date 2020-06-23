@@ -20,91 +20,67 @@ class WalletTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testWallet_Credit10Coins() throws {
-        let wallet = Wallet.init()
-
-        let handler = WalletHandler(wallet: wallet)
-        let interactor = WalletInteractor(walletHandler: handler)
+    func testWallet_DidCredit10Coins() throws {
+        let wallet = WalletHandler()
 
         let amount = 10
 
-        XCTAssertNoThrow(  try interactor.credit(amount: amount) )
-        XCTAssertEqual(interactor.balance, amount )
-
-        XCTAssertEqual(interactor.walletHandler?.balance  , interactor.walletHandler?.balance)
+        XCTAssertNoThrow(  try wallet.credit(amount) )
+        XCTAssertEqual(wallet.balance, amount )
     }
 
     func testWallet_CreditZero_Fails() throws {
-        let wallet = Wallet.init()
-
-        let handler = WalletHandler(wallet: wallet)
-        let interactor = WalletInteractor(walletHandler: handler)
-
+        let wallet = WalletHandler()
         let amount = 0
 
-        XCTAssertThrowsError(try interactor.credit(amount: amount) ) { error in
+        XCTAssertThrowsError(try wallet.credit(amount) ) { error in
             XCTAssertEqual(error as! SpendingError, SpendingError.mustBePositive(amount) )
         }
     }
 
     func testWallet_DebitZero_Fails() throws {
-        let wallet = Wallet.init()
-
-        let handler = WalletHandler(wallet: wallet)
-        let interactor = WalletInteractor(walletHandler: handler)
-
+        let wallet = WalletHandler()
         let amount = 0
 
-        XCTAssertThrowsError(try interactor.debit(amount: amount) ) { error in
+        XCTAssertThrowsError(try wallet.debit(amount) ) { error in
             XCTAssertEqual(error as! SpendingError, SpendingError.mustBePositive(amount) )
         }
     }
 
     func testWallet_DebitNegative_Fails() throws {
-        let wallet = Wallet.init()
-
-        let handler = WalletHandler(wallet: wallet)
-        let interactor = WalletInteractor(walletHandler: handler)
-
+        let wallet = WalletHandler()
         let amount = -1
 
-        XCTAssertThrowsError(try interactor.debit(amount: amount) ) { error in
+        XCTAssertThrowsError(try wallet.debit(amount) ) { error in
             XCTAssertEqual(error as! SpendingError, SpendingError.mustBePositive(amount) )
         }
     }
 
     func testWallet_DebitEqualsZero() throws {
-        let wallet = Wallet.init()
-
-        let handler = WalletHandler(wallet: wallet)
-        let interactor = WalletInteractor(walletHandler: handler)
+        let wallet = WalletHandler()
 
         let amount = 5
         let debit = 5
         let expected = 0
 
-        XCTAssertNoThrow( try interactor.credit(amount: amount) )
-        XCTAssertNoThrow( try interactor.debit(amount: debit) )
-        XCTAssertEqual(interactor.balance, expected)
+        XCTAssertNoThrow( try wallet.credit(amount) )
+        XCTAssertNoThrow( try wallet.debit(debit) )
+        XCTAssertEqual(wallet.balance, expected)
     }
 
     func testWallet_DebitMoreThanFunds_Fails() throws {
-        let wallet = Wallet.init()
-
-        let handler = WalletHandler(wallet: wallet)
-        let interactor = WalletInteractor(walletHandler: handler)
+        let wallet = WalletHandler()
 
         // Try to debit more than amount - expect fail
         let amount = 5
         let debit = 10
 
-        XCTAssertNoThrow( try interactor.credit(amount: amount) )
+        XCTAssertNoThrow( try wallet.credit(amount) )
 
-        XCTAssertThrowsError(try interactor.debit(amount: debit) ) { error in
+        XCTAssertThrowsError(try wallet.debit(debit) ) { error in
             XCTAssertEqual(error as! SpendingError, SpendingError.cannotSpend(debit) )
         }
 
-        XCTAssertEqual(interactor.balance, amount)
+        XCTAssertEqual(wallet.balance, amount)
     }
-
 }
