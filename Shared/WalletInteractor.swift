@@ -163,9 +163,11 @@ class DebitUseCaseHandler : WalletDebitUseCase {
             throw SpendingError.mustBePositive(amount)
         }
         let balance = walletHandler.balance
-        guard (balance - amount).isPositive else {
+
+        guard ((balance - amount) >= 0) else {
             throw SpendingError.cannotSpend(amount)
         }
+
         return true
     }
 }

@@ -228,7 +228,6 @@
 				4D1C72F024A0F2D1009CAA3A /* JSONAny.swift */,
 				4D238C3D24A046B30031E3EE /* Meta.swift */,
 				4D238C4624A050C00031E3EE /* Response.swift */,
-				4D3BE052249FE0F7009C203E /* Creditor */,
 				4D3BE051249FE0DE009C203E /* Spending */,
 			);
 			path = Shared;
@@ -254,13 +253,6 @@
 				4D3BE04C249FDBB4009C203E /* Spending-Validation.swift */,
 			);
 			name = Spending;
-			sourceTree = "<group>";
-		};
-		4D3BE052249FE0F7009C203E /* Creditor */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Creditor;
 			sourceTree = "<group>";
 		};
 		4D3BE05B249FF19E009C203E /* Data */ = {
