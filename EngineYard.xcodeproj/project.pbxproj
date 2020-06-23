@@ -26,6 +26,7 @@
 		4D1C72FB24A13AB5009CAA3A /* TestGameLocalDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1C72FA24A13AB5009CAA3A /* TestGameLocalDataFetch.swift */; };
 		4D1C72FD24A16C54009CAA3A /* LocalFileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1C72FC24A16C54009CAA3A /* LocalFileProvider.swift */; };
 		4D1C72FF24A16EAA009CAA3A /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1C72FE24A16EAA009CAA3A /* AsyncOperation.swift */; };
+		4D1C730124A1C898009CAA3A /* EY+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1C730024A1C898009CAA3A /* EY+Bundle.swift */; };
 		4D238C3B24A00D060031E3EE /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE05E249FF1E1009C203E /* Factory.swift */; };
 		4D238C3C24A00D0C0031E3EE /* Locomotive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE060249FF23C009C203E /* Locomotive.swift */; };
 		4D238C4924A051240031E3EE /* MetaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D238C4824A051240031E3EE /* MetaTests.swift */; };
@@ -97,6 +98,7 @@
 		4D1C72FA24A13AB5009CAA3A /* TestGameLocalDataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGameLocalDataFetch.swift; sourceTree = "<group>"; };
 		4D1C72FC24A16C54009CAA3A /* LocalFileProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileProvider.swift; sourceTree = "<group>"; };
 		4D1C72FE24A16EAA009CAA3A /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
+		4D1C730024A1C898009CAA3A /* EY+Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Bundle.swift"; sourceTree = "<group>"; };
 		4D238C3D24A046B30031E3EE /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
 		4D238C4624A050C00031E3EE /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		4D238C4824A051240031E3EE /* MetaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaTests.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 				4DA1C1472486EDE3004C4121 /* EY+Date.swift */,
 				4D49D2662499FE2C000E857F /* EY+Identifier.swift */,
 				4D238C5224A095230031E3EE /* EY+CaseIterable.swift */,
+				4D1C730024A1C898009CAA3A /* EY+Bundle.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				4D238C4B24A051C20031E3EE /* Meta.swift in Sources */,
 				4DA1C13B2486EC77004C4121 /* EY+Int.swift in Sources */,
 				4DA1C1422486ED12004C4121 /* NumberFormatCache.swift in Sources */,
+				4D1C730124A1C898009CAA3A /* EY+Bundle.swift in Sources */,
 				4DA1C1402486ECF3004C4121 /* Sounds.swift in Sources */,
 				4D1C72F724A0FDC5009CAA3A /* GameLocalDataAPI.swift in Sources */,
 				4D10C58A2486D08400238508 /* SceneDelegate.swift in Sources */,
