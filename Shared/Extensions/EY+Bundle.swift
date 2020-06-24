@@ -10,7 +10,7 @@ import Foundation
 
 public enum BundleError: Error, Equatable {
     case fileNotFound(_ file: String)
-    case cannotLoad(_ file: String)
+    case failedToLocate(_ file: String)
     case failedToDecode(_ file: String, context: String? )
     case unknown(_ reason: String)
 }
@@ -18,10 +18,10 @@ public enum BundleError: Error, Equatable {
 extension BundleError: LocalizedError {
     public var errorDescription: String? {
         switch self {
-        case let .fileNotFound(file):
+        case let .failedToLocate(file):
             return NSLocalizedString("Failed to locate: \(file) in bundle", comment: "bundle.error.fileNotFound")
 
-        case let .cannotLoad(file):
+        case let .fileNotFound(file):
             return NSLocalizedString("Failed to load: \(file) from bundle.", comment: "bundle.error.cannotLoadFile")
 
         case let .failedToDecode(file, context):
@@ -67,11 +67,11 @@ extension Bundle {
 
         guard let url = self.url(forResource: file, withExtension: nil) else {
             //fatalError("Failed to locate \(file) in bundle.")
-            throw BundleError.fileNotFound(file)
+            throw BundleError.failedToLocate(file)
         }
 
         guard let data = try? Data(contentsOf: url) else {
-            throw BundleError.cannotLoad(file)
+            throw BundleError.fileNotFound(file)
         }
 
         let decoder = JSONDecoder()
