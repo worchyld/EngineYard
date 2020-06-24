@@ -1,50 +1,24 @@
 {
     "_meta": {
-        "spaces": 14,
+        "spaces": 14,        
         "total-capacity": 46,
-        "cards": 43,
-        "liveries": {
+        "cards": {
             "total": 43,
-            "green": 20,
-            "red": 13,
-            "yellow": 7,
-            "blue": 3
-        },
-        "generations": {
-            "first": {
-                "total": 10,
-                "green": 4,
-                "red": 3,
-                "blue": 1,
-                "yellow": 2
+            "green": {
+                "total": 20,
+                "generations": [ 4, 4, 4, 4, 4 ]
             },
-            "second": {
-                "total": 11,
-                "green": 4,
-                "red": 3,
-                "blue": 2,
-                "yellow": 2
+            "red": {
+                "total": 13,
+                "generations": [ 3, 3, 3, 4, 0 ]
             },
-            "third": {
-                "total": 10,
-                "green": 4,
-                "red": 3,
-                "blue": 0,
-                "yellow": 3
+            "yellow": {
+                "total": 7,
+                "generations": [ 2, 2, 3, 0, 0 ]
             },
-            "fourth": {
-                "total": 8,
-                "green": 4,
-                "red": 4,
-                "blue": 0,
-                "yellow": 0
-            },
-            "fifth": {
-                "total": 4,
-                "green": 4,
-                "red": 0,
-                "blue": 0,
-                "yellow": 0
+            "blue": {
+                "total": 3,
+                "generations": [ 1, 2, 0, 0, 0 ]
             }
         }
     },
@@ -261,20 +235,62 @@
         }
     ],
     "spaces": [
-        {"id": "b383ae6e-9398-4e90-b3cc-98883d56e571", "name": "green.first"},
-        {"id": "47f2dd2d-4224-4a04-966f-97396d9ce0ef", "name": "red.first"},
-        {"id": "5bc723f7-f50a-482f-be61-f338c0d7d513", "name": "yellow.first"},
-        {"id": "4d51accd-3b52-429b-a89b-d03e8b0f5a36", "name": "blue.first"},
-        {"id": "ce385a55-80d9-4436-bcde-d01cb09afb80", "name": "green.second"},
-        {"id": "4a5afa4c-aedb-4714-8b2f-35335ba48ecf", "name": "red.second"},
-        {"id": "7913b9cb-3395-4966-99b8-252ae7a92ee2", "name": "yellow.second"},
-        {"id": "304c9070-4ece-46e0-add7-74d1827b682e", "name": "green.third"},
-        {"id": "e95b312d-e457-4521-97c2-cd19eca5fd26", "name": "blue.second"},
-        {"id": "a6123831-84c9-406e-838f-3fa52126e543", "name": "red.third"},
-        {"id": "72551686-d0d4-4b91-be0a-8e22024eb9fc", "name": "green.fourth"},
-        {"id": "5479d033-c36a-4e64-995b-767b19a33433", "name": "yellow.third"},
-        {"id": "9fbd8d50-39a4-4b92-87f1-49566c713a69", "name": "red.fourth"},
-        {"id": "28aea59a-6bbd-42f2-af4b-835fffda87d8", "name": "green.fifth"}
+        {
+            "id": "b383ae6e-9398-4e90-b3cc-98883d56e571",
+            "name": "green.first"
+        },
+        {
+            "id": "47f2dd2d-4224-4a04-966f-97396d9ce0ef",
+            "name": "red.first"
+        },
+        {
+            "id": "5bc723f7-f50a-482f-be61-f338c0d7d513",
+            "name": "yellow.first"
+        },
+        {
+            "id": "4d51accd-3b52-429b-a89b-d03e8b0f5a36",
+            "name": "blue.first"
+        },
+        {
+            "id": "ce385a55-80d9-4436-bcde-d01cb09afb80",
+            "name": "green.second"
+        },
+        {
+            "id": "4a5afa4c-aedb-4714-8b2f-35335ba48ecf",
+            "name": "red.second"
+        },
+        {
+            "id": "7913b9cb-3395-4966-99b8-252ae7a92ee2",
+            "name": "yellow.second"
+        },
+        {
+            "id": "304c9070-4ece-46e0-add7-74d1827b682e",
+            "name": "green.third"
+        },
+        {
+            "id": "e95b312d-e457-4521-97c2-cd19eca5fd26",
+            "name": "blue.second"
+        },
+        {
+            "id": "a6123831-84c9-406e-838f-3fa52126e543",
+            "name": "red.third"
+        },
+        {
+            "id": "72551686-d0d4-4b91-be0a-8e22024eb9fc",
+            "name": "green.fourth"
+        },
+        {
+            "id": "5479d033-c36a-4e64-995b-767b19a33433",
+            "name": "yellow.third"
+        },
+        {
+            "id": "9fbd8d50-39a4-4b92-87f1-49566c713a69",
+            "name": "red.fourth"
+        },
+        {
+            "id": "28aea59a-6bbd-42f2-af4b-835fffda87d8",
+            "name": "green.fifth"
+        }
     ],
     "locomotives": [
         {

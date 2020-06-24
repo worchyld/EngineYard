@@ -12,8 +12,8 @@ import XCTest
 
 class TestLocalData: XCTestCase {
 
-    internal var response: Response?
-    internal var components: Components?
+    internal var response: Response!
+    internal var components: Components!
 
     struct Components {
         var meta: Meta
@@ -82,16 +82,47 @@ class TestLocalData: XCTestCase {
         XCTAssertNotNil( self.components )
     }
 
-    func testFactories() throws {
-        guard let components = self.components else {
-            return
-        }
+    func testFactoriesEqualsSpaces() throws {
         let factories = components.factories
-        XCTAssertEqual(factories.count, components.meta.boardSpaces)
-
+        XCTAssertEqual(factories.count, components.meta.spaces)
     }
 
+    func testLocomotivesEqualsCardsQty() throws {
+        let locos = components.locomotives
+        XCTAssertEqual(locos.count, components.meta.cards.total)
+    }
 
+    func testFilterGreenCards() throws {
+        let cards = components.locomotives
+        let expected = 20
+        let green = Card.filter(cards: cards, on: .green)
+        XCTAssertEqual(green.count, components.meta.cards.green.total)
+        XCTAssertEqual(green.count, expected)
+    }
 
+    func testFilterRedCards() throws {
+        let cards = components.locomotives
+        let expected = 13
+        let red = Card.filter(cards: cards, on: .red)
+        XCTAssertEqual(red.count, components.meta.cards.red.total)
+        XCTAssertEqual(red.count, expected)
+    }
+
+    func testFilterYellowCards() throws {
+        let cards = components.locomotives
+        let expected = 7
+        let yellow = Card.filter(cards: cards, on: .yellow)
+        print ("yellow cards == \(yellow as Any)")
+        XCTAssertEqual(yellow.count, components.meta.cards.yellow.total)
+        XCTAssertEqual(yellow.count, expected)
+    }
+
+    func testFilterBlueCards() throws {
+        let cards = components.locomotives
+        let expected = 3
+        let blue = Card.filter(cards: cards, on: .blue)
+        XCTAssertEqual(blue.count, components.meta.cards.blue.total)
+        XCTAssertEqual(blue.count, expected)
+    }
 
 }
