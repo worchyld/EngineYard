@@ -53,6 +53,7 @@
 		4DA1C1482486EDE3004C4121 /* EY+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C1472486EDE3004C4121 /* EY+Date.swift */; };
 		4DA1C14B2486F3FC004C4121 /* Tax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C14A2486F3FC004C4121 /* Tax.swift */; };
 		4DA1C14D2486F43E004C4121 /* TaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C14C2486F43E004C4121 /* TaxTests.swift */; };
+		4DA3992824A3472F008A02A4 /* Factory+Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3992724A3472F008A02A4 /* Factory+Filter.swift */; };
 		4DC20053249FFECD00E0B4D8 /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC20052249FFECD00E0B4D8 /* Space.swift */; };
 		4DF1B6CE24A3412F00618C7B /* Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1B6CD24A3412F00618C7B /* Fixtures.swift */; };
 		4DF1B6D024A3460B00618C7B /* TestLocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1B6CF24A3460B00618C7B /* TestLocalData.swift */; };
@@ -118,6 +119,7 @@
 		4DA1C1472486EDE3004C4121 /* EY+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Date.swift"; sourceTree = "<group>"; };
 		4DA1C14A2486F3FC004C4121 /* Tax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tax.swift; sourceTree = "<group>"; };
 		4DA1C14C2486F43E004C4121 /* TaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTests.swift; sourceTree = "<group>"; };
+		4DA3992724A3472F008A02A4 /* Factory+Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Factory+Filter.swift"; sourceTree = "<group>"; };
 		4DC20052249FFECD00E0B4D8 /* Space.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space.swift; sourceTree = "<group>"; };
 		4DF1B6CD24A3412F00618C7B /* Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixtures.swift; sourceTree = "<group>"; };
 		4DF1B6CF24A3460B00618C7B /* TestLocalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLocalData.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				4DA1C14A2486F3FC004C4121 /* Tax.swift */,
 				4DC20052249FFECD00E0B4D8 /* Space.swift */,
 				4D3BE05E249FF1E1009C203E /* Factory.swift */,
+				4DA3992724A3472F008A02A4 /* Factory+Filter.swift */,
 				4D1C72F224A0F323009CAA3A /* Rusting.swift */,
 				4D238C4C24A058AD0031E3EE /* Livery.swift */,
 				4D238C4F24A059430031E3EE /* Generation.swift */,
@@ -402,6 +405,7 @@
 				4D1C72F124A0F2D1009CAA3A /* JSONAny.swift in Sources */,
 				4D238C4A24A051880031E3EE /* Response.swift in Sources */,
 				4D238C5124A059F90031E3EE /* Generation.swift in Sources */,
+				4DA3992824A3472F008A02A4 /* Factory+Filter.swift in Sources */,
 				4D1C72F524A0F6B0009CAA3A /* Board.swift in Sources */,
 				4DA1C1392486EC3D004C4121 /* Die.swift in Sources */,
 				4DA1C14B2486F3FC004C4121 /* Tax.swift in Sources */,
