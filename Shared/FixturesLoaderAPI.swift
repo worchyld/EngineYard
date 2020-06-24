@@ -32,11 +32,9 @@ final class FixturesLoaderAPI {
 
         switch responseResult {
         case .success(let response):
-            print ("RESPONSE -- \(response)")
             return response
 
         case .failure(let error):
-            print ("ERROR -- \(error as Any)")
             throw error
 
         case .none:

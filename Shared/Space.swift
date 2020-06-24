@@ -16,6 +16,7 @@ import Foundation
 struct Space: Codable, Identifiable {
     let id: String
     let name: String
+    var factory: Factory?
 
     enum CodingKeys: String, CodingKey {
         case id, name = "name"

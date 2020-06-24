@@ -11,7 +11,7 @@ import Foundation
 typealias Board = [Space?]
 
 class TrainGame {
-    var board: Board?
+    var board: Board!
 
     func start() throws {
         do {
@@ -26,7 +26,7 @@ class TrainGame {
 
 extension TrainGame {
     func loadInitialBoard() throws -> Board? {
-        let board = [Space?](repeating: nil, count: 14)
+        var board = [Space?](repeating: nil, count: 14)
 
 
         // 1. get response object from data in local json file
@@ -34,27 +34,50 @@ extension TrainGame {
 
             let api = FixturesLoaderAPI.shared
 
-            guard let result = try api.loadJSON() else {
+            guard let response = try api.loadJSON() else {
                 throw BundleError.unknown("Did not find response from local file")
             }
-            print ("RESULT -- \(result as Any)")
+
+
+            // 2. prepare/build the board
+            let results = try prepare(board: board, with: response)
+
+            print (results)
+            board = results
+
+
+            // 3. save to cloudkit/database/disk?
 
         }
         catch {
             throw error
         }
 
-        // 2. prepare/build the board
+        return board
+    }
 
-        // 3. save to cloudkit/database?
+
+    internal func prepare(board: [Space?], with response: Response) throws -> Board {
+
+        guard let factories = response.factories else {
+            throw BundleError.unknown("Factory data not found")
+        }
+        guard let spaces = response.spaces else {
+            throw BundleError.unknown("Space data not found")
+        }
+        guard let locomotives = response.locomotives else {
+            throw BundleError.unknown("Locomotive data not found")
+        }
+        guard (spaces.count == board.count) else {
+            throw BundleError.unknown("Invalid board count")
+        }
+
+        var board = board
+
+        print ("\nboard -- \(board)")
 
         return board
     }
 
 
-    
-
-
 }
-
-
