@@ -1,10 +1,11 @@
 {
     "_meta": {
-        "board-spaces": 14,
+        "spaces": 14,
         "total-capacity": 46,
-        "cards": {
-            "total": 43,
+        "cards": 43,
+        "locomotive": {
             "liveries": {
+                "total": 43,
                 "green": 20,
                 "red": 13,
                 "yellow": 7,
