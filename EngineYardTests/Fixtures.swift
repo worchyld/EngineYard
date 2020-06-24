@@ -34,3 +34,23 @@ public func example(of description: String,
     print("\n", description, "")
     action()
 }
+
+extension XCTestCase {
+    func assert<T>(_ result: Result<T, Error>?,
+                   containsError expectedError: Error,
+                   in file: StaticString = #file,
+                   line: UInt = #line) {
+        switch result {
+        case .success?:
+            XCTFail("No error thrown", file: file, line: line)
+        case .failure(let error)?:
+            XCTAssertEqual(
+                error.localizedDescription,
+                expectedError.localizedDescription,
+                file: file, line: line
+            )
+        case nil:
+            XCTFail("Result was nil", file: file, line: line)
+        }
+    }
+}
