@@ -28,25 +28,14 @@ extension TrainGame {
     func loadInitialBoard() throws -> Board? {
         let board = [Space?](repeating: nil, count: 14)
 
-        var jsonResult: Result<Response, Error>?
 
         // 1. get response object from data in local json file
-        self.loadJSON(from: Constants.boardJSONFile) { (result) in
-            DispatchQueue.main.async {
-                jsonResult = result
-                
-            }
+        do {
+            let response = try getLocalJSON()
+            print (response as Any)
         }
-
-        switch jsonResult {
-        case .success(let response):
-            print (response)
-
-        case .failure(let error):
-            print ("Error -- \(error)")
+        catch {
             throw error
-        case .none:
-            throw BundleError.unknown("Unknown error loading from bundle")
         }
 
 
@@ -58,13 +47,45 @@ extension TrainGame {
     }
 
 
+    func getLocalJSON(file: String = Constants.boardJSONFile) throws -> Response? {
+        let api = FixturesLoaderAPI.shared
+
+        var responseResult: Result<Response, Error>?
+
+        api.fetchFixtures(from: file) { (results) in
+
+            print (results as Any)
+
+            //DispatchQueue.main.async {
+                responseResult = results
+            //}
+        }
+
+        guard let result = responseResult else {
+            throw BundleError.unknown("ResponseResult-Failed")
+        }
+
+        switch result {
+        case .success(let response):
+            print (response)
+            return response
+
+        case .failure(let error):
+            print ("Error -- \(error)")
+            throw error
+
+        }
+    }
+
+
+    /*
     func loadJSON(from file: String = Constants.boardJSONFile, completion: @escaping ResponseHandler ) {
         let api = FixturesLoaderAPI.shared
 
         api.fetchFixtures(from: file) { (results) in
             completion(results)
         }
-    }
+    }*/
 
 }
 

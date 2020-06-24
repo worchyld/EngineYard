@@ -74,10 +74,9 @@ class TestLocalData: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testLoadJSONFile_CannotFindFile() throws {
+    func testBundle_CannotFindFile() throws {
         //let bundle = Bundle(for: type(of: self))
         let api = FixturesLoaderAPI.shared
-
 
         // Boards.json should fail
         let file = "boards.json"
