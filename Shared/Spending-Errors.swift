@@ -15,6 +15,8 @@ enum SpendingError : Error, Equatable {
     case notEnoughFunds(_ amount: Int)
     case cannotSpend(_ amount: Int)
     case invalidAmount
+    case invalidAccount
+    case unknown
 }
 
 // spending: localized error
@@ -32,6 +34,12 @@ extension SpendingError : LocalizedError {
 
         case .invalidAmount:
             return "Invalid amount"
+
+        case .invalidAccount:
+            return "Player account is invalid"
+
+        case .unknown:
+            return "SpendingError - Unknown error"
         }
     }
 }
