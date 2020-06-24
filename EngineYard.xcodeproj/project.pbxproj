@@ -23,7 +23,6 @@
 		4D1C72F324A0F323009CAA3A /* Rusting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1C72F224A0F323009CAA3A /* Rusting.swift */; };
 		4D1C72F524A0F6B0009CAA3A /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1C72F424A0F6B0009CAA3A /* Board.swift */; };
 		4D1C72F724A0FDC5009CAA3A /* FixturesLoaderAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1C72F624A0FDC5009CAA3A /* FixturesLoaderAPI.swift */; };
-		4D1C72FB24A13AB5009CAA3A /* TestLocalJSONFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1C72FA24A13AB5009CAA3A /* TestLocalJSONFetch.swift */; };
 		4D1C72FF24A16EAA009CAA3A /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1C72FE24A16EAA009CAA3A /* AsyncOperation.swift */; };
 		4D1C730124A1C898009CAA3A /* EY+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1C730024A1C898009CAA3A /* EY+Bundle.swift */; };
 		4D238C3B24A00D060031E3EE /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE05E249FF1E1009C203E /* Factory.swift */; };
@@ -56,6 +55,7 @@
 		4DA1C14D2486F43E004C4121 /* TaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C14C2486F43E004C4121 /* TaxTests.swift */; };
 		4DC20053249FFECD00E0B4D8 /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC20052249FFECD00E0B4D8 /* Space.swift */; };
 		4DF1B6CE24A3412F00618C7B /* Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1B6CD24A3412F00618C7B /* Fixtures.swift */; };
+		4DF1B6D024A3460B00618C7B /* TestLocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1B6CF24A3460B00618C7B /* TestLocalData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,7 +89,6 @@
 		4D1C72F224A0F323009CAA3A /* Rusting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rusting.swift; sourceTree = "<group>"; };
 		4D1C72F424A0F6B0009CAA3A /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		4D1C72F624A0FDC5009CAA3A /* FixturesLoaderAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixturesLoaderAPI.swift; sourceTree = "<group>"; };
-		4D1C72FA24A13AB5009CAA3A /* TestLocalJSONFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLocalJSONFetch.swift; sourceTree = "<group>"; };
 		4D1C72FE24A16EAA009CAA3A /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
 		4D1C730024A1C898009CAA3A /* EY+Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Bundle.swift"; sourceTree = "<group>"; };
 		4D238C3D24A046B30031E3EE /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
@@ -121,6 +120,7 @@
 		4DA1C14C2486F43E004C4121 /* TaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTests.swift; sourceTree = "<group>"; };
 		4DC20052249FFECD00E0B4D8 /* Space.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space.swift; sourceTree = "<group>"; };
 		4DF1B6CD24A3412F00618C7B /* Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixtures.swift; sourceTree = "<group>"; };
+		4DF1B6CF24A3460B00618C7B /* TestLocalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLocalData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,8 +193,8 @@
 				4D34A86A2495A61D00590EFD /* WinnerTests.swift */,
 				4D10C5A02486D08500238508 /* Info.plist */,
 				4D6BA939249D41A200167E68 /* IntTests.swift */,
-				4D1C72FA24A13AB5009CAA3A /* TestLocalJSONFetch.swift */,
 				4D238C4824A051240031E3EE /* MetaTests.swift */,
+				4DF1B6CF24A3460B00618C7B /* TestLocalData.swift */,
 			);
 			path = EngineYardTests;
 			sourceTree = "<group>";
@@ -417,10 +417,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D1C72FB24A13AB5009CAA3A /* TestLocalJSONFetch.swift in Sources */,
 				4D3BE05A249FF05E009C203E /* WalletTests.swift in Sources */,
 				4D10C59F2486D08500238508 /* EngineYardTests.swift in Sources */,
 				4DF1B6CE24A3412F00618C7B /* Fixtures.swift in Sources */,
+				4DF1B6D024A3460B00618C7B /* TestLocalData.swift in Sources */,
 				4DA1C14D2486F43E004C4121 /* TaxTests.swift in Sources */,
 				4D238C4924A051240031E3EE /* MetaTests.swift in Sources */,
 				4D34A86B2495A61D00590EFD /* WinnerTests.swift in Sources */,
