@@ -9,5 +9,5 @@
 import Foundation
 
 enum Livery: Int, Codable, CaseIterable {
-    case green = 1, red, blue, yellow
+    case green = 1, red, yellow, blue
 }
