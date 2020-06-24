@@ -12,8 +12,18 @@ import XCTest
 
 class WalletTests: XCTestCase {
 
+    internal class FakePlayer: WalletHolderDelegate {
+        var cash: Int
+
+        init(cash: Int = 0) {
+            self.cash = cash
+        }
+    }
+    var player: FakePlayer!
+
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        self.player = FakePlayer()
     }
 
     override func tearDownWithError() throws {
@@ -21,66 +31,79 @@ class WalletTests: XCTestCase {
     }
 
     func testWallet_DidCredit10Coins() throws {
-        let wallet = WalletHandler()
-
+        let wallet = Wallet()
         let amount = 10
 
-        XCTAssertNoThrow(  try wallet.credit(amount) )
-        XCTAssertEqual(wallet.balance, amount )
+        XCTAssertNoThrow( try wallet.credit(account: player, amount: amount) )
+        XCTAssertEqual(player.cash, amount )
     }
 
+
     func testWallet_CreditZero_Fails() throws {
-        let wallet = WalletHandler()
+        let wallet = Wallet()
         let amount = 0
 
-        XCTAssertThrowsError(try wallet.credit(amount) ) { error in
+        XCTAssertThrowsError(try wallet.credit(account: player, amount: amount) ) { error in
             XCTAssertEqual(error as! SpendingError, SpendingError.mustBePositive(amount) )
         }
     }
 
     func testWallet_DebitZero_Fails() throws {
-        let wallet = WalletHandler()
+        let wallet = Wallet()
         let amount = 0
 
-        XCTAssertThrowsError(try wallet.debit(amount) ) { error in
+        XCTAssertThrowsError(try wallet.debit(account: player, amount: amount) ) { error in
             XCTAssertEqual(error as! SpendingError, SpendingError.mustBePositive(amount) )
         }
     }
 
     func testWallet_DebitNegative_Fails() throws {
-        let wallet = WalletHandler()
+        let wallet = Wallet()
         let amount = -1
 
-        XCTAssertThrowsError(try wallet.debit(amount) ) { error in
+        // Expect not enough funds Wallet has 0 cash
+        XCTAssertThrowsError(try wallet.debit(account: player, amount: amount) ) { error in
+            XCTAssertEqual(error as! SpendingError, SpendingError.notEnoughFunds(0) )
+        }
+    }
+
+    func testWallet_DebitNegative_WhenWalletIsPositive_Fails() throws {
+        let wallet = Wallet()
+        let anotherFakePlayer = FakePlayer(cash: 1)
+        let amount = -1
+
+        // Expect throw must be positive
+        XCTAssertThrowsError(try wallet.debit(account: anotherFakePlayer, amount: amount) ) { error in
             XCTAssertEqual(error as! SpendingError, SpendingError.mustBePositive(amount) )
         }
     }
 
     func testWallet_DebitEqualsZero() throws {
-        let wallet = WalletHandler()
+        let wallet = Wallet()
 
         let amount = 5
         let debit = 5
         let expected = 0
 
-        XCTAssertNoThrow( try wallet.credit(amount) )
-        XCTAssertNoThrow( try wallet.debit(debit) )
-        XCTAssertEqual(wallet.balance, expected)
+        XCTAssertNoThrow( try wallet.credit(account: player, amount: amount)  )
+        XCTAssertNoThrow( try wallet.debit(account: player, amount: debit) )
+        XCTAssertEqual( player.cash  , expected)
     }
 
+
     func testWallet_DebitMoreThanFunds_Fails() throws {
-        let wallet = WalletHandler()
+        let wallet = Wallet()
 
         // Try to debit more than amount - expect fail
         let amount = 5
         let debit = 10
 
-        XCTAssertNoThrow( try wallet.credit(amount) )
+        XCTAssertNoThrow( try wallet.credit(account: player, amount: amount)  )
 
-        XCTAssertThrowsError(try wallet.debit(debit) ) { error in
+        XCTAssertThrowsError(try wallet.debit(account: player, amount: debit) ) { error in
             XCTAssertEqual(error as! SpendingError, SpendingError.cannotSpend(debit) )
         }
 
-        XCTAssertEqual(wallet.balance, amount)
+        XCTAssertEqual(player.cash, amount)
     }
 }
