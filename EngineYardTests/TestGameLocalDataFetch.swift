@@ -12,7 +12,22 @@ import XCTest
 
 class TestGameLocalDataFetch: XCTestCase {
 
-    var response: Response?
+    internal var response: Response?
+    internal var components: Components?
+
+    struct Components {
+        var meta: Meta
+        var factories: [Factory]
+        var spaces: [Space]
+        var locomotives: [Locomotive]
+
+        init( meta: Meta, factories: [Factory], spaces: [Space], locomotives: [Locomotive] ) {
+            self.meta = meta
+            self.factories = factories
+            self.spaces = spaces
+            self.locomotives = locomotives
+        }
+    }
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -25,6 +40,27 @@ class TestGameLocalDataFetch: XCTestCase {
             case .success(let response):
                 self?.response = response
 
+                guard let meta = response.meta else {
+                    XCTFail("No meta found")
+                    return
+                }
+
+                guard let factories = response.factories else {
+                    XCTFail("No factories found")
+                    return
+                }
+
+                guard let spaces = response.spaces else {
+                    XCTFail("No spaces found")
+                    return
+                }
+
+                guard let locomotives = response.locomotives else {
+                    XCTFail("No locomotives found")
+                    return
+                }
+
+                self?.components = Components(meta: meta, factories: factories, spaces: spaces, locomotives: locomotives)
 
             case .failure(let error):
                 XCTFail(error.localizedDescription)
@@ -36,30 +72,20 @@ class TestGameLocalDataFetch: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testAPI_FetchFixtures() throws {
+    func testLoadData_ResponseNotNil() throws {
+        XCTAssertNotNil(  self.response )
+    }
 
-        guard let response = response else {
-            XCTFail("No meta key found")
-            return
-        }
-        guard let meta = response.meta else {
-            XCTFail("No meta key found")
-            return
-        }
-        guard let factories = response.factories else {
-            return
-        }
-        guard let locomotives = response.locomotives else {
-            XCTFail("No meta key found")
-            return
-        }
-        guard let spaces = response.spaces else {
-            return
-        }
+    func testLocalData_ComponentsNotNil() throws {
+        XCTAssertNotNil( self.components )
+    }
 
-        XCTAssertEqual(meta.boardSpaces! , factories.count)
-        XCTAssertEqual(meta.boardSpaces!, spaces.count)
-        XCTAssertEqual(meta.cards?.total, locomotives.count)
+    func testFactories() throws {
+        guard let components = self.components else {
+            return
+        }
+        let factories = components.factories
+        XCTAssertEqual(factories.count, components.meta.boardSpaces)
 
     }
 }
