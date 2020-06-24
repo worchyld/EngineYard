@@ -52,8 +52,9 @@ class WalletTests: XCTestCase {
         let wallet = Wallet()
         let amount = 0
 
+        // When wallet is 0, Fail when debiting 0
         XCTAssertThrowsError(try wallet.debit(account: player, amount: amount) ) { error in
-            XCTAssertEqual(error as! SpendingError, SpendingError.mustBePositive(amount) )
+            XCTAssertEqual(error as! SpendingError, SpendingError.notEnoughFunds(amount) )
         }
     }
 
