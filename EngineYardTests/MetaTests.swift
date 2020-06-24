@@ -23,8 +23,9 @@ class MetaTests: XCTestCase {
     func testJSONMapping() throws {
         let bundle = Bundle(for: type(of: self))
 
-        guard let url = bundle.url(forResource: "board", withExtension: "json") else {
-            XCTFail("Missing file: board.json")
+        let resourceFile = Constants.boardJSONFile
+        guard let url = bundle.url(forResource: resourceFile, withExtension: nil) else {
+            XCTFail("Missing file: \(resourceFile))")
             return
         }
 
@@ -89,8 +90,8 @@ class MetaTests: XCTestCase {
 
     func testCanDecodeFromBundleExtension() throws {
         let bundle = Bundle(for: type(of: self))
-
-        let response = try bundle.decode(Response.self, from: "board.json", dateDecodingStrategy: .deferredToDate, keyDecodingStrategy: .convertFromSnakeCase)
+        let file = Constants.boardJSONFile
+        let response = try bundle.decode(Response.self, from: file, dateDecodingStrategy: .deferredToDate, keyDecodingStrategy: .convertFromSnakeCase)
 
         XCTAssertNotNil(response)
         XCTAssertNotNil(response.meta)
