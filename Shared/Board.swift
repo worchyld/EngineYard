@@ -14,17 +14,41 @@ class TrainGame {
     var board: Board?
 
     func start() throws {
-        let board = TrainGame.loadInitialBoard()
-
-        print ("board: \(board as Any)")
+        do {
+            let board = try loadInitialBoard()
+            print ("board: \(board as Any)")
+        }
+        catch {
+            throw error
+        }
     }
 }
 
 extension TrainGame {
-    static func loadInitialBoard() -> Board? {
+    func loadInitialBoard() throws -> Board? {
         let board = [Space?](repeating: nil, count: 14)
 
+        var jsonResult: Result<Response, Error>?
+
         // 1. get response object from data in local json file
+
+        self.loadJSON(from: "boards.json", in: Bundle.main) { (result) in
+            DispatchQueue.main.async {
+                jsonResult = result
+            }
+        }
+
+        switch jsonResult {
+        case .success(let response):
+            print (response)
+
+        case .failure(let error):
+            print ("Error -- \(error)")
+            throw error
+        case .none:
+            throw BundleError.unknown("Unknown error loading from bundle")
+        }
+
 
         // 2. prepare/build the board
 
@@ -32,4 +56,16 @@ extension TrainGame {
 
         return board
     }
+
+
+    func loadJSON(from file: String = "board.json", in bundle: Bundle, completion: @escaping ResponseHandler ) {
+        let api = FixturesLoaderAPI.shared
+
+        api.fetchFixtures(from: file, in: bundle) { (results) in
+            completion(results)
+        }
+    }
+
 }
+
+
