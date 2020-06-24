@@ -28,3 +28,9 @@ struct Fixtures {
         return [greenFirst, redFirst, yellowFirst, blueFirst]
     }
 }
+
+public func example(of description: String,
+                    _ action: () -> Void) {
+    print("\n", description, "")
+    action()
+}
