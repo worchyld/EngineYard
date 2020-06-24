@@ -53,12 +53,7 @@ extension TrainGame {
         var responseResult: Result<Response, Error>?
 
         api.fetchFixtures(from: file) { (results) in
-
-            print (results as Any)
-
-            //DispatchQueue.main.async {
-                responseResult = results
-            //}
+            responseResult = results
         }
 
         guard let result = responseResult else {
