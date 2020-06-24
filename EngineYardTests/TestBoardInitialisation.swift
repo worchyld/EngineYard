@@ -16,13 +16,26 @@ class TestBoardInitialisation: XCTestCase {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
-    func testDidLoadBoard() throws {
+    func testDid_LoadJSONFromBundle() throws {
         let trainGame = TrainGame()
 
-        /*
-        XCTAssertThrowsError(try trainGame.loadInitialBoard() ) { error in
-            XCTAssertEqual(error as! BundleError, BundleError.fileNotFound("boards.json") )
-        }*/
+        trainGame.loadJSON(from: Constants.boardJSONFile, completion: { (response) in
+            switch (response) {
+            case .success(let response):
+                print (response)
+
+                XCTAssertNotNil(response)
+
+            case .failure(let error):
+                print (error)
+                XCTFail(error.localizedDescription)
+            }
+        })
+    }
+
+    func testDid_InitBoard() throws {
+        //let trainGame = TrainGame()
+        //try trainGame.start()
     }
 
 }
