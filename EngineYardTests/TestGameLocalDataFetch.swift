@@ -58,5 +58,8 @@ class TestGameLocalDataFetch: XCTestCase {
         }
 
         XCTAssertEqual(meta.boardSpaces! , factories.count)
+        XCTAssertEqual(meta.boardSpaces!, spaces.count)
+        XCTAssertEqual(meta.cards?.total, locomotives.count)
+
     }
 }
