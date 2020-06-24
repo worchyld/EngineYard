@@ -23,12 +23,10 @@ class TestGameLocalDataFetch: XCTestCase {
         api.fetchFixtures(from: bundle) { [weak self] result in
             switch result {
             case .success(let response):
-
                 self?.response = response
 
 
             case .failure(let error):
-                print(error.localizedDescription)
                 XCTFail(error.localizedDescription)
             }
         }
@@ -39,6 +37,26 @@ class TestGameLocalDataFetch: XCTestCase {
     }
 
     func testAPI_FetchFixtures() throws {
-        print ("RESPONSE >> \(response as Any)")
+
+        guard let response = response else {
+            XCTFail("No meta key found")
+            return
+        }
+        guard let meta = response.meta else {
+            XCTFail("No meta key found")
+            return
+        }
+        guard let factories = response.factories else {
+            return
+        }
+        guard let locomotives = response.locomotives else {
+            XCTFail("No meta key found")
+            return
+        }
+        guard let spaces = response.spaces else {
+            return
+        }
+
+        XCTAssertEqual(meta.boardSpaces! , factories.count)
     }
 }
