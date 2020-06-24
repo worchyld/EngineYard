@@ -125,4 +125,22 @@ class TestLocalData: XCTestCase {
         XCTAssertEqual(blue.count, expected)
     }
 
+    func testCardTotals() throws {
+        let cards = components.locomotives
+
+        let green =  Card.filter(cards: cards, on: .green).count
+        let yellow = Card.filter(cards: cards, on: .yellow).count
+        let red = Card.filter(cards: cards, on: .red).count
+        let blue =  Card.filter(cards: cards, on: .blue).count
+
+        let total = green + yellow + red + blue
+        XCTAssertEqual( total, components.meta.cards.total )
+    }
+
+    func testCapacities() throws {
+        let factories = components.factories
+        let totalCapacity = factories.reduce(0, { $0 + $1.orderCapacity }  )
+        XCTAssertEqual(totalCapacity, components.meta.totalCapacity)
+    }
+
 }
