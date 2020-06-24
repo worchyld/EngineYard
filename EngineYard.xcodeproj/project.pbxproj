@@ -22,7 +22,7 @@
 		4D1C72F124A0F2D1009CAA3A /* JSONAny.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1C72F024A0F2D1009CAA3A /* JSONAny.swift */; };
 		4D1C72F324A0F323009CAA3A /* Rusting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1C72F224A0F323009CAA3A /* Rusting.swift */; };
 		4D1C72F524A0F6B0009CAA3A /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1C72F424A0F6B0009CAA3A /* Board.swift */; };
-		4D1C72F724A0FDC5009CAA3A /* GameLocalDataAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1C72F624A0FDC5009CAA3A /* GameLocalDataAPI.swift */; };
+		4D1C72F724A0FDC5009CAA3A /* FixturesLoaderAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1C72F624A0FDC5009CAA3A /* FixturesLoaderAPI.swift */; };
 		4D1C72FB24A13AB5009CAA3A /* TestGameLocalDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1C72FA24A13AB5009CAA3A /* TestGameLocalDataFetch.swift */; };
 		4D1C72FF24A16EAA009CAA3A /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1C72FE24A16EAA009CAA3A /* AsyncOperation.swift */; };
 		4D1C730124A1C898009CAA3A /* EY+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1C730024A1C898009CAA3A /* EY+Bundle.swift */; };
@@ -37,13 +37,11 @@
 		4D238C5624A0CDE80031E3EE /* board.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D3BE05C249FF1C4009C203E /* board.json */; };
 		4D238C5824A0CF0C0031E3EE /* board.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D3BE05C249FF1C4009C203E /* board.json */; };
 		4D34A86B2495A61D00590EFD /* WinnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D34A86A2495A61D00590EFD /* WinnerTests.swift */; };
-		4D3BE04B249FD07C009C203E /* WalletHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE04A249FD07C009C203E /* WalletHandler.swift */; };
-		4D3BE04D249FDBB4009C203E /* Spending-Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE04C249FDBB4009C203E /* Spending-Validation.swift */; };
+		4D3BE04B249FD07C009C203E /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE04A249FD07C009C203E /* Wallet.swift */; };
 		4D3BE05A249FF05E009C203E /* WalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE059249FF05E009C203E /* WalletTests.swift */; };
 		4D49D2632499F9D9000E857F /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D49D2622499F9D9000E857F /* AvatarView.swift */; };
 		4D49D2672499FE2C000E857F /* EY+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D49D2662499FE2C000E857F /* EY+Identifier.swift */; };
 		4D54250C249D5B16004B97A8 /* Spending-Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D54250B249D5B16004B97A8 /* Spending-Errors.swift */; };
-		4D54250E249D62C3004B97A8 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D54250D249D62C3004B97A8 /* Wallet.swift */; };
 		4D66EBC8248F8147005DE7F0 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66EBC7248F8147005DE7F0 /* Player.swift */; };
 		4D6BA93A249D41A200167E68 /* IntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6BA939249D41A200167E68 /* IntTests.swift */; };
 		4DA1C1392486EC3D004C4121 /* Die.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C1382486EC3D004C4121 /* Die.swift */; };
@@ -89,7 +87,7 @@
 		4D1C72F024A0F2D1009CAA3A /* JSONAny.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONAny.swift; sourceTree = "<group>"; };
 		4D1C72F224A0F323009CAA3A /* Rusting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rusting.swift; sourceTree = "<group>"; };
 		4D1C72F424A0F6B0009CAA3A /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
-		4D1C72F624A0FDC5009CAA3A /* GameLocalDataAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLocalDataAPI.swift; sourceTree = "<group>"; };
+		4D1C72F624A0FDC5009CAA3A /* FixturesLoaderAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixturesLoaderAPI.swift; sourceTree = "<group>"; };
 		4D1C72FA24A13AB5009CAA3A /* TestGameLocalDataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGameLocalDataFetch.swift; sourceTree = "<group>"; };
 		4D1C72FE24A16EAA009CAA3A /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
 		4D1C730024A1C898009CAA3A /* EY+Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Bundle.swift"; sourceTree = "<group>"; };
@@ -100,8 +98,7 @@
 		4D238C4F24A059430031E3EE /* Generation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generation.swift; sourceTree = "<group>"; };
 		4D238C5224A095230031E3EE /* EY+CaseIterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+CaseIterable.swift"; sourceTree = "<group>"; };
 		4D34A86A2495A61D00590EFD /* WinnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerTests.swift; sourceTree = "<group>"; };
-		4D3BE04A249FD07C009C203E /* WalletHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletHandler.swift; sourceTree = "<group>"; };
-		4D3BE04C249FDBB4009C203E /* Spending-Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Spending-Validation.swift"; sourceTree = "<group>"; };
+		4D3BE04A249FD07C009C203E /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		4D3BE059249FF05E009C203E /* WalletTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletTests.swift; sourceTree = "<group>"; };
 		4D3BE05C249FF1C4009C203E /* board.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = board.json; sourceTree = "<group>"; };
 		4D3BE05E249FF1E1009C203E /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
@@ -109,7 +106,6 @@
 		4D49D2622499F9D9000E857F /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		4D49D2662499FE2C000E857F /* EY+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Identifier.swift"; sourceTree = "<group>"; };
 		4D54250B249D5B16004B97A8 /* Spending-Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Spending-Errors.swift"; sourceTree = "<group>"; };
-		4D54250D249D62C3004B97A8 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		4D66EBC7248F8147005DE7F0 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		4D6BA939249D41A200167E68 /* IntTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntTests.swift; sourceTree = "<group>"; };
 		4DA1C1382486EC3D004C4121 /* Die.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Die.swift; sourceTree = "<group>"; };
@@ -216,14 +212,13 @@
 				4D238C4F24A059430031E3EE /* Generation.swift */,
 				4D3BE060249FF23C009C203E /* Locomotive.swift */,
 				4D66EBC7248F8147005DE7F0 /* Player.swift */,
-				4D54250D249D62C3004B97A8 /* Wallet.swift */,
-				4D3BE04A249FD07C009C203E /* WalletHandler.swift */,
+				4D3BE04A249FD07C009C203E /* Wallet.swift */,
 				4D1C72F424A0F6B0009CAA3A /* Board.swift */,
-				4D1C72F624A0FDC5009CAA3A /* GameLocalDataAPI.swift */,
+				4D1C72F624A0FDC5009CAA3A /* FixturesLoaderAPI.swift */,
 				4D1C72F024A0F2D1009CAA3A /* JSONAny.swift */,
 				4D238C3D24A046B30031E3EE /* Meta.swift */,
 				4D238C4624A050C00031E3EE /* Response.swift */,
-				4D3BE051249FE0DE009C203E /* Spending */,
+				4D54250B249D5B16004B97A8 /* Spending-Errors.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -238,15 +233,6 @@
 				4DA1C13F2486ECF3004C4121 /* Sounds.swift */,
 			);
 			path = Sounds;
-			sourceTree = "<group>";
-		};
-		4D3BE051249FE0DE009C203E /* Spending */ = {
-			isa = PBXGroup;
-			children = (
-				4D54250B249D5B16004B97A8 /* Spending-Errors.swift */,
-				4D3BE04C249FDBB4009C203E /* Spending-Validation.swift */,
-			);
-			name = Spending;
 			sourceTree = "<group>";
 		};
 		4D3BE05B249FF19E009C203E /* Data */ = {
@@ -390,7 +376,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D10C5882486D08400238508 /* AppDelegate.swift in Sources */,
-				4D54250E249D62C3004B97A8 /* Wallet.swift in Sources */,
 				4D238C5324A095230031E3EE /* EY+CaseIterable.swift in Sources */,
 				4D1C72FF24A16EAA009CAA3A /* AsyncOperation.swift in Sources */,
 				4DC20053249FFECD00E0B4D8 /* Space.swift in Sources */,
@@ -403,13 +388,13 @@
 				4DA1C1422486ED12004C4121 /* NumberFormatCache.swift in Sources */,
 				4D1C730124A1C898009CAA3A /* EY+Bundle.swift in Sources */,
 				4DA1C1402486ECF3004C4121 /* Sounds.swift in Sources */,
-				4D1C72F724A0FDC5009CAA3A /* GameLocalDataAPI.swift in Sources */,
+				4D1C72F724A0FDC5009CAA3A /* FixturesLoaderAPI.swift in Sources */,
 				4D10C58A2486D08400238508 /* SceneDelegate.swift in Sources */,
 				4DA1C1442486ED8C004C4121 /* EY+FlatColor.swift in Sources */,
 				4D10C58C2486D08400238508 /* ContentView.swift in Sources */,
 				4D238C4E24A058B40031E3EE /* Livery.swift in Sources */,
 				4D54250C249D5B16004B97A8 /* Spending-Errors.swift in Sources */,
-				4D3BE04B249FD07C009C203E /* WalletHandler.swift in Sources */,
+				4D3BE04B249FD07C009C203E /* Wallet.swift in Sources */,
 				4D238C3B24A00D060031E3EE /* Factory.swift in Sources */,
 				4D1C72F124A0F2D1009CAA3A /* JSONAny.swift in Sources */,
 				4D238C4A24A051880031E3EE /* Response.swift in Sources */,
@@ -418,7 +403,6 @@
 				4DA1C1392486EC3D004C4121 /* Die.swift in Sources */,
 				4DA1C14B2486F3FC004C4121 /* Tax.swift in Sources */,
 				4DA1C1482486EDE3004C4121 /* EY+Date.swift in Sources */,
-				4D3BE04D249FDBB4009C203E /* Spending-Validation.swift in Sources */,
 				4D10C6162486DC4700238508 /* Constants.swift in Sources */,
 				4D49D2672499FE2C000E857F /* EY+Identifier.swift in Sources */,
 				4D1C72F324A0F323009CAA3A /* Rusting.swift in Sources */,
