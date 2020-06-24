@@ -17,28 +17,35 @@ protocol HandleResponseDelegate: class {
 
 typealias ResponseHandler = (Result<Response, Error>) -> Void
 
-class FixturesLoaderAPI {
-    fileprivate let processFileQueue = DispatchQueue(label: "Process file queue", qos: DispatchQoS.background)
+final class FixturesLoaderAPI {
+    static let shared = FixturesLoaderAPI()
 
-    func fetchFixtures(from bundle: Bundle, completion: @escaping ResponseHandler ) {
+    private init() { }
+
+    public func fetchFixtures(from bundle: Bundle, completion: @escaping ResponseHandler ) {
         FixturesLoaderAPI.debugInfo(bundle: bundle)
 
-        processFileQueue.async(execute: { () -> Void in
-            print ("In queue...")
 
-            do {
-                let result = try bundle.decode(Response.self, from: "board.json", dateDecodingStrategy: .deferredToDate, keyDecodingStrategy: .convertFromSnakeCase)
-                print (result)
+        DispatchQueue(label: "utility.dispatch", qos: .utility).sync()
+        {
+            autoreleasepool {
+                do {
+                    let result = try bundle.decode(Response.self, from: "board.json", dateDecodingStrategy: .deferredToDate, keyDecodingStrategy: .convertFromSnakeCase)
+                    print ("got response = \(result)")
 
-                DispatchQueue.main.async { completion( Result.success(result) )}
+                    completion(Result.success(result))
+                    //DispatchQueue.main.async { completion( Result.success(result) )}
+
+                }
+                catch {
+                    print ("got error = \(error as Any)")
+
+                    completion(Result.failure(error))
+                    //DispatchQueue.main.async { completion( Result.failure(error) )}
+
+                }
             }
-            catch {
-                print("ERROR -- Could not load fixtures: \(error)")
-                print (error.localizedDescription)
-
-                DispatchQueue.main.async { completion( Result.failure(error) )}
-            }
-        })
+        }
 
     }
 
