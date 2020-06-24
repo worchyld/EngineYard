@@ -15,7 +15,7 @@ import Foundation
 // MARK: - Space
 struct Space: Codable, Identifiable {
     let id: String
-    let name: String?
+    let name: String
 
     enum CodingKeys: String, CodingKey {
         case id, name = "name"

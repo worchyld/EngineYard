@@ -9,32 +9,28 @@
 import Foundation
 
 struct Meta: Codable {
-    var boardSpaces: Int?
-    var cards: Meta.Cards?
+    var spaces, totalCapacity, cards: Int
+    var liveries: Meta.Liveries
+    var generations: Meta.Generations
 
     enum CodingKeys: String, CodingKey {
-        case boardSpaces = "board-spaces"
-        case cards
+        case spaces
+        case totalCapacity = "total-capacity"
+        case cards, liveries, generations
     }
 
-    // MARK: - Cards
-    struct Cards: Codable {
-        var total: Int?
-        var liveries: Meta.Liveries?
-        var generations: Meta.Generations?
-    }
-
-    // MARK: - Colors/Liveries
-    struct Liveries: Codable {
-        var green, red, yellow, blue: Int?
-        var total: Int?
-    }
 
     // MARK: - Generations
     struct Generations: Codable {
-        var first, second, third, fourth: Meta.Liveries?
-        var fifth: Meta.Liveries?
+        var first, second, third, fourth: Meta.Liveries
+        var fifth: Meta.Liveries
     }
-}
 
+    // MARK: - Liveries
+    struct Liveries: Codable {
+        var total, green, red, yellow: Int
+        var blue: Int
+    }
+
+}
 
