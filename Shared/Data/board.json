@@ -3,50 +3,48 @@
         "spaces": 14,
         "total-capacity": 46,
         "cards": 43,
-        "locomotive": {
-            "liveries": {
-                "total": 43,
-                "green": 20,
-                "red": 13,
-                "yellow": 7,
-                "blue": 3
+        "liveries": {
+            "total": 43,
+            "green": 20,
+            "red": 13,
+            "yellow": 7,
+            "blue": 3
+        },
+        "generations": {
+            "first": {
+                "total": 10,
+                "green": 4,
+                "red": 3,
+                "blue": 1,
+                "yellow": 2
             },
-            "generations": {
-                "first": {
-                    "total": 10,
-                    "green": 4,
-                    "red": 3,
-                    "blue": 1,
-                    "yellow": 2
-                },
-                "second": {
-                    "total": 11,
-                    "green": 4,
-                    "red": 3,
-                    "blue": 2,
-                    "yellow": 2
-                },
-                "third": {
-                    "total": 10,
-                    "green": 4,
-                    "red": 3,
-                    "blue": 0,
-                    "yellow": 3
-                },
-                "fourth": {
-                    "total": 8,
-                    "green": 4,
-                    "red": 4,
-                    "blue": 0,
-                    "yellow": 0
-                },
-                "fifth": {
-                    "total": 4,
-                    "green": 4,
-                    "red": 0,
-                    "blue": 0,
-                    "yellow": 0
-                }
+            "second": {
+                "total": 11,
+                "green": 4,
+                "red": 3,
+                "blue": 2,
+                "yellow": 2
+            },
+            "third": {
+                "total": 10,
+                "green": 4,
+                "red": 3,
+                "blue": 0,
+                "yellow": 3
+            },
+            "fourth": {
+                "total": 8,
+                "green": 4,
+                "red": 4,
+                "blue": 0,
+                "yellow": 0
+            },
+            "fifth": {
+                "total": 4,
+                "green": 4,
+                "red": 0,
+                "blue": 0,
+                "yellow": 0
             }
         }
     },
