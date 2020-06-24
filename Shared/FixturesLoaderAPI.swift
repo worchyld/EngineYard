@@ -8,13 +8,6 @@
 
 import Foundation
 
-//protocol GameLocalDataAPIInputProtocol: class {
-//    func fetchFixtures(from bundle: Bundle) throws
-//}
-protocol HandleResponseDelegate: class {
-    func handleResponse(result: Result<Response, Error> )
-}
-
 typealias ResponseHandler = (Result<Response, Error>) -> Void
 
 final class FixturesLoaderAPI {
@@ -22,29 +15,23 @@ final class FixturesLoaderAPI {
 
     private init() { }
 
-    public func fetchFixtures(from bundle: Bundle, completion: @escaping ResponseHandler ) {
+
+    public func fetchFixtures(from filename: String, in bundle: Bundle, completion: @escaping ResponseHandler ) {
         FixturesLoaderAPI.debugInfo(bundle: bundle)
 
 
-        DispatchQueue(label: "utility.dispatch", qos: .utility).sync()
-        {
-            autoreleasepool {
-                do {
-                    let result = try bundle.decode(Response.self, from: "board.json", dateDecodingStrategy: .deferredToDate, keyDecodingStrategy: .convertFromSnakeCase)
-                    print ("got response = \(result)")
+        DispatchQueue.global(qos: .utility).sync {
 
-                    completion(Result.success(result))
-                    //DispatchQueue.main.async { completion( Result.success(result) )}
+            do {
+                let result = try bundle.decode(Response.self, from: filename, dateDecodingStrategy: .deferredToDate, keyDecodingStrategy: .convertFromSnakeCase)
 
-                }
-                catch {
-                    print ("got error = \(error as Any)")
+                completion( Result.success(result) )
 
-                    completion(Result.failure(error))
-                    //DispatchQueue.main.async { completion( Result.failure(error) )}
-
-                }
             }
+            catch {
+                completion( Result.failure(error) )
+            }
+            
         }
 
     }
