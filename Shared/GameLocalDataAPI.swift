@@ -15,10 +15,11 @@ protocol HandleResponseDelegate: class {
     func handleResponse(result: Result<Response, Error> )
 }
 
-class GameLocalDataAPI: GameLocalDataAPIInputProtocol {
+class FixturesLoaderAPI: GameLocalDataAPIInputProtocol {
 
+    // #TODO -- should be a completion block
     func fetchFixtures(from bundle: Bundle) throws {
-        GameLocalDataAPI.debugInfo(bundle: bundle)
+        FixturesLoaderAPI.debugInfo(bundle: bundle)
 
         do {
             let result = try bundle.decode(Response.self, from: "board.json", dateDecodingStrategy: .deferredToDate, keyDecodingStrategy: .convertFromSnakeCase)
