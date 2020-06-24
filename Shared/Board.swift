@@ -31,13 +31,18 @@ extension TrainGame {
 
         // 1. get response object from data in local json file
         do {
-            let response = try getLocalJSON()
-            print (response as Any)
+
+            let api = FixturesLoaderAPI.shared
+
+            guard let result = try api.loadJSON() else {
+                throw BundleError.unknown("Did not find response from local file")
+            }
+            print ("RESULT -- \(result as Any)")
+
         }
         catch {
             throw error
         }
-
 
         // 2. prepare/build the board
 
@@ -47,40 +52,8 @@ extension TrainGame {
     }
 
 
-    func getLocalJSON(file: String = Constants.boardJSONFile) throws -> Response? {
-        let api = FixturesLoaderAPI.shared
+    
 
-        var responseResult: Result<Response, Error>?
-
-        api.fetchFixtures(from: file) { (results) in
-            responseResult = results
-        }
-
-        guard let result = responseResult else {
-            throw BundleError.unknown("ResponseResult-Failed")
-        }
-
-        switch result {
-        case .success(let response):
-            print (response)
-            return response
-
-        case .failure(let error):
-            print ("Error -- \(error)")
-            throw error
-
-        }
-    }
-
-
-    /*
-    func loadJSON(from file: String = Constants.boardJSONFile, completion: @escaping ResponseHandler ) {
-        let api = FixturesLoaderAPI.shared
-
-        api.fetchFixtures(from: file) { (results) in
-            completion(results)
-        }
-    }*/
 
 }
 

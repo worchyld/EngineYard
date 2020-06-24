@@ -13,21 +13,44 @@ typealias ResponseHandler = (Result<Response, Error>) -> Void
 final class FixturesLoaderAPI {
     static let shared = FixturesLoaderAPI()
 
+
     private init() { }
 
-
-    public func fetchFixtures(from filename: String, completion: @escaping ResponseHandler ) {
+    public func loadJSON(from file: String = Constants.boardJSONFile) throws -> Response? {
+        let api = FixturesLoaderAPI.shared
+        var responseResult: Result<Response, Error>?
 
         #if DEBUG
-        print ("in debug mode")
         let bundle = Bundle(for: type(of: self))
         #else
-        print ("in app mode")
         let bundle = Bundle.main
         #endif
 
-        FixturesLoaderAPI.debugInfo(bundle: bundle)
+        api.decodeJSON(fromFile: file, in: bundle) { (result) in
+            responseResult = result
+        }
 
+        switch responseResult {
+        case .success(let response):
+            print ("RESPONSE -- \(response)")
+            return response
+
+        case .failure(let error):
+            print ("ERROR -- \(error as Any)")
+            throw error
+
+        case .none:
+            let error = BundleError.unknown("Cannot decode from bundle")
+            throw error
+        }
+
+
+    }
+
+
+    internal func decodeJSON(fromFile filename: String, in bundle: Bundle, completion: @escaping ResponseHandler ) {
+
+        FixturesLoaderAPI.debugInfo(bundle: bundle)
 
         DispatchQueue.global(qos: .utility).sync {
 

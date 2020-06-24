@@ -17,15 +17,6 @@ class TestBoardInitialisation: XCTestCase {
     }
 
     func testDid_LoadJSONFromBundle() throws {
-        let trainGame = TrainGame()
-
-        do {
-            let response = try trainGame.getLocalJSON(file: Constants.boardJSONFile)
-            print ("response - \(response as Any)")
-
-        } catch {
-            XCTFail( error.localizedDescription )
-        }
 
         /*
         trainGame.loadJSON(from: Constants.boardJSONFile, completion: { (response) in
@@ -43,8 +34,7 @@ class TestBoardInitialisation: XCTestCase {
     }
 
     func testDid_InitBoard() throws {
-        //let trainGame = TrainGame()
-        //try trainGame.start()
+        
     }
 
 }

@@ -33,11 +33,15 @@ class TestLocalData: XCTestCase {
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 
-        //let bundle = Bundle(for: type(of: self))
+        let bundle = Bundle(for: type(of: self))
         let api = FixturesLoaderAPI.shared
         let file = Constants.boardJSONFile
 
-        api.fetchFixtures(from: file) { [weak self] result in
+
+        //api.fetchFixtures(from: file) { [weak self] result in
+
+        api.decodeJSON(fromFile: file, in: bundle) { [weak self] result in
+
             switch result {
             case .success(let response):
                 self?.response = response
@@ -75,12 +79,14 @@ class TestLocalData: XCTestCase {
     }
 
     func testBundle_CannotFindFile() throws {
-        //let bundle = Bundle(for: type(of: self))
+        let bundle = Bundle(for: type(of: self))
         let api = FixturesLoaderAPI.shared
 
         // Boards.json should fail
         let file = "boards.json"
-        api.fetchFixtures(from: file) { result in
+
+        //api.fetchFixtures(from: file) { result in
+        api.decodeJSON(fromFile: file, in: bundle) { (result) in
 
             let expectedError = BundleError.failedToLocate(file)
             print (expectedError)
