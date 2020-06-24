@@ -21,13 +21,8 @@ class TestGameLocalDataFetch: XCTestCase {
     }
 
     func testlocaldataLoader() {
-        let bundle = Bundle(for: type(of: self))
-        let api = GameLocalDataAPI()
-        do {
-            try api.fetchFixtures(from: bundle)
-        }
-        catch {
-            XCTFail(error.localizedDescription)
-        }
+//        let bundle = Bundle(for: type(of: self))
+//        let api = FixturesLoaderAPI()
+
     }
 }
