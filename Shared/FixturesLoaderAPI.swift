@@ -43,8 +43,6 @@ final class FixturesLoaderAPI {
             let error = BundleError.unknown("Cannot decode from bundle")
             throw error
         }
-
-
     }
 
 

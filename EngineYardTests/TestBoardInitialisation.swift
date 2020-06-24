@@ -18,19 +18,16 @@ class TestBoardInitialisation: XCTestCase {
 
     func testDid_LoadJSONFromBundle() throws {
 
-        /*
-        trainGame.loadJSON(from: Constants.boardJSONFile, completion: { (response) in
-            switch (response) {
-            case .success(let response):
-                print (response)
+        let trainGame = TrainGame()
 
-                XCTAssertNotNil(response)
+        do {
+            let result = try trainGame.loadInitialBoard()
 
-            case .failure(let error):
-                print (error)
-                XCTFail(error.localizedDescription)
-            }
-        })*/
+            XCTAssertNotNil(result)
+        } catch  {
+            XCTFail(error.localizedDescription)
+        }
+
     }
 
     func testDid_InitBoard() throws {

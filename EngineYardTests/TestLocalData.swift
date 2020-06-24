@@ -37,9 +37,6 @@ class TestLocalData: XCTestCase {
         let api = FixturesLoaderAPI.shared
         let file = Constants.boardJSONFile
 
-
-        //api.fetchFixtures(from: file) { [weak self] result in
-
         api.decodeJSON(fromFile: file, in: bundle) { [weak self] result in
 
             switch result {
