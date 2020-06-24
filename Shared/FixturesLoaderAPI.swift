@@ -16,7 +16,16 @@ final class FixturesLoaderAPI {
     private init() { }
 
 
-    public func fetchFixtures(from filename: String, in bundle: Bundle, completion: @escaping ResponseHandler ) {
+    public func fetchFixtures(from filename: String, completion: @escaping ResponseHandler ) {
+
+        #if DEBUG
+        print ("in debug mode")
+        let bundle = Bundle(for: type(of: self))
+        #else
+        print ("in app mode")
+        let bundle = Bundle.main
+        #endif
+
         FixturesLoaderAPI.debugInfo(bundle: bundle)
 
 
@@ -31,7 +40,7 @@ final class FixturesLoaderAPI {
             catch {
                 completion( Result.failure(error) )
             }
-            
+
         }
 
     }
