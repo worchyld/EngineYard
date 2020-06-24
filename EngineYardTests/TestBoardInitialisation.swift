@@ -16,22 +16,5 @@ class TestBoardInitialisation: XCTestCase {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
-    func testDid_LoadJSONFromBundle() throws {
-
-        let trainGame = TrainGame()
-
-        do {
-            let result = try trainGame.loadInitialBoard()
-
-            XCTAssertNotNil(result)
-        } catch  {
-            XCTFail(error.localizedDescription)
-        }
-
-    }
-
-    func testDid_InitBoard() throws {
-        
-    }
 
 }

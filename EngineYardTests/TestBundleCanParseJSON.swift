@@ -1,5 +1,5 @@
 //
-//  TestLocalData.swift
+//  TestBundleCanParseJSON.swift
 //  EngineYardTests
 //
 //  Created by Amarjit on 24/06/2020.

@@ -10,22 +10,22 @@ import Foundation
 
 // MARK: - Meta
 struct Meta: Codable {
-    var spaces, totalCapacity: Int
+    var factories, totalCapacity: Int
     var cards: Meta.Cards
 
     enum CodingKeys: String, CodingKey {
-        case spaces
+        case factories
         case totalCapacity = "total-capacity"
         case cards
     }
 
-    // MARK: - Cards
+    // MARK: - Meta:Cards totals
     struct Cards: Codable {
         var total: Int
         var green, red, yellow, blue: Meta.Generations
     }
 
-    // MARK: - Generations/Livery totals
+    // MARK: - Meta:Generations/Livery totals
     struct Generations: Codable {
         var total: Int
         var generations: [Int]

@@ -11,11 +11,10 @@ import Foundation
 struct Response: Codable {
     var meta: Meta?
     var factories: [Factory]?
-    var spaces: [Space]?
-    var locomotives: [Locomotive]?
+    var cards: [Card]?
 
     enum CodingKeys: String, CodingKey {
         case meta = "_meta"
-        case factories, spaces, locomotives
+        case factories, cards
     }
 }

@@ -20,10 +20,10 @@ struct Fixtures {
     }
 
     static var factories: [Factory] {
-        let greenFirst = Factory(id: "green.1", ref: "green.1", avatar: "green.1", cost: 4, initialOrder: 0, existingOrders: [nil], completedOrders: [nil], cards: [nil], available: false, livery: .green, generation: .first, rusting: Rusting.notRusting, orderCapacity: 3)
-        let redFirst = Factory(id: "green.1", ref: "green.1", avatar: "green.1", cost: 4, initialOrder: 0, existingOrders: [nil], completedOrders: [nil], cards: [nil], available: false, livery: .green, generation: .first, rusting: Rusting.notRusting, orderCapacity: 3)
-        let yellowFirst = Factory(id: "yellow.1", ref: "yellow.1", avatar: "yellow.1", cost: 12, initialOrder: 0, existingOrders: [nil], completedOrders: [nil], cards: [nil], available: false, livery: .blue, generation: .first, rusting: Rusting.notRusting, orderCapacity: 3)
-        let blueFirst = Factory(id: "blue.1", ref: "blue.1", avatar: "blue.1", cost: 18, initialOrder: 0, existingOrders: [nil], completedOrders: [nil], cards: [nil], available: false, livery: .blue, generation: .first, rusting: Rusting.notRusting, orderCapacity: 3)
+        let greenFirst = Factory(id: "green.1", ref: "green.1", avatar: "green.1", cost: 4, initialOrder: 0, existingOrders: [], completedOrders: [], cards: [], available: false, livery: .green, generation: .first, rusting: Rusting.notRusting, orderCapacity: 3)
+        let redFirst = Factory(id: "green.1", ref: "green.1", avatar: "green.1", cost: 4, initialOrder: 0, existingOrders: [], completedOrders: [], cards: [], available: false, livery: .green, generation: .first, rusting: Rusting.notRusting, orderCapacity: 3)
+        let yellowFirst = Factory(id: "yellow.1", ref: "yellow.1", avatar: "yellow.1", cost: 12, initialOrder: 0, existingOrders: [], completedOrders: [], cards: [], available: false, livery: .blue, generation: .first, rusting: Rusting.notRusting, orderCapacity: 3)
+        let blueFirst = Factory(id: "blue.1", ref: "blue.1", avatar: "blue.1", cost: 18, initialOrder: 0, existingOrders: [], completedOrders: [], cards: [], available: false, livery: .blue, generation: .first, rusting: Rusting.notRusting, orderCapacity: 3)
 
         return [greenFirst, redFirst, yellowFirst, blueFirst]
     }

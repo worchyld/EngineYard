@@ -13,13 +13,19 @@ struct Factory: Codable, Identifiable {
     var id, ref, avatar: String
     var cost: Int
     var initialOrder: Int?
-    var existingOrders, completedOrders: [Int?]
-    var cards: [Locomotive?]?
+    var existingOrders, completedOrders: [Int]?
+    var cards: [Card]?
     var available: Bool
     var livery: Livery
     var generation: Generation
     var rusting: Rusting
     var orderCapacity: Int
+    internal var references: [Reference]?
+
+    // MARK: - Child Reference
+    struct Reference: Codable {
+        var id: String
+    }
 }
 
 

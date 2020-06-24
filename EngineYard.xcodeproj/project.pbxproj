@@ -56,9 +56,8 @@
 		4DA1C14D2486F43E004C4121 /* TaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C14C2486F43E004C4121 /* TaxTests.swift */; };
 		4DA3992824A3472F008A02A4 /* Factory+Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3992724A3472F008A02A4 /* Factory+Filter.swift */; };
 		4DA3992A24A35AE2008A02A4 /* Locomotive+Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3992924A35AE2008A02A4 /* Locomotive+Filter.swift */; };
-		4DC20053249FFECD00E0B4D8 /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC20052249FFECD00E0B4D8 /* Space.swift */; };
 		4DF1B6CE24A3412F00618C7B /* Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1B6CD24A3412F00618C7B /* Fixtures.swift */; };
-		4DF1B6D024A3460B00618C7B /* TestLocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1B6CF24A3460B00618C7B /* TestLocalData.swift */; };
+		4DF1B6D024A3460B00618C7B /* TestBundleCanParseJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1B6CF24A3460B00618C7B /* TestBundleCanParseJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,9 +123,8 @@
 		4DA1C14C2486F43E004C4121 /* TaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTests.swift; sourceTree = "<group>"; };
 		4DA3992724A3472F008A02A4 /* Factory+Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Factory+Filter.swift"; sourceTree = "<group>"; };
 		4DA3992924A35AE2008A02A4 /* Locomotive+Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locomotive+Filter.swift"; sourceTree = "<group>"; };
-		4DC20052249FFECD00E0B4D8 /* Space.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space.swift; sourceTree = "<group>"; };
 		4DF1B6CD24A3412F00618C7B /* Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixtures.swift; sourceTree = "<group>"; };
-		4DF1B6CF24A3460B00618C7B /* TestLocalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLocalData.swift; sourceTree = "<group>"; };
+		4DF1B6CF24A3460B00618C7B /* TestBundleCanParseJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBundleCanParseJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,7 +197,7 @@
 				4D34A86A2495A61D00590EFD /* WinnerTests.swift */,
 				4D10C5A02486D08500238508 /* Info.plist */,
 				4D6BA939249D41A200167E68 /* IntTests.swift */,
-				4DF1B6CF24A3460B00618C7B /* TestLocalData.swift */,
+				4DF1B6CF24A3460B00618C7B /* TestBundleCanParseJSON.swift */,
 				4D238C4824A051240031E3EE /* MetaTests.swift */,
 				4D5502EF24A3961200173BDA /* TestBoardInitialisation.swift */,
 			);
@@ -215,7 +213,6 @@
 				4DA1C1492486EE33004C4121 /* Helpers */,
 				4D10C6152486DC4700238508 /* Constants.swift */,
 				4DA1C14A2486F3FC004C4121 /* Tax.swift */,
-				4DC20052249FFECD00E0B4D8 /* Space.swift */,
 				4D3BE05E249FF1E1009C203E /* Factory.swift */,
 				4DA3992724A3472F008A02A4 /* Factory+Filter.swift */,
 				4D1C72F224A0F323009CAA3A /* Rusting.swift */,
@@ -390,7 +387,6 @@
 				4D10C5882486D08400238508 /* AppDelegate.swift in Sources */,
 				4D238C5324A095230031E3EE /* EY+CaseIterable.swift in Sources */,
 				4D1C72FF24A16EAA009CAA3A /* AsyncOperation.swift in Sources */,
-				4DC20053249FFECD00E0B4D8 /* Space.swift in Sources */,
 				4DA3992A24A35AE2008A02A4 /* Locomotive+Filter.swift in Sources */,
 				4DA1C13E2486ECC9004C4121 /* EY+String.swift in Sources */,
 				4D66EBC8248F8147005DE7F0 /* Player.swift in Sources */,
@@ -431,7 +427,7 @@
 				4D3BE05A249FF05E009C203E /* WalletTests.swift in Sources */,
 				4D10C59F2486D08500238508 /* EngineYardTests.swift in Sources */,
 				4DF1B6CE24A3412F00618C7B /* Fixtures.swift in Sources */,
-				4DF1B6D024A3460B00618C7B /* TestLocalData.swift in Sources */,
+				4DF1B6D024A3460B00618C7B /* TestBundleCanParseJSON.swift in Sources */,
 				4D5502F024A3961200173BDA /* TestBoardInitialisation.swift in Sources */,
 				4DA1C14D2486F43E004C4121 /* TaxTests.swift in Sources */,
 				4D238C4924A051240031E3EE /* MetaTests.swift in Sources */,

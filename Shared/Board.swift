@@ -8,22 +8,24 @@
 
 import Foundation
 
-typealias Board = [Space?]
+typealias Board = [Factory?]
 
 class TrainGame {
     var board: Board!
 
     func start() throws {
-        do {
-            let board = try loadInitialBoard()
-            print ("board: \(board as Any)")
-        }
-        catch {
-            throw error
-        }
+//        do {
+//            let board = try loadInitialBoard()
+//            print ("board: \(board as Any)")
+//        }
+//        catch {
+//            throw error
+//        }
     }
 }
 
+
+/**
 extension TrainGame {
     func loadInitialBoard() throws -> Board? {
         var board = [Space?](repeating: nil, count: 14)
@@ -81,3 +83,4 @@ extension TrainGame {
 
 
 }
+**/

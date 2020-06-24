@@ -1,24 +1,48 @@
 {
     "_meta": {
-        "spaces": 14,        
+        "factories": 14,
         "total-capacity": 46,
         "cards": {
             "total": 43,
             "green": {
                 "total": 20,
-                "generations": [ 4, 4, 4, 4, 4 ]
+                "generations": [
+                    4,
+                    4,
+                    4,
+                    4,
+                    4
+                ]
             },
             "red": {
                 "total": 13,
-                "generations": [ 3, 3, 3, 4, 0 ]
+                "generations": [
+                    3,
+                    3,
+                    3,
+                    4,
+                    0
+                ]
             },
             "yellow": {
                 "total": 7,
-                "generations": [ 2, 2, 3, 0, 0 ]
+                "generations": [
+                    2,
+                    2,
+                    3,
+                    0,
+                    0
+                ]
             },
             "blue": {
                 "total": 3,
-                "generations": [ 1, 2, 0, 0, 0 ]
+                "generations": [
+                    1,
+                    2,
+                    0,
+                    0,
+                    0
+                ]
             }
         }
     },
@@ -30,10 +54,20 @@
             "cost": 4,
             "livery": 1,
             "generation": 1,
-            "initialOrder": 0,
-            "existingOrders": [],
-            "completedOrders": [],
-            "cards": [],
+            "references": [
+                {
+                    "id": "f52358a2-1b99-4aa5-9210-11995fd28672"
+                },
+                {
+                    "id": "4c45158b-e03b-4203-86d3-c7b3365144fc"
+                },
+                {
+                    "id": "526b1619-0756-428a-a072-d1c4ff5bc660"
+                },
+                {
+                    "id": "7c712a41-9975-433a-901f-4b592ddcc909"
+                }
+            ],
             "available": false,
             "rusting": 0,
             "orderCapacity": 3
@@ -45,10 +79,17 @@
             "cost": 8,
             "livery": 2,
             "generation": 1,
-            "initialOrder": 0,
-            "existingOrders": [],
-            "completedOrders": [],
-            "cards": [],
+            "references": [
+                {
+                    "id": "1425acca-315f-4037-b586-a0e71fedc856"
+                },
+                {
+                    "id": "60b4c87c-6c2e-483f-936f-323760d5b461"
+                },
+                {
+                    "id": "c181c758-661f-4fd3-9e20-7c7816e8d355"
+                }
+            ],
             "available": false,
             "rusting": 0,
             "orderCapacity": 3
@@ -60,10 +101,14 @@
             "cost": 12,
             "livery": 3,
             "generation": 1,
-            "initialOrder": 0,
-            "existingOrders": [],
-            "completedOrders": [],
-            "cards": [],
+            "references": [
+                {
+                    "id": "0e3ed925-e3fe-484c-b69e-b320e99dea91"
+                },
+                {
+                    "id": "1ed912c9-f35c-4fcb-a2d0-863008da14b2"
+                }
+            ],
             "available": false,
             "rusting": 0,
             "orderCapacity": 2
@@ -75,10 +120,11 @@
             "cost": 16,
             "livery": 4,
             "generation": 1,
-            "initialOrder": 0,
-            "existingOrders": [],
-            "completedOrders": [],
-            "cards": [],
+            "references": [
+                {
+                    "id": "5269a3b2-d197-43ea-998f-63445235050d"
+                }
+            ],
             "available": false,
             "rusting": 0,
             "orderCapacity": 1
@@ -90,10 +136,20 @@
             "cost": 20,
             "livery": 1,
             "generation": 2,
-            "initialOrder": 0,
-            "existingOrders": [],
-            "completedOrders": [],
-            "cards": [],
+            "references": [
+                {
+                    "id": "f62fc5ba-a297-4cd9-9264-7d4bfe752dc9"
+                },
+                {
+                    "id": "6314d2f8-257f-4af8-b725-3ff64fc25b4e"
+                },
+                {
+                    "id": "037441b2-f2c7-4a52-8752-530c31ba0dd6"
+                },
+                {
+                    "id": "6b65ca5f-7687-4c8d-af8c-fd19b4e975df"
+                }
+            ],
             "available": false,
             "rusting": 0,
             "orderCapacity": 4
@@ -105,10 +161,17 @@
             "cost": 24,
             "livery": 2,
             "generation": 2,
-            "initialOrder": 0,
-            "existingOrders": [],
-            "completedOrders": [],
-            "cards": [],
+            "references": [
+                {
+                    "id": "2f029850-023a-47ed-8ec6-7df8c1b3fb53"
+                },
+                {
+                    "id": "7f9ad83a-a530-42ce-a3bc-bc79c3adf212"
+                },
+                {
+                    "id": "1af691c8-b2d5-4ad9-8df8-a4ec47ebb8b4"
+                }
+            ],
             "available": false,
             "rusting": 0,
             "orderCapacity": 3
@@ -120,10 +183,14 @@
             "cost": 28,
             "livery": 3,
             "generation": 2,
-            "initialOrder": 0,
-            "existingOrders": [],
-            "completedOrders": [],
-            "cards": [],
+            "references": [
+                {
+                    "id": "3f894792-b2f2-4796-a560-deaba15eeaf5"
+                },
+                {
+                    "id": "6d0573c5-4c8f-40e1-bffb-f2738fbb7dcb"
+                }
+            ],
             "available": false,
             "rusting": 0,
             "orderCapacity": 3
@@ -135,10 +202,20 @@
             "cost": 32,
             "livery": 1,
             "generation": 3,
-            "initialOrder": 0,
-            "existingOrders": [],
-            "completedOrders": [],
-            "cards": [],
+            "references": [
+                {
+                    "id": "3bbdddf7-fb51-44e9-953f-375d6aeac621"
+                },
+                {
+                    "id": "5e26958e-1505-4488-ab11-9b540980432f"
+                },
+                {
+                    "id": "de090b59-d382-4f66-adcf-26b1e912cee7"
+                },
+                {
+                    "id": "f9bab0ed-8c16-4c52-8c76-27a7eb94fcbc"
+                }
+            ],
             "available": false,
             "rusting": 0,
             "orderCapacity": 4
@@ -150,10 +227,14 @@
             "cost": 36,
             "livery": 4,
             "generation": 2,
-            "initialOrder": 0,
-            "existingOrders": [],
-            "completedOrders": [],
-            "cards": [],
+            "references": [
+                {
+                    "id": "4ac8b2a5-5bb1-40fb-becc-7f76a121b435"
+                },
+                {
+                    "id": "c5bfdf0f-700c-4c75-808f-2f7a3e520ef0"
+                }
+            ],
             "available": false,
             "rusting": 0,
             "orderCapacity": 2
@@ -165,10 +246,17 @@
             "cost": 40,
             "livery": 2,
             "generation": 3,
-            "initialOrder": 0,
-            "existingOrders": [],
-            "completedOrders": [],
-            "cards": [],
+            "references": [
+                {
+                    "id": "6249246f-f8a5-492b-8627-a471995bf525"
+                },
+                {
+                    "id": "79904698-1fed-4871-9066-c16babf515da"
+                },
+                {
+                    "id": "96a2e18d-1d19-45ba-a008-ed0299dc0de4"
+                }
+            ],
             "available": false,
             "rusting": 0,
             "orderCapacity": 4
@@ -180,10 +268,20 @@
             "cost": 44,
             "livery": 1,
             "generation": 4,
-            "initialOrder": 0,
-            "existingOrders": [],
-            "completedOrders": [],
-            "cards": [],
+            "references": [
+                {
+                    "id": "c8f22644-aac5-4884-b0b5-6905f8ae8e32"
+                },
+                {
+                    "id": "29439ff0-11d3-4573-9a71-b291f21cc24f"
+                },
+                {
+                    "id": "a67e02b9-acfd-4751-8b67-e0f162dd2a28"
+                },
+                {
+                    "id": "92678f37-aeab-431d-8c89-4a7b9d5f4829"
+                }
+            ],
             "available": false,
             "rusting": 0,
             "orderCapacity": 5
@@ -195,10 +293,17 @@
             "cost": 48,
             "livery": 3,
             "generation": 3,
-            "initialOrder": 0,
-            "existingOrders": [],
-            "completedOrders": [],
-            "cards": [],
+            "references": [
+                {
+                    "id": "398c72b4-22b7-44c6-97bb-ae2a80808890"
+                },
+                {
+                    "id": "f78b60f0-10d6-4009-befe-77a2a9ee4149"
+                },
+                {
+                    "id": "6c3163d3-65f4-466f-aa13-9e045547a533"
+                }
+            ],
             "available": false,
             "rusting": 0,
             "orderCapacity": 3
@@ -210,10 +315,20 @@
             "cost": 52,
             "livery": 2,
             "generation": 4,
-            "initialOrder": 0,
-            "existingOrders": [],
-            "completedOrders": [],
-            "cards": [],
+            "references": [
+                {
+                    "id": "d0511da2-6d20-4801-96f2-7f435f4e7755"
+                },
+                {
+                    "id": "59f2c4b4-bc46-413f-a3d6-5d9a9aacc662"
+                },
+                {
+                    "id": "d8229a71-de42-4886-a3a2-30f66c550bc3"
+                },
+                {
+                    "id": "8ea3affb-1173-4b13-b5fd-3e6ac1ecffb8"
+                }
+            ],
             "available": false,
             "rusting": 0,
             "orderCapacity": 4
@@ -225,74 +340,26 @@
             "cost": 56,
             "livery": 1,
             "generation": 5,
-            "initialOrder": 0,
-            "existingOrders": [],
-            "completedOrders": [],
-            "cards": [],
+            "references": [
+                {
+                    "id": "8c23a803-f5ba-4ecc-9a6c-4660681fb101"
+                },
+                {
+                    "id": "95739df6-9a35-45aa-888d-15bb45b2b590"
+                },
+                {
+                    "id": "007bca6c-db4c-4733-a5b4-7a41468b0996"
+                },
+                {
+                    "id": "0c64e11b-ce7d-445f-8029-7415b898e269"
+                }
+            ],
             "rusting": 0,
             "available": false,
             "orderCapacity": 5
         }
     ],
-    "spaces": [
-        {
-            "id": "b383ae6e-9398-4e90-b3cc-98883d56e571",
-            "name": "green.first"
-        },
-        {
-            "id": "47f2dd2d-4224-4a04-966f-97396d9ce0ef",
-            "name": "red.first"
-        },
-        {
-            "id": "5bc723f7-f50a-482f-be61-f338c0d7d513",
-            "name": "yellow.first"
-        },
-        {
-            "id": "4d51accd-3b52-429b-a89b-d03e8b0f5a36",
-            "name": "blue.first"
-        },
-        {
-            "id": "ce385a55-80d9-4436-bcde-d01cb09afb80",
-            "name": "green.second"
-        },
-        {
-            "id": "4a5afa4c-aedb-4714-8b2f-35335ba48ecf",
-            "name": "red.second"
-        },
-        {
-            "id": "7913b9cb-3395-4966-99b8-252ae7a92ee2",
-            "name": "yellow.second"
-        },
-        {
-            "id": "304c9070-4ece-46e0-add7-74d1827b682e",
-            "name": "green.third"
-        },
-        {
-            "id": "e95b312d-e457-4521-97c2-cd19eca5fd26",
-            "name": "blue.second"
-        },
-        {
-            "id": "a6123831-84c9-406e-838f-3fa52126e543",
-            "name": "red.third"
-        },
-        {
-            "id": "72551686-d0d4-4b91-be0a-8e22024eb9fc",
-            "name": "green.fourth"
-        },
-        {
-            "id": "5479d033-c36a-4e64-995b-767b19a33433",
-            "name": "yellow.third"
-        },
-        {
-            "id": "9fbd8d50-39a4-4b92-87f1-49566c713a69",
-            "name": "red.fourth"
-        },
-        {
-            "id": "28aea59a-6bbd-42f2-af4b-835fffda87d8",
-            "name": "green.fifth"
-        }
-    ],
-    "locomotives": [
+    "cards": [
         {
             "id": "f52358a2-1b99-4aa5-9210-11995fd28672",
             "ref": "green.first",
