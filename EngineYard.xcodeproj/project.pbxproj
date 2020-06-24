@@ -55,6 +55,7 @@
 		4DA1C14B2486F3FC004C4121 /* Tax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C14A2486F3FC004C4121 /* Tax.swift */; };
 		4DA1C14D2486F43E004C4121 /* TaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C14C2486F43E004C4121 /* TaxTests.swift */; };
 		4DC20053249FFECD00E0B4D8 /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC20052249FFECD00E0B4D8 /* Space.swift */; };
+		4DF1B6CE24A3412F00618C7B /* Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1B6CD24A3412F00618C7B /* Fixtures.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		4DA1C14A2486F3FC004C4121 /* Tax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tax.swift; sourceTree = "<group>"; };
 		4DA1C14C2486F43E004C4121 /* TaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTests.swift; sourceTree = "<group>"; };
 		4DC20052249FFECD00E0B4D8 /* Space.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space.swift; sourceTree = "<group>"; };
+		4DF1B6CD24A3412F00618C7B /* Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixtures.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 		4D10C59D2486D08500238508 /* EngineYardTests */ = {
 			isa = PBXGroup;
 			children = (
+				4DF1B6CD24A3412F00618C7B /* Fixtures.swift */,
 				4D3BE059249FF05E009C203E /* WalletTests.swift */,
 				4D10C59E2486D08500238508 /* EngineYardTests.swift */,
 				4DA1C14C2486F43E004C4121 /* TaxTests.swift */,
@@ -417,6 +420,7 @@
 				4D1C72FB24A13AB5009CAA3A /* TestGameLocalDataFetch.swift in Sources */,
 				4D3BE05A249FF05E009C203E /* WalletTests.swift in Sources */,
 				4D10C59F2486D08500238508 /* EngineYardTests.swift in Sources */,
+				4DF1B6CE24A3412F00618C7B /* Fixtures.swift in Sources */,
 				4DA1C14D2486F43E004C4121 /* TaxTests.swift in Sources */,
 				4D238C4924A051240031E3EE /* MetaTests.swift in Sources */,
 				4D34A86B2495A61D00590EFD /* WinnerTests.swift in Sources */,
