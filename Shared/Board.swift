@@ -31,10 +31,10 @@ extension TrainGame {
         var jsonResult: Result<Response, Error>?
 
         // 1. get response object from data in local json file
-
-        self.loadJSON(from: "boards.json", in: Bundle.main) { (result) in
+        self.loadJSON(from: Constants.boardJSONFile) { (result) in
             DispatchQueue.main.async {
                 jsonResult = result
+                
             }
         }
 
@@ -58,10 +58,10 @@ extension TrainGame {
     }
 
 
-    func loadJSON(from file: String = "board.json", in bundle: Bundle, completion: @escaping ResponseHandler ) {
+    func loadJSON(from file: String = Constants.boardJSONFile, completion: @escaping ResponseHandler ) {
         let api = FixturesLoaderAPI.shared
 
-        api.fetchFixtures(from: file, in: bundle) { (results) in
+        api.fetchFixtures(from: file) { (results) in
             completion(results)
         }
     }
