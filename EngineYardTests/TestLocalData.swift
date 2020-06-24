@@ -35,8 +35,9 @@ class TestLocalData: XCTestCase {
 
         let bundle = Bundle(for: type(of: self))
         let api = FixturesLoaderAPI.shared
+        let file = "board.json"
 
-        api.fetchFixtures(from: bundle) { [weak self] result in
+        api.fetchFixtures(from: file, in: bundle) { [weak self] result in
             switch result {
             case .success(let response):
                 self?.response = response
@@ -71,6 +72,22 @@ class TestLocalData: XCTestCase {
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+    }
+
+    func testLoadJSONFile_CannotFindFile() throws {
+        let bundle = Bundle(for: type(of: self))
+        let api = FixturesLoaderAPI.shared
+
+
+        // Boards.json should fail
+        let file = "boards.json"
+        api.fetchFixtures(from: file, in: bundle) { result in
+
+            let expectedError = BundleError.failedToLocate(file)
+            print (expectedError)
+
+            self.assert(result, containsError: expectedError)
+        }
     }
 
 
@@ -142,5 +159,6 @@ class TestLocalData: XCTestCase {
         let totalCapacity = factories.reduce(0, { $0 + $1.orderCapacity }  )
         XCTAssertEqual(totalCapacity, components.meta.totalCapacity)
     }
+
 
 }
