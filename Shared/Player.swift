@@ -15,7 +15,7 @@ enum PlayerState: Int, CaseIterable {
     case thinking
 }
 
-class Player : NSObject, GKGameModelPlayer, Identifiable {
+class Player : NSObject, GKGameModelPlayer, Identifiable, WalletHolderDelegate {
     var playerId: Int
     let name: String
     var cash: Int
