@@ -10,7 +10,6 @@ import Foundation
 
 // MARK: Spending errors
 
-// spending errors
 enum SpendingError : Error, Equatable {
     case mustBePositive(_ amount: Int)
     case notEnoughFunds(_ amount: Int)
