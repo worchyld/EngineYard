@@ -10,7 +10,7 @@ import XCTest
 
 @testable import EngineYard
 
-class MetaTests: XCTestCase {
+class DecodedDataTests: XCTestCase {
 
     var response: Response!
 
