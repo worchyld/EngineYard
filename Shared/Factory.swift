@@ -9,8 +9,9 @@
 import Foundation
 
 // Locomotive factory
-struct Factory: Codable, Identifiable {
+struct Factory: Codable, Identifiable, Equatable, Hashable {
     let id: UUID
+    let name: String
     let avatar: String
     let cost: Int
     var initialOrder: Int?
@@ -24,11 +25,10 @@ struct Factory: Codable, Identifiable {
     internal var references: [Reference]?
 
     // MARK: - Child Reference
-    struct Reference: Codable {
-        var id: String
+    struct Reference: Codable, Identifiable, Hashable, Equatable {
+        var id: UUID
     }
 }
-
 
 extension Factory {
     static func == (lhs: Factory, rhs: Factory) -> Bool {

@@ -11,7 +11,7 @@ import Foundation
 typealias Card = Locomotive
 
 // MARK: - Locomotive
-struct Locomotive: Codable, Identifiable {
+struct Locomotive: Codable, Identifiable, Hashable, Equatable {
     let id: UUID
     let name, avatar: String
     let cost: Int, generation: Generation
