@@ -31,6 +31,17 @@ struct Factory: Codable, Identifiable, Equatable, Hashable {
 }
 
 extension Factory {
+    /*
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        cards = try container.decode([Card].self, forKey: .cards)
+        if (cards == nil) {
+            cards = [Card]()
+        }
+    }*/
+}
+
+extension Factory {
     static func == (lhs: Factory, rhs: Factory) -> Bool {
         return (lhs.id == rhs.id)
     }

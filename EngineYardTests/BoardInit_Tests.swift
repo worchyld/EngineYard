@@ -40,9 +40,8 @@ class BoardInit_Tests: XCTestCase {
                 return
             }
 
-            for f in factories {
-                XCTAssertNil(f.cards)
-            }
+            
+
 
             for f in factories {
 
@@ -63,34 +62,36 @@ class BoardInit_Tests: XCTestCase {
 
                 let generation = (f.generation.rawValue - 1)
 
-                for (index, ref) in references.enumerated() {
+                let metaGenerations: Int = {
+                               switch livery {
+                               case .green:
+                                   return meta.cards.green.generations[generation]
+                               case .red:
+                                   return meta.cards.red.generations[generation]
+                               case .yellow:
+                                   return meta.cards.yellow.generations[generation]
+                               case .blue:
+                                   return meta.cards.blue.generations[generation]
+                               }
+                           }()
 
-                    print ("\nINDEX -- \(index), REF: \(ref.id)")
+                print ("\nMeta found: \(metaGenerations) results for \(f.livery) \(f.generation)")
 
 
-                    let metaGenerations: Int = {
-                        switch livery {
-                        case .green:
-                            return meta.cards.green.generations[generation]
-                        case .red:
-                            return meta.cards.red.generations[generation]
-                        case .yellow:
-                            return meta.cards.yellow.generations[generation]
-                        case .blue:
-                            return meta.cards.blue.generations[generation]
-                        }
-                    }()
+                let foundList = cards.filter { r in references.contains(where: { $0.id == r.id }) }
 
-                    print ("\nMeta found: \(metaGenerations) results for \(f.livery) \(f.generation)")
+                XCTAssertEqual(references.count, metaGenerations, "references: \(references.count) vs \(metaGenerations) -- (Failed on :\(f.livery), \(f.generation)")
 
-                    XCTAssertEqual(references.count, metaGenerations, "ref: \(references.count) vs \(metaGenerations) -- (Failed on :\(f.livery), \(f.generation), Ref: \(ref.id)")
+                XCTAssertEqual(foundList.count, metaGenerations, "(Failed on :\(f.livery), \(f.generation), Found: \(foundList.count) vs \(metaGenerations)")
 
-                    let foundList = cards.filter { r in references.contains(where: { $0.id == r.id }) }
+                if (f.cards == nil) { f.cards = [Card]() }
 
-                    XCTAssertEqual(foundList.count, metaGenerations, "(Failed on :\(f.livery), \(f.generation), Found: \(foundList.count) vs \(metaGenerations)")
-                }
+                f.cards?.append(contentsOf: foundList)
 
+                XCTAssertEqual( f.cards?.count , metaGenerations)
             }
+
+
 
             for f in factories {
                 print (f.name, f.cards as Any)
