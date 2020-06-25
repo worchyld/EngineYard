@@ -11,7 +11,7 @@ import Foundation
 // Locomotive factory
 struct Factory: Codable, Identifiable {
     let id: UUID
-    let ref, avatar: String
+    let avatar: String
     let cost: Int
     var initialOrder: Int?
     var existingOrders, completedOrders: [Int]?
