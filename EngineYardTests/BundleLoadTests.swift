@@ -61,7 +61,7 @@ class BundleLoadTests: XCTestCase {
 
         switch result {
         case .success(let response):
-            print ("RESPONSE FOUND")
+            print ("RESPONSE FOUND >> \(response)")
             XCTAssertNotNil(response.meta)
 
         case .failure(let error):
