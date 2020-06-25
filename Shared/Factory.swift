@@ -10,16 +10,17 @@ import Foundation
 
 // Locomotive factory
 struct Factory: Codable, Identifiable {
-    var id, ref, avatar: String
-    var cost: Int
+    let id: UUID
+    let ref, avatar: String
+    let cost: Int
     var initialOrder: Int?
     var existingOrders, completedOrders: [Int]?
     var cards: [Card]?
     var available: Bool
-    var livery: Livery
-    var generation: Generation
+    let livery: Livery
+    let generation: Generation
     var rusting: Rusting
-    var orderCapacity: Int
+    let orderCapacity: Int
     internal var references: [Reference]?
 
     // MARK: - Child Reference
