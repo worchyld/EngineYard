@@ -20,16 +20,16 @@ struct Fixtures {
     }
 
     static var mockFactories: [Factory] {
-        let greenFirst = Factory(id: UUID(), avatar: "green.1", cost: 4, initialOrder: 0, existingOrders: [], completedOrders: [], cards: [], available: false, livery: .green, generation: .first, rusting: Rusting.notRusting, orderCapacity: 3)
-        let redFirst = Factory(id: UUID(), avatar: "green.1", cost: 4, initialOrder: 0, existingOrders: [], completedOrders: [], cards: [], available: false, livery: .green, generation: .first, rusting: Rusting.notRusting, orderCapacity: 3)
-        let yellowFirst = Factory(id: UUID(), avatar: "yellow.1", cost: 12, initialOrder: 0, existingOrders: [], completedOrders: [], cards: [], available: false, livery: .blue, generation: .first, rusting: Rusting.notRusting, orderCapacity: 3)
-        let blueFirst = Factory(id: UUID(), avatar: "blue.1", cost: 18, initialOrder: 0, existingOrders: [], completedOrders: [], cards: [], available: false, livery: .blue, generation: .first, rusting: Rusting.notRusting, orderCapacity: 3)
+        let greenFirst = Factory(id: UUID(), name: "green.1", avatar: "green.1", cost: 4, initialOrder: 0, existingOrders: [], completedOrders: [], cards: [], available: false, livery: .green, generation: .first, rusting: Rusting.notRusting, orderCapacity: 3)
+        let redFirst = Factory(id: UUID(), name: "red.1",avatar: "green.1", cost: 4, initialOrder: 0, existingOrders: [], completedOrders: [], cards: [], available: false, livery: .green, generation: .first, rusting: Rusting.notRusting, orderCapacity: 3)
+        let yellowFirst = Factory(id: UUID(), name: "yellow.1", avatar: "yellow.1", cost: 12, initialOrder: 0, existingOrders: [], completedOrders: [], cards: [], available: false, livery: .blue, generation: .first, rusting: Rusting.notRusting, orderCapacity: 3)
+        let blueFirst = Factory(id: UUID(), name: "blue.1",avatar: "blue.1", cost: 18, initialOrder: 0, existingOrders: [], completedOrders: [], cards: [], available: false, livery: .blue, generation: .first, rusting: Rusting.notRusting, orderCapacity: 3)
 
         return [greenFirst, redFirst, yellowFirst, blueFirst]
     }
 
     private static func MakeFactory(avatar: String, cost: Int, livery: Livery, generation: Generation, orderCapacity: Int) -> Factory {
-        return Factory.init(id: UUID(), avatar: avatar, cost: cost, initialOrder: nil, existingOrders: nil, completedOrders: nil, cards: nil, available: false, livery: livery, generation: generation, rusting: .notRusting, orderCapacity: orderCapacity, references: nil)
+        return Factory.init(id: UUID(), name:"\(livery)-\(generation.rawValue)", avatar: avatar, cost: cost, initialOrder: nil, existingOrders: nil, completedOrders: nil, cards: nil, available: false, livery: livery, generation: generation, rusting: .notRusting, orderCapacity: orderCapacity, references: nil)
     }
 
     static var factories: [Factory] = [
