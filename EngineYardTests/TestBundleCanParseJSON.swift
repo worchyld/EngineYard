@@ -53,4 +53,20 @@ class TestBundleCanParseJSON: XCTestCase {
         XCTAssertNotNil(response.meta)
     }
 
+    func testDataLoader_DidDecode() throws {
+        let bundle = Bundle(for: type(of: self))
+        let file = Constants.boardJSONFile
+        let api = DataLoader.shared
+        let result = api.load(from: bundle, file: file)
+
+        switch result {
+        case .success(let response):
+            print ("RESPONSE FOUND")
+            XCTAssertNotNil(response.meta)
+
+        case .failure(let error):
+            throw(error)
+        }
+    }
+
 }
