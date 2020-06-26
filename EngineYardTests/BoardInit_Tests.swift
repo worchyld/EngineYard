@@ -12,11 +12,15 @@ import XCTest
 
 class BoardInit_Tests: XCTestCase {
 
+    var meta: Meta!
+
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        self.meta = Meta.build()
     }
 
 
+    /**
     func testBoardInit() throws {
         let bundle = Bundle(for: type(of: self))
         let file = Constants.boardJSONFile
@@ -101,6 +105,6 @@ class BoardInit_Tests: XCTestCase {
         case .failure(let error):
            throw(error)
         }
-    }
+    }*/
 
 }
