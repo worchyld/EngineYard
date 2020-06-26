@@ -1,5 +1,5 @@
 //
-//  Spending-Errors.swift
+//  Spending.swift
 //  EngineYard
 //
 //  Created by Amarjit on 19/06/2020.
@@ -10,6 +10,14 @@ import Foundation
 
 // MARK: Spending errors
 
+protocol ValidateIncrease {
+    func canIncrease(by amount: Int) throws -> Bool
+}
+
+protocol ValidateSpending {
+    func canSpend(amount: Int) throws -> Bool
+}
+
 enum SpendingError : Error, Equatable {
     case mustBePositive(_ amount: Int)
     case notEnoughFunds(_ amount: Int)
@@ -18,6 +26,36 @@ enum SpendingError : Error, Equatable {
     case invalidAccount
     case unknown
 }
+
+struct Spender : ValidateSpending {
+    private (set) var value : Int
+
+    init(_ value: Int = 0) {
+        precondition(value >= 0, "Must initalise Spender with a number >= 0")
+        self.value = value
+    }
+
+    mutating func spend(amount: Int) throws -> Int {
+        if try canSpend(amount: amount) {
+            self.value -= amount
+        }
+        return self.value
+    }
+
+    func canSpend(amount: Int) throws -> Bool {
+        guard amount.isPositive else {
+            throw SpendingError.mustBePositive(amount)
+        }
+        guard value.isPositive else {
+            throw SpendingError.notEnoughFunds(value)
+        }
+        guard ((value - amount) >= 0) else {
+            throw SpendingError.cannotSpend(amount)
+        }
+        return true
+    }
+}
+
 
 // spending: localized error
 extension SpendingError : LocalizedError {
