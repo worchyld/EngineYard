@@ -10,11 +10,11 @@
 import  XCTest
 
 struct Fixtures {
-    static var mockLocos: [Locomotive] {
-        let greenFirst = Locomotive(id: UUID(), name: "green.1", avatar: "green-1.png", cost: 4, generation: .first, livery: .green)
-        let redFirst = Locomotive(id: UUID(), name: "red.1", avatar: "red-1.png", cost: 8, generation: .first, livery: .red)
-        let yellowFirst = Locomotive(id: UUID(),  name: "yellow.1", avatar: "yellow-1.png", cost: 12, generation: .first, livery: .yellow)
-        let blueFirst = Locomotive(id: UUID(), name: "blue.1", avatar: "blue-1.png", cost: 18, generation: .first, livery: .blue)
+    static var mockLocos: [Card] {
+        let greenFirst = Card(id: UUID(), name: "green.1", avatar: "green-1.png", cost: 4, generation: .first, livery: .green, production: 0, spentProduction:  0 )
+        let redFirst = Card(id: UUID(), name: "red.1", avatar: "red-1.png", cost: 8, generation: .first, livery: .red, production: 0, spentProduction:  0 )
+        let yellowFirst = Card(id: UUID(),  name: "yellow.1", avatar: "yellow-1.png", cost: 12, generation: .first, livery: .yellow, production: 0, spentProduction:  0 )
+        let blueFirst = Card(id: UUID(), name: "blue.1", avatar: "blue-1.png", cost: 18, generation: .first, livery: .blue, production: 0, spentProduction:  0 )
 
         return [greenFirst, redFirst, yellowFirst, blueFirst]
     }
@@ -52,75 +52,75 @@ struct Fixtures {
 
     static var cards: [Card]  =  [
         // Green.first (x4)
-        Card.init(id: UUID(), name: "Green.1", avatar: "green-1.png", cost: 4, generation: .first, livery: .green ),
-        Card.init(id: UUID(), name: "Green.1", avatar: "green-1.png", cost: 4, generation: .first, livery: .green ),
-        Card.init(id: UUID(), name: "Green.1", avatar: "green-1.png", cost: 4, generation: .first, livery: .green ),
-        Card.init(id: UUID(), name: "Green.1", avatar: "green-1.png", cost: 4, generation: .first, livery: .green ),
+        Card.init(id: UUID(), name: "Green.1", avatar: "green-1.png", cost: 4, generation: .first, livery: .green, production: 0, spentProduction:  0 ),
+        Card.init(id: UUID(), name: "Green.1", avatar: "green-1.png", cost: 4, generation: .first, livery: .green, production: 0, spentProduction:  0  ),
+        Card.init(id: UUID(), name: "Green.1", avatar: "green-1.png", cost: 4, generation: .first, livery: .green, production: 0, spentProduction:  0  ),
+        Card.init(id: UUID(), name: "Green.1", avatar: "green-1.png", cost: 4, generation: .first, livery: .green, production: 0, spentProduction:  0  ),
 
         // Red.first (x3)
-        Card.init(id: UUID(), name: "Red.1", avatar: "red-1.png", cost: 8, generation: .first, livery: .red ),
-        Card.init(id: UUID(), name: "Red.1", avatar: "red-1.png", cost: 8, generation: .first, livery: .red ),
-        Card.init(id: UUID(), name: "Red.1", avatar: "red-1.png", cost: 8, generation: .first, livery: .red ),
+        Card.init(id: UUID(), name: "Red.1", avatar: "red-1.png", cost: 8, generation: .first, livery: .red, production: 0, spentProduction:  0  ),
+        Card.init(id: UUID(), name: "Red.1", avatar: "red-1.png", cost: 8, generation: .first, livery: .red, production: 0, spentProduction:  0  ),
+        Card.init(id: UUID(), name: "Red.1", avatar: "red-1.png", cost: 8, generation: .first, livery: .red, production: 0, spentProduction:  0  ),
 
         // Yellow.first (x2)
-        Card.init(id: UUID(), name: "Yellow.1", avatar: "yellow-1.png", cost: 12, generation: .first, livery: .yellow ),
-        Card.init(id: UUID(), name: "Yellow.1", avatar: "yellow-1.png", cost: 12, generation: .first, livery: .yellow ),
+        Card.init(id: UUID(), name: "Yellow.1", avatar: "yellow-1.png", cost: 12, generation: .first, livery: .yellow, production: 0, spentProduction:  0  ),
+        Card.init(id: UUID(), name: "Yellow.1", avatar: "yellow-1.png", cost: 12, generation: .first, livery: .yellow, production: 0, spentProduction:  0  ),
 
         // Blue.first (x1)
-        Card.init(id: UUID(), name: "Blue.1", avatar: "blue-1.png", cost: 16, generation: .first, livery: .blue ),
+        Card.init(id: UUID(), name: "Blue.1", avatar: "blue-1.png", cost: 16, generation: .first, livery: .blue, production: 0, spentProduction:  0  ),
 
         // Green.second (x4)
-        Card.init(id: UUID(), name: "Green.2", avatar: "green-2.png" , cost: 20, generation: .second, livery: .green ),
-        Card.init(id: UUID(), name: "Green.2", avatar: "green-2.png" , cost: 20, generation: .second, livery: .green ),
-        Card.init(id: UUID(), name: "Green.2", avatar: "green-2.png" , cost: 20, generation: .second, livery: .green ),
-        Card.init(id: UUID(), name: "Green.2", avatar: "green-2.png" , cost: 20, generation: .second, livery: .green ),
+        Card.init(id: UUID(), name: "Green.2", avatar: "green-2.png" , cost: 20, generation: .second, livery: .green, production: 0, spentProduction:  0  ),
+        Card.init(id: UUID(), name: "Green.2", avatar: "green-2.png" , cost: 20, generation: .second, livery: .green, production: 0, spentProduction:  0  ),
+        Card.init(id: UUID(), name: "Green.2", avatar: "green-2.png" , cost: 20, generation: .second, livery: .green, production: 0, spentProduction:  0  ),
+        Card.init(id: UUID(), name: "Green.2", avatar: "green-2.png" , cost: 20, generation: .second, livery: .green, production: 0, spentProduction:  0  ),
 
         // Red.second (x3)
-        Card.init(id: UUID(), name: "Red.2", avatar: "red-2.png", cost: 24, generation: .second, livery: .red ),
-        Card.init(id: UUID(), name: "Red.2", avatar: "red-2.png", cost: 24, generation: .second, livery: .red ),
-        Card.init(id: UUID(), name: "Red.2", avatar: "red-2.png", cost: 24, generation: .second, livery: .red ),
+        Card.init(id: UUID(), name: "Red.2", avatar: "red-2.png", cost: 24, generation: .second, livery: .red, production: 0, spentProduction:  0  ),
+        Card.init(id: UUID(), name: "Red.2", avatar: "red-2.png", cost: 24, generation: .second, livery: .red, production: 0, spentProduction:  0  ),
+        Card.init(id: UUID(), name: "Red.2", avatar: "red-2.png", cost: 24, generation: .second, livery: .red, production: 0, spentProduction:  0  ),
 
         // Yellow.second (x2)
-        Card.init(id: UUID(), name: "Yellow.2", avatar: "yellow-2.png", cost: 28, generation: .second, livery: .yellow),
-        Card.init(id: UUID(), name: "Yellow.2", avatar: "yellow-2.png", cost: 28, generation: .second, livery: .yellow),
+        Card.init(id: UUID(), name: "Yellow.2", avatar: "yellow-2.png", cost: 28, generation: .second, livery: .yellow, production: 0, spentProduction:  0 ),
+        Card.init(id: UUID(), name: "Yellow.2", avatar: "yellow-2.png", cost: 28, generation: .second, livery: .yellow, production: 0, spentProduction:  0 ),
 
         // Green.third (x4)
-        Card.init(id: UUID(), name: "Green.3", avatar: "green-3.png", cost: 32, generation: .third, livery: .green),
-        Card.init(id: UUID(), name: "Green.3", avatar: "green-3.png", cost: 32, generation: .third, livery: .green),
-        Card.init(id: UUID(), name: "Green.3", avatar: "green-3.png", cost: 32, generation: .third, livery: .green),
-        Card.init(id: UUID(), name: "Green.3", avatar: "green-3.png", cost: 32, generation: .third, livery: .green),
+        Card.init(id: UUID(), name: "Green.3", avatar: "green-3.png", cost: 32, generation: .third, livery: .green, production: 0, spentProduction:  0 ),
+        Card.init(id: UUID(), name: "Green.3", avatar: "green-3.png", cost: 32, generation: .third, livery: .green, production: 0, spentProduction:  0 ),
+        Card.init(id: UUID(), name: "Green.3", avatar: "green-3.png", cost: 32, generation: .third, livery: .green, production: 0, spentProduction:  0 ),
+        Card.init(id: UUID(), name: "Green.3", avatar: "green-3.png", cost: 32, generation: .third, livery: .green, production: 0, spentProduction:  0 ),
 
         // Blue.second (x2)
-        Card.init(id: UUID(), name: "Blue.2", avatar: "blue-2.png" , cost: 36, generation: .second, livery: .blue),
-        Card.init(id: UUID(), name: "Blue.2", avatar: "blue-2.png" , cost: 36, generation: .second, livery: .blue),
+        Card.init(id: UUID(), name: "Blue.2", avatar: "blue-2.png" , cost: 36, generation: .second, livery: .blue, production: 0, spentProduction:  0 ),
+        Card.init(id: UUID(), name: "Blue.2", avatar: "blue-2.png" , cost: 36, generation: .second, livery: .blue, production: 0, spentProduction:  0 ),
 
         // Red.third (x3)
-        Card.init(id: UUID(), name: "Red.3", avatar: "red-3.png", cost: 40, generation: .third, livery: .red),
-        Card.init(id: UUID(), name: "Red.3", avatar: "red-3.png", cost: 40, generation: .third, livery: .red),
-        Card.init(id: UUID(), name: "Red.3", avatar: "red-3.png", cost: 40, generation: .third, livery: .red),
+        Card.init(id: UUID(), name: "Red.3", avatar: "red-3.png", cost: 40, generation: .third, livery: .red, production: 0, spentProduction:  0 ),
+        Card.init(id: UUID(), name: "Red.3", avatar: "red-3.png", cost: 40, generation: .third, livery: .red, production: 0, spentProduction:  0 ),
+        Card.init(id: UUID(), name: "Red.3", avatar: "red-3.png", cost: 40, generation: .third, livery: .red, production: 0, spentProduction:  0 ),
 
         // Green.fourth (x4)
-        Card.init(id: UUID(), name: "Green.4", avatar: "green-4.png", cost: 44, generation: .fourth, livery: .green),
-        Card.init(id: UUID(), name: "Green.4", avatar: "green-4.png", cost: 44, generation: .fourth, livery: .green),
-        Card.init(id: UUID(), name: "Green.4", avatar: "green-4.png", cost: 44, generation: .fourth, livery: .green),
-        Card.init(id: UUID(), name: "Green.4", avatar: "green-4.png", cost: 44, generation: .fourth, livery: .green),
+        Card.init(id: UUID(), name: "Green.4", avatar: "green-4.png", cost: 44, generation: .fourth, livery: .green, production: 0, spentProduction:  0 ),
+        Card.init(id: UUID(), name: "Green.4", avatar: "green-4.png", cost: 44, generation: .fourth, livery: .green, production: 0, spentProduction:  0 ),
+        Card.init(id: UUID(), name: "Green.4", avatar: "green-4.png", cost: 44, generation: .fourth, livery: .green, production: 0, spentProduction:  0 ),
+        Card.init(id: UUID(), name: "Green.4", avatar: "green-4.png", cost: 44, generation: .fourth, livery: .green, production: 0, spentProduction:  0 ),
 
         // Yellow.third (x3)
-        Card.init(id: UUID(), name: "Yellow.3", avatar: "yellow-3.png" , cost: 48, generation: .third, livery: .yellow),
-        Card.init(id: UUID(), name: "Yellow.3", avatar: "yellow-3.png" , cost: 48, generation: .third, livery: .yellow),
-        Card.init(id: UUID(), name: "Yellow.3", avatar: "yellow-3.png" , cost: 48, generation: .third, livery: .yellow),
+        Card.init(id: UUID(), name: "Yellow.3", avatar: "yellow-3.png" , cost: 48, generation: .third, livery: .yellow, production: 0, spentProduction:  0 ),
+        Card.init(id: UUID(), name: "Yellow.3", avatar: "yellow-3.png" , cost: 48, generation: .third, livery: .yellow, production: 0, spentProduction:  0 ),
+        Card.init(id: UUID(), name: "Yellow.3", avatar: "yellow-3.png" , cost: 48, generation: .third, livery: .yellow, production: 0, spentProduction:  0 ),
 
         // Red.fourth (x4)
-        Card.init(id: UUID(), name: "Red.4", avatar: "red-4.png", cost: 52, generation: .fourth, livery: .red),
-        Card.init(id: UUID(), name: "Red.4", avatar: "red-4.png", cost: 52, generation: .fourth, livery: .red),
-        Card.init(id: UUID(), name: "Red.4", avatar: "red-4.png", cost: 52, generation: .fourth, livery: .red),
-        Card.init(id: UUID(), name: "Red.4", avatar: "red-4.png", cost: 52, generation: .fourth, livery: .red),
+        Card.init(id: UUID(), name: "Red.4", avatar: "red-4.png", cost: 52, generation: .fourth, livery: .red, production: 0, spentProduction:  0 ),
+        Card.init(id: UUID(), name: "Red.4", avatar: "red-4.png", cost: 52, generation: .fourth, livery: .red, production: 0, spentProduction:  0 ),
+        Card.init(id: UUID(), name: "Red.4", avatar: "red-4.png", cost: 52, generation: .fourth, livery: .red, production: 0, spentProduction:  0 ),
+        Card.init(id: UUID(), name: "Red.4", avatar: "red-4.png", cost: 52, generation: .fourth, livery: .red, production: 0, spentProduction:  0 ),
 
         // Green.fifth (x4)
-        Card.init(id: UUID(), name: "Green.5", avatar: "green-5.png" , cost: 56, generation: .fifth, livery: .green),
-        Card.init(id: UUID(), name: "Green.5", avatar: "green-5.png" , cost: 56, generation: .fifth, livery: .green),
-        Card.init(id: UUID(), name: "Green.5", avatar: "green-5.png" , cost: 56, generation: .fifth, livery: .green),
-        Card.init(id: UUID(), name: "Green.5", avatar: "green-5.png" , cost: 56, generation: .fifth, livery: .green)
+        Card.init(id: UUID(), name: "Green.5", avatar: "green-5.png" , cost: 56, generation: .fifth, livery: .green, production: 0, spentProduction:  0 ),
+        Card.init(id: UUID(), name: "Green.5", avatar: "green-5.png" , cost: 56, generation: .fifth, livery: .green, production: 0, spentProduction:  0 ),
+        Card.init(id: UUID(), name: "Green.5", avatar: "green-5.png" , cost: 56, generation: .fifth, livery: .green, production: 0, spentProduction:  0 ),
+        Card.init(id: UUID(), name: "Green.5", avatar: "green-5.png" , cost: 56, generation: .fifth, livery: .green, production: 0, spentProduction:  0 )
     ]
 
 }
