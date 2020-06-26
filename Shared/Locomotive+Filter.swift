@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension Locomotive {
+extension Card {
 
     public static func filter(cards: [Card], on livery: Livery ) -> [Card] {
         cards
