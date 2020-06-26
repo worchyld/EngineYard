@@ -27,16 +27,12 @@ class BoardInit_Tests: XCTestCase {
 
         switch result {
         case .success(let response):
-
             guard let factories = response.factories else {
                 XCTFail("No factories found")
                 return
             }
-            guard let cards = response.cards else {
-                XCTFail("No cards found")
-                return
-            }
 
+            print ("FACTORIES -> \(factories as Any)")
             
 
             /*
