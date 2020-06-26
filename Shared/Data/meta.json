@@ -1,0 +1,49 @@
+{
+    "_meta": {
+        "factories": 14,
+        "total-capacity": 46,
+        "cards": {
+            "total": 43,
+            "green": {
+                "total": 20,
+                "generations": [
+                    4,
+                    4,
+                    4,
+                    4,
+                    4
+                ]
+            },
+            "red": {
+                "total": 13,
+                "generations": [
+                    3,
+                    3,
+                    3,
+                    4,
+                    0
+                ]
+            },
+            "yellow": {
+                "total": 7,
+                "generations": [
+                    2,
+                    2,
+                    3,
+                    0,
+                    0
+                ]
+            },
+            "blue": {
+                "total": 3,
+                "generations": [
+                    1,
+                    2,
+                    0,
+                    0,
+                    0
+                ]
+            }
+        }
+    }
+}
