@@ -23,3 +23,16 @@ extension Locomotive {
         return (lhs.id == rhs.id)
     }
 }
+
+extension Locomotive {
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        id = try container.decode(UUID.self, forKey: .id)
+        name = try container.decode(String.self, forKey: .name)
+        avatar = try container.decode(String.self, forKey: .avatar)
+        cost = try container.decode(Int.self, forKey: .cost)
+        generation = try container.decode(Generation.self, forKey: .generation)
+        livery = try container.decode(Livery.self, forKey: .livery)
+    }
+}

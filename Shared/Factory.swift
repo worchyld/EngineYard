@@ -24,21 +24,22 @@ struct Factory: Codable, Identifiable, Equatable, Hashable {
     let orderCapacity: Int
     internal var references: [Reference]?
 
-    // MARK: - Child Reference
-    struct Reference: Codable, Identifiable, Hashable, Equatable {
-        var id: UUID
-
-        private enum CodingKeys: String, CodingKey {
-            case id
-        }
-    }
-
     private enum CodingKeys: String, CodingKey {
         case id, name, avatar, cost, initialOrder, existingOrders, completedOrders, cards, available, livery, generation, rusting, orderCapacity, references
     }
 }
 
-extension Factory.Reference {
+
+// MARK: - Reference
+struct Reference: Codable, Identifiable, Hashable, Equatable {
+    var id: UUID
+
+    private enum CodingKeys: String, CodingKey {
+        case id
+    }
+}
+
+extension Reference {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(UUID.self, forKey: .id)
@@ -73,9 +74,10 @@ extension Factory {
         generation = try container.decode(Generation.self, forKey: .generation)
         rusting = try container.decode(Rusting.self, forKey: .rusting)
         orderCapacity = try container.decode(Int.self, forKey: .orderCapacity).clamp(low: 1, high: 5)
-        references = try container.decode([Factory.Reference].self, forKey: .references)
-
-
+        references = try container.decode([Reference].self, forKey: .references)
+        
+        
+        /**
         let generationValue = (generation.rawValue - 1)
 
         let meta = Meta.build()
@@ -96,7 +98,7 @@ extension Factory {
         print ("\nMeta found: \(metaGenerations) results for \(livery) \(generation)")
 
         //let foundList = cards.filter { r in references.contains(where: { $0.id == r.id }) }
-
+         **/
 
     }
 }
