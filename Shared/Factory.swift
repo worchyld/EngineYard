@@ -29,6 +29,17 @@ struct Factory: Codable, Identifiable, Equatable, Hashable {
     }
 }
 
+extension Factory : ProductionAndIncome {
+    var productionCost: Int {
+        guard (self.cost % 4 == 0) else { return 0 }
+        return Int( floor(Double(self.cost / 2)) )
+    }
+    var income: Int {
+        guard (cost % 4 == 0) else { return 0 }
+        return Int( floor(Double(productionCost / 2)) )
+    }
+}
+
 
 // MARK: - Reference
 struct Reference: Codable, Identifiable, Hashable, Equatable {
