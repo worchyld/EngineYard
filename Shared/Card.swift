@@ -8,9 +8,13 @@
 
 import Foundation
 
-typealias Card = Card
+protocol ProductionAndIncome {
+    var productionCost: Int { get }
+    var income : Int { get }
+}
 
-// MARK: - Locomotive
+// MARK: - Locomotive Card
+
 struct Card: Codable, Identifiable, Hashable, Equatable {
     let id: UUID
     let name, avatar: String
@@ -18,6 +22,21 @@ struct Card: Codable, Identifiable, Hashable, Equatable {
     let livery: Livery
     var production: Int
     var spentProduction: Int
+
+    private enum CodingKeys: String, CodingKey {
+        case id, name, avatar, cost, generation, livery, production, spentProduction
+    }
+}
+
+extension Card : ProductionAndIncome {
+    var productionCost: Int {
+        guard (self.cost % 4 == 0) else { return 0 }
+        return Int( floor(Double(self.cost / 2)) )
+    }
+    var income: Int {
+        guard (cost % 4 == 0) else { return 0 }
+        return Int( floor(Double(productionCost / 2)) )
+    }
 }
 
 extension Card {
@@ -36,5 +55,7 @@ extension Card {
         cost = try container.decode(Int.self, forKey: .cost)
         generation = try container.decode(Generation.self, forKey: .generation)
         livery = try container.decode(Livery.self, forKey: .livery)
+        production = 0
+        spentProduction = 0
     }
 }
