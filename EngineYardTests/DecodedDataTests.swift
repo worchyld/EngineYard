@@ -37,7 +37,6 @@ class DecodedDataTests: XCTestCase {
 
     func testResponseItemsAreNotNil() throws {
         XCTAssertNotNil(response.factories)
-        XCTAssertNotNil(response.cards)
     }
 
     func testMetaExpectations() throws {
@@ -86,63 +85,7 @@ class DecodedDataTests: XCTestCase {
         }
         XCTAssertEqual(factories.count, meta.factories)
     }
-
-    func testCards() throws -> [Card] {
-        guard let cards = response.cards else {
-            throw NSError(domain: "No cards found", code: 0, userInfo: nil)
-        }
-        return cards
-    }
-
-    func testLocomotivesEqualsCardsQty() throws {
-        let cards = try testCards()
-        XCTAssertEqual(cards.count, meta.cards.total)
-    }
-
-    func testFilterGreenCards() throws {
-        let cards = try testCards()
-        let expected = 20
-        let green = Card.filter(cards: cards, on: .green)
-        XCTAssertEqual(green.count, meta.cards.green.total)
-        XCTAssertEqual(green.count, expected)
-    }
-
-    func testFilterRedCards() throws {
-        let cards = try testCards()
-        let expected = 13
-        let red = Card.filter(cards: cards, on: .red)
-        XCTAssertEqual(red.count, meta.cards.red.total)
-        XCTAssertEqual(red.count, expected)
-    }
-
-    func testFilterYellowCards() throws {
-        let cards = try testCards()
-        let expected = 7
-        let yellow = Card.filter(cards: cards, on: .yellow)
-        print ("yellow cards == \(yellow as Any)")
-        XCTAssertEqual(yellow.count, meta.cards.yellow.total)
-        XCTAssertEqual(yellow.count, expected)
-    }
-
-    func testFilterBlueCards() throws {
-        let cards = try testCards()
-        let expected = 3
-        let blue = Card.filter(cards: cards, on: .blue)
-        XCTAssertEqual(blue.count, meta.cards.blue.total)
-        XCTAssertEqual(blue.count, expected)
-    }
-
-    func testCardTotals() throws {
-        let cards = try testCards()
-
-        let green =  Card.filter(cards: cards, on: .green).count
-        let yellow = Card.filter(cards: cards, on: .yellow).count
-        let red = Card.filter(cards: cards, on: .red).count
-        let blue =  Card.filter(cards: cards, on: .blue).count
-
-        let total = green + yellow + red + blue
-        XCTAssertEqual( total, meta.cards.total )
-    }
+    
 
     func testCapacities() throws {
         guard let factories = response.factories else {
