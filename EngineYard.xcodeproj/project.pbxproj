@@ -43,6 +43,7 @@
 		4D5502F024A3961200173BDA /* BoardInit_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5502EF24A3961200173BDA /* BoardInit_Tests.swift */; };
 		4D66EBC8248F8147005DE7F0 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66EBC7248F8147005DE7F0 /* Player.swift */; };
 		4D6BA93A249D41A200167E68 /* IntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6BA939249D41A200167E68 /* IntTests.swift */; };
+		4D9BCA6F24A5734A00C637EB /* meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D9BCA6E24A5734A00C637EB /* meta.json */; };
 		4DA1C1392486EC3D004C4121 /* Die.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C1382486EC3D004C4121 /* Die.swift */; };
 		4DA1C13B2486EC77004C4121 /* EY+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C13A2486EC77004C4121 /* EY+Int.swift */; };
 		4DA1C13E2486ECC9004C4121 /* EY+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C13D2486ECC9004C4121 /* EY+String.swift */; };
@@ -109,6 +110,7 @@
 		4D5502EF24A3961200173BDA /* BoardInit_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardInit_Tests.swift; sourceTree = "<group>"; };
 		4D66EBC7248F8147005DE7F0 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		4D6BA939249D41A200167E68 /* IntTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntTests.swift; sourceTree = "<group>"; };
+		4D9BCA6E24A5734A00C637EB /* meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = meta.json; sourceTree = "<group>"; };
 		4DA1C1382486EC3D004C4121 /* Die.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Die.swift; sourceTree = "<group>"; };
 		4DA1C13A2486EC77004C4121 /* EY+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Int.swift"; sourceTree = "<group>"; };
 		4DA1C13D2486ECC9004C4121 /* EY+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+String.swift"; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 		4D3BE05B249FF19E009C203E /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				4D9BCA6E24A5734A00C637EB /* meta.json */,
 				4D3BE05C249FF1C4009C203E /* board.json */,
 			);
 			path = Data;
@@ -355,6 +358,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D9BCA6F24A5734A00C637EB /* meta.json in Resources */,
 				4D10C6222486DF3A00238508 /* cardSlide8.wav in Resources */,
 				4D10C6212486DF3A00238508 /* Birdy_Notification1.wav in Resources */,
 				4D238C5624A0CDE80031E3EE /* board.json in Resources */,
