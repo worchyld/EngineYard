@@ -54,7 +54,7 @@ class WalletTests: XCTestCase {
 
         // When wallet is 0, Fail when debiting 0
         XCTAssertThrowsError(try wallet.debit(account: player, amount: amount) ) { error in
-            XCTAssertEqual(error as! SpendingError, SpendingError.notEnoughFunds(amount) )
+            XCTAssertEqual(error as! SpendingError, SpendingError.mustBePositive(0) )
         }
     }
 
@@ -64,7 +64,7 @@ class WalletTests: XCTestCase {
 
         // Expect not enough funds Wallet has 0 cash
         XCTAssertThrowsError(try wallet.debit(account: player, amount: amount) ) { error in
-            XCTAssertEqual(error as! SpendingError, SpendingError.notEnoughFunds(0) )
+            XCTAssertEqual(error as! SpendingError, SpendingError.mustBePositive(amount) )
         }
     }
 
