@@ -50,14 +50,7 @@ struct Reference: Codable, Identifiable, Hashable, Equatable {
     }
 }
 
-extension Reference {
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        id = try container.decode(UUID.self, forKey: .id)
-    }
-}
-
-
+/*
 extension Factory {
 
     init(from decoder: Decoder) throws {
@@ -75,9 +68,9 @@ extension Factory {
         }
         self.cost = cost
 
-        //initialOrder = try container.decodeIfPresent(Int.self, forKey: .initialOrder) ?? nil
-        //existingOrders = try container.decodeIfPresent([Int].self, forKey: .existingOrders) ?? [Int]()
-        //completedOrders = try container.decodeIfPresent([Int].self, forKey: .completedOrders) ?? [Int]()
+        initialOrder = try container.decodeIfPresent(Int.self, forKey: .initialOrder) ?? nil
+        existingOrders = try container.decodeIfPresent([Int].self, forKey: .existingOrders) ?? [Int]()
+        completedOrders = try container.decodeIfPresent([Int].self, forKey: .completedOrders) ?? [Int]()
 
         cards = try container.decodeIfPresent([Card].self, forKey: .cards) ?? [Card]()
         available = try container.decode(Bool.self, forKey: .available)
@@ -86,33 +79,9 @@ extension Factory {
         rusting = try container.decode(Rusting.self, forKey: .rusting)
         orderCapacity = try container.decode(Int.self, forKey: .orderCapacity).clamp(low: 1, high: 5)
         references = try container.decode([Reference].self, forKey: .references)
-        
-        
-        /**
-        let generationValue = (generation.rawValue - 1)
-
-        let meta = Meta.build()
-
-        let metaGenerations: Int = {
-            switch livery {
-            case .green:
-                return meta.cards.green.generations[generationValue]
-            case .red:
-                return meta.cards.red.generations[generationValue]
-            case .yellow:
-                return meta.cards.yellow.generations[generationValue]
-            case .blue:
-                return meta.cards.blue.generations[generationValue]
-            }
-        }()
-
-        print ("\nMeta found: \(metaGenerations) results for \(livery) \(generation)")
-
-        //let foundList = cards.filter { r in references.contains(where: { $0.id == r.id }) }
-         **/
 
     }
-}
+}*/
 
 extension Factory {
     static func == (lhs: Factory, rhs: Factory) -> Bool {

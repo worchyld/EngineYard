@@ -19,8 +19,6 @@ class BoardInit_Tests: XCTestCase {
         self.meta = Meta.build()
     }
 
-
-    /**
     func testBoardInit() throws {
         let bundle = Bundle(for: type(of: self))
         let file = Constants.boardJSONFile
@@ -29,11 +27,6 @@ class BoardInit_Tests: XCTestCase {
 
         switch result {
         case .success(let response):
-
-            guard let meta = response.meta else {
-                XCTFail("No meta found")
-                return
-            }
 
             guard let factories = response.factories else {
                 XCTFail("No factories found")
@@ -46,7 +39,7 @@ class BoardInit_Tests: XCTestCase {
 
             
 
-
+            /*
             for f in factories {
 
                 var f = f
@@ -94,17 +87,11 @@ class BoardInit_Tests: XCTestCase {
 
                 XCTAssertEqual( f.cards?.count , metaGenerations)
             }
-
-
-
-            for f in factories {
-                print (f.name, f.cards as Any)
-            }
-
+             */
 
         case .failure(let error):
            throw(error)
         }
-    }*/
+    }
 
 }

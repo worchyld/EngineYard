@@ -24,7 +24,7 @@ struct Card: Codable, Identifiable, Hashable, Equatable {
     var spentProduction: Int
 
     private enum CodingKeys: String, CodingKey {
-        case id, name, avatar, cost, generation, livery, production, spentProduction
+        case id, name, avatar, cost, generation, livery
     }
 }
 
