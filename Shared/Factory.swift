@@ -8,25 +8,32 @@
 
 import Foundation
 
-// Locomotive factory
-struct Factory: Codable, Identifiable, Equatable, Hashable {
+
+// MARK: - Factory
+struct Factory: Codable {
     let id: UUID
-    let name: String
-    let avatar: String
+    let name, avatar: String
     let cost: Int
-    var initialOrder: Int?
-    var existingOrders, completedOrders: [Int]?
-    var cards: [Card]?
-    var available: Bool
     let livery: Livery
     let generation: Generation
-    var rusting: Rusting
+    let cards: [Card]?
+    let available: Bool
+    let rusting: Rusting
     let orderCapacity: Int
-    internal var references: [Reference]?
+}
 
-    private enum CodingKeys: String, CodingKey {
-        case id, name, avatar, cost, initialOrder, existingOrders, completedOrders, cards, available, livery, generation, rusting, orderCapacity, references
-    }
+// MARK: - Card
+struct Card: Codable {
+    let id: UUID
+    let name, avatar: String
+    let cost: Int
+    let generation: Generation
+    let livery: Livery
+}
+
+protocol ProductionAndIncome {
+    var productionCost: Int { get }
+    var income: Int { get }
 }
 
 extension Factory : ProductionAndIncome {
@@ -41,50 +48,10 @@ extension Factory : ProductionAndIncome {
 }
 
 
-// MARK: - Reference
-struct Reference: Codable, Identifiable, Hashable, Equatable {
-    var id: UUID
-
-    private enum CodingKeys: String, CodingKey {
-        case id
-    }
-}
-
-/*
-extension Factory {
-
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-
-        id = try container.decode(UUID.self, forKey: .id)
-        name = try container.decode(String.self, forKey: .name)
-        avatar = try container.decode(String.self, forKey: .avatar)
-        let cost = try container.decode(Int.self, forKey: .cost).clamp(low: 4, high: 56)
-        if ((cost % 4) != 0) {
-            throw NSError(domain: "Cost is not a modulus of 4", code: 0, userInfo: nil)
-        }
-        guard (cost >= 4 && cost <= 56 ) else {
-            throw NSError(domain: "Cost is not in the expected range of 4-56", code: 0, userInfo: nil)
-        }
-        self.cost = cost
-
-        initialOrder = try container.decodeIfPresent(Int.self, forKey: .initialOrder) ?? nil
-        existingOrders = try container.decodeIfPresent([Int].self, forKey: .existingOrders) ?? [Int]()
-        completedOrders = try container.decodeIfPresent([Int].self, forKey: .completedOrders) ?? [Int]()
-
-        cards = try container.decodeIfPresent([Card].self, forKey: .cards) ?? [Card]()
-        available = try container.decode(Bool.self, forKey: .available)
-        livery = try container.decode(Livery.self, forKey: .livery)
-        generation = try container.decode(Generation.self, forKey: .generation)
-        rusting = try container.decode(Rusting.self, forKey: .rusting)
-        orderCapacity = try container.decode(Int.self, forKey: .orderCapacity).clamp(low: 1, high: 5)
-        references = try container.decode([Reference].self, forKey: .references)
-
-    }
-}*/
 
 extension Factory {
     static func == (lhs: Factory, rhs: Factory) -> Bool {
         return (lhs.id == rhs.id)
     }
 }
+
