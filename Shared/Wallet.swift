@@ -38,22 +38,26 @@ struct Wallet : Bank {
     func debit(account: WalletHolderDelegate, amount: Int = 0) throws {
 
         let balance = account.cash
+
+        let spender = Spender(balance)
+
         do {
-            if try canDeduct(balance: balance, bySpending: amount) {
-                willDeduct(account: account, amount: amount)
-            }
-        }
-        catch {
+            let newBalance = try spender.spend(amount: amount)
+            setBalance(on: account, amount: newBalance)
+
+        } catch {
             throw error
         }
     }
-
-
 
     // MARK: (Private) functions
 
     private func willAdd(funds: Int, to account: WalletHolderDelegate) {
         account.cash += funds
+    }
+
+    private func setBalance(on account: WalletHolderDelegate, amount: Int) {
+        account.cash = amount
     }
 
     private func willDeduct(account: WalletHolderDelegate, amount: Int) {
