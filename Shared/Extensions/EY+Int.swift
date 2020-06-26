@@ -25,3 +25,16 @@ extension Int {
         return (self < 0)
     }
 }
+
+extension Int {
+    func clamp(low: Int, high: Int) -> Int {
+        if (self > high) {
+            // if we are higher than the upper bound, return the upper bound
+            return high
+        } else if (self < low) {
+            // if we are lower than the lower bound, return the lower bound
+            return low
+        }
+        return self
+    }
+}
