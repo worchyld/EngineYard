@@ -23,7 +23,7 @@ class SpendingTests: XCTestCase {
     }
 
     func testCannotSpendZero() throws {
-        var spender = Spender(0)
+        let spender = Spender()
 
         XCTAssertThrowsError(  try spender.spend(amount: 0) ) { error in
             XCTAssertEqual(error as! SpendingError, SpendingError.mustBePositive(0) )
@@ -31,7 +31,7 @@ class SpendingTests: XCTestCase {
     }
 
     func testCannotSpendNegative() throws {
-        var spender = Spender()
+        let spender = Spender()
 
         XCTAssertThrowsError(  try spender.spend(amount: -1) ) { error in
             XCTAssertEqual(error as! SpendingError, SpendingError.mustBePositive(-1) )
@@ -39,7 +39,7 @@ class SpendingTests: XCTestCase {
     }
 
     func testCannotSpendMoreThanFunds() throws {
-        var spender = Spender(3)
+        let spender = Spender(3)
 
         XCTAssertThrowsError(  try spender.spend(amount: 5) ) { error in
             XCTAssertEqual(error as! SpendingError, SpendingError.cannotSpend(5) )
@@ -48,7 +48,7 @@ class SpendingTests: XCTestCase {
 
     func testDidSpendToZero() throws {
         let amount = 3
-        var spender = Spender(amount)
+        let spender = Spender(amount)
 
         let result = try spender.spend(amount: amount)
 
