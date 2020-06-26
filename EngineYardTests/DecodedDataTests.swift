@@ -13,11 +13,14 @@ import XCTest
 class DecodedDataTests: XCTestCase {
 
     var response: Response!
+    var meta: Meta!
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         let bundle = Bundle(for: type(of: self))
         let resourceFile = Constants.boardJSONFile
+
+        self.meta = Meta.build()
 
         do {
             let response = try bundle.decode(Response.self, from: resourceFile)
@@ -32,18 +35,12 @@ class DecodedDataTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testJSONMapping() throws {
-
-        XCTAssertNotNil(response.meta)
+    func testResponseItemsAreNotNil() throws {
         XCTAssertNotNil(response.factories)
         XCTAssertNotNil(response.cards)
+    }
 
-        // Test against meta
-        guard let meta = response.meta else {
-            XCTFail("No meta found")
-            return
-        }
-
+    func testMetaExpectations() throws {
         XCTAssertEqual( meta.factories,  14 )
         XCTAssertEqual( meta.totalCapacity,  46 )
         XCTAssertEqual( meta.cards.total, 43 )
@@ -87,7 +84,7 @@ class DecodedDataTests: XCTestCase {
         guard let factories = response.factories else {
             throw NSError(domain: "No factories found", code: 0, userInfo: nil)
         }
-        XCTAssertEqual(factories.count, response.meta?.factories)
+        XCTAssertEqual(factories.count, meta.factories)
     }
 
     func testCards() throws -> [Card] {
@@ -99,14 +96,14 @@ class DecodedDataTests: XCTestCase {
 
     func testLocomotivesEqualsCardsQty() throws {
         let cards = try testCards()
-        XCTAssertEqual(cards.count, response.meta?.cards.total)
+        XCTAssertEqual(cards.count, meta.cards.total)
     }
 
     func testFilterGreenCards() throws {
         let cards = try testCards()
         let expected = 20
         let green = Card.filter(cards: cards, on: .green)
-        XCTAssertEqual(green.count, response.meta?.cards.green.total)
+        XCTAssertEqual(green.count, meta.cards.green.total)
         XCTAssertEqual(green.count, expected)
     }
 
@@ -114,7 +111,7 @@ class DecodedDataTests: XCTestCase {
         let cards = try testCards()
         let expected = 13
         let red = Card.filter(cards: cards, on: .red)
-        XCTAssertEqual(red.count, response.meta?.cards.red.total)
+        XCTAssertEqual(red.count, meta.cards.red.total)
         XCTAssertEqual(red.count, expected)
     }
 
@@ -123,7 +120,7 @@ class DecodedDataTests: XCTestCase {
         let expected = 7
         let yellow = Card.filter(cards: cards, on: .yellow)
         print ("yellow cards == \(yellow as Any)")
-        XCTAssertEqual(yellow.count, response.meta?.cards.yellow.total)
+        XCTAssertEqual(yellow.count, meta.cards.yellow.total)
         XCTAssertEqual(yellow.count, expected)
     }
 
@@ -131,7 +128,7 @@ class DecodedDataTests: XCTestCase {
         let cards = try testCards()
         let expected = 3
         let blue = Card.filter(cards: cards, on: .blue)
-        XCTAssertEqual(blue.count, response.meta?.cards.blue.total)
+        XCTAssertEqual(blue.count, meta.cards.blue.total)
         XCTAssertEqual(blue.count, expected)
     }
 
@@ -144,7 +141,7 @@ class DecodedDataTests: XCTestCase {
         let blue =  Card.filter(cards: cards, on: .blue).count
 
         let total = green + yellow + red + blue
-        XCTAssertEqual( total, response.meta?.cards.total )
+        XCTAssertEqual( total, meta.cards.total )
     }
 
     func testCapacities() throws {
@@ -154,7 +151,7 @@ class DecodedDataTests: XCTestCase {
         }
 
         let totalCapacity = factories.reduce(0, { $0 + $1.orderCapacity }  )
-        XCTAssertEqual(totalCapacity, response.meta?.totalCapacity)
+        XCTAssertEqual(totalCapacity, meta.totalCapacity)
     }
 
 

@@ -42,7 +42,8 @@ class BundleLoadTests: XCTestCase {
 
         let response = try decoder.decode(Response.self, from: data)
 
-        XCTAssertNotNil(response.meta)
+        XCTAssertNotNil(response.factories)
+        XCTAssertNotNil(response.cards)
     }
 
     func testBundleDidDecodeViaExtension() throws {
@@ -50,7 +51,8 @@ class BundleLoadTests: XCTestCase {
         let resourceFile = Constants.boardJSONFile
         let response = try bundle.decode(Response.self, from: resourceFile)
 
-        XCTAssertNotNil(response.meta)
+        XCTAssertNotNil(response.factories)
+        XCTAssertNotNil(response.cards)
     }
 
     func testDataLoader_DidDecode() throws {
@@ -62,7 +64,8 @@ class BundleLoadTests: XCTestCase {
         switch result {
         case .success(let response):
             print ("RESPONSE FOUND >> \(response)")
-            XCTAssertNotNil(response.meta)
+            XCTAssertNotNil(response.factories)
+            XCTAssertNotNil(response.cards)
 
         case .failure(let error):
             throw(error)
