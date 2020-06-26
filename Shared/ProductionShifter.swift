@@ -8,6 +8,8 @@
 
 import Foundation
 
+// Only deals with shifting production units from 1 card to another
+
 protocol ProductionShifterUseCase {
     func shift(production: Int, from: Card, to: Card) throws
 }
