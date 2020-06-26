@@ -27,7 +27,11 @@ enum SpendingError : Error, Equatable {
     case unknown
 }
 
-struct Spender : ValidateSpending {
+protocol SpendingUseCase {
+    func spend(amount: Int) throws -> Int
+}
+
+class Spender : ValidateSpending, SpendingUseCase {
     private (set) var value : Int
 
     init(_ value: Int = 0) {
@@ -35,7 +39,7 @@ struct Spender : ValidateSpending {
         self.value = value
     }
 
-    mutating func spend(amount: Int) throws -> Int {
+    func spend(amount: Int) throws -> Int {
         if try canSpend(amount: amount) {
             self.value -= amount
         }
@@ -51,6 +55,33 @@ struct Spender : ValidateSpending {
         }
         guard ((value - amount) >= 0) else {
             throw SpendingError.cannotSpend(amount)
+        }
+        return true
+    }
+}
+
+protocol IncreaserUseCase {
+    func increase(by amount: Int) throws -> Int
+}
+
+class Increaser : ValidateIncrease, IncreaserUseCase {
+    private (set) var value: Int
+
+    init(_ value: Int = 0) {
+        precondition(value >= 0, "Must initialise Increaser with a number >=0")
+        self.value = value
+    }
+
+    func increase(by amount: Int) throws -> Int {
+        if try canIncrease(by: amount) {
+            self.value += amount
+        }
+        return self.value
+    }
+
+    func canIncrease(by amount: Int) throws -> Bool {
+        guard amount.isPositive else {
+            throw SpendingError.mustBePositive(amount)
         }
         return true
     }
