@@ -59,7 +59,6 @@ class ProductionHandler : ProductionUseCase {
     func spend(amount: Int) throws -> Int {
         do {
             if let result = try self.spendingDelegate?.spend(amount: amount) {
-            //if try self.spendingDelegate.canSpend(amount: amount) {
                 self.fp.spend(amount: amount)
                 return result
             }
