@@ -17,10 +17,15 @@ protocol ProductionUseCase {
     func shift()
 }
 
+protocol ProductionInputDelegate: AnyObject {
+    var units: Int { get }
+    var spent: Int { get }
+}
+
 class ProductionHandler : ProductionUseCase {
     internal var fp: FactoryProduction!
     internal var spendingDelegate: Spender?
-    internal var increaserDelegate: Increaser?
+    internal var increaserDelegate: Increaser?    
 
     init(with fp: FactoryProduction) {
         self.fp = fp
