@@ -93,7 +93,7 @@ class DecodedDataTests: XCTestCase {
             return
         }
 
-        let totalCapacity = factories.reduce(0, { $0 + $1.orderCapacity }  )
+        let totalCapacity = factories.reduce(0, { $0 + $1.maxDice }  )
         XCTAssertEqual(totalCapacity, meta.totalCapacity)
     }
 

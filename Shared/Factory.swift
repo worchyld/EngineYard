@@ -16,10 +16,10 @@ struct Factory: Codable {
     let cost: Int
     let livery: Livery
     let generation: Generation
-    let cards: [Card]?
-    let available: Bool
-    let rusting: Rusting
-    let orderCapacity: Int
+    var cards: [Card]?
+    var available: Bool
+    var rusting: Rusting
+    let maxDice: Int
 }
 
 // MARK: - Card

@@ -19,28 +19,28 @@ struct Fixtures {
         return [greenFirst, redFirst, yellowFirst, blueFirst]
     }
 
-    private static func MakeFactory(avatar: String, cost: Int, livery: Livery, generation: Generation, orderCapacity: Int) -> Factory {
+    private static func MakeFactory(avatar: String, cost: Int, livery: Livery, generation: Generation, maxDice: Int) -> Factory {
         let card = Card.init(id: UUID(), name: "fake.card", avatar: "fake-card.png", cost: cost, generation: generation, livery: livery)
         let name = "\(livery)-\(generation.rawValue)"
-        return Factory.init(id: UUID(), name: name, avatar: avatar, cost: cost, livery: livery, generation: generation, cards: [card], available: false, rusting: .notRusting, orderCapacity: 0)
-        //return Factory.init(id: UUID(), name: "\(livery)-\(generation.rawValue)", avatar: avatar, cost: cost, initialOrder: nil, existingOrders: nil, completedOrders: nil, cards: [card], available: false, livery: livery, generation: generation, rusting: .notRusting, orderCapacity: orderCapacity)
+        return Factory.init(id: UUID(), name: name, avatar: avatar, cost: cost, livery: livery, generation: generation, cards: [card], available: false, rusting: .notRusting, maxDice: 0)
+        //return Factory.init(id: UUID(), name: "\(livery)-\(generation.rawValue)", avatar: avatar, cost: cost, initialOrder: nil, existingOrders: nil, completedOrders: nil, cards: [card], available: false, livery: livery, generation: generation, rusting: .notRusting, maxDice: maxDice)
     }
 
     static var factories: [Factory] = [
-        MakeFactory(avatar: "green-1.png", cost: 4, livery: .green, generation: .first, orderCapacity:       3),
-        MakeFactory(avatar: "red-1.png",  cost: 8, livery: .red, generation: .first, orderCapacity:          3),
-        MakeFactory(avatar: "yellow-1.png", cost: 12,  livery: .yellow, generation: .first, orderCapacity:   2),
-        MakeFactory(avatar: "blue-1.png",  cost: 16, livery: .blue, generation: .first, orderCapacity:       1),
-        MakeFactory(avatar: "green-2.png",  cost: 20, livery: .green, generation: .second, orderCapacity:    4),
-        MakeFactory(avatar: "red-1.png",  cost: 24, livery: .red, generation: .second, orderCapacity:        3),
-        MakeFactory(avatar: "yellow-2.png", cost: 28,  livery: .yellow, generation: .second, orderCapacity:  3),
-        MakeFactory(avatar: "green-3.png",  cost: 32, livery: .green, generation: .third, orderCapacity:     4),
-        MakeFactory(avatar: "blue-2.png",  cost: 36, livery: .blue, generation: .second, orderCapacity:      2),
-        MakeFactory(avatar: "red-3.png",  cost: 40, livery: .red, generation: .third, orderCapacity:         4),
-        MakeFactory(avatar: "green-4.png",  cost: 44, livery: .green, generation: .fourth, orderCapacity:    5),
-        MakeFactory(avatar: "yellow-3.png",  cost: 48, livery: .yellow, generation: .third, orderCapacity:   3),
-        MakeFactory(avatar: "red-4.png",  cost: 52, livery: .red, generation: .fourth, orderCapacity:        4),
-        MakeFactory(avatar: "green-5.png",  cost: 56, livery: .green, generation: .fifth, orderCapacity:     5)
+        MakeFactory(avatar: "green-1.png", cost: 4, livery: .green, generation: .first, maxDice:       3),
+        MakeFactory(avatar: "red-1.png",  cost: 8, livery: .red, generation: .first, maxDice:          3),
+        MakeFactory(avatar: "yellow-1.png", cost: 12,  livery: .yellow, generation: .first, maxDice:   2),
+        MakeFactory(avatar: "blue-1.png",  cost: 16, livery: .blue, generation: .first, maxDice:       1),
+        MakeFactory(avatar: "green-2.png",  cost: 20, livery: .green, generation: .second, maxDice:    4),
+        MakeFactory(avatar: "red-1.png",  cost: 24, livery: .red, generation: .second, maxDice:        3),
+        MakeFactory(avatar: "yellow-2.png", cost: 28,  livery: .yellow, generation: .second, maxDice:  3),
+        MakeFactory(avatar: "green-3.png",  cost: 32, livery: .green, generation: .third, maxDice:     4),
+        MakeFactory(avatar: "blue-2.png",  cost: 36, livery: .blue, generation: .second, maxDice:      2),
+        MakeFactory(avatar: "red-3.png",  cost: 40, livery: .red, generation: .third, maxDice:         4),
+        MakeFactory(avatar: "green-4.png",  cost: 44, livery: .green, generation: .fourth, maxDice:    5),
+        MakeFactory(avatar: "yellow-3.png",  cost: 48, livery: .yellow, generation: .third, maxDice:   3),
+        MakeFactory(avatar: "red-4.png",  cost: 52, livery: .red, generation: .fourth, maxDice:        4),
+        MakeFactory(avatar: "green-5.png",  cost: 56, livery: .green, generation: .fifth, maxDice:     5)
     ]
 
 
