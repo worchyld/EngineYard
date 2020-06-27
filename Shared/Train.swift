@@ -20,8 +20,18 @@ enum TrainError : Error, Equatable {
     case alreadyHaveThisTrain(_ train: Train)
 }
 
+protocol LocomotiveDelegate {
+    var id: UUID { get }
+    var name: String { get }
+    var cost: Int { get }
+    var livery : Livery { get }
+    var generation : Generation { get }
+    var rusting : Rusting { get }
+    var available : Bool { get }
+}
+
 // MARK: - Train
-struct Train: Codable, Identifiable, Equatable {
+struct Train: Codable, Identifiable, Equatable, LocomotiveDelegate {
     let id : UUID
     let name, avatar: String
     let cost, trainPool: Int
