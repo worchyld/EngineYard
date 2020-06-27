@@ -33,10 +33,10 @@ struct Card: Codable, ProductionInputDelegate {
     var spentProduction: Int
 
     var productionCost: Int {
-       guard (self.cost % 4 == 0) else { return 0 }
-       return Int( floor(Double(self.cost / 2)) )
-   }
-
+        guard (self.cost % 4 == 0) else { return 0 }
+        return Int( floor(Double(self.cost / 2)) )
+    }
+    
     var income: Int {
         guard (cost % 4 == 0) else { return 0 }
         return Int( floor(Double(productionCost / 2)) )
