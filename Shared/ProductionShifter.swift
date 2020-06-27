@@ -8,26 +8,22 @@
 
 import Foundation
 
-// Only deals with shifting production units from 1 card to another
-//
-protocol ProductionShifterUseCase {
-    func shift(units: Int, from: Card, to: Card) throws
+protocol ProductionShiftUseCase {
+    func shift()
 }
 
-class ProductionShifter : ProductionShifterUseCase {
-    private var delegate: ProductionInputDelegate?
-
-    init() {} 
-
-    func shift(units: Int, from: Card, to: Card) throws {
-
-
+class ProductionShifter : ProductionShiftUseCase {
+    func shift() {
 
     }
 }
 
-
 extension ProductionShifter {
+    func canShift() -> Bool {
+        return true
+    }
+
+    /*
     func canShift(production: Int, from origin: Card, to destination: Card) throws -> Bool {
         guard production.isPositive else {
             throw SpendingError.mustBePositive(production)
@@ -52,13 +48,5 @@ extension ProductionShifter {
 
         return true
     }
-
-    func canAffordShifting(production: Int, from: Card, to: Card) -> Bool {
-        return true
-    }
-
-    func costOfShifting(production: Int, from: Card, to: Card) -> Int {
-        return 0
-    }
-
+    */
 }
