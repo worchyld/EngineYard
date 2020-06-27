@@ -15,8 +15,10 @@ protocol ProductionShifterUseCase {
 }
 
 class ProductionShifter : ProductionShifterUseCase {
+    private var delegate: ProductionInputDelegate?
 
-    init() {}
+    init() {} 
+
 
     func shift(production: Int, from: Card, to: Card) throws {
 
