@@ -10,7 +10,7 @@ import XCTest
 
 @testable import EngineYard
 
-class DecodedDataTests: XCTestCase {
+class MetaDecodedTests: XCTestCase {
 
     var response: Response!
     var meta: Meta!
@@ -36,7 +36,7 @@ class DecodedDataTests: XCTestCase {
     }
 
     func testResponseItemsAreNotNil() throws {
-        XCTAssertNotNil(response.factories)
+        XCTAssertNotNil(response.trains)
     }
 
     func testMetaExpectations() throws {
@@ -80,15 +80,15 @@ class DecodedDataTests: XCTestCase {
     }
 
     func testFactoriesEqualsSpaces() throws {
-        guard let factories = response.factories else {
-            throw NSError(domain: "No factories found", code: 0, userInfo: nil)
+        guard let factories = response.trains else {
+            throw NSError(domain: "No trains found", code: 0, userInfo: nil)
         }
         XCTAssertEqual(factories.count, meta.factories)
     }
     
 
     func testCapacities() throws {
-        guard let factories = response.factories else {
+        guard let factories = response.trains else {
             XCTFail("No factories found")
             return
         }
