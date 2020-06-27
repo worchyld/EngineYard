@@ -17,20 +17,26 @@ protocol ProductionUseCase {
     func shift()
 }
 
-protocol ProductionInputDelegate: AnyObject {
-    var units: Int { get }
-    var spent: Int { get }
+protocol FactoryProductionInputDelegate: AnyObject {
+    var units: Int { get set }
+    var spent: Int { get set }
 }
 
 class ProductionHandler : ProductionUseCase {
-    internal var fp: FactoryProduction!
-    internal var spendingDelegate: Spender?
-    internal var increaserDelegate: Increaser?    
+    internal var fp: FactoryProductionInputDelegate!
+    internal var spendingDelegate: Spender!
+    internal var increaserDelegate: Increaser!
 
-    init(with fp: FactoryProduction) {
+    init(with fp: FactoryProductionInputDelegate) {
         self.fp = fp
         self.spendingDelegate = Spender(fp.units)
         self.increaserDelegate = Increaser(fp.units)
+    }
+
+    deinit {
+        self.fp = nil
+        self.spendingDelegate = nil
+        self.increaserDelegate = nil
     }
 
     func increase() {
@@ -40,8 +46,8 @@ class ProductionHandler : ProductionUseCase {
     func spend(amount: Int) throws -> Int {
         do {
             if let result = try self.spendingDelegate?.spend(amount: amount) {
-                fp.units = result
-                fp.spent += amount
+
+                self.fp.spend(amount: amount)
                 return result
             }
             else {
@@ -54,11 +60,26 @@ class ProductionHandler : ProductionUseCase {
     }
 
     func reset() {
-        self.fp.units = self.fp.spent
-        self.fp.spent = 0
+        self.fp.reset()
     }
 
     func shift() {
 
     }
 }
+
+
+fileprivate extension FactoryProductionInputDelegate {
+
+    func spend(amount: Int) {
+        self.units -= amount
+        self.spent += amount
+    }
+
+    func reset() {
+        self.units = self.spent
+        self.spent = 0
+    }
+
+}
+

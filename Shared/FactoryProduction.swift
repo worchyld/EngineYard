@@ -8,7 +8,7 @@
 
 import Foundation
 
-class FactoryProduction : Identifiable, Codable {
+class FactoryProduction : Identifiable, Codable, FactoryProductionInputDelegate {
     let id: UUID
     var units: Int
     var spent: Int
