@@ -97,6 +97,17 @@ extension Card {
     }
 }
 
+extension Card {
+    static func == (lhs: Card, rhs: Card) -> Bool {
+        return (lhs.id == rhs.id)
+    }
+    static func != (lhs: Card, rhs: Card) -> Bool {
+        return (lhs.id != rhs.id)
+    }
+}
+
+
+
 
 extension Factory {
     static func == (lhs: Factory, rhs: Factory) -> Bool {
