@@ -1,5 +1,5 @@
 //
-//  FactoryState.swift
+//  Rusting.swift
 //  EngineYard
 //
 //  Created by Amarjit on 22/06/2020.
@@ -10,5 +10,5 @@ import Foundation
 
 // Obsolescence
 enum Rusting : Int, Codable, CaseIterable {
-    case notRusting = 0, rusting, rusted
+    case new = 0, rusting, rusted
 }
