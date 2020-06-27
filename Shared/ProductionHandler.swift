@@ -11,7 +11,7 @@ import Foundation
 // Production Handler use cases
 
 protocol ProductionUseCase {
-    func increase()
+    //func increase()
     //func spend()
     func reset()
     func shift()
@@ -39,14 +39,27 @@ class ProductionHandler : ProductionUseCase {
         self.increaserDelegate = nil
     }
 
-    func increase() {
-
+    // Increase production by amount
+    func increase(by amount: Int) throws -> Int {
+        do {
+            if try self.increaserDelegate.canIncrease(by: amount) {
+                self.fp.increase(by: amount)
+                return self.fp.units
+            }
+            else {
+                throw SpendingError.invalidAmount
+            }
+        }
+        catch {
+            throw error
+        }
     }
 
+    // Spend production units
     func spend(amount: Int) throws -> Int {
         do {
             if let result = try self.spendingDelegate?.spend(amount: amount) {
-
+            //if try self.spendingDelegate.canSpend(amount: amount) {
                 self.fp.spend(amount: amount)
                 return result
             }
@@ -69,9 +82,16 @@ class ProductionHandler : ProductionUseCase {
 }
 
 
-fileprivate extension FactoryProductionInputDelegate {
+internal extension FactoryProductionInputDelegate {
+
+    func increase(by amount: Int) {
+        precondition(amount.isPositive, "To increase production, amount must be positive")
+        self.units += amount
+    }
 
     func spend(amount: Int) {
+        precondition(amount.isPositive, "To spend production, amount must be positive")
+        precondition( ((units - amount) >= 0)  , "Not enough funds -- Result from spend would be negative")
         self.units -= amount
         self.spent += amount
     }
