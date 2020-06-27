@@ -233,9 +233,9 @@
 				4D66EBC7248F8147005DE7F0 /* Player.swift */,
 				4D3BE04A249FD07C009C203E /* Wallet.swift */,
 				4D1C72F424A0F6B0009CAA3A /* Board.swift */,
-				4D42DBE524A7A45200B8FF68 /* DataLoader.swift */,
 				4D238C3D24A046B30031E3EE /* Meta.swift */,
 				4D238C4624A050C00031E3EE /* Response.swift */,
+				4D42DBE524A7A45200B8FF68 /* DataLoader.swift */,
 				4D1C72F024A0F2D1009CAA3A /* JSONAny.swift */,
 				4D54250B249D5B16004B97A8 /* Spending.swift */,
 			);

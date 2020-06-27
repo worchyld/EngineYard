@@ -10,12 +10,12 @@ import Foundation
 
 // MARK: - Meta
 struct Meta: Codable {
-    var factories, totalCapacity: Int
+    var totalDecks, totalCapacity: Int
     var cards: Meta.Cards
 
     enum CodingKeys: String, CodingKey {
-        case factories
-        case totalCapacity = "total-capacity"
+        case totalDecks
+        case totalCapacity = "totalCapacity"
         case cards
     }
 
@@ -47,7 +47,7 @@ extension Meta {
             return Generations(total: 3, generations: [1,2,0,0,0])
         }())
 
-        let meta = Meta.init(factories: 14, totalCapacity: 46, cards: cards)
+        let meta = Meta.init(totalDecks: 14, totalCapacity: 46, cards: cards)
         return meta
     }
 
