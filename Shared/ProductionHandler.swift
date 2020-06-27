@@ -18,7 +18,7 @@ protocol ProductionUseCase {
 }
 
 class ProductionHandler : ProductionUseCase {
-    var fp: FactoryProduction!
+    internal var fp: FactoryProduction!
     internal var spendingDelegate: Spender?
     internal var increaserDelegate: Increaser?
 
@@ -34,10 +34,14 @@ class ProductionHandler : ProductionUseCase {
 
     func spend(amount: Int) throws -> Int {
         do {
-            guard let result = try self.spendingDelegate?.spend(amount: amount) else {
+            if let result = try self.spendingDelegate?.spend(amount: amount) {
+                fp.units = result
+                fp.spent += amount
+                return result
+            }
+            else {
                 throw SpendingError.cannotSpend(amount)
             }
-            return result
         }
         catch {
             throw error
@@ -45,6 +49,8 @@ class ProductionHandler : ProductionUseCase {
     }
 
     func reset() {
+        self.fp.units = self.fp.spent
+        self.fp.spent = 0
     }
 
     func shift() {

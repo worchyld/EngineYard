@@ -53,16 +53,56 @@ class ProductionHandlerTests: XCTestCase {
 
         let result = try handler.spend(amount: amount)
         XCTAssertEqual(result, 0)
+        XCTAssertEqual(fp.spent, 1)
     }
 
-    func testProductionSpendsPositiveValue() throws {
-        let fp = FactoryProduction(id: UUID(), units: 3)
+    func testProductionWhenSpending_IncreasedSpentAmount() throws {
+        let units = 3
+        let spend = 1
+        let expected = (units - spend)
+        let fp = FactoryProduction(id: UUID(), units: units)
         let handler = ProductionHandler.init(with: fp)
-        let amount = 1
 
-        let result = try handler.spend(amount: amount)
-        XCTAssertEqual(result, 2)
+        let result = try handler.spend(amount: spend)
+        XCTAssertEqual(result, expected)
+        XCTAssertEqual(fp.spent, spend)
     }
 
+    func testProductionSpendMultipleToZero() throws {
+        let units = 5
+        let fp = FactoryProduction(id: UUID(), units: units)
+        let handler = ProductionHandler.init(with: fp)
+        let _ = try handler.spend(amount: 1)
+        let _ = try handler.spend(amount: 1)
+        let _ = try handler.spend(amount: 1)
+        let _ = try handler.spend(amount: 1)
+        let _ = try handler.spend(amount: 1)
+        XCTAssertEqual(fp.units, 0)
+        XCTAssertEqual(fp.spent, 5)
+
+        XCTAssertThrowsError( try handler.spend(amount: 1) ) { error in
+            XCTAssertEqual(error as! SpendingError, SpendingError.notEnoughFunds(0) )
+        }
+    }
+
+    func testProductionDidReset() throws {
+        let units = 5
+        let fp = FactoryProduction(id: UUID(), units: units)
+        let handler = ProductionHandler.init(with: fp)
+        let _ = try handler.spend(amount: 1)
+        let _ = try handler.spend(amount: 1)
+        let _ = try handler.spend(amount: 1)
+        let _ = try handler.spend(amount: 1)
+        let _ = try handler.spend(amount: 1)
+
+        XCTAssertEqual(fp.units, 0)
+        XCTAssertEqual(fp.spent, 5)
+
+        handler.reset()
+
+        XCTAssertEqual(fp.units, 5)
+        XCTAssertEqual(fp.spent, 0)
+
+    }
 
 }
