@@ -17,17 +17,17 @@ protocol ProductionUseCase {
     func shift()
 }
 
-protocol FactoryProductionInputDelegate: AnyObject {
+protocol FactoryProductionUnitsDelegate: AnyObject {
     var units: Int { get set }
     var spent: Int { get set }
 }
 
 class ProductionHandler : ProductionUseCase {
-    internal var fp: FactoryProductionInputDelegate!
+    internal var fp: FactoryProductionUnitsDelegate!
     internal var spendingDelegate: Spender!
     internal var increaserDelegate: Increaser!
 
-    init(with fp: FactoryProductionInputDelegate) {
+    init(with fp: FactoryProductionUnitsDelegate) {
         self.fp = fp
         self.spendingDelegate = Spender(fp.units)
         self.increaserDelegate = Increaser(fp.units)
@@ -81,7 +81,7 @@ class ProductionHandler : ProductionUseCase {
 }
 
 
-internal extension FactoryProductionInputDelegate {
+internal extension FactoryProductionUnitsDelegate {
 
     func increase(by amount: Int) {
         precondition(amount.isPositive, "To increase production, amount must be positive")
