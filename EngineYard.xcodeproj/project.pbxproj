@@ -43,6 +43,7 @@
 		4D42DBEE24A7A78C00B8FF68 /* cards.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D42DBED24A7A78C00B8FF68 /* cards.json */; };
 		4D42DBF224A7D0B200B8FF68 /* TrainProductionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D42DBF124A7D0B200B8FF68 /* TrainProductionTests.swift */; };
 		4D42DBF424A7D20300B8FF68 /* ProductionHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D42DBF324A7D20300B8FF68 /* ProductionHandlerTests.swift */; };
+		4D42DBF624A8A02800B8FF68 /* TrainHasOrdersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D42DBF524A8A02800B8FF68 /* TrainHasOrdersTests.swift */; };
 		4D49D2632499F9D9000E857F /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D49D2622499F9D9000E857F /* AvatarView.swift */; };
 		4D49D2672499FE2C000E857F /* EY+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D49D2662499FE2C000E857F /* EY+Identifier.swift */; };
 		4D54250C249D5B16004B97A8 /* Spending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D54250B249D5B16004B97A8 /* Spending.swift */; };
@@ -116,6 +117,7 @@
 		4D42DBED24A7A78C00B8FF68 /* cards.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cards.json; sourceTree = "<group>"; };
 		4D42DBF124A7D0B200B8FF68 /* TrainProductionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainProductionTests.swift; sourceTree = "<group>"; };
 		4D42DBF324A7D20300B8FF68 /* ProductionHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionHandlerTests.swift; sourceTree = "<group>"; };
+		4D42DBF524A8A02800B8FF68 /* TrainHasOrdersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainHasOrdersTests.swift; sourceTree = "<group>"; };
 		4D49D2622499F9D9000E857F /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		4D49D2662499FE2C000E857F /* EY+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Identifier.swift"; sourceTree = "<group>"; };
 		4D54250B249D5B16004B97A8 /* Spending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spending.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				4D42DBEB24A7A6BA00B8FF68 /* BoardCreationTests.swift */,
 				4D42DBF124A7D0B200B8FF68 /* TrainProductionTests.swift */,
 				4D42DBF324A7D20300B8FF68 /* ProductionHandlerTests.swift */,
+				4D42DBF524A8A02800B8FF68 /* TrainHasOrdersTests.swift */,
 			);
 			path = EngineYardTests;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				4DA1C14D2486F43E004C4121 /* TaxTests.swift in Sources */,
 				4D34A86B2495A61D00590EFD /* WinnerTests.swift in Sources */,
 				4D6BA93A249D41A200167E68 /* IntTests.swift in Sources */,
+				4D42DBF624A8A02800B8FF68 /* TrainHasOrdersTests.swift in Sources */,
 				4D42DBF224A7D0B200B8FF68 /* TrainProductionTests.swift in Sources */,
 				4D42DBEC24A7A6BA00B8FF68 /* BoardCreationTests.swift in Sources */,
 				4D9BCA7524A6200E00C637EB /* IncreaserTests.swift in Sources */,
