@@ -105,4 +105,23 @@ class BoardCreationTests: XCTestCase {
         let _ = board.map { XCTAssertNil($0?.initialOrder) }
     }
 
+    func testTrainsHaveProductionCostAndIncome() throws {
+        let bundle = Bundle(for: type(of: self))
+        let trainGame = TrainGame()
+
+        try trainGame.start(bundle)
+
+        XCTAssertNotNil(trainGame.board)
+        guard let board =  trainGame.board else {
+            XCTFail("Board doesn't exist")
+            return
+        }
+
+        let _ = board.compactMap { $0.flatMap {
+            XCTAssertEqual( $0.cost % 4, 0 )
+            XCTAssertEqual( $0.productionCost, Int($0.cost / 2) )
+            XCTAssertEqual( $0.income, Int($0.productionCost / 2) )
+        } }
+    }
+
 }
