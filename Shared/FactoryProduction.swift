@@ -9,8 +9,8 @@
 import Foundation
 
 protocol FactoryProductionUnitsDelegate: AnyObject {
-    var units: Int { get  }
-    var spent: Int { get  }
+    var units: Int { get set }
+    var spent: Int { get set }
 }
 
 class FactoryProduction : Identifiable, Codable, FactoryProductionUnitsDelegate {
