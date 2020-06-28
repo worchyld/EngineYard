@@ -9,8 +9,8 @@
 import Foundation
 
 enum TrainError : Error, Equatable {
-    case trainDoesNotExist(train: Train)
-    case trainIsNotAvailable(train: Train)
+    case trainDoesNotExist
+    case trainIsNotAvailable
     case trainHasRusted(train: Train)
     case trainCannotBePurchased(train: Train)
     case trainHasNoExistingOrders(train: Train)
@@ -24,6 +24,7 @@ protocol LocomotiveDelegate {
     var id: UUID { get }
     var name: String { get }
     var cost: Int { get }
+    var productionCost: Int { get }
     var income: Int { get }
     var livery : Livery { get }
     var generation : Generation { get }
@@ -41,9 +42,11 @@ struct Train: Codable, Identifiable, Equatable, LocomotiveDelegate {
     var available: Bool
     var rusting : Rusting
     let maxDice: Int
+
     var initialOrder: Int?
     var existingOrders: [Int]?
     var completedOrders: [Int]?
+
     var factoryProduction: [FactoryProduction]?
 
     private enum CodingKeys: String, CodingKey {
@@ -64,6 +67,24 @@ extension Train {
     var income: Int {
         guard (cost % 4 == 0) else { return 0 }
         return Int( floor(Double(productionCost / 2)) )
+    }
+}
+
+extension Train {
+    func hasOrders() -> Bool {
+        var flag = false
+        if let initialOrder = self.initialOrder {
+            if initialOrder > 0 {
+                flag = true
+            }
+        }
+        if let existingOrders = self.existingOrders {
+            flag = (existingOrders.reduce(0, +) > 0)
+        }
+        if let completedOrders = self.completedOrders {
+            flag = (completedOrders.reduce(0, +) > 0)
+        }
+        return flag
     }
 }
 
