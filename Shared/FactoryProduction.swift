@@ -8,12 +8,7 @@
 
 import Foundation
 
-protocol FactoryProductionUnitsDelegate: AnyObject {
-    var units: Int { get set }
-    var spent: Int { get set }
-}
-
-class FactoryProduction : Identifiable, Codable, FactoryProductionUnitsDelegate {
+class FactoryProduction : Identifiable, Codable {
     let id: UUID
     var units: Int
     var spent: Int

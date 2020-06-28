@@ -26,7 +26,7 @@ class TrainHasOrdersTests: XCTestCase {
     }
 
     func testTrainHasOrders_InitialOrderIsPositive() {
-        var train = Fixtures.fakeTrain
+        let train = Fixtures.fakeTrain
         XCTAssertNil(train.initialOrder)
         train.initialOrder = Die.roll
         XCTAssertNotNil(train.initialOrder)
@@ -37,7 +37,7 @@ class TrainHasOrdersTests: XCTestCase {
     }
 
     func testTrainHasOrders_ExistingOrdersArePositive() {
-        var train: Train = {
+        let train: Train = {
             return Train.init(id: UUID(),
                               name: "green-1", avatar: "green-1.png",
                               cost: 4, trainPool: 3,
@@ -58,7 +58,7 @@ class TrainHasOrdersTests: XCTestCase {
     }
 
     func testTrainHasOrders_CompletedOrdersArePositive() {
-        var train: Train = {
+        let train: Train = {
             return Train.init(id: UUID(),
                               name: "green-1", avatar: "green-1.png",
                               cost: 4, trainPool: 3,
