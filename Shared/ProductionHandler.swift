@@ -18,14 +18,57 @@ protocol ProductionUseCase {
 }
 
 protocol FactoryProductionInjector: AnyObject {
-    var fp : FactoryProduction { get }
+    var fp : FactoryProductionUnitsDelegate { get }
+    var trainDelegate: LocomotiveDelegate? { get }
+    var playerDelegate: PlayerDelegate? { get }
+
+    var costOfProduction: Int? { get }
+    var isTrainAvailable: Bool { get }
+
+    func spend(production: Int) -> Int
+    func increase(production: Int) -> Int
+    func reset()
 }
 
 class FactoryProductionInjected : FactoryProductionInjector {
-    var fp: FactoryProduction
+    var fp: FactoryProductionUnitsDelegate
+    var trainDelegate: LocomotiveDelegate?
+    var playerDelegate: PlayerDelegate?
 
-    init(fp: FactoryProduction) {
+    var costOfProduction: Int? {
+        guard let cost = self.trainDelegate?.productionCost else {
+           return nil
+       }
+       return cost
+    }
+
+    var isTrainAvailable: Bool {
+        guard let trainDelegate = self.trainDelegate else {
+            return false
+        }
+        return trainDelegate.available
+    }
+
+    init(fp: FactoryProductionUnitsDelegate, train: LocomotiveDelegate? = nil, player: PlayerDelegate? = nil ) {
         self.fp = fp
+        self.playerDelegate = player
+        self.trainDelegate = train
+    }
+
+    internal func spend(production: Int) -> Int {
+        self.fp.units -= production
+        self.fp.spent += production
+        return self.fp.units
+    }
+
+    internal func increase(production: Int) -> Int {
+        self.fp.units += production
+        return self.fp.units
+    }
+
+    internal func reset() {
+        self.fp.units = self.fp.spent
+        self.fp.spent = 0
     }
 }
 
@@ -48,12 +91,23 @@ class ProductionHandler : ProductionUseCase {
     // Increase production by amount
     func increase(by amount: Int) throws -> Int {
         do {
-            if try self.increaserDelegate.canIncrease(by: amount) {
-                //self.fp.increase(by: amount)
-                //return self.fp.units
 
-                self.fpi.fp.units += amount
-                return self.fpi.fp.units
+            if let playerDelegate = self.fpi.playerDelegate {
+                // Do I have the cash to increase
+                guard playerDelegate.cash > amount else {
+                    throw SpendingError.notEnoughFunds(playerDelegate.cash)
+                }
+            }
+            if let trainDelegate = self.fpi.trainDelegate {
+                // Is the train available
+                guard trainDelegate.available else {
+                    throw TrainError.trainIsNotAvailable
+                }
+            }
+
+            if try self.increaserDelegate.canIncrease(by: amount) {
+
+                return self.fpi.increase(production: amount)
             }
             else {
                 throw SpendingError.invalidAmount
@@ -67,14 +121,9 @@ class ProductionHandler : ProductionUseCase {
     // Spend production units
     func spend(amount: Int) throws -> Int {
         do {
-            if let result = try self.spendingDelegate?.spend(amount: amount) {
-                //self.fp.spend(amount: amount)
-                //return result
+            if let _ = try self.spendingDelegate?.spend(amount: amount) {
 
-                self.fpi.fp.units -= amount
-                self.fpi.fp.spent += amount
-
-                return result
+                return self.fpi.spend(production: amount)
             }
             else {
                 throw SpendingError.cannotSpend(amount)
@@ -86,9 +135,7 @@ class ProductionHandler : ProductionUseCase {
     }
 
     func reset() {
-        //self.fp.reset()
-        self.fpi.fp.units = self.fpi.fp.spent
-        self.fpi.fp.spent = 0
+        self.fpi.reset()
     }
 
     func shift() {
