@@ -88,6 +88,7 @@ class ProductionHandlerTests: XCTestCase {
         XCTAssertEqual(fp.units, 0)
         XCTAssertEqual(fp.spent, 5)
 
+        // spend 1 more should throw error
         XCTAssertThrowsError( try handler.spend(amount: 1) ) { error in
             XCTAssertEqual(error as! SpendingError, SpendingError.notEnoughFunds(0) )
         }
