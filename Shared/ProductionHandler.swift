@@ -8,67 +8,91 @@
 
 import Foundation
 
-// Production Handler use cases
+/**
+    **Production Handler**
+
+    Use cases:
+    (1) Increase factory production
+    (2) Spend factory production
+    (3) Reset factory production
+    (4) Shift factory production from 1 factory to another?
+
+    **Increase factory production**
+    Cannot be negative
+    Must have the cash to increase it
+
+    **Spend factory production**
+    Cannot be negative
+    Cannot spend more than you have
+
+    **Reset factory production**
+    Set units to spent
+    Set spent to zero
+*/
 
 protocol ProductionUseCase {
     func increase(by amount: Int) throws -> Int
     func spend(amount: Int) throws -> Int
-    func reset()
+    func reset() throws
     func shift()
 }
 
 protocol FactoryProductionInjector: AnyObject {
-    var fp : FactoryProductionUnitsDelegate { get }
-    var trainDelegate: LocomotiveDelegate? { get }
-    var playerDelegate: PlayerDelegate? { get }
+    var fp : FactoryProductionUnitsDelegate? { get }
+    var playerFactoryConnection: PlayerFactoryConnectionDelegate? { get }
 
-    var costOfProduction: Int? { get }
-    var isTrainAvailable: Bool { get }
-
-    func spend(production: Int) -> Int
-    func increase(production: Int) -> Int
-    func reset()
+    func spend(production: Int) throws -> Int
+    func increase(production: Int) throws -> Int
+    func reset() throws
 }
 
-class FactoryProductionInjected : FactoryProductionInjector {
-    var fp: FactoryProductionUnitsDelegate
+protocol PlayerFactoryConnectionDelegate {
+    var trainDelegate: LocomotiveDelegate? { get }
+    var playerDelegate: PlayerDelegate? { get }
+}
+
+class PlayerFactoryConnection: PlayerFactoryConnectionDelegate {
     var trainDelegate: LocomotiveDelegate?
     var playerDelegate: PlayerDelegate?
 
-    var costOfProduction: Int? {
-        guard let cost = self.trainDelegate?.productionCost else {
-           return nil
-       }
-       return cost
+    init(trainDelegate: LocomotiveDelegate?, playerDelegate: PlayerDelegate?) {
+        self.trainDelegate = trainDelegate
+        self.playerDelegate = playerDelegate
     }
+}
 
-    var isTrainAvailable: Bool {
-        guard let trainDelegate = self.trainDelegate else {
-            return false
-        }
-        return trainDelegate.available
-    }
+class FactoryProductionInjected : FactoryProductionInjector {
+    var fp: FactoryProductionUnitsDelegate?
+    var playerFactoryConnection: PlayerFactoryConnectionDelegate?
 
-    init(fp: FactoryProductionUnitsDelegate, train: LocomotiveDelegate? = nil, player: PlayerDelegate? = nil ) {
+    init(fp: FactoryProductionUnitsDelegate, playerFactoryConnection: PlayerFactoryConnectionDelegate? = nil) {
         self.fp = fp
-        self.playerDelegate = player
-        self.trainDelegate = train
+        self.playerFactoryConnection = playerFactoryConnection
     }
 
-    internal func spend(production: Int) -> Int {
-        self.fp.units -= production
-        self.fp.spent += production
-        return self.fp.units
+    internal func spend(production: Int) throws -> Int {
+        guard let fp = self.fp else {
+            throw NSError(domain: "Factory production link does not exist", code: 0, userInfo: nil)
+        }
+        fp.units -= production
+        fp.spent += production
+        return fp.units
     }
 
-    internal func increase(production: Int) -> Int {
-        self.fp.units += production
-        return self.fp.units
+    internal func increase(production: Int) throws -> Int {
+        guard let fp = self.fp else {
+            throw NSError(domain: "Factory production link does not exist", code: 0, userInfo: nil)
+        }
+        fp.units += production
+        return fp.units
     }
 
-    internal func reset() {
-        self.fp.units = self.fp.spent
-        self.fp.spent = 0
+    internal func reset() throws {
+        guard let fp = self.fp else {
+            throw NSError(domain: "Factory production link does not exist", code: 0, userInfo: nil)
+        }
+        fp.units = fp.spent
+        fp.spent = 0
     }
 }
 
@@ -79,8 +103,11 @@ class ProductionHandler : ProductionUseCase {
 
     init(with fpi: FactoryProductionInjector ) {
         self.fpi = fpi
-        self.spendingDelegate = Spender(fpi.fp.units)
-        self.increaserDelegate = Increaser(fpi.fp.units)
+        guard let fp = self.fpi.fp else {
+            return
+        }
+        self.spendingDelegate = Spender(fp.units)
+        self.increaserDelegate = Increaser(fp.units)
     }
 
     deinit {
@@ -91,23 +118,9 @@ class ProductionHandler : ProductionUseCase {
     // Increase production by amount
     func increase(by amount: Int) throws -> Int {
         do {
-
-            if let playerDelegate = self.fpi.playerDelegate {
-                // Do I have the cash to increase
-                guard playerDelegate.cash > amount else {
-                    throw SpendingError.notEnoughFunds(playerDelegate.cash)
-                }
-            }
-            if let trainDelegate = self.fpi.trainDelegate {
-                // Is the train available
-                guard trainDelegate.available else {
-                    throw TrainError.trainIsNotAvailable
-                }
-            }
-
             if try self.increaserDelegate.canIncrease(by: amount) {
 
-                return self.fpi.increase(production: amount)
+                return try self.fpi.increase(production: amount)
             }
             else {
                 throw SpendingError.invalidAmount
@@ -123,7 +136,7 @@ class ProductionHandler : ProductionUseCase {
         do {
             if let _ = try self.spendingDelegate?.spend(amount: amount) {
 
-                return self.fpi.spend(production: amount)
+                return try self.fpi.spend(production: amount)
             }
             else {
                 throw SpendingError.cannotSpend(amount)
@@ -134,8 +147,8 @@ class ProductionHandler : ProductionUseCase {
         }
     }
 
-    func reset() {
-        self.fpi.reset()
+    func reset() throws {
+        try self.fpi.reset()
     }
 
     func shift() {

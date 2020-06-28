@@ -12,11 +12,8 @@ import XCTest
 
 class ProductionHandlerTests: XCTestCase {
 
-    var train : Train!
-
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        self.train = Fixtures.fakeTrain
     }
 
     override func tearDownWithError() throws {
@@ -108,11 +105,40 @@ class ProductionHandlerTests: XCTestCase {
         XCTAssertEqual(fp.units, 0)
         XCTAssertEqual(fp.spent, 5)
 
-        handler.reset()
+        try handler.reset()
 
         XCTAssertEqual(fp.units, 5)
         XCTAssertEqual(fp.spent, 0)
-
     }
+
+    func testDidIncreaseProductionForTrain() throws {
+        let train: Train = {
+            let fp = FactoryProduction(id: UUID(), units: 0, 0)
+            return Train.init(id: UUID(),
+                              name: "green-1", avatar: "green-1.png",
+                              cost: 4, trainPool: 3,
+                              livery: .green, generation: .first,
+                              available: false, rusting: .new,
+                              maxDice: 3, initialOrder: nil, existingOrders: nil, completedOrders: nil, factoryProduction: [fp])
+        }()
+
+        guard let fp = train.factoryProduction?.first else {
+            throw NSError(domain: "Train has no production", code: 0, userInfo: nil)
+        }
+
+        let fpj = FactoryProductionInjected.init(fp: fp)
+        let handler = ProductionHandler.init(with: fpj)
+        let _ = try handler.increase(by: 1)
+        XCTAssertEqual( fp.units, 1)
+        XCTAssertEqual( fp.spent, 0)
+
+        XCTAssertEqual(
+            train.factoryProduction?.first?.units, 1
+        )
+        XCTAssertEqual(
+            train.factoryProduction?.first?.spent, 0
+        )
+    }
+
 
 }
