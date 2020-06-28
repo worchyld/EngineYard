@@ -17,20 +17,27 @@ protocol ProductionUseCase {
     func shift()
 }
 
-protocol FactoryProductionUnitsDelegate: AnyObject {
-    var units: Int { get set }
-    var spent: Int { get set }
+protocol FactoryProductionInjector: AnyObject {
+    var fp : FactoryProduction { get }
+}
+
+class FactoryProductionInjected : FactoryProductionInjector {
+    var fp: FactoryProduction
+
+    init(fp: FactoryProduction) {
+        self.fp = fp
+    }
 }
 
 class ProductionHandler : ProductionUseCase {
-    internal var fp: FactoryProductionUnitsDelegate
+    internal var fpi: FactoryProductionInjector!
     internal var spendingDelegate: Spender!
     internal var increaserDelegate: Increaser!
 
-    init(with fp: FactoryProductionUnitsDelegate ) {
-        self.fp = fp
-        self.spendingDelegate = Spender(fp.units)
-        self.increaserDelegate = Increaser(fp.units)
+    init(with fpi: FactoryProductionInjector ) {
+        self.fpi = fpi
+        self.spendingDelegate = Spender(fpi.fp.units)
+        self.increaserDelegate = Increaser(fpi.fp.units)
     }
 
     deinit {
@@ -42,8 +49,11 @@ class ProductionHandler : ProductionUseCase {
     func increase(by amount: Int) throws -> Int {
         do {
             if try self.increaserDelegate.canIncrease(by: amount) {
-                self.fp.increase(by: amount)
-                return self.fp.units
+                //self.fp.increase(by: amount)
+                //return self.fp.units
+
+                self.fpi.fp.units += amount
+                return self.fpi.fp.units
             }
             else {
                 throw SpendingError.invalidAmount
@@ -58,7 +68,12 @@ class ProductionHandler : ProductionUseCase {
     func spend(amount: Int) throws -> Int {
         do {
             if let result = try self.spendingDelegate?.spend(amount: amount) {
-                self.fp.spend(amount: amount)
+                //self.fp.spend(amount: amount)
+                //return result
+
+                self.fpi.fp.units -= amount
+                self.fpi.fp.spent += amount
+
                 return result
             }
             else {
@@ -71,33 +86,13 @@ class ProductionHandler : ProductionUseCase {
     }
 
     func reset() {
-        self.fp.reset()
+        //self.fp.reset()
+        self.fpi.fp.units = self.fpi.fp.spent
+        self.fpi.fp.spent = 0
     }
 
     func shift() {
 
     }
-}
-
-
-internal extension FactoryProductionUnitsDelegate {
-
-    func increase(by amount: Int) {
-        precondition(amount.isPositive, "To increase production, amount must be positive")
-        self.units += amount
-    }
-
-    func spend(amount: Int) {
-        precondition(amount.isPositive, "To spend production, amount must be positive")
-        precondition( ((units - amount) >= 0)  , "Not enough funds -- Result from spend would be negative")
-        self.units -= amount
-        self.spent += amount
-    }
-
-    func reset() {
-        self.units = self.spent
-        self.spent = 0
-    }
-
 }
 

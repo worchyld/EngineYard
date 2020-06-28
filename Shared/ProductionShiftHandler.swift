@@ -9,11 +9,11 @@
 import Foundation
 
 protocol ProductionShiftUseCase {
-    func shift()
+    //func shift()
 }
 
 class ProductionShiftHandler : ProductionShiftUseCase {
-    func shift() {
+    func shift(production: FactoryProduction ) {
 
     }
 }

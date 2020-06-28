@@ -31,7 +31,8 @@ class ProductionHandlerTests: XCTestCase {
 
     func testProductionCannotSpendZero() throws {
         let fp = FactoryProduction(id: UUID(), units: 1)
-        let handler = ProductionHandler.init(with: fp)
+        let fpj = FactoryProductionInjected.init(fp: fp)
+        let handler = ProductionHandler.init(with: fpj)
         let amount = 0
 
         XCTAssertThrowsError( try handler.spend(amount: amount) ) { error in
@@ -41,7 +42,8 @@ class ProductionHandlerTests: XCTestCase {
 
     func testProductionCannotSpendNegative() throws {
         let fp = FactoryProduction(id: UUID(), units: 1)
-        let handler = ProductionHandler.init(with: fp)
+        let fpj = FactoryProductionInjected.init(fp: fp)
+        let handler = ProductionHandler.init(with: fpj)
         let amount = -1
 
         XCTAssertThrowsError( try handler.spend(amount: amount) ) { error in
@@ -51,7 +53,8 @@ class ProductionHandlerTests: XCTestCase {
 
     func testProductionSpendsToZero() throws {
         let fp = FactoryProduction(id: UUID(), units: 1)
-        let handler = ProductionHandler.init(with: fp)
+        let fpj = FactoryProductionInjected.init(fp: fp)
+        let handler = ProductionHandler.init(with: fpj)
         let amount = 1
 
         let result = try handler.spend(amount: amount)
@@ -64,7 +67,8 @@ class ProductionHandlerTests: XCTestCase {
         let spend = 1
         let expected = (units - spend)
         let fp = FactoryProduction(id: UUID(), units: units)
-        let handler = ProductionHandler.init(with: fp)
+        let fpj = FactoryProductionInjected.init(fp: fp)
+        let handler = ProductionHandler.init(with: fpj)
 
         let result = try handler.spend(amount: spend)
         XCTAssertEqual(result, expected)
@@ -74,7 +78,8 @@ class ProductionHandlerTests: XCTestCase {
     func testProductionSpendMultipleToZero() throws {
         let units = 5
         let fp = FactoryProduction(id: UUID(), units: units)
-        let handler = ProductionHandler.init(with: fp)
+        let fpj = FactoryProductionInjected.init(fp: fp)
+        let handler = ProductionHandler.init(with: fpj)
         let _ = try handler.spend(amount: 1)
         let _ = try handler.spend(amount: 1)
         let _ = try handler.spend(amount: 1)
@@ -91,7 +96,8 @@ class ProductionHandlerTests: XCTestCase {
     func testProductionDidReset() throws {
         let units = 5
         let fp = FactoryProduction(id: UUID(), units: units)
-        let handler = ProductionHandler.init(with: fp)
+        let fpj = FactoryProductionInjected.init(fp: fp)
+        let handler = ProductionHandler.init(with: fpj)
         let _ = try handler.spend(amount: 1)
         let _ = try handler.spend(amount: 1)
         let _ = try handler.spend(amount: 1)
