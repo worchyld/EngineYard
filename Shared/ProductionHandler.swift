@@ -11,8 +11,8 @@ import Foundation
 // Production Handler use cases
 
 protocol ProductionUseCase {
-    //func increase()
-    //func spend()
+    func increase(by amount: Int) throws -> Int
+    func spend(amount: Int) throws -> Int
     func reset()
     func shift()
 }
@@ -23,18 +23,17 @@ protocol FactoryProductionUnitsDelegate: AnyObject {
 }
 
 class ProductionHandler : ProductionUseCase {
-    internal var fp: FactoryProductionUnitsDelegate!
+    internal var fp: FactoryProductionUnitsDelegate
     internal var spendingDelegate: Spender!
     internal var increaserDelegate: Increaser!
 
-    init(with fp: FactoryProductionUnitsDelegate) {
+    init(with fp: FactoryProductionUnitsDelegate ) {
         self.fp = fp
         self.spendingDelegate = Spender(fp.units)
         self.increaserDelegate = Increaser(fp.units)
     }
 
     deinit {
-        self.fp = nil
         self.spendingDelegate = nil
         self.increaserDelegate = nil
     }

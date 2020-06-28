@@ -24,6 +24,7 @@ protocol LocomotiveDelegate {
     var id: UUID { get }
     var name: String { get }
     var cost: Int { get }
+    var income: Int { get }
     var livery : Livery { get }
     var generation : Generation { get }
     var rusting : Rusting { get }
@@ -51,6 +52,18 @@ struct Train: Codable, Identifiable, Equatable, LocomotiveDelegate {
         case available, rusting, maxDice
         case initialOrder, existingOrders, completedOrders
         case factoryProduction
+    }
+}
+
+extension Train {
+    var productionCost: Int {
+        guard (self.cost % 4 == 0) else { return 0 }
+        return Int( floor(Double(self.cost / 2)) )
+    }
+
+    var income: Int {
+        guard (cost % 4 == 0) else { return 0 }
+        return Int( floor(Double(productionCost / 2)) )
     }
 }
 
