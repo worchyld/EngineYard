@@ -16,14 +16,9 @@ class ProductionHandler {
         return production
     }
 
-    func increase(amount: Int, on subject: FactoryProduction, train: TrainDelegate, player: PlayerDelegate) throws -> FactoryProduction {
-
-        return subject
-
+    func increase() {
     }
 
-    func spend(amount: Int, on subject: FactoryProduction, train: TrainDelegate ) throws -> FactoryProduction {
-
-        return subject
+    func spend() {
     }
 }
