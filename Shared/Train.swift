@@ -32,8 +32,9 @@ class Train: Codable, Identifiable, Equatable, TrainDelegate {
     let cost, trainPool: Int
     let livery : Livery
     let generation : Generation
+    /// A `train` is considered unavailable if it is `rusted` or if it has no `orders`
     lazy var available: Bool = {
-        return self.hasOrders()
+        return (self.hasOrders()) && (self.rusting != .rusted)
     }()
     var rusting : Rusting
     let maxDice: Int
