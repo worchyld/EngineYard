@@ -88,6 +88,8 @@ public enum CardErrorReason : Equatable {
 
 /// Enum listing reasons why production manipulation could fail
 public enum ProductionErrorReason : Equatable {
+    /// Production handler is missing
+    case missingHandler
     /// The production cannot be negative
     case mustBePositive
     /// Not enough units, result could be negative

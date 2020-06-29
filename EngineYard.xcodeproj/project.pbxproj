@@ -35,6 +35,7 @@
 		4D34A86B2495A61D00590EFD /* WinnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D34A86A2495A61D00590EFD /* WinnerTests.swift */; };
 		4D3BE04B249FD07C009C203E /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE04A249FD07C009C203E /* Wallet.swift */; };
 		4D3BE05A249FF05E009C203E /* WalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE059249FF05E009C203E /* WalletTests.swift */; };
+		4D3BE3A124AA6D0200DE8787 /* ShiftProductionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE3A024AA6D0200DE8787 /* ShiftProductionHandler.swift */; };
 		4D42DBE424A7A15600B8FF68 /* FactoryProduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D42DBE324A7A15600B8FF68 /* FactoryProduction.swift */; };
 		4D42DBE624A7A45200B8FF68 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D42DBE524A7A45200B8FF68 /* DataLoader.swift */; };
 		4D42DBE824A7A5CC00B8FF68 /* MetaDecodedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D42DBE724A7A5CC00B8FF68 /* MetaDecodedTests.swift */; };
@@ -107,6 +108,7 @@
 		4D3BE059249FF05E009C203E /* WalletTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletTests.swift; sourceTree = "<group>"; };
 		4D3BE05C249FF1C4009C203E /* board.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = board.json; sourceTree = "<group>"; };
 		4D3BE05E249FF1E1009C203E /* Train.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Train.swift; sourceTree = "<group>"; };
+		4D3BE3A024AA6D0200DE8787 /* ShiftProductionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftProductionHandler.swift; sourceTree = "<group>"; };
 		4D42DBE324A7A15600B8FF68 /* FactoryProduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryProduction.swift; sourceTree = "<group>"; };
 		4D42DBE524A7A45200B8FF68 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		4D42DBE724A7A5CC00B8FF68 /* MetaDecodedTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaDecodedTests.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				4D3BE05E249FF1E1009C203E /* Train.swift */,
 				4D42DBE324A7A15600B8FF68 /* FactoryProduction.swift */,
 				4D42DBF724A9122700B8FF68 /* ProductionHandler.swift */,
+				4D3BE3A024AA6D0200DE8787 /* ShiftProductionHandler.swift */,
 				4D1C72F224A0F323009CAA3A /* Rusting.swift */,
 				4D238C4C24A058AD0031E3EE /* Livery.swift */,
 				4D238C4F24A059430031E3EE /* Generation.swift */,
@@ -413,6 +416,7 @@
 				4D1C730124A1C898009CAA3A /* EY+Bundle.swift in Sources */,
 				4D9FC8B724AA0B6B002E5FB4 /* GameErrors.swift in Sources */,
 				4DA1C1402486ECF3004C4121 /* Sounds.swift in Sources */,
+				4D3BE3A124AA6D0200DE8787 /* ShiftProductionHandler.swift in Sources */,
 				4D10C58A2486D08400238508 /* SceneDelegate.swift in Sources */,
 				4D42DBE624A7A45200B8FF68 /* DataLoader.swift in Sources */,
 				4DA1C1442486ED8C004C4121 /* EY+FlatColor.swift in Sources */,
