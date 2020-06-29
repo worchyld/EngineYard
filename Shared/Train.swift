@@ -9,18 +9,49 @@
 import Foundation
 
 enum TrainError : Error, Equatable {
+    static func == (lhs: TrainError, rhs: TrainError) -> Bool {
+        switch (lhs, rhs) {
+        case (.trainDoesNotExist, .trainDoesNotExist):
+            return true
+        case (.trainIsNotAvailable, .trainIsNotAvailable):
+            return true
+        case (.trainHasRusted(train: let lhsType), .trainHasRusted(train: let rhsType)):
+            return lhsType.id == rhsType.id
+        case (.trainCannotBePurchased(train: let lhsType), .trainCannotBePurchased(train: let rhsType)):
+            return lhsType.id == rhsType.id
+        case (.trainHasNoExistingOrders(train: let lhsType), .trainHasNoExistingOrders(train: let rhsType)):
+            return lhsType.id == rhsType.id
+        case (.trainHasNoCompletedOrders(train: let lhsType), .trainHasNoCompletedOrders(train: let rhsType)):
+            return lhsType.id == rhsType.id
+        case (.trainHasNoInitialOrder(train: let lhsType), .trainHasNoInitialOrder(train: let rhsType)):
+            return lhsType.id == rhsType.id
+        case (.trainHasNoOrders(train: let lhsType), .trainHasNoOrders(train: let rhsType)):
+            return lhsType.id == rhsType.id
+        case (.cannotShiftProductionTo(destination: let lhsType), .cannotShiftProductionTo(destination: let rhsType)):
+            return lhsType.id == rhsType.id
+        case (.alreadyHaveThisTrain(train: let lhsType), .alreadyHaveThisTrain(train: let rhsType)):
+            return lhsType.id == rhsType.id
+        case (.trainYouDoNotOwnThisCard(card: let lhsType), .trainYouDoNotOwnThisCard(card: let rhsType)):
+            return (lhsType.id == rhsType.id)
+        default:
+            return false
+        }
+    }
+
     case trainDoesNotExist
     case trainIsNotAvailable
-    case trainHasRusted(train: Train)
-    case trainCannotBePurchased(train: Train)
-    case trainHasNoExistingOrders(train: Train)
-    case trainHasNoCompletedOrders(train: Train)
-    case trainHasNoInitialOrder(train: Train)
-    case cannotShiftProductionFrom(origin: Train, destination: Train)
-    case alreadyHaveThisTrain(_ train: Train)
+    case trainHasRusted(train: TrainDelegate)
+    case trainCannotBePurchased(train: TrainDelegate)
+    case trainHasNoExistingOrders(train: TrainDelegate)
+    case trainHasNoCompletedOrders(train: TrainDelegate)
+    case trainHasNoInitialOrder(train: TrainDelegate)
+    case trainHasNoOrders(train: TrainDelegate)
+    case cannotShiftProductionTo(destination: TrainDelegate)
+    case alreadyHaveThisTrain(_ train: TrainDelegate)
+    case trainYouDoNotOwnThisCard(card: FactoryProduction)
 }
 
-protocol LocomotiveDelegate {
+protocol TrainDelegate {
     var id: UUID { get }
     var name: String { get }
     var cost: Int { get }
@@ -30,10 +61,15 @@ protocol LocomotiveDelegate {
     var generation : Generation { get }
     var rusting : Rusting { get }
     var available : Bool { get }
+    var initialOrder: Int? { get }
+    var existingOrders: [Int]? { get }
+    var completedOrders: [Int]? { get }
+    var factoryProduction: [FactoryProduction]? { get }
+    func hasOrders() -> Bool
 }
 
 // MARK: - Train
-class Train: Codable, Identifiable, Equatable, LocomotiveDelegate {
+class Train: Codable, Identifiable, Equatable, TrainDelegate {
     let id : UUID
     let name, avatar: String
     let cost, trainPool: Int

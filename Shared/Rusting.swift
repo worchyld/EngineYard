@@ -12,3 +12,5 @@ import Foundation
 enum Rusting : Int, Codable, CaseIterable {
     case new = 0, rusting, rusted
 }
+
+
