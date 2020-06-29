@@ -88,7 +88,7 @@ extension Wallet {
     func canAdd(amount: Int) throws -> Bool {
         guard amount.isPositive else {
            //throw SpendingError.mustBePositive(amount)
-            throw SpendingMoneyError(reason: .mustBePositive) 
+            throw SpendingMoneyError(reason: .mustBePositive)
         }
         return true
     }

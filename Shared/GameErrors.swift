@@ -76,12 +76,14 @@ public enum TrainErrorReason : Equatable {
 
 /// Enum listing reasons for card manipulation could fail
 public enum CardErrorReason : Equatable {
-    /// The card cannot be found
-    case missing
+    /// A specific card cannot be found
+    case missingCard
+    /// No cards can be found
+    case noCardsFound
     /// The card is the same card
-    case samecard
+    case sameCard
     /// The card is not owned by you
-    case notyours
+    case notYours
 }
 
 /// Enum listing reasons why production manipulation could fail
@@ -123,7 +125,7 @@ public typealias BoardError = GameError<BoardErrorReason>
 public typealias LocomotiveError = GameError<TrainErrorReason>
 /// Error thrown by card operations - such as card is missing
 public typealias CardError = GameError<CardErrorReason>
-/// Error thrown by money/cash operations - such as not enough funds
-public typealias SpendingMoneyError = GameError<SpendingMoneyErrorReason>
 /// Error thrown by production - such as cannot spend negative production units
 public typealias ProductionError = GameError<ProductionErrorReason>
+/// Error thrown by money/cash operations - such as not enough funds
+public typealias SpendingMoneyError = GameError<SpendingMoneyErrorReason>
