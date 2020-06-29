@@ -8,19 +8,25 @@
 
 import Foundation
 
+typealias Card = FactoryProduction
+
 class FactoryProduction : Identifiable, Codable {
+    private(set) weak var parent: Train?
+    private(set) weak var owner: Player?
     let id: UUID
     var units: Int
     var spent: Int
+    var deleted: Bool
 
     init(id: UUID, units: Int = 0, _ spent: Int = 0) {
         self.id = id
         self.units = units
         self.spent = spent
+        self.deleted = false
     }
 
     private enum CodingKeys: String, CodingKey {
-        case id, units, spent
+        case id, units, spent, deleted
     }
 }
 
@@ -32,6 +38,6 @@ extension FactoryProduction : Equatable {
 
 extension FactoryProduction : CustomStringConvertible {
     var description: String {
-        return ("units: \(self.units), spent: \(spent)")
+        return ("units: \(self.units), spent: \(spent), deleted: \(deleted)")
     }
 }
