@@ -18,18 +18,10 @@ protocol ValidateSpending {
     func canSpend(amount: Int) throws -> Bool
 }
 
-enum SpendingError : Error, Equatable {
-    case mustBePositive(_ amount: Int)
-    case notEnoughFunds(_ amount: Int)
-    case cannotSpend(_ amount: Int)
-    case invalidAmount
-    case invalidAccount
-    case unknown
-}
-
 protocol SpendingUseCase {
     func spend(amount: Int) throws -> Int
 }
+
 
 class Spender : ValidateSpending, SpendingUseCase {
     private (set) var value : Int
@@ -48,13 +40,16 @@ class Spender : ValidateSpending, SpendingUseCase {
 
     func canSpend(amount: Int) throws -> Bool {
         guard amount.isPositive else {
-            throw SpendingError.mustBePositive(amount)
+            //throw SpendingError.mustBePositive(amount)
+            throw SpendingMoneyError(reason: .mustBePositive)
         }
         guard value.isPositive else {
-            throw SpendingError.notEnoughFunds(value)
+            //throw SpendingError.notEnoughFunds(value)
+            throw SpendingMoneyError(reason: .mustBePositive)
         }
         guard ((value - amount) >= 0) else {
-            throw SpendingError.cannotSpend(amount)
+            //throw SpendingError.cannotSpend(amount)
+            throw SpendingMoneyError(reason: .notEnoughFunds(amount: amount))
         }
         return true
     }
@@ -81,35 +76,9 @@ class Increaser : ValidateIncrease, IncreaserUseCase {
 
     func canIncrease(by amount: Int) throws -> Bool {
         guard amount.isPositive else {
-            throw SpendingError.mustBePositive(amount)
+            //throw SpendingError.mustBePositive(amount)
+            throw SpendingMoneyError(reason: .mustBePositive)
         }
         return true
     }
 }
-
-
-// spending: localized error
-extension SpendingError : LocalizedError {
-    public var errorDescription: String? {
-        switch self {
-        case let .mustBePositive(amount):
-            return "#{\(amount)} is not valid amount to spend"
-
-        case let .notEnoughFunds(amount):
-            return "Cannot spend #{\(amount)}"
-
-        case let .cannotSpend(amount):
-            return "Cannot spend #{\(amount)}"
-
-        case .invalidAmount:
-            return "Invalid amount"
-
-        case .invalidAccount:
-            return "Player account is invalid"
-
-        case .unknown:
-            return "SpendingError - Unknown error"
-        }
-    }
-}
-

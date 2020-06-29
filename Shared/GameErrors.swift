@@ -8,6 +8,12 @@
 
 import Foundation
 
+/// Implement the `==` operator as required by protocol `Equatable`.
+public func ==(lhs: Error, rhs: Error) -> Bool {
+    return lhs._domain == rhs._domain
+        && lhs._code   == rhs._code
+}
+
 /// Error type thrown by all of Files' throwing APIs.
 public struct GameError<Reason>: Error {
 
@@ -31,7 +37,7 @@ extension GameError: CustomStringConvertible {
 }
 
 /// Data specific errors
-public enum DataErrorReason {
+public enum DataErrorReason : Equatable {
     /// The game data file is missing
     case missing
     /// The save failed
@@ -42,14 +48,14 @@ public enum DataErrorReason {
 
 
 /// Errors for Board
-public enum BoardErrorReason {
+public enum BoardErrorReason : Equatable {
     /// The board is missing
     case missing
 }
 
 
 /// Enum listing reasons that a train manipulation could fail.
-public enum TrainErrorReason {
+public enum TrainErrorReason : Equatable {
     /// The train cannot be found
     case missing
     /// The train is not available
@@ -69,7 +75,7 @@ public enum TrainErrorReason {
 }
 
 /// Enum listing reasons for card manipulation could fail
-public enum CardErrorReason {
+public enum CardErrorReason : Equatable {
     /// The card cannot be found
     case missing
     /// The card is the same card
@@ -79,9 +85,9 @@ public enum CardErrorReason {
 }
 
 /// Enum listing reasons why production manipulation could fail
-public enum ProductionErrorReason {
+public enum ProductionErrorReason : Equatable {
     /// The production cannot be negative
-    case negative
+    case mustBePositive
     /// Not enough units, result could be negative
     case notEnoughProduction
     /// Cannot shift production from `origin` card to `destination` card
@@ -89,12 +95,24 @@ public enum ProductionErrorReason {
 }
 
 /// Enum listing reasons that cash/money manipulation could fail
-public enum SpendingMoneyErrorReason {
+public enum SpendingMoneyErrorReason : Equatable {
     /// The amount spent cannot be negative
-    case negative
+    case mustBePositive
     /// Must have enough to spend  amount
     case notEnoughFunds(amount: Int)
 }
+
+/*
+extension SpendingMoneyErrorReason : CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .mustBePositive:
+            return NSLocalizedString("Value cannot be negative", comment: "error.valueIsNegative")
+        case .notEnoughFunds(let amount):
+            return NSLocalizedString("Not enough funds to spend \(amount)", comment: "error.notEnoughFunds")
+        }
+    }
+}*/
 
 /// Error thrown by data operations - such as data is missing, cannot save, cannot load
 public typealias DataError = GameError<DataErrorReason>

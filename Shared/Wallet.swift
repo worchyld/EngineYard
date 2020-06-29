@@ -69,13 +69,16 @@ extension Wallet {
     // can deduct balance by spending amount
     func canDeduct(balance: Int, bySpending amount: Int) throws -> Bool {
         guard balance.isPositive else {
-            throw SpendingError.notEnoughFunds(balance)
+            //throw SpendingError.notEnoughFunds(balance)
+            throw SpendingMoneyError(reason: .notEnoughFunds(amount: balance))
         }
         guard amount.isPositive else {
-            throw SpendingError.mustBePositive(amount)
+            //throw SpendingError.mustBePositive(amount)
+            throw SpendingMoneyError(reason: .notEnoughFunds(amount: amount))
         }
         guard ((balance - amount) >= 0) else {
-            throw SpendingError.cannotSpend(amount)
+            //throw SpendingError.cannotSpend(amount)
+            throw SpendingMoneyError(reason: .notEnoughFunds(amount: amount))
         }
         return true
     }
@@ -84,7 +87,8 @@ extension Wallet {
     // Can add cash?
     func canAdd(amount: Int) throws -> Bool {
         guard amount.isPositive else {
-           throw SpendingError.mustBePositive(amount)
+           //throw SpendingError.mustBePositive(amount)
+            throw SpendingMoneyError(reason: .mustBePositive) 
         }
         return true
     }

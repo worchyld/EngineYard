@@ -43,8 +43,14 @@ class WalletTests: XCTestCase {
         let wallet = Wallet()
         let amount = 0
 
-        XCTAssertThrowsError(try wallet.credit(account: player, amount: amount) ) { error in
-            XCTAssertEqual(error as! SpendingError, SpendingError.mustBePositive(amount) )
+        do {
+            let _ = try wallet.credit(account: player, amount: amount)
+            XCTFail("Wallet succeeded, but was expected to fail.")
+        } catch let error as GameError<SpendingMoneyErrorReason> {
+            XCTAssertEqual(error.reason, SpendingMoneyErrorReason.mustBePositive)
+        }
+        catch {
+            XCTFail("Error caught: \(error)")
         }
     }
 
@@ -53,8 +59,15 @@ class WalletTests: XCTestCase {
         let amount = 0
 
         // When wallet is 0, Fail when debiting 0
-        XCTAssertThrowsError(try wallet.debit(account: player, amount: amount) ) { error in
-            XCTAssertEqual(error as! SpendingError, SpendingError.mustBePositive(0) )
+
+        do {
+            let _ = try wallet.debit(account: player, amount: amount)
+            XCTFail("Wallet succeeded, but was expected to fail.")
+        } catch let error as GameError<SpendingMoneyErrorReason> {
+            XCTAssertEqual(error.reason, SpendingMoneyErrorReason.mustBePositive)
+        }
+        catch {
+            XCTFail("Error caught: \(error)")
         }
     }
 
@@ -62,10 +75,16 @@ class WalletTests: XCTestCase {
         let wallet = Wallet()
         let amount = -1
 
-        // Expect not enough funds Wallet has 0 cash
-        XCTAssertThrowsError(try wallet.debit(account: player, amount: amount) ) { error in
-            XCTAssertEqual(error as! SpendingError, SpendingError.mustBePositive(amount) )
+        do {
+            let _ = try wallet.debit(account: player, amount: amount)
+            XCTFail("Wallet succeeded, but was expected to fail.")
+        } catch let error as GameError<SpendingMoneyErrorReason> {
+            XCTAssertEqual(error.reason, SpendingMoneyErrorReason.mustBePositive)
         }
+        catch {
+            XCTFail("Error caught: \(error)")
+        }
+
     }
 
     func testWallet_DebitNegative_WhenWalletIsPositive_Fails() throws {
@@ -73,9 +92,14 @@ class WalletTests: XCTestCase {
         let anotherFakePlayer = FakePlayer(cash: 1)
         let amount = -1
 
-        // Expect throw must be positive
-        XCTAssertThrowsError(try wallet.debit(account: anotherFakePlayer, amount: amount) ) { error in
-            XCTAssertEqual(error as! SpendingError, SpendingError.mustBePositive(amount) )
+        do {
+            let _ = try wallet.credit(account: anotherFakePlayer, amount: amount)
+            XCTFail("Wallet succeeded, but was expected to fail.")
+        } catch let error as GameError<SpendingMoneyErrorReason> {
+            XCTAssertEqual(error.reason, SpendingMoneyErrorReason.mustBePositive)
+        }
+        catch {
+            XCTFail("Error caught: \(error)")
         }
     }
 
@@ -96,15 +120,21 @@ class WalletTests: XCTestCase {
         let wallet = Wallet()
 
         // Try to debit more than amount - expect fail
-        let amount = 5
+        let credit = 5
         let debit = 10
 
-        XCTAssertNoThrow( try wallet.credit(account: player, amount: amount)  )
+        XCTAssertNoThrow( try wallet.credit(account: player, amount: credit)  )
 
-        XCTAssertThrowsError(try wallet.debit(account: player, amount: debit) ) { error in
-            XCTAssertEqual(error as! SpendingError, SpendingError.cannotSpend(debit) )
+        do {
+            let _ = try wallet.debit(account: player, amount: debit)
+            XCTFail("Wallet succeeded, but was expected to fail.")
+        } catch let error as GameError<SpendingMoneyErrorReason> {
+            XCTAssertEqual(error.reason, SpendingMoneyErrorReason.notEnoughFunds(amount: debit))
+        }
+        catch {
+            XCTFail("Error caught: \(error)")
         }
 
-        XCTAssertEqual(player.cash, amount)
+        XCTAssertEqual(player.cash, credit)
     }
 }

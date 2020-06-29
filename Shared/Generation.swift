@@ -12,8 +12,6 @@ enum Generation: Int, Codable, CaseIterable {
     case first = 1, second, third, fourth, fifth
 }
 
-
-
 // Ordinal description extension
 extension Generation {
     var ordinalFormat: String? {

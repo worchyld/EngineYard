@@ -11,7 +11,7 @@ import XCTest
 @testable import EngineYard
 
 // Tests against the Increment class
-class IncreaserTests: XCTestCase {
+class IncreaserTests: EngineYardTests {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -22,21 +22,27 @@ class IncreaserTests: XCTestCase {
     }
 
     func testCannotIncrementZero() throws {
-        let increaser = Increaser()
+        let handler = Increaser()
         let amount = 0
 
-        XCTAssertThrowsError(  try increaser.increase(by: amount) ) { error in
-            XCTAssertEqual(error as! SpendingError, SpendingError.mustBePositive(0) )
+        try assert( handler.increase(by: amount) , throwsErrorOfType: SpendingMoneyError.self)
+
+        do {
+            let _ = try handler.increase(by: amount)
+            XCTFail("Spend succeeded, but was expected to fail.")
+        } catch let error as GameError<SpendingMoneyErrorReason> {
+            XCTAssertEqual(error.reason, SpendingMoneyErrorReason.mustBePositive)
+        }
+        catch {
+            XCTFail("Error caught: \(error)")
         }
     }
 
     func testCannotIncrementNegativeInt() throws {
-        let increaser = Increaser()
+        let handler = Increaser()
         let amount = -1
 
-        XCTAssertThrowsError(  try increaser.increase(by: amount) ) { error in
-            XCTAssertEqual(error as! SpendingError, SpendingError.mustBePositive(-1) )
-        }
+        try assert( handler.increase(by: amount) , throwsErrorOfType: SpendingMoneyError.self)
     }
 
     func testCanIncreasePositiveInt() throws {

@@ -12,12 +12,8 @@ class FactoryProduction : Identifiable, Codable {
     let id: UUID
     var units: Int
     var spent: Int
-    //private weak var train: Train?
-    //private weak var owner: Player?
 
-    init(train: Train? = nil, owner: Player? = nil, id: UUID, units: Int = 0, _ spent: Int = 0) {
-        //self.train = train
-        //self.owner = owner
+    init(id: UUID, units: Int = 0, _ spent: Int = 0) {
         self.id = id
         self.units = units
         self.spent = spent
