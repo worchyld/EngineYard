@@ -40,15 +40,12 @@ class Spender : ValidateSpending, SpendingUseCase {
 
     func canSpend(amount: Int) throws -> Bool {
         guard amount.isPositive else {
-            //throw SpendingError.mustBePositive(amount)
             throw SpendingMoneyError(reason: .mustBePositive)
         }
         guard value.isPositive else {
-            //throw SpendingError.notEnoughFunds(value)
             throw SpendingMoneyError(reason: .mustBePositive)
         }
         guard ((value - amount) >= 0) else {
-            //throw SpendingError.cannotSpend(amount)
             throw SpendingMoneyError(reason: .notEnoughFunds(amount: amount))
         }
         return true
@@ -76,7 +73,6 @@ class Increaser : ValidateIncrease, IncreaserUseCase {
 
     func canIncrease(by amount: Int) throws -> Bool {
         guard amount.isPositive else {
-            //throw SpendingError.mustBePositive(amount)
             throw SpendingMoneyError(reason: .mustBePositive)
         }
         return true

@@ -24,7 +24,7 @@ class DataLoader {
         }
     }
 
-    public func load(from directory: String) -> Result<Response, Error>? {
+    public func load(from directoryURL: String) -> Result<Response, Error>? {
         // #NOT IMPLEMENTED
         return nil
     }
