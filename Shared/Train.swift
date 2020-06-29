@@ -32,7 +32,9 @@ class Train: Codable, Identifiable, Equatable, TrainDelegate {
     let cost, trainPool: Int
     let livery : Livery
     let generation : Generation
-    var available: Bool
+    lazy var available: Bool = {
+        return self.hasOrders()
+    }()
     var rusting : Rusting
     let maxDice: Int
 
@@ -45,12 +47,12 @@ class Train: Codable, Identifiable, Equatable, TrainDelegate {
     private enum CodingKeys: String, CodingKey {
         case id, name, avatar, cost, livery, generation
         case trainPool = "train-pool"
-        case available, rusting, maxDice
+        case rusting, maxDice
         case initialOrder, existingOrders, completedOrders
         case factoryProduction
     }
 
-    init(id: UUID, name: String, avatar: String, cost: Int, trainPool: Int, livery: Livery, generation: Generation, available: Bool, rusting: Rusting, maxDice: Int, initialOrder: Int?, existingOrders: [Int]?, completedOrders: [Int]?, factoryProduction: [FactoryProduction]?) {
+    init(id: UUID, name: String, avatar: String, cost: Int, trainPool: Int, livery: Livery, generation: Generation, rusting: Rusting, maxDice: Int, initialOrder: Int?, existingOrders: [Int]?, completedOrders: [Int]?, factoryProduction: [FactoryProduction]?) {
         self.id = id
         self.name = name
         self.avatar = avatar
@@ -58,7 +60,6 @@ class Train: Codable, Identifiable, Equatable, TrainDelegate {
         self.trainPool = trainPool
         self.livery = livery
         self.generation = generation
-        self.available = available
         self.rusting = rusting
         self.maxDice = maxDice
         self.initialOrder = initialOrder
@@ -84,7 +85,6 @@ class Train: Codable, Identifiable, Equatable, TrainDelegate {
 
         maxDice = try container.decode(Int.self, forKey: .maxDice).clamp(low: 1, high: 6)
         trainPool = try container.decode(Int.self, forKey: .trainPool).clamp(low: 1, high: 4)
-        available = try container.decodeIfPresent(Bool.self, forKey: .available) ?? false
 
         livery = try container.decode(Livery.self, forKey: .livery)
         generation = try container.decode(Generation.self, forKey: .generation)
