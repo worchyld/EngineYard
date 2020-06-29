@@ -112,20 +112,11 @@ extension Train {
 }
 
 extension Train {
-    func hasOrders() -> Bool {
-        var flag = false
-        if let initialOrder = self.initialOrder {
-            if initialOrder > 0 {
-                flag = true
-            }
-        }
-        if let existingOrders = self.existingOrders {
-            flag = (existingOrders.reduce(0, +) > 0)
-        }
-        if let completedOrders = self.completedOrders {
-            flag = (completedOrders.reduce(0, +) > 0)
-        }
-        return flag
+    internal func hasOrders() -> Bool {
+        var completedOrders: Int = self.initialOrder ?? 0
+        completedOrders += self.existingOrders?.compactMap({ $0 }).reduce(0, +) ?? 0
+        completedOrders += self.completedOrders?.compactMap({ $0 }).reduce(0, +) ?? 0
+        return (completedOrders > 0)
     }
 }
 

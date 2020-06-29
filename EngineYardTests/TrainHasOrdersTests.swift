@@ -42,7 +42,7 @@ class TrainHasOrdersTests: XCTestCase {
                               name: "green-1", avatar: "green-1.png",
                               cost: 4, trainPool: 3,
                               livery: .green, generation: .first,
-                              available: false, rusting: .new,
+                              rusting: .new,
                               maxDice: 3, initialOrder: nil, existingOrders: [Int](), completedOrders: nil, factoryProduction: nil)
         }()
 
@@ -63,7 +63,7 @@ class TrainHasOrdersTests: XCTestCase {
                               name: "green-1", avatar: "green-1.png",
                               cost: 4, trainPool: 3,
                               livery: .green, generation: .first,
-                              available: false, rusting: .new,
+                              rusting: .new,
                               maxDice: 3, initialOrder: nil, existingOrders:nil, completedOrders: [Int](), factoryProduction: nil)
         }()
         
@@ -77,4 +77,54 @@ class TrainHasOrdersTests: XCTestCase {
         XCTAssertTrue(train.hasOrders())
     }
 
+    func testTrainCompactMapOrdersIsZero() {
+        let train: Train = {
+            return Train.init(id: UUID(),
+                              name: "green-1", avatar: "green-1.png",
+                              cost: 4, trainPool: 3,
+                              livery: .green, generation: .first,
+                              rusting: .new,
+                              maxDice: 3, initialOrder: nil, existingOrders:nil, completedOrders: [Int](), factoryProduction: nil)
+        }()
+
+        var completedOrders: Int = train.initialOrder ?? 0
+        completedOrders += train.existingOrders?.compactMap({ $0 }).reduce(0, +) ?? 0
+        completedOrders += train.completedOrders?.compactMap({ $0 }).reduce(0, +) ?? 0
+
+        XCTAssertEqual(completedOrders, 0)
+    }
+
+    func testTrainCompactMapOrdersIsOne() {
+        let train: Train = {
+            return Train.init(id: UUID(),
+                              name: "green-1", avatar: "green-1.png",
+                              cost: 4, trainPool: 3,
+                              livery: .green, generation: .first,
+                              rusting: .new,
+                              maxDice: 3, initialOrder: 1, existingOrders:nil, completedOrders: [Int](), factoryProduction: nil)
+        }()
+
+        var completedOrders: Int = train.initialOrder ?? 0
+        completedOrders += train.existingOrders?.compactMap({ $0 }).reduce(0, +) ?? 0
+        completedOrders += train.completedOrders?.compactMap({ $0 }).reduce(0, +) ?? 0
+
+        XCTAssertEqual(completedOrders, 1)
+    }
+
+    func testTrainCompactMapOrdersIsMixed() {
+        let train: Train = {
+            return Train.init(id: UUID(),
+                              name: "green-1", avatar: "green-1.png",
+                              cost: 4, trainPool: 3,
+                              livery: .green, generation: .first,
+                              rusting: .new,
+                              maxDice: 3, initialOrder: 1, existingOrders:[3,5,7], completedOrders: nil, factoryProduction: nil)
+        }()
+
+        var completedOrders: Int = train.initialOrder ?? 0
+        completedOrders += train.existingOrders?.compactMap({ $0 }).reduce(0, +) ?? 0
+        completedOrders += train.completedOrders?.compactMap({ $0 }).reduce(0, +) ?? 0
+
+        XCTAssertEqual(completedOrders, 16)
+    }
 }
