@@ -72,6 +72,8 @@ public enum TrainErrorReason : Equatable {
     case youngerGeneration
     /// The train is the same livery
     case sameLivery
+    /// No cards remain, all cards have owners
+    case noCardsRemain
 }
 
 /// Enum listing reasons for card manipulation could fail

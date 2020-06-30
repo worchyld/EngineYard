@@ -19,7 +19,7 @@ class Hand {
     func push(_ card: Card) throws -> [Card] {
         do {
             if try canPush(card) {
-
+                didPush(card)
             }
             return self.hand
         }
@@ -31,21 +31,66 @@ class Hand {
 
     /// Pop a card from a players hand
     func pop(card: Card) throws -> [Card] {
-        return self.hand
+        do {
+            if try canPop(card) {
+                if let index = try self.findIndexOf(card) {
+                    didPop(card, at: index)
+                }
+            }
+            return self.hand
+        }
+        catch {
+            throw error
+        }
     }
 }
 
 extension Hand {
     func canPush(_ card: Card) throws -> Bool {
+        guard let parent = card.parent else {
+            throw TrainError(reason: .missing)
+        }
+        guard parent.available else {
+            throw TrainError(reason: .unavailable)
+        }
+        guard (parent.rust != .rusted) else {
+            throw TrainError(reason: .rusted)
+        }
+
+        let filterMatchingFamily = hand.filter {
+            return ($0.parent?.generation == card.parent?.generation)
+        }.count
+
+        guard (filterMatchingFamily == 0) else {
+            throw CardError(reason: .sameFamily)
+        }
+
+        let filterMatchingCardId = hand.filter {
+            return ($0.id == card.id)
+        }.count
+
+        guard (filterMatchingCardId == 0) else {
+            throw CardError(reason: .alreadyOwnThisCard)
+        }
+
         return true
     }
 
     func canPop(_ card: Card) throws -> Bool {
+        guard (card.units == 0 && card.spent == 0) else {
+            return false
+        }
+
         return true
     }
 
-    func findIndexOf(_ card: Card) throws -> Int {
-        return 0
+    internal func findIndexOf(_ card: Card) throws -> Int? {
+        if let index = hand.firstIndex(where: { $0.id == card.id }) {
+            return index
+        }
+        else {
+            throw CardError(reason: .noCardsFound)
+        }
     }
 }
 
