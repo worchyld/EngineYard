@@ -90,6 +90,8 @@ public enum CardErrorReason : Equatable {
     case alreadyOwnThisCard
     /// You cannot own more than 1 card from family
     case sameFamily
+    /// Your hand is empty
+    case emptyHand
 }
 
 /// Enum listing reasons why production manipulation could fail

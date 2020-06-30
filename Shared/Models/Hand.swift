@@ -8,6 +8,9 @@
 
 import Foundation
 
+
+// Only responsible for pushing and popping cards
+// to a collecion of cards
 class Hand {
     private var hand: [Card]
 
@@ -77,6 +80,9 @@ extension Hand {
     }
 
     func canPop(_ card: Card) throws -> Bool {
+        guard (self.hand.count > 0) else {
+            throw CardError(reason: .emptyHand)
+        }
         guard (card.units == 0 && card.spent == 0) else {
             return false
         }
