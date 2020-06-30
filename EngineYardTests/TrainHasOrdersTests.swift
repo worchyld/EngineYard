@@ -126,5 +126,22 @@ class TrainHasOrdersTests: XCTestCase {
         completedOrders += train.completedOrders?.compactMap({ $0 }).reduce(0, +) ?? 0
 
         XCTAssertEqual(completedOrders, 16)
+        XCTAssertEqual( train.hasOrders() , Bool(true))
+    }
+
+    func testTrainIsNotAvaialbable() {
+        let train: Train = {
+            return Train.init(id: UUID(),
+                              name: "green-1", avatar: "green-1.png",
+                              cost: 4, trainPool: 3,
+                              livery: .green, generation: .first,
+                              rusting: .new,
+                              maxDice: 3, initialOrder: nil, existingOrders:nil, completedOrders: nil, factoryProduction: nil)
+        }()
+
+        XCTAssertEqual( train.hasOrders() , false)
+        XCTAssertEqual( train.rusting , Rust.new)
+        XCTAssertEqual( train.available , false)
+
     }
 }

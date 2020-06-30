@@ -16,7 +16,7 @@ protocol TrainDelegate {
     var income: Int { get }
     var livery : Livery { get }
     var generation : Generation { get }
-    var rusting : Rusting { get }
+    var rusting : Rust { get }
     var available : Bool { get }
     var initialOrder: Int? { get }
     var existingOrders: [Int]? { get }
@@ -36,7 +36,7 @@ class Train: Codable, Identifiable, Equatable, TrainDelegate {
     lazy var available: Bool = {
         return (self.hasOrders()) && (self.rusting != .rusted)
     }()
-    var rusting : Rusting
+    var rusting : Rust
     let maxDice: Int
 
     var initialOrder: Int?
@@ -53,7 +53,7 @@ class Train: Codable, Identifiable, Equatable, TrainDelegate {
         case factoryProduction
     }
 
-    init(id: UUID, name: String, avatar: String, cost: Int, trainPool: Int, livery: Livery, generation: Generation, rusting: Rusting, maxDice: Int, initialOrder: Int?, existingOrders: [Int]?, completedOrders: [Int]?, factoryProduction: [FactoryProduction]?) {
+    init(id: UUID, name: String, avatar: String, cost: Int, trainPool: Int, livery: Livery, generation: Generation, rusting: Rust, maxDice: Int, initialOrder: Int?, existingOrders: [Int]?, completedOrders: [Int]?, factoryProduction: [FactoryProduction]?) {
         self.id = id
         self.name = name
         self.avatar = avatar
@@ -89,7 +89,7 @@ class Train: Codable, Identifiable, Equatable, TrainDelegate {
 
         livery = try container.decode(Livery.self, forKey: .livery)
         generation = try container.decode(Generation.self, forKey: .generation)
-        rusting = try container.decode(Rusting.self, forKey: .rusting)
+        rusting = try container.decode(Rust.self, forKey: .rusting)
 
         initialOrder = try container.decodeIfPresent(Int.self, forKey: .initialOrder)
         existingOrders = try container.decodeIfPresent([Int].self, forKey: .existingOrders) ?? [Int]()
