@@ -230,14 +230,8 @@
 				4D10C6152486DC4700238508 /* Constants.swift */,
 				4D9FC8B624AA0B6B002E5FB4 /* GameErrors.swift */,
 				4DA1C14A2486F3FC004C4121 /* Tax.swift */,
-				4D3BE05E249FF1E1009C203E /* Train.swift */,
-				4D42DBE324A7A15600B8FF68 /* FactoryProduction.swift */,
 				4D42DBF724A9122700B8FF68 /* ProductionHandler.swift */,
 				4D3BE3A024AA6D0200DE8787 /* ShiftProductionHandler.swift */,
-				4D1C72F224A0F323009CAA3A /* Rusting.swift */,
-				4D238C4C24A058AD0031E3EE /* Livery.swift */,
-				4D238C4F24A059430031E3EE /* Generation.swift */,
-				4D66EBC7248F8147005DE7F0 /* Player.swift */,
 				4D3BE04A249FD07C009C203E /* Wallet.swift */,
 				4D1C72F424A0F6B0009CAA3A /* Board.swift */,
 				4D54250B249D5B16004B97A8 /* Spending.swift */,
@@ -299,6 +293,12 @@
 				4D238C3D24A046B30031E3EE /* Meta.swift */,
 				4D42DBE524A7A45200B8FF68 /* DataLoader.swift */,
 				4D1C72F024A0F2D1009CAA3A /* JSONAny.swift */,
+				4D3BE05E249FF1E1009C203E /* Train.swift */,
+				4D42DBE324A7A15600B8FF68 /* FactoryProduction.swift */,
+				4D1C72F224A0F323009CAA3A /* Rusting.swift */,
+				4D238C4C24A058AD0031E3EE /* Livery.swift */,
+				4D238C4F24A059430031E3EE /* Generation.swift */,
+				4D66EBC7248F8147005DE7F0 /* Player.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
