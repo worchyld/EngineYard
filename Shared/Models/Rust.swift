@@ -1,5 +1,5 @@
 //
-//  Rusting.swift
+//  Rust.swift
 //  EngineYard
 //
 //  Created by Amarjit on 22/06/2020.
@@ -9,7 +9,7 @@
 import Foundation
 
 // Obsolescence
-enum Rusting : Int, Codable, CaseIterable {
+enum Rust : Int, Codable, CaseIterable {
     case new = 0, rusting, rusted
 }
 
