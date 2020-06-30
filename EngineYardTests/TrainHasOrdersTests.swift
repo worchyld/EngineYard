@@ -10,7 +10,7 @@ import XCTest
 
 @testable import EngineYard
 
-class TrainHasOrdersTests: XCTestCase {
+class TrainHasOrdersTests: EngineYardTests {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -42,7 +42,7 @@ class TrainHasOrdersTests: XCTestCase {
                               name: "green-1", avatar: "green-1.png",
                               cost: 4, trainPool: 3,
                               livery: .green, generation: .first,
-                              rusting: .new,
+                              rust: .new,
                               maxDice: 3, initialOrder: nil, existingOrders: [Int](), completedOrders: nil, factoryProduction: nil)
         }()
 
@@ -63,7 +63,7 @@ class TrainHasOrdersTests: XCTestCase {
                               name: "green-1", avatar: "green-1.png",
                               cost: 4, trainPool: 3,
                               livery: .green, generation: .first,
-                              rusting: .new,
+                              rust: .new,
                               maxDice: 3, initialOrder: nil, existingOrders:nil, completedOrders: [Int](), factoryProduction: nil)
         }()
         
@@ -83,7 +83,7 @@ class TrainHasOrdersTests: XCTestCase {
                               name: "green-1", avatar: "green-1.png",
                               cost: 4, trainPool: 3,
                               livery: .green, generation: .first,
-                              rusting: .new,
+                              rust: .new,
                               maxDice: 3, initialOrder: nil, existingOrders:nil, completedOrders: [Int](), factoryProduction: nil)
         }()
 
@@ -100,7 +100,7 @@ class TrainHasOrdersTests: XCTestCase {
                               name: "green-1", avatar: "green-1.png",
                               cost: 4, trainPool: 3,
                               livery: .green, generation: .first,
-                              rusting: .new,
+                              rust: .new,
                               maxDice: 3, initialOrder: 1, existingOrders:nil, completedOrders: [Int](), factoryProduction: nil)
         }()
 
@@ -117,7 +117,7 @@ class TrainHasOrdersTests: XCTestCase {
                               name: "green-1", avatar: "green-1.png",
                               cost: 4, trainPool: 3,
                               livery: .green, generation: .first,
-                              rusting: .new,
+                              rust: .new,
                               maxDice: 3, initialOrder: 1, existingOrders:[3,5,7], completedOrders: nil, factoryProduction: nil)
         }()
 
@@ -129,19 +129,88 @@ class TrainHasOrdersTests: XCTestCase {
         XCTAssertEqual( train.hasOrders() , Bool(true))
     }
 
-    func testTrainIsNotAvaialbable() {
+    func testTrainIsNotAvailable() {
         let train: Train = {
             return Train.init(id: UUID(),
                               name: "green-1", avatar: "green-1.png",
                               cost: 4, trainPool: 3,
                               livery: .green, generation: .first,
-                              rusting: .new,
+                              rust: .new,
                               maxDice: 3, initialOrder: nil, existingOrders:nil, completedOrders: nil, factoryProduction: nil)
         }()
 
         XCTAssertEqual( train.hasOrders() , false)
-        XCTAssertEqual( train.rusting , Rust.new)
+        XCTAssertEqual( train.rust, Rust.new)
         XCTAssertEqual( train.available , false)
-
     }
+
+    func testTrainHasOrdersButRusted() {
+
+        performTest {
+            // with no orders
+            let train: Train = {
+                return Train.init(id: UUID(),
+                                  name: "green-1", avatar: "green-1.png",
+                                  cost: 4, trainPool: 3,
+                                  livery: .green, generation: .first,
+                                  rust: .rusted,
+                                  maxDice: 3, initialOrder: nil, existingOrders:nil, completedOrders: nil, factoryProduction: nil)
+            }()
+
+            XCTAssertEqual( train.hasOrders() , false)
+            XCTAssertEqual( train.rust, Rust.rusted)
+            XCTAssertEqual( train.available , false)
+        }
+
+        performTest {
+            // with initial order
+            let train: Train = {
+                return Train.init(id: UUID(),
+                                  name: "green-1", avatar: "green-1.png",
+                                  cost: 4, trainPool: 3,
+                                  livery: .green, generation: .first,
+                                  rust: .rusted,
+                                  maxDice: 3, initialOrder: 1, existingOrders:nil, completedOrders: nil, factoryProduction: nil)
+            }()
+
+            XCTAssertEqual( train.hasOrders() , true)
+            XCTAssertEqual( train.rust, Rust.rusted)
+            XCTAssertEqual( train.available , false)
+
+        }
+
+
+        performTest {
+            // with existing orders
+            let train: Train = {
+                return Train.init(id: UUID(),
+                                  name: "green-1", avatar: "green-1.png",
+                                  cost: 4, trainPool: 3,
+                                  livery: .green, generation: .first,
+                                  rust: .rusted,
+                                  maxDice: 3, initialOrder: nil, existingOrders:[3,4], completedOrders: nil, factoryProduction: nil)
+            }()
+
+            XCTAssertEqual( train.hasOrders() , true)
+            XCTAssertEqual( train.rust, Rust.rusted)
+            XCTAssertEqual( train.available , false)
+        }
+
+        performTest {
+                   // with completed orders
+                   let train: Train = {
+                       return Train.init(id: UUID(),
+                                         name: "green-1", avatar: "green-1.png",
+                                         cost: 4, trainPool: 3,
+                                         livery: .green, generation: .first,
+                                         rust: .rusted,
+                                         maxDice: 3, initialOrder: nil, existingOrders:nil, completedOrders: [3,6], factoryProduction: nil)
+                   }()
+
+                   XCTAssertEqual( train.hasOrders() , true)
+                   XCTAssertEqual( train.rust, Rust.rusted)
+                   XCTAssertEqual( train.available , false)
+               }
+    }
+
 }

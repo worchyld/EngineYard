@@ -16,7 +16,7 @@ protocol TrainDelegate {
     var income: Int { get }
     var livery : Livery { get }
     var generation : Generation { get }
-    var rusting : Rust { get }
+    var rust : Rust { get }
     var available : Bool { get }
     var initialOrder: Int? { get }
     var existingOrders: [Int]? { get }
@@ -34,9 +34,9 @@ class Train: Codable, Identifiable, Equatable, TrainDelegate {
     let generation : Generation
     /// A `train` is considered unavailable if it is `rusted` or if it has no `orders`
     lazy var available: Bool = {
-        return (self.hasOrders()) && (self.rusting != .rusted)
+        return (self.hasOrders()) && (self.rust != .rusted)
     }()
-    var rusting : Rust
+    var rust : Rust
     let maxDice: Int
 
     var initialOrder: Int?
@@ -48,12 +48,12 @@ class Train: Codable, Identifiable, Equatable, TrainDelegate {
     private enum CodingKeys: String, CodingKey {
         case id, name, avatar, cost, livery, generation
         case trainPool = "train-pool"
-        case rusting, maxDice
+        case rust, maxDice
         case initialOrder, existingOrders, completedOrders
         case factoryProduction
     }
 
-    init(id: UUID, name: String, avatar: String, cost: Int, trainPool: Int, livery: Livery, generation: Generation, rusting: Rust, maxDice: Int, initialOrder: Int?, existingOrders: [Int]?, completedOrders: [Int]?, factoryProduction: [FactoryProduction]?) {
+    init(id: UUID, name: String, avatar: String, cost: Int, trainPool: Int, livery: Livery, generation: Generation, rust: Rust, maxDice: Int, initialOrder: Int?, existingOrders: [Int]?, completedOrders: [Int]?, factoryProduction: [FactoryProduction]?) {
         self.id = id
         self.name = name
         self.avatar = avatar
@@ -61,7 +61,7 @@ class Train: Codable, Identifiable, Equatable, TrainDelegate {
         self.trainPool = trainPool
         self.livery = livery
         self.generation = generation
-        self.rusting = rusting
+        self.rust = rust
         self.maxDice = maxDice
         self.initialOrder = initialOrder
         self.existingOrders = existingOrders
@@ -89,7 +89,7 @@ class Train: Codable, Identifiable, Equatable, TrainDelegate {
 
         livery = try container.decode(Livery.self, forKey: .livery)
         generation = try container.decode(Generation.self, forKey: .generation)
-        rusting = try container.decode(Rust.self, forKey: .rusting)
+        rust = try container.decodeIfPresent(Rust.self, forKey: .rust) ?? Rust.new
 
         initialOrder = try container.decodeIfPresent(Int.self, forKey: .initialOrder)
         existingOrders = try container.decodeIfPresent([Int].self, forKey: .existingOrders) ?? [Int]()
@@ -131,9 +131,4 @@ extension Train {
     static func isOlder(lhs: Train, rhs: Train) -> Bool {
         return (lhs.generation.rawValue > rhs.generation.rawValue)
     }
-}
-
-
-extension Train {
-
 }

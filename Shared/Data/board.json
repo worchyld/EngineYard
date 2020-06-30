@@ -8,7 +8,6 @@
             "livery": 1,
             "generation": 1,
             "train-pool": 4,
-            "rusting": 0,
             "maxDice": 3
         },
         {
@@ -19,7 +18,6 @@
             "livery": 2,
             "generation": 1,
             "train-pool": 3,            
-            "rusting": 0,
             "maxDice": 3
         },
         {
@@ -30,7 +28,6 @@
             "livery": 3,
             "generation": 1,
             "train-pool": 2,
-            "rusting": 0,
             "maxDice": 2
         },
         {
@@ -41,7 +38,6 @@
             "livery": 4,
             "generation": 1,
             "train-pool": 1,
-            "rusting": 0,
             "maxDice": 1
         },
         {
@@ -52,7 +48,6 @@
             "livery": 1,
             "generation": 2,
             "train-pool": 4,
-            "rusting": 0,
             "maxDice": 4
         },
         {
@@ -63,7 +58,6 @@
             "livery": 2,
             "generation": 2,
             "train-pool": 3,            
-            "rusting": 0,
             "maxDice": 3
         },
         {
@@ -74,7 +68,6 @@
             "livery": 3,
             "generation": 2,
             "train-pool": 2,
-            "rusting": 0,
             "maxDice": 3
         },
         {
@@ -85,7 +78,6 @@
             "livery": 1,
             "generation": 3,
             "train-pool": 4,            
-            "rusting": 0,
             "maxDice": 4
         },
         {
@@ -96,7 +88,6 @@
             "livery": 4,
             "generation": 2,
             "train-pool": 2,
-            "rusting": 0,
             "maxDice": 2
         },
         {
@@ -107,7 +98,6 @@
             "livery": 2,
             "generation": 3,
             "train-pool": 3,
-            "rusting": 0,
             "maxDice": 4
         },
         {
@@ -118,7 +108,6 @@
             "livery": 1,
             "generation": 4,
             "train-pool": 4,
-            "rusting": 0,
             "maxDice": 5
         },
         {
@@ -129,7 +118,6 @@
             "livery": 3,
             "generation": 3,
             "train-pool": 3,
-            "rusting": 0,
             "maxDice": 3
         },
         {
@@ -140,7 +128,6 @@
             "livery": 2,
             "generation": 4,
             "train-pool": 4,
-            "rusting": 0,
             "maxDice": 4
         },
         {
@@ -151,7 +138,6 @@
             "livery": 1,
             "generation": 5,
             "train-pool": 4,
-            "rusting": 0,
             "maxDice": 5
         }
     ]
