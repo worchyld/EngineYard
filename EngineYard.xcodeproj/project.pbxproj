@@ -63,7 +63,8 @@
 		4DA1C1482486EDE3004C4121 /* EY+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C1472486EDE3004C4121 /* EY+Date.swift */; };
 		4DA1C14B2486F3FC004C4121 /* Tax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C14A2486F3FC004C4121 /* Tax.swift */; };
 		4DA1C14D2486F43E004C4121 /* TaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C14C2486F43E004C4121 /* TaxTests.swift */; };
-		4DBBA17624AB89E100E32BBD /* PurchaseTrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBA17424AB89B300E32BBD /* PurchaseTrain.swift */; };
+		4DBBA17624AB89E100E32BBD /* PurchaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBA17424AB89B300E32BBD /* PurchaseHandler.swift */; };
+		4DBBA17924AB91EC00E32BBD /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBA17724AB91DE00E32BBD /* Hand.swift */; };
 		4DF1B6CE24A3412F00618C7B /* Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1B6CD24A3412F00618C7B /* Fixtures.swift */; };
 /* End PBXBuildFile section */
 
@@ -137,7 +138,8 @@
 		4DA1C1472486EDE3004C4121 /* EY+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Date.swift"; sourceTree = "<group>"; };
 		4DA1C14A2486F3FC004C4121 /* Tax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tax.swift; sourceTree = "<group>"; };
 		4DA1C14C2486F43E004C4121 /* TaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTests.swift; sourceTree = "<group>"; };
-		4DBBA17424AB89B300E32BBD /* PurchaseTrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseTrain.swift; sourceTree = "<group>"; };
+		4DBBA17424AB89B300E32BBD /* PurchaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHandler.swift; sourceTree = "<group>"; };
+		4DBBA17724AB91DE00E32BBD /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
 		4DF1B6CD24A3412F00618C7B /* Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixtures.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -233,7 +235,7 @@
 				4D9FC8B624AA0B6B002E5FB4 /* GameErrors.swift */,
 				4DA1C14A2486F3FC004C4121 /* Tax.swift */,
 				4D42DBF724A9122700B8FF68 /* ProductionHandler.swift */,
-				4DBBA17424AB89B300E32BBD /* PurchaseTrain.swift */,
+				4DBBA17424AB89B300E32BBD /* PurchaseHandler.swift */,
 				4D3BE3A024AA6D0200DE8787 /* ShiftProductionHandler.swift */,
 				4D3BE04A249FD07C009C203E /* Wallet.swift */,
 				4D1C72F424A0F6B0009CAA3A /* Board.swift */,
@@ -299,6 +301,7 @@
 				4D238C4C24A058AD0031E3EE /* Livery.swift */,
 				4D238C4F24A059430031E3EE /* Generation.swift */,
 				4D66EBC7248F8147005DE7F0 /* Player.swift */,
+				4DBBA17724AB91DE00E32BBD /* Hand.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -453,8 +456,9 @@
 				4DA1C1392486EC3D004C4121 /* Die.swift in Sources */,
 				4DA1C14B2486F3FC004C4121 /* Tax.swift in Sources */,
 				4DA1C1482486EDE3004C4121 /* EY+Date.swift in Sources */,
-				4DBBA17624AB89E100E32BBD /* PurchaseTrain.swift in Sources */,
+				4DBBA17624AB89E100E32BBD /* PurchaseHandler.swift in Sources */,
 				4D10C6162486DC4700238508 /* Constants.swift in Sources */,
+				4DBBA17924AB91EC00E32BBD /* Hand.swift in Sources */,
 				4D49D2672499FE2C000E857F /* EY+Identifier.swift in Sources */,
 				4D1C72F324A0F323009CAA3A /* Rust.swift in Sources */,
 				4D49D2632499F9D9000E857F /* AvatarView.swift in Sources */,

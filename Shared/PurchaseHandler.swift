@@ -1,5 +1,5 @@
 //
-//  PurchaseTrain.swift
+//  PurchaseHandler.swift
 //  EngineYardTests
 //
 //  Created by Amarjit on 30/06/2020.
@@ -8,15 +8,11 @@
 
 import Foundation
 
-class PurchaseTrain {
+/// Handles purchasing a train from the board
+class PurchaseHandler {
 
-    private var train: Train
+    func purchase(train: Train, player: Player) throws {
 
-    init(train: Train) {
-        self.train = train
-    }
-
-    func purchase(player: Player) throws {
         do {
             guard train.available else {
                 throw TrainError(reason: .unavailable)
@@ -24,6 +20,21 @@ class PurchaseTrain {
             guard (train.rust != .rusted) else {
                 throw TrainError(reason: .rusted)
             }
+
+        }
+        catch {
+            throw error
+        }
+
+
+    }
+
+
+
+    /**
+    func purchase(player: Player) throws {
+        do {
+
             let sameFamily = player.cards.filter({
                 return $0.parent?.generation == train.generation &&
                     $0.parent?.livery == train.livery
@@ -52,9 +63,8 @@ class PurchaseTrain {
             throw error
         }
     }
-
+     **/
     private func add(card: FactoryProduction, to player: Player) {
         player.cards.append( card )
-    }
-
+    }    
 }
