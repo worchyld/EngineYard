@@ -226,6 +226,7 @@
 				4D10C61A2486DF3A00238508 /* Sounds */,
 				4DA1C13C2486EC8B004C4121 /* Extensions */,
 				4DA1C1492486EE33004C4121 /* Helpers */,
+				4DBBA16C24AB75D600E32BBD /* Models */,
 				4D10C6152486DC4700238508 /* Constants.swift */,
 				4D9FC8B624AA0B6B002E5FB4 /* GameErrors.swift */,
 				4DA1C14A2486F3FC004C4121 /* Tax.swift */,
@@ -239,10 +240,6 @@
 				4D66EBC7248F8147005DE7F0 /* Player.swift */,
 				4D3BE04A249FD07C009C203E /* Wallet.swift */,
 				4D1C72F424A0F6B0009CAA3A /* Board.swift */,
-				4D238C3D24A046B30031E3EE /* Meta.swift */,
-				4D238C4624A050C00031E3EE /* Response.swift */,
-				4D42DBE524A7A45200B8FF68 /* DataLoader.swift */,
-				4D1C72F024A0F2D1009CAA3A /* JSONAny.swift */,
 				4D54250B249D5B16004B97A8 /* Spending.swift */,
 			);
 			path = Shared;
@@ -293,6 +290,17 @@
 				4D1C72FE24A16EAA009CAA3A /* AsyncOperation.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		4DBBA16C24AB75D600E32BBD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4D238C4624A050C00031E3EE /* Response.swift */,
+				4D238C3D24A046B30031E3EE /* Meta.swift */,
+				4D42DBE524A7A45200B8FF68 /* DataLoader.swift */,
+				4D1C72F024A0F2D1009CAA3A /* JSONAny.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
