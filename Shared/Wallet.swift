@@ -35,6 +35,11 @@ struct Wallet : Bank {
         }
     }
 
+    func canCredit(account: WalletHolderDelegate, amount: Int = 0) throws -> Bool {
+        return try canAdd(amount: amount)
+    }
+
+
     func debit(account: WalletHolderDelegate, amount: Int = 0) throws {
 
         let balance = account.cash
@@ -49,6 +54,11 @@ struct Wallet : Bank {
             throw error
         }
     }
+    
+    func canDebit(account: WalletHolderDelegate, amount: Int = 0) throws -> Bool {
+        return try canDeduct(balance: account.cash, bySpending: amount)
+    }
+
 
     // MARK: (Private) functions
 
@@ -67,7 +77,7 @@ struct Wallet : Bank {
 
 extension Wallet {
     // can deduct balance by spending amount
-    func canDeduct(balance: Int, bySpending amount: Int) throws -> Bool {
+    internal func canDeduct(balance: Int, bySpending amount: Int) throws -> Bool {
         guard balance.isPositive else {
             //throw SpendingError.notEnoughFunds(balance)
             throw SpendingMoneyError(reason: .notEnoughFunds(amount: balance))
@@ -85,12 +95,13 @@ extension Wallet {
 
 
     // Can add cash?
-    func canAdd(amount: Int) throws -> Bool {
+    internal func canAdd(amount: Int) throws -> Bool {
         guard amount.isPositive else {
            //throw SpendingError.mustBePositive(amount)
             throw SpendingMoneyError(reason: .mustBePositive)
         }
         return true
     }
+
 }
 

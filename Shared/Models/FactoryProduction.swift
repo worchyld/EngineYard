@@ -41,3 +41,20 @@ extension FactoryProduction : CustomStringConvertible {
         return ("units: \(self.units), spent: \(spent), deleted: \(deleted)")
     }
 }
+
+// Builder pattern
+
+protocol FactoryProductionBuilder: AnyObject {
+    static func build( _ owner: Player?, _ train: Train?, units: Int ) -> FactoryProduction
+}
+
+extension FactoryProduction : FactoryProductionBuilder {
+    public static func build( _ owner: Player? = nil, _ train: Train? = nil, units: Int = 1 ) -> FactoryProduction {
+
+        let fp = FactoryProduction.init( id: UUID(), units: units)
+        fp.parent = train
+        fp.owner = owner
+
+        return fp
+    }
+}

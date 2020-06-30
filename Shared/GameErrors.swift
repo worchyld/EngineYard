@@ -81,9 +81,13 @@ public enum CardErrorReason : Equatable {
     /// No cards can be found
     case noCardsFound
     /// The card is the same card
-    case sameCard
+    case duplicateCard
     /// The card is not owned by you
     case notYours
+    /// The card already owned by you
+    case alreadyOwnThisCard
+    /// You cannot own more than 1 card from family
+    case sameFamily
 }
 
 /// Enum listing reasons why production manipulation could fail

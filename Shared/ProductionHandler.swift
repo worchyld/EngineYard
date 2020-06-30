@@ -16,7 +16,6 @@ class ProductionHandler {
         self.shiftProductionHandler = ShiftProductionHandler()
     }
 
-
     /// Reset production to value set in spent; so long as you own the card resetting
     func reset(production: FactoryProduction, owner: Player) throws -> FactoryProduction {
         do {
