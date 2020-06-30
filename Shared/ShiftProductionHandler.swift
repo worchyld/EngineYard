@@ -25,17 +25,12 @@ class ShiftProductionHandler: ShiftProductionUseCase {
 
 extension ShiftProductionHandler {
 
-    func costToShift(production units: Int, from origin: FactoryProduction, to destination: FactoryProduction) throws -> Int {
-        do {
-            if try canShift(production: units, from: origin, to: destination) {
-                // do something
-
-            }
-            return 0
+    func costToShift(production units: Int, to destination: FactoryProduction) throws -> Int {
+        guard let train = destination.parent else {
+            throw TrainError(reason: .missing)
         }
-        catch {
-            throw error
-        }
+        let total = (units * train.productionCost)
+        return total
     }
 
     /// + Must own both the origin and destination card

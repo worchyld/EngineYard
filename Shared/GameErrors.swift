@@ -90,6 +90,12 @@ public enum CardErrorReason : Equatable {
 public enum ProductionErrorReason : Equatable {
     /// Production handler is missing
     case missingHandler
+    /// The production has no factory parent
+    case missingParent
+    /// The production has no player owner
+    case missingOwner
+    /// This production is not yours
+    case notYours
     /// The production cannot be negative
     case mustBePositive
     /// Not enough units, result could be negative
@@ -124,7 +130,7 @@ public typealias DataError = GameError<DataErrorReason>
 public typealias BoardError = GameError<BoardErrorReason>
 
 /// Error thrown by train operations - such as train is missing, unavailable, isRusted, hasNoOrders, etc
-public typealias LocomotiveError = GameError<TrainErrorReason>
+public typealias TrainError = GameError<TrainErrorReason>
 /// Error thrown by card operations - such as card is missing
 public typealias CardError = GameError<CardErrorReason>
 /// Error thrown by production - such as cannot spend negative production units
