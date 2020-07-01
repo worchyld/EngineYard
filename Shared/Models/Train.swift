@@ -22,7 +22,6 @@ protocol TrainDelegate {
     var existingOrders: [Int]? { get }
     var completedOrders: [Int]? { get }
     var factoryProduction: [FactoryProduction]? { get }
-    func hasOrders() -> Bool
 }
 
 // MARK: - Train
@@ -34,7 +33,7 @@ class Train: Codable, Identifiable, Equatable, TrainDelegate {
     let generation : Generation
     /// A `train` is considered unavailable if it is `rusted` or if it has no `orders`
     lazy var available: Bool = {
-        return (self.hasOrders()) && (self.rust != .rusted)
+        return (self.hasOrders) && (self.rust != .rusted)
     }()
     var rust : Rust
     let maxDice: Int
@@ -42,6 +41,25 @@ class Train: Codable, Identifiable, Equatable, TrainDelegate {
     var initialOrder: Int?
     var existingOrders: [Int]?
     var completedOrders: [Int]?
+
+    lazy var hasOrders: Bool = {
+        return (self.sumOfOrders > 0)
+    }()
+
+    lazy var sizeOfOrders: Int = {
+        var orders: Int = 0
+        orders += self.existingOrders?.compactMap({ $0 }).count ?? 0
+        orders += self.completedOrders?.compactMap({ $0 }).count ?? 0
+        return orders
+    }()
+
+    lazy var sumOfOrders: Int = {
+        var orders: Int = self.initialOrder ?? 0
+        orders += self.existingOrders?.compactMap({ $0 }).reduce(0, +) ?? 0
+        orders += self.completedOrders?.compactMap({ $0 }).reduce(0, +) ?? 0
+        return orders
+    }()
+
 
     var factoryProduction: [FactoryProduction]?
 
@@ -53,14 +71,6 @@ class Train: Codable, Identifiable, Equatable, TrainDelegate {
 //               //.sorted { $0.owner.turnOrder < $1.owner.turnOrder }
 //               .map { $0.owner }
 //       }
-
-
-    lazy var owners : [Player]? = {
-        return self.factoryProduction?
-            .compactMap({ (fp) -> Player? in
-                return fp.owner
-            })
-    }()
     
 
     private enum CodingKeys: String, CodingKey {
@@ -128,16 +138,6 @@ extension Train {
         return Int( floor(Double(productionCost / 2)) )
     }
 }
-
-extension Train {
-    internal func hasOrders() -> Bool {
-        var completedOrders: Int = self.initialOrder ?? 0
-        completedOrders += self.existingOrders?.compactMap({ $0 }).reduce(0, +) ?? 0
-        completedOrders += self.completedOrders?.compactMap({ $0 }).reduce(0, +) ?? 0
-        return (completedOrders > 0)
-    }
-}
-
 
 extension Train {
     static func == (lhs: Train, rhs: Train) -> Bool {

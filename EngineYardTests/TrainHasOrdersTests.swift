@@ -22,18 +22,19 @@ class TrainHasOrdersTests: EngineYardTests {
 
     func testTrainHasNoOrders() {
         let train = Fixtures.fakeTrain
-        XCTAssertFalse(train.hasOrders())
+        XCTAssertFalse(train.hasOrders)
     }
 
     func testTrainHasOrders_InitialOrderIsPositive() {
         let train = Fixtures.fakeTrain
         XCTAssertNil(train.initialOrder)
-        train.initialOrder = Die.roll
+        let order = Die.roll
+        train.initialOrder = order
         XCTAssertNotNil(train.initialOrder)
         XCTAssertNil(train.existingOrders)
         XCTAssertNil(train.completedOrders)
-        XCTAssertTrue(train.hasOrders())
-
+        XCTAssertEqual(train.totalOrders, order)
+        XCTAssertEqual(train.hasOrders, true)
     }
 
     func testTrainHasOrders_ExistingOrdersArePositive() {
@@ -53,7 +54,7 @@ class TrainHasOrdersTests: EngineYardTests {
         XCTAssertNil(train.initialOrder)
         XCTAssertNotNil(train.existingOrders)
         XCTAssertNil(train.completedOrders)
-        XCTAssertTrue(train.hasOrders())
+        XCTAssertTrue(train.hasOrders)
 
     }
 
@@ -74,7 +75,7 @@ class TrainHasOrdersTests: EngineYardTests {
         XCTAssertNil(train.initialOrder)
         XCTAssertNil(train.existingOrders)
 
-        XCTAssertTrue(train.hasOrders())
+        XCTAssertTrue(train.hasOrders)
     }
 
     func testTrainCompactMapOrdersIsZero() {
@@ -126,7 +127,7 @@ class TrainHasOrdersTests: EngineYardTests {
         completedOrders += train.completedOrders?.compactMap({ $0 }).reduce(0, +) ?? 0
 
         XCTAssertEqual(completedOrders, 16)
-        XCTAssertEqual( train.hasOrders() , Bool(true))
+        XCTAssertEqual( train.hasOrders , true)
     }
 
     func testTrainIsNotAvailable() {
@@ -139,7 +140,7 @@ class TrainHasOrdersTests: EngineYardTests {
                               maxDice: 3, initialOrder: nil, existingOrders:nil, completedOrders: nil, factoryProduction: nil)
         }()
 
-        XCTAssertEqual( train.hasOrders() , false)
+        XCTAssertEqual( train.hasOrders , false)
         XCTAssertEqual( train.rust, Rust.new)
         XCTAssertEqual( train.available , false)
     }
@@ -157,7 +158,7 @@ class TrainHasOrdersTests: EngineYardTests {
                                   maxDice: 3, initialOrder: nil, existingOrders:nil, completedOrders: nil, factoryProduction: nil)
             }()
 
-            XCTAssertEqual( train.hasOrders() , false)
+            XCTAssertEqual( train.hasOrders , false)
             XCTAssertEqual( train.rust, Rust.rusted)
             XCTAssertEqual( train.available , false)
         }
@@ -173,7 +174,7 @@ class TrainHasOrdersTests: EngineYardTests {
                                   maxDice: 3, initialOrder: 1, existingOrders:nil, completedOrders: nil, factoryProduction: nil)
             }()
 
-            XCTAssertEqual( train.hasOrders() , true)
+            XCTAssertEqual( train.hasOrders , true)
             XCTAssertEqual( train.rust, Rust.rusted)
             XCTAssertEqual( train.available , false)
 
@@ -191,7 +192,7 @@ class TrainHasOrdersTests: EngineYardTests {
                                   maxDice: 3, initialOrder: nil, existingOrders:[3,4], completedOrders: nil, factoryProduction: nil)
             }()
 
-            XCTAssertEqual( train.hasOrders() , true)
+            XCTAssertEqual( train.hasOrders , true)
             XCTAssertEqual( train.rust, Rust.rusted)
             XCTAssertEqual( train.available , false)
         }
@@ -207,7 +208,7 @@ class TrainHasOrdersTests: EngineYardTests {
                                          maxDice: 3, initialOrder: nil, existingOrders:nil, completedOrders: [3,6], factoryProduction: nil)
                    }()
 
-                   XCTAssertEqual( train.hasOrders() , true)
+                   XCTAssertEqual( train.hasOrders , true)
                    XCTAssertEqual( train.rust, Rust.rusted)
                    XCTAssertEqual( train.available , false)
                }
