@@ -34,7 +34,7 @@ extension TrainGame {
 
         switch result {
         case .success(let response):
-            print ("RESPONSE RETURNED >> \(response)")
+            //print ("RESPONSE FOUND >> \(response)")
 
             guard let factories = response.factories else {
                 throw NSError(domain: "Couldn't load the factories from data", code: 0, userInfo: nil)
@@ -55,7 +55,7 @@ extension TrainGame {
             // Link the space to the factory
             for space in spaces {
                 guard let factory = factories.filter({ $0.generation == space.generation && $0.livery == space.livery }).first else {
-                    throw NSError(domain: "Cannot find factory: \(space.generation), \(space.livery)", code: 0, userInfo: nil)
+                    throw NSError(domain: "Cannot find factory: \(space.livery) \(space.generation)", code: 0, userInfo: nil)
                 }
                 space.factory = factory
             }
