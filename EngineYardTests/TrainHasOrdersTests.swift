@@ -33,8 +33,19 @@ class TrainHasOrdersTests: EngineYardTests {
         XCTAssertNotNil(train.initialOrder)
         XCTAssertNil(train.existingOrders)
         XCTAssertNil(train.completedOrders)
-        XCTAssertEqual(train.totalOrders, order)
-        XCTAssertEqual(train.hasOrders, true)
+
+        let initialOrders: Int = train.initialOrder ?? 0
+        XCTAssertEqual(initialOrders, order)
+
+        let existingOrders = train.existingOrders?.compactMap({ $0 }).count ?? 0
+        let completedOrders = train.completedOrders?.compactMap({ $0 }).count ?? 0
+
+        XCTAssertEqual(existingOrders, 0)
+        XCTAssertEqual(completedOrders, 0)
+
+        XCTAssertEqual( train.countOrders , 1)
+        XCTAssertEqual( train.sumOfOrders, order)
+        XCTAssertEqual( train.hasOrders, true)
     }
 
     func testTrainHasOrders_ExistingOrdersArePositive() {

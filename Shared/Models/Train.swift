@@ -43,14 +43,17 @@ class Train: Codable, Identifiable, Equatable, TrainDelegate {
     var completedOrders: [Int]?
 
     lazy var hasOrders: Bool = {
-        return (self.sumOfOrders > 0)
+        return (self.countOrders > 0)
     }()
 
-    lazy var sizeOfOrders: Int = {
-        var orders: Int = 0
-        orders += self.existingOrders?.compactMap({ $0 }).count ?? 0
-        orders += self.completedOrders?.compactMap({ $0 }).count ?? 0
-        return orders
+    lazy var countOrders: Int = {
+        var count: Int = 0
+        if let _ = self.initialOrder {
+            count += 1
+        }
+        count += self.existingOrders?.compactMap({ $0 }).count ?? 0
+        count += self.completedOrders?.compactMap({ $0 }).count ?? 0
+        return count
     }()
 
     lazy var sumOfOrders: Int = {

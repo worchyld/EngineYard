@@ -41,7 +41,7 @@ extension OrderManager {
     }
 
     internal func hasSpaceForOrders(train: Train)  throws -> Bool {
-        guard (self.train.sizeOfOrders < self.train.maxDice) else {
+        guard (self.train.countOrders < self.train.maxDice) else {
             throw TrainError(reason: .ordersAreFull)
         }
         return true
