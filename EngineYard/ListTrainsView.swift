@@ -10,7 +10,25 @@ import SwiftUI
 
 struct ListTrainsView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading, spacing: 0) {
+            Text("🚂")
+            Text("Locomotives")
+                .font(.largeTitle)
+            Text("Pick a locomotive to purchase")
+
+            Image("card-1")
+            .resizable()
+                .frame(width: 200, height: 130, alignment: .leading)
+                .cornerRadius(20)
+
+            Text("Cost : $4")
+            Text("Production: $2")
+            Text("Income $1")
+            Text("Existing Orders:")
+            Text("⚀ ⚁ ⚂ ⚃ ⚄ ⚅")
+            Text("Completed Orders:")
+            //Text("⚀ ⚁ ⚂ ⚃ ⚄ ⚅")
+        }
     }
 }
 
