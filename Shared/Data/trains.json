@@ -1,0 +1,144 @@
+{
+    "trains": [
+        {
+            "id": "7a24a713-c0aa-4498-ba2f-3c8b51089bee",
+            "name": "green.first",
+            "avatar": "green-1.png",
+            "cost": 4,
+            "livery": 1,
+            "generation": 1,
+            "train-pool": 4,
+            "maxDice": 3
+        },
+        {
+            "id": "690db970-9dda-48cc-a633-a823f438e176",
+            "name": "red.first",
+            "avatar": "red-1.png",
+            "cost": 8,
+            "livery": 2,
+            "generation": 1,
+            "train-pool": 3,            
+            "maxDice": 3
+        },
+        {
+            "id": "4633a625-4d0e-48c7-abf2-d2682b24ae18",
+            "name": "yellow.first",
+            "avatar": "yellow-1.png",
+            "cost": 12,
+            "livery": 3,
+            "generation": 1,
+            "train-pool": 2,
+            "maxDice": 2
+        },
+        {
+            "id": "af2d4cb1-ccdf-40c4-b009-af030d2d657a",
+            "name": "blue.first",
+            "avatar": "blue-1.png",
+            "cost": 16,
+            "livery": 4,
+            "generation": 1,
+            "train-pool": 1,
+            "maxDice": 1
+        },
+        {
+            "id": "08816a10-c006-475d-9d13-0a0e37ac1bbe",
+            "name": "green.second",
+            "avatar": "green-2.png",
+            "cost": 20,
+            "livery": 1,
+            "generation": 2,
+            "train-pool": 4,
+            "maxDice": 4
+        },
+        {
+            "id": "aecadc33-2930-4d96-a48d-ca4f33ff3712",
+            "name": "red.second",
+            "avatar": "red-2.png",
+            "cost": 24,
+            "livery": 2,
+            "generation": 2,
+            "train-pool": 3,            
+            "maxDice": 3
+        },
+        {
+            "id": "57f8e9b9-32b2-4bdb-a418-bc18998f66cd",
+            "name": "yellow.second",
+            "avatar": "yellow-2.png",
+            "cost": 28,
+            "livery": 3,
+            "generation": 2,
+            "train-pool": 2,
+            "maxDice": 3
+        },
+        {
+            "id": "0e26f55a-af59-4b26-8200-2d1486f3dec5",
+            "name": "green.third",
+            "avatar": "green-3.png",
+            "cost": 32,
+            "livery": 1,
+            "generation": 3,
+            "train-pool": 4,            
+            "maxDice": 4
+        },
+        {
+            "id": "95de6620-1b76-4962-91a6-f1c32fbc72ae",
+            "name": "blue.second",
+            "avatar": "blue-2.png",
+            "cost": 36,
+            "livery": 4,
+            "generation": 2,
+            "train-pool": 2,
+            "maxDice": 2
+        },
+        {
+            "id": "5e5155fb-21b5-47a1-9bb5-e7efcca4b6ae",
+            "name": "red.third",
+            "avatar": "red-3.png",
+            "cost": 40,
+            "livery": 2,
+            "generation": 3,
+            "train-pool": 3,
+            "maxDice": 4
+        },
+        {
+            "id": "fef54be7-f434-4305-a1b9-8c5ce073eeb7",
+            "name": "green.fourth",
+            "avatar": "green-4.png",
+            "cost": 44,
+            "livery": 1,
+            "generation": 4,
+            "train-pool": 4,
+            "maxDice": 5
+        },
+        {
+            "id": "1d4a6098-d39c-4d96-aabe-2623e0b1fbc5",
+            "name": "yellow.third",
+            "avatar": "yellow-3.png",
+            "cost": 48,
+            "livery": 3,
+            "generation": 3,
+            "train-pool": 3,
+            "maxDice": 3
+        },
+        {
+            "id": "628c95fe-bb3f-4b00-8df4-6a78e3a9b804",
+            "name": "red.fourth",
+            "avatar": "red-4.png",
+            "cost": 52,
+            "livery": 2,
+            "generation": 4,
+            "train-pool": 4,
+            "maxDice": 4
+        },
+        {
+            "id": "92814610-30a3-4150-a09b-e3a97bc1b99a",
+            "name": "green.fifth",
+            "avatar": "green-5.png",
+            "cost": 56,
+            "livery": 1,
+            "generation": 5,
+            "train-pool": 4,
+            "maxDice": 5
+        }
+    ]
+}
