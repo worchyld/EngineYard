@@ -87,11 +87,10 @@ class Factory : Codable, Identifiable, Equatable {
         generation = try container.decode(Generation.self, forKey: .generation)
         rust = try container.decodeIfPresent(Rust.self, forKey: .rust) ?? Rust.new
 
-        initialOrder = try container.decodeIfPresent(Int.self, forKey: .initialOrder)
-        existingOrders = try container.decodeIfPresent([Int].self, forKey: .existingOrders) ?? [Int]()
-        completedOrders = try container.decodeIfPresent([Int].self, forKey: .completedOrders) ?? [Int]()
+        initialOrder = try container.decodeIfPresent(Int.self, forKey: .initialOrder) ?? nil
+        existingOrders = try container.decodeIfPresent([Int].self, forKey: .existingOrders) ?? nil //[Int]()
+        completedOrders = try container.decodeIfPresent([Int].self, forKey: .completedOrders) ?? nil // [Int]()
 
-        //factoryProduction = try container.decodeIfPresent([FactoryProduction].self, forKey: .factoryProduction) ?? [FactoryProduction]()
         cards = try container.decodeIfPresent([Card].self, forKey: .cards) ?? [Card]()
     }
 }

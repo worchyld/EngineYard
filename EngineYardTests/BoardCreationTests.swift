@@ -107,12 +107,16 @@ class BoardCreationTests: XCTestCase {
 
         for item in trainGame.board {
             XCTAssertNotNil(item)
-            print ("Item: \(item as Any)\n")
+            XCTAssertNotNil(item?.factory)
+        }
+
+        let _ = trainGame.board.compactMap { (sp) -> Void in
+            XCTAssertNotNil( sp?.factory )
+            XCTAssertNotNil( sp?.factory?.cards )
         }
     }
 
-    /*
-    func testBoardHasNilOrdersAndEmptyArrays() throws {
+    func testBoardHasNoOrders() throws {
         let bundle = Bundle(for: type(of: self))
         let trainGame = TrainGame()
 
@@ -124,29 +128,22 @@ class BoardCreationTests: XCTestCase {
             return
         }
 
-        let _ = board.map { XCTAssertNotNil($0?.factoryProduction) }
-        let _ = board.map { XCTAssertNotNil($0?.existingOrders) }
-        let _ = board.map { XCTAssertNotNil($0?.completedOrders) }
-        let _ = board.map { XCTAssertNil($0?.initialOrder) }
-    }
+        let _ = board.compactMap { XCTAssertNil($0?.factory?.existingOrders) }
+        let _ = board.compactMap { XCTAssertNil($0?.factory?.completedOrders) }
+        let _ = board.compactMap { XCTAssertNil($0?.factory?.initialOrder) }
 
-    func testTrainsHaveProductionCostAndIncome() throws {
-        let bundle = Bundle(for: type(of: self))
-        let trainGame = TrainGame()
+        let allFactories: [Factory] = board.compactMap({ $0?.factory })
+        XCTAssertEqual(allFactories.count, 14)
 
-        try trainGame.start(bundle)
+        let _ = allFactories.map {
+            XCTAssertEqual( $0.summarizedOrders.count , 0)
 
-        XCTAssertNotNil(trainGame.board)
-        guard let board =  trainGame.board else {
-            XCTFail("Board doesn't exist")
-            return
-        }
-
-        let _ = board.compactMap { $0.flatMap {
+            // Check modulus'
             XCTAssertEqual( $0.cost % 4, 0 )
             XCTAssertEqual( $0.productionCost, Int($0.cost / 2) )
             XCTAssertEqual( $0.income, Int($0.productionCost / 2) )
-        } }
+
+        }
     }
-    */
+
 }
