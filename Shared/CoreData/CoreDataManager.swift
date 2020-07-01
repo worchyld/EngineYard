@@ -10,9 +10,9 @@ import Foundation
 import CoreData
 
 
-class CDPersistence: NSObject {
+class CoreDataManager: NSObject {
 
-    static let shared = CDPersistence()   // Singleton
+    static let shared = CoreDataManager()   // Singleton
 
     // MARK: - Core Data stack
 
@@ -56,7 +56,7 @@ class CDPersistence: NSObject {
     class func executeBlockAndCommit(_ block: @escaping () -> Void) {
 
         block()
-        CDPersistence.shared.save()
+        CoreDataManager.shared.save()
     }
 
 }
