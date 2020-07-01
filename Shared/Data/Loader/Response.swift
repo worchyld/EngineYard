@@ -9,9 +9,10 @@
 import Foundation
 
 struct Response: Codable {
-    var trains: [Train]?
+    var spaces: [Space]?
+    var factories: [Factory]?
 
     enum CodingKeys: String, CodingKey {
-        case trains
+        case spaces, factories
     }
 }

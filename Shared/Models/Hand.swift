@@ -50,43 +50,10 @@ class Hand {
 
 extension Hand {
     func canPush(_ card: Card) throws -> Bool {
-        guard let parent = card.parent else {
-            throw TrainError(reason: .missing)
-        }
-        guard parent.available else {
-            throw TrainError(reason: .unavailable)
-        }
-        guard (parent.rust != .rusted) else {
-            throw TrainError(reason: .rusted)
-        }
-
-        let filterMatchingFamily = hand.filter {
-            return ($0.parent?.generation == card.parent?.generation)
-        }.count
-
-        guard (filterMatchingFamily == 0) else {
-            throw CardError(reason: .sameFamily)
-        }
-
-        let filterMatchingCardId = hand.filter {
-            return ($0.id == card.id)
-        }.count
-
-        guard (filterMatchingCardId == 0) else {
-            throw CardError(reason: .alreadyOwnThisCard)
-        }
-
         return true
     }
 
-    func canPop(_ card: Card) throws -> Bool {
-        guard (self.hand.count > 0) else {
-            throw CardError(reason: .emptyHand)
-        }
-        guard (card.units == 0 && card.spent == 0) else {
-            return false
-        }
-
+    func canPop(_ card: Card) throws -> Bool {        
         return true
     }
 

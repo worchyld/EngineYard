@@ -37,42 +37,54 @@ class BoardCreationTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testNumberOfTrains_Equals14() throws {
-        XCTAssertNotNil(response.trains)
-        guard let trains = response.trains else {
-            XCTFail("No trains")
+    func testNumberOfSpaces_Equals14() throws {
+        XCTAssertNotNil(response.spaces)
+        guard let spaces = response.spaces else {
+            XCTFail("No spaces")
             return
         }
 
-        XCTAssertEqual(trains.count, meta.totalDecks)
+        XCTAssertEqual(spaces.count, meta.totalDecks)
     }
 
-    func testEveryTrainCostIsAModulusOf4() throws {
-        guard let trains = response.trains else {
-            XCTFail("No trains")
+    func testNumberOfFactories_Equals14() {
+        XCTAssertNotNil(response.factories)
+        guard let factories = response.factories else {
+            XCTFail("No factories")
             return
         }
-        let _ = trains.map {  XCTAssertEqual( ($0.cost % 4), 0) }
+        XCTAssertEqual(factories.count, meta.totalDecks)
+        XCTAssertEqual(factories.count, response.spaces?.count)
+    }
+
+
+    func testEveryTrainCostIsAModulusOf4() throws {
+        guard let factories = response.factories else {
+            XCTFail("No factories")
+            return
+        }
+        let _ = factories.map {  XCTAssertEqual( ($0.cost % 4), 0) }
     }
 
     func testTotalCapacityMeetsMetaExpectation() throws {
-        guard let trains = response.trains else {
-            XCTFail("No trains")
+        guard let factories = response.factories else {
+            XCTFail("No factories")
             return
         }
-        let total = trains.reduce(0, { $0 + $1.maxDice } )
+        let total = factories.reduce(0, { $0 + $1.maxDice } )
         XCTAssertEqual(total, meta.totalCapacity)
     }
 
     func testNumberOfCards_EqualsMetaExpectations() {
-        guard let trains = response.trains else {
-            XCTFail("No trains")
+        guard let factories = response.factories else {
+            XCTFail("No factories")
             return
         }
-        let totalTrainPool = trains.reduce(0, { $0 + $1.trainPool } )
+        let totalTrainPool = factories.reduce(0, { $0 + $1.trainPool } )
         XCTAssertEqual( totalTrainPool , meta.cards.total )
     }
-    
+
+
     func testBoardGetsConstructed() throws {
         let bundle = Bundle(for: type(of: self))
         let trainGame = TrainGame()
@@ -87,6 +99,19 @@ class BoardCreationTests: XCTestCase {
         XCTAssertEqual(board.count, meta.totalDecks)
     }
 
+    func testBoardSpacesHaveFactories() throws {
+        let bundle = Bundle(for: type(of: self))
+        let trainGame = TrainGame()
+
+        try trainGame.start(bundle)
+
+        for item in trainGame.board {
+            XCTAssertNotNil(item)
+            print ("Item: \(item as Any)\n")
+        }
+    }
+
+    /*
     func testBoardHasNilOrdersAndEmptyArrays() throws {
         let bundle = Bundle(for: type(of: self))
         let trainGame = TrainGame()
@@ -123,5 +148,5 @@ class BoardCreationTests: XCTestCase {
             XCTAssertEqual( $0.income, Int($0.productionCost / 2) )
         } }
     }
-
+    */
 }

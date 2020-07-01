@@ -36,7 +36,7 @@ class MetaDecodedTests: XCTestCase {
     }
 
     func testResponseItemsAreNotNil() throws {
-        XCTAssertNotNil(response.trains)
+        XCTAssertNotNil(response.factories)
     }
 
     func testMetaExpectations() throws {
@@ -80,15 +80,15 @@ class MetaDecodedTests: XCTestCase {
     }
 
     func testDecksEqualsMetaQty() throws {
-        guard let trains = response.trains else {
-            throw NSError(domain: "No trains found", code: 0, userInfo: nil)
+        guard let factories = response.factories else {
+            throw NSError(domain: "No factories found", code: 0, userInfo: nil)
         }
-        XCTAssertEqual(trains.count, meta.totalDecks)
+        XCTAssertEqual(factories.count, meta.totalDecks)
     }
     
 
     func testCapacities() throws {
-        guard let factories = response.trains else {
+        guard let factories = response.factories else {
             XCTFail("No factories found")
             return
         }

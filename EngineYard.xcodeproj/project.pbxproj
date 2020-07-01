@@ -24,7 +24,6 @@
 		4D1C72F524A0F6B0009CAA3A /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1C72F424A0F6B0009CAA3A /* Board.swift */; };
 		4D1C72FF24A16EAA009CAA3A /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1C72FE24A16EAA009CAA3A /* AsyncOperation.swift */; };
 		4D1C730124A1C898009CAA3A /* EY+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1C730024A1C898009CAA3A /* EY+Bundle.swift */; };
-		4D238C3B24A00D060031E3EE /* Train.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE05E249FF1E1009C203E /* Train.swift */; };
 		4D238C4A24A051880031E3EE /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D238C4624A050C00031E3EE /* Response.swift */; };
 		4D238C4B24A051C20031E3EE /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D238C3D24A046B30031E3EE /* Meta.swift */; };
 		4D238C4E24A058B40031E3EE /* Livery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D238C4C24A058AD0031E3EE /* Livery.swift */; };
@@ -35,16 +34,15 @@
 		4D34A86B2495A61D00590EFD /* WinnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D34A86A2495A61D00590EFD /* WinnerTests.swift */; };
 		4D3BE04B249FD07C009C203E /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE04A249FD07C009C203E /* Wallet.swift */; };
 		4D3BE05A249FF05E009C203E /* WalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE059249FF05E009C203E /* WalletTests.swift */; };
-		4D3BE3A124AA6D0200DE8787 /* ShiftProductionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BE3A024AA6D0200DE8787 /* ShiftProductionHandler.swift */; };
-		4D42DBE424A7A15600B8FF68 /* FactoryProduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D42DBE324A7A15600B8FF68 /* FactoryProduction.swift */; };
 		4D42DBE624A7A45200B8FF68 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D42DBE524A7A45200B8FF68 /* DataLoader.swift */; };
 		4D42DBE824A7A5CC00B8FF68 /* MetaDecodedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D42DBE724A7A5CC00B8FF68 /* MetaDecodedTests.swift */; };
 		4D42DBEA24A7A65800B8FF68 /* BundleLoadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D42DBE924A7A65800B8FF68 /* BundleLoadTests.swift */; };
 		4D42DBEC24A7A6BA00B8FF68 /* BoardCreationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D42DBEB24A7A6BA00B8FF68 /* BoardCreationTests.swift */; };
 		4D42DBF624A8A02800B8FF68 /* TrainHasOrdersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D42DBF524A8A02800B8FF68 /* TrainHasOrdersTests.swift */; };
-		4D42DBF824A9122700B8FF68 /* ProductionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D42DBF724A9122700B8FF68 /* ProductionHandler.swift */; };
 		4D43244C24AC1FF000B982BE /* EY+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D43244B24AC1FF000B982BE /* EY+Array.swift */; };
-		4D43244E24AC20FB00B982BE /* OrderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D43244D24AC20FB00B982BE /* OrderManager.swift */; };
+		4D43245024ACB29E00B982BE /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D43244F24ACB29E00B982BE /* Space.swift */; };
+		4D43245224ACB37700B982BE /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D43245124ACB37700B982BE /* Factory.swift */; };
+		4D43245424ACB4A200B982BE /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D43245324ACB4A200B982BE /* Card.swift */; };
 		4D49D2632499F9D9000E857F /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D49D2622499F9D9000E857F /* AvatarView.swift */; };
 		4D49D2672499FE2C000E857F /* EY+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D49D2662499FE2C000E857F /* EY+Identifier.swift */; };
 		4D54250C249D5B16004B97A8 /* Spending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D54250B249D5B16004B97A8 /* Spending.swift */; };
@@ -64,7 +62,6 @@
 		4DA1C1482486EDE3004C4121 /* EY+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C1472486EDE3004C4121 /* EY+Date.swift */; };
 		4DA1C14B2486F3FC004C4121 /* Tax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C14A2486F3FC004C4121 /* Tax.swift */; };
 		4DA1C14D2486F43E004C4121 /* TaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C14C2486F43E004C4121 /* TaxTests.swift */; };
-		4DBBA17624AB89E100E32BBD /* PurchaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBA17424AB89B300E32BBD /* PurchaseHandler.swift */; };
 		4DBBA17924AB91EC00E32BBD /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBA17724AB91DE00E32BBD /* Hand.swift */; };
 		4DF1B6CE24A3412F00618C7B /* Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1B6CD24A3412F00618C7B /* Fixtures.swift */; };
 /* End PBXBuildFile section */
@@ -110,17 +107,15 @@
 		4D3BE04A249FD07C009C203E /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		4D3BE059249FF05E009C203E /* WalletTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletTests.swift; sourceTree = "<group>"; };
 		4D3BE05C249FF1C4009C203E /* board.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = board.json; sourceTree = "<group>"; };
-		4D3BE05E249FF1E1009C203E /* Train.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Train.swift; sourceTree = "<group>"; };
-		4D3BE3A024AA6D0200DE8787 /* ShiftProductionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftProductionHandler.swift; sourceTree = "<group>"; };
-		4D42DBE324A7A15600B8FF68 /* FactoryProduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryProduction.swift; sourceTree = "<group>"; };
 		4D42DBE524A7A45200B8FF68 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		4D42DBE724A7A5CC00B8FF68 /* MetaDecodedTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaDecodedTests.swift; sourceTree = "<group>"; };
 		4D42DBE924A7A65800B8FF68 /* BundleLoadTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleLoadTests.swift; sourceTree = "<group>"; };
 		4D42DBEB24A7A6BA00B8FF68 /* BoardCreationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardCreationTests.swift; sourceTree = "<group>"; };
 		4D42DBF524A8A02800B8FF68 /* TrainHasOrdersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainHasOrdersTests.swift; sourceTree = "<group>"; };
-		4D42DBF724A9122700B8FF68 /* ProductionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionHandler.swift; sourceTree = "<group>"; };
 		4D43244B24AC1FF000B982BE /* EY+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Array.swift"; sourceTree = "<group>"; };
-		4D43244D24AC20FB00B982BE /* OrderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderManager.swift; sourceTree = "<group>"; };
+		4D43244F24ACB29E00B982BE /* Space.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space.swift; sourceTree = "<group>"; };
+		4D43245124ACB37700B982BE /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
+		4D43245324ACB4A200B982BE /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		4D49D2622499F9D9000E857F /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		4D49D2662499FE2C000E857F /* EY+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Identifier.swift"; sourceTree = "<group>"; };
 		4D54250B249D5B16004B97A8 /* Spending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spending.swift; sourceTree = "<group>"; };
@@ -140,7 +135,6 @@
 		4DA1C1472486EDE3004C4121 /* EY+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Date.swift"; sourceTree = "<group>"; };
 		4DA1C14A2486F3FC004C4121 /* Tax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tax.swift; sourceTree = "<group>"; };
 		4DA1C14C2486F43E004C4121 /* TaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTests.swift; sourceTree = "<group>"; };
-		4DBBA17424AB89B300E32BBD /* PurchaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHandler.swift; sourceTree = "<group>"; };
 		4DBBA17724AB91DE00E32BBD /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
 		4DF1B6CD24A3412F00618C7B /* Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixtures.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -235,11 +229,8 @@
 				4DBBA16C24AB75D600E32BBD /* Models */,
 				4D10C6152486DC4700238508 /* Constants.swift */,
 				4D9FC8B624AA0B6B002E5FB4 /* GameErrors.swift */,
-				4DA1C14A2486F3FC004C4121 /* Tax.swift */,
-				4D42DBF724A9122700B8FF68 /* ProductionHandler.swift */,
-				4DBBA17424AB89B300E32BBD /* PurchaseHandler.swift */,
-				4D3BE3A024AA6D0200DE8787 /* ShiftProductionHandler.swift */,
 				4D3BE04A249FD07C009C203E /* Wallet.swift */,
+				4D1C72F424A0F6B0009CAA3A /* Board.swift */,
 				4D54250B249D5B16004B97A8 /* Spending.swift */,
 			);
 			path = Shared;
@@ -296,15 +287,15 @@
 		4DBBA16C24AB75D600E32BBD /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4D1C72F424A0F6B0009CAA3A /* Board.swift */,
-				4D43244D24AC20FB00B982BE /* OrderManager.swift */,
-				4D3BE05E249FF1E1009C203E /* Train.swift */,
-				4D42DBE324A7A15600B8FF68 /* FactoryProduction.swift */,
+				4D43244F24ACB29E00B982BE /* Space.swift */,
+				4D43245124ACB37700B982BE /* Factory.swift */,
+				4D43245324ACB4A200B982BE /* Card.swift */,
+				4D66EBC7248F8147005DE7F0 /* Player.swift */,
 				4D1C72F224A0F323009CAA3A /* Rust.swift */,
 				4D238C4C24A058AD0031E3EE /* Livery.swift */,
 				4D238C4F24A059430031E3EE /* Generation.swift */,
-				4D66EBC7248F8147005DE7F0 /* Player.swift */,
 				4DBBA17724AB91DE00E32BBD /* Hand.swift */,
+				4DA1C14A2486F3FC004C4121 /* Tax.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -430,6 +421,7 @@
 			files = (
 				4D43244C24AC1FF000B982BE /* EY+Array.swift in Sources */,
 				4D10C5882486D08400238508 /* AppDelegate.swift in Sources */,
+				4D43245424ACB4A200B982BE /* Card.swift in Sources */,
 				4D238C5324A095230031E3EE /* EY+CaseIterable.swift in Sources */,
 				4D1C72FF24A16EAA009CAA3A /* AsyncOperation.swift in Sources */,
 				4DA1C13E2486ECC9004C4121 /* EY+String.swift in Sources */,
@@ -441,7 +433,7 @@
 				4D1C730124A1C898009CAA3A /* EY+Bundle.swift in Sources */,
 				4D9FC8B724AA0B6B002E5FB4 /* GameErrors.swift in Sources */,
 				4DA1C1402486ECF3004C4121 /* Sounds.swift in Sources */,
-				4D3BE3A124AA6D0200DE8787 /* ShiftProductionHandler.swift in Sources */,
+				4D43245024ACB29E00B982BE /* Space.swift in Sources */,
 				4D10C58A2486D08400238508 /* SceneDelegate.swift in Sources */,
 				4D42DBE624A7A45200B8FF68 /* DataLoader.swift in Sources */,
 				4DA1C1442486ED8C004C4121 /* EY+FlatColor.swift in Sources */,
@@ -449,18 +441,14 @@
 				4D238C4E24A058B40031E3EE /* Livery.swift in Sources */,
 				4D54250C249D5B16004B97A8 /* Spending.swift in Sources */,
 				4D3BE04B249FD07C009C203E /* Wallet.swift in Sources */,
-				4D42DBE424A7A15600B8FF68 /* FactoryProduction.swift in Sources */,
-				4D238C3B24A00D060031E3EE /* Train.swift in Sources */,
 				4D1C72F124A0F2D1009CAA3A /* JSONAny.swift in Sources */,
-				4D43244E24AC20FB00B982BE /* OrderManager.swift in Sources */,
 				4D238C4A24A051880031E3EE /* Response.swift in Sources */,
 				4D238C5124A059F90031E3EE /* Generation.swift in Sources */,
-				4D42DBF824A9122700B8FF68 /* ProductionHandler.swift in Sources */,
 				4D1C72F524A0F6B0009CAA3A /* Board.swift in Sources */,
 				4DA1C1392486EC3D004C4121 /* Die.swift in Sources */,
 				4DA1C14B2486F3FC004C4121 /* Tax.swift in Sources */,
 				4DA1C1482486EDE3004C4121 /* EY+Date.swift in Sources */,
-				4DBBA17624AB89E100E32BBD /* PurchaseHandler.swift in Sources */,
+				4D43245224ACB37700B982BE /* Factory.swift in Sources */,
 				4D10C6162486DC4700238508 /* Constants.swift in Sources */,
 				4DBBA17924AB91EC00E32BBD /* Hand.swift in Sources */,
 				4D49D2672499FE2C000E857F /* EY+Identifier.swift in Sources */,
