@@ -83,14 +83,45 @@ class TrainHasOrdersTests: EngineYardTests {
     }
 
     func testFactoryHasOrdersButRusted() {
-        let f: Factory = {
-            return Factory.init(id: UUID(),
-                                name: "green-1", avatar: "green-1.png", livery: .green, generation: .first, cost: 4, rust: .rusted,
-                                cards: nil, maxDice: 4, trainPool: 3, initialOrder: nil, existingOrders: [3,5,2], completedOrders: nil)
-        }()
 
-        XCTAssertEqual( f.summarizedOrders.count, 3)
-        XCTAssertEqual( f.isAvailable, false)
-        XCTAssertEqual( f.rust, Rust.rusted)
+        // Test with `initialOrders`
+        performTest {
+            let f: Factory = {
+                return Factory.init(id: UUID(),
+                                    name: "green-1", avatar: "green-1.png", livery: .green, generation: .first, cost: 4, rust: .rusted,
+                                    cards: nil, maxDice: 4, trainPool: 3, initialOrder: 3, existingOrders: nil, completedOrders: nil)
+            }()
+
+            XCTAssertEqual( f.summarizedOrders.count, 1)
+            XCTAssertEqual( f.isAvailable, false)
+            XCTAssertEqual( f.rust, Rust.rusted)
+        }
+
+        // Test with `existingOrders`
+        performTest {
+            let f: Factory = {
+                return Factory.init(id: UUID(),
+                                    name: "green-1", avatar: "green-1.png", livery: .green, generation: .first, cost: 4, rust: .rusted,
+                                    cards: nil, maxDice: 4, trainPool: 3, initialOrder: nil, existingOrders: [3,5,2], completedOrders: nil)
+            }()
+
+            XCTAssertEqual( f.summarizedOrders.count, 3)
+            XCTAssertEqual( f.isAvailable, false)
+            XCTAssertEqual( f.rust, Rust.rusted)
+        }
+
+        // Test with `completedOrders`
+        performTest {
+            let f: Factory = {
+                return Factory.init(id: UUID(),
+                                    name: "green-1", avatar: "green-1.png", livery: .green, generation: .first, cost: 4, rust: .rusted,
+                                    cards: nil, maxDice: 4, trainPool: 3, initialOrder: nil, existingOrders: nil, completedOrders: [6,4])
+            }()
+
+            XCTAssertEqual( f.summarizedOrders.count, 2)
+            XCTAssertEqual( f.isAvailable, false)
+            XCTAssertEqual( f.rust, Rust.rusted)
+        }
+
     }
 }
