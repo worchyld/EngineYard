@@ -27,6 +27,7 @@ class Player : NSObject, GKGameModelPlayer, Identifiable, WalletHolderDelegate, 
     let name: String
     var cash: Int
     let avatar: String
+    var cards: [Card]
 
     private(set) var state: PlayerState
 
@@ -36,6 +37,7 @@ class Player : NSObject, GKGameModelPlayer, Identifiable, WalletHolderDelegate, 
         self.cash = cash
         self.avatar = avatar
         self.state = .waiting
+        self.cards = [Card]()
     }
 }
 

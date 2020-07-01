@@ -12,7 +12,6 @@ import XCTest
 
 class TrainHasOrdersTests: EngineYardTests {
 
-    /*
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -22,208 +21,76 @@ class TrainHasOrdersTests: EngineYardTests {
     }
 
     func testTrainHasNoOrders() {
-        let train = Fixtures.fakeTrain
-        XCTAssertFalse(train.hasOrders)
+        let train = Fixtures.mockFactory
+        XCTAssertNil(train.initialOrder)
+        XCTAssertNil(train.existingOrders)
+        XCTAssertNil(train.completedOrders)
+        XCTAssertEqual(train.summarizedOrders.count, 0)
     }
 
     func testTrainHasOrders_InitialOrderIsPositive() {
-        let train = Fixtures.fakeTrain
+        let train = Fixtures.mockFactory
         XCTAssertNil(train.initialOrder)
+
         let order = Die.roll
         train.initialOrder = order
         XCTAssertNotNil(train.initialOrder)
+
         XCTAssertNil(train.existingOrders)
         XCTAssertNil(train.completedOrders)
 
-        let initialOrders: Int = train.initialOrder ?? 0
-        XCTAssertEqual(initialOrders, order)
-
-        let existingOrders = train.existingOrders?.compactMap({ $0 }).count ?? 0
-        let completedOrders = train.completedOrders?.compactMap({ $0 }).count ?? 0
-
-        XCTAssertEqual(existingOrders, 0)
-        XCTAssertEqual(completedOrders, 0)
-
-        XCTAssertEqual( train.countOrders , 1)
-        XCTAssertEqual( train.sumOfOrders, order)
-        XCTAssertEqual( train.hasOrders, true)
+        XCTAssertEqual( train.summarizedOrders.count , 1)
     }
 
-    func testTrainHasOrders_ExistingOrdersArePositive() {
-        let train: Train = {
-            return Train.init(id: UUID(),
-                              name: "green-1", avatar: "green-1.png",
-                              cost: 4, trainPool: 3,
-                              livery: .green, generation: .first,
-                              rust: .new,
-                              maxDice: 3, initialOrder: nil, existingOrders: [Int](), completedOrders: nil, factoryProduction: nil)
+    func testFactory_HasExistingOrders() {
+        let f: Factory = {
+            return Factory.init(id: UUID(),
+                                name: "green-1", avatar: "green-1.png", livery: .green, generation: .first, cost: 4, rust: .new,
+                                cards: nil, maxDice: 4, trainPool: 3, initialOrder: nil, existingOrders: [3,5,2], completedOrders: nil)
         }()
 
-        XCTAssertNotNil(train.existingOrders)
-        XCTAssertEqual(train.existingOrders?.isEmpty, true)
-
-        train.existingOrders?.append( Die.roll )
-        XCTAssertNil(train.initialOrder)
-        XCTAssertNotNil(train.existingOrders)
-        XCTAssertNil(train.completedOrders)
-        XCTAssertTrue(train.hasOrders)
-
+        XCTAssertNil(f.initialOrder)
+        XCTAssertNil(f.completedOrders)
+        XCTAssertNotNil(f.existingOrders)
+        XCTAssertEqual(f.existingOrders?.count, 3)
+        XCTAssertEqual(f.summarizedOrders.count, 3, "Summarised orders: \(f.summarizedOrders)")
     }
 
-    func testTrainHasOrders_CompletedOrdersArePositive() {
-        let train: Train = {
-            return Train.init(id: UUID(),
-                              name: "green-1", avatar: "green-1.png",
-                              cost: 4, trainPool: 3,
-                              livery: .green, generation: .first,
-                              rust: .new,
-                              maxDice: 3, initialOrder: nil, existingOrders:nil, completedOrders: [Int](), factoryProduction: nil)
-        }()
-        
-        XCTAssertNotNil(train.completedOrders)
-        train.completedOrders?.append( Die.roll )
-        XCTAssertNotNil(train.completedOrders)
-
-        XCTAssertNil(train.initialOrder)
-        XCTAssertNil(train.existingOrders)
-
-        XCTAssertTrue(train.hasOrders)
-    }
-
-    func testTrainCompactMapOrdersIsZero() {
-        let train: Train = {
-            return Train.init(id: UUID(),
-                              name: "green-1", avatar: "green-1.png",
-                              cost: 4, trainPool: 3,
-                              livery: .green, generation: .first,
-                              rust: .new,
-                              maxDice: 3, initialOrder: nil, existingOrders:nil, completedOrders: [Int](), factoryProduction: nil)
+    func testFactory_HasMixedOrders() {
+        let f: Factory = {
+            return Factory.init(id: UUID(),
+                                name: "green-1", avatar: "green-1.png", livery: .green, generation: .first, cost: 4, rust: .new,
+                                cards: nil, maxDice: 4, trainPool: 3, initialOrder: nil, existingOrders: [3,5,2], completedOrders: [6])
         }()
 
-        var completedOrders: Int = train.initialOrder ?? 0
-        completedOrders += train.existingOrders?.compactMap({ $0 }).reduce(0, +) ?? 0
-        completedOrders += train.completedOrders?.compactMap({ $0 }).reduce(0, +) ?? 0
-
-        XCTAssertEqual(completedOrders, 0)
+        XCTAssertNil(f.initialOrder)
+        XCTAssertNotNil(f.completedOrders)
+        XCTAssertNotNil(f.existingOrders)
+        XCTAssertEqual(f.existingOrders?.count, 3)
+        XCTAssertEqual(f.completedOrders?.count, 1)
+        XCTAssertEqual(f.summarizedOrders.count, 4, "Summarised orders: \(f.summarizedOrders)")
     }
 
-    func testTrainCompactMapOrdersIsOne() {
-        let train: Train = {
-            return Train.init(id: UUID(),
-                              name: "green-1", avatar: "green-1.png",
-                              cost: 4, trainPool: 3,
-                              livery: .green, generation: .first,
-                              rust: .new,
-                              maxDice: 3, initialOrder: 1, existingOrders:nil, completedOrders: [Int](), factoryProduction: nil)
+    func testFactoryIsNotAvailable() {
+        let f: Factory = {
+            return Factory.init(id: UUID(),
+                                name: "green-1", avatar: "green-1.png", livery: .green, generation: .first, cost: 4, rust: .new,
+                                cards: nil, maxDice: 4, trainPool: 3, initialOrder: nil, existingOrders: nil, completedOrders: nil)
         }()
 
-        var completedOrders: Int = train.initialOrder ?? 0
-        completedOrders += train.existingOrders?.compactMap({ $0 }).reduce(0, +) ?? 0
-        completedOrders += train.completedOrders?.compactMap({ $0 }).reduce(0, +) ?? 0
-
-        XCTAssertEqual(completedOrders, 1)
+        XCTAssertEqual( f.summarizedOrders.count , 0)
+        XCTAssertEqual( f.isAvailable, false)
     }
 
-    func testTrainCompactMapOrdersIsMixed() {
-        let train: Train = {
-            return Train.init(id: UUID(),
-                              name: "green-1", avatar: "green-1.png",
-                              cost: 4, trainPool: 3,
-                              livery: .green, generation: .first,
-                              rust: .new,
-                              maxDice: 3, initialOrder: 1, existingOrders:[3,5,7], completedOrders: nil, factoryProduction: nil)
+    func testFactoryHasOrdersButRusted() {
+        let f: Factory = {
+            return Factory.init(id: UUID(),
+                                name: "green-1", avatar: "green-1.png", livery: .green, generation: .first, cost: 4, rust: .rusted,
+                                cards: nil, maxDice: 4, trainPool: 3, initialOrder: nil, existingOrders: [3,5,2], completedOrders: nil)
         }()
 
-        var completedOrders: Int = train.initialOrder ?? 0
-        completedOrders += train.existingOrders?.compactMap({ $0 }).reduce(0, +) ?? 0
-        completedOrders += train.completedOrders?.compactMap({ $0 }).reduce(0, +) ?? 0
-
-        XCTAssertEqual(completedOrders, 16)
-        XCTAssertEqual( train.hasOrders , true)
+        XCTAssertEqual( f.summarizedOrders.count, 3)
+        XCTAssertEqual( f.isAvailable, false)
+        XCTAssertEqual( f.rust, Rust.rusted)
     }
-
-    func testTrainIsNotAvailable() {
-        let train: Train = {
-            return Train.init(id: UUID(),
-                              name: "green-1", avatar: "green-1.png",
-                              cost: 4, trainPool: 3,
-                              livery: .green, generation: .first,
-                              rust: .new,
-                              maxDice: 3, initialOrder: nil, existingOrders:nil, completedOrders: nil, factoryProduction: nil)
-        }()
-
-        XCTAssertEqual( train.hasOrders , false)
-        XCTAssertEqual( train.rust, Rust.new)
-        XCTAssertEqual( train.available , false)
-    }
-
-    func testTrainHasOrdersButRusted() {
-
-        performTest {
-            // with no orders
-            let train: Train = {
-                return Train.init(id: UUID(),
-                                  name: "green-1", avatar: "green-1.png",
-                                  cost: 4, trainPool: 3,
-                                  livery: .green, generation: .first,
-                                  rust: .rusted,
-                                  maxDice: 3, initialOrder: nil, existingOrders:nil, completedOrders: nil, factoryProduction: nil)
-            }()
-
-            XCTAssertEqual( train.hasOrders , false)
-            XCTAssertEqual( train.rust, Rust.rusted)
-            XCTAssertEqual( train.available , false)
-        }
-
-        performTest {
-            // with initial order
-            let train: Train = {
-                return Train.init(id: UUID(),
-                                  name: "green-1", avatar: "green-1.png",
-                                  cost: 4, trainPool: 3,
-                                  livery: .green, generation: .first,
-                                  rust: .rusted,
-                                  maxDice: 3, initialOrder: 1, existingOrders:nil, completedOrders: nil, factoryProduction: nil)
-            }()
-
-            XCTAssertEqual( train.hasOrders , true)
-            XCTAssertEqual( train.rust, Rust.rusted)
-            XCTAssertEqual( train.available , false)
-
-        }
-
-
-        performTest {
-            // with existing orders
-            let train: Train = {
-                return Train.init(id: UUID(),
-                                  name: "green-1", avatar: "green-1.png",
-                                  cost: 4, trainPool: 3,
-                                  livery: .green, generation: .first,
-                                  rust: .rusted,
-                                  maxDice: 3, initialOrder: nil, existingOrders:[3,4], completedOrders: nil, factoryProduction: nil)
-            }()
-
-            XCTAssertEqual( train.hasOrders , true)
-            XCTAssertEqual( train.rust, Rust.rusted)
-            XCTAssertEqual( train.available , false)
-        }
-
-        performTest {
-                   // with completed orders
-                   let train: Train = {
-                       return Train.init(id: UUID(),
-                                         name: "green-1", avatar: "green-1.png",
-                                         cost: 4, trainPool: 3,
-                                         livery: .green, generation: .first,
-                                         rust: .rusted,
-                                         maxDice: 3, initialOrder: nil, existingOrders:nil, completedOrders: [3,6], factoryProduction: nil)
-                   }()
-
-                   XCTAssertEqual( train.hasOrders , true)
-                   XCTAssertEqual( train.rust, Rust.rusted)
-                   XCTAssertEqual( train.available , false)
-               }
-    }
- */
 }

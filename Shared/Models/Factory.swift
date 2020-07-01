@@ -32,12 +32,12 @@ class Factory : Codable, Identifiable, Equatable {
             orders.append( initial )
         }
         if let existing = self.existingOrders {
-            let flattenExisting = existing.compactMap({ $0 }).count
-            orders.append(flattenExisting)
+            let flattenExisting = existing.compactMap({ $0 })
+            orders.append(contentsOf: flattenExisting)
         }
         if let completed = self.completedOrders {
-            let flattenCompleted = completed.compactMap({ $0 }).count
-            orders.append(flattenCompleted)
+            let flattenCompleted = completed.compactMap({ $0 })
+            orders.append(contentsOf: flattenCompleted)
         }
         return orders
     }()
@@ -116,5 +116,9 @@ extension Factory {
     var income: Int {
         guard (cost % 4 == 0) else { return 0 }
         return Int( floor(Double(productionCost / 2)) )
+    }
+
+    var isAvailable: Bool {
+        return ((self.summarizedOrders.count > 0) && (self.rust != .rusted))
     }
 }
