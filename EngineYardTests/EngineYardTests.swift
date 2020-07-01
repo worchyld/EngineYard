@@ -19,16 +19,24 @@ class EngineYardTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+    public func performTest(closure: () throws -> Void) {
+           do {
+               try closure()
+           } catch {
+               XCTFail("Unexpected error thrown: \(error)")
+           }
+       }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    public func assert<T, E: Error>(_ expression: @autoclosure () throws -> T,
+                                     throwsErrorOfType expectedError: E.Type) {
+        do {
+            _ = try expression()
+            XCTFail("Expected error to be thrown")
+        } catch {
+            XCTAssertTrue(error is E)
         }
     }
 
+    
 }
+

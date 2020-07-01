@@ -12,6 +12,8 @@ public struct Constants {
     // Game ends when a player hits 330 coins or more
     public static let endGameCashTrigger: Int = 330
 
+    public static let boardJSONFile = "board.json"
+
     public struct SeedCash {
         public static let threePlayer: Int = 12
         public static let fivePlayer: Int = 14
