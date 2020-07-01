@@ -44,6 +44,8 @@
 		4D42DBEE24A7A78C00B8FF68 /* cards.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D42DBED24A7A78C00B8FF68 /* cards.json */; };
 		4D42DBF624A8A02800B8FF68 /* TrainHasOrdersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D42DBF524A8A02800B8FF68 /* TrainHasOrdersTests.swift */; };
 		4D42DBF824A9122700B8FF68 /* ProductionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D42DBF724A9122700B8FF68 /* ProductionHandler.swift */; };
+		4D43244C24AC1FF000B982BE /* EY+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D43244B24AC1FF000B982BE /* EY+Array.swift */; };
+		4D43244E24AC20FB00B982BE /* OrderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D43244D24AC20FB00B982BE /* OrderManager.swift */; };
 		4D49D2632499F9D9000E857F /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D49D2622499F9D9000E857F /* AvatarView.swift */; };
 		4D49D2672499FE2C000E857F /* EY+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D49D2662499FE2C000E857F /* EY+Identifier.swift */; };
 		4D54250C249D5B16004B97A8 /* Spending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D54250B249D5B16004B97A8 /* Spending.swift */; };
@@ -119,6 +121,8 @@
 		4D42DBED24A7A78C00B8FF68 /* cards.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cards.json; sourceTree = "<group>"; };
 		4D42DBF524A8A02800B8FF68 /* TrainHasOrdersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainHasOrdersTests.swift; sourceTree = "<group>"; };
 		4D42DBF724A9122700B8FF68 /* ProductionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionHandler.swift; sourceTree = "<group>"; };
+		4D43244B24AC1FF000B982BE /* EY+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Array.swift"; sourceTree = "<group>"; };
+		4D43244D24AC20FB00B982BE /* OrderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderManager.swift; sourceTree = "<group>"; };
 		4D49D2622499F9D9000E857F /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		4D49D2662499FE2C000E857F /* EY+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Identifier.swift"; sourceTree = "<group>"; };
 		4D54250B249D5B16004B97A8 /* Spending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spending.swift; sourceTree = "<group>"; };
@@ -238,7 +242,6 @@
 				4DBBA17424AB89B300E32BBD /* PurchaseHandler.swift */,
 				4D3BE3A024AA6D0200DE8787 /* ShiftProductionHandler.swift */,
 				4D3BE04A249FD07C009C203E /* Wallet.swift */,
-				4D1C72F424A0F6B0009CAA3A /* Board.swift */,
 				4D54250B249D5B16004B97A8 /* Spending.swift */,
 			);
 			path = Shared;
@@ -278,6 +281,7 @@
 				4D49D2662499FE2C000E857F /* EY+Identifier.swift */,
 				4D238C5224A095230031E3EE /* EY+CaseIterable.swift */,
 				4D1C730024A1C898009CAA3A /* EY+Bundle.swift */,
+				4D43244B24AC1FF000B982BE /* EY+Array.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -295,6 +299,8 @@
 		4DBBA16C24AB75D600E32BBD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4D1C72F424A0F6B0009CAA3A /* Board.swift */,
+				4D43244D24AC20FB00B982BE /* OrderManager.swift */,
 				4D3BE05E249FF1E1009C203E /* Train.swift */,
 				4D42DBE324A7A15600B8FF68 /* FactoryProduction.swift */,
 				4D1C72F224A0F323009CAA3A /* Rust.swift */,
@@ -426,6 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D43244C24AC1FF000B982BE /* EY+Array.swift in Sources */,
 				4D10C5882486D08400238508 /* AppDelegate.swift in Sources */,
 				4D238C5324A095230031E3EE /* EY+CaseIterable.swift in Sources */,
 				4D1C72FF24A16EAA009CAA3A /* AsyncOperation.swift in Sources */,
@@ -449,6 +456,7 @@
 				4D42DBE424A7A15600B8FF68 /* FactoryProduction.swift in Sources */,
 				4D238C3B24A00D060031E3EE /* Train.swift in Sources */,
 				4D1C72F124A0F2D1009CAA3A /* JSONAny.swift in Sources */,
+				4D43244E24AC20FB00B982BE /* OrderManager.swift in Sources */,
 				4D238C4A24A051880031E3EE /* Response.swift in Sources */,
 				4D238C5124A059F90031E3EE /* Generation.swift in Sources */,
 				4D42DBF824A9122700B8FF68 /* ProductionHandler.swift in Sources */,

@@ -45,6 +45,24 @@ class Train: Codable, Identifiable, Equatable, TrainDelegate {
 
     var factoryProduction: [FactoryProduction]?
 
+//    // Ownership
+//       var owners: [Player]? {
+//           return self.cards
+//               .lazy
+//               .flatMap { card in card.owner.map{ (card: card, owner: $0) } }
+//               //.sorted { $0.owner.turnOrder < $1.owner.turnOrder }
+//               .map { $0.owner }
+//       }
+
+
+    lazy var owners : [Player]? = {
+        return self.factoryProduction?
+            .compactMap({ (fp) -> Player? in
+                return fp.owner
+            })
+    }()
+    
+
     private enum CodingKeys: String, CodingKey {
         case id, name, avatar, cost, livery, generation
         case trainPool = "train-pool"

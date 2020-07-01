@@ -60,8 +60,16 @@ public enum TrainErrorReason : Equatable {
     case missing
     /// The train is not available
     case unavailable
-    /// The train is rusted
+    /// The train is rusting
+    case rusting
+    /// The train is rusted / obsolete
     case rusted
+    /// No orders found
+    case noOrders
+    /// Orders are at capacity: See maxDice
+    case ordersAreFull
+    /// Already has initial order
+    case alreadyHasInitialOrder
     /// Has no initial order
     case noInitialOrder
     /// Has no existingOrders
@@ -92,6 +100,8 @@ public enum CardErrorReason : Equatable {
     case sameFamily
     /// Your hand is empty
     case emptyHand
+    /// Cannot add card
+    case cannotAddCard
 }
 
 /// Enum listing reasons why production manipulation could fail

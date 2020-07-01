@@ -10,7 +10,7 @@ import Foundation
 
 
 // Only responsible for pushing and popping cards
-// to a collecion of cards
+// to a collecion of cards with validation
 class Hand {
     private var hand: [Card]
 

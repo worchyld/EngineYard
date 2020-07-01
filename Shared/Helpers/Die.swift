@@ -10,6 +10,9 @@ import Foundation
 import GameplayKit
 
 // Simple die randomizer
+protocol Rollable {
+    func roll() -> Int
+}
 
 struct Die: Equatable {
     public static var roll: Int {

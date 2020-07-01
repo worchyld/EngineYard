@@ -11,8 +11,8 @@ import Foundation
 typealias Card = FactoryProduction
 
 class FactoryProduction : Identifiable, Codable {
-    private(set) weak var parent: Train?
-    private(set) weak var owner: Player?
+    weak var parent: Train?
+    weak var owner: Player?
     let id: UUID
     var units: Int
     var spent: Int
@@ -39,22 +39,5 @@ extension FactoryProduction : Equatable {
 extension FactoryProduction : CustomStringConvertible {
     var description: String {
         return ("units: \(self.units), spent: \(spent), deleted: \(deleted)")
-    }
-}
-
-// Builder pattern
-
-protocol FactoryProductionBuilder: AnyObject {
-    static func build( _ owner: Player?, _ train: Train?, units: Int ) -> FactoryProduction
-}
-
-extension FactoryProduction : FactoryProductionBuilder {
-    public static func build( _ owner: Player? = nil, _ train: Train? = nil, units: Int = 1 ) -> FactoryProduction {
-
-        let fp = FactoryProduction.init( id: UUID(), units: units)
-        fp.parent = train
-        fp.owner = owner
-
-        return fp
     }
 }

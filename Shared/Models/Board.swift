@@ -13,6 +13,11 @@ typealias Board = [Train?]
 class TrainGame {
     var board: Board!
 
+    public var countUnlocked : Int {
+        return (self.board.compactMap({$0}).reduce(0) { $0 + ($1.available ? 1 : 0) })
+    }
+
+
     func start(_ bundle: Bundle = Bundle.main) throws {
         do {
             self.board = try TrainGame.loadInitialBoard(bundle: bundle)
@@ -20,6 +25,20 @@ class TrainGame {
         catch {
             throw error
         }
+    }
+
+    internal func unlockNextTrain(after train: Train) throws {
+        guard let nextItem = self.board.after(train) else {
+            return
+        }
+        guard let nextTrain = nextItem else {
+            return
+        }
+        guard (nextTrain.available == false) else {
+            return
+        }
+        let orderManager = OrderManager.init(train: nextTrain)
+        try orderManager.addInitialOrder()
     }
 }
 

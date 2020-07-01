@@ -11,60 +11,123 @@ import Foundation
 /// Handles purchasing a train from the board
 class PurchaseHandler {
 
+    private var board: Board
+
+    init(board: Board) {
+        self.board = board
+    }
+
     func purchase(train: Train, player: Player) throws {
 
         do {
-            guard train.available else {
-                throw TrainError(reason: .unavailable)
-            }
-            guard (train.rust != .rusted) else {
-                throw TrainError(reason: .rusted)
-            }
+            // validate the train
+            try validate(train: train)
 
-        }
-        catch {
-            throw error
-        }
+            // create card
+            let card : FactoryProduction = FactoryProduction.init(id: UUID(), units:  1)
+            card.owner = player
+            card.parent = train
 
-
-    }
-
-
-
-    /**
-    func purchase(player: Player) throws {
-        do {
-
-            let sameFamily = player.cards.filter({
-                return $0.parent?.generation == train.generation &&
-                    $0.parent?.livery == train.livery
-                }).count
-
-            if (sameFamily > 0) {
-                throw CardError(reason: .sameFamily)
-            }
-            if let _ = player.cards.filter({ $0.owner == player }).first {
-                throw CardError(reason: .alreadyOwnThisCard)
-            }
-
-            // deduct cash
+            let hand = Hand(cards: player.cards)
             let wallet = Wallet()
-            if try wallet.canDebit(account: player, amount: train.cost) {
-               try wallet.debit(account: player, amount:  train.cost)
+
+            // can I afford it?
+            guard try wallet.canAfford(player: player, train: train) else {
+                throw SpendingMoneyError(reason: .notEnoughFunds(amount: train.cost))
+            }
+            // can I add it to my hand?
+            guard try hand.canPush(card: card, set: player) else {
+                throw CardError(reason: .cannotAddCard)
             }
 
-            // Create factory production
-            let fp = FactoryProduction.build(player, train, units: 1)
+            // add it to my hand
+            try hand.willPush(card: card, assigning: player)
 
-            // Add to player's hand
-            self.add(card: fp, to: player)
+            // subtract cash from players wallet
+            try wallet.purchased(card: card, owner: player)
+
+            // notify the board to unlock the next train
+//            guard let findIndex = board.firstIndex(of: train) else {
+//                return
+//            }
+//            let nextIndex = board.index(after: findIndex)
+
+            // count owners
+            
         }
         catch {
             throw error
         }
     }
-     **/
-    private func add(card: FactoryProduction, to player: Player) {
-        player.cards.append( card )
-    }    
+
+    internal func validate(train: Train) throws {
+        guard train.available else {
+            throw TrainError(reason: .unavailable)
+        }
+        guard (train.rust != .rusted) else {
+            throw TrainError(reason: .rusted)
+        }
+    }
+}
+
+
+protocol HandPurchasedTrainUseCase : AnyObject {
+    func canPush(card: Card, set owner: Player) throws -> Bool
+    func willPush(card: Card, assigning owner: Player) throws
+}
+
+extension Hand : HandPurchasedTrainUseCase {
+
+    internal func canPush(card: Card, set owner: Player) throws -> Bool {
+        do {
+            let hand = Hand(cards: owner.cards)
+            return try hand.canPush(card)
+        }
+        catch {
+            throw error
+        }
+    }
+
+    internal func willPush(card: Card, assigning owner: Player) throws {
+        do {
+            let hand = Hand(cards: owner.cards)
+            owner.cards = try hand.push(card)
+        }
+        catch {
+            throw error
+        }
+    }
+}
+
+protocol PurchasedTrainDelegate {
+    func purchased(card: Card, owner: Player) throws
+    func canAfford(player: Player, train: Train) throws -> Bool
+}
+
+extension Wallet : PurchasedTrainDelegate {
+    internal func purchased(card: Card, owner: Player) throws {
+        do {
+            guard let parent = card.parent else {
+                throw CardError(reason: .missingCard)
+            }
+            let cost = parent.cost
+
+            //let wallet = Wallet()
+            return try self.debit(account: owner, amount: cost)
+        }
+        catch {
+            throw error
+        }
+    }
+
+    internal func canAfford(player: Player, train: Train) throws -> Bool {
+        do {
+            let cost = train.cost
+            //let wallet = Wallet()
+            return try self.canDebit(account: player, amount: cost)
+        }
+        catch {
+            throw error
+        }
+    }
 }
