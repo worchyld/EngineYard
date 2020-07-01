@@ -1,60 +1,60 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Card" representedClassName="Card" syncable="YES">
+    <entity name="CardEntity" representedClassName="CardEntity" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="production" optional="YES" attributeType="Integer 16" minValueString="0" maxValueString="999" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="spentProduction" optional="YES" attributeType="Integer 16" minValueString="0" maxValueString="999" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="locomotive" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Locomotive" inverseName="card" inverseEntity="Locomotive"/>
-        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Player" inverseName="cards" inverseEntity="Player"/>
-        <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Factory" inverseName="cards" inverseEntity="Factory"/>
+        <relationship name="locomotive" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LocomotiveEntity" inverseName="card" inverseEntity="LocomotiveEntity"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlayerEntity" inverseName="cards" inverseEntity="PlayerEntity"/>
+        <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FactoryEntity" inverseName="cards" inverseEntity="FactoryEntity"/>
     </entity>
-    <entity name="Factory" representedClassName="Factory" syncable="YES">
+    <entity name="FactoryEntity" representedClassName="FactoryEntity" syncable="YES">
         <attribute name="avatar" optional="YES" attributeType="String"/>
         <attribute name="maxDice" attributeType="Integer 16" minValueString="1" maxValueString="5" defaultValueString="1" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="trainPool" optional="YES" attributeType="Integer 16" minValueString="1" maxValueString="4" defaultValueString="1" usesScalarValueType="YES"/>
-        <relationship name="cards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Card" inverseName="parent" inverseEntity="Card"/>
-        <relationship name="game" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Game" inverseName="factories" inverseEntity="Game"/>
-        <relationship name="locomotive" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Locomotive" inverseName="factory" inverseEntity="Locomotive"/>
-        <relationship name="orders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Order" inverseName="factory" inverseEntity="Order"/>
+        <relationship name="cards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CardEntity" inverseName="parent" inverseEntity="CardEntity"/>
+        <relationship name="game" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GameEntity" inverseName="factories" inverseEntity="GameEntity"/>
+        <relationship name="locomotive" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LocomotiveEntity" inverseName="factory" inverseEntity="LocomotiveEntity"/>
+        <relationship name="orders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="OrderEntity" inverseName="factory" inverseEntity="OrderEntity"/>
     </entity>
-    <entity name="Game" representedClassName="Game" syncable="YES">
+    <entity name="GameEntity" representedClassName="GameEntity" syncable="YES">
         <attribute name="createdOn" optional="YES" attributeType="Integer 32" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="notes" optional="YES" attributeType="String"/>
         <attribute name="phase" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="factories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Factory" inverseName="game" inverseEntity="Factory"/>
-        <relationship name="players" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Player" inverseName="game" inverseEntity="Player"/>
+        <relationship name="factories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FactoryEntity" inverseName="game" inverseEntity="FactoryEntity"/>
+        <relationship name="players" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlayerEntity" inverseName="game" inverseEntity="PlayerEntity"/>
     </entity>
-    <entity name="Locomotive" representedClassName="Locomotive" syncable="YES">
+    <entity name="LocomotiveEntity" representedClassName="LocomotiveEntity" syncable="YES">
         <attribute name="avatar" optional="YES" attributeType="String"/>
         <attribute name="cost" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="generation" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="livery" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="rust" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="card" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Card" inverseName="locomotive" inverseEntity="Card"/>
-        <relationship name="factory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Factory" inverseName="locomotive" inverseEntity="Factory"/>
+        <relationship name="card" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CardEntity" inverseName="locomotive" inverseEntity="CardEntity"/>
+        <relationship name="factory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FactoryEntity" inverseName="locomotive" inverseEntity="FactoryEntity"/>
     </entity>
-    <entity name="Order" representedClassName="Order" syncable="YES">
+    <entity name="OrderEntity" representedClassName="OrderEntity" syncable="YES">
         <attribute name="orderType" attributeType="Integer 16" minValueString="0" maxValueString="3" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="value" attributeType="Integer 16" minValueString="0" maxValueString="6" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="factory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Factory" inverseName="orders" inverseEntity="Factory"/>
+        <relationship name="factory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FactoryEntity" inverseName="orders" inverseEntity="FactoryEntity"/>
     </entity>
-    <entity name="Player" representedClassName="Player" syncable="YES">
+    <entity name="PlayerEntity" representedClassName="PlayerEntity" syncable="YES">
         <attribute name="avatar" optional="YES" attributeType="String"/>
         <attribute name="cash" attributeType="Integer 16" minValueString="0" maxValueString="999" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="state" attributeType="Integer 16" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="turnOrder" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="cards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Card" inverseName="owner" inverseEntity="Card"/>
-        <relationship name="game" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Game" inverseName="players" inverseEntity="Game"/>
+        <relationship name="cards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CardEntity" inverseName="owner" inverseEntity="CardEntity"/>
+        <relationship name="game" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GameEntity" inverseName="players" inverseEntity="GameEntity"/>
     </entity>
     <elements>
-        <element name="Card" positionX="523.58984375" positionY="12.0625" width="128" height="133"/>
-        <element name="Factory" positionX="158.47265625" positionY="107.16796875" width="128" height="163"/>
-        <element name="Game" positionX="-75.81640625" positionY="33.140625" width="128" height="118"/>
-        <element name="Player" positionX="156.59375" positionY="-111.63671875" width="128" height="148"/>
-        <element name="Locomotive" positionX="369.15234375" positionY="-178.72265625" width="128" height="163"/>
-        <element name="Order" positionX="456.0625" positionY="245.2578125" width="128" height="88"/>
+        <element name="CardEntity" positionX="523.58984375" positionY="12.0625" width="128" height="133"/>
+        <element name="FactoryEntity" positionX="158.47265625" positionY="107.16796875" width="128" height="163"/>
+        <element name="GameEntity" positionX="-75.81640625" positionY="33.140625" width="128" height="118"/>
+        <element name="PlayerEntity" positionX="156.59375" positionY="-111.63671875" width="128" height="148"/>
+        <element name="LocomotiveEntity" positionX="369.15234375" positionY="-178.72265625" width="128" height="163"/>
+        <element name="OrderEntity" positionX="456.0625" positionY="245.2578125" width="128" height="88"/>
     </elements>
 </model>
