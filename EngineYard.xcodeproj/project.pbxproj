@@ -45,6 +45,7 @@
 		4D43245424ACB4A200B982BE /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D43245324ACB4A200B982BE /* Card.swift */; };
 		4D43245824ACCE0500B982BE /* ListTrainsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D43245724ACCE0500B982BE /* ListTrainsView.swift */; };
 		4D43245C24ACCF8700B982BE /* EYGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D43245A24ACCF8700B982BE /* EYGame.xcdatamodeld */; };
+		4D43245E24AD031900B982BE /* CDPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D43245D24AD031900B982BE /* CDPersistence.swift */; };
 		4D49D2632499F9D9000E857F /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D49D2622499F9D9000E857F /* AvatarView.swift */; };
 		4D49D2672499FE2C000E857F /* EY+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D49D2662499FE2C000E857F /* EY+Identifier.swift */; };
 		4D54250C249D5B16004B97A8 /* Spending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D54250B249D5B16004B97A8 /* Spending.swift */; };
@@ -120,6 +121,7 @@
 		4D43245324ACB4A200B982BE /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		4D43245724ACCE0500B982BE /* ListTrainsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTrainsView.swift; sourceTree = "<group>"; };
 		4D43245B24ACCF8700B982BE /* EYGame.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EYGame.xcdatamodel; sourceTree = "<group>"; };
+		4D43245D24AD031900B982BE /* CDPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDPersistence.swift; sourceTree = "<group>"; };
 		4D49D2622499F9D9000E857F /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		4D49D2662499FE2C000E857F /* EY+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Identifier.swift"; sourceTree = "<group>"; };
 		4D54250B249D5B16004B97A8 /* Spending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spending.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				4D43245A24ACCF8700B982BE /* EYGame.xcdatamodeld */,
+				4D43245D24AD031900B982BE /* CDPersistence.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 			files = (
 				4D43245C24ACCF8700B982BE /* EYGame.xcdatamodeld in Sources */,
 				4D43244C24AC1FF000B982BE /* EY+Array.swift in Sources */,
+				4D43245E24AD031900B982BE /* CDPersistence.swift in Sources */,
 				4D10C5882486D08400238508 /* AppDelegate.swift in Sources */,
 				4D43245424ACB4A200B982BE /* Card.swift in Sources */,
 				4D238C5324A095230031E3EE /* EY+CaseIterable.swift in Sources */,
