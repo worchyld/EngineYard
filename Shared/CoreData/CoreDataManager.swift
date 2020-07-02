@@ -15,9 +15,8 @@ class CoreDataManager: NSObject {
     static let shared = CoreDataManager()   // Singleton
 
     // MARK: - Core Data stack
-
+    
     private lazy var persistentContainer: NSPersistentContainer = {
-
         let container = NSPersistentContainer(name: "EYGame")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let nserror = error as NSError? {
@@ -27,8 +26,11 @@ class CoreDataManager: NSObject {
         return container
     }()
 
-    public var context: NSManagedObjectContext {
+    lazy var backgroundContext: NSManagedObjectContext = {
+        return self.persistentContainer.newBackgroundContext()
+    }()
 
+    public var context: NSManagedObjectContext {
         get {
             return self.persistentContainer.viewContext
         }

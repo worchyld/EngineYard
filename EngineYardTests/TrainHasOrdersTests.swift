@@ -39,7 +39,7 @@ class TrainHasOrdersTests: EngineYardTests {
         XCTAssertNil(train.existingOrders)
         XCTAssertNil(train.completedOrders)
 
-        XCTAssertEqual( train.summarizedOrders.count , 1)
+        XCTAssertEqual( train.summarizedOrders.count , 1, "Summarized orders = \(train.summarizedOrders)")
     }
 
     func testFactory_HasExistingOrders() {

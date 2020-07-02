@@ -2,7 +2,7 @@
 //  GameEntity+CoreDataProperties.swift
 //  EngineYard
 //
-//  Created by Amarjit on 01/07/2020.
+//  Created by Amarjit on 02/07/2020.
 //  Copyright © 2020 Amarjit. All rights reserved.
 //
 //
@@ -18,27 +18,11 @@ extension GameEntity {
     }
 
     @NSManaged public var createdOn: Int32
+    @NSManaged public var updatedOn: Int32
     @NSManaged public var notes: String?
     @NSManaged public var phase: Int16
-    @NSManaged public var factories: NSSet?
     @NSManaged public var players: NSSet?
-
-}
-
-// MARK: Generated accessors for factories
-extension GameEntity {
-
-    @objc(addFactoriesObject:)
-    @NSManaged public func addToFactories(_ value: FactoryEntity)
-
-    @objc(removeFactoriesObject:)
-    @NSManaged public func removeFromFactories(_ value: FactoryEntity)
-
-    @objc(addFactories:)
-    @NSManaged public func addToFactories(_ values: NSSet)
-
-    @objc(removeFactories:)
-    @NSManaged public func removeFromFactories(_ values: NSSet)
+    @NSManaged public var factories: NSSet?
 
 }
 
@@ -56,5 +40,22 @@ extension GameEntity {
 
     @objc(removePlayers:)
     @NSManaged public func removeFromPlayers(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for factories
+extension GameEntity {
+
+    @objc(addFactoriesObject:)
+    @NSManaged public func addToFactories(_ value: FactoryEntity)
+
+    @objc(removeFactoriesObject:)
+    @NSManaged public func removeFromFactories(_ value: FactoryEntity)
+
+    @objc(addFactories:)
+    @NSManaged public func addToFactories(_ values: NSSet)
+
+    @objc(removeFactories:)
+    @NSManaged public func removeFromFactories(_ values: NSSet)
 
 }

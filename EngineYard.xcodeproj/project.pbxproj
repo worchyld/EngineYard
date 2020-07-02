@@ -47,23 +47,22 @@
 		4D43245C24ACCF8700B982BE /* EYGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D43245A24ACCF8700B982BE /* EYGame.xcdatamodeld */; };
 		4D43245E24AD031900B982BE /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D43245D24AD031900B982BE /* CoreDataManager.swift */; };
 		4D43246324AD169E00B982BE /* CDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D43246224AD169E00B982BE /* CDTests.swift */; };
-		4D43247024AD1A9400B982BE /* OrderEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D43246424AD1A9400B982BE /* OrderEntity+CoreDataClass.swift */; };
-		4D43247124AD1A9400B982BE /* OrderEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D43246524AD1A9400B982BE /* OrderEntity+CoreDataProperties.swift */; };
-		4D43247224AD1A9400B982BE /* GameEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D43246624AD1A9400B982BE /* GameEntity+CoreDataClass.swift */; };
-		4D43247324AD1A9400B982BE /* GameEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D43246724AD1A9400B982BE /* GameEntity+CoreDataProperties.swift */; };
-		4D43247424AD1A9400B982BE /* LocomotiveEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D43246824AD1A9400B982BE /* LocomotiveEntity+CoreDataClass.swift */; };
-		4D43247524AD1A9400B982BE /* LocomotiveEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D43246924AD1A9400B982BE /* LocomotiveEntity+CoreDataProperties.swift */; };
-		4D43247624AD1A9400B982BE /* PlayerEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D43246A24AD1A9400B982BE /* PlayerEntity+CoreDataClass.swift */; };
-		4D43247724AD1A9400B982BE /* PlayerEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D43246B24AD1A9400B982BE /* PlayerEntity+CoreDataProperties.swift */; };
-		4D43247824AD1A9400B982BE /* FactoryEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D43246C24AD1A9400B982BE /* FactoryEntity+CoreDataClass.swift */; };
-		4D43247924AD1A9400B982BE /* FactoryEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D43246D24AD1A9400B982BE /* FactoryEntity+CoreDataProperties.swift */; };
-		4D43247A24AD1A9400B982BE /* CardEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D43246E24AD1A9400B982BE /* CardEntity+CoreDataClass.swift */; };
-		4D43247B24AD1A9400B982BE /* CardEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D43246F24AD1A9400B982BE /* CardEntity+CoreDataProperties.swift */; };
 		4D49D2632499F9D9000E857F /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D49D2622499F9D9000E857F /* AvatarView.swift */; };
 		4D49D2672499FE2C000E857F /* EY+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D49D2662499FE2C000E857F /* EY+Identifier.swift */; };
 		4D54250C249D5B16004B97A8 /* Spending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D54250B249D5B16004B97A8 /* Spending.swift */; };
 		4D66EBC8248F8147005DE7F0 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66EBC7248F8147005DE7F0 /* Player.swift */; };
 		4D6BA93A249D41A200167E68 /* IntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6BA939249D41A200167E68 /* IntTests.swift */; };
+		4D8E124924ADE6B000EF2B1D /* OrderEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E123F24ADE6B000EF2B1D /* OrderEntity+CoreDataClass.swift */; };
+		4D8E124A24ADE6B000EF2B1D /* OrderEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E124024ADE6B000EF2B1D /* OrderEntity+CoreDataProperties.swift */; };
+		4D8E124B24ADE6B000EF2B1D /* FactoryEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E124124ADE6B000EF2B1D /* FactoryEntity+CoreDataClass.swift */; };
+		4D8E124C24ADE6B000EF2B1D /* FactoryEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E124224ADE6B000EF2B1D /* FactoryEntity+CoreDataProperties.swift */; };
+		4D8E124D24ADE6B000EF2B1D /* GameEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E124324ADE6B000EF2B1D /* GameEntity+CoreDataClass.swift */; };
+		4D8E124E24ADE6B000EF2B1D /* GameEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E124424ADE6B000EF2B1D /* GameEntity+CoreDataProperties.swift */; };
+		4D8E124F24ADE6B000EF2B1D /* CardEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E124524ADE6B000EF2B1D /* CardEntity+CoreDataClass.swift */; };
+		4D8E125024ADE6B000EF2B1D /* CardEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E124624ADE6B000EF2B1D /* CardEntity+CoreDataProperties.swift */; };
+		4D8E125124ADE6B000EF2B1D /* PlayerEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E124724ADE6B000EF2B1D /* PlayerEntity+CoreDataClass.swift */; };
+		4D8E125224ADE6B000EF2B1D /* PlayerEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E124824ADE6B000EF2B1D /* PlayerEntity+CoreDataProperties.swift */; };
+		4D8E125D24AE0CC000EF2B1D /* EYGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D43245A24ACCF8700B982BE /* EYGame.xcdatamodeld */; };
 		4D9BCA6F24A5734A00C637EB /* meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D9BCA6E24A5734A00C637EB /* meta.json */; };
 		4D9BCA7324A5F5CE00C637EB /* SpendingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9BCA7224A5F5CE00C637EB /* SpendingTests.swift */; };
 		4D9BCA7524A6200E00C637EB /* IncreaserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9BCA7424A6200E00C637EB /* IncreaserTests.swift */; };
@@ -136,23 +135,21 @@
 		4D43245B24ACCF8700B982BE /* EYGame.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EYGame.xcdatamodel; sourceTree = "<group>"; };
 		4D43245D24AD031900B982BE /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		4D43246224AD169E00B982BE /* CDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTests.swift; sourceTree = "<group>"; };
-		4D43246424AD1A9400B982BE /* OrderEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		4D43246524AD1A9400B982BE /* OrderEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		4D43246624AD1A9400B982BE /* GameEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		4D43246724AD1A9400B982BE /* GameEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		4D43246824AD1A9400B982BE /* LocomotiveEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocomotiveEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		4D43246924AD1A9400B982BE /* LocomotiveEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocomotiveEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		4D43246A24AD1A9400B982BE /* PlayerEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		4D43246B24AD1A9400B982BE /* PlayerEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		4D43246C24AD1A9400B982BE /* FactoryEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FactoryEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		4D43246D24AD1A9400B982BE /* FactoryEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FactoryEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		4D43246E24AD1A9400B982BE /* CardEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		4D43246F24AD1A9400B982BE /* CardEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4D49D2622499F9D9000E857F /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		4D49D2662499FE2C000E857F /* EY+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Identifier.swift"; sourceTree = "<group>"; };
 		4D54250B249D5B16004B97A8 /* Spending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spending.swift; sourceTree = "<group>"; };
 		4D66EBC7248F8147005DE7F0 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		4D6BA939249D41A200167E68 /* IntTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntTests.swift; sourceTree = "<group>"; };
+		4D8E123F24ADE6B000EF2B1D /* OrderEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4D8E124024ADE6B000EF2B1D /* OrderEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4D8E124124ADE6B000EF2B1D /* FactoryEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FactoryEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4D8E124224ADE6B000EF2B1D /* FactoryEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FactoryEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4D8E124324ADE6B000EF2B1D /* GameEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4D8E124424ADE6B000EF2B1D /* GameEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4D8E124524ADE6B000EF2B1D /* CardEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4D8E124624ADE6B000EF2B1D /* CardEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4D8E124724ADE6B000EF2B1D /* PlayerEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4D8E124824ADE6B000EF2B1D /* PlayerEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4D9BCA6E24A5734A00C637EB /* meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = meta.json; sourceTree = "<group>"; };
 		4D9BCA7224A5F5CE00C637EB /* SpendingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingTests.swift; sourceTree = "<group>"; };
 		4D9BCA7424A6200E00C637EB /* IncreaserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreaserTests.swift; sourceTree = "<group>"; };
@@ -296,19 +293,17 @@
 		4D43245924ACCF7200B982BE /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				4D43246424AD1A9400B982BE /* OrderEntity+CoreDataClass.swift */,
-				4D43246524AD1A9400B982BE /* OrderEntity+CoreDataProperties.swift */,
-				4D43246624AD1A9400B982BE /* GameEntity+CoreDataClass.swift */,
-				4D43246724AD1A9400B982BE /* GameEntity+CoreDataProperties.swift */,
-				4D43246824AD1A9400B982BE /* LocomotiveEntity+CoreDataClass.swift */,
-				4D43246924AD1A9400B982BE /* LocomotiveEntity+CoreDataProperties.swift */,
-				4D43246A24AD1A9400B982BE /* PlayerEntity+CoreDataClass.swift */,
-				4D43246B24AD1A9400B982BE /* PlayerEntity+CoreDataProperties.swift */,
-				4D43246C24AD1A9400B982BE /* FactoryEntity+CoreDataClass.swift */,
-				4D43246D24AD1A9400B982BE /* FactoryEntity+CoreDataProperties.swift */,
-				4D43246E24AD1A9400B982BE /* CardEntity+CoreDataClass.swift */,
-				4D43246F24AD1A9400B982BE /* CardEntity+CoreDataProperties.swift */,
 				4D43245A24ACCF8700B982BE /* EYGame.xcdatamodeld */,
+				4D8E123F24ADE6B000EF2B1D /* OrderEntity+CoreDataClass.swift */,
+				4D8E124024ADE6B000EF2B1D /* OrderEntity+CoreDataProperties.swift */,
+				4D8E124124ADE6B000EF2B1D /* FactoryEntity+CoreDataClass.swift */,
+				4D8E124224ADE6B000EF2B1D /* FactoryEntity+CoreDataProperties.swift */,
+				4D8E124324ADE6B000EF2B1D /* GameEntity+CoreDataClass.swift */,
+				4D8E124424ADE6B000EF2B1D /* GameEntity+CoreDataProperties.swift */,
+				4D8E124524ADE6B000EF2B1D /* CardEntity+CoreDataClass.swift */,
+				4D8E124624ADE6B000EF2B1D /* CardEntity+CoreDataProperties.swift */,
+				4D8E124724ADE6B000EF2B1D /* PlayerEntity+CoreDataClass.swift */,
+				4D8E124824ADE6B000EF2B1D /* PlayerEntity+CoreDataProperties.swift */,
 				4D43245D24AD031900B982BE /* CoreDataManager.swift */,
 			);
 			path = CoreData;
@@ -475,44 +470,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D43247624AD1A9400B982BE /* PlayerEntity+CoreDataClass.swift in Sources */,
-				4D43247924AD1A9400B982BE /* FactoryEntity+CoreDataProperties.swift in Sources */,
 				4D43245C24ACCF8700B982BE /* EYGame.xcdatamodeld in Sources */,
+				4D8E124D24ADE6B000EF2B1D /* GameEntity+CoreDataClass.swift in Sources */,
 				4D43244C24AC1FF000B982BE /* EY+Array.swift in Sources */,
+				4D8E125124ADE6B000EF2B1D /* PlayerEntity+CoreDataClass.swift in Sources */,
 				4D43245E24AD031900B982BE /* CoreDataManager.swift in Sources */,
 				4D10C5882486D08400238508 /* AppDelegate.swift in Sources */,
-				4D43247324AD1A9400B982BE /* GameEntity+CoreDataProperties.swift in Sources */,
+				4D8E124B24ADE6B000EF2B1D /* FactoryEntity+CoreDataClass.swift in Sources */,
 				4D43245424ACB4A200B982BE /* Card.swift in Sources */,
 				4D238C5324A095230031E3EE /* EY+CaseIterable.swift in Sources */,
 				4D1C72FF24A16EAA009CAA3A /* AsyncOperation.swift in Sources */,
-				4D43247724AD1A9400B982BE /* PlayerEntity+CoreDataProperties.swift in Sources */,
 				4DA1C13E2486ECC9004C4121 /* EY+String.swift in Sources */,
-				4D43247524AD1A9400B982BE /* LocomotiveEntity+CoreDataProperties.swift in Sources */,
 				4D66EBC8248F8147005DE7F0 /* Player.swift in Sources */,
 				4DA1C1462486EDC0004C4121 /* EY+FileManager.swift in Sources */,
 				4D238C4B24A051C20031E3EE /* Meta.swift in Sources */,
-				4D43247124AD1A9400B982BE /* OrderEntity+CoreDataProperties.swift in Sources */,
+				4D8E124A24ADE6B000EF2B1D /* OrderEntity+CoreDataProperties.swift in Sources */,
 				4DA1C13B2486EC77004C4121 /* EY+Int.swift in Sources */,
+				4D8E124F24ADE6B000EF2B1D /* CardEntity+CoreDataClass.swift in Sources */,
 				4DA1C1422486ED12004C4121 /* NumberFormatCache.swift in Sources */,
-				4D43247824AD1A9400B982BE /* FactoryEntity+CoreDataClass.swift in Sources */,
-				4D43247B24AD1A9400B982BE /* CardEntity+CoreDataProperties.swift in Sources */,
 				4D1C730124A1C898009CAA3A /* EY+Bundle.swift in Sources */,
-				4D43247024AD1A9400B982BE /* OrderEntity+CoreDataClass.swift in Sources */,
+				4D8E124924ADE6B000EF2B1D /* OrderEntity+CoreDataClass.swift in Sources */,
 				4D9FC8B724AA0B6B002E5FB4 /* GameErrors.swift in Sources */,
+				4D8E125224ADE6B000EF2B1D /* PlayerEntity+CoreDataProperties.swift in Sources */,
 				4DA1C1402486ECF3004C4121 /* Sounds.swift in Sources */,
+				4D8E124E24ADE6B000EF2B1D /* GameEntity+CoreDataProperties.swift in Sources */,
 				4D43245024ACB29E00B982BE /* Space.swift in Sources */,
 				4D10C58A2486D08400238508 /* SceneDelegate.swift in Sources */,
 				4D42DBE624A7A45200B8FF68 /* DataLoader.swift in Sources */,
 				4DA1C1442486ED8C004C4121 /* EY+FlatColor.swift in Sources */,
 				4D10C58C2486D08400238508 /* ContentView.swift in Sources */,
 				4D238C4E24A058B40031E3EE /* Livery.swift in Sources */,
+				4D8E125024ADE6B000EF2B1D /* CardEntity+CoreDataProperties.swift in Sources */,
 				4D54250C249D5B16004B97A8 /* Spending.swift in Sources */,
 				4D3BE04B249FD07C009C203E /* Wallet.swift in Sources */,
 				4D1C72F124A0F2D1009CAA3A /* JSONAny.swift in Sources */,
 				4D238C4A24A051880031E3EE /* Response.swift in Sources */,
-				4D43247424AD1A9400B982BE /* LocomotiveEntity+CoreDataClass.swift in Sources */,
 				4D238C5124A059F90031E3EE /* Generation.swift in Sources */,
-				4D43247224AD1A9400B982BE /* GameEntity+CoreDataClass.swift in Sources */,
 				4D1C72F524A0F6B0009CAA3A /* Board.swift in Sources */,
 				4DA1C1392486EC3D004C4121 /* Die.swift in Sources */,
 				4DA1C14B2486F3FC004C4121 /* Tax.swift in Sources */,
@@ -520,11 +513,11 @@
 				4D43245224ACB37700B982BE /* Factory.swift in Sources */,
 				4D10C6162486DC4700238508 /* Constants.swift in Sources */,
 				4DBBA17924AB91EC00E32BBD /* Hand.swift in Sources */,
+				4D8E124C24ADE6B000EF2B1D /* FactoryEntity+CoreDataProperties.swift in Sources */,
 				4D49D2672499FE2C000E857F /* EY+Identifier.swift in Sources */,
 				4D1C72F324A0F323009CAA3A /* Rust.swift in Sources */,
 				4D49D2632499F9D9000E857F /* AvatarView.swift in Sources */,
 				4D43245824ACCE0500B982BE /* ListTrainsView.swift in Sources */,
-				4D43247A24AD1A9400B982BE /* CardEntity+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,6 +530,7 @@
 				4D42DBE824A7A5CC00B8FF68 /* MetaDecodedTests.swift in Sources */,
 				4D42DBEA24A7A65800B8FF68 /* BundleLoadTests.swift in Sources */,
 				4DF1B6CE24A3412F00618C7B /* Fixtures.swift in Sources */,
+				4D8E125D24AE0CC000EF2B1D /* EYGame.xcdatamodeld in Sources */,
 				4D9BCA7324A5F5CE00C637EB /* SpendingTests.swift in Sources */,
 				4DA1C14D2486F43E004C4121 /* TaxTests.swift in Sources */,
 				4D34A86B2495A61D00590EFD /* WinnerTests.swift in Sources */,
