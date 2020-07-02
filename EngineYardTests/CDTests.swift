@@ -95,4 +95,82 @@ class CDTests: EngineYardTests {
         }
     }
 
+    func testDidCreateAndDelete() throws {
+        let context = self.mockPersistentContainer.viewContext
+        let factory = FactoryEntity.init(context: context)
+        factory.name = "Green.1"
+        factory.livery = Int16(Livery.green.rawValue) as Int16
+        factory.generation = Int16(Generation.first.rawValue) as Int16
+        factory.rust = Int16(Rust.new.rawValue) as Int16
+        factory.avatar = "green-1.png"
+
+        try context.save()
+
+
+        do {
+            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FactoryEntity")
+            let results = try context.fetch(fetchRequest)
+            XCTAssertEqual(results.count, 1)
+
+            guard let firstObj = results.first as? FactoryEntity else {
+                XCTFail("No object found")
+                return
+            }
+
+            context.delete(firstObj)
+            try context.save()
+
+            let results2 = try context.fetch(fetchRequest)
+            XCTAssertEqual(results2.count, 0)
+
+        }
+        catch {
+            throw error
+        }
+    }
+
+
+    func testDidCreateAndEdit() throws {
+        let context = self.mockPersistentContainer.viewContext
+        let factory = FactoryEntity.init(context: context)
+        factory.name = "Green.1"
+        factory.livery = Int16(Livery.green.rawValue) as Int16
+        factory.generation = Int16(Generation.first.rawValue) as Int16
+        factory.rust = Int16(Rust.new.rawValue) as Int16
+        factory.avatar = "green-1.png"
+
+        try context.save()
+
+
+        do {
+            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FactoryEntity")
+            let results = try context.fetch(fetchRequest)
+            XCTAssertEqual(results.count, 1)
+
+            guard let firstObj = results.first as? FactoryEntity else {
+                XCTFail("No object found")
+                return
+            }
+
+            firstObj.cost = 14
+
+            try context.save()
+
+
+            let results2 = try context.fetch(fetchRequest)
+            XCTAssertEqual(results2.count, 1)
+
+            guard let firstObj2 = results2.first as? FactoryEntity else {
+                XCTFail("No object found")
+                return
+            }
+
+            XCTAssertEqual(firstObj2.cost, 14)
+
+            print ("firstobj = \(firstObj2 as Any)")
+        }
+        catch {
+            throw error
+        }
+    }
 }
