@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Generation: Int, Codable, CaseIterable {
+enum Generation: NSInteger, Codable, CaseIterable {
     case first = 1, second, third, fourth, fifth
 }
 

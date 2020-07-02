@@ -8,6 +8,6 @@
 
 import Foundation
 
-enum Livery: Int, Codable, CaseIterable {
+enum Livery: NSInteger, Codable, CaseIterable {
     case green = 1, red, yellow, blue
 }

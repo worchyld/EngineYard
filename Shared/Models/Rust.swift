@@ -9,7 +9,7 @@
 import Foundation
 
 // Obsolescence
-enum Rust : Int, Codable, CaseIterable {
+enum Rust : NSInteger, Codable, CaseIterable {
     case new = 0, rusting, rusted
 }
 
