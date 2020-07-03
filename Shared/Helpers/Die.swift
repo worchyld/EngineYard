@@ -15,14 +15,14 @@ protocol Rollable {
 }
 
 struct Die: Equatable {
-    public static var roll: Int {
+    public static var roll: NSInteger {
         if #available(iOS 9, *) {
             let d6 = GKRandomDistribution.d6()
             return (d6.nextInt())
         }
         else {
             let d6 = 6
-            return Int.randomInt(withMax: d6)
+            return NSInteger.randomInt(withMax: d6)
         }
     }
 }

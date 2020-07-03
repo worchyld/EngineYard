@@ -78,6 +78,8 @@
 		4DA1C14B2486F3FC004C4121 /* Tax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C14A2486F3FC004C4121 /* Tax.swift */; };
 		4DA1C14D2486F43E004C4121 /* TaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C14C2486F43E004C4121 /* TaxTests.swift */; };
 		4DBBA17924AB91EC00E32BBD /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBA17724AB91DE00E32BBD /* Hand.swift */; };
+		4DDD124824AE60CF006708BE /* OrderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDD124724AE60CF006708BE /* OrderType.swift */; };
+		4DDD124A24AE610E006708BE /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDD124924AE610E006708BE /* Order.swift */; };
 		4DF1B6CE24A3412F00618C7B /* Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1B6CD24A3412F00618C7B /* Fixtures.swift */; };
 /* End PBXBuildFile section */
 
@@ -165,6 +167,8 @@
 		4DA1C14A2486F3FC004C4121 /* Tax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tax.swift; sourceTree = "<group>"; };
 		4DA1C14C2486F43E004C4121 /* TaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTests.swift; sourceTree = "<group>"; };
 		4DBBA17724AB91DE00E32BBD /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
+		4DDD124724AE60CF006708BE /* OrderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderType.swift; sourceTree = "<group>"; };
+		4DDD124924AE610E006708BE /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		4DF1B6CD24A3412F00618C7B /* Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixtures.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -347,6 +351,8 @@
 				4D238C4F24A059430031E3EE /* Generation.swift */,
 				4DBBA17724AB91DE00E32BBD /* Hand.swift */,
 				4DA1C14A2486F3FC004C4121 /* Tax.swift */,
+				4DDD124724AE60CF006708BE /* OrderType.swift */,
+				4DDD124924AE610E006708BE /* Order.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -482,6 +488,7 @@
 				4D1C72FF24A16EAA009CAA3A /* AsyncOperation.swift in Sources */,
 				4DA1C13E2486ECC9004C4121 /* EY+String.swift in Sources */,
 				4D66EBC8248F8147005DE7F0 /* Player.swift in Sources */,
+				4DDD124A24AE610E006708BE /* Order.swift in Sources */,
 				4DA1C1462486EDC0004C4121 /* EY+FileManager.swift in Sources */,
 				4D238C4B24A051C20031E3EE /* Meta.swift in Sources */,
 				4D8E124A24ADE6B000EF2B1D /* OrderEntity+CoreDataProperties.swift in Sources */,
@@ -506,6 +513,7 @@
 				4D1C72F124A0F2D1009CAA3A /* JSONAny.swift in Sources */,
 				4D238C4A24A051880031E3EE /* Response.swift in Sources */,
 				4D238C5124A059F90031E3EE /* Generation.swift in Sources */,
+				4DDD124824AE60CF006708BE /* OrderType.swift in Sources */,
 				4D1C72F524A0F6B0009CAA3A /* Board.swift in Sources */,
 				4DA1C1392486EC3D004C4121 /* Die.swift in Sources */,
 				4DA1C14B2486F3FC004C4121 /* Tax.swift in Sources */,
