@@ -11,43 +11,6 @@ import CoreData
 
 @testable import EngineYard
 
-class PersistenceManager {
-    static var managedObjectModel: NSManagedObjectModel = {
-        let managedObjectModel = NSManagedObjectModel.mergedModel(from: [Bundle(for: PersistenceManager.self)])!
-        return managedObjectModel
-    }()
-
-    public var inMemoryPersistentContainer: NSPersistentContainer!
-
-    public lazy var inMemoryContext: NSManagedObjectContext = {
-        return self.inMemoryPersistentContainer.viewContext
-    }()
-
-
-    init() {
-        // setup in-memory NSPersistentContainer
-        let storeURL = NSPersistentContainer.defaultDirectoryURL().appendingPathComponent("store")
-        let description = NSPersistentStoreDescription(url: storeURL)
-        description.shouldMigrateStoreAutomatically = true
-        description.shouldInferMappingModelAutomatically = true
-        description.shouldAddStoreAsynchronously = false
-        description.type = NSInMemoryStoreType
-
-        let persistentContainer = NSPersistentContainer(name: "EYGame", managedObjectModel: PersistenceManager.managedObjectModel)
-        persistentContainer.persistentStoreDescriptions = [description]
-        persistentContainer.loadPersistentStores { _, error in
-            if let error = error {
-                fatalError("Fail to create CoreData Stack \(error.localizedDescription)")
-            } else {
-                print("CoreData Stack set up with in-memory store type")
-            }
-        }
-
-        self.inMemoryPersistentContainer = persistentContainer
-    }
-}
-
-
 class CDTests: EngineYardTests {
 
     private var persistenceManager = PersistenceManager()
@@ -64,20 +27,11 @@ class CDTests: EngineYardTests {
 
     override func tearDownWithError() throws {
         try self.flushData()
+
     }
 
     func flushData() throws {
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FactoryEntity")
-        let objs = try self.inMemoryContext.fetch(fetchRequest)
-        for case let obj in objs {
-            self.inMemoryPersistentContainer.viewContext.delete(obj)
-        }
-        do {
-            let _ = try self.inMemoryPersistentContainer.viewContext.save()
-        }
-        catch {
-            throw error
-        }
+        try FactoryEntity.flushAll(in: self.inMemoryContext)
     }
 
     func testFetchFactories() throws {
@@ -105,8 +59,6 @@ class CDTests: EngineYardTests {
         factory.avatar = "green-1.png"
 
         try context.save()
-
-
 
         do {
             let fetchRequest: NSFetchRequest<FactoryEntity> = FactoryEntity.fetchRequest()
@@ -158,7 +110,6 @@ class CDTests: EngineYardTests {
 
             let results2 = try context.fetch(fetchRequest)
             XCTAssertEqual(results2.count, 0)
-
         }
         catch {
             throw error
@@ -177,7 +128,6 @@ class CDTests: EngineYardTests {
         factory.avatar = "green-1.png"
 
         try context.save()
-
 
         do {
             let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FactoryEntity")

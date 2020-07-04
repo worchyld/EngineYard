@@ -14,9 +14,7 @@ import CoreData
 public class FactoryEntity: NSManagedObject {
 
     // Count
-    class func count() -> Int {
-
-        let context = CoreDataManager.shared.context
+    class func count(in context: NSManagedObjectContext) -> Int {
         let fetchRequest: NSFetchRequest<FactoryEntity> = FactoryEntity.fetchRequest()
 
         do {
@@ -27,9 +25,8 @@ public class FactoryEntity: NSManagedObject {
         }
     }
 
-    public static func fetchAllFactories() throws -> [FactoryEntity]? {
+    public static func fetchAllFactories(in context: NSManagedObjectContext) throws -> [FactoryEntity]? {
         do {
-            let context = CoreDataManager.shared.context
             let fetchRequest: NSFetchRequest<NSFetchRequestResult> = FactoryEntity.fetchRequest()
 
             let results = try context.fetch(fetchRequest)
@@ -40,22 +37,23 @@ public class FactoryEntity: NSManagedObject {
         }
     }
 
-    public static func flushAll() throws {
+    public static func flushAll(in context: NSManagedObjectContext) throws {
 
         do {
-            let fetchRequest : NSFetchRequest<NSFetchRequestResult> = FactoryEntity.fetchRequest()
-            let objs = try CoreDataManager.shared.context.fetch(fetchRequest)
+            //let fetchRequest : NSFetchRequest<NSFetchRequestResult> = FactoryEntity.fetchRequest()
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "FactoryEntity")
+            let objs = try context.fetch(fetchRequest)
             for case let obj as NSManagedObject in objs {
-                CoreDataManager.shared.context.delete(obj)
+                context.delete(obj)
             }
-            try CoreDataManager.shared.context.save()
+            try context.save()
         }
         catch {
             throw error
         }
     }
 
-    public func delete() {
-        CoreDataManager.shared.context.delete(self)
+    public func delete(in context: NSManagedObjectContext) {
+        context.delete(self)
     }
 }

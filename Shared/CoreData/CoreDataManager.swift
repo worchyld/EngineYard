@@ -52,6 +52,17 @@ class CoreDataManager: NSObject {
         }
     }
 
+    func fetch<T: NSManagedObject>(_ type: T.Type, completion: @escaping ([T]?, Error?) -> Void) {
+         let request = NSFetchRequest<T>(entityName: String(describing: type))
+
+         do {
+            let objects = try self.context.fetch(request)
+             completion(objects, nil)
+         } catch {
+             print ("Fetch error -- \(error as Any)")
+             completion(nil, error)
+         }
+     }
 
     // MARK: - Managed Object Helpers
 
@@ -60,5 +71,7 @@ class CoreDataManager: NSObject {
         block()
         CoreDataManager.shared.save()
     }
+
+    
 
 }

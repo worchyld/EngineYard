@@ -7,6 +7,8 @@
 //
 
 import XCTest
+import CoreData
+
 @testable import EngineYard
 
 class EngineYardTests: XCTestCase {
@@ -36,7 +38,67 @@ class EngineYardTests: XCTestCase {
             XCTAssertTrue(error is E)
         }
     }
+}
 
-    
+public class PersistenceManager {
+    static var managedObjectModel: NSManagedObjectModel = {
+        let managedObjectModel = NSManagedObjectModel.mergedModel(from: [Bundle(for: PersistenceManager.self)])!
+        return managedObjectModel
+    }()
+
+    public var inMemoryPersistentContainer: NSPersistentContainer!
+
+    public lazy var inMemoryContext: NSManagedObjectContext = {
+        return self.inMemoryPersistentContainer.viewContext
+    }()
+
+    func fetch<T: NSManagedObject>(_ type: T.Type, completion: @escaping ([T]?, Error?) -> Void) {
+        let request = NSFetchRequest<T>(entityName: String(describing: type))
+
+        do {
+            let objects = try inMemoryContext.fetch(request)
+            completion(objects, nil)
+        } catch {
+            print (error)
+            completion(nil, error)
+        }
+    }
+
+    public func save() {
+        let context = self.inMemoryContext
+        if context.hasChanges {
+            do {
+                try context.save()
+                print ("Saved successfully")
+            }
+            catch {
+                let nserror = error as NSError
+                fatalError("Unresolved error -- \(nserror), \(nserror.userInfo)")
+            }
+        }
+    }
+
+
+    init() {
+        // setup in-memory NSPersistentContainer
+        let storeURL = NSPersistentContainer.defaultDirectoryURL().appendingPathComponent("store")
+        let description = NSPersistentStoreDescription(url: storeURL)
+        description.shouldMigrateStoreAutomatically = true
+        description.shouldInferMappingModelAutomatically = true
+        description.shouldAddStoreAsynchronously = false
+        description.type = NSInMemoryStoreType
+
+        let persistentContainer = NSPersistentContainer(name: "EYGame", managedObjectModel: PersistenceManager.managedObjectModel)
+        persistentContainer.persistentStoreDescriptions = [description]
+        persistentContainer.loadPersistentStores { _, error in
+            if let error = error {
+                fatalError("Fail to create CoreData Stack \(error.localizedDescription)")
+            } else {
+                print("CoreData Stack set up with in-memory store type")
+            }
+        }
+
+        self.inMemoryPersistentContainer = persistentContainer
+    }
 }
 

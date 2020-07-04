@@ -81,6 +81,8 @@
 		4DDD124824AE60CF006708BE /* OrderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDD124724AE60CF006708BE /* OrderType.swift */; };
 		4DDD124A24AE610E006708BE /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDD124924AE610E006708BE /* Order.swift */; };
 		4DF1B6CE24A3412F00618C7B /* Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1B6CD24A3412F00618C7B /* Fixtures.swift */; };
+		4DFE31B724B0A21E00F03D9A /* CDFilledJSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFE31B624B0A21E00F03D9A /* CDFilledJSONTests.swift */; };
+		4DFE31B924B0A2A800F03D9A /* EY+ManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFE31B824B0A2A800F03D9A /* EY+ManagedObjectContext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +172,8 @@
 		4DDD124724AE60CF006708BE /* OrderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderType.swift; sourceTree = "<group>"; };
 		4DDD124924AE610E006708BE /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		4DF1B6CD24A3412F00618C7B /* Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixtures.swift; sourceTree = "<group>"; };
+		4DFE31B624B0A21E00F03D9A /* CDFilledJSONTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDFilledJSONTests.swift; sourceTree = "<group>"; };
+		4DFE31B824B0A2A800F03D9A /* EY+ManagedObjectContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+ManagedObjectContext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +254,7 @@
 				4D42DBEB24A7A6BA00B8FF68 /* BoardCreationTests.swift */,
 				4D42DBF524A8A02800B8FF68 /* TrainHasOrdersTests.swift */,
 				4D43246224AD169E00B982BE /* CDTests.swift */,
+				4DFE31B624B0A21E00F03D9A /* CDFilledJSONTests.swift */,
 			);
 			path = EngineYardTests;
 			sourceTree = "<group>";
@@ -325,6 +330,7 @@
 				4D238C5224A095230031E3EE /* EY+CaseIterable.swift */,
 				4D1C730024A1C898009CAA3A /* EY+Bundle.swift */,
 				4D43244B24AC1FF000B982BE /* EY+Array.swift */,
+				4DFE31B824B0A2A800F03D9A /* EY+ManagedObjectContext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -515,6 +521,7 @@
 				4D238C5124A059F90031E3EE /* Generation.swift in Sources */,
 				4DDD124824AE60CF006708BE /* OrderType.swift in Sources */,
 				4D1C72F524A0F6B0009CAA3A /* Board.swift in Sources */,
+				4DFE31B924B0A2A800F03D9A /* EY+ManagedObjectContext.swift in Sources */,
 				4DA1C1392486EC3D004C4121 /* Die.swift in Sources */,
 				4DA1C14B2486F3FC004C4121 /* Tax.swift in Sources */,
 				4DA1C1482486EDE3004C4121 /* EY+Date.swift in Sources */,
@@ -534,6 +541,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D3BE05A249FF05E009C203E /* WalletTests.swift in Sources */,
+				4DFE31B724B0A21E00F03D9A /* CDFilledJSONTests.swift in Sources */,
 				4D10C59F2486D08500238508 /* EngineYardTests.swift in Sources */,
 				4D42DBE824A7A5CC00B8FF68 /* MetaDecodedTests.swift in Sources */,
 				4D42DBEA24A7A65800B8FF68 /* BundleLoadTests.swift in Sources */,
