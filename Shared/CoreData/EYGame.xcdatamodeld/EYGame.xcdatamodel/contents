@@ -21,7 +21,7 @@
         <attribute name="rust" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="rustedBy" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="trainPool" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="cards" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CardEntity" inverseName="factory" inverseEntity="CardEntity"/>
+        <relationship name="cards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CardEntity" inverseName="factory" inverseEntity="CardEntity"/>
         <relationship name="game" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GameEntity" inverseName="factories" inverseEntity="GameEntity"/>
         <relationship name="orders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="OrderEntity" inverseName="factory" inverseEntity="OrderEntity"/>
     </entity>
@@ -48,10 +48,10 @@
         <relationship name="game" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GameEntity" inverseName="players" inverseEntity="GameEntity"/>
     </entity>
     <elements>
-        <element name="GameEntity" positionX="-389.82421875" positionY="-37.11328125" width="128" height="133"/>
-        <element name="FactoryEntity" positionX="-180.22265625" positionY="-229.20703125" width="128" height="223"/>
         <element name="CardEntity" positionX="70.49609375" positionY="-375.55078125" width="128" height="178"/>
-        <element name="PlayerEntity" positionX="241.08203125" positionY="-99.1484375" width="128" height="148"/>
+        <element name="FactoryEntity" positionX="-180.22265625" positionY="-229.20703125" width="128" height="223"/>
+        <element name="GameEntity" positionX="-389.82421875" positionY="-37.11328125" width="128" height="133"/>
         <element name="OrderEntity" positionX="59.21484375" positionY="-87.95703125" width="128" height="88"/>
+        <element name="PlayerEntity" positionX="241.08203125" positionY="-99.1484375" width="128" height="148"/>
     </elements>
 </model>
