@@ -40,12 +40,12 @@ public class FactoryEntity: NSManagedObject {
     public static func flushAll(in context: NSManagedObjectContext) throws {
 
         do {
-            //let fetchRequest : NSFetchRequest<NSFetchRequestResult> = FactoryEntity.fetchRequest()
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "FactoryEntity")
             let objs = try context.fetch(fetchRequest)
             for case let obj as NSManagedObject in objs {
                 context.delete(obj)
             }
+
             try context.save()
         }
         catch {

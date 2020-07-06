@@ -12,5 +12,18 @@ import CoreData
 
 @objc(CardEntity)
 public class CardEntity: NSManagedObject {
+    public static func flushAll(in context: NSManagedObjectContext) throws {
+        do {
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CardEntity")
+            let objs = try context.fetch(fetchRequest)
+            for case let obj as NSManagedObject in objs {
+                context.delete(obj)
+            }
 
+            try context.save()
+        }
+        catch {
+            throw error
+        }
+    }
 }

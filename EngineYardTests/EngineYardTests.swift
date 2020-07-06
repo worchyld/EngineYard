@@ -64,6 +64,14 @@ public class PersistenceManager {
         }
     }
 
+    public func flushAll(in context: NSManagedObjectContext) throws {
+        try FactoryEntity.flushAll(in: inMemoryContext)
+        try OrderEntity.flushAll(in: inMemoryContext)
+        try CardEntity.flushAll(in: inMemoryContext)
+        try GameEntity.flushAll(in: inMemoryContext)
+        try PlayerEntity.flushAll(in: inMemoryContext)
+    }
+
     public func save() {
         let context = self.inMemoryContext
         if context.hasChanges {

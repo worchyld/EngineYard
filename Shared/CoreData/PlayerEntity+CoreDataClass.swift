@@ -12,5 +12,18 @@ import CoreData
 
 @objc(PlayerEntity)
 public class PlayerEntity: NSManagedObject {
+    public static func flushAll(in context: NSManagedObjectContext) throws {
+        do {
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "PlayerEntity")
+            let objs = try context.fetch(fetchRequest)
+            for case let obj as NSManagedObject in objs {
+                context.delete(obj)
+            }
 
+            try context.save()
+        }
+        catch {
+            throw error
+        }
+    }
 }

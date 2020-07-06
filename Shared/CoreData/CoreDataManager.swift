@@ -52,6 +52,10 @@ class CoreDataManager: NSObject {
         }
     }
 
+    func flushAll() {
+        
+    }
+
     func fetch<T: NSManagedObject>(_ type: T.Type, completion: @escaping ([T]?, Error?) -> Void) {
          let request = NSFetchRequest<T>(entityName: String(describing: type))
 

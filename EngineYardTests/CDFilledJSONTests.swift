@@ -27,7 +27,8 @@ class CDFilledJSONTests: EngineYardTests {
     }
 
     func flushData() throws {
-        try FactoryEntity.flushAll(in: inMemoryContext)
+        //try FactoryEntity.flushAll(in: inMemoryContext)
+        try persistenceManager.flushAll(in: inMemoryContext)
     }
 
 
@@ -53,7 +54,7 @@ class CDFilledJSONTests: EngineYardTests {
         try self.flushData()
     }
 
-    func translateJSONToCoreData() throws {
+    func testTranslateJSONToCoreData() throws {
         // create factories
         guard let factories = response.factories else {
             XCTFail("No factories found in JSON")
@@ -72,12 +73,36 @@ class CDFilledJSONTests: EngineYardTests {
             factoryEntity.trainPool = Int16(factory.trainPool)
             factoryEntity.rust = Int16(factory.rust.rawValue)
 
+            XCTAssertNil(factory.initialOrder)            
+            XCTAssertNil(factory.existingOrders)
+            XCTAssertNil(factory.completedOrders)
+
+            factory.existingOrders = [Int]()
+            factory.completedOrders = [Int]()
+
+            // add initialOrder
+            factory.initialOrder = Die.roll
+            // add existingOrders
+            for _ in 1...3 {
+                let value = Die.roll
+                factory.existingOrders?.append(value)
+            }
+            // add completedOrders
+            for _ in 1...3 {
+                let value = Die.roll
+                factory.completedOrders?.append(value)
+            }
+
+            // set entity versions
             if let hasInitialOrder = factory.initialOrder {
                 let initialOrderEntity = NSEntityDescription.insertNewObject(forEntityName: "OrderEntity", into: context) as! OrderEntity
                 initialOrderEntity.value = Int16(hasInitialOrder)
                 initialOrderEntity.orderType = Int16(OrderType.initialOrder.rawValue)
 
                 factoryEntity.addToOrders(initialOrderEntity)
+            }
+            else {
+                XCTFail("No initial order found")
             }
 
             if let hasExistingOrders = factory.existingOrders {
@@ -89,6 +114,11 @@ class CDFilledJSONTests: EngineYardTests {
                     factoryEntity.addToOrders(existingOrderEntity)
                 }
             }
+            else {
+                XCTFail("No existing orders found")
+            }
+
+
             if let hasCompletedOrders = factory.completedOrders {
                 hasCompletedOrders.forEach { (value) in
                     let completedOrderEntity = NSEntityDescription.insertNewObject(forEntityName: "OrderEntity", into: context) as! OrderEntity
@@ -98,6 +128,11 @@ class CDFilledJSONTests: EngineYardTests {
                     factoryEntity.addToOrders(completedOrderEntity)
                 }
             }
+            else {
+                XCTFail("No completed orders found")
+            }
+
+
             if let hasCards = factory.cards {
                 hasCards.forEach { (card) in
                     let cardEntity = NSEntityDescription.insertNewObject(forEntityName: "CardEntity", into: context) as! CardEntity
@@ -113,17 +148,22 @@ class CDFilledJSONTests: EngineYardTests {
                     factoryEntity.addToCards(cardEntity)
                 }
             }
-        }
+            else {
+                print ("No cards found")
+            }
 
-        // Save context
-        try context.save()
+
+            // Save context
+            try context.save()
+
+        } // :next
 
         // Load from core data
         performTest {
             do {
                 let fetchRequest: NSFetchRequest<FactoryEntity> = FactoryEntity.fetchRequest()
 
-                let results = try context.fetch(fetchRequest)
+                let results = try context.fetch(fetchRequest) as [FactoryEntity]
                 XCTAssertEqual(results.count, response.factories?.count)
 
                 guard let firstObj = results.first else {
@@ -132,6 +172,24 @@ class CDFilledJSONTests: EngineYardTests {
                 }
 
                 print (firstObj)
+                print (firstObj.orders as Any)
+                XCTAssertNotNil( firstObj.orders )
+                XCTAssertEqual(firstObj.orders?.count, 7)
+                guard let orders = firstObj.orders else {
+                    XCTFail("No orders found")
+                    return
+                }
+                let orderPredicate1 = NSPredicate(format: "orderType == \(OrderType.initialOrder.rawValue)", argumentArray: nil)
+                let orderPredicate2 = NSPredicate(format: "orderType == \(OrderType.existingOrder.rawValue)", argumentArray: nil)
+                let orderPredicate3 = NSPredicate(format: "orderType == \(OrderType.completedOrder.rawValue)", argumentArray: nil)
+
+                let initialOrders = orders.filtered(using: orderPredicate1)
+                let existingOrders = orders.filtered(using: orderPredicate2)
+                let completedOrders = orders.filtered(using: orderPredicate3)
+
+                XCTAssertEqual(initialOrders.count, 1)
+                XCTAssertEqual(existingOrders.count, 3)
+                XCTAssertEqual(completedOrders.count, 3)
 
             }
             catch {
