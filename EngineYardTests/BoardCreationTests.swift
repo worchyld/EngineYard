@@ -136,7 +136,7 @@ class BoardCreationTests: XCTestCase {
         XCTAssertEqual(allFactories.count, 14)
 
         let _ = allFactories.map {
-            XCTAssertEqual( $0.summarizedOrders.count , 0)
+            XCTAssertEqual( $0.summarizedOrders().count , 0)
 
             // Check modulus'
             XCTAssertEqual( $0.cost % 4, 0 )

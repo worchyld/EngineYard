@@ -25,7 +25,7 @@ class TrainHasOrdersTests: EngineYardTests {
         XCTAssertNil(train.initialOrder)
         XCTAssertNil(train.existingOrders)
         XCTAssertNil(train.completedOrders)
-        XCTAssertEqual(train.summarizedOrders.count, 0)
+        XCTAssertEqual(train.summarizedOrders().count, 0)
     }
 
     func testTrainHasOrders_InitialOrderIsPositive() {
@@ -39,7 +39,10 @@ class TrainHasOrdersTests: EngineYardTests {
         XCTAssertNil(train.existingOrders)
         XCTAssertNil(train.completedOrders)
 
-        XCTAssertEqual( train.summarizedOrders.count , 1, "Summarized orders = \(train.summarizedOrders)")
+
+        let summarizedOrders = train.summarizedOrders()
+
+        XCTAssertEqual( summarizedOrders.count , 1, "Summarized orders = \(summarizedOrders)")
     }
 
     func testFactory_HasExistingOrders() {
@@ -53,7 +56,7 @@ class TrainHasOrdersTests: EngineYardTests {
         XCTAssertNil(f.completedOrders)
         XCTAssertNotNil(f.existingOrders)
         XCTAssertEqual(f.existingOrders?.count, 3)
-        XCTAssertEqual(f.summarizedOrders.count, 3, "Summarised orders: \(f.summarizedOrders)")
+        XCTAssertEqual(f.summarizedOrders().count, 3, "Summarised orders: \(f.summarizedOrders())")
     }
 
     func testFactory_HasMixedOrders() {
@@ -68,7 +71,7 @@ class TrainHasOrdersTests: EngineYardTests {
         XCTAssertNotNil(f.existingOrders)
         XCTAssertEqual(f.existingOrders?.count, 3)
         XCTAssertEqual(f.completedOrders?.count, 1)
-        XCTAssertEqual(f.summarizedOrders.count, 4, "Summarised orders: \(f.summarizedOrders)")
+        XCTAssertEqual(f.summarizedOrders().count, 4, "Summarised orders: \(f.summarizedOrders())")
     }
 
     func testFactoryIsNotAvailable() {
@@ -78,7 +81,7 @@ class TrainHasOrdersTests: EngineYardTests {
                                 cards: nil, maxDice: 4, trainPool: 3, initialOrder: nil, existingOrders: nil, completedOrders: nil)
         }()
 
-        XCTAssertEqual( f.summarizedOrders.count , 0)
+        XCTAssertEqual( f.summarizedOrders().count , 0)
         XCTAssertEqual( f.isAvailable, false)
     }
 
@@ -92,7 +95,7 @@ class TrainHasOrdersTests: EngineYardTests {
                                     cards: nil, maxDice: 4, trainPool: 3, initialOrder: 3, existingOrders: nil, completedOrders: nil)
             }()
 
-            XCTAssertEqual( f.summarizedOrders.count, 1)
+            XCTAssertEqual( f.summarizedOrders().count, 1)
             XCTAssertEqual( f.isAvailable, false)
             XCTAssertEqual( f.rust, Rust.rusted)
         }
@@ -105,7 +108,7 @@ class TrainHasOrdersTests: EngineYardTests {
                                     cards: nil, maxDice: 4, trainPool: 3, initialOrder: nil, existingOrders: [3,5,2], completedOrders: nil)
             }()
 
-            XCTAssertEqual( f.summarizedOrders.count, 3)
+            XCTAssertEqual( f.summarizedOrders().count, 3)
             XCTAssertEqual( f.isAvailable, false)
             XCTAssertEqual( f.rust, Rust.rusted)
         }
@@ -118,7 +121,7 @@ class TrainHasOrdersTests: EngineYardTests {
                                     cards: nil, maxDice: 4, trainPool: 3, initialOrder: nil, existingOrders: nil, completedOrders: [6,4])
             }()
 
-            XCTAssertEqual( f.summarizedOrders.count, 2)
+            XCTAssertEqual( f.summarizedOrders().count, 2)
             XCTAssertEqual( f.isAvailable, false)
             XCTAssertEqual( f.rust, Rust.rusted)
         }

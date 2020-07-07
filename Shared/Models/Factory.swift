@@ -25,23 +25,6 @@ class Factory : Codable, Identifiable, Equatable {
     var existingOrders: [Int]?
     var completedOrders: [Int]?
 
-    // summarize all orders into 1 flattened array
-    lazy var summarizedOrders: [Int] = {
-        var orders: [Int] = [Int]()
-        if let initial = self.initialOrder {
-            orders.append( initial )
-        }
-        if let existing = self.existingOrders {
-            let flattenExisting = existing.compactMap({ $0 })
-            orders.append(contentsOf: flattenExisting)
-        }
-        if let completed = self.completedOrders {
-            let flattenCompleted = completed.compactMap({ $0 })
-            orders.append(contentsOf: flattenCompleted)
-        }
-        return orders
-    }()
-
     // codingkeys
     private enum CodingKeys: String, CodingKey {
         case id, name, avatar, cost, livery, generation
@@ -119,6 +102,16 @@ extension Factory {
     }
 
     var isAvailable: Bool {
-        return ((self.summarizedOrders.count > 0) && (self.rust != .rusted))
+        return ((self.summarizedOrders().count > 0) && (self.rust != .rusted))
+    }
+
+    func summarizedOrders() -> [Int] {
+        var orders: [Int] = [Int]()
+        orders.append( self.initialOrder ?? 0 )
+        orders.append( contentsOf: self.existingOrders?.compactMap({ $0 }) ?? [0] )
+        orders.append( contentsOf: self.completedOrders?.compactMap({ $0 }) ?? [0] )
+        orders = orders.compactMap { $0 }
+        orders = orders.filter { $0 != 0 }
+        return orders
     }
 }
