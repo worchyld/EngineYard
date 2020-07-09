@@ -25,6 +25,16 @@ class Factory : Codable, Identifiable, Equatable {
     var existingOrders: [Int]?
     var completedOrders: [Int]?
 
+    var summarizedOrders: [Int] {
+        var orders: [Int] = [Int]()
+        orders.append( self.initialOrder ?? 0 )
+        orders.append( contentsOf: self.existingOrders?.compactMap({ $0 }) ?? [0] )
+        orders.append( contentsOf: self.completedOrders?.compactMap({ $0 }) ?? [0] )
+        orders = orders.compactMap { $0 }
+        orders = orders.filter { $0 != 0 }
+        return orders
+    }
+
     // codingkeys
     private enum CodingKeys: String, CodingKey {
         case id, name, avatar, cost, livery, generation
@@ -102,16 +112,6 @@ extension Factory {
     }
 
     var isAvailable: Bool {
-        return ((self.summarizedOrders().count > 0) && (self.rust != .rusted))
-    }
-
-    func summarizedOrders() -> [Int] {
-        var orders: [Int] = [Int]()
-        orders.append( self.initialOrder ?? 0 )
-        orders.append( contentsOf: self.existingOrders?.compactMap({ $0 }) ?? [0] )
-        orders.append( contentsOf: self.completedOrders?.compactMap({ $0 }) ?? [0] )
-        orders = orders.compactMap { $0 }
-        orders = orders.filter { $0 != 0 }
-        return orders
+        return ((self.summarizedOrders.count > 0) && (self.rust != .rusted))
     }
 }

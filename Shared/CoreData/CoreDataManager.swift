@@ -52,8 +52,12 @@ class CoreDataManager: NSObject {
         }
     }
 
-    func flushAll() {
-        
+    public func flushAll(in context: NSManagedObjectContext) throws {
+        try FactoryEntity.flushAll(in: context)
+        try OrderEntity.flushAll(in: context)
+        try CardEntity.flushAll(in: context)
+        try GameEntity.flushAll(in: context)
+        try PlayerEntity.flushAll(in: context)
     }
 
     func fetch<T: NSManagedObject>(_ type: T.Type, completion: @escaping ([T]?, Error?) -> Void) {
