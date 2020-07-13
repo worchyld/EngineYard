@@ -40,7 +40,6 @@
 		4D42DBEC24A7A6BA00B8FF68 /* BoardCreationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D42DBEB24A7A6BA00B8FF68 /* BoardCreationTests.swift */; };
 		4D42DBF624A8A02800B8FF68 /* TrainHasOrdersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D42DBF524A8A02800B8FF68 /* TrainHasOrdersTests.swift */; };
 		4D43244C24AC1FF000B982BE /* EY+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D43244B24AC1FF000B982BE /* EY+Array.swift */; };
-		4D43245024ACB29E00B982BE /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D43244F24ACB29E00B982BE /* Space.swift */; };
 		4D43245224ACB37700B982BE /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D43245124ACB37700B982BE /* Factory.swift */; };
 		4D43245424ACB4A200B982BE /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D43245324ACB4A200B982BE /* Card.swift */; };
 		4D43245824ACCE0500B982BE /* ListTrainsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D43245724ACCE0500B982BE /* ListTrainsView.swift */; };
@@ -114,7 +113,6 @@
 		4D42DBEB24A7A6BA00B8FF68 /* BoardCreationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardCreationTests.swift; sourceTree = "<group>"; };
 		4D42DBF524A8A02800B8FF68 /* TrainHasOrdersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainHasOrdersTests.swift; sourceTree = "<group>"; };
 		4D43244B24AC1FF000B982BE /* EY+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Array.swift"; sourceTree = "<group>"; };
-		4D43244F24ACB29E00B982BE /* Space.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space.swift; sourceTree = "<group>"; };
 		4D43245124ACB37700B982BE /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		4D43245324ACB4A200B982BE /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		4D43245724ACCE0500B982BE /* ListTrainsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTrainsView.swift; sourceTree = "<group>"; };
@@ -290,7 +288,6 @@
 		4DBBA16C24AB75D600E32BBD /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4D43244F24ACB29E00B982BE /* Space.swift */,
 				4D43245124ACB37700B982BE /* Factory.swift */,
 				4D43245324ACB4A200B982BE /* Card.swift */,
 				4D66EBC7248F8147005DE7F0 /* Player.swift */,
@@ -436,7 +433,6 @@
 				4D1C730124A1C898009CAA3A /* EY+Bundle.swift in Sources */,
 				4D9FC8B724AA0B6B002E5FB4 /* GameErrors.swift in Sources */,
 				4DA1C1402486ECF3004C4121 /* Sounds.swift in Sources */,
-				4D43245024ACB29E00B982BE /* Space.swift in Sources */,
 				4D10C58A2486D08400238508 /* SceneDelegate.swift in Sources */,
 				4D42DBE624A7A45200B8FF68 /* DataLoader.swift in Sources */,
 				4DA1C1442486ED8C004C4121 /* EY+FlatColor.swift in Sources */,

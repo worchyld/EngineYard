@@ -37,15 +37,6 @@ class BoardCreationTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testNumberOfSpaces_Equals14() throws {
-        XCTAssertNotNil(response.spaces)
-        guard let spaces = response.spaces else {
-            XCTFail("No spaces")
-            return
-        }
-
-        XCTAssertEqual(spaces.count, meta.totalDecks)
-    }
 
     func testNumberOfFactories_Equals14() {
         XCTAssertNotNil(response.factories)
@@ -54,7 +45,6 @@ class BoardCreationTests: XCTestCase {
             return
         }
         XCTAssertEqual(factories.count, meta.totalDecks)
-        XCTAssertEqual(factories.count, response.spaces?.count)
     }
 
 
@@ -107,12 +97,11 @@ class BoardCreationTests: XCTestCase {
 
         for item in trainGame.board {
             XCTAssertNotNil(item)
-            XCTAssertNotNil(item?.factory)
         }
 
-        let _ = trainGame.board.compactMap { (sp) -> Void in
-            XCTAssertNotNil( sp?.factory )
-            XCTAssertNotNil( sp?.factory?.cards )
+        let _ = trainGame.board.compactMap { (factory) -> Void in
+            XCTAssertNotNil( factory )
+            XCTAssertNotNil( factory?.cards )
         }
     }
 
@@ -128,11 +117,11 @@ class BoardCreationTests: XCTestCase {
             return
         }
 
-        let _ = board.compactMap { XCTAssertNil($0?.factory?.existingOrders) }
-        let _ = board.compactMap { XCTAssertNil($0?.factory?.completedOrders) }
-        let _ = board.compactMap { XCTAssertNil($0?.factory?.initialOrder) }
+        let _ = board.compactMap { XCTAssertNil($0?.existingOrders) }
+        let _ = board.compactMap { XCTAssertNil($0?.completedOrders) }
+        let _ = board.compactMap { XCTAssertNil($0?.initialOrder) }
 
-        let allFactories: [Factory] = board.compactMap({ $0?.factory })
+        let allFactories: [Factory] = board.compactMap({ $0 })
         XCTAssertEqual(allFactories.count, 14)
 
         let _ = allFactories.map {

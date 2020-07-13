@@ -26,7 +26,7 @@ class Factory : Codable, Identifiable, Equatable {
     var completedOrders: [Int]?
 
     // summarize all orders into 1 flattened array
-    lazy var summarizedOrders: [Int] = {
+    var summarizedOrders: [Int] {
         var orders: [Int] = [Int]()
         if let initial = self.initialOrder {
             orders.append( initial )
@@ -40,7 +40,7 @@ class Factory : Codable, Identifiable, Equatable {
             orders.append(contentsOf: flattenCompleted)
         }
         return orders
-    }()
+    }
 
     // codingkeys
     private enum CodingKeys: String, CodingKey {
