@@ -28,6 +28,15 @@ class TranslateObjectsToCoreData {
                 factoryEntity.maxDice = Int16(factory.maxDice)
                 factoryEntity.trainPool = Int16(factory.trainPool)
                 factoryEntity.rust = Int16(factory.rust.rawValue)
+
+                if (factory.existingOrders == nil) {
+                    factory.existingOrders = [Int]()
+                }
+                if (factory.completedOrders == nil) {
+                    factory.completedOrders = [Int]()
+                }
+
+                
             }
 
             do {
@@ -41,6 +50,7 @@ class TranslateObjectsToCoreData {
             }
         } // :next
 
+        
 
     }
 }
