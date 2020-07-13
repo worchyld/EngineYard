@@ -34,9 +34,7 @@ class TranslateObjectsToCoreData {
                 }
                 if (factory.completedOrders == nil) {
                     factory.completedOrders = [Int]()
-                }
-
-                
+                }                
             }
 
             do {
