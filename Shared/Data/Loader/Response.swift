@@ -9,10 +9,9 @@
 import Foundation
 
 struct Response: Codable {
-    var spaces: [Space]?
     var factories: [Factory]?
 
     enum CodingKeys: String, CodingKey {
-        case spaces, factories
+        case factories
     }
 }

@@ -79,7 +79,4 @@ class CoreDataManager: NSObject {
         block()
         CoreDataManager.shared.save()
     }
-
-    
-
 }

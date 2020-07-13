@@ -8,10 +8,14 @@
 
 import Foundation
 
-typealias Board = [Space?]
+typealias Board = [Factory?]
 
 class TrainGame {
     var board: Board!
+
+    func load() {
+
+    }
 
     func start(_ bundle: Bundle = Bundle.main) throws {
         do {
@@ -26,7 +30,7 @@ class TrainGame {
 
 extension TrainGame {
     public static func loadInitialBoard(bundle: Bundle) throws -> Board? {
-        var board = [Space?](repeating: nil, count: 14)
+        var board = [Factory?](repeating: nil, count: 14)
 
         // Load JSON from Bundle
         let api = DataLoader.shared
@@ -40,27 +44,9 @@ extension TrainGame {
                 throw NSError(domain: "Couldn't load the factories from data", code: 0, userInfo: nil)
             }
 
-            guard let spaces = response.spaces else {
-                throw NSError(domain: "Couldn't find any board spaces from JSON data", code: 0, userInfo: nil)
-            }
+            board = factories
 
-            guard (spaces.count == board.count) else {
-                throw NSError(domain: "The spaces count mis-match", code: 0, userInfo: ["spaces": spaces.count, "board": board.count])
-            }
-
-            guard (factories.count == spaces.count) else {
-                throw NSError(domain: "Factories/Spaces mis-match", code: 0, userInfo: nil)
-            }
-
-            // Link the space to the factory
-            for space in spaces {
-                guard let factory = factories.filter({ $0.generation == space.generation && $0.livery == space.livery }).first else {
-                    throw NSError(domain: "Cannot find factory: \(space.livery) \(space.generation)", code: 0, userInfo: nil)
-                }
-                space.factory = factory
-            }
-
-            board = spaces
+            
 
             return board
         case .failure(let error):

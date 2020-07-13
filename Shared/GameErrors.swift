@@ -51,6 +51,8 @@ public enum DataErrorReason : Equatable {
 public enum BoardErrorReason : Equatable {
     /// The board is missing
     case missing
+    /// The board is invalid
+    case invalidBoard
 }
 
 

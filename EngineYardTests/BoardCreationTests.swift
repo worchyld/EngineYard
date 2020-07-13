@@ -37,15 +37,6 @@ class BoardCreationTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testNumberOfSpaces_Equals14() throws {
-        XCTAssertNotNil(response.spaces)
-        guard let spaces = response.spaces else {
-            XCTFail("No spaces")
-            return
-        }
-
-        XCTAssertEqual(spaces.count, meta.totalDecks)
-    }
 
     func testNumberOfFactories_Equals14() {
         XCTAssertNotNil(response.factories)
@@ -54,7 +45,6 @@ class BoardCreationTests: XCTestCase {
             return
         }
         XCTAssertEqual(factories.count, meta.totalDecks)
-        XCTAssertEqual(factories.count, response.spaces?.count)
     }
 
 
@@ -99,7 +89,7 @@ class BoardCreationTests: XCTestCase {
         XCTAssertEqual(board.count, meta.totalDecks)
     }
 
-    func testBoardSpacesHaveFactories() throws {
+    func testBoardHasFactories() throws {
         let bundle = Bundle(for: type(of: self))
         let trainGame = TrainGame()
 
@@ -107,13 +97,8 @@ class BoardCreationTests: XCTestCase {
 
         for item in trainGame.board {
             XCTAssertNotNil(item)
-            XCTAssertNotNil(item?.factory)
         }
-
-        let _ = trainGame.board.compactMap { (sp) -> Void in
-            XCTAssertNotNil( sp?.factory )
-            XCTAssertNotNil( sp?.factory?.cards )
-        }
+        XCTAssertEqual(trainGame.board.count, 14)
     }
 
     func testBoardHasNoOrders() throws {
@@ -128,21 +113,21 @@ class BoardCreationTests: XCTestCase {
             return
         }
 
-        let _ = board.compactMap { XCTAssertNil($0?.factory?.existingOrders) }
-        let _ = board.compactMap { XCTAssertNil($0?.factory?.completedOrders) }
-        let _ = board.compactMap { XCTAssertNil($0?.factory?.initialOrder) }
+        let _ = board.compactMap { XCTAssertNil($0?.existingOrders) }
+        let _ = board.compactMap { XCTAssertNil($0?.completedOrders) }
+        let _ = board.compactMap { XCTAssertNil($0?.initialOrder) }
 
-        let allFactories: [Factory] = board.compactMap({ $0?.factory })
-        XCTAssertEqual(allFactories.count, 14)
-
-        let _ = allFactories.map {
-            XCTAssertEqual( $0.summarizedOrders.count , 0)
+        let _ = board.map {
+            guard let item = $0 else {
+                XCTFail("No factory found")
+                return
+            }
+            XCTAssertEqual( item.summarizedOrders.count , 0)
 
             // Check modulus'
-            XCTAssertEqual( $0.cost % 4, 0 )
-            XCTAssertEqual( $0.productionCost, Int($0.cost / 2) )
-            XCTAssertEqual( $0.income, Int($0.productionCost / 2) )
-
+            XCTAssertEqual( item.cost % 4, 0 )
+            XCTAssertEqual( item.productionCost, Int(item.cost / 2) )
+            XCTAssertEqual( item.income, Int(item.productionCost / 2) )
         }
     }
 
