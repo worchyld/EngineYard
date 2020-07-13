@@ -62,6 +62,7 @@
 		4DA1C1482486EDE3004C4121 /* EY+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C1472486EDE3004C4121 /* EY+Date.swift */; };
 		4DA1C14B2486F3FC004C4121 /* Tax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C14A2486F3FC004C4121 /* Tax.swift */; };
 		4DA1C14D2486F43E004C4121 /* TaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA1C14C2486F43E004C4121 /* TaxTests.swift */; };
+		4DB924D324BC91BC008E782B /* FileManagerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB924D224BC91BC008E782B /* FileManagerHelper.swift */; };
 		4DBBA17924AB91EC00E32BBD /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBA17724AB91DE00E32BBD /* Hand.swift */; };
 		4DF1B6CE24A3412F00618C7B /* Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1B6CD24A3412F00618C7B /* Fixtures.swift */; };
 /* End PBXBuildFile section */
@@ -135,6 +136,7 @@
 		4DA1C1472486EDE3004C4121 /* EY+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Date.swift"; sourceTree = "<group>"; };
 		4DA1C14A2486F3FC004C4121 /* Tax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tax.swift; sourceTree = "<group>"; };
 		4DA1C14C2486F43E004C4121 /* TaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTests.swift; sourceTree = "<group>"; };
+		4DB924D224BC91BC008E782B /* FileManagerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerHelper.swift; sourceTree = "<group>"; };
 		4DBBA17724AB91DE00E32BBD /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
 		4DF1B6CD24A3412F00618C7B /* Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixtures.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -281,6 +283,7 @@
 				4DA1C1412486ED12004C4121 /* NumberFormatCache.swift */,
 				4DA1C1382486EC3D004C4121 /* Die.swift */,
 				4D1C72FE24A16EAA009CAA3A /* AsyncOperation.swift */,
+				4DB924D224BC91BC008E782B /* FileManagerHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				4D10C58A2486D08400238508 /* SceneDelegate.swift in Sources */,
 				4D42DBE624A7A45200B8FF68 /* DataLoader.swift in Sources */,
 				4DA1C1442486ED8C004C4121 /* EY+FlatColor.swift in Sources */,
+				4DB924D324BC91BC008E782B /* FileManagerHelper.swift in Sources */,
 				4D10C58C2486D08400238508 /* ContentView.swift in Sources */,
 				4D238C4E24A058B40031E3EE /* Livery.swift in Sources */,
 				4D54250C249D5B16004B97A8 /* Spending.swift in Sources */,
