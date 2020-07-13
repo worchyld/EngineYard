@@ -27,4 +27,11 @@ public class OrderEntity: NSManagedObject {
             throw error
         }
     }
+
+    class func create(in context: NSManagedObjectContext, value: Int, orderType: OrderType) -> OrderEntity {
+        let entity = NSEntityDescription.insertNewObject(forEntityName: "OrderEntity", into: context) as! OrderEntity
+        entity.value = Int16(value)
+        entity.orderType = Int16(orderType.rawValue)
+        return entity
+    }
 }

@@ -34,7 +34,26 @@ class TranslateObjectsToCoreData {
                 }
                 if (factory.completedOrders == nil) {
                     factory.completedOrders = [Int]()
-                }                
+                }
+
+                if let hasInitialOrder = factory.initialOrder {
+                    let initialOrderEntity = OrderEntity.create(in: context, value: hasInitialOrder, orderType: .initialOrder)
+                    factoryEntity.addToOrders(initialOrderEntity)
+                }
+
+                if let hasExistingOrders = factory.existingOrders {
+                    for o in hasExistingOrders {
+                        let existingOrderEntity = OrderEntity.create(in: context, value: o, orderType: .existingOrder)
+                        factoryEntity.addToOrders(existingOrderEntity)
+                    }
+                }
+
+                if let hasCompletedOrders = factory.completedOrders {
+                    for o in hasCompletedOrders {
+                        let completedOrderEntity = OrderEntity.create(in: context, value: o, orderType: .completedOrder)
+                        factoryEntity.addToOrders(completedOrderEntity)
+                    }
+                }
             }
 
             do {
@@ -42,7 +61,6 @@ class TranslateObjectsToCoreData {
             }
             catch {
                 if let nserror = error as NSError? {
-                    //fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
                     throw nserror
                 }
             }
