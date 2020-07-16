@@ -217,7 +217,7 @@ class CDFilledJSONTests: EngineYardTests {
     }
 
 
-    func testDidTranslateToCoreData() throws {
+    func testDidSaveGameToCoreData() throws {
         let context = self.inMemoryContext
         let bundle = Bundle(for: type(of: self))
         let trainGame = TrainGame()
