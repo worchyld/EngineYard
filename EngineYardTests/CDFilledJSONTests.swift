@@ -216,4 +216,26 @@ class CDFilledJSONTests: EngineYardTests {
         }
     }
 
+
+    func testDidTranslateToCoreData() throws {
+        let context = self.inMemoryContext
+        let bundle = Bundle(for: type(of: self))
+        let trainGame = TrainGame()
+        try trainGame.start(bundle)
+
+        let translater = TranslateObjectsToCoreData.init()
+        try translater.save(game: trainGame, in: context)
+
+        let fetchRequest: NSFetchRequest<GameEntity> = GameEntity.fetchRequest()
+        let gameEntity = try context.fetch(fetchRequest).first
+
+        if let factories = gameEntity?.factories {
+            XCTAssertTrue(factories.count == 14)
+            print ("Results -- \(gameEntity as Any)")
+        }
+        else {
+            XCTFail("No factories found in core data")
+        }
+    }
+
 }

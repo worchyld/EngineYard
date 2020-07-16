@@ -11,13 +11,11 @@ import CoreData
 
 // Translate objects -> core data
 class TranslateObjectsToCoreData {
-    func save(game: TrainGame) throws {
+    func save(game: TrainGame, in context: NSManagedObjectContext) throws {
 
         guard !game.board.isEmpty else {
             throw BoardError(reason: .missing)
         }
-
-        let context = CoreDataManager.shared.context
 
         // Save board
         for item in game.board {
