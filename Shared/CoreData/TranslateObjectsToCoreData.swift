@@ -156,6 +156,23 @@ class TranslateObjectsToCoreData {
                 throw nserror
             }
         }
+    }
 
+    func load(trainGame: TrainGame) throws -> TrainGame {
+        // Get game entity
+        let fetchRequest: NSFetchRequest<GameEntity> = GameEntity.fetchRequest()
+        fetchRequest.fetchLimit = 1
+
+        let context = CoreDataManager.shared.context
+        do {
+            if let gameEntity = try context.fetch(fetchRequest).first {
+                print ("Game entity -- \(gameEntity as Any)")
+            }
+        }
+        catch {
+            throw error
+        }
+
+        return trainGame
     }
 }
