@@ -44,7 +44,7 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="state" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="turnOrder" optional="YES" attributeType="Integer 16" minValueString="0" maxValueString="5" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="cards" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CardEntity" inverseName="owner" inverseEntity="CardEntity"/>
+        <relationship name="cards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CardEntity" inverseName="owner" inverseEntity="CardEntity"/>
         <relationship name="game" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GameEntity" inverseName="players" inverseEntity="GameEntity"/>
     </entity>
     <elements>

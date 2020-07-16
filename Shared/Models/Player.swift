@@ -20,6 +20,7 @@ protocol PlayerDelegate : AnyObject {
     var name: String { get }
     var cash: Int { get }
     var avatar: String { get }
+    var turnOrder: Int { get }
 }
 
 class Player : NSObject, GKGameModelPlayer, Identifiable, WalletHolderDelegate, PlayerDelegate {
@@ -28,6 +29,7 @@ class Player : NSObject, GKGameModelPlayer, Identifiable, WalletHolderDelegate, 
     var cash: Int
     let avatar: String
     var cards: [Card]
+    var turnOrder: Int
 
     private(set) var state: PlayerState
 
@@ -38,6 +40,7 @@ class Player : NSObject, GKGameModelPlayer, Identifiable, WalletHolderDelegate, 
         self.avatar = avatar
         self.state = .waiting
         self.cards = [Card]()
+        self.turnOrder = 0
     }
 }
 

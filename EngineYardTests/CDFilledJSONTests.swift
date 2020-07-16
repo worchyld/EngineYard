@@ -196,6 +196,24 @@ class CDFilledJSONTests: EngineYardTests {
                 throw error
             }
         }
+
+        performTest {
+            do {
+                let livery = Livery.green.rawValue
+                let generation = Generation.first.rawValue
+                let predicate = NSPredicate(format: "livery == %@ AND generation == %@", argumentArray: [livery, generation])
+                let fetchRequest: NSFetchRequest<FactoryEntity> = FactoryEntity.fetchRequest()
+                fetchRequest.predicate = predicate
+
+                let results = try context.fetch(fetchRequest) as [FactoryEntity]
+                XCTAssertEqual(results.count, 1)
+
+
+            }
+            catch {
+                throw error
+            }
+        }
     }
 
 }

@@ -11,13 +11,16 @@ import CoreData
 
 // Translate objects -> core data
 class TranslateObjectsToCoreData {
-    func save(board: Board) throws {
-        guard !board.isEmpty else {
+    func save(game: TrainGame) throws {
+
+        guard !game.board.isEmpty else {
             throw BoardError(reason: .missing)
         }
+
         let context = CoreDataManager.shared.context
 
-        for item in board {
+        // Save board
+        for item in game.board {
             if let factory = item {
                 let factoryEntity: FactoryEntity = NSEntityDescription.insertNewObject(forEntityName: "FactoryEntity" , into: context) as! FactoryEntity
                 factoryEntity.name = factory.name
@@ -54,7 +57,7 @@ class TranslateObjectsToCoreData {
                         factoryEntity.addToOrders(completedOrderEntity)
                     }
                 }
-            }
+            } // :endif
 
             do {
                 try context.save()
@@ -67,6 +70,92 @@ class TranslateObjectsToCoreData {
         } // :next
 
         
+
+        // Save players
+        for player in game.players {
+            let playerEntity: PlayerEntity = NSEntityDescription.insertNewObject(forEntityName: "PlayerEntity", into: context) as! PlayerEntity
+            playerEntity.name = player.name
+            playerEntity.cash = Int16(player.cash)
+            playerEntity.avatar = player.avatar
+            playerEntity.state = Int16(player.state.rawValue)
+            playerEntity.turnOrder = Int16(player.turnOrder)
+
+            for card in player.cards {
+                // Find factory object in core data
+                let predicate = NSPredicate(format: "livery == %@ AND generation == %@", argumentArray: [card.livery.rawValue, card.generation.rawValue])
+                let fetchRequest: NSFetchRequest<FactoryEntity> = FactoryEntity.fetchRequest()
+                fetchRequest.predicate = predicate
+                fetchRequest.fetchLimit = 1
+
+                let results = try context.fetch(fetchRequest)
+                print ("Found results -- \(results)")
+                if (results.count == 1) {
+
+                    let factoryEntity: FactoryEntity = results.first!
+                    let cardEntity: CardEntity = NSEntityDescription.insertNewObject(forEntityName: "CardEntity", into: context) as! CardEntity
+                    cardEntity.avatar = card.avatar
+                    cardEntity.name = card.name
+                    cardEntity.cost = Int16(card.cost)
+                    cardEntity.owner = playerEntity
+                    cardEntity.livery = Int16(card.livery.rawValue)
+                    cardEntity.generation = Int16(card.generation.rawValue)
+                    cardEntity.production = Int16(card.production)
+                    cardEntity.spentProduction = Int16(card.spentProduction)
+                    cardEntity.factory = factoryEntity
+                    cardEntity.owner = playerEntity
+
+                }
+                else {
+                    print ("Found \(results.count)")
+                }
+
+                do {
+                    try context.save()
+                }
+                catch {
+                    if let nserror = error as NSError? {
+                        throw nserror
+                    }
+                }
+            }
+
+            do {
+                try context.save()
+            }
+            catch {
+                if let nserror = error as NSError? {
+                    throw nserror
+                }
+            }
+        }
+
+
+        // Get player entities
+        let playersFetchRequest: NSFetchRequest<PlayerEntity> = PlayerEntity.fetchRequest()
+        let playerResults = try context.fetch(playersFetchRequest)
+
+        // Get factory entities
+        let factoryFetchRequest: NSFetchRequest<FactoryEntity> = FactoryEntity.fetchRequest()
+        let factoryResults = try context.fetch(factoryFetchRequest)
+
+        // Save game entity
+        let gameEntity: GameEntity = NSEntityDescription.insertNewObject(forEntityName: "GameEntity", into: context) as! GameEntity
+        gameEntity.phase = Int16(game.phase.rawValue)
+
+        for playerEntity in playerResults {
+            gameEntity.addToPlayers(playerEntity)
+        }
+        for factoryEntity in factoryResults {
+            gameEntity.addToFactories(factoryEntity)
+        }
+        do {
+            try context.save()
+        }
+        catch {
+            if let nserror = error as NSError? {
+                throw nserror
+            }
+        }
 
     }
 }

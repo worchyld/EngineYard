@@ -12,6 +12,8 @@ typealias Board = [Factory?]
 
 class TrainGame {
     var board: Board!
+    var players: [Player] = [Player]()
+    var phase: GamePhase = .mainMenu
 
     func load() {
 

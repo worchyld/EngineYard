@@ -39,11 +39,10 @@ class CoreDataManager: NSObject {
     // MARK: - Core Data Saving support
 
     public func save() {
-
         if self.context.hasChanges {
             do {
                 try self.context.save()
-                print("In CoreData.stack.save()")
+                print("CoreData.saved")
             } catch {
 
                 let nserror = error as NSError
