@@ -112,9 +112,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D5AC8F52555C30200E39048 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		4D807BC62555C03F0067ABD0 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				4D5AC8F52555C30200E39048 /* Models */,
 				4D807BCA2555C0700067ABD0 /* Sounds */,
 				4D807BC92555C0680067ABD0 /* Helpers */,
 				4D807BC82555C04B0067ABD0 /* Extensions */,

@@ -9,9 +9,10 @@
 import Foundation
 
 struct Response: Codable {
-    var factories: [Factory]?
-
-    enum CodingKeys: String, CodingKey {
-        case factories
-    }
+//    var factories: [Factory]?
+//
+//    enum CodingKeys: String, CodingKey {
+//        case factories
+//    }
 }
+
