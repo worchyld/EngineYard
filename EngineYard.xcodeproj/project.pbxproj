@@ -34,6 +34,7 @@
 		4D5AC9272555DF0500E39048 /* PlayerHUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC9262555DF0500E39048 /* PlayerHUDView.swift */; };
 		4D5AC92C2555FE3500E39048 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC92B2555FE3500E39048 /* Player.swift */; };
 		4D5AC9342555FF8D00E39048 /* PlayersHorizontalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC9332555FF8D00E39048 /* PlayersHorizontalListView.swift */; };
+		4D5AC93C2556083700E39048 /* WinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC93B2556083700E39048 /* WinnerView.swift */; };
 		4D807BD02555C0940067ABD0 /* cardSlide8.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D807BCB2555C0940067ABD0 /* cardSlide8.wav */; };
 		4D807BD12555C0940067ABD0 /* cardSlide1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D807BCC2555C0940067ABD0 /* cardSlide1.wav */; };
 		4D807BD22555C0940067ABD0 /* Birdy_Note5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D807BCD2555C0940067ABD0 /* Birdy_Note5.wav */; };
@@ -92,6 +93,7 @@
 		4D5AC9262555DF0500E39048 /* PlayerHUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerHUDView.swift; sourceTree = "<group>"; };
 		4D5AC92B2555FE3500E39048 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		4D5AC9332555FF8D00E39048 /* PlayersHorizontalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersHorizontalListView.swift; sourceTree = "<group>"; };
+		4D5AC93B2556083700E39048 /* WinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerView.swift; sourceTree = "<group>"; };
 		4D807BCB2555C0940067ABD0 /* cardSlide8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardSlide8.wav; sourceTree = "<group>"; };
 		4D807BCC2555C0940067ABD0 /* cardSlide1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardSlide1.wav; sourceTree = "<group>"; };
 		4D807BCD2555C0940067ABD0 /* Birdy_Note5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Note5.wav; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 				4D5AC9212555DE3800E39048 /* AvatarView.swift */,
 				4D5AC9262555DF0500E39048 /* PlayerHUDView.swift */,
 				4D5AC9332555FF8D00E39048 /* PlayersHorizontalListView.swift */,
+				4D5AC93B2556083700E39048 /* WinnerView.swift */,
 			);
 			path = EngineYard;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 				4D5AC9132555DD5900E39048 /* GamePhase.swift in Sources */,
 				4D5AC8CF2555C27700E39048 /* EY+Bundle.swift in Sources */,
 				4D5AC8FA2555DC8B00E39048 /* Board.swift in Sources */,
+				4D5AC93C2556083700E39048 /* WinnerView.swift in Sources */,
 				4D5AC8ED2555C2B600E39048 /* Response.swift in Sources */,
 				4D5AC9222555DE3800E39048 /* AvatarView.swift in Sources */,
 				4D5AC8D22555C27700E39048 /* EY+Identifier.swift in Sources */,
