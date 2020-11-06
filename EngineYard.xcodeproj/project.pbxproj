@@ -30,6 +30,10 @@
 		4D5AC9132555DD5900E39048 /* GamePhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC9122555DD5900E39048 /* GamePhase.swift */; };
 		4D5AC9182555DD8300E39048 /* Rust.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC9172555DD8300E39048 /* Rust.swift */; };
 		4D5AC91D2555DD9D00E39048 /* Tax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC91C2555DD9D00E39048 /* Tax.swift */; };
+		4D5AC9222555DE3800E39048 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC9212555DE3800E39048 /* AvatarView.swift */; };
+		4D5AC9272555DF0500E39048 /* PlayerHUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC9262555DF0500E39048 /* PlayerHUDView.swift */; };
+		4D5AC92C2555FE3500E39048 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC92B2555FE3500E39048 /* Player.swift */; };
+		4D5AC9342555FF8D00E39048 /* PlayersHorizontalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC9332555FF8D00E39048 /* PlayersHorizontalListView.swift */; };
 		4D807BD02555C0940067ABD0 /* cardSlide8.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D807BCB2555C0940067ABD0 /* cardSlide8.wav */; };
 		4D807BD12555C0940067ABD0 /* cardSlide1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D807BCC2555C0940067ABD0 /* cardSlide1.wav */; };
 		4D807BD22555C0940067ABD0 /* Birdy_Note5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D807BCD2555C0940067ABD0 /* Birdy_Note5.wav */; };
@@ -84,6 +88,10 @@
 		4D5AC9122555DD5900E39048 /* GamePhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePhase.swift; sourceTree = "<group>"; };
 		4D5AC9172555DD8300E39048 /* Rust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rust.swift; sourceTree = "<group>"; };
 		4D5AC91C2555DD9D00E39048 /* Tax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tax.swift; sourceTree = "<group>"; };
+		4D5AC9212555DE3800E39048 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		4D5AC9262555DF0500E39048 /* PlayerHUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerHUDView.swift; sourceTree = "<group>"; };
+		4D5AC92B2555FE3500E39048 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		4D5AC9332555FF8D00E39048 /* PlayersHorizontalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersHorizontalListView.swift; sourceTree = "<group>"; };
 		4D807BCB2555C0940067ABD0 /* cardSlide8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardSlide8.wav; sourceTree = "<group>"; };
 		4D807BCC2555C0940067ABD0 /* cardSlide1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardSlide1.wav; sourceTree = "<group>"; };
 		4D807BCD2555C0940067ABD0 /* Birdy_Note5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Note5.wav; sourceTree = "<group>"; };
@@ -138,6 +146,7 @@
 				4D5AC9122555DD5900E39048 /* GamePhase.swift */,
 				4D5AC9172555DD8300E39048 /* Rust.swift */,
 				4D5AC91C2555DD9D00E39048 /* Tax.swift */,
+				4D5AC92B2555FE3500E39048 /* Player.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -145,11 +154,11 @@
 		4D807BC62555C03F0067ABD0 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				4D5AC8F52555C30200E39048 /* Models */,
 				4D807BCA2555C0700067ABD0 /* Sounds */,
 				4D807BC92555C0680067ABD0 /* Helpers */,
 				4D807BC82555C04B0067ABD0 /* Extensions */,
 				4D807BC72555C0470067ABD0 /* Data */,
+				4D5AC8F52555C30200E39048 /* Models */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -232,6 +241,9 @@
 				4DB92AE92555BDEF00B976A2 /* Assets.xcassets */,
 				4DB92AEE2555BDEF00B976A2 /* Info.plist */,
 				4DB92AEB2555BDEF00B976A2 /* Preview Content */,
+				4D5AC9212555DE3800E39048 /* AvatarView.swift */,
+				4D5AC9262555DF0500E39048 /* PlayerHUDView.swift */,
+				4D5AC9332555FF8D00E39048 /* PlayersHorizontalListView.swift */,
 			);
 			path = EngineYard;
 			sourceTree = "<group>";
@@ -405,6 +417,7 @@
 				4D5AC8CF2555C27700E39048 /* EY+Bundle.swift in Sources */,
 				4D5AC8FA2555DC8B00E39048 /* Board.swift in Sources */,
 				4D5AC8ED2555C2B600E39048 /* Response.swift in Sources */,
+				4D5AC9222555DE3800E39048 /* AvatarView.swift in Sources */,
 				4D5AC8D22555C27700E39048 /* EY+Identifier.swift in Sources */,
 				4D5AC91D2555DD9D00E39048 /* Tax.swift in Sources */,
 				4D5AC9042555DD0C00E39048 /* Generation.swift in Sources */,
@@ -416,11 +429,14 @@
 				4DB92AE62555BDEE00B976A2 /* EngineYardApp.swift in Sources */,
 				4D5AC8EE2555C2B600E39048 /* JSONAny.swift in Sources */,
 				4D5AC8E52555C2AE00E39048 /* DataLoader.swift in Sources */,
+				4D5AC9272555DF0500E39048 /* PlayerHUDView.swift in Sources */,
 				4D5AC8D52555C27700E39048 /* EY+CaseIterable.swift in Sources */,
 				4D5AC8D42555C27700E39048 /* EY+Int.swift in Sources */,
 				4D5AC8EC2555C2B600E39048 /* Meta.swift in Sources */,
 				4D5AC90A2555DD3300E39048 /* Die.swift in Sources */,
+				4D5AC92C2555FE3500E39048 /* Player.swift in Sources */,
 				4D5AC8D32555C27700E39048 /* EY+Date.swift in Sources */,
+				4D5AC9342555FF8D00E39048 /* PlayersHorizontalListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
