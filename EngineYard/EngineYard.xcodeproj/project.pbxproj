@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D807BD02555C0940067ABD0 /* cardSlide8.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D807BCB2555C0940067ABD0 /* cardSlide8.wav */; };
+		4D807BD12555C0940067ABD0 /* cardSlide1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D807BCC2555C0940067ABD0 /* cardSlide1.wav */; };
+		4D807BD22555C0940067ABD0 /* Birdy_Note5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D807BCD2555C0940067ABD0 /* Birdy_Note5.wav */; };
+		4D807BD32555C0940067ABD0 /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D807BCE2555C0940067ABD0 /* Sounds.swift */; };
+		4D807BD42555C0940067ABD0 /* Birdy_Notification1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D807BCF2555C0940067ABD0 /* Birdy_Notification1.wav */; };
 		4DB92AE62555BDEE00B976A2 /* EngineYardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB92AE52555BDEE00B976A2 /* EngineYardApp.swift */; };
 		4DB92AE82555BDEE00B976A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB92AE72555BDEE00B976A2 /* ContentView.swift */; };
 		4DB92AEA2555BDEF00B976A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DB92AE92555BDEF00B976A2 /* Assets.xcassets */; };
@@ -33,6 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D807BCB2555C0940067ABD0 /* cardSlide8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardSlide8.wav; sourceTree = "<group>"; };
+		4D807BCC2555C0940067ABD0 /* cardSlide1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardSlide1.wav; sourceTree = "<group>"; };
+		4D807BCD2555C0940067ABD0 /* Birdy_Note5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Note5.wav; sourceTree = "<group>"; };
+		4D807BCE2555C0940067ABD0 /* Sounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
+		4D807BCF2555C0940067ABD0 /* Birdy_Notification1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Notification1.wav; sourceTree = "<group>"; };
 		4DB92AE22555BDEE00B976A2 /* EngineYard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EngineYard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DB92AE52555BDEE00B976A2 /* EngineYardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineYardApp.swift; sourceTree = "<group>"; };
 		4DB92AE72555BDEE00B976A2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,9 +82,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D807BC62555C03F0067ABD0 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				4D807BCA2555C0700067ABD0 /* Sounds */,
+				4D807BC92555C0680067ABD0 /* Helpers */,
+				4D807BC82555C04B0067ABD0 /* Extensions */,
+				4D807BC72555C0470067ABD0 /* Data */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		4D807BC72555C0470067ABD0 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		4D807BC82555C04B0067ABD0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4D807BC92555C0680067ABD0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		4D807BCA2555C0700067ABD0 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				4D807BCD2555C0940067ABD0 /* Birdy_Note5.wav */,
+				4D807BCF2555C0940067ABD0 /* Birdy_Notification1.wav */,
+				4D807BCC2555C0940067ABD0 /* cardSlide1.wav */,
+				4D807BCB2555C0940067ABD0 /* cardSlide8.wav */,
+				4D807BCE2555C0940067ABD0 /* Sounds.swift */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		4DB92AD92555BDEE00B976A2 = {
 			isa = PBXGroup;
 			children = (
+				4D807BC62555C03F0067ABD0 /* Shared */,
 				4DB92AE42555BDEE00B976A2 /* EngineYard */,
 				4DB92AF62555BDEF00B976A2 /* EngineYardTests */,
 				4DB92B012555BDEF00B976A2 /* EngineYardUITests */,
@@ -233,7 +288,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D807BD42555C0940067ABD0 /* Birdy_Notification1.wav in Resources */,
+				4D807BD22555C0940067ABD0 /* Birdy_Note5.wav in Resources */,
 				4DB92AED2555BDEF00B976A2 /* Preview Assets.xcassets in Resources */,
+				4D807BD02555C0940067ABD0 /* cardSlide8.wav in Resources */,
+				4D807BD12555C0940067ABD0 /* cardSlide1.wav in Resources */,
 				4DB92AEA2555BDEF00B976A2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D807BD32555C0940067ABD0 /* Sounds.swift in Sources */,
 				4DB92AE82555BDEE00B976A2 /* ContentView.swift in Sources */,
 				4DB92AE62555BDEE00B976A2 /* EngineYardApp.swift in Sources */,
 			);
