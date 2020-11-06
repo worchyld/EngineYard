@@ -1,0 +1,22 @@
+//
+//  Generation.swift
+//  EngineYard
+//
+//  Created by Amarjit on 06/11/2020.
+//
+
+import Foundation
+
+// Locomotive generation
+enum Generation: NSInteger, Codable, CaseIterable {
+    case first = 1, second, third, fourth, fifth
+}
+
+// Ordinal description extension
+extension Generation {
+    var ordinalFormat: String? {
+        let number: NSNumber = NSNumber(integerLiteral: self.rawValue)
+        let cache = NumberFormatCache.ordinalFormat
+        return cache.string(from: number)
+    }
+}

@@ -22,6 +22,14 @@
 		4D5AC8EC2555C2B600E39048 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC8E92555C2B600E39048 /* Meta.swift */; };
 		4D5AC8ED2555C2B600E39048 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC8EB2555C2B600E39048 /* Response.swift */; };
 		4D5AC8EE2555C2B600E39048 /* JSONAny.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC8EA2555C2B600E39048 /* JSONAny.swift */; };
+		4D5AC8FA2555DC8B00E39048 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC8F92555DC8B00E39048 /* Board.swift */; };
+		4D5AC8FF2555DCE600E39048 /* Livery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC8FE2555DCE600E39048 /* Livery.swift */; };
+		4D5AC9042555DD0C00E39048 /* Generation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC9032555DD0C00E39048 /* Generation.swift */; };
+		4D5AC90A2555DD3300E39048 /* Die.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC9082555DD3300E39048 /* Die.swift */; };
+		4D5AC90B2555DD3300E39048 /* NumberFormatCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC9092555DD3300E39048 /* NumberFormatCache.swift */; };
+		4D5AC9132555DD5900E39048 /* GamePhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC9122555DD5900E39048 /* GamePhase.swift */; };
+		4D5AC9182555DD8300E39048 /* Rust.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC9172555DD8300E39048 /* Rust.swift */; };
+		4D5AC91D2555DD9D00E39048 /* Tax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC91C2555DD9D00E39048 /* Tax.swift */; };
 		4D807BD02555C0940067ABD0 /* cardSlide8.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D807BCB2555C0940067ABD0 /* cardSlide8.wav */; };
 		4D807BD12555C0940067ABD0 /* cardSlide1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D807BCC2555C0940067ABD0 /* cardSlide1.wav */; };
 		4D807BD22555C0940067ABD0 /* Birdy_Note5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D807BCD2555C0940067ABD0 /* Birdy_Note5.wav */; };
@@ -68,6 +76,14 @@
 		4D5AC8E92555C2B600E39048 /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
 		4D5AC8EA2555C2B600E39048 /* JSONAny.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONAny.swift; sourceTree = "<group>"; };
 		4D5AC8EB2555C2B600E39048 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		4D5AC8F92555DC8B00E39048 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		4D5AC8FE2555DCE600E39048 /* Livery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Livery.swift; sourceTree = "<group>"; };
+		4D5AC9032555DD0C00E39048 /* Generation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generation.swift; sourceTree = "<group>"; };
+		4D5AC9082555DD3300E39048 /* Die.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Die.swift; sourceTree = "<group>"; };
+		4D5AC9092555DD3300E39048 /* NumberFormatCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberFormatCache.swift; sourceTree = "<group>"; };
+		4D5AC9122555DD5900E39048 /* GamePhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePhase.swift; sourceTree = "<group>"; };
+		4D5AC9172555DD8300E39048 /* Rust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rust.swift; sourceTree = "<group>"; };
+		4D5AC91C2555DD9D00E39048 /* Tax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tax.swift; sourceTree = "<group>"; };
 		4D807BCB2555C0940067ABD0 /* cardSlide8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardSlide8.wav; sourceTree = "<group>"; };
 		4D807BCC2555C0940067ABD0 /* cardSlide1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardSlide1.wav; sourceTree = "<group>"; };
 		4D807BCD2555C0940067ABD0 /* Birdy_Note5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Note5.wav; sourceTree = "<group>"; };
@@ -115,6 +131,13 @@
 		4D5AC8F52555C30200E39048 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4D5AC9082555DD3300E39048 /* Die.swift */,
+				4D5AC8F92555DC8B00E39048 /* Board.swift */,
+				4D5AC8FE2555DCE600E39048 /* Livery.swift */,
+				4D5AC9032555DD0C00E39048 /* Generation.swift */,
+				4D5AC9122555DD5900E39048 /* GamePhase.swift */,
+				4D5AC9172555DD8300E39048 /* Rust.swift */,
+				4D5AC91C2555DD9D00E39048 /* Tax.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -163,6 +186,7 @@
 		4D807BC92555C0680067ABD0 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				4D5AC9092555DD3300E39048 /* NumberFormatCache.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -376,11 +400,18 @@
 				4D807BD32555C0940067ABD0 /* Sounds.swift in Sources */,
 				4D5AC8D12555C27700E39048 /* EY+Array.swift in Sources */,
 				4D5AC8D72555C27700E39048 /* EY+String.swift in Sources */,
+				4D5AC9182555DD8300E39048 /* Rust.swift in Sources */,
+				4D5AC9132555DD5900E39048 /* GamePhase.swift in Sources */,
 				4D5AC8CF2555C27700E39048 /* EY+Bundle.swift in Sources */,
+				4D5AC8FA2555DC8B00E39048 /* Board.swift in Sources */,
 				4D5AC8ED2555C2B600E39048 /* Response.swift in Sources */,
 				4D5AC8D22555C27700E39048 /* EY+Identifier.swift in Sources */,
+				4D5AC91D2555DD9D00E39048 /* Tax.swift in Sources */,
+				4D5AC9042555DD0C00E39048 /* Generation.swift in Sources */,
 				4D5AC8D62555C27700E39048 /* EY+FileManager.swift in Sources */,
+				4D5AC8FF2555DCE600E39048 /* Livery.swift in Sources */,
 				4D5AC8D02555C27700E39048 /* EY+FlatColor.swift in Sources */,
+				4D5AC90B2555DD3300E39048 /* NumberFormatCache.swift in Sources */,
 				4DB92AE82555BDEE00B976A2 /* ContentView.swift in Sources */,
 				4DB92AE62555BDEE00B976A2 /* EngineYardApp.swift in Sources */,
 				4D5AC8EE2555C2B600E39048 /* JSONAny.swift in Sources */,
@@ -388,6 +419,7 @@
 				4D5AC8D52555C27700E39048 /* EY+CaseIterable.swift in Sources */,
 				4D5AC8D42555C27700E39048 /* EY+Int.swift in Sources */,
 				4D5AC8EC2555C2B600E39048 /* Meta.swift in Sources */,
+				4D5AC90A2555DD3300E39048 /* Die.swift in Sources */,
 				4D5AC8D32555C27700E39048 /* EY+Date.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
