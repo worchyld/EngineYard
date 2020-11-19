@@ -47,6 +47,7 @@
 		4DB92AED2555BDEF00B976A2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DB92AEC2555BDEF00B976A2 /* Preview Assets.xcassets */; };
 		4DB92AF82555BDEF00B976A2 /* EngineYardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB92AF72555BDEF00B976A2 /* EngineYardTests.swift */; };
 		4DB92B032555BDEF00B976A2 /* EngineYardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB92B022555BDEF00B976A2 /* EngineYardUITests.swift */; };
+		4DDEB2AF2565FB6F00715529 /* WinnerListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDEB2AE2565FB6F00715529 /* WinnerListItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		4DB92AFE2555BDEF00B976A2 /* EngineYardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EngineYardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DB92B022555BDEF00B976A2 /* EngineYardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineYardUITests.swift; sourceTree = "<group>"; };
 		4DB92B042555BDEF00B976A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DDEB2AE2565FB6F00715529 /* WinnerListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerListItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +251,7 @@
 				4D5AC9262555DF0500E39048 /* PlayerHUDView.swift */,
 				4D5AC9332555FF8D00E39048 /* PlayersHorizontalListView.swift */,
 				4D5AC93B2556083700E39048 /* WinnerView.swift */,
+				4DDEB2AE2565FB6F00715529 /* WinnerListItem.swift */,
 				4D5AC9402556091100E39048 /* DieView.swift */,
 			);
 			path = EngineYard;
@@ -435,6 +438,7 @@
 				4D5AC90B2555DD3300E39048 /* NumberFormatCache.swift in Sources */,
 				4DB92AE82555BDEE00B976A2 /* ContentView.swift in Sources */,
 				4DB92AE62555BDEE00B976A2 /* EngineYardApp.swift in Sources */,
+				4DDEB2AF2565FB6F00715529 /* WinnerListItem.swift in Sources */,
 				4D5AC8EE2555C2B600E39048 /* JSONAny.swift in Sources */,
 				4D5AC8E52555C2AE00E39048 /* DataLoader.swift in Sources */,
 				4D5AC9272555DF0500E39048 /* PlayerHUDView.swift in Sources */,

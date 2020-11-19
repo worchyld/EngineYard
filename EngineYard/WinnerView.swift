@@ -10,7 +10,13 @@ import SwiftUI
 struct WinnerView: View {
     let players: [Player]
     var body: some View {
-        Image("trophy")
+        List {
+            Text("Winner 1")
+            Text("Winner 2")
+            Text("Winner 3")
+            Text("Winner 4")
+            Text("Winner 5")
+        }
     }
 }
 
