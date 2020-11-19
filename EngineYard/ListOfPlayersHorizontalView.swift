@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PlayersHorizontalListView: View {
+struct ListOfPlayersHorizontalView: View {
     let players: [Player]
     var body: some View {
         HStack(alignment: .firstTextBaseline, spacing: 18, content: {
@@ -22,7 +22,7 @@ struct PlayersHorizontalListView: View {
 
 struct PlayersHorizontalListView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayersHorizontalListView(players: [
+        ListOfPlayersHorizontalView(players: [
             Player(id: UUID(), avatar: "avt_1", cash: 330, trains: 14, active: true),
             Player(id: UUID(), avatar: "avt_2", cash: 330, trains: 14, active: false),
             Player(id: UUID(), avatar: "avt_3", cash: 330, trains: 14, active: false),

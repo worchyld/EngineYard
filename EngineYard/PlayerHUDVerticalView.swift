@@ -9,11 +9,6 @@ import SwiftUI
 
 struct PlayerHUDVerticalView: View {
     let player: Player
-    func cashFormat(player: Player) -> String {
-        let number: NSNumber = NSNumber(integerLiteral: player.cash)
-        let cache = NumberFormatCache.currencyRateFormatter
-        return cache.string(from: number) ?? "$0"
-    }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8.0) {
