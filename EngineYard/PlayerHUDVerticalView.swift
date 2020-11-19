@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PlayerHUDView: View {
+struct PlayerHUDVerticalView: View {
     let player: Player
     func cashFormat(player: Player) -> String {
         let number: NSNumber = NSNumber(integerLiteral: player.cash)
@@ -45,6 +45,6 @@ struct PlayerHUDView: View {
 
 struct PlayerAvatarView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerHUDView(player: Player(id: UUID(), avatar: "avt_1", cash: 330, trains: 14, active: true))
+        PlayerHUDVerticalView(player: Player(id: UUID(), avatar: "avt_1", cash: 330, trains: 14, active: true))
     }
 }
