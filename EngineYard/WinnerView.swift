@@ -10,12 +10,13 @@ import SwiftUI
 struct WinnerView: View {
     let players: [Player]
     var body: some View {
-        List {
-            Text("Winner 1")
-            Text("Winner 2")
-            Text("Winner 3")
-            Text("Winner 4")
-            Text("Winner 5")
+        NavigationView {
+            List {
+                ForEach(players) { player in
+                    PlayerHUDHorizontalView(player: player)
+                }
+            }
+            .navigationBarTitle("Winner")
         }
     }
 }
