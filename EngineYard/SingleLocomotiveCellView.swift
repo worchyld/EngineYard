@@ -10,15 +10,20 @@ import SwiftUI
 struct SingleLocomotiveCellView: View {
     let locomotive: Locomotive
     var body: some View {
-        HStack(alignment: .center, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, content: {
+        HStack(alignment: .center, spacing: 1.0, content: {
             Image("icon-train")
-            Text("\(locomotive.name)").font(.headline)
-            Text("\(locomotive.generation.description.capitalizingFirstLetter())")
-            Text("\(locomotive.livery.description.capitalizingFirstLetter())")
+            VStack(alignment: .leading, spacing: 1.0, content: {
+                HStack(alignment: .center, spacing: 1.0, content: {
+                    Text("\(locomotive.name)").font(.headline)
+                    Text("\(locomotive.livery.description.capitalizingFirstLetter())").padding(.leading, 8.0)
+                })
+                Text("\(locomotive.generation.ordinalFormat ?? "nil") Generation").font(.caption)
+            }).frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .topLeading).padding(.leading, 15)
+            
             Text(cashFormat(amount: locomotive.cost))
                 .font(.headline)
                 .fontWeight(.bold)
-        })
+        }).frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .center).padding([.leading, .trailing], 15)
     }
 }
 
