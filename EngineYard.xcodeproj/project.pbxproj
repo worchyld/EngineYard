@@ -41,6 +41,8 @@
 		4D807BD22555C0940067ABD0 /* Birdy_Note5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D807BCD2555C0940067ABD0 /* Birdy_Note5.wav */; };
 		4D807BD32555C0940067ABD0 /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D807BCE2555C0940067ABD0 /* Sounds.swift */; };
 		4D807BD42555C0940067ABD0 /* Birdy_Notification1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D807BCF2555C0940067ABD0 /* Birdy_Notification1.wav */; };
+		4DA2FEA2256749FD00F606AF /* TrainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA2FEA1256749FD00F606AF /* TrainListView.swift */; };
+		4DA2FEAF25674A2E00F606AF /* Locomotive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA2FEAE25674A2E00F606AF /* Locomotive.swift */; };
 		4DB92AE62555BDEE00B976A2 /* EngineYardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB92AE52555BDEE00B976A2 /* EngineYardApp.swift */; };
 		4DB92AE82555BDEE00B976A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB92AE72555BDEE00B976A2 /* ContentView.swift */; };
 		4DB92AEA2555BDEF00B976A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DB92AE92555BDEF00B976A2 /* Assets.xcassets */; };
@@ -102,6 +104,8 @@
 		4D807BCD2555C0940067ABD0 /* Birdy_Note5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Note5.wav; sourceTree = "<group>"; };
 		4D807BCE2555C0940067ABD0 /* Sounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
 		4D807BCF2555C0940067ABD0 /* Birdy_Notification1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Notification1.wav; sourceTree = "<group>"; };
+		4DA2FEA1256749FD00F606AF /* TrainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainListView.swift; sourceTree = "<group>"; };
+		4DA2FEAE25674A2E00F606AF /* Locomotive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locomotive.swift; sourceTree = "<group>"; };
 		4DB92AE22555BDEE00B976A2 /* EngineYard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EngineYard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DB92AE52555BDEE00B976A2 /* EngineYardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineYardApp.swift; sourceTree = "<group>"; };
 		4DB92AE72555BDEE00B976A2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 				4D5AC9172555DD8300E39048 /* Rust.swift */,
 				4D5AC91C2555DD9D00E39048 /* Tax.swift */,
 				4D5AC92B2555FE3500E39048 /* Player.swift */,
+				4DA2FEAE25674A2E00F606AF /* Locomotive.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -253,6 +258,7 @@
 				4D5AC9402556091100E39048 /* DieView.swift */,
 				4D5AC9332555FF8D00E39048 /* ListOfPlayersHorizontalView.swift */,
 				4D5AC93B2556083700E39048 /* WinnerView.swift */,
+				4DA2FEA1256749FD00F606AF /* TrainListView.swift */,
 			);
 			path = EngineYard;
 			sourceTree = "<group>";
@@ -421,6 +427,7 @@
 				4D807BD32555C0940067ABD0 /* Sounds.swift in Sources */,
 				4D5AC8D12555C27700E39048 /* EY+Array.swift in Sources */,
 				4D5AC8D72555C27700E39048 /* EY+String.swift in Sources */,
+				4DA2FEA2256749FD00F606AF /* TrainListView.swift in Sources */,
 				4D5AC9182555DD8300E39048 /* Rust.swift in Sources */,
 				4D5AC9132555DD5900E39048 /* GamePhase.swift in Sources */,
 				4D5AC8CF2555C27700E39048 /* EY+Bundle.swift in Sources */,
@@ -430,6 +437,7 @@
 				4D5AC9222555DE3800E39048 /* AvatarView.swift in Sources */,
 				4D5AC8D22555C27700E39048 /* EY+Identifier.swift in Sources */,
 				4DDEB2B72565FE5700715529 /* PlayerHUDHorizontalView.swift in Sources */,
+				4DA2FEAF25674A2E00F606AF /* Locomotive.swift in Sources */,
 				4D5AC9412556091100E39048 /* DieView.swift in Sources */,
 				4D5AC91D2555DD9D00E39048 /* Tax.swift in Sources */,
 				4D5AC9042555DD0C00E39048 /* Generation.swift in Sources */,
