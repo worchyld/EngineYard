@@ -33,8 +33,8 @@ struct NumberFormatCache {
     }()
 }
 
-func cashFormat(player: Player) -> String {
-    let number: NSNumber = NSNumber(integerLiteral: player.cash)
+func cashFormat(amount: Int) -> String {
+    let number: NSNumber = NSNumber(integerLiteral: amount)
     let cache = NumberFormatCache.currencyRateFormatter
     return cache.string(from: number) ?? "$0"
 }
