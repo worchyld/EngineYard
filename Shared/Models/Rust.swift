@@ -12,3 +12,19 @@ import Foundation
 enum Rust : NSInteger, Codable, CaseIterable {
     case new = 0, rusting, rusted
 }
+
+// Stringify description
+extension Rust: CustomStringConvertible {
+    var description: String {
+        get {
+            switch self {
+            case .new:
+                return "new"
+            case .rusting:
+                return "rusting"
+            case .rusted:
+                return "obsolete"
+            }
+        }
+    }
+}

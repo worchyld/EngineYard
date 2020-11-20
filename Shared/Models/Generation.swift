@@ -20,3 +20,23 @@ extension Generation {
         return cache.string(from: number)
     }
 }
+
+// Stringify description
+extension Generation: CustomStringConvertible {
+    var description: String {
+        get {
+            switch self {
+            case .first:
+                return "first"
+            case .second:
+                return "second"
+            case .third:
+                return "third"
+            case .fourth:
+                return "fourth"
+            case .fifth:
+                return "fifth"
+            }
+        }
+    }
+}
