@@ -13,10 +13,18 @@ struct WinnerView: View {
         NavigationView {
             List {
                 ForEach(players) { player in
-                    PlayerHUDHorizontalView(player: player)
+                    
+                    if (player.cash >= 330) {
+                        Section(header: Text("Winner")) {
+                            PlayerHUDHorizontalView(player: player)
+                        }
+                    } else {
+                        PlayerHUDHorizontalView(player: player)
+                    }
                 }
             }
-            .navigationBarTitle("Winner")
+            .navigationBarTitle("End of game")
+            .listStyle(GroupedListStyle())
         }
     }
 }
@@ -29,7 +37,6 @@ struct WinnerView_Previews: PreviewProvider {
             Player(id: UUID(), avatar: "avt_3", cash: 230, trains: 14, active: false),
             Player(id: UUID(), avatar: "avt_4", cash: 130, trains: 14, active: false),
             Player(id: UUID(), avatar: "avt_5", cash: 30, trains: 14, active: false)
-        ]
-        )
+        ])
     }
 }

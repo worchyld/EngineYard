@@ -250,9 +250,9 @@
 				4D5AC9212555DE3800E39048 /* AvatarView.swift */,
 				4D5AC9262555DF0500E39048 /* PlayerHUDVerticalView.swift */,
 				4DDEB2B62565FE5700715529 /* PlayerHUDHorizontalView.swift */,
-				4D5AC93B2556083700E39048 /* WinnerView.swift */,
 				4D5AC9402556091100E39048 /* DieView.swift */,
 				4D5AC9332555FF8D00E39048 /* ListOfPlayersHorizontalView.swift */,
+				4D5AC93B2556083700E39048 /* WinnerView.swift */,
 			);
 			path = EngineYard;
 			sourceTree = "<group>";

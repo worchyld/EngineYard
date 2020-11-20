@@ -35,7 +35,7 @@ struct PlayerHUDHorizontalView: View {
                     .font(.caption)
                     .fontWeight(.regular)
                     .multilineTextAlignment(.center)
-            }).padding(.leading, 8.0)
+            }).padding(.leading, 7.0)
             
         })
         

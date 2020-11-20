@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Player: Identifiable, Hashable {
+struct Player: Equatable, Identifiable, Hashable {
     let id: UUID
     let avatar: String
     let cash: Int
