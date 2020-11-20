@@ -16,7 +16,10 @@ struct WinnerView: View {
                     
                     if (player.cash >= 330) {
                         Section(header: Text("Winner")) {
-                            PlayerHUDHorizontalView(player: player)
+                            HStack(alignment: .center, spacing: nil, content: {
+                                Image("trophy")
+                                PlayerHUDHorizontalView(player: player)
+                            })
                         }
                     } else {
                         PlayerHUDHorizontalView(player: player)
