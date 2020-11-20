@@ -11,7 +11,7 @@ struct SingleLocomotiveCellView: View {
     let locomotive: Locomotive
     var body: some View {
         HStack(alignment: .center, spacing: 1.0, content: {
-            Image("icon-train")
+            Image("icon-train").resizable().frame(width: 35, height: 25, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             VStack(alignment: .leading, spacing: 1.0, content: {
                 HStack(alignment: .center, spacing: 1.0, content: {
                     Text("\(locomotive.name)").font(.headline)
@@ -23,7 +23,7 @@ struct SingleLocomotiveCellView: View {
             Text(cashFormat(amount: locomotive.cost))
                 .font(.headline)
                 .fontWeight(.bold)
-        }).frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .center).padding([.leading, .trailing], 15)
+        }).frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .center)
     }
 }
 

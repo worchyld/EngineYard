@@ -13,7 +13,7 @@ struct TrainListView: View {
         NavigationView {
             List {
                 ForEach(locomotives) { locomotive in
-                   Text("Locomotive")
+                   SingleLocomotiveCellView(locomotive: locomotive)
                 }
             }
             .navigationBarTitle("🚂 Locomotives")
