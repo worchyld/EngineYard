@@ -10,14 +10,15 @@ import SwiftUI
 struct NewTurnOrderView: View {
     let players: [Player]
     var body: some View {
+        let withIndex = players.enumerated().map({ $0 })
+        
         NavigationView {
-            List {
-                ForEach(players) { player in
-                    HStack(alignment: .center, spacing: 15) {
-                        Text("#1")
-                        PlayerHUDHorizontalView(player: player)
-                    }
-                }
+            
+            List(withIndex, id: \.element) { index, player in
+                HStack(alignment: .center, spacing: 15.0, content: {
+                    Text("#\(index + 1)")
+                    PlayerHUDHorizontalView(player: player)
+                })
             }
             .navigationBarTitle("New Turn Order")
         }
