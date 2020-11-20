@@ -13,12 +13,21 @@ struct PlayerPortfolioListView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(locomotives) { locomotive in
-                   SingleLocomotiveCellView(locomotive: locomotive)
+                Section(header: PlayerPortfolioHeaderView(player: player)) {
+                    ForEach(locomotives) { locomotive in
+                       SingleLocomotiveCellView(locomotive: locomotive)
+                    }
                 }
             }
-            .navigationBarTitle("🚂 Portfolio")
+            .navigationBarTitle("💼 My Portfolio")
         }
+    }
+}
+
+struct PlayerPortfolioHeaderView: View {
+    let player: Player
+    var body: some View {
+        PlayerHUDHorizontalView(player: player).padding([.top, .bottom], 10.0)
     }
 }
 
