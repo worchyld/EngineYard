@@ -40,6 +40,6 @@ struct PlayerHUDVerticalView: View {
 
 struct PlayerAvatarView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerHUDVerticalView(player: Player(id: UUID(), avatar: "avt_1", cash: 330, trains: 14, active: true))
+        PlayerHUDVerticalView(player: Player(id: UUID(), avatar: "avt-1", cash: 330, trains: 14, active: true))
     }
 }

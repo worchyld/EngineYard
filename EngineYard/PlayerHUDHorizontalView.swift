@@ -45,6 +45,6 @@ struct PlayerHUDHorizontalView: View {
 struct PlayerHUDHorizontalView_Previews: PreviewProvider {
     static var previews: some View {
         PlayerHUDHorizontalView(player:
-                                    Player(id: UUID(), avatar: "avt_1", cash: 330, trains: 14, active: true))
+                                    Player(id: UUID(), avatar: "avt-1", cash: 330, trains: 14, active: true))
     }
 }

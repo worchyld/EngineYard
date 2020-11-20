@@ -41,6 +41,7 @@
 		4D807BD22555C0940067ABD0 /* Birdy_Note5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D807BCD2555C0940067ABD0 /* Birdy_Note5.wav */; };
 		4D807BD32555C0940067ABD0 /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D807BCE2555C0940067ABD0 /* Sounds.swift */; };
 		4D807BD42555C0940067ABD0 /* Birdy_Notification1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D807BCF2555C0940067ABD0 /* Birdy_Notification1.wav */; };
+		4D94DFA225678B9E00E9DF74 /* PlayerPortfolioListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D94DFA125678B9E00E9DF74 /* PlayerPortfolioListView.swift */; };
 		4DA2FEA2256749FD00F606AF /* TrainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA2FEA1256749FD00F606AF /* TrainListView.swift */; };
 		4DA2FEAF25674A2E00F606AF /* Locomotive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA2FEAE25674A2E00F606AF /* Locomotive.swift */; };
 		4DA2FEB425674D5100F606AF /* SingleLocomotiveCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA2FEB325674D5100F606AF /* SingleLocomotiveCellView.swift */; };
@@ -106,6 +107,7 @@
 		4D807BCD2555C0940067ABD0 /* Birdy_Note5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Note5.wav; sourceTree = "<group>"; };
 		4D807BCE2555C0940067ABD0 /* Sounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
 		4D807BCF2555C0940067ABD0 /* Birdy_Notification1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Notification1.wav; sourceTree = "<group>"; };
+		4D94DFA125678B9E00E9DF74 /* PlayerPortfolioListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPortfolioListView.swift; sourceTree = "<group>"; };
 		4DA2FEA1256749FD00F606AF /* TrainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainListView.swift; sourceTree = "<group>"; };
 		4DA2FEAE25674A2E00F606AF /* Locomotive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locomotive.swift; sourceTree = "<group>"; };
 		4DA2FEB325674D5100F606AF /* SingleLocomotiveCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLocomotiveCellView.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				4D5AC93B2556083700E39048 /* WinnerView.swift */,
 				4DA2FEA1256749FD00F606AF /* TrainListView.swift */,
 				4DA2FEB325674D5100F606AF /* SingleLocomotiveCellView.swift */,
+				4D94DFA125678B9E00E9DF74 /* PlayerPortfolioListView.swift */,
 			);
 			path = EngineYard;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				4D5AC90B2555DD3300E39048 /* NumberFormatCache.swift in Sources */,
 				4DB92AE82555BDEE00B976A2 /* ContentView.swift in Sources */,
 				4DB92AE62555BDEE00B976A2 /* EngineYardApp.swift in Sources */,
+				4D94DFA225678B9E00E9DF74 /* PlayerPortfolioListView.swift in Sources */,
 				4D5AC8EE2555C2B600E39048 /* JSONAny.swift in Sources */,
 				4D5AC8E52555C2AE00E39048 /* DataLoader.swift in Sources */,
 				4D5AC9272555DF0500E39048 /* PlayerHUDVerticalView.swift in Sources */,

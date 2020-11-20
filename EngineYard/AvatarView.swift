@@ -24,6 +24,6 @@ struct AvatarView: View {
 
 struct AvatarView_Previews: PreviewProvider {
     static var previews: some View {
-        AvatarView(avatar: "avt_1")
+        AvatarView(avatar: "avt-1")
     }
 }
