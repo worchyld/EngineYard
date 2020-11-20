@@ -24,7 +24,7 @@ struct PlayerHUDVerticalView: View {
             }
             
             VStack(alignment: .leading, spacing: 5, content: {
-                Text(cashFormat(player: player))
+                Text(cashFormat(amount: player.cash))
                     .font(.caption)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
