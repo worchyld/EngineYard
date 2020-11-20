@@ -42,6 +42,8 @@
 		4D807BD32555C0940067ABD0 /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D807BCE2555C0940067ABD0 /* Sounds.swift */; };
 		4D807BD42555C0940067ABD0 /* Birdy_Notification1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D807BCF2555C0940067ABD0 /* Birdy_Notification1.wav */; };
 		4D94DFA225678B9E00E9DF74 /* PlayerPortfolioListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D94DFA125678B9E00E9DF74 /* PlayerPortfolioListView.swift */; };
+		4D94DFA72567902F00E9DF74 /* TaxPhaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D94DFA62567902F00E9DF74 /* TaxPhaseView.swift */; };
+		4D94DFAC2567906300E9DF74 /* NewTurnOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D94DFAB2567906300E9DF74 /* NewTurnOrderView.swift */; };
 		4DA2FEA2256749FD00F606AF /* TrainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA2FEA1256749FD00F606AF /* TrainListView.swift */; };
 		4DA2FEAF25674A2E00F606AF /* Locomotive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA2FEAE25674A2E00F606AF /* Locomotive.swift */; };
 		4DA2FEB425674D5100F606AF /* SingleLocomotiveCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA2FEB325674D5100F606AF /* SingleLocomotiveCellView.swift */; };
@@ -108,6 +110,8 @@
 		4D807BCE2555C0940067ABD0 /* Sounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
 		4D807BCF2555C0940067ABD0 /* Birdy_Notification1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Notification1.wav; sourceTree = "<group>"; };
 		4D94DFA125678B9E00E9DF74 /* PlayerPortfolioListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPortfolioListView.swift; sourceTree = "<group>"; };
+		4D94DFA62567902F00E9DF74 /* TaxPhaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxPhaseView.swift; sourceTree = "<group>"; };
+		4D94DFAB2567906300E9DF74 /* NewTurnOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTurnOrderView.swift; sourceTree = "<group>"; };
 		4DA2FEA1256749FD00F606AF /* TrainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainListView.swift; sourceTree = "<group>"; };
 		4DA2FEAE25674A2E00F606AF /* Locomotive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locomotive.swift; sourceTree = "<group>"; };
 		4DA2FEB325674D5100F606AF /* SingleLocomotiveCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLocomotiveCellView.swift; sourceTree = "<group>"; };
@@ -267,6 +271,8 @@
 				4DA2FEA1256749FD00F606AF /* TrainListView.swift */,
 				4DA2FEB325674D5100F606AF /* SingleLocomotiveCellView.swift */,
 				4D94DFA125678B9E00E9DF74 /* PlayerPortfolioListView.swift */,
+				4D94DFA62567902F00E9DF74 /* TaxPhaseView.swift */,
+				4D94DFAB2567906300E9DF74 /* NewTurnOrderView.swift */,
 			);
 			path = EngineYard;
 			sourceTree = "<group>";
@@ -435,7 +441,9 @@
 			files = (
 				4D807BD32555C0940067ABD0 /* Sounds.swift in Sources */,
 				4D5AC8D12555C27700E39048 /* EY+Array.swift in Sources */,
+				4D94DFA72567902F00E9DF74 /* TaxPhaseView.swift in Sources */,
 				4D5AC8D72555C27700E39048 /* EY+String.swift in Sources */,
+				4D94DFAC2567906300E9DF74 /* NewTurnOrderView.swift in Sources */,
 				4DA2FEA2256749FD00F606AF /* TrainListView.swift in Sources */,
 				4D5AC9182555DD8300E39048 /* Rust.swift in Sources */,
 				4DA2FEB425674D5100F606AF /* SingleLocomotiveCellView.swift in Sources */,
