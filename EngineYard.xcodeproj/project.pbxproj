@@ -47,7 +47,7 @@
 		4D94DFB12567915A00E9DF74 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D94DFB02567915A00E9DF74 /* MainMenuView.swift */; };
 		4DA2FEA2256749FD00F606AF /* TrainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA2FEA1256749FD00F606AF /* TrainListView.swift */; };
 		4DA2FEAF25674A2E00F606AF /* Locomotive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA2FEAE25674A2E00F606AF /* Locomotive.swift */; };
-		4DA2FEB425674D5100F606AF /* SingleLocomotiveCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA2FEB325674D5100F606AF /* SingleLocomotiveCellView.swift */; };
+		4DA2FEB425674D5100F606AF /* LocomotiveCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA2FEB325674D5100F606AF /* LocomotiveCellView.swift */; };
 		4DA2FEB92567501F00F606AF /* GenerationEnumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA2FEB82567501F00F606AF /* GenerationEnumTests.swift */; };
 		4DB92AE62555BDEE00B976A2 /* EngineYardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB92AE52555BDEE00B976A2 /* EngineYardApp.swift */; };
 		4DB92AE82555BDEE00B976A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB92AE72555BDEE00B976A2 /* ContentView.swift */; };
@@ -56,6 +56,7 @@
 		4DB92AF82555BDEF00B976A2 /* EngineYardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB92AF72555BDEF00B976A2 /* EngineYardTests.swift */; };
 		4DB92B032555BDEF00B976A2 /* EngineYardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB92B022555BDEF00B976A2 /* EngineYardUITests.swift */; };
 		4DDEB2B72565FE5700715529 /* PlayerHUDHorizontalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDEB2B62565FE5700715529 /* PlayerHUDHorizontalView.swift */; };
+		4DFEFE47256B965B0081DC10 /* LocomotiveProductionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEFE46256B965B0081DC10 /* LocomotiveProductionCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,7 +117,7 @@
 		4D94DFB02567915A00E9DF74 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		4DA2FEA1256749FD00F606AF /* TrainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainListView.swift; sourceTree = "<group>"; };
 		4DA2FEAE25674A2E00F606AF /* Locomotive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locomotive.swift; sourceTree = "<group>"; };
-		4DA2FEB325674D5100F606AF /* SingleLocomotiveCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLocomotiveCellView.swift; sourceTree = "<group>"; };
+		4DA2FEB325674D5100F606AF /* LocomotiveCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocomotiveCellView.swift; sourceTree = "<group>"; };
 		4DA2FEB82567501F00F606AF /* GenerationEnumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationEnumTests.swift; sourceTree = "<group>"; };
 		4DB92AE22555BDEE00B976A2 /* EngineYard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EngineYard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DB92AE52555BDEE00B976A2 /* EngineYardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineYardApp.swift; sourceTree = "<group>"; };
@@ -131,6 +132,7 @@
 		4DB92B022555BDEF00B976A2 /* EngineYardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineYardUITests.swift; sourceTree = "<group>"; };
 		4DB92B042555BDEF00B976A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DDEB2B62565FE5700715529 /* PlayerHUDHorizontalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerHUDHorizontalView.swift; sourceTree = "<group>"; };
+		4DFEFE46256B965B0081DC10 /* LocomotiveProductionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocomotiveProductionCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,7 +319,8 @@
 			children = (
 				4D5AC9402556091100E39048 /* DieView.swift */,
 				4DA2FEA1256749FD00F606AF /* TrainListView.swift */,
-				4DA2FEB325674D5100F606AF /* SingleLocomotiveCellView.swift */,
+				4DA2FEB325674D5100F606AF /* LocomotiveCellView.swift */,
+				4DFEFE46256B965B0081DC10 /* LocomotiveProductionCellView.swift */,
 				4D94DFA125678B9E00E9DF74 /* PlayerPortfolioListView.swift */,
 			);
 			path = TrainView;
@@ -466,7 +469,7 @@
 				4D94DFAC2567906300E9DF74 /* NewTurnOrderView.swift in Sources */,
 				4DA2FEA2256749FD00F606AF /* TrainListView.swift in Sources */,
 				4D5AC9182555DD8300E39048 /* Rust.swift in Sources */,
-				4DA2FEB425674D5100F606AF /* SingleLocomotiveCellView.swift in Sources */,
+				4DA2FEB425674D5100F606AF /* LocomotiveCellView.swift in Sources */,
 				4D5AC9132555DD5900E39048 /* GamePhase.swift in Sources */,
 				4D5AC8CF2555C27700E39048 /* EY+Bundle.swift in Sources */,
 				4D5AC8FA2555DC8B00E39048 /* Board.swift in Sources */,
@@ -487,6 +490,7 @@
 				4DB92AE62555BDEE00B976A2 /* EngineYardApp.swift in Sources */,
 				4D94DFA225678B9E00E9DF74 /* PlayerPortfolioListView.swift in Sources */,
 				4D5AC8EE2555C2B600E39048 /* JSONAny.swift in Sources */,
+				4DFEFE47256B965B0081DC10 /* LocomotiveProductionCellView.swift in Sources */,
 				4D5AC8E52555C2AE00E39048 /* DataLoader.swift in Sources */,
 				4D5AC9272555DF0500E39048 /* PlayerHUDVerticalView.swift in Sources */,
 				4D5AC8D52555C27700E39048 /* EY+CaseIterable.swift in Sources */,

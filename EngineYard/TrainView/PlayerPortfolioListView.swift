@@ -15,7 +15,7 @@ struct PlayerPortfolioListView: View {
             List {
                 Section(header: PlayerPortfolioHeaderView(player: player)) {
                     ForEach(locomotives) { locomotive in
-                       SingleLocomotiveCellView(locomotive: locomotive)
+                       LocomotiveCellView(locomotive: locomotive)
                     }
                 }
             }

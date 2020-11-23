@@ -13,13 +13,14 @@ struct LocomotiveCellView: View {
         HStack(alignment: .center, spacing: 1.0, content: {
             Image(locomotive.image).resizable().frame(width: 35, height: 25, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             VStack(alignment: .leading, spacing: 1.0, content: {
-                HStack(alignment: .center, spacing: 1.0, content: {
-                    Text("\(locomotive.name)").font(.headline)
-                    Text("\(locomotive.livery.description.capitalizingFirstLetter())").padding(.leading, 8.0)
-                })
-                Text("\(locomotive.generation.ordinalFormat ?? "nil") Generation").font(.caption)
+                Text("\(locomotive.name)").font(.headline)
+                HStack {
+                    Text("\(locomotive.generation.ordinalFormat ?? "nil") Generation").font(.caption)
+                    Text("\(locomotive.livery.description.capitalizingFirstLetter())").font(.caption)
+                }
             }).frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .topLeading).padding(.leading, 15)
             
+            // cost
             Text(cashFormat(amount: locomotive.cost))
                 .font(.headline)
                 .fontWeight(.bold)
