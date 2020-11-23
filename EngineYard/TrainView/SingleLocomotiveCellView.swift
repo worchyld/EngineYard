@@ -29,6 +29,6 @@ struct SingleLocomotiveCellView: View {
 
 struct SingleLocomotiveCellView_Previews: PreviewProvider {
     static var previews: some View {
-        SingleLocomotiveCellView(locomotive: Locomotive(id: UUID(), name: "Green.1", image: "icon-train", cost: 4, livery: .green, generation: .first, rust: .new, available: false))
+        SingleLocomotiveCellView(locomotive: Locomotive(id: UUID(), name: "Green.1", image: "icon-train-green", cost: 4, livery: .green, generation: .first, rust: .new, available: false))
     }
 }

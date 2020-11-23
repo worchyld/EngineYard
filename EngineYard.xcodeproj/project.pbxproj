@@ -264,18 +264,12 @@
 				4DB92AE92555BDEF00B976A2 /* Assets.xcassets */,
 				4DB92AEE2555BDEF00B976A2 /* Info.plist */,
 				4DB92AEB2555BDEF00B976A2 /* Preview Content */,
-				4D5AC9212555DE3800E39048 /* AvatarView.swift */,
-				4D5AC9262555DF0500E39048 /* PlayerHUDVerticalView.swift */,
-				4DDEB2B62565FE5700715529 /* PlayerHUDHorizontalView.swift */,
-				4D5AC9402556091100E39048 /* DieView.swift */,
-				4D5AC9332555FF8D00E39048 /* ListOfPlayersHorizontalView.swift */,
-				4D5AC93B2556083700E39048 /* WinnerView.swift */,
-				4DA2FEA1256749FD00F606AF /* TrainListView.swift */,
-				4DA2FEB325674D5100F606AF /* SingleLocomotiveCellView.swift */,
-				4D94DFA125678B9E00E9DF74 /* PlayerPortfolioListView.swift */,
+				4DFEFE3B256B95560081DC10 /* PlayerView */,
+				4DFEFE3C256B95740081DC10 /* TrainView */,
+				4D94DFB02567915A00E9DF74 /* MainMenuView.swift */,
 				4D94DFA62567902F00E9DF74 /* TaxPhaseView.swift */,
 				4D94DFAB2567906300E9DF74 /* NewTurnOrderView.swift */,
-				4D94DFB02567915A00E9DF74 /* MainMenuView.swift */,
+				4D5AC93B2556083700E39048 /* WinnerView.swift */,
 			);
 			path = EngineYard;
 			sourceTree = "<group>";
@@ -305,6 +299,28 @@
 				4DB92B042555BDEF00B976A2 /* Info.plist */,
 			);
 			path = EngineYardUITests;
+			sourceTree = "<group>";
+		};
+		4DFEFE3B256B95560081DC10 /* PlayerView */ = {
+			isa = PBXGroup;
+			children = (
+				4D5AC9212555DE3800E39048 /* AvatarView.swift */,
+				4DDEB2B62565FE5700715529 /* PlayerHUDHorizontalView.swift */,
+				4D5AC9262555DF0500E39048 /* PlayerHUDVerticalView.swift */,
+				4D5AC9332555FF8D00E39048 /* ListOfPlayersHorizontalView.swift */,
+			);
+			path = PlayerView;
+			sourceTree = "<group>";
+		};
+		4DFEFE3C256B95740081DC10 /* TrainView */ = {
+			isa = PBXGroup;
+			children = (
+				4D5AC9402556091100E39048 /* DieView.swift */,
+				4DA2FEA1256749FD00F606AF /* TrainListView.swift */,
+				4DA2FEB325674D5100F606AF /* SingleLocomotiveCellView.swift */,
+				4D94DFA125678B9E00E9DF74 /* PlayerPortfolioListView.swift */,
+			);
+			path = TrainView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
