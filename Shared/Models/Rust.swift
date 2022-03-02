@@ -7,10 +7,11 @@
 
 import Foundation
 
-
 // Obsolescence
+// In the game trains can be unavailable to purchase (not built) thru to rusted
+
 enum Rust : NSInteger, Codable, CaseIterable {
-    case new = 0, rusting, rusted
+    case notbuilt = -1, new = 0, rusting, rusted
 }
 
 // Stringify description
@@ -18,6 +19,8 @@ extension Rust: CustomStringConvertible {
     var description: String {
         get {
             switch self {
+            case .notbuilt:
+                return "notbuilt"
             case .new:
                 return "new"
             case .rusting:
