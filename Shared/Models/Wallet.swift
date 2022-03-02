@@ -9,7 +9,7 @@ import Foundation
 
 // Simple cash handling
 
-protocol WalletDelegate {
+internal protocol WalletDelegate {
     func didCredit(_amount: Int) -> Bool
     func didDebit(_amount: Int) -> Bool
 }
@@ -20,7 +20,7 @@ class Wallet {
 
 extension Wallet {
     func credit(_ amount: Int = 0) -> Bool {
-        guard (amount.isNegative) else {
+        guard (!amount.isNegative) else {
             return false
         }
         self.add(amount)
@@ -43,11 +43,11 @@ extension Wallet {
 }
 
 extension Wallet : WalletDelegate {
-    func didCredit(_amount: Int) -> Bool {
+    internal func didCredit(_amount: Int) -> Bool {
         return true
     }
     
-    func didDebit(_amount: Int) -> Bool {
+    internal func didDebit(_amount: Int) -> Bool {
         return true
     }
 }
