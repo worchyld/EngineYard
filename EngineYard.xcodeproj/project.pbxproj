@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4D05247027CF5034006BDACE /* RollDieTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D05246F27CF5034006BDACE /* RollDieTest.swift */; };
+		4D05247227CF539C006BDACE /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D05247127CF539C006BDACE /* Wallet.swift */; };
 		4D5AC8CF2555C27700E39048 /* EY+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC8C62555C27700E39048 /* EY+Bundle.swift */; };
 		4D5AC8D02555C27700E39048 /* EY+FlatColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC8C72555C27700E39048 /* EY+FlatColor.swift */; };
 		4D5AC8D12555C27700E39048 /* EY+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC8C82555C27700E39048 /* EY+Array.swift */; };
@@ -79,6 +80,7 @@
 
 /* Begin PBXFileReference section */
 		4D05246F27CF5034006BDACE /* RollDieTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollDieTest.swift; sourceTree = "<group>"; };
+		4D05247127CF539C006BDACE /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		4D5AC8C62555C27700E39048 /* EY+Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EY+Bundle.swift"; sourceTree = "<group>"; };
 		4D5AC8C72555C27700E39048 /* EY+FlatColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EY+FlatColor.swift"; sourceTree = "<group>"; };
 		4D5AC8C82555C27700E39048 /* EY+Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EY+Array.swift"; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				4D5AC91C2555DD9D00E39048 /* Tax.swift */,
 				4D5AC92B2555FE3500E39048 /* Player.swift */,
 				4DA2FEAE25674A2E00F606AF /* Locomotive.swift */,
+				4D05247127CF539C006BDACE /* Wallet.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D05247227CF539C006BDACE /* Wallet.swift in Sources */,
 				4D94DFB12567915A00E9DF74 /* MainMenuView.swift in Sources */,
 				4D807BD32555C0940067ABD0 /* Sounds.swift in Sources */,
 				4D5AC8D12555C27700E39048 /* EY+Array.swift in Sources */,
@@ -666,7 +670,7 @@
 				DEVELOPMENT_TEAM = A48R25Y4D5;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = EngineYard/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -688,7 +692,7 @@
 				DEVELOPMENT_TEAM = A48R25Y4D5;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = EngineYard/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
