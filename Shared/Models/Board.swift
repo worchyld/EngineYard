@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+class BoardSpace {
+    // TBD
+    var available: Bool = false
+}
+
+class Board {
+    private (set) var spaces: [BoardSpace] = [BoardSpace]()
+}
