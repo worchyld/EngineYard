@@ -45,6 +45,7 @@
 		4D807BD32555C0940067ABD0 /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D807BCE2555C0940067ABD0 /* Sounds.swift */; };
 		4D807BD42555C0940067ABD0 /* Birdy_Notification1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D807BCF2555C0940067ABD0 /* Birdy_Notification1.wav */; };
 		4D909E4127D216DF00A50180 /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D909E4027D216DF00A50180 /* ErrorCode.swift */; };
+		4D909E4327D2180500A50180 /* EY+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D909E4227D2180500A50180 /* EY+Notification.swift */; };
 		4D90BEC227D1F42B00C13550 /* TaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D90BEC127D1F42B00C13550 /* TaxTests.swift */; };
 		4D94DFA225678B9E00E9DF74 /* PlayerPortfolioListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D94DFA125678B9E00E9DF74 /* PlayerPortfolioListView.swift */; };
 		4D94DFA72567902F00E9DF74 /* TaxPhaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D94DFA62567902F00E9DF74 /* TaxPhaseView.swift */; };
@@ -120,6 +121,7 @@
 		4D807BCE2555C0940067ABD0 /* Sounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
 		4D807BCF2555C0940067ABD0 /* Birdy_Notification1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Notification1.wav; sourceTree = "<group>"; };
 		4D909E4027D216DF00A50180 /* ErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCode.swift; sourceTree = "<group>"; };
+		4D909E4227D2180500A50180 /* EY+Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Notification.swift"; sourceTree = "<group>"; };
 		4D90BEC127D1F42B00C13550 /* TaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTests.swift; sourceTree = "<group>"; };
 		4D94DFA125678B9E00E9DF74 /* PlayerPortfolioListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPortfolioListView.swift; sourceTree = "<group>"; };
 		4D94DFA62567902F00E9DF74 /* TaxPhaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxPhaseView.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				4D5AC8C92555C27700E39048 /* EY+Identifier.swift */,
 				4D5AC8CB2555C27700E39048 /* EY+Int.swift */,
 				4D5AC8CE2555C27700E39048 /* EY+String.swift */,
+				4D909E4227D2180500A50180 /* EY+Notification.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				4DA2FEAF25674A2E00F606AF /* Locomotive.swift in Sources */,
 				4D5AC9412556091100E39048 /* DieView.swift in Sources */,
 				4D5AC91D2555DD9D00E39048 /* Tax.swift in Sources */,
+				4D909E4327D2180500A50180 /* EY+Notification.swift in Sources */,
 				4D5AC9042555DD0C00E39048 /* Generation.swift in Sources */,
 				4D5AC8D62555C27700E39048 /* EY+FileManager.swift in Sources */,
 				4D5AC8FF2555DCE600E39048 /* Livery.swift in Sources */,
