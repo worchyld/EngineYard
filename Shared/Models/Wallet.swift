@@ -28,6 +28,10 @@ protocol WalletUseCases {
 
 class Wallet : WalletUseCases {
     private (set) var balance : Int = 0
+    
+    init(_ balance: Int = 0) {
+        self.balance = balance
+    }
 
     // credit
     func credit(_ amount: Int = 0) throws -> Int? {

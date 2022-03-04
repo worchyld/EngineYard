@@ -18,10 +18,16 @@ class WalletTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testCanCreditPositiveAmount() throws {
-        let w = Wallet()
-        let result = w.credit(100)
-        XCTAssert(result == true)
-        XCTAssert(w.balance == 100)
+    func testCreditWallet() {
+        let w = Wallet(100)
+        XCTAssertNoThrow(try w.credit(100))
+        XCTAssertTrue(w.balance == 200)
+    }
+
+    func testDebitWallet() {
+        let w = Wallet(100)
+        let _ = try! w.credit(150)
+        XCTAssertNoThrow(try w.debit(50))
+        XCTAssertTrue(w.balance == 200)
     }
 }

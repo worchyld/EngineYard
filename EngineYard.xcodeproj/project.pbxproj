@@ -44,6 +44,7 @@
 		4D807BD22555C0940067ABD0 /* Birdy_Note5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D807BCD2555C0940067ABD0 /* Birdy_Note5.wav */; };
 		4D807BD32555C0940067ABD0 /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D807BCE2555C0940067ABD0 /* Sounds.swift */; };
 		4D807BD42555C0940067ABD0 /* Birdy_Notification1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D807BCF2555C0940067ABD0 /* Birdy_Notification1.wav */; };
+		4D90BEC227D1F42B00C13550 /* TaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D90BEC127D1F42B00C13550 /* TaxTests.swift */; };
 		4D94DFA225678B9E00E9DF74 /* PlayerPortfolioListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D94DFA125678B9E00E9DF74 /* PlayerPortfolioListView.swift */; };
 		4D94DFA72567902F00E9DF74 /* TaxPhaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D94DFA62567902F00E9DF74 /* TaxPhaseView.swift */; };
 		4D94DFAC2567906300E9DF74 /* NewTurnOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D94DFAB2567906300E9DF74 /* NewTurnOrderView.swift */; };
@@ -117,6 +118,7 @@
 		4D807BCD2555C0940067ABD0 /* Birdy_Note5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Note5.wav; sourceTree = "<group>"; };
 		4D807BCE2555C0940067ABD0 /* Sounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
 		4D807BCF2555C0940067ABD0 /* Birdy_Notification1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Notification1.wav; sourceTree = "<group>"; };
+		4D90BEC127D1F42B00C13550 /* TaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTests.swift; sourceTree = "<group>"; };
 		4D94DFA125678B9E00E9DF74 /* PlayerPortfolioListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPortfolioListView.swift; sourceTree = "<group>"; };
 		4D94DFA62567902F00E9DF74 /* TaxPhaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxPhaseView.swift; sourceTree = "<group>"; };
 		4D94DFAB2567906300E9DF74 /* NewTurnOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTurnOrderView.swift; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 				4D05246F27CF5034006BDACE /* RollDieTest.swift */,
 				4D05247327CF55BD006BDACE /* WalletTests.swift */,
 				4DA2FEB82567501F00F606AF /* GenerationEnumTests.swift */,
+				4D90BEC127D1F42B00C13550 /* TaxTests.swift */,
 				4DB92AF92555BDEF00B976A2 /* Info.plist */,
 			);
 			path = EngineYardTests;
@@ -519,6 +522,7 @@
 			files = (
 				4D05247427CF55BD006BDACE /* WalletTests.swift in Sources */,
 				4DA2FEB92567501F00F606AF /* GenerationEnumTests.swift in Sources */,
+				4D90BEC227D1F42B00C13550 /* TaxTests.swift in Sources */,
 				4D05247027CF5034006BDACE /* RollDieTest.swift in Sources */,
 				4DB92AF82555BDEF00B976A2 /* EngineYardTests.swift in Sources */,
 			);
