@@ -23,21 +23,21 @@ extension Wallet {
         guard (!amount.isNegative) else {
             return false
         }
-        self.add(amount)
+        self.willCredit(amount)
         return didCredit(_amount: amount)
     }
     func debit(_ amount: Int = 0) -> Bool {
         guard (amount.isPositive) else {
             return false
         }
-        self.subtract(amount)
+        self.willDebit(amount)
         return didDebit(_amount: amount)
     }
     
-    private func add(_ funds: Int = 0) {
+    private func willCredit(_ funds: Int = 0) {
         self.balance += funds
     }
-    private func subtract(_ funds: Int = 0) {
+    private func willDebit(_ funds: Int = 0) {
         self.balance -= funds
     }
 }
