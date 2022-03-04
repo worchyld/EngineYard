@@ -17,6 +17,7 @@ internal protocol WalletDelegate {
 public enum WalletErrorDelegate: Error, Equatable {
     case mustBePositive
     case notEnoughBalance
+    case cannotCover(_ amount: Int)
     //case need(balance: Int)  Un-used for now
 }
 
@@ -80,7 +81,7 @@ extension Wallet {
         }
         let sum = balance
         guard ((sum - amount) >= 0) else {
-            throw WalletErrorDelegate.notEnoughBalance
+            throw WalletErrorDelegate.cannotCover(amount)
         }
         
         return true

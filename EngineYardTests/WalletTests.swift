@@ -30,4 +30,39 @@ class WalletTests: XCTestCase {
         XCTAssertNoThrow(try w.debit(50))
         XCTAssertTrue(w.balance == 200)
     }
+    
+    func testCreditCannotBeNegative() {
+        let w = Wallet()
+        let amount = -50
+        XCTAssertThrowsError(try w.credit(amount)) { error in
+            XCTAssertEqual(error as? WalletErrorDelegate, WalletErrorDelegate.mustBePositive)
+        }
+//
+//
+//        XCTAssertThrowsError(try Production.costToShift(amount: 1, from: firstRedCard, to: firstGreenCard)) { error in
+//            XCTAssertEqual(error as? ProductionError, ProductionError.cannotUpgradeDownstream)
+//
+//
+//        XCTAssertThrowsError(try Hand.costToShift(amount: 1, from: firstRedCard, to: firstGreenCard)) { error in
+//            XCTAssertEqual(error as? HandError, HandError.cannotSelectDownstream)
+//        }
+    }
+    
+    func testDebitCannotBeNegative() {
+        let w = Wallet()
+        let amount = -50
+        XCTAssertThrowsError(try w.debit(amount)) { error in
+            XCTAssertEqual(error as? WalletErrorDelegate, WalletErrorDelegate.mustBePositive)
+        }
+    }
+    
+    func testDebitBalanceIsNotEnoughToCoverAmount() {
+        let amount = 50
+        let w = Wallet(25)
+        
+        XCTAssertThrowsError(try w.debit(amount)) { error in
+            XCTAssertEqual(error as? WalletErrorDelegate, WalletErrorDelegate.notEnoughBalance)
+        }
+    }
+    
 }
