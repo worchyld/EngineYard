@@ -12,5 +12,3 @@ class NotificationListener: NSObject {
         print("* Notification received: \(notification)")
     }
 }
-
-//test 
