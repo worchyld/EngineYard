@@ -9,7 +9,7 @@ import Foundation
 
 class BoardSpace {
     // TBD
-    var available: Bool = false
+    var available: Bool = false    
 }
 
 class Board {

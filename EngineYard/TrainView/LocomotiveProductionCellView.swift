@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LocomotiveProductionCellView: View {
-    let locomotive: Locomotive
+    let locomotive: LocomotiveViewModel
     let productionUnits: Int
     var body: some View {
         HStack(alignment: .center, spacing: 1.0, content: {
@@ -31,6 +31,6 @@ struct LocomotiveProductionCellView: View {
 
 struct LocomotiveProductionCellView_Previews: PreviewProvider {
     static var previews: some View {
-        LocomotiveProductionCellView(locomotive: Locomotive(id: UUID(), name: "Green.1", image: "icon-train-green", cost: 4, livery: .green, generation: .first, rust: .new, available: false), productionUnits: 3)
+        LocomotiveProductionCellView(locomotive: LocomotiveViewModel(id: UUID(), name: "Green.1", image: "icon-train-green", cost: 4, livery: .green, generation: .first, rust: .new, available: false), productionUnits: 3)
     }
 }

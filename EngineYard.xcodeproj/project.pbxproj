@@ -10,6 +10,7 @@
 		4D05247027CF5034006BDACE /* RollDieTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D05246F27CF5034006BDACE /* RollDieTest.swift */; };
 		4D05247227CF539C006BDACE /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D05247127CF539C006BDACE /* Wallet.swift */; };
 		4D05247427CF55BD006BDACE /* WalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D05247327CF55BD006BDACE /* WalletTests.swift */; };
+		4D145CD527D6B72200E47522 /* LocomotiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D145CD427D6B72200E47522 /* LocomotiveViewModel.swift */; };
 		4D5AC8CF2555C27700E39048 /* EY+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC8C62555C27700E39048 /* EY+Bundle.swift */; };
 		4D5AC8D02555C27700E39048 /* EY+FlatColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC8C72555C27700E39048 /* EY+FlatColor.swift */; };
 		4D5AC8D12555C27700E39048 /* EY+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC8C82555C27700E39048 /* EY+Array.swift */; };
@@ -52,7 +53,7 @@
 		4D94DFAC2567906300E9DF74 /* NewTurnOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D94DFAB2567906300E9DF74 /* NewTurnOrderView.swift */; };
 		4D94DFB12567915A00E9DF74 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D94DFB02567915A00E9DF74 /* MainMenuView.swift */; };
 		4DA2FEA2256749FD00F606AF /* TrainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA2FEA1256749FD00F606AF /* TrainListView.swift */; };
-		4DA2FEAF25674A2E00F606AF /* Locomotive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA2FEAE25674A2E00F606AF /* Locomotive.swift */; };
+		4DA2FEAF25674A2E00F606AF /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA2FEAE25674A2E00F606AF /* Card.swift */; };
 		4DA2FEB425674D5100F606AF /* LocomotiveCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA2FEB325674D5100F606AF /* LocomotiveCellView.swift */; };
 		4DA2FEB92567501F00F606AF /* GenerationEnumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA2FEB82567501F00F606AF /* GenerationEnumTests.swift */; };
 		4DB92AE62555BDEE00B976A2 /* EngineYardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB92AE52555BDEE00B976A2 /* EngineYardApp.swift */; };
@@ -86,6 +87,7 @@
 		4D05246F27CF5034006BDACE /* RollDieTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollDieTest.swift; sourceTree = "<group>"; };
 		4D05247127CF539C006BDACE /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		4D05247327CF55BD006BDACE /* WalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTests.swift; sourceTree = "<group>"; };
+		4D145CD427D6B72200E47522 /* LocomotiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocomotiveViewModel.swift; sourceTree = "<group>"; };
 		4D5AC8C62555C27700E39048 /* EY+Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EY+Bundle.swift"; sourceTree = "<group>"; };
 		4D5AC8C72555C27700E39048 /* EY+FlatColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EY+FlatColor.swift"; sourceTree = "<group>"; };
 		4D5AC8C82555C27700E39048 /* EY+Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EY+Array.swift"; sourceTree = "<group>"; };
@@ -128,7 +130,7 @@
 		4D94DFAB2567906300E9DF74 /* NewTurnOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTurnOrderView.swift; sourceTree = "<group>"; };
 		4D94DFB02567915A00E9DF74 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		4DA2FEA1256749FD00F606AF /* TrainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainListView.swift; sourceTree = "<group>"; };
-		4DA2FEAE25674A2E00F606AF /* Locomotive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locomotive.swift; sourceTree = "<group>"; };
+		4DA2FEAE25674A2E00F606AF /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		4DA2FEB325674D5100F606AF /* LocomotiveCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocomotiveCellView.swift; sourceTree = "<group>"; };
 		4DA2FEB82567501F00F606AF /* GenerationEnumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationEnumTests.swift; sourceTree = "<group>"; };
 		4DB92AE22555BDEE00B976A2 /* EngineYard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EngineYard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,9 +185,10 @@
 				4D5AC9122555DD5900E39048 /* GamePhase.swift */,
 				4D5AC91C2555DD9D00E39048 /* Tax.swift */,
 				4D5AC92B2555FE3500E39048 /* Player.swift */,
-				4DA2FEAE25674A2E00F606AF /* Locomotive.swift */,
+				4DA2FEAE25674A2E00F606AF /* Card.swift */,
 				4D05247127CF539C006BDACE /* Wallet.swift */,
 				4D909E4027D216DF00A50180 /* ErrorCode.swift */,
+				4D145CD427D6B72200E47522 /* LocomotiveViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 			files = (
 				4D05247227CF539C006BDACE /* Wallet.swift in Sources */,
 				4D94DFB12567915A00E9DF74 /* MainMenuView.swift in Sources */,
+				4D145CD527D6B72200E47522 /* LocomotiveViewModel.swift in Sources */,
 				4D807BD32555C0940067ABD0 /* Sounds.swift in Sources */,
 				4D5AC8D12555C27700E39048 /* EY+Array.swift in Sources */,
 				4D94DFA72567902F00E9DF74 /* TaxPhaseView.swift in Sources */,
@@ -498,7 +502,7 @@
 				4D5AC9222555DE3800E39048 /* AvatarView.swift in Sources */,
 				4D5AC8D22555C27700E39048 /* EY+Identifier.swift in Sources */,
 				4DDEB2B72565FE5700715529 /* PlayerHUDHorizontalView.swift in Sources */,
-				4DA2FEAF25674A2E00F606AF /* Locomotive.swift in Sources */,
+				4DA2FEAF25674A2E00F606AF /* Card.swift in Sources */,
 				4D5AC9412556091100E39048 /* DieView.swift in Sources */,
 				4D5AC91D2555DD9D00E39048 /* Tax.swift in Sources */,
 				4D909E4327D2180500A50180 /* EY+Notification.swift in Sources */,
