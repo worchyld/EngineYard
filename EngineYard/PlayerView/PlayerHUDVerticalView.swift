@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PlayerHUDVerticalView: View {
-    let player: Player
+    let player: PlayerViewModel
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8.0) {
@@ -40,6 +40,6 @@ struct PlayerHUDVerticalView: View {
 
 struct PlayerAvatarView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerHUDVerticalView(player: Player(id: UUID(), avatar: "avt-1", cash: 330, trains: 14, active: true))
+        PlayerHUDVerticalView(player: PlayerViewModel(id: UUID(), avatar: "avt-1", cash: 330, trains: 14, active: true))
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PlayerPortfolioListView: View {
-    let player: Player
+    let player: PlayerViewModel
     let locomotives: [LocomotiveViewModel]
     var body: some View {
         NavigationView {
@@ -25,7 +25,7 @@ struct PlayerPortfolioListView: View {
 }
 
 struct PlayerPortfolioHeaderView: View {
-    let player: Player
+    let player: PlayerViewModel
     var body: some View {
         PlayerHUDHorizontalView(player: player).padding([.top, .bottom], 10.0)
     }
@@ -33,7 +33,7 @@ struct PlayerPortfolioHeaderView: View {
 
 struct PlayerPortfolioListView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerPortfolioListView(player: Player(id: UUID(), avatar: "avt-1", cash: 3, trains: 0, active: false),
+        PlayerPortfolioListView(player: PlayerViewModel(id: UUID(), avatar: "avt-1", cash: 3, trains: 0, active: false),
                                 locomotives: [
             LocomotiveViewModel(id: UUID(), name: "Green.1", image: "icon-train-green", cost: 4, livery: .green, generation: .first, rust: .new, available: false),
             LocomotiveViewModel(id: UUID(), name: "Red.1", image: "icon-train-red", cost: 8, livery: .green, generation: .first, rust: .new, available: false),

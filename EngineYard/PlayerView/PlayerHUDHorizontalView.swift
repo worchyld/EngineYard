@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PlayerHUDHorizontalView: View {
-    let player: Player
+    let player: PlayerViewModel
 
     var body: some View {
         HStack(alignment: .top, spacing: 3.0, content: {
@@ -45,6 +45,6 @@ struct PlayerHUDHorizontalView: View {
 struct PlayerHUDHorizontalView_Previews: PreviewProvider {
     static var previews: some View {
         PlayerHUDHorizontalView(player:
-                                    Player(id: UUID(), avatar: "avt-1", cash: 330, trains: 14, active: true))
+                                    PlayerViewModel(id: UUID(), avatar: "avt-1", cash: 330, trains: 14, active: true))
     }
 }
