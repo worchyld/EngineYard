@@ -20,6 +20,7 @@ class Player: NSObject, GKGameModelPlayer {
     var avatar : String = ""
     var cash : Int = 0
     var state : PlayerState = .waiting
+    var onTurn : Bool = false 
     
     //var hand: [Cards]
 }
