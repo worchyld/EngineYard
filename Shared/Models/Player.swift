@@ -6,6 +6,20 @@
 //
 
 import Foundation
+import GameplayKit
+
+public enum PlayerState {
+    case waiting, thinking, done
+}
 
 // TBD
-class Player {}
+class Player: NSObject, GKGameModelPlayer {
+    var playerId: Int = 0
+    
+    var name : String = ""
+    var avatar : String = ""
+    var cash : Int = 0
+    var state : PlayerState = .waiting
+    
+    //var hand: [Cards]
+}
