@@ -32,3 +32,44 @@ class Locomotive {
         self.available = false
     }
 }
+
+
+public enum LocomotiveOrdersErrorDelegate: Error, Equatable {
+    case ordersAreFull
+    case salesAreFull
+}
+
+extension Locomotive {
+    
+    // Add order
+    
+    func add(order: Int) throws {
+        guard try canAdd(order: order) else {
+            return
+        }
+        self.orders.append(order)
+    }
+    
+    func canAdd(order: Int) throws -> Bool {
+        guard (self.orders.count < self.maxDice) else {
+            throw LocomotiveOrdersErrorDelegate.ordersAreFull
+        }
+        return true
+    }
+    
+    // Add sale
+    
+    func add(sale: Int) throws {
+        guard try canAdd(sale: sale) else {
+            throw LocomotiveOrdersErrorDelegate.salesAreFull
+        }
+        self.sales.append(sale)
+    }
+    
+    func canAdd(sale: Int) throws -> Bool {
+        guard (self.sales.count < self.maxDice) else {
+            throw LocomotiveOrdersErrorDelegate.salesAreFull
+        }
+        return true
+    }
+}

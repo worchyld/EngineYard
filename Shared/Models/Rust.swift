@@ -31,3 +31,10 @@ extension Rust: CustomStringConvertible {
         }
     }
 }
+
+extension Rust {
+    mutating func age() {
+        let a = type(of: self).allCases
+        self = a[(a.firstIndex(of: self)! + 1) % a.count]
+    }
+}
