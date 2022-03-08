@@ -300,8 +300,8 @@
 				4D05247327CF55BD006BDACE /* WalletTests.swift */,
 				4DA2FEB82567501F00F606AF /* GenerationEnumTests.swift */,
 				4D90BEC127D1F42B00C13550 /* TaxTests.swift */,
-				4DB92AF92555BDEF00B976A2 /* Info.plist */,
 				4D627CCA27D7078100170F26 /* RustTests.swift */,
+				4DB92AF92555BDEF00B976A2 /* Info.plist */,
 			);
 			path = EngineYardTests;
 			sourceTree = "<group>";

@@ -35,7 +35,7 @@ class RustTests: XCTestCase {
         print ("Rust: \(rust)")
     }
     
-    /*
+    
     /* needs fixing */
     func testRustedDoesNotLoop() {
         var rust = Rust.rusted
@@ -43,6 +43,6 @@ class RustTests: XCTestCase {
         rust.age()
         XCTAssertEqual(rust, expected)
         print ("Rust: \(rust)")
-    }*/
+    }
 
 }

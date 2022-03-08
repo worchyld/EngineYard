@@ -34,7 +34,7 @@ extension Rust: CustomStringConvertible {
 
 extension Rust {
     mutating func age() {
-        let a = type(of: self).allCases
-        self = a[(a.firstIndex(of: self)! + 1) % a.count]
+        // set rusted as the default if it can't be aged further
+        self = Rust(rawValue: rawValue + 1) ?? .rusted
     }
 }
