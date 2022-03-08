@@ -7,33 +7,28 @@
 
 import Foundation
 
-protocol LocomotiveProtocol {
-    var name: String { get }
-    var image: String { get }
-    var cost: Int { get }
-    var livery: Livery { get set }
-    var generation: Generation { get set }
-    var rust: Rust { get set }
-    var available: Bool { get set }
-}
-
-class Locomotive : LocomotiveProtocol {
-    var name: String
-    var image: String
-    var cost: Int
-    var livery: Livery
-    var generation: Generation
+class Locomotive {
+    let name: String
+    let image: String
+    let cost: Int
+    let livery: Livery
+    let generation: Generation
+    let trainPool: Int
+    let maxDice: Int
     var rust: Rust
+    var orders: [Int] = [Int]()
+    var sales: [Int] = [Int]()
     var available: Bool
     
-    init(name: String, cost: Int, livery: Livery, generation: Generation) {
+    init(name: String, image: String, cost: Int, livery: Livery, generation: Generation, trainPool: Int, maxDice: Int) {
         self.name = name
-        self.image = "" // tbc
+        self.image = image
         self.cost = cost
         self.livery = livery
         self.generation = generation
+        self.trainPool = trainPool
+        self.maxDice = maxDice
         self.rust = .notbuilt
         self.available = false
     }
 }
-
