@@ -75,3 +75,14 @@ extension Locomotive {
         return true
     }
 }
+
+// In the game the orders pool of dice moves over to sales pool of dice
+extension Locomotive {
+    func transferToSales(order: Int) {
+        
+    }
+    
+    func transferToOrders(order: Int) {
+        
+    }
+}
