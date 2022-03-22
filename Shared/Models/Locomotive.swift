@@ -7,6 +7,8 @@
 
 import Foundation
 
+typealias Card = Locomotive
+
 class Locomotive {
     let name: String
     let image: String

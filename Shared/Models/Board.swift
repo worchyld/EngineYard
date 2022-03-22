@@ -8,8 +8,20 @@
 import Foundation
 
 class BoardSpace {
-    // TBD
-    var available: Bool = false    
+    var available: Bool = false
+    var deck: [Card] = [Card]()
+    
+    init(with deck:[Card]) {
+        self.deck = deck
+    }
+    
+    func toggleAvailability() {
+        self.available = !self.available
+    }
+    
+    func makeNextSpaceAvailable() {
+        // TBD
+    }
 }
 
 class Board {

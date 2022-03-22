@@ -8,8 +8,8 @@
 import Foundation
 import GameplayKit
 
-public enum PlayerState {
-    case waiting, thinking, done
+public enum PlayerState: Int {
+    case waiting = 0, thinking, done
 }
 
 // TBD
