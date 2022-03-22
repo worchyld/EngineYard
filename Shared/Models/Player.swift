@@ -22,5 +22,5 @@ class Player: NSObject, GKGameModelPlayer {
     var state : PlayerState = .waiting
     var onTurn : Bool = false 
     
-    //var hand: [Cards]
+    var hand: [Card] = [Card]()
 }
