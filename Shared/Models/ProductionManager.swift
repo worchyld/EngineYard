@@ -1,0 +1,72 @@
+//
+//  ProductionManager.swift
+//  EngineYard
+//
+//  Created by Amarjit on 15/04/2022.
+//
+
+import Foundation
+
+protocol ProductionManagerUseCases {
+    func add(_ units: Int) throws
+    func spend(_ units: Int) throws
+    func reset()
+}
+
+internal protocol ProductionManagerValidationDelegate {
+    func canAdd(_ amount: Int) throws -> Bool
+    func canSpend(_ amount: Int) throws -> Bool
+}
+
+class ProductionManager : ProductionManagerUseCases {
+    internal var units: Int = 0
+    internal var spent: Int = 0
+    
+    init(units: Int = 0) {
+        self.units = units
+    }
+    
+    func add(_ units: Int) throws {
+        guard try canAdd(units) else {
+            return
+        }
+        self.units += units
+    }
+    
+    func spend(_ units: Int) throws {
+        guard try canSpend(units) else {
+            return
+        }
+        self.spent += units
+        self.units -= spent
+    }
+    
+    func reset() {
+        self.units = self.spent
+    }
+}
+
+extension ProductionManager : ProductionManagerValidationDelegate {
+    internal func canAdd(_ amount: Int = 0) throws -> Bool {
+        guard units.isPositive else {
+            throw NumericErrorDelegate.cannotBeNegative
+        }
+        
+        return true
+    }
+    
+    internal func canSpend(_ amount: Int = 0) throws -> Bool {
+        guard amount.isPositive else {
+            throw NumericErrorDelegate.cannotBeNegative
+        }
+//        guard ((spent.isPositive) && (spent >= units)) else {
+//            throw NumericErrorDelegate.notEnoughFunds
+//        }
+        let sum = units
+        guard ((sum - amount) >= 0) else {
+            throw NumericErrorDelegate.cannotCover(amount)
+        }
+        
+        return true
+    }
+}

@@ -7,11 +7,20 @@
 
 import Foundation
 
-public enum ErrorCode : Error {
+public enum GameErrorDelegate: Error {
     case noGameObject, noBoardDefined, noPlayerFound
 }
 
-extension ErrorCode : LocalizedError {
+public enum NumericErrorDelegate: Error, Equatable {
+    case cannotBeNegative
+    case notEnoughFunds
+    case cannotCover(_ amount: Int)
+}
+
+
+// Descriptions
+
+extension GameErrorDelegate : LocalizedError {
     public var errorDescription: String? {
         switch self {
         case .noBoardDefined:
@@ -20,6 +29,20 @@ extension ErrorCode : LocalizedError {
             return NSLocalizedString("** No game defined **", comment: "System-error: No game object")
         case .noPlayerFound:
             return NSLocalizedString("** No player found **", comment: "System-error: No player found")
+        }
+    }
+}
+
+
+extension NumericErrorDelegate : LocalizedError {
+    public var errorDescription: String? {
+        switch self {
+        case .cannotBeNegative:
+            return NSLocalizedString("Number cannot be negative", comment: "Numeric error")
+        case .notEnoughFunds:
+            return NSLocalizedString("Not enough funds", comment: "Numeric error")
+        case .cannotCover:
+            return NSLocalizedString("Cannot cover amount", comment: "Numeric error")
         }
     }
 }

@@ -35,7 +35,7 @@ class WalletTests: XCTestCase {
         let w = Wallet()
         let amount = -50
         XCTAssertThrowsError(try w.credit(amount)) { error in
-            XCTAssertEqual(error as? WalletErrorDelegate, WalletErrorDelegate.mustBePositive)
+            XCTAssertEqual(error as? NumericErrorDelegate, NumericErrorDelegate.cannotBeNegative)
         }
 //
 //
@@ -52,7 +52,7 @@ class WalletTests: XCTestCase {
         let w = Wallet()
         let amount = -50
         XCTAssertThrowsError(try w.debit(amount)) { error in
-            XCTAssertEqual(error as? WalletErrorDelegate, WalletErrorDelegate.mustBePositive)
+            XCTAssertEqual(error as? NumericErrorDelegate, NumericErrorDelegate.cannotBeNegative)
         }
     }
     
@@ -61,7 +61,7 @@ class WalletTests: XCTestCase {
         let w = Wallet(25)
         
         XCTAssertThrowsError(try w.debit(amount)) { error in
-            XCTAssertEqual(error as? WalletErrorDelegate, WalletErrorDelegate.notEnoughBalance)
+            XCTAssertEqual(error as? NumericErrorDelegate, NumericErrorDelegate.notEnoughFunds)
         }
     }
     

@@ -61,6 +61,8 @@
 		4DB92AF82555BDEF00B976A2 /* EngineYardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB92AF72555BDEF00B976A2 /* EngineYardTests.swift */; };
 		4DB92B032555BDEF00B976A2 /* EngineYardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB92B022555BDEF00B976A2 /* EngineYardUITests.swift */; };
 		4DC2082C27EA7724004ACF6B /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC2082B27EA7724004ACF6B /* Hand.swift */; };
+		4DD53093280908AD0013840D /* ProductionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD53092280908AD0013840D /* ProductionManager.swift */; };
+		4DD5309528090E990013840D /* ProductionManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD5309428090E990013840D /* ProductionManagerTests.swift */; };
 		4DDEB2B72565FE5700715529 /* PlayerHUDHorizontalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDEB2B62565FE5700715529 /* PlayerHUDHorizontalView.swift */; };
 		4DFEFE47256B965B0081DC10 /* LocomotiveProductionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEFE46256B965B0081DC10 /* LocomotiveProductionCellView.swift */; };
 /* End PBXBuildFile section */
@@ -143,6 +145,8 @@
 		4DB92B022555BDEF00B976A2 /* EngineYardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineYardUITests.swift; sourceTree = "<group>"; };
 		4DB92B042555BDEF00B976A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DC2082B27EA7724004ACF6B /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
+		4DD53092280908AD0013840D /* ProductionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionManager.swift; sourceTree = "<group>"; };
+		4DD5309428090E990013840D /* ProductionManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionManagerTests.swift; sourceTree = "<group>"; };
 		4DDEB2B62565FE5700715529 /* PlayerHUDHorizontalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerHUDHorizontalView.swift; sourceTree = "<group>"; };
 		4DFEFE46256B965B0081DC10 /* LocomotiveProductionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocomotiveProductionCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,6 +193,7 @@
 				4DA2FEAE25674A2E00F606AF /* Locomotive.swift */,
 				4D145CD427D6B72200E47522 /* LocomotiveViewModel.swift */,
 				4DC2082B27EA7724004ACF6B /* Hand.swift */,
+				4DD53092280908AD0013840D /* ProductionManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -307,6 +312,7 @@
 				4DA2FEB82567501F00F606AF /* GenerationEnumTests.swift */,
 				4D90BEC127D1F42B00C13550 /* TaxTests.swift */,
 				4D627CCA27D7078100170F26 /* RustTests.swift */,
+				4DD5309428090E990013840D /* ProductionManagerTests.swift */,
 				4DB92AF92555BDEF00B976A2 /* Info.plist */,
 			);
 			path = EngineYardTests;
@@ -515,6 +521,7 @@
 				4DFEFE47256B965B0081DC10 /* LocomotiveProductionCellView.swift in Sources */,
 				4D5AC9272555DF0500E39048 /* PlayerHUDVerticalView.swift in Sources */,
 				4D5AC8D52555C27700E39048 /* EY+CaseIterable.swift in Sources */,
+				4DD53093280908AD0013840D /* ProductionManager.swift in Sources */,
 				4D5AC8D42555C27700E39048 /* EY+Int.swift in Sources */,
 				4D5AC90A2555DD3300E39048 /* Die.swift in Sources */,
 				4D5AC92C2555FE3500E39048 /* PlayerViewModel.swift in Sources */,
@@ -532,6 +539,7 @@
 				4D90BEC227D1F42B00C13550 /* TaxTests.swift in Sources */,
 				4D05247027CF5034006BDACE /* RollDieTest.swift in Sources */,
 				4DB92AF82555BDEF00B976A2 /* EngineYardTests.swift in Sources */,
+				4DD5309528090E990013840D /* ProductionManagerTests.swift in Sources */,
 				4D627CCB27D7078100170F26 /* RustTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

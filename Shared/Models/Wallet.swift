@@ -14,17 +14,15 @@ internal protocol WalletDelegate {
     func didDebit(_amount: Int) -> Bool
 }
 
-public enum WalletErrorDelegate: Error, Equatable {
-    case mustBePositive
-    case notEnoughBalance
-    case cannotCover(_ amount: Int)
-    //case need(balance: Int)  Un-used for now
-}
-
 // The use cases of the wallet
 protocol WalletUseCases {
     func credit(_ amount: Int) throws -> Int?
     func debit(_ amount: Int) throws -> Int?
+}
+
+protocol WalletValidationDelegate {
+    func canCredit(_ amount: Int) throws -> Bool
+    func canDebit(_ amount: Int) throws -> Bool
 }
 
 class Wallet : WalletUseCases {
@@ -51,6 +49,15 @@ class Wallet : WalletUseCases {
         executeDebit(amount)
         return self.balance
     }
+    
+    // MARK: (Private) functions
+    
+    private func executeCredit(_ funds: Int = 0) {
+        self.balance += funds
+    }
+    private func executeDebit(_ funds: Int = 0) {
+        self.balance -= funds
+    }
 }
 
 extension Wallet: CustomStringConvertible {
@@ -59,12 +66,12 @@ extension Wallet: CustomStringConvertible {
     }
 }
 
-extension Wallet {
+extension Wallet : WalletValidationDelegate {
     
     // amount must be positive, cannot credit negative numbers
     func canCredit(_ amount: Int = 0) throws -> Bool {
         guard amount.isPositive else {
-            throw WalletErrorDelegate.mustBePositive
+            throw NumericErrorDelegate.cannotBeNegative
         }
         return true
     }
@@ -74,24 +81,16 @@ extension Wallet {
     // the amount remaining in the wallet must not be negative
     func canDebit(_ amount: Int = 0) throws -> Bool {
         guard amount.isPositive else {
-            throw WalletErrorDelegate.mustBePositive
+            throw NumericErrorDelegate.cannotBeNegative
         }
         guard balance >= amount else {
-            throw WalletErrorDelegate.notEnoughBalance
+            throw NumericErrorDelegate.notEnoughFunds
         }
         let sum = balance
         guard ((sum - amount) >= 0) else {
-            throw WalletErrorDelegate.cannotCover(amount)
+            throw NumericErrorDelegate.cannotCover(amount)
         }
         
         return true
-    }
-    
-    
-    private func executeCredit(_ funds: Int = 0) {
-        self.balance += funds
-    }
-    private func executeDebit(_ funds: Int = 0) {
-        self.balance -= funds
     }
 }
