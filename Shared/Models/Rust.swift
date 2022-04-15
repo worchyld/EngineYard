@@ -10,6 +10,10 @@ import Foundation
 // Obsolescence
 // In the game trains can be unavailable to purchase (not built) thru to rusted
 
+protocol RustUseCases {
+    mutating func age()
+}
+
 enum Rust : NSInteger, Codable, CaseIterable {
     case notbuilt = -1, new = 0, rusting, rusted
 }
@@ -32,7 +36,7 @@ extension Rust: CustomStringConvertible {
     }
 }
 
-extension Rust {
+extension Rust : RustUseCases {
     mutating func age() {
         // set rusted as the default if it can't be aged further
         self = Rust(rawValue: rawValue + 1) ?? .rusted
