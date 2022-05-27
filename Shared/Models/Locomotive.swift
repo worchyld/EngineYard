@@ -9,7 +9,20 @@ import Foundation
 
 typealias Card = Locomotive
 
-class Locomotive {
+protocol LocomotiveDelegate {
+    var id: UUID { get }
+    var name: String { get }
+    var image: String  { get }
+    var cost: Int  { get }
+    var livery: Livery  { get }
+    var generation: Generation  { get }
+    var rust: Rust  { get set }
+    var available: Bool  { get set }
+}
+
+class Locomotive : LocomotiveDelegate {
+    var id: UUID = UUID()
+    
     let name: String
     let image: String
     let cost: Int
