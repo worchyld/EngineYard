@@ -52,11 +52,11 @@ class Wallet : WalletUseCases {
     
     // MARK: (Private) functions
     
-    private func executeCredit(_ funds: Int = 0) {
-        self.balance += funds
+    private func executeCredit(_ credit: Int = 0) {
+        self.balance += credit
     }
-    private func executeDebit(_ funds: Int = 0) {
-        self.balance -= funds
+    private func executeDebit(_ debit: Int = 0) {
+        self.balance -= debit
     }
 }
 
@@ -65,6 +65,9 @@ extension Wallet: CustomStringConvertible {
         return "$\(self.balance)"
     }
 }
+
+
+// MARK: Validation
 
 extension Wallet : WalletValidationDelegate {
     
