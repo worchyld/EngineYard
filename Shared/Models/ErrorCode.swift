@@ -8,7 +8,7 @@
 import Foundation
 
 public enum GameErrorDelegate: Error {
-    case noGameObject, noBoardDefined, noPlayerFound
+    case noGameObject, noBoardDefined, noPlayerFound, noGenerationFound, noLiveryFound
 }
 
 public enum NumericErrorDelegate: Error, Equatable {
@@ -29,6 +29,10 @@ extension GameErrorDelegate : LocalizedError {
             return NSLocalizedString("** No game defined **", comment: "System-error: No game object")
         case .noPlayerFound:
             return NSLocalizedString("** No player found **", comment: "System-error: No player found")
+        case .noGenerationFound:
+            return NSLocalizedString("** No train generation found **", comment: "System-error: No train generation found")
+        case .noLiveryFound:
+            return NSLocalizedString("** No train livery found **", comment: "System-error: No train livery found")
         }
     }
 }
