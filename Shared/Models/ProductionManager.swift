@@ -46,6 +46,8 @@ class ProductionManager : ProductionManagerUseCases {
     }
 }
 
+// MARK: Production validaation
+
 extension ProductionManager : ProductionManagerValidationDelegate {
     internal func canAdd(_ amount: Int = 0) throws -> Bool {
         guard units.isPositive else {
@@ -59,9 +61,7 @@ extension ProductionManager : ProductionManagerValidationDelegate {
         guard amount.isPositive else {
             throw NumericErrorDelegate.cannotBeNegative
         }
-//        guard ((spent.isPositive) && (spent >= units)) else {
-//            throw NumericErrorDelegate.notEnoughFunds
-//        }
+
         let sum = units
         guard ((sum - amount) >= 0) else {
             throw NumericErrorDelegate.cannotCover(amount)
