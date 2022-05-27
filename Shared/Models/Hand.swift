@@ -19,6 +19,8 @@ class Hand {
     }
 }
 
+// MARK: Adding card to hand validation
+
 extension Hand {
     func canAdd(_ card: Card) -> Bool {
         return true
