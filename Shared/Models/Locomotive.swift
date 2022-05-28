@@ -9,10 +9,17 @@ import Foundation
 
 typealias Card = Locomotive
 
+public enum LocomotiveAssetImage : String {
+    case greenTrain = "icon-train-green"
+    case redTrain = "icon-train-red"
+    case yellowTrain = "icon-train-yellow"
+    case blueTrain = "icon-train-blue"
+}
+
 protocol LocomotiveDelegate {
     var id: UUID { get }
     var name: String { get }
-    var image: String  { get }
+    var image: LocomotiveAssetImage  { get }
     var cost: Int  { get }
     var livery: Livery  { get }
     var generation: Generation  { get }
@@ -24,7 +31,7 @@ class Locomotive : LocomotiveDelegate {
     var id: UUID = UUID()
     
     let name: String
-    let image: String
+    let image: LocomotiveAssetImage
     let cost: Int
     let livery: Livery
     let generation: Generation
@@ -35,7 +42,7 @@ class Locomotive : LocomotiveDelegate {
     var sales: [Int] = [Int]()
     var available: Bool
     
-    init(name: String, image: String, cost: Int, livery: Livery, generation: Generation, trainPool: Int, maxDice: Int) {
+    init(name: String, image: LocomotiveAssetImage, cost: Int, livery: Livery, generation: Generation, trainPool: Int, maxDice: Int) {
         self.name = name
         self.image = image
         self.cost = cost

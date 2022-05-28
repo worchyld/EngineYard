@@ -13,7 +13,7 @@ import Foundation
 struct LocomotiveViewModel: LocomotiveDelegate, Identifiable, Hashable, Equatable {
     let id: UUID
     let name: String
-    let image: String
+    let image: LocomotiveAssetImage
     let cost: Int
     let livery: Livery
     let generation: Generation
