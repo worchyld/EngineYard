@@ -8,11 +8,6 @@
 import Foundation
 
 class Game {
-    public private (set) var deck: [Card] = [Card]()
     
-    func createDeck() -> [Card] {
-        let deck: [Card] = [Card]()
-                
-        return deck
-    }
+    
 }
