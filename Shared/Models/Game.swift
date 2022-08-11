@@ -8,6 +8,14 @@
 import Foundation
 
 class Game {
-    
-    
+    var board: Board?
+    var players: [Player]?
+    var gamePhase: GamePhase = .setup
+}
+
+extension Game {
+    func prepareBoard() {
+        self.board = Board()
+        self.board?.prepare()
+    }
 }

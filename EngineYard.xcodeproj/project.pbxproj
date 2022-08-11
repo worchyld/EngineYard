@@ -184,20 +184,20 @@
 			isa = PBXGroup;
 			children = (
 				4D909E4027D216DF00A50180 /* ErrorCode.swift */,
+				4D5AC9122555DD5900E39048 /* GamePhase.swift */,
 				4D5AC9082555DD3300E39048 /* Die.swift */,
 				4D9D103A28419E400045E759 /* Game.swift */,
 				4DE3A50428436D3A00CC0B49 /* Board.swift */,
 				4D5AC8FE2555DCE600E39048 /* Livery.swift */,
 				4D5AC9032555DD0C00E39048 /* Generation.swift */,
 				4D5AC9172555DD8300E39048 /* Rust.swift */,
-				4D5AC9122555DD5900E39048 /* GamePhase.swift */,
 				4D5AC91C2555DD9D00E39048 /* Tax.swift */,
 				4D05247127CF539C006BDACE /* Wallet.swift */,
 				4D627CCC27D74D9B00170F26 /* Player.swift */,
 				4D5AC92B2555FE3500E39048 /* PlayerViewModel.swift */,
+				4DC2082B27EA7724004ACF6B /* Hand.swift */,
 				4DA2FEAE25674A2E00F606AF /* Locomotive.swift */,
 				4D145CD427D6B72200E47522 /* LocomotiveViewModel.swift */,
-				4DC2082B27EA7724004ACF6B /* Hand.swift */,
 				4DD53092280908AD0013840D /* ProductionManager.swift */,
 			);
 			path = Models;

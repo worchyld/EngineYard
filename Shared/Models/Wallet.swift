@@ -16,6 +16,7 @@ internal protocol WalletDelegate {
 
 // The use cases of the wallet
 protocol WalletUseCases {
+    var getBalance: Int { get }
     func credit(_ amount: Int) throws -> Int?
     func debit(_ amount: Int) throws -> Int?
 }
@@ -28,6 +29,10 @@ protocol WalletValidationDelegate {
 class Wallet : WalletUseCases {
     private (set) var balance : Int = 0
     
+    var getBalance: Int {
+        return self.balance
+    }
+    
     init(_ balance: Int = 0) {
         self.balance = balance
     }
@@ -37,7 +42,7 @@ class Wallet : WalletUseCases {
         guard try canCredit(amount) else {
             return nil
         }
-        executeCredit(amount)
+        self.balance += amount
         return self.balance
     }
     
@@ -46,17 +51,8 @@ class Wallet : WalletUseCases {
         guard try canDebit(amount) else {
             return nil
         }
-        executeDebit(amount)
+        self.balance -= amount
         return self.balance
-    }
-    
-    // MARK: (Private) functions
-    
-    private func executeCredit(_ credit: Int = 0) {
-        self.balance += credit
-    }
-    private func executeDebit(_ debit: Int = 0) {
-        self.balance -= debit
     }
 }
 

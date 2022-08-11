@@ -8,12 +8,11 @@
 import Foundation
 
 class Board {
+    public private (set) var space: [BoardSpace] = [BoardSpace]()
 }
 
 extension Board {
-    
-    
-    private func prepare() {
+    func prepare() {
 //        let board = Board()
 //        
 //        let cardsGen1 = [
@@ -22,6 +21,10 @@ extension Board {
 //            Card.init(name: "Green.1", image: .greenTrain, cost: 4, livery: .green, generation: .first, trainPool: 4, maxDice: 3),
 //            Card.init(name: "Green.1", image: .greenTrain, cost: 4, livery: .green, generation: .first, trainPool: 4, maxDice: 3)
 //        ]
-        
     }
+}
+
+class BoardSpace {
+    var deck: [Card] = [Card]()
+    var active: Bool = false
 }
