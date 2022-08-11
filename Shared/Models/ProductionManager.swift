@@ -19,8 +19,15 @@ internal protocol ProductionManagerValidationDelegate {
 }
 
 class ProductionManager : ProductionManagerUseCases {
-    internal var units: Int = 0
-    internal var spent: Int = 0
+    private (set) var units: Int = 0
+    private (set) var spent: Int = 0
+    
+    public var productionUnits: Int {
+        return self.units
+    }
+    public var productionSpent: Int {
+        return self.spent
+    }
     
     init(units: Int = 0) {
         self.units = units
@@ -42,7 +49,7 @@ class ProductionManager : ProductionManagerUseCases {
     }
     
     func reset() {
-        self.units = self.spent
+        self.units += self.spent
     }
 }
 

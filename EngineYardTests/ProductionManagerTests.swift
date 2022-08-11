@@ -41,4 +41,39 @@ class ProductionManagerTests: XCTestCase {
         XCTAssertEqual(pm.spent, 1)
     }
     
+    func testDidUpdateProductionUnits() throws {
+        var units = 1
+        
+        let pm = ProductionManager(units: units)
+        try pm.add(1)
+        units = pm.units
+        
+        XCTAssertTrue(units == 2)
+    }
+    
+    func testDidSpendAndResetUnits() throws {
+        let startingUnits = 5
+        var units = startingUnits
+        let spend = 2
+        let expected = (units - spend)
+     
+        // spend 2 units
+        let pm = ProductionManager(units: units)
+        XCTAssertTrue(pm.units == units)
+        XCTAssertTrue(pm.spent == 0)
+        
+        try pm.spend(spend)
+        XCTAssertTrue(pm.units == expected)
+        XCTAssertTrue(pm.spent == spend)
+                
+        units = pm.units
+        XCTAssertTrue(units == expected) // expect units = 3
+        XCTAssertTrue(pm.spent == 2) // expect spent = 2
+        
+        // reset
+        pm.reset()
+        units = pm.units
+        
+        XCTAssertTrue(units == startingUnits, "units: \(units)")
+    }
 }
