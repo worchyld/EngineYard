@@ -23,6 +23,7 @@ class Deck : TrainSpecificationDelegate {
     let generation: Generation
     var rust: Rust = .notbuilt
     var available: Bool = false
+    var dicePool: [Int] = [Int]()
     
     init(_ cost: Int, _ livery: Livery, _ generation: Generation, _ maxDice: Int) {
         self.name = UUID().uuidString
