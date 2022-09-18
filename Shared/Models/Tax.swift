@@ -15,7 +15,7 @@ private protocol TaxProtocol {
 
 struct Tax : TaxProtocol {
     // Players pay 10% of their cash in taxes, rounded down
-    static let rate: Float = 0.10
+    static let rate: Float = Constants.taxRate
 
     // Finds out how much tax is due on an amount
     // Return rounded down amount as per game rules
