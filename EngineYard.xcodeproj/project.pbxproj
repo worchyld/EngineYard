@@ -193,6 +193,7 @@
 		4D5AC8F52555C30200E39048 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4D613FC828D7467600811666 /* Managers */,
 				4D75BFBE28D6BBCE002C44F0 /* Constants.swift */,
 				4D909E4027D216DF00A50180 /* ErrorCode.swift */,
 				4D5AC9122555DD5900E39048 /* GamePhase.swift */,
@@ -206,16 +207,30 @@
 				4D5AC9032555DD0C00E39048 /* Generation.swift */,
 				4D5AC9172555DD8300E39048 /* Rust.swift */,
 				4D05247127CF539C006BDACE /* Wallet.swift */,
-				4DD53092280908AD0013840D /* ProductionManager.swift */,
-				4D75BFC428D6D011002C44F0 /* DicePoolManager.swift */,
-				4D613FC328D72CB300811666 /* ShiftProduction.swift */,
 				4D627CCC27D74D9B00170F26 /* Player.swift */,
-				4D5AC92B2555FE3500E39048 /* PlayerViewModel.swift */,
 				4DC2082B27EA7724004ACF6B /* Hand.swift */,
-				4D145CD427D6B72200E47522 /* LocomotiveViewModel.swift */,
 				4D613FC528D7429100811666 /* GameLogEntry.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		4D613FC728D7465100811666 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4D5AC92B2555FE3500E39048 /* PlayerViewModel.swift */,
+				4D145CD427D6B72200E47522 /* LocomotiveViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4D613FC828D7467600811666 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				4DD53092280908AD0013840D /* ProductionManager.swift */,
+				4D75BFC428D6D011002C44F0 /* DicePoolManager.swift */,
+				4D613FC328D72CB300811666 /* ShiftProduction.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		4D807BC62555C03F0067ABD0 /* Shared */ = {
@@ -225,6 +240,7 @@
 				4D807BC92555C0680067ABD0 /* Helpers */,
 				4D807BC82555C04B0067ABD0 /* Extensions */,
 				4D5AC8F52555C30200E39048 /* Models */,
+				4D613FC728D7465100811666 /* ViewModels */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
