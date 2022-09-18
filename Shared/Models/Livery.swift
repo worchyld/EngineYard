@@ -29,3 +29,21 @@ extension Livery: CustomStringConvertible {
         }
     }
 }
+
+// Asset image for each colour engine
+extension Livery {
+    public var iconAsset : String {
+        get {
+            switch self {
+            case .green:
+                return "icon-train-green"
+            case .red:
+                return "icon-train-red"
+            case .blue:
+                return "icon-train-yellow"
+            case .yellow:
+                return "icon-train-blue"
+            }
+        }
+    }
+}
