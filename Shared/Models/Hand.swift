@@ -8,13 +8,13 @@
 import Foundation
 
 class Hand {
-    private (set) var cards: [Card] = [Card]()
-    
-    func add(_ card: Card) {
+    public private (set) var cards: [Card] = [Card]()
+        
+    func push(_ card: Card) {
         
     }
     
-    func remove(_ card: Card) {
+    func pop(_ card: Card) {
         
     }
 }
@@ -22,11 +22,11 @@ class Hand {
 // MARK: Adding card to hand validation
 
 extension Hand {
-    func canAdd(_ card: Card) -> Bool {
+    func canPush(_ card: Card) -> Bool {
         return true
     }
     
-    func canRemove(_ card: Card) -> Bool {
+    func canPop(_ card: Card) -> Bool {
         return true
     }
 }
