@@ -12,10 +12,3 @@ class Game {
     var players: [Player]?
     var gamePhase: GamePhase = .setup
 }
-
-extension Game {
-    func prepareBoard() {
-        self.board = Board()
-        self.board?.prepare()
-    }
-}
