@@ -17,19 +17,19 @@ extension Board {
         let cards = self.makeCards()
         
         let decks : [Deck] = [
-            Deck(4, .green, .first, 1),
-            Deck(8, .red, .first, 1),
-            Deck(12, .yellow, .first, 3),
-            Deck(16, .blue, .first, 3),
-            Deck(20, .green, .second, 3),
+            Deck(4, .green, .first, 3),
+            Deck(8, .red, .first, 3),
+            Deck(12, .yellow, .first, 2),
+            Deck(16, .blue, .first, 1),
+            Deck(20, .green, .second, 4),
             Deck(24, .red, .second, 3),
-            Deck(28, .yellow, .second, 2),
-            Deck(32, .green, .third, 3),
-            Deck(36, .blue, .second, 3),
-            Deck(40, .red, .third, 3),
-            Deck(44, .green, .fourth, 3),
+            Deck(28, .yellow, .second, 3),
+            Deck(32, .green, .third, 4),
+            Deck(36, .blue, .second, 2),
+            Deck(40, .red, .third, 4),
+            Deck(44, .green, .fourth, 4),
             Deck(48, .yellow, .third, 3),
-            Deck(52, .red, .fourth, 3),
+            Deck(52, .red, .fourth, 4),
             Deck(56, .green, .fifth, 5),
         ]
 
@@ -47,7 +47,6 @@ extension Board {
     
     internal func makeCards() -> [Card] {
         var cards: [Card] = [Card]()
-        
         
         for _ in 1...4 {
             let card = Card(4, .green, .first)
