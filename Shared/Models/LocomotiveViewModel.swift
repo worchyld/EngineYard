@@ -10,10 +10,10 @@ import Foundation
 
 // Used in the views
 
-struct LocomotiveViewModel: LocomotiveDelegate, Identifiable, Hashable, Equatable {
+struct LocomotiveViewModel: TrainSpecificationDelegate, Identifiable, Hashable, Equatable {
     let id: UUID
     let name: String
-    let image: LocomotiveAssetImage
+    let image: String
     let cost: Int
     let livery: Livery
     let generation: Generation
