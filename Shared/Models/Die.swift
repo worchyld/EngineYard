@@ -9,9 +9,19 @@
 import Foundation
 import GameplayKit
 
-// Simple die randomizer
-protocol Rollable {
-    func roll() -> Int
+struct D6 {
+    public private (set) var value: Int
+    
+    init() {
+        self.value = Die.roll
+    }
+    
+    public mutating func decrement() {
+        guard self.value > 1 else {
+            return 
+        }
+        self.value = self.value - 1
+    }
 }
 
 struct Die: Equatable {

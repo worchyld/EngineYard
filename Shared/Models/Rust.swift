@@ -15,7 +15,7 @@ protocol RustUseCases {
 }
 
 enum Rust : NSInteger, Codable, CaseIterable {
-    case notbuilt = -1, new = 0, rusting, rusted
+    case notBuilt = -1, new = 0, rusting, rusted
 }
 
 // Stringify description
@@ -23,14 +23,14 @@ extension Rust: CustomStringConvertible {
     var description: String {
         get {
             switch self {
-            case .notbuilt:
-                return "notbuilt"
+            case .notBuilt:
+                return "notBuilt"
             case .new:
                 return "new"
             case .rusting:
                 return "rusting"
-            case .rusted:
-                return "obsolete"
+            case .rusted: // obsolete
+                return "rusted"
             }
         }
     }
