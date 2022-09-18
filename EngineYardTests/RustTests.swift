@@ -20,7 +20,7 @@ class RustTests: XCTestCase {
     }
 
     func testRustNotBuiltToNew() {
-        var rust = Rust.notbuilt
+        var rust = Rust.notBuilt
         let expected = Rust.new
         rust.age()
         XCTAssertEqual(rust, expected)

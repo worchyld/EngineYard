@@ -33,6 +33,7 @@
 		4D5AC9342555FF8D00E39048 /* ListOfPlayersHorizontalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC9332555FF8D00E39048 /* ListOfPlayersHorizontalView.swift */; };
 		4D5AC93C2556083700E39048 /* WinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC93B2556083700E39048 /* WinnerView.swift */; };
 		4D5AC9412556091100E39048 /* DieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC9402556091100E39048 /* DieView.swift */; };
+		4D613FC228D71B7700811666 /* DicePoolManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D613FC128D71B7700811666 /* DicePoolManagerTests.swift */; };
 		4D627CCB27D7078100170F26 /* RustTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D627CCA27D7078100170F26 /* RustTests.swift */; };
 		4D627CCD27D74D9B00170F26 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D627CCC27D74D9B00170F26 /* Player.swift */; };
 		4D75BFBF28D6BBCE002C44F0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D75BFBE28D6BBCE002C44F0 /* Constants.swift */; };
@@ -115,6 +116,7 @@
 		4D5AC9332555FF8D00E39048 /* ListOfPlayersHorizontalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfPlayersHorizontalView.swift; sourceTree = "<group>"; };
 		4D5AC93B2556083700E39048 /* WinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerView.swift; sourceTree = "<group>"; };
 		4D5AC9402556091100E39048 /* DieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DieView.swift; sourceTree = "<group>"; };
+		4D613FC128D71B7700811666 /* DicePoolManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DicePoolManagerTests.swift; sourceTree = "<group>"; };
 		4D627CCA27D7078100170F26 /* RustTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RustTests.swift; sourceTree = "<group>"; };
 		4D627CCC27D74D9B00170F26 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		4D75BFBE28D6BBCE002C44F0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 				4DD5309428090E990013840D /* ProductionManagerTests.swift */,
 				4D9D103828419D3D0045E759 /* CardSetupTests.swift */,
 				4D75BFC228D6C192002C44F0 /* BoardPrepTests.swift */,
+				4D613FC128D71B7700811666 /* DicePoolManagerTests.swift */,
 				4DB92AF92555BDEF00B976A2 /* Info.plist */,
 			);
 			path = EngineYardTests;
@@ -544,6 +547,7 @@
 				4DA2FEB92567501F00F606AF /* GenerationEnumTests.swift in Sources */,
 				4D75BFC328D6C192002C44F0 /* BoardPrepTests.swift in Sources */,
 				4D90BEC227D1F42B00C13550 /* TaxTests.swift in Sources */,
+				4D613FC228D71B7700811666 /* DicePoolManagerTests.swift in Sources */,
 				4D05247027CF5034006BDACE /* RollDieTest.swift in Sources */,
 				4DB92AF82555BDEF00B976A2 /* EngineYardTests.swift in Sources */,
 				4D9D103928419D3D0045E759 /* CardSetupTests.swift in Sources */,
