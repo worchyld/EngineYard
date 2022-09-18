@@ -23,6 +23,12 @@ class CardSetupTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+    
+    func testCardCostsAreModularOf4() throws {
+        let _ = cards!.map {
+            XCTAssertTrue($0.cost % 4 == 0)
+        }
+    }
 
     func testTotalCards() throws {
         XCTAssertTrue(cards!.count == Constants.totalCards)
