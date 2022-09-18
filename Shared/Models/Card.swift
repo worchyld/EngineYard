@@ -13,9 +13,7 @@ class Card : TrainSpecificationDelegate {
     let cost: Int
     let livery: Livery
     let generation: Generation
-
-    var orders: [Int] = [Int]()
-    var sales: [Int] = [Int]()
+    var productionUnits: Int
         
     init(_ cost: Int, _ livery: Livery, _ generation: Generation) {
         self.cost = cost
@@ -23,5 +21,6 @@ class Card : TrainSpecificationDelegate {
         self.image = livery.iconAsset
         self.generation = generation
         self.name = livery.description.lowercased() + "." + generation.description.lowercased()
+        self.productionUnits = 0
     }
 }
