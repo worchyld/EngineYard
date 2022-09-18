@@ -40,3 +40,15 @@ extension Generation: CustomStringConvertible {
         }
     }
 }
+
+extension Generation : Equatable {
+    static func > (lhs: Generation, rhs: Generation) -> Bool {
+        return (lhs.rawValue > rhs.rawValue)
+    }
+    static func < (lhs: Generation, rhs: Generation) -> Bool {
+        return (lhs.rawValue < rhs.rawValue)
+    }
+    static func == (lhs: Generation, rhs: Generation) -> Bool {
+        return (lhs.rawValue == rhs.rawValue)
+    }
+}

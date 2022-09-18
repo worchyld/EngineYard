@@ -34,6 +34,8 @@
 		4D5AC93C2556083700E39048 /* WinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC93B2556083700E39048 /* WinnerView.swift */; };
 		4D5AC9412556091100E39048 /* DieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC9402556091100E39048 /* DieView.swift */; };
 		4D613FC228D71B7700811666 /* DicePoolManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D613FC128D71B7700811666 /* DicePoolManagerTests.swift */; };
+		4D613FC428D72CB300811666 /* ShiftProduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D613FC328D72CB300811666 /* ShiftProduction.swift */; };
+		4D613FC628D7429100811666 /* GameLogEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D613FC528D7429100811666 /* GameLogEntry.swift */; };
 		4D627CCB27D7078100170F26 /* RustTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D627CCA27D7078100170F26 /* RustTests.swift */; };
 		4D627CCD27D74D9B00170F26 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D627CCC27D74D9B00170F26 /* Player.swift */; };
 		4D75BFBF28D6BBCE002C44F0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D75BFBE28D6BBCE002C44F0 /* Constants.swift */; };
@@ -117,6 +119,8 @@
 		4D5AC93B2556083700E39048 /* WinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerView.swift; sourceTree = "<group>"; };
 		4D5AC9402556091100E39048 /* DieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DieView.swift; sourceTree = "<group>"; };
 		4D613FC128D71B7700811666 /* DicePoolManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DicePoolManagerTests.swift; sourceTree = "<group>"; };
+		4D613FC328D72CB300811666 /* ShiftProduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftProduction.swift; sourceTree = "<group>"; };
+		4D613FC528D7429100811666 /* GameLogEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogEntry.swift; sourceTree = "<group>"; };
 		4D627CCA27D7078100170F26 /* RustTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RustTests.swift; sourceTree = "<group>"; };
 		4D627CCC27D74D9B00170F26 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		4D75BFBE28D6BBCE002C44F0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -202,12 +206,14 @@
 				4D5AC9032555DD0C00E39048 /* Generation.swift */,
 				4D5AC9172555DD8300E39048 /* Rust.swift */,
 				4D05247127CF539C006BDACE /* Wallet.swift */,
+				4DD53092280908AD0013840D /* ProductionManager.swift */,
+				4D75BFC428D6D011002C44F0 /* DicePoolManager.swift */,
+				4D613FC328D72CB300811666 /* ShiftProduction.swift */,
 				4D627CCC27D74D9B00170F26 /* Player.swift */,
 				4D5AC92B2555FE3500E39048 /* PlayerViewModel.swift */,
 				4DC2082B27EA7724004ACF6B /* Hand.swift */,
 				4D145CD427D6B72200E47522 /* LocomotiveViewModel.swift */,
-				4DD53092280908AD0013840D /* ProductionManager.swift */,
-				4D75BFC428D6D011002C44F0 /* DicePoolManager.swift */,
+				4D613FC528D7429100811666 /* GameLogEntry.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -510,6 +516,7 @@
 				4DC2082C27EA7724004ACF6B /* Hand.swift in Sources */,
 				4D5AC8D22555C27700E39048 /* EY+Identifier.swift in Sources */,
 				4DDEB2B72565FE5700715529 /* PlayerHUDHorizontalView.swift in Sources */,
+				4D613FC628D7429100811666 /* GameLogEntry.swift in Sources */,
 				4DA2FEAF25674A2E00F606AF /* Card.swift in Sources */,
 				4D5AC9412556091100E39048 /* DieView.swift in Sources */,
 				4D5AC91D2555DD9D00E39048 /* Tax.swift in Sources */,
@@ -524,6 +531,7 @@
 				4D5AC90B2555DD3300E39048 /* NumberFormatCache.swift in Sources */,
 				4D627CCD27D74D9B00170F26 /* Player.swift in Sources */,
 				4DB92AE82555BDEE00B976A2 /* ContentView.swift in Sources */,
+				4D613FC428D72CB300811666 /* ShiftProduction.swift in Sources */,
 				4DB92AE62555BDEE00B976A2 /* EngineYardApp.swift in Sources */,
 				4D94DFA225678B9E00E9DF74 /* PlayerPortfolioListView.swift in Sources */,
 				4DFEFE47256B965B0081DC10 /* LocomotiveProductionCellView.swift in Sources */,

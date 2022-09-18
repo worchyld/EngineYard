@@ -15,9 +15,16 @@ protocol TrainSpecificationDelegate {
 }
 
 class Deck : TrainSpecificationDelegate {
-    private let name: String
+    private let uuid: UUID
     public var cards: [Card] = [Card]()
-    let cost: Int
+    let cost: Int    
+    public var productionCost: Int {
+        return cost / 2
+    }
+    public var income: Int {
+        return self.productionCost / 2
+    }
+    
     let maxDice: Int
     let livery: Livery
     let generation: Generation
@@ -26,7 +33,7 @@ class Deck : TrainSpecificationDelegate {
     var dicePool: [D6] = [D6]()
     
     init(_ cost: Int, _ livery: Livery, _ generation: Generation, _ maxDice: Int) {
-        self.name = UUID().uuidString
+        self.uuid = UUID()
         self.cost = cost
         self.maxDice = maxDice
         self.livery = livery
@@ -45,5 +52,11 @@ class Deck : TrainSpecificationDelegate {
     
     public func toggleAvailability() {
         self.available = !self.available
+    }
+}
+
+extension Deck : Equatable {
+    static func == (lhs: Deck, rhs: Deck) -> Bool {
+        return (lhs.uuid == rhs.uuid)
     }
 }

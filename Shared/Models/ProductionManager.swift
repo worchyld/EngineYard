@@ -9,6 +9,7 @@ import Foundation
 
 protocol ProductionManagerUseCases {
     func add(_ units: Int) throws
+    func subtract(_ units: Int) throws
     func spend(_ units: Int) throws
     func reset()
 }
@@ -38,6 +39,13 @@ class ProductionManager : ProductionManagerUseCases {
             return
         }
         self.units += units
+    }
+    
+    func subtract(_ units: Int) throws {
+        guard try canSpend(units) else {
+            return
+        }
+        self.units -= units
     }
     
     func spend(_ units: Int) throws {
