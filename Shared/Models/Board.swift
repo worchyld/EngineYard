@@ -34,7 +34,6 @@ extension Board {
         ]
 
         // Fill deck where the cost is the same
-        // it is assumed the colour and generation are fine
         let _ = decks.map {
             let deck = $0
             let cards = cards.filter {
