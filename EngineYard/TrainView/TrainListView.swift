@@ -21,6 +21,7 @@ struct TrainListView: View {
     }
 }
 
+/*
 struct TrainListView_Previews: PreviewProvider {
     static var previews: some View {
         TrainListView(locomotives: [
@@ -41,3 +42,4 @@ struct TrainListView_Previews: PreviewProvider {
         ])
     }
 }
+*/

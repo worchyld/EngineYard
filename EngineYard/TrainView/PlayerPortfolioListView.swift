@@ -31,6 +31,7 @@ struct PlayerPortfolioHeaderView: View {
     }
 }
 
+/*
 struct PlayerPortfolioListView_Previews: PreviewProvider {
     static var previews: some View {
         PlayerPortfolioListView(player: PlayerViewModel(id: UUID(), avatar: "avt-1", cash: 3, trains: 0, active: false),
@@ -52,3 +53,4 @@ struct PlayerPortfolioListView_Previews: PreviewProvider {
         ])
     }
 }
+*/
