@@ -15,15 +15,15 @@ protocol TrainSpecificationDelegate {
 }
 
 class Deck : TrainSpecificationDelegate {
-    private var name: String
-    var cards: [Card] = [Card]()    
+    private let name: String
+    public var cards: [Card] = [Card]()
     let cost: Int
     let maxDice: Int
     let livery: Livery
     let generation: Generation
-    var rust: Rust = .notbuilt
+    var rust: Rust = .notBuilt
     var available: Bool = false
-    var dicePool: [Int] = [Int]()
+    var dicePool: [D6] = [D6]()
     
     init(_ cost: Int, _ livery: Livery, _ generation: Generation, _ maxDice: Int) {
         self.name = UUID().uuidString
@@ -31,7 +31,19 @@ class Deck : TrainSpecificationDelegate {
         self.maxDice = maxDice
         self.livery = livery
         self.generation = generation
-        self.rust = .notbuilt
+        self.rust = .notBuilt
         self.available = false
+    }
+    
+    public func addToDicePool(d6: D6) {
+        self.dicePool.append(d6)
+    }
+    
+    public func age() {
+        self.rust.age()
+    }
+    
+    public func toggleAvailability() {
+        self.available = !self.available
     }
 }
