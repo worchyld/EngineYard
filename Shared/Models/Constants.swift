@@ -7,8 +7,6 @@
 
 import Foundation
 
-// Constants
-
 public struct Constants {
     public static let taxRate: Float = 0.10
     
