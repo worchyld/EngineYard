@@ -17,6 +17,10 @@ public enum NumericErrorDelegate: Error, Equatable {
     case cannotCover(_ amount: Int)
 }
 
+public enum DicePoolError: Error {
+    case poolIsFull
+}
+
 
 // Descriptions
 
@@ -47,6 +51,15 @@ extension NumericErrorDelegate : LocalizedError {
             return NSLocalizedString("Not enough funds", comment: "Numeric error")
         case .cannotCover:
             return NSLocalizedString("Cannot cover amount", comment: "Numeric error")
+        }
+    }
+}
+
+extension DicePoolError : LocalizedError {
+    public var errorDescription: String? {
+        switch self {
+        case .poolIsFull:
+            return NSLocalizedString("The dice pool is full", comment: "The dice pool for the train is full")
         }
     }
 }
