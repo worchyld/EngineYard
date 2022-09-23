@@ -7,14 +7,7 @@
 
 import Foundation
 
-// Each train has these 3 common things
-protocol TrainSpecificationDelegate {
-    var cost: Int  { get }
-    var livery: Livery  { get }
-    var generation: Generation  { get }
-}
-
-class Deck : TrainSpecificationDelegate {
+class Deck {
     private let uuid: UUID
     public var cards: [Card] = [Card]()
     let cost: Int    
@@ -58,5 +51,11 @@ class Deck : TrainSpecificationDelegate {
 extension Deck : Equatable {
     static func == (lhs: Deck, rhs: Deck) -> Bool {
         return (lhs.uuid == rhs.uuid)
+    }
+}
+
+extension Deck : CustomStringConvertible {
+    var description: String {
+        return ("Deck: { \(self.livery) \(self.generation) }")
     }
 }
