@@ -10,7 +10,7 @@ import Foundation
 
 // Used in the views
 
-struct LocomotiveViewModel: TrainSpecificationDelegate, Identifiable, Hashable, Equatable {
+struct LocomotiveViewModel: Identifiable, Hashable, Equatable {
     let id: UUID
     let name: String
     let image: String
