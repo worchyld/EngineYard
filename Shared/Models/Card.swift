@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Card : TrainSpecificationDelegate {
+class Card {
     private let uuid: UUID = UUID()
     let name: String
     let image: String
@@ -31,6 +31,12 @@ class Card : TrainSpecificationDelegate {
         self.generation = generation
         self.name = livery.description.lowercased() + "." + generation.description.lowercased()
         self.productionUnits = 0
+    }
+}
+
+extension Card : CustomStringConvertible {
+    var description: String {
+        return (self.name)
     }
 }
 
