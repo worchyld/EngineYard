@@ -9,7 +9,7 @@
 import Foundation
 import GameplayKit
 
-struct D6 {
+struct D6: Equatable {
     public private (set) var value: Int
     
     init() {
