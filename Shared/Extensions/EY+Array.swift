@@ -76,3 +76,10 @@ extension Collection where Indices.Iterator.Element == Index {
     }
 }
 
+extension Array where Element: Equatable {
+    mutating func removeObject(object: Element)  {
+        if let index = firstIndex(of: object) {
+            remove(at: index)
+        }
+    }
+}
