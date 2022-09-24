@@ -68,6 +68,8 @@
 		4DB92AF82555BDEF00B976A2 /* EngineYardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB92AF72555BDEF00B976A2 /* EngineYardTests.swift */; };
 		4DB92B032555BDEF00B976A2 /* EngineYardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB92B022555BDEF00B976A2 /* EngineYardUITests.swift */; };
 		4DC2082C27EA7724004ACF6B /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC2082B27EA7724004ACF6B /* Hand.swift */; };
+		4DCA01BF28DDDB0900558599 /* SalesOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCA01BE28DDDB0900558599 /* SalesOrder.swift */; };
+		4DCA01C128DDDB5700558599 /* SalesOrderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCA01C028DDDB5700558599 /* SalesOrderTests.swift */; };
 		4DD53093280908AD0013840D /* ProductionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD53092280908AD0013840D /* ProductionManager.swift */; };
 		4DD5309528090E990013840D /* ProductionManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD5309428090E990013840D /* ProductionManagerTests.swift */; };
 		4DDEB2B72565FE5700715529 /* PlayerHUDHorizontalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDEB2B62565FE5700715529 /* PlayerHUDHorizontalView.swift */; };
@@ -160,6 +162,8 @@
 		4DB92B022555BDEF00B976A2 /* EngineYardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineYardUITests.swift; sourceTree = "<group>"; };
 		4DB92B042555BDEF00B976A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DC2082B27EA7724004ACF6B /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
+		4DCA01BE28DDDB0900558599 /* SalesOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesOrder.swift; sourceTree = "<group>"; };
+		4DCA01C028DDDB5700558599 /* SalesOrderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesOrderTests.swift; sourceTree = "<group>"; };
 		4DD53092280908AD0013840D /* ProductionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionManager.swift; sourceTree = "<group>"; };
 		4DD5309428090E990013840D /* ProductionManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionManagerTests.swift; sourceTree = "<group>"; };
 		4DDEB2B62565FE5700715529 /* PlayerHUDHorizontalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerHUDHorizontalView.swift; sourceTree = "<group>"; };
@@ -212,6 +216,7 @@
 				4D627CCC27D74D9B00170F26 /* Player.swift */,
 				4DC2082B27EA7724004ACF6B /* Hand.swift */,
 				4D613FC528D7429100811666 /* GameLogEntry.swift */,
+				4DCA01BE28DDDB0900558599 /* SalesOrder.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -345,6 +350,7 @@
 				4D75BFC228D6C192002C44F0 /* BoardPrepTests.swift */,
 				4D613FC128D71B7700811666 /* DicePoolManagerTests.swift */,
 				4D7DE2D428DD67E700A79EDE /* HandManagementTests.swift */,
+				4DCA01C028DDDB5700558599 /* SalesOrderTests.swift */,
 				4DB92AF92555BDEF00B976A2 /* Info.plist */,
 			);
 			path = EngineYardTests;
@@ -563,6 +569,7 @@
 				4D9D103B28419E400045E759 /* Game.swift in Sources */,
 				4D5AC8D32555C27700E39048 /* EY+Date.swift in Sources */,
 				4D5AC9342555FF8D00E39048 /* ListOfPlayersHorizontalView.swift in Sources */,
+				4DCA01BF28DDDB0900558599 /* SalesOrder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,6 +584,7 @@
 				4D613FC228D71B7700811666 /* DicePoolManagerTests.swift in Sources */,
 				4D7DE2D528DD67E700A79EDE /* HandManagementTests.swift in Sources */,
 				4D05247027CF5034006BDACE /* RollDieTest.swift in Sources */,
+				4DCA01C128DDDB5700558599 /* SalesOrderTests.swift in Sources */,
 				4DB92AF82555BDEF00B976A2 /* EngineYardTests.swift in Sources */,
 				4D9D103928419D3D0045E759 /* CardSetupTests.swift in Sources */,
 				4DD5309528090E990013840D /* ProductionManagerTests.swift in Sources */,
