@@ -9,21 +9,6 @@
 import Foundation
 import GameplayKit
 
-struct D6: Equatable {
-    public private (set) var value: Int
-    
-    init() {
-        self.value = Die.roll
-    }
-    
-    public mutating func decrement() {
-        guard self.value > 1 else {
-            return 
-        }
-        self.value = self.value - 1
-    }
-}
-
 struct Die: Equatable {
     public static var roll: Int {
         if #available(iOS 9, *) {

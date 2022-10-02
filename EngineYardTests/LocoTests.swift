@@ -15,14 +15,5 @@ final class LocoTests: XCTestCase {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
-    func testLocoDidChange() throws {
-        var l = Locomotive(4, .green, .first, 4)
-        XCTAssertFalse(l.available)
-        XCTAssertTrue(l.rusted == .notBuilt)
-        
-        l = l.execute(.obsolence(.new))
-        XCTAssertFalse(l.available)
-        XCTAssertTrue(l.rusted == .new)
-    }
 
 }

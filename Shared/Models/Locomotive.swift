@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Locomotive {
+final class Locomotive {
     private let uuid: UUID = UUID()
     var avatar: String {
         return self.livery.iconAsset
@@ -21,29 +21,26 @@ struct Locomotive {
     }
     let generation: Generation
     let livery: Livery
-    let rusted: Rust
-    let available: Bool
     let trainPool: Int
+    let maxDice: Int
     
-    init(_ cost: Int, _ livery: Livery, _ generation: Generation, _ trainPool: Int,
-         _ rust: Rust = .notBuilt , _ available: Bool = false) {
+    private var _rusted: Rust = .notBuilt
+    private var _available: Bool = false
+    
+    public var rusted: Rust {
+        return _rusted
+    }
+    public var available: Bool {
+        return _available
+    }
+        
+    public private (set) var dicePool: [Int] = [Int]()
+    
+    init(_ cost: Int, _ livery: Livery, _ generation: Generation, _ trainPool: Int, _ maxDice: Int) {
         self.cost = cost
         self.generation = generation
         self.livery = livery
         self.trainPool = trainPool
-        self.available = available
-        self.rusted = rust
-    }
-    
-    enum Change {
-        case obsolence(Rust)
-        case availability(Bool)
-    }
-    
-    func execute(_ change: Change) -> Self {
-        switch change {
-        case .obsolence( let r): return .init(cost, livery, generation, trainPool, r, available)
-        case .availability( let a): return .init(cost, livery, generation, trainPool, rusted, a)
-        }
+        self.maxDice = maxDice
     }
 }

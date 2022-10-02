@@ -22,5 +22,4 @@ class RollDieTest: XCTestCase {
         let d6 = Die.roll
         XCTAssertTrue(d6 > 0 && d6 < 7)
     }
-
 }
