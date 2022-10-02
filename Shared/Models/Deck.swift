@@ -7,6 +7,11 @@
 
 import Foundation
 
+struct Deck {
+    
+}
+
+/*
 class Deck {
     private let uuid: UUID
     public var cards: [Card] = [Card]()
@@ -59,3 +64,4 @@ extension Deck : CustomStringConvertible {
         return ("Deck: { \(self.livery) \(self.generation) }")
     }
 }
+*/

@@ -8,7 +8,7 @@
 import Foundation
 
 // Color of engine
-enum Livery: NSInteger, Codable, CaseIterable {
+enum Livery: NSInteger, Codable, CaseIterable, Equatable {
     case green = 1, red, yellow, blue
 }
 

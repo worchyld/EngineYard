@@ -8,9 +8,10 @@
 import Foundation
 
 class Board {
-    var decks : [Deck] = [Deck]()
+    //var decks : [Deck] = [Deck]()
 }
 
+/*
 extension Board {
     func prepare() -> [Deck] {
         
@@ -118,3 +119,4 @@ extension Board {
         return cards
     }
 }
+*/

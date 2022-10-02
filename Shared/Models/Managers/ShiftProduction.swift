@@ -58,6 +58,7 @@ extension ShiftErrorDelegate : LocalizedError {
 
 class ShiftProduction {
     
+    /*
     func shift(units: Int, from lhs: Card, to rhs: Card, player: Player?) throws -> Player? {
         guard (units.isPositive) else {
             throw ShiftErrorDelegate.mustBePositive
@@ -137,4 +138,6 @@ class ShiftProduction {
         
         return player
     }
+     
+     */
 }
