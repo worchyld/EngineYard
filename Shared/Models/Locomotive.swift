@@ -9,6 +9,9 @@ import Foundation
 
 final class Locomotive {
     private let uuid: UUID = UUID()
+    var name: String {
+        return livery.description.lowercased() + "." + generation.description.lowercased()
+    }
     var avatar: String {
         return self.livery.iconAsset
     }
@@ -24,11 +27,11 @@ final class Locomotive {
     let trainPool: Int
     let maxDice: Int
     
-    private var _rusted: Rust = .notBuilt
+    private var _rust: Rust = .notBuilt
     private var _available: Bool = false
     
-    public var rusted: Rust {
-        return _rusted
+    public var rust: Rust {
+        return _rust
     }
     public var available: Bool {
         return _available
@@ -42,5 +45,31 @@ final class Locomotive {
         self.livery = livery
         self.trainPool = trainPool
         self.maxDice = maxDice
+    }
+    
+    public func age() {
+        self._rust.age()
+    }
+    
+    public func toggleAvailability() {
+        self._available = !self._available
+    }
+}
+
+extension Locomotive : CustomStringConvertible {
+    var description: String {
+        return (self.name)
+    }
+}
+
+extension Locomotive : Equatable {
+    static func == (lhs: Locomotive, rhs: Locomotive) -> Bool {
+        return (lhs.uuid == rhs.uuid)
+    }
+    static func > (lhs: Locomotive, rhs: Locomotive) -> Bool {
+        return (lhs.generation.rawValue > rhs.generation.rawValue)
+    }
+    static func < (lhs: Locomotive, rhs: Locomotive) -> Bool {
+        return (lhs.generation.rawValue < rhs.generation.rawValue)
     }
 }
