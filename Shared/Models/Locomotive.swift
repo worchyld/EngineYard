@@ -7,8 +7,9 @@
 
 import Foundation
 
-final class Locomotive {
-    private let uuid: UUID = UUID()
+final class Locomotive : Hashable, Identifiable {
+    private let id: Int
+    
     var name: String {
         return livery.description.lowercased() + "." + generation.description.lowercased()
     }
@@ -39,7 +40,8 @@ final class Locomotive {
         
     public private (set) var dicePool: [Int] = [Int]()
     
-    init(_ cost: Int, _ livery: Livery, _ generation: Generation, _ trainPool: Int, _ maxDice: Int) {
+    init(_ id: Int = 0, _ cost: Int, _ livery: Livery, _ generation: Generation, _ trainPool: Int, _ maxDice: Int) {
+        self.id = id
         self.cost = cost
         self.generation = generation
         self.livery = livery
@@ -64,7 +66,7 @@ extension Locomotive : CustomStringConvertible {
 
 extension Locomotive : Equatable {
     static func == (lhs: Locomotive, rhs: Locomotive) -> Bool {
-        return (lhs.uuid == rhs.uuid)
+        return (lhs.id == rhs.id)
     }
     static func > (lhs: Locomotive, rhs: Locomotive) -> Bool {
         return (lhs.generation.rawValue > rhs.generation.rawValue)

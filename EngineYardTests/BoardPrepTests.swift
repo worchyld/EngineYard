@@ -35,6 +35,15 @@ final class BoardPrepTests: XCTestCase {
         }
     }
     
+    func testLocoTrainPoolSumIs50() throws {
+        let locos = self.board!.locos
+        var sum = 0
+        let _ = locos.map { loco in
+            sum += loco.trainPool
+        }
+        XCTAssertTrue(sum == Constants.trainPoolMax)
+    }
+    
     func testExpectedNumberOfGenerations() throws {
         let locos = self.board!.locos
         let greenLocos = locos.filter {
