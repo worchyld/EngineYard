@@ -70,7 +70,6 @@
 		4DB92AED2555BDEF00B976A2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DB92AEC2555BDEF00B976A2 /* Preview Assets.xcassets */; };
 		4DB92AF82555BDEF00B976A2 /* EngineYardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB92AF72555BDEF00B976A2 /* EngineYardTests.swift */; };
 		4DB92B032555BDEF00B976A2 /* EngineYardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB92B022555BDEF00B976A2 /* EngineYardUITests.swift */; };
-		4DC2082C27EA7724004ACF6B /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC2082B27EA7724004ACF6B /* Hand.swift */; };
 		4DCA01BF28DDDB0900558599 /* SalesOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCA01BE28DDDB0900558599 /* SalesOrder.swift */; };
 		4DCA01C128DDDB5700558599 /* SalesOrderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCA01C028DDDB5700558599 /* SalesOrderTests.swift */; };
 		4DD53093280908AD0013840D /* ProductionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD53092280908AD0013840D /* ProductionManager.swift */; };
@@ -167,7 +166,6 @@
 		4DB92AFE2555BDEF00B976A2 /* EngineYardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EngineYardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DB92B022555BDEF00B976A2 /* EngineYardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineYardUITests.swift; sourceTree = "<group>"; };
 		4DB92B042555BDEF00B976A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4DC2082B27EA7724004ACF6B /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
 		4DCA01BE28DDDB0900558599 /* SalesOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesOrder.swift; sourceTree = "<group>"; };
 		4DCA01C028DDDB5700558599 /* SalesOrderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesOrderTests.swift; sourceTree = "<group>"; };
 		4DD53092280908AD0013840D /* ProductionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionManager.swift; sourceTree = "<group>"; };
@@ -217,7 +215,6 @@
 				4D2AEF6028DF1E000002CC73 /* Locomotive.swift */,
 				4D75BFC028D6BF1E002C44F0 /* Deck.swift */,
 				4DA2FEAE25674A2E00F606AF /* Card.swift */,
-				4DC2082B27EA7724004ACF6B /* Hand.swift */,
 				4D5AC8FE2555DCE600E39048 /* Livery.swift */,
 				4D5AC9032555DD0C00E39048 /* Generation.swift */,
 				4D5AC9172555DD8300E39048 /* Rust.swift */,
@@ -547,7 +544,6 @@
 				4D909E4127D216DF00A50180 /* ErrorCode.swift in Sources */,
 				4D5AC93C2556083700E39048 /* WinnerView.swift in Sources */,
 				4D5AC9222555DE3800E39048 /* AvatarView.swift in Sources */,
-				4DC2082C27EA7724004ACF6B /* Hand.swift in Sources */,
 				4D5AC8D22555C27700E39048 /* EY+Identifier.swift in Sources */,
 				4DDEB2B72565FE5700715529 /* PlayerHUDHorizontalView.swift in Sources */,
 				4D613FC628D7429100811666 /* GameLogEntry.swift in Sources */,
