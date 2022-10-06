@@ -12,21 +12,36 @@ public enum FundingError: Error {
     case mustBePositive
 }
 
-public enum Funds {
+public struct Funds {
+    static func credit(balance: Int, with amount: Int) -> Result<Int, FundingError> {
+        #warning("Needs fixing")
+        let _ = Transaction.make(.credit(balance: balance, withAmount: amount))
+        return .success(0)
+    }
+    static func debit(balance: Int, by amount: Int) {
+        let result = Transaction.make(.debit(balance: balance, byAmount: amount))
+        print (result)
+    }
+}
+
+private enum Transaction {
     case credit(balance: Int, withAmount: Int)
     case debit(balance: Int, byAmount: Int)
     
-    func transaction(f: Funds) -> Result<Int, FundingError> {
+    func make(t: Transaction) -> Result<Int, FundingError> {
         do {
-            let _ = try Funds.validate(f: f)
-            
-            
+            let _ = try Transaction.validate(t)
+                        
             switch self {
             case .credit(let balance, let amount):
-                return self.handleCredit(balance: balance, with: amount)
+                var balance = balance
+                balance += amount
+                return .success(balance)
                             
             case .debit(let balance, let amount):
-                return self.handleDebit(balance: balance, by: amount)
+                var balance = balance
+                balance -= amount
+                return .success(balance)
             }
         }
         catch let err {
@@ -34,22 +49,11 @@ public enum Funds {
         }
     }
     
-    private func handleCredit(balance: Int, with amount: Int) -> Result<Int, FundingError> {
-        var balance = balance
-        balance += amount
-        return .success(balance)
-    }
-    
-    private func handleDebit(balance: Int, by amount: Int) -> Result<Int, FundingError> {
-        var balance = balance
-        balance -= amount
-        return .success(balance)
-    }
 }
 
-extension Funds {
-    static func validate(f: Funds) throws {
-        switch (f) {
+extension Transaction {
+    static func validate(_ transaction: Transaction) throws {
+        switch (transaction) {
             
         case .credit(_, let amount):
             guard amount > 0 else {

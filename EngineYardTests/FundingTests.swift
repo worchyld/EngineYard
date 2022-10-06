@@ -11,8 +11,7 @@ import XCTest
 final class FundingTests: XCTestCase {
 
     func testDidAddCreditOf1() throws {
-        let result = Funds.credit(balance: 0, withAmount: 1)
-        print (result)
+        Funds.credit(balance: 0, with: 1)
     }
 
 }

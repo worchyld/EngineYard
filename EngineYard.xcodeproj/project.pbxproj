@@ -351,6 +351,7 @@
 				4D05246F27CF5034006BDACE /* RollDieTest.swift */,
 				4DA2FEB82567501F00F606AF /* GenerationEnumTests.swift */,
 				4D90BEC127D1F42B00C13550 /* TaxTests.swift */,
+				4DA7AC8528EF4C510092DA6C /* FundingTests.swift */,
 				4D627CCA27D7078100170F26 /* RustTests.swift */,
 				4DD5309428090E990013840D /* ProductionManagerTests.swift */,
 				4D9E6B0A28E91EE30054F91D /* LocoTests.swift */,
@@ -360,7 +361,6 @@
 				4D7DE2D428DD67E700A79EDE /* HandManagementTests.swift */,
 				4DCA01C028DDDB5700558599 /* SalesOrderTests.swift */,
 				4DB92AF92555BDEF00B976A2 /* Info.plist */,
-				4DA7AC8528EF4C510092DA6C /* FundingTests.swift */,
 			);
 			path = EngineYardTests;
 			sourceTree = "<group>";
