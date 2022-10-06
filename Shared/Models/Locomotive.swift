@@ -14,9 +14,7 @@ final class Locomotive : Hashable, Identifiable {
         hasher.combine(self.id + self.generation.rawValue + self.livery.rawValue)
     }
     
-    var name: String {
-        return livery.description.lowercased() + "." + generation.description.lowercased()
-    }
+    var name: String
     var avatar: String {
         return self.livery.iconAsset
     }
@@ -44,8 +42,9 @@ final class Locomotive : Hashable, Identifiable {
         
     public private (set) var dicePool: [Int] = [Int]()
     
-    init(_ id: Int = 0, _ cost: Int, _ livery: Livery, _ generation: Generation, _ trainPool: Int, _ maxDice: Int) {
+    init(_ id: Int = 0, _ name: String, _ cost: Int, _ livery: Livery, _ generation: Generation, _ trainPool: Int, _ maxDice: Int) {
         self.id = id
+        self.name = name
         self.cost = cost
         self.generation = generation
         self.livery = livery
@@ -56,7 +55,7 @@ final class Locomotive : Hashable, Identifiable {
 
 extension Locomotive : CustomStringConvertible {
     var description: String {
-        return (self.name)
+        return (livery.description.lowercased() + "." + generation.description.lowercased())
     }
 }
 
