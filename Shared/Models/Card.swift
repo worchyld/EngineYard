@@ -9,39 +9,36 @@ import Foundation
 
 class Card {
     private let uuid: UUID = UUID()
-    let name: String
-    let image: String
-    let cost: Int
-    public var productionCost: Int {
-        return cost / 2
-    }
-    public var income: Int {
-        return self.productionCost / 2
-    }
+    let loco: Locomotive
+  
+//    // Lookup vars
+//    var name: String {
+//        return loco.name
+//    }
+//    var cost: Int {
+//        return loco.cost
+//    }
+//    var productionCost: Int {
+//        return loco.productionCost
+//    }
+//    var income: Int {
+//        return loco.income
+//    }
+//    var livery: Livery {
+//        return loco.livery
+//    }
+//    var generation: Generation {
+//        return loco.generation
+//    }
+//    var rust: Rust {
+//        return loco.rust
+//    }
     
-    let livery: Livery
-    let generation: Generation
-    var productionUnits: Int
-    var rust: Rust = .notBuilt 
-        
-    init(_ cost: Int, _ livery: Livery, _ generation: Generation) {
-        self.cost = cost
-        self.livery = livery
-        self.image = livery.iconAsset
-        self.generation = generation
-        self.name = livery.description.lowercased() + "." + generation.description.lowercased()
-        self.productionUnits = 0
-    }
-}
-
-extension Card : CustomStringConvertible {
-    var description: String {
-        return (self.name)
-    }
-}
-
-extension Card : Equatable {
-    static func == (lhs: Card, rhs: Card) -> Bool {
-        return (lhs.uuid == rhs.uuid)
+    // Production units
+    var units: Int = 0
+    var spentUnits: Int = 0
+    
+    init(loco: Locomotive) {
+        self.loco = loco
     }
 }

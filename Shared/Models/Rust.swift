@@ -14,7 +14,7 @@ protocol RustUseCases {
     mutating func age()
 }
 
-enum Rust : NSInteger, Codable, CaseIterable {
+enum Rust : NSInteger, Codable, CaseIterable, Equatable {
     case notBuilt = -1, new = 0, rusting, rusted
 }
 

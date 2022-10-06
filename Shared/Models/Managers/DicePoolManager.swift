@@ -2,52 +2,36 @@
 //  DicePoolManager.swift
 //  EngineYard
 //
-//  Created by Amarjit on 18/09/2022.
+//  Created by Amarjit on 02/10/2022.
 //
 
 import Foundation
 
-public enum OrderType: Int {
-    case order, sale
+enum DieDestination {
+    case orders, sales
 }
 
-public class Order {
-    var value: D6
-    var type: OrderType = .order
+class DicePool {
+    private var _orders: [Int]?
+    private var _sales: [Int]?
+    private var capacity: Int
     
-    init() {
-        self.value = D6.init()
+    public var orders: [Int] {
+        return self._orders ?? [Int]()
+    }
+    public var sales: [Int] {
+        return self._sales ?? [Int]()
     }
     
-    func decrement() {
-        self.value.decrement()
+    init(with orders: [Int]? = nil, sales: [Int]? = nil, capacity: Int) {
+        self.capacity = capacity
+        self._orders = orders
+        self._sales = sales
     }
     
-    func changeOrderType(_ toOrderType: OrderType = .order) {
-        self.type = toOrderType
+    public var isAtCapacity: Bool {
+        let sum = self.orders.count + self.sales.count
+        return sum <= self.capacity
     }
 }
 
-class DicePoolManager {
-    private var deck: Deck
-    
-    init(deck: Deck) {
-        self.deck = deck
-    }
-    
-    func addToDicePool() throws {
-        guard try self.canAdd() else {
-            return
-        }
-        
-        self.deck.addToDicePool(d6: D6())
-    }
-    
-    private func canAdd() throws -> Bool {
-        guard (self.deck.dicePool.count < self.deck.maxDice) else {
-            throw DicePoolError.poolIsFull
-        }
-        return true
-    }
-    
-}

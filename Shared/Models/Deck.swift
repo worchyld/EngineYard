@@ -8,43 +8,37 @@
 import Foundation
 
 class Deck {
-    private let uuid: UUID
+    private let uuid: UUID = UUID()
+    public let loco: Locomotive
     public var cards: [Card] = [Card]()
-    let cost: Int    
-    public var productionCost: Int {
-        return cost / 2
+
+    // Lookup vars
+    var cost: Int {
+        return loco.cost
     }
-    public var income: Int {
-        return self.productionCost / 2
+    var productionCost: Int {
+        return loco.productionCost
     }
-    
-    let maxDice: Int
-    let livery: Livery
-    let generation: Generation
-    var rust: Rust = .notBuilt
-    var available: Bool = false
-    var dicePool: [D6] = [D6]()
-    
-    init(_ cost: Int, _ livery: Livery, _ generation: Generation, _ maxDice: Int) {
-        self.uuid = UUID()
-        self.cost = cost
-        self.maxDice = maxDice
-        self.livery = livery
-        self.generation = generation
-        self.rust = .notBuilt
-        self.available = false
+    var income: Int {
+        return loco.income
+    }
+    var livery: Livery {
+        return loco.livery
+    }
+    var generation: Generation {
+        return loco.generation
+    }
+    var rust: Rust {
+        return loco.rust
     }
     
-    public func addToDicePool(d6: D6) {
-        self.dicePool.append(d6)
+    init(locomotive: Locomotive, cards: [Card]) {
+        self.loco = locomotive
+        self.cards = cards
     }
     
-    public func age() {
-        self.rust.age()
-    }
-    
-    public func toggleAvailability() {
-        self.available = !self.available
+    public var isEmpty : Bool {
+        return (self.cards.count == 0)
     }
 }
 
@@ -56,6 +50,6 @@ extension Deck : Equatable {
 
 extension Deck : CustomStringConvertible {
     var description: String {
-        return ("Deck: { \(self.livery) \(self.generation) }")
+        return ("Deck: { \(self.loco.livery) \(self.loco.generation) }")
     }
 }

@@ -20,7 +20,7 @@ final class SalesOrderTests: XCTestCase {
     }
 
     func testSalesOrders() throws {
-        var order = SalesOrder(orders: [2, 3, 5])
+        let order = SalesOrder(orders: [2, 3, 5])
         let good = 8
 
         if let match = order.match(good) {

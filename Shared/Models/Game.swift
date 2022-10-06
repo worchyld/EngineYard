@@ -12,3 +12,18 @@ class Game {
     var players: [Player]?
     var gamePhase: GamePhase = .setup
 }
+
+extension Game {
+    func didEndTrigger(cash: Int) -> Bool {
+        return (cash >= Constants.winCondition)
+    }
+    func winnersList() -> [Player]? {
+        guard let pl = players else {
+            return nil
+        }
+        let sortedByMostCoins = pl.sorted(by: { p1, p2 in
+            return p1.cash > p2.cash
+        })
+        return sortedByMostCoins
+    }
+}

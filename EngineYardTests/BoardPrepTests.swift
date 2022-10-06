@@ -16,26 +16,64 @@ final class BoardPrepTests: XCTestCase {
     var board: Board?
     
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
         self.board = Board()
-        self.board!.decks = self.board!.prepare()
+        self.board!.prepare()
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testLocoCount() throws {
+        XCTAssertTrue(self.board!.locos.count == Constants.totalDecks)
     }
-
+    
     func testDecksCount() throws {
         XCTAssertTrue(self.board!.decks.count == Constants.totalDecks)
     }
-    
-    
-    func testDeckPrintOut() throws {
-        for deck in self.board!.decks {
-            for card in deck.cards {
-                print (card.name, card.livery, card.generation, card.cost)
-            }
+        
+    func testLocoCostsAreModularOf4() throws {
+        let locos = self.board!.locos
+        let _ = locos.map { loco in
+            XCTAssertTrue(loco.cost % 4 == 0)
         }
+    }
+    
+    func testTrainPoolIsValid() throws {
+        let locos = self.board!.locos
+        var sum = 0
+        let _ = locos.map { loco in
+            sum += loco.trainPool
+        }
+        XCTAssertTrue(sum == Constants.totalTrainPool)
+    }
+    
+    func testMaxDiceIsValid() throws {
+        let locos = self.board!.locos
+        
+        var sum = 0
+        let _ = locos.map { loco in
+            sum += loco.maxDice
+        }
+
+        XCTAssertTrue(sum == Constants.totalMaxDice, "loco max dice: \(sum) vs constant \(Constants.totalMaxDice)")
+    }
+    
+    func testExpectedNumberOfGenerations() throws {
+        let locos = self.board!.locos
+        let greenLocos = locos.filter {
+            return $0.livery == .green
+        }
+        let redLocos = locos.filter {
+            return $0.livery == .red
+        }
+        let yellowLocos = locos.filter {
+            return $0.livery == .yellow
+        }
+        let blueLocos = locos.filter {
+            return $0.livery == .blue
+        }
+        
+        XCTAssertTrue(greenLocos.count == Constants.Green.generations)
+        XCTAssertTrue(redLocos.count == Constants.Red.generations)
+        XCTAssertTrue(yellowLocos.count == Constants.Yellow.generations)
+        XCTAssertTrue(blueLocos.count == Constants.Blue.generations)
     }
     
 }
