@@ -8,7 +8,11 @@
 import Foundation
 
 final class Locomotive : Hashable, Identifiable {
-    private let id: Int
+    internal let id: Int
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.id + self.generation.rawValue + self.livery.rawValue)
+    }
     
     var name: String {
         return livery.description.lowercased() + "." + generation.description.lowercased()
@@ -48,14 +52,6 @@ final class Locomotive : Hashable, Identifiable {
         self.trainPool = trainPool
         self.maxDice = maxDice
     }
-    
-    public func age() {
-        self._rust.age()
-    }
-    
-    public func toggleAvailability() {
-        self._available = !self._available
-    }
 }
 
 extension Locomotive : CustomStringConvertible {
@@ -73,5 +69,15 @@ extension Locomotive : Equatable {
     }
     static func < (lhs: Locomotive, rhs: Locomotive) -> Bool {
         return (lhs.generation.rawValue < rhs.generation.rawValue)
+    }
+}
+
+extension Locomotive {
+    public func age() {
+        self._rust.age()
+    }
+    
+    public func toggleAvailability() {
+        self._available = !self._available
     }
 }

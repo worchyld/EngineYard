@@ -9,6 +9,12 @@ import Foundation
 
 public struct Constants {
     public static let taxRate: Float = 0.10
+    public static let winCondition = 300   // need >=300 to trigger end of game
+    
+    public struct ValidNumberOfPlayers {
+        public static let min = 3
+        public static let max = 5
+    }
     
     public static let totalDecks = 14
     public static let totalCards = 43

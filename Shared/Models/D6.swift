@@ -10,6 +10,7 @@ import Foundation
 protocol D6UseCases {
     mutating func increment()
     mutating func decrement()
+    mutating func roll()
 }
 
 struct D6: Codable, Equatable, D6UseCases {
@@ -35,5 +36,9 @@ struct D6: Codable, Equatable, D6UseCases {
             return
         }
         self.value -= 1
+    }
+    
+    public mutating func roll() {
+        self.value = Die.roll
     }
 }
