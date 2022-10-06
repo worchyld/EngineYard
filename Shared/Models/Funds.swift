@@ -7,20 +7,17 @@
 
 import Foundation
 
-public enum FundingError: Error {
+public enum FundingError: Error, Equatable {
     case notEnough(funds: Int)
     case mustBePositive
 }
 
 public struct Funds {
     static func credit(balance: Int, with amount: Int) -> Result<Int, FundingError> {
-        #warning("Needs fixing")
-        let _ = Transaction.make(.credit(balance: balance, withAmount: amount))
-        return .success(0)
+        return Transaction.make(.credit(balance: balance, withAmount: amount))
     }
-    static func debit(balance: Int, by amount: Int) {
-        let result = Transaction.make(.debit(balance: balance, byAmount: amount))
-        print (result)
+    static func debit(balance: Int, by amount: Int) -> Result<Int, FundingError> {
+        return Transaction.make(.debit(balance: balance, byAmount: amount))
     }
 }
 
@@ -28,11 +25,11 @@ private enum Transaction {
     case credit(balance: Int, withAmount: Int)
     case debit(balance: Int, byAmount: Int)
     
-    func make(t: Transaction) -> Result<Int, FundingError> {
+    static func make(_ t: Transaction) -> Result<Int, FundingError> {
         do {
             let _ = try Transaction.validate(t)
                         
-            switch self {
+            switch t {
             case .credit(let balance, let amount):
                 var balance = balance
                 balance += amount
