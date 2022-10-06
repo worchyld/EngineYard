@@ -67,8 +67,14 @@ extension Locomotive : Equatable {
     static func > (lhs: Locomotive, rhs: Locomotive) -> Bool {
         return (lhs.generation.rawValue > rhs.generation.rawValue)
     }
+    static func >= (lhs: Locomotive, rhs: Locomotive) -> Bool {
+        return (lhs.generation.rawValue >= rhs.generation.rawValue)
+    }
     static func < (lhs: Locomotive, rhs: Locomotive) -> Bool {
         return (lhs.generation.rawValue < rhs.generation.rawValue)
+    }
+    static func <= (lhs: Locomotive, rhs: Locomotive) -> Bool {
+        return (lhs.generation.rawValue <= rhs.generation.rawValue)
     }
 }
 
