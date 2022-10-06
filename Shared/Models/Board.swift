@@ -16,21 +16,21 @@ extension Board {
     func prepare() {
 
         var locos = [
-            //         id   ,   £    color       gen         tp   dp
+            //         id   ,   £    color       gen         tp   maxDice
             Locomotive(1    ,   4    , .green    , .first    , 4 , 3),
-            Locomotive(2    ,   20   , .green    , .second   , 4 , 4),
-            Locomotive(3    ,   32   , .green    , .third    , 4 , 4),
-            Locomotive(4    ,   44   , .green    , .fourth   , 4 , 4),
-            Locomotive(5    ,   56   , .green    , .fifth    , 4 , 5),
-            Locomotive(6    ,   8    , .red      , .first    , 3 , 3),
-            Locomotive(7    ,   24   , .red      , .second   , 3 , 3),
-            Locomotive(8    ,   40   , .red      , .third    , 3 , 4),
-            Locomotive(9    ,   52   , .red      , .fourth   , 4 , 4),
-            Locomotive(10   ,   12   , .yellow   , .first    , 2 , 2),
-            Locomotive(11   ,   28   , .yellow   , .second   , 2 , 3),
+            Locomotive(2    ,   8    , .red      , .first    , 3 , 3),
+            Locomotive(3    ,   12   , .yellow   , .first    , 2 , 2),
+            Locomotive(4    ,   16   , .blue     , .first    , 1 , 1),
+            Locomotive(5    ,   20   , .green    , .second   , 4 , 4),
+            Locomotive(6    ,   24   , .red      , .second   , 3 , 3),
+            Locomotive(7    ,   28   , .yellow   , .second   , 2 , 3),
+            Locomotive(8    ,   32   , .green    , .third    , 4 , 4),
+            Locomotive(9    ,   36   , .blue     , .second   , 2 , 2),
+            Locomotive(10   ,   40   , .red      , .third    , 3 , 4),
+            Locomotive(11   ,   44   , .green    , .fourth   , 4 , 5),
             Locomotive(12   ,   48   , .yellow   , .third    , 3 , 3),
-            Locomotive(13   ,   16   , .blue     , .first    , 1 , 1),
-            Locomotive(14   ,   36   , .blue     , .second   , 2 , 2),
+            Locomotive(13   ,   52   , .red      , .fourth   , 4 , 4),
+            Locomotive(14   ,   56   , .green    , .fifth    , 4 , 5),
         ]
         locos.sort(by: {
             $0.cost < $1.cost

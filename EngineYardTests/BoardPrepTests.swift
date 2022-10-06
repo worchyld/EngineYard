@@ -35,13 +35,24 @@ final class BoardPrepTests: XCTestCase {
         }
     }
     
-    func testLocoTrainPoolSumIs50() throws {
+    func testTrainPoolIsValid() throws {
         let locos = self.board!.locos
         var sum = 0
         let _ = locos.map { loco in
             sum += loco.trainPool
         }
-        XCTAssertTrue(sum == Constants.trainPoolMax)
+        XCTAssertTrue(sum == Constants.totalTrainPool)
+    }
+    
+    func testMaxDiceIsValid() throws {
+        let locos = self.board!.locos
+        
+        var sum = 0
+        let _ = locos.map { loco in
+            sum += loco.maxDice
+        }
+
+        XCTAssertTrue(sum == Constants.totalMaxDice, "loco max dice: \(sum) vs constant \(Constants.totalMaxDice)")
     }
     
     func testExpectedNumberOfGenerations() throws {
