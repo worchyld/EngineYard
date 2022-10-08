@@ -7,15 +7,29 @@
 
 import Foundation
 
-class Card {
+typealias Card = LocomotiveCard
+
+class LocomotiveCard {
     private let uuid: UUID = UUID()
-    let loco: Locomotive
+    private let _loco: Locomotive
+    public var loco: Locomotive {
+        return self._loco
+    }
   
-    // Production units
-    var productionUnits: Int = 0
-    var spentUnits: Int = 0
+    // Production inventory
+    struct Production {
+        let units: Int
+        let spent: Int
+        
+        init(units: Int = 0, spent: Int = 0) {
+            self.units = units
+            self.spent = spent
+        }
+    }
+    internal var production: Production
     
     init(loco: Locomotive) {
-        self.loco = loco
+        self._loco = loco
+        self.production = Production()
     }
 }

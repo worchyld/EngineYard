@@ -7,13 +7,19 @@
 
 import Foundation
 
-class Deck : Identifiable {
+typealias Deck = LocomotiveDeck
+
+class LocomotiveDeck : Identifiable {
     private let uuid: UUID = UUID()
-    public let loco: Locomotive
+    private let _loco: Locomotive
+    public var loco: Locomotive {
+        return self._loco
+    }
+    
     public var cards: [Card] = [Card]()
     
-    init(locomotive: Locomotive, cards: [Card]) {
-        self.loco = locomotive
+    init(loco: Locomotive, cards: [Card]) {
+        self._loco = loco
         self.cards = cards
     }
     

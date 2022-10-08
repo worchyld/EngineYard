@@ -41,11 +41,11 @@ extension Board {
             var cards: [Card] = [Card]()
             
             for _ in 0...loco.qty {
-                let c = Card.init(loco: loco)
+                let c = Card(loco: loco)
                 cards.append(c)
             }
             
-            let deck = Deck.init(locomotive: loco, cards: cards)
+            let deck = Deck(loco: loco, cards: cards)
             decks.append(deck)
         }
         
