@@ -16,7 +16,7 @@ extension Board {
     func prepare() {
 
         self.locos = [
-            //         id   ,   name                ,   £    color       gen         tp   maxDice
+            //         id   ,   name                ,   £    color       gen         qty   maxDice
             Locomotive(1    ,   "General I"         ,   4    , .green    , .first    , 4 , 3),
             Locomotive(2    ,   "Fast Freight"      ,   8    , .red      , .first    , 3 , 3),
             Locomotive(3    ,   "Heavy I"           ,   12   , .yellow   , .first    , 2 , 2),
@@ -40,7 +40,7 @@ extension Board {
         for loco in self.locos {
             var cards: [Card] = [Card]()
             
-            for _ in 0...loco.trainPool {
+            for _ in 0...loco.qty {
                 let c = Card.init(loco: loco)
                 cards.append(c)
             }

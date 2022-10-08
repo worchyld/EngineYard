@@ -27,7 +27,7 @@ final class Locomotive : Hashable, Identifiable {
     }
     let generation: Generation
     let livery: Livery
-    let trainPool: Int
+    let qty: Int
     let maxDice: Int
     
     private var _rust: Rust = .notBuilt
@@ -42,13 +42,13 @@ final class Locomotive : Hashable, Identifiable {
         
     public private (set) var dicePool: [Int] = [Int]()
     
-    init(_ id: Int = 0, _ name: String, _ cost: Int, _ livery: Livery, _ generation: Generation, _ trainPool: Int, _ maxDice: Int) {
+    init(_ id: Int = 0, _ name: String, _ cost: Int, _ livery: Livery, _ generation: Generation, _ qty: Int, _ maxDice: Int) {
         self.id = id
         self.name = name
         self.cost = cost
         self.generation = generation
         self.livery = livery
-        self.trainPool = trainPool
+        self.qty = qty
         self.maxDice = maxDice
     }
 }
