@@ -27,7 +27,7 @@ final class Locomotive : Hashable, Identifiable {
     }
     let generation: Generation
     let livery: Livery
-    let qty: Int
+    var qty: Int
     let maxDice: Int
     
     private var _rust: Rust = .notBuilt
@@ -39,10 +39,10 @@ final class Locomotive : Hashable, Identifiable {
     public var available: Bool {
         return _available
     }
-        
-    public private (set) var dicePool: [Int] = [Int]()
     
-    init(_ id: Int = 0, _ name: String, _ cost: Int, _ livery: Livery, _ generation: Generation, _ qty: Int, _ maxDice: Int) {
+    var dicePool: [Int]?
+        
+    init(_ id: Int = 0, _ name: String, _ cost: Int, _ livery: Livery, _ generation: Generation, _ qty: Int, _ maxDice: Int, _ dp: [Int]? = nil) {
         self.id = id
         self.name = name
         self.cost = cost
@@ -50,6 +50,11 @@ final class Locomotive : Hashable, Identifiable {
         self.livery = livery
         self.qty = qty
         self.maxDice = maxDice
+        if let dp = dp {
+            self.dicePool = dp
+        } else {
+            self.dicePool = nil
+        }
     }
 }
 
@@ -82,7 +87,10 @@ extension Locomotive {
         self._rust.age()
     }
     
-    public func toggleAvailability() {
-        self._available = !self._available
+    public func reduceStockBy1() {
+        guard self.qty > 0 else {
+            return
+        }
+        self.qty -= 1
     }
 }

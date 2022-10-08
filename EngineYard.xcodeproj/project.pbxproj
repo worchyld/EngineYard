@@ -57,7 +57,6 @@
 		4D9D103B28419E400045E759 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D103A28419E400045E759 /* Game.swift */; };
 		4D9E6B0B28E91EE30054F91D /* LocoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9E6B0A28E91EE30054F91D /* LocoTests.swift */; };
 		4D9E6B0D28E929680054F91D /* D6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9E6B0C28E929680054F91D /* D6.swift */; };
-		4D9E6B0F28E92D260054F91D /* DicePoolManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9E6B0E28E92D260054F91D /* DicePoolManager.swift */; };
 		4DA2FEA2256749FD00F606AF /* TrainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA2FEA1256749FD00F606AF /* TrainListView.swift */; };
 		4DA2FEAF25674A2E00F606AF /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA2FEAE25674A2E00F606AF /* Card.swift */; };
 		4DA2FEB425674D5100F606AF /* LocomotiveCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA2FEB325674D5100F606AF /* LocomotiveCellView.swift */; };
@@ -147,7 +146,6 @@
 		4D9D103A28419E400045E759 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		4D9E6B0A28E91EE30054F91D /* LocoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocoTests.swift; sourceTree = "<group>"; };
 		4D9E6B0C28E929680054F91D /* D6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D6.swift; sourceTree = "<group>"; };
-		4D9E6B0E28E92D260054F91D /* DicePoolManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DicePoolManager.swift; sourceTree = "<group>"; };
 		4DA2FEA1256749FD00F606AF /* TrainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainListView.swift; sourceTree = "<group>"; };
 		4DA2FEAE25674A2E00F606AF /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		4DA2FEB325674D5100F606AF /* LocomotiveCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocomotiveCellView.swift; sourceTree = "<group>"; };
@@ -238,7 +236,6 @@
 		4D613FC828D7467600811666 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				4D9E6B0E28E92D260054F91D /* DicePoolManager.swift */,
 				4DD53092280908AD0013840D /* ProductionManager.swift */,
 				4D613FC328D72CB300811666 /* ShiftProduction.swift */,
 			);
@@ -574,7 +571,6 @@
 				4D5AC92C2555FE3500E39048 /* PlayerViewModel.swift in Sources */,
 				4D9D103B28419E400045E759 /* Game.swift in Sources */,
 				4D5AC8D32555C27700E39048 /* EY+Date.swift in Sources */,
-				4D9E6B0F28E92D260054F91D /* DicePoolManager.swift in Sources */,
 				4D5AC9342555FF8D00E39048 /* ListOfPlayersHorizontalView.swift in Sources */,
 				4DCA01BF28DDDB0900558599 /* SalesOrder.swift in Sources */,
 			);
