@@ -18,6 +18,7 @@ class ProductionManager {
         case add(Int)
         case spend(Int)
         case reset
+        // todo: shift
     }
     
     static func modify(production: Production, _ useCase: ProductionUseCase) -> Result<Production, ProductionError> {
