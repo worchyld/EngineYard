@@ -33,7 +33,8 @@ struct Production {
             return .init(units: newUnits, spent: spent)
         case .spendProductionUnits(let spentUnits):
             let newUnits = self.units - spentUnits
-            return .init(units: newUnits, spent: spentUnits)
+            let newSpend = self.spent + spentUnits
+            return .init(units: newUnits, spent: newSpend)
         case .resetProductionUnits:
             let newUnits = self.units + self.spent
             return .init(units: newUnits, spent: 0)
