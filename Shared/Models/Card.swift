@@ -16,20 +16,10 @@ class LocomotiveCard {
         return self._loco
     }
   
-    // Production inventory
-    struct Production {
-        let units: Int
-        let spent: Int
-        
-        init(units: Int = 0, spent: Int = 0) {
-            self.units = units
-            self.spent = spent
-        }
-    }
-    internal var production: Production
+    internal var production: Production?
     
     init(loco: Locomotive) {
         self._loco = loco
-        self.production = Production()
+        self.production = Production(units: 0, spent: 0)
     }
 }
