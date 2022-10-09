@@ -48,6 +48,7 @@
 		4D807BD42555C0940067ABD0 /* Birdy_Notification1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D807BCF2555C0940067ABD0 /* Birdy_Notification1.wav */; };
 		4D8A2DB928F32EA40055C47E /* Production.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8A2DB828F32EA40055C47E /* Production.swift */; };
 		4D8A2DBB28F32F000055C47E /* ProductionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8A2DBA28F32F000055C47E /* ProductionTests.swift */; };
+		4D8A2DBD28F331A80055C47E /* ProductionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8A2DBC28F331A80055C47E /* ProductionManager.swift */; };
 		4D909E4127D216DF00A50180 /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D909E4027D216DF00A50180 /* ErrorCode.swift */; };
 		4D909E4327D2180500A50180 /* EY+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D909E4227D2180500A50180 /* EY+Notification.swift */; };
 		4D90BEC227D1F42B00C13550 /* TaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D90BEC127D1F42B00C13550 /* TaxTests.swift */; };
@@ -73,7 +74,6 @@
 		4DB92B032555BDEF00B976A2 /* EngineYardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB92B022555BDEF00B976A2 /* EngineYardUITests.swift */; };
 		4DCA01BF28DDDB0900558599 /* SalesOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCA01BE28DDDB0900558599 /* SalesOrder.swift */; };
 		4DCA01C128DDDB5700558599 /* SalesOrderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCA01C028DDDB5700558599 /* SalesOrderTests.swift */; };
-		4DD53093280908AD0013840D /* ProductionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD53092280908AD0013840D /* ProductionManager.swift */; };
 		4DDEB2B72565FE5700715529 /* PlayerHUDHorizontalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDEB2B62565FE5700715529 /* PlayerHUDHorizontalView.swift */; };
 		4DE3A50528436D3A00CC0B49 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3A50428436D3A00CC0B49 /* Board.swift */; };
 		4DFEFE47256B965B0081DC10 /* LocomotiveProductionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEFE46256B965B0081DC10 /* LocomotiveProductionCellView.swift */; };
@@ -138,6 +138,7 @@
 		4D807BCF2555C0940067ABD0 /* Birdy_Notification1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Notification1.wav; sourceTree = "<group>"; };
 		4D8A2DB828F32EA40055C47E /* Production.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Production.swift; sourceTree = "<group>"; };
 		4D8A2DBA28F32F000055C47E /* ProductionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionTests.swift; sourceTree = "<group>"; };
+		4D8A2DBC28F331A80055C47E /* ProductionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionManager.swift; sourceTree = "<group>"; };
 		4D909E4027D216DF00A50180 /* ErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCode.swift; sourceTree = "<group>"; };
 		4D909E4227D2180500A50180 /* EY+Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Notification.swift"; sourceTree = "<group>"; };
 		4D90BEC127D1F42B00C13550 /* TaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTests.swift; sourceTree = "<group>"; };
@@ -169,7 +170,6 @@
 		4DB92B042555BDEF00B976A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DCA01BE28DDDB0900558599 /* SalesOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesOrder.swift; sourceTree = "<group>"; };
 		4DCA01C028DDDB5700558599 /* SalesOrderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesOrderTests.swift; sourceTree = "<group>"; };
-		4DD53092280908AD0013840D /* ProductionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionManager.swift; sourceTree = "<group>"; };
 		4DDEB2B62565FE5700715529 /* PlayerHUDHorizontalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerHUDHorizontalView.swift; sourceTree = "<group>"; };
 		4DE3A50428436D3A00CC0B49 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		4DFEFE46256B965B0081DC10 /* LocomotiveProductionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocomotiveProductionCellView.swift; sourceTree = "<group>"; };
@@ -216,6 +216,7 @@
 				4D75BFC028D6BF1E002C44F0 /* Deck.swift */,
 				4DA2FEAE25674A2E00F606AF /* Card.swift */,
 				4D8A2DB828F32EA40055C47E /* Production.swift */,
+				4D8A2DBC28F331A80055C47E /* ProductionManager.swift */,
 				4D5AC8FE2555DCE600E39048 /* Livery.swift */,
 				4D5AC9032555DD0C00E39048 /* Generation.swift */,
 				4D5AC9172555DD8300E39048 /* Rust.swift */,
@@ -239,7 +240,6 @@
 		4D613FC828D7467600811666 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				4DD53092280908AD0013840D /* ProductionManager.swift */,
 				4D613FC328D72CB300811666 /* ShiftProduction.swift */,
 			);
 			path = Managers;
@@ -556,6 +556,7 @@
 				4D75BFBF28D6BBCE002C44F0 /* Constants.swift in Sources */,
 				4D5AC9042555DD0C00E39048 /* Generation.swift in Sources */,
 				4D5AC8D62555C27700E39048 /* EY+FileManager.swift in Sources */,
+				4D8A2DBD28F331A80055C47E /* ProductionManager.swift in Sources */,
 				4DE3A50528436D3A00CC0B49 /* Board.swift in Sources */,
 				4D75BFC128D6BF1E002C44F0 /* Deck.swift in Sources */,
 				4D5AC8FF2555DCE600E39048 /* Livery.swift in Sources */,
@@ -569,7 +570,6 @@
 				4DFEFE47256B965B0081DC10 /* LocomotiveProductionCellView.swift in Sources */,
 				4D5AC9272555DF0500E39048 /* PlayerHUDVerticalView.swift in Sources */,
 				4D5AC8D52555C27700E39048 /* EY+CaseIterable.swift in Sources */,
-				4DD53093280908AD0013840D /* ProductionManager.swift in Sources */,
 				4D5AC8D42555C27700E39048 /* EY+Int.swift in Sources */,
 				4D5AC90A2555DD3300E39048 /* Die.swift in Sources */,
 				4D5AC92C2555FE3500E39048 /* PlayerViewModel.swift in Sources */,
