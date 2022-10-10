@@ -22,7 +22,7 @@ class TaxTests: XCTestCase {
     func testTaxDue() {
         let balance = 100
         let expected = 10
-        let taxDue = Tax.due(on: balance)
+        let taxDue = Tax.calculate(on: balance)
         XCTAssertTrue(taxDue == expected)
     }
     
@@ -36,7 +36,7 @@ class TaxTests: XCTestCase {
     func testNegativeValues() {
         let balance = -10
         let expected = 0
-        let taxDue = Tax.due(on: balance)
+        let taxDue = Tax.calculate(on: balance)
         XCTAssertTrue(taxDue == expected)
 
         let taxPay = Tax.pay(on: balance)
@@ -58,7 +58,7 @@ class TaxTests: XCTestCase {
         let _ = arrayOfValues.map{
             let value = $0["value"]! as Int
             let expected = $0["expected"]! as Int
-            let taxDue = Tax.due(on: value)
+            let taxDue = Tax.calculate(on: value)
 
             XCTAssertTrue(taxDue == expected)
         }
