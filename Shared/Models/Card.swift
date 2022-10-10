@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct Card: Identifiable {
+    let id: UUID = UUID()
+}

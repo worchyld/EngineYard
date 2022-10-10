@@ -7,6 +7,11 @@
 
 import Foundation
 
-class Deck : GenericDeck {
+class Deck : GenericDeck<Card> {
+    private let loco: Locomotive
     
+    init(loco: Locomotive) {
+        self.loco = loco
+        super.init(id: UUID(), cards: nil)
+    }
 }

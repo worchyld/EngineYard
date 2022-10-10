@@ -41,6 +41,8 @@
 		4D7671FB28F429370011F607 /* GenericDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7671FA28F429370011F607 /* GenericDeck.swift */; };
 		4D7671FD28F429860011F607 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7671FC28F429860011F607 /* Deck.swift */; };
 		4D7671FF28F429C40011F607 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7671FE28F429C40011F607 /* Card.swift */; };
+		4D76720128F42D060011F607 /* Locomotive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D76720028F42D060011F607 /* Locomotive.swift */; };
+		4D76720628F434CA0011F607 /* locos.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D76720528F434CA0011F607 /* locos.json */; };
 		4D7DE2D528DD67E700A79EDE /* HandManagementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7DE2D428DD67E700A79EDE /* HandManagementTests.swift */; };
 		4D807BD02555C0940067ABD0 /* cardSlide8.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D807BCB2555C0940067ABD0 /* cardSlide8.wav */; };
 		4D807BD12555C0940067ABD0 /* cardSlide1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D807BCC2555C0940067ABD0 /* cardSlide1.wav */; };
@@ -131,6 +133,8 @@
 		4D7671FA28F429370011F607 /* GenericDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericDeck.swift; sourceTree = "<group>"; };
 		4D7671FC28F429860011F607 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		4D7671FE28F429C40011F607 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		4D76720028F42D060011F607 /* Locomotive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locomotive.swift; sourceTree = "<group>"; };
+		4D76720528F434CA0011F607 /* locos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = locos.json; sourceTree = "<group>"; };
 		4D7DE2D428DD67E700A79EDE /* HandManagementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandManagementTests.swift; sourceTree = "<group>"; };
 		4D807BCB2555C0940067ABD0 /* cardSlide8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardSlide8.wav; sourceTree = "<group>"; };
 		4D807BCC2555C0940067ABD0 /* cardSlide1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardSlide1.wav; sourceTree = "<group>"; };
@@ -214,6 +218,7 @@
 				4DE3A50428436D3A00CC0B49 /* Board.swift */,
 				4D7671FA28F429370011F607 /* GenericDeck.swift */,
 				4D7671FC28F429860011F607 /* Deck.swift */,
+				4D76720028F42D060011F607 /* Locomotive.swift */,
 				4D7671FE28F429C40011F607 /* Card.swift */,
 				4D8A2DB828F32EA40055C47E /* Production.swift */,
 				4D8A2DBC28F331A80055C47E /* ProductionManager.swift */,
@@ -245,9 +250,18 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		4D76720228F434790011F607 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4D76720528F434CA0011F607 /* locos.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		4D807BC62555C03F0067ABD0 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				4D76720228F434790011F607 /* Data */,
 				4D807BCA2555C0700067ABD0 /* Sounds */,
 				4D807BC92555C0680067ABD0 /* Helpers */,
 				4D807BC82555C04B0067ABD0 /* Extensions */,
@@ -500,6 +514,7 @@
 				4D807BD42555C0940067ABD0 /* Birdy_Notification1.wav in Resources */,
 				4D807BD22555C0940067ABD0 /* Birdy_Note5.wav in Resources */,
 				4DB92AED2555BDEF00B976A2 /* Preview Assets.xcassets in Resources */,
+				4D76720628F434CA0011F607 /* locos.json in Resources */,
 				4D807BD02555C0940067ABD0 /* cardSlide8.wav in Resources */,
 				4D807BD12555C0940067ABD0 /* cardSlide1.wav in Resources */,
 				4DB92AEA2555BDEF00B976A2 /* Assets.xcassets in Resources */,
@@ -573,6 +588,7 @@
 				4D5AC8D42555C27700E39048 /* EY+Int.swift in Sources */,
 				4D5AC90A2555DD3300E39048 /* Die.swift in Sources */,
 				4D5AC92C2555FE3500E39048 /* PlayerViewModel.swift in Sources */,
+				4D76720128F42D060011F607 /* Locomotive.swift in Sources */,
 				4D9D103B28419E400045E759 /* Game.swift in Sources */,
 				4D5AC8D32555C27700E39048 /* EY+Date.swift in Sources */,
 				4D5AC9342555FF8D00E39048 /* ListOfPlayersHorizontalView.swift in Sources */,

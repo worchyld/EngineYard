@@ -17,14 +17,10 @@ extension Livery: CustomStringConvertible {
     var description: String {
         get {
             switch self {
-            case .green:
-                return "green"
-            case .blue:
-                return "blue"
-            case .red:
-                return "red"
-            case .yellow:
-                return "yellow"
+            case .green: return "green"
+            case .red: return "red"
+            case .yellow: return "yellow"
+            case .blue: return "blue"
             }
         }
     }
@@ -35,14 +31,10 @@ extension Livery {
     public var iconAsset : String {
         get {
             switch self {
-            case .green:
-                return "icon-train-green"
-            case .red:
-                return "icon-train-red"
-            case .blue:
-                return "icon-train-yellow"
-            case .yellow:
-                return "icon-train-blue"
+            case .green: return "icon-train-green"
+            case .red: return "icon-train-red"
+            case .yellow: return "icon-train-yellow"
+            case .blue: return "icon-train-blue"
             }
         }
     }

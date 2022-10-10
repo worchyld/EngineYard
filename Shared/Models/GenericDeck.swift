@@ -16,7 +16,9 @@ protocol DeckDelegate: AnyObject {
     func pop() -> Element?
 }
 
-final class GenericDeck<Element> : DeckDelegate {
+class GenericDeck<Element> : DeckDelegate, Identifiable {
+    let id: UUID
+    
     var size: Int {
         return cards.count
     }
@@ -24,7 +26,16 @@ final class GenericDeck<Element> : DeckDelegate {
         return (cards.count == 0)
     }
     
-    internal var cards: [Element] = []
+    final internal var cards: [Element] = []
+    
+    init(id: UUID, cards: [Element]?) {
+        self.id = id
+        if let cards = cards {
+            self.cards = cards
+        } else {
+            self.cards = [Element]()
+        }
+    }
     
     func push(_ element: Element) {
         cards.append(element)
