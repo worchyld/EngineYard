@@ -7,6 +7,8 @@
 
 import Foundation
 
+// Locomotive decks
+
 class Deck : GenericDeck<Card> {
     private let loco: Locomotive
     
