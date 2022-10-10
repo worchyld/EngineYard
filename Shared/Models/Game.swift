@@ -8,7 +8,6 @@
 import Foundation
 
 class Game {
-    var board: Board?
     var players: [Player]?
     var gamePhase: GamePhase = .setup
 }
