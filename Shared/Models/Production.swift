@@ -8,7 +8,7 @@
 import Foundation
 
 // Production inventory
-struct Production {
+struct Production: Codable {
     let units: Int
     let spent: Int
     
@@ -18,7 +18,6 @@ struct Production {
     }
     
     enum Change {
-        case setProductionUnits(Int,Int)
         case addProductionUnits(Int)
         case spendProductionUnits(Int)
         case resetProductionUnits
@@ -26,15 +25,17 @@ struct Production {
     
     func execute(_ change: Change) -> Self {
         switch change {
-        case .setProductionUnits(let units, let spent):
-            return .init(units: units, spent: spent)
+        
         case .addProductionUnits(let addUnits):
             let newUnits = self.units + addUnits
             return .init(units: newUnits, spent: spent)
-        case .spendProductionUnits(let spentUnits):
-            let newUnits = self.units - spentUnits
-            let newSpend = self.spent + spentUnits
+            
+        case .spendProductionUnits(let spendingUnits):
+            let newSpend = self.spent + spendingUnits
+            let newUnits = self.units - spendingUnits
+            
             return .init(units: newUnits, spent: newSpend)
+        
         case .resetProductionUnits:
             let newUnits = self.units + self.spent
             return .init(units: newUnits, spent: 0)

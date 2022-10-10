@@ -13,33 +13,38 @@ public enum ProductionError: Error, Equatable {
     case haveNotSpentAnyUnits
 }
 
-class ProductionManager {
-    enum ProductionUseCase {
-        case add(Int)
-        case spend(Int)
+
+public class ProductionManager {
+    private var _production: Production
+    
+    init(production: Production) {
+        self._production = production
+    }
+
+    public enum ProductionAction {
+        case add(units: Int)
+        case spend(units: Int)
         case reset
         // todo: shift
     }
     
-    static func modify(production: Production, _ useCase: ProductionUseCase) -> Result<Production, ProductionError> {
+    
+    func perform(action: ProductionAction) -> Result<Production, ProductionError> {        
         do {
-            let _ = try ProductionManager.validate(useCase, p: production)
-
-            switch (useCase) {
+            let _ = try ProductionManager.validate(action, p: self._production)
+            
+            switch (action) {
             case .add(let units):
-                var p = production
-                p = p.execute(.addProductionUnits(units))
-                return .success(p)
+                self._production = _production.execute(.addProductionUnits(units))
+                return .success(self._production)
                 
-            case .spend(let spend):
-                var p = production
-                p = p.execute(.spendProductionUnits(spend))
-                return .success(p)
+            case .spend(let units):
+                self._production = _production.execute(.spendProductionUnits(units))
+                return .success(self._production)
                 
             case .reset:
-                var p = production
-                p = p.execute(.resetProductionUnits)
-                return .success(p)
+                self._production = self._production.execute(.resetProductionUnits)
+                return .success(self._production)
             }
             
         }
@@ -49,8 +54,9 @@ class ProductionManager {
     }
 }
 
+
 extension ProductionManager {
-    static func validate(_ useCase: ProductionUseCase, p: Production) throws {
+    static func validate(_ useCase: ProductionAction, p: Production) throws {
         switch (useCase) {
         case .add(let units):
             guard units > 0 else {

@@ -7,6 +7,7 @@
 
 import Foundation
 
+/*
 public enum ShiftErrorDelegate : Error {
     case sameCard
     case sameGeneration
@@ -141,3 +142,4 @@ class ShiftProduction {
      
      */
 }
+*/
