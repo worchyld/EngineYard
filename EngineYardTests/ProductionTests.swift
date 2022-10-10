@@ -59,24 +59,23 @@ final class ProductionTests: XCTestCase {
     
     func testProductionManagerAdd() throws {
         var p = Production(units: 4, spent: 0)
-        let pm = ProductionManager.init(production: p)
-        let result = pm.perform(action: .add(units: 1))
+        let pm = ProductionManager()
+        let result = pm.add(units: 1, p: p)
         
         switch result {
         case .success(let prod):
             p = prod
-            XCTAssertTrue(p.units == 5)
+            XCTAssertTrue(p.units == 5, "expected 5, got: \(p.units)")
             XCTAssertTrue(p.spent == 0)
         case .failure(let error):
             XCTFail("Got error -- \(error)")
         }
     }
-    
-    
+
     func testProductionManagerSpend() throws {
         var p = Production(units: 4, spent: 0)
-        let pm = ProductionManager.init(production: p)
-        let result = pm.perform(action: .spend(units: 1))
+        let pm = ProductionManager()
+        let result = pm.spend(units: 1, on: p)
 
         switch result {
         case .success(let prod):
@@ -85,15 +84,25 @@ final class ProductionTests: XCTestCase {
             XCTFail("Got error -- \(error)")
         }
         
-        XCTAssertTrue(p.units == 3)
-        XCTAssertTrue(p.spent == 1)
+        XCTAssertTrue(p.units == 3, "expected 3, got: \(p.units)")
+        XCTAssertTrue(p.spent == 1, "expected 1, got: \(p.spent)")
     }
     
     func testProductionManagerReset() throws {
         var p = Production(units: 4, spent: 0)
-        let pm = ProductionManager.init(production: p)
-        var result = pm.perform(action: .spend(units: 1))
-        result = pm.perform(action: .reset)
+        let pm = ProductionManager()
+       
+        var result = pm.spend(units: 1, on: p)//perform(action: .spend(units: 1))
+        switch result {
+        case .success(let prod):
+            p = prod
+            XCTAssertTrue(p.units == 3)
+            XCTAssertTrue(p.spent == 1)
+        case .failure(let error):
+            XCTFail("Got error -- \(error)")
+        }
+                
+        result = pm.reset(p: p)
         
         switch result {
         case .success(let prod):
@@ -105,4 +114,32 @@ final class ProductionTests: XCTestCase {
         XCTAssertTrue(p.units == 4)
         XCTAssertTrue(p.spent == 0)
     }
+    
+    func testProductionManagerResetMultiple() throws {
+        var p = Production(units: 10, spent: 0)
+        let pm = ProductionManager()
+       
+        var result = pm.spend(units: 3, on: p)
+        switch result {
+        case .success(let prod):
+            p = prod
+        case .failure(let error):
+            XCTFail("Got error -- \(error)")
+        }
+        
+        result = pm.spend(units: 3, on: p)        
+        switch result {
+        case .success(let prod):
+            p = prod
+        case .failure(let error):
+            XCTFail("Got error -- \(error)")
+        }
+        
+        XCTAssertTrue(p.units == 4, "got: \(p.units)")
+        XCTAssertTrue(p.spent == 6, "got: \(p.spent)")
+        
+        result = pm.reset(p: p)
+        XCTAssertTrue(try result.get().units == 10)
+    }
+
 }
