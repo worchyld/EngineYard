@@ -14,7 +14,7 @@ class RustTests: XCTestCase {
     func testRustNotBuiltToNew() {
         var rust = Rust.notBuilt
         let expected = Rust.new
-        rust.age()
+        rust.rustify()
         XCTAssertEqual(rust, expected)
         print ("Rust: \(rust)")
     }
@@ -22,7 +22,7 @@ class RustTests: XCTestCase {
     func testRustingToRusted() {
         var rust = Rust.rusting
         let expected = Rust.rusted
-        rust.age()
+        rust.rustify()
         XCTAssertEqual(rust, expected)
         print ("Rust: \(rust)")
     }
@@ -31,7 +31,7 @@ class RustTests: XCTestCase {
     func testRustedDoesNotLoop() {
         var rust = Rust.rusted
         let expected = Rust.rusted
-        rust.age()
+        rust.rustify()
         XCTAssertEqual(rust, expected)
         XCTAssertNotEqual(rust, .notBuilt)
     }
