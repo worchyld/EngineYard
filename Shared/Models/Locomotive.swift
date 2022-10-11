@@ -64,14 +64,14 @@ struct Locomotive: Codable, Identifiable {
 }
 
 extension Locomotive {
-    enum Change {
+    internal enum Change {
         case subtractQtyBy1
         case rustify
         case addOrder(order: Int)
         case addSale(sale: Int)
     }
     
-    func execute(_ change: Change) -> Self {
+    internal func execute(_ change: Change) -> Self {
         switch change {
         case .subtractQtyBy1:
             guard qty > 0 else {
