@@ -207,7 +207,6 @@
 				4D9D103A28419E400045E759 /* Game.swift */,
 				4DE3A50428436D3A00CC0B49 /* Board.swift */,
 				4D76720028F42D060011F607 /* Locomotive.swift */,
-				4D7671FA28F429370011F607 /* GenericDeck.swift */,
 				4D7671FC28F429860011F607 /* Deck.swift */,
 				4D7671FE28F429C40011F607 /* Card.swift */,
 				4D8A2DB828F32EA40055C47E /* Production.swift */,
@@ -282,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				4D5AC9092555DD3300E39048 /* NumberFormatCache.swift */,
+				4D7671FA28F429370011F607 /* GenericDeck.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
