@@ -22,16 +22,52 @@ struct Locomotive: Codable, Identifiable {
     let qty: Int // how many exist
     let capacity: Int // for dice
     let rust: Rust
-    var orders: [Int] = [Int]()
-    var sales: [Int] = [Int]()
+    let orders: [Int]
+    let sales: [Int]
+    
+    init(id: String, name: String, color: Livery, generation: Generation, cost: Int, qty: Int, capacity: Int, rust: Rust?, orders: [Int]?, sales: [Int]?) {
+        self.id = id
+        self.name = name
+        self.color = color
+        self.generation = generation
+        self.cost = cost
+        self.qty = qty
+        self.capacity = capacity
+        if let rust = rust {
+            self.rust = rust
+        } else {
+            self.rust = .notBuilt
+        }
+        if let orders = orders {
+            self.orders = orders
+        } else {
+            self.orders = [Int]()
+        }
+        if let sales = sales {
+            self.sales = sales
+        } else {
+            self.sales = [Int]()
+        }
+    }
 }
 
 extension Locomotive {
-    func allLocos() -> [Locomotive] {
+    internal static func allLocos() -> [Locomotive] {
         let locos: [Locomotive] = [
-            Locomotive.init(id: UUID().uuidString, name: "General I", color: .green, generation: .first, cost: 4, qty: 4, capacity: 3, rust: .notBuilt),
-            Locomotive.init(id: UUID().uuidString, name: "Fast Freight I", color: .red, generation: .first, cost: 8, qty: 4, capacity: 3, rust: .notBuilt),
-            
+            Locomotive.init(id: UUID().uuidString, name: "General I", color: .green, generation: .first, cost: 4, qty: 4, capacity: 3, rust: nil, orders: nil, sales:nil),
+            Locomotive.init(id: UUID().uuidString, name: "Fast Freight I", color: .red, generation: .first, cost: 8, qty: 3, capacity: 3, rust: nil, orders: nil, sales: nil),
+            Locomotive.init(id: UUID().uuidString, name: "Heavy I", color: .yellow, generation: .first, cost: 12, qty: 2, capacity: 2, rust: nil, orders: nil, sales: nil),
+            Locomotive.init(id: UUID().uuidString, name: "Special I", color: .blue, generation: .first, cost: 16, qty: 1, capacity: 1, rust: nil, orders: nil, sales: nil),
+            Locomotive.init(id: UUID().uuidString, name: "General II", color: .green, generation: .second, cost: 20, qty: 4, capacity: 4, rust: nil, orders: nil, sales: nil),
+            Locomotive.init(id: UUID().uuidString, name: "Fast Freight II", color: .red, generation: .second, cost: 24, qty: 3, capacity: 3, rust: nil, orders: nil, sales: nil),
+            Locomotive.init(id: UUID().uuidString, name: "Heavy II", color: .yellow, generation: .second, cost: 28, qty: 2, capacity: 3, rust: nil, orders: nil, sales: nil),
+            Locomotive.init(id: UUID().uuidString, name: "General III", color: .green, generation: .third, cost: 32, qty: 4, capacity: 4, rust: nil, orders: nil, sales: nil),
+            Locomotive.init(id: UUID().uuidString, name: "Special II", color: .blue, generation: .second, cost: 36, qty: 2, capacity: 2, rust: nil, orders: nil, sales: nil),
+            Locomotive.init(id: UUID().uuidString, name: "Fast Freight III", color: .red, generation: .third, cost: 40, qty: 3, capacity: 4, rust: nil, orders: nil, sales: nil),
+            Locomotive.init(id: UUID().uuidString, name: "General IV", color: .green, generation: .fourth, cost: 44, qty: 4, capacity: 5, rust: nil, orders: nil, sales: nil),
+            Locomotive.init(id: UUID().uuidString, name: "Heavy III", color: .yellow, generation: .third, cost: 48, qty: 3, capacity: 3, rust: nil, orders: nil, sales: nil),
+            Locomotive.init(id: UUID().uuidString, name: "Fast Freight IV", color: .red, generation: .fourth, cost: 52, qty: 4, capacity: 4, rust: nil, orders: nil, sales: nil),
+            Locomotive.init(id: UUID().uuidString, name: "General V", color: .green, generation: .fifth, cost: 56, qty: 4, capacity: 5, rust: nil, orders: nil, sales: nil),
             
             /*
             Locomotive(1    ,   "General I"         ,   4    , .green    , .first    , 4 , 3),
