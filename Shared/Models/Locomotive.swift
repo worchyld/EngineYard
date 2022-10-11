@@ -30,6 +30,12 @@ struct Locomotive: Codable, Identifiable {
         }
         return false
     }
+    var isAvailable: Bool {
+        let hasOrders = orders.count > 0
+        let hasSales = sales.count > 0
+        return ((hasOrders || hasSales) && rust.isActiveButNotRusted())
+                //(rustValue >= Rust.new.rawValue && rustValue <= Rust.rusting.rawValue))
+    }
     
     init(id: UUID, name: String, livery: Livery, generation: Generation, cost: Int, qty: Int, capacity: Int, rust: Rust?, orders: [Int]?, sales: [Int]?) {
         self.id = id

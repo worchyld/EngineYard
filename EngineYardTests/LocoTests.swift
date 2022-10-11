@@ -37,14 +37,14 @@ final class LocoTests: XCTestCase {
         XCTAssertEqual(sum, Constants.totalCapacity)
     }
     
-        
+    
     func testLocoCostsAreModularOf4() throws {
         let locos = self.allLocos!
         let _ = locos.map { loco in
             XCTAssertTrue(loco.cost % 4 == 0)
         }
     }
-
+    
     func testTotalColors() throws {
         let green = self.allLocos!.filter{ return $0.livery == .green }
         let red = self.allLocos!.filter{ return $0.livery == .red }
@@ -138,6 +138,13 @@ final class LocoTests: XCTestCase {
         // try to exceed rusted state
         firstLoco = firstLoco.execute(.rustify)
         XCTAssertTrue(firstLoco.rust == .rusted)
+    }
 
+    
+    func testRustAvailability() throws {
+        var firstLoco = self.allLocos!.first!
+        XCTAssertFalse(firstLoco.isAvailable)
+        firstLoco = firstLoco.execute(.addOrder(order: Die.roll))
+        XCTAssertTrue(firstLoco.isAvailable)
     }
 }
