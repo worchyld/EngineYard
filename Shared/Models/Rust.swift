@@ -41,4 +41,9 @@ extension Rust : RustUseCases {
         // set rusted as the default if it can't be aged further
         self = Rust(rawValue: rawValue + 1) ?? .rusted
     }
+    
+    public func isActiveButNotRusted() -> Bool {
+        let rustValue = self.rawValue
+        return (rustValue >= Rust.new.rawValue && rustValue <= Rust.rusting.rawValue)
+    }
 }
