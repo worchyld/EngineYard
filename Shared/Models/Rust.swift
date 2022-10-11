@@ -11,7 +11,7 @@ import Foundation
 // In the game trains can be unavailable to purchase (not built) thru to rusted
 
 protocol RustUseCases {
-    mutating func age()
+    mutating func rustify()
 }
 
 enum Rust : NSInteger, Codable, CaseIterable, Equatable {
@@ -37,8 +37,13 @@ extension Rust: CustomStringConvertible {
 }
 
 extension Rust : RustUseCases {
-    mutating func age() {
+    mutating func rustify() {
         // set rusted as the default if it can't be aged further
         self = Rust(rawValue: rawValue + 1) ?? .rusted
+    }
+    
+    public func isActiveButNotRusted() -> Bool {
+        let rustValue = self.rawValue
+        return (rustValue >= Rust.new.rawValue && rustValue <= Rust.rusting.rawValue)
     }
 }

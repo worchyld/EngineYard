@@ -1,25 +1,23 @@
 //
-//  Locomotive.swift
+//  Card.swift
 //  EngineYard
 //
-//  Created by Amarjit on 20/11/2020.
+//  Created by Amarjit on 10/10/2022.
 //
 
 import Foundation
 
-typealias Card = LocomotiveCard
-
-class LocomotiveCard {
-    private let uuid: UUID = UUID()
-    private let _loco: Locomotive
-    public var loco: Locomotive {
-        return self._loco
+struct Card: Identifiable {
+    let id: UUID
+    private let locomotive: Locomotive?
+    public var loco: Locomotive? {
+        return self.locomotive
     }
-  
-    internal var production: Production?
+    let production: Production
     
-    init(loco: Locomotive) {
-        self._loco = loco
-        self.production = Production(units: 0, spent: 0)
+    init(id: UUID, locomotive: Locomotive?) {
+        self.id = UUID()
+        self.locomotive = locomotive
+        self.production = Production()
     }
 }

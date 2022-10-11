@@ -1,0 +1,128 @@
+[
+  {
+    "id": 1,
+    "name": "General I",
+    "cost": 4,
+    "color": 1,
+    "gen": 1,
+    "qty": 4,
+    "maxDice": 3
+  },
+  {
+    "id": 2,
+    "name": "Fast Freight",
+    "cost": 8,
+    "color": 2,
+    "gen": 1,
+    "qty": 3,
+    "maxDice": 3
+  },
+  {
+    "id": 3,
+    "name": "Heavy I",
+    "cost": 12,
+    "color": 3,
+    "gen": 1,
+    "qty": 2,
+    "maxDice": 2
+  },
+  {
+    "id": 4,
+    "name": "Special I",
+    "cost": 16,
+    "color": 4,
+    "gen": 1,
+    "qty": 1,
+    "maxDice": 1
+  },
+  {
+    "id": 5,
+    "name": "General II",
+    "cost": 20,
+    "color": 1,
+    "gen": 2,
+    "qty": 4,
+    "maxDice": 4
+  },
+  {
+    "id": 6,
+    "name": "Fast Freight II",
+    "cost": 24,
+    "color": 2,
+    "gen": 2,
+    "qty": 3,
+    "maxDice": 3
+  },
+  {
+    "id": 7,
+    "name": "Heavy II",
+    "cost": 28,
+    "color": 3,
+    "gen": 2,
+    "qty": 2,
+    "maxDice": 3
+  },
+  {
+    "id": 8,
+    "name": "General III",
+    "cost": 32,
+    "color": 1,
+    "gen": 3,
+    "qty": 4,
+    "maxDice": 4
+  },
+  {
+    "id": 9,
+    "name": "Special II",
+    "cost": 36,
+    "color": 4,
+    "gen": 2,
+    "qty": 2,
+    "maxDice": 2
+  },
+  {
+    "id": 10,
+    "name": "Fast Freight III",
+    "cost": 40,
+    "color": 2,
+    "gen": 3,
+    "qty": 3,
+    "maxDice": 4
+  },
+  {
+    "id": 11,
+    "name": "General IV",
+    "cost": 44,
+    "color": 1,
+    "gen": 4,
+    "qty": 4,
+    "maxDice": 5
+  },
+  {
+    "id": 12,
+    "name": "Heavy III",
+    "cost": 48,
+    "color": 3,
+    "gen": 3,
+    "qty": 3,
+    "maxDice": 3
+  },
+  {
+    "id": 13,
+    "name": "Fast Freight IV",
+    "cost": 52,
+    "color": 2,
+    "gen": 4,
+    "qty": 4,
+    "maxDice": 4
+  },
+  {
+    "id": 14,
+    "name": "General V",
+    "cost": 56,
+    "color": 1,
+    "gen": 5,
+    "qty": 4,
+    "maxDice": 5
+  }
+]
