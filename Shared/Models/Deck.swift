@@ -15,8 +15,8 @@ class Deck : GenericDeck<Card> {
         return self.locomotive
     }
     
-    init(loco: Locomotive) {
+    init(loco: Locomotive, cards: [Card]? = nil) {
         self.locomotive = loco
-        super.init(id: UUID(), cards: nil)
+        super.init(id: UUID(), cards: cards)
     }
 }
