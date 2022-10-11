@@ -128,10 +128,16 @@ final class LocoTests: XCTestCase {
     
     func testRustify() throws {
         var firstLoco = self.allLocos!.first!
-        var newRust = firstLoco.rust
-        newRust.age()
-        firstLoco = firstLoco.execute(.rustify(rust: newRust))
+        XCTAssertTrue(firstLoco.rust == .notBuilt)
+        firstLoco = firstLoco.execute(.rustify)
         XCTAssertTrue(firstLoco.rust == .new)
+        firstLoco = firstLoco.execute(.rustify)
+        XCTAssertTrue(firstLoco.rust == .rusting)
+        firstLoco = firstLoco.execute(.rustify)
+        XCTAssertTrue(firstLoco.rust == .rusted)
+        // try to exceed rusted state
+        firstLoco = firstLoco.execute(.rustify)
+        XCTAssertTrue(firstLoco.rust == .rusted)
 
     }
 }

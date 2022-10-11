@@ -60,7 +60,7 @@ struct Locomotive: Codable, Identifiable {
 extension Locomotive {
     enum Change {
         case subtractQtyBy1
-        case rustify(rust: Rust)
+        case rustify
         case addOrder(order: Int)
         case addSale(sale: Int)
     }
@@ -100,8 +100,10 @@ extension Locomotive {
             return .init(id: id, name: name, livery: livery, generation: generation, cost: cost, qty: qty, capacity: capacity, rust: rust, orders: orders, sales: sales)
 
             
-        case .rustify(let rust):
-            return .init(id: id, name: name, livery: livery, generation: generation, cost: cost, qty: qty, capacity: capacity, rust: rust, orders: orders, sales: sales)
+        case .rustify:
+            var newRust = self.rust
+            newRust.rustify()
+            return .init(id: id, name: name, livery: livery, generation: generation, cost: cost, qty: qty, capacity: capacity, rust: newRust, orders: orders, sales: sales)
             
         }
     }
