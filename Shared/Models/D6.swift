@@ -13,6 +13,12 @@ protocol D6UseCases {
     mutating func roll()
 }
 
+extension Int {
+    public var isD6 : Bool {
+        return (self >= Constants.D6.min && self <= Constants.D6.max)
+    }
+}
+
 struct D6: Codable, Equatable, D6UseCases {
     public private (set) var value: Int
 
@@ -25,14 +31,14 @@ struct D6: Codable, Equatable, D6UseCases {
     }
 
     public mutating func increment() {
-        guard self.value < 6 else {
+        guard self.value < Constants.D6.max else {
             return
         }
         self.value += 1
     }
 
     public mutating func decrement() {
-        guard self.value > 1 else {
+        guard self.value > Constants.D6.min else {
             return
         }
         self.value -= 1

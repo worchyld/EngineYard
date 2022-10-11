@@ -46,14 +46,92 @@ final class LocoTests: XCTestCase {
     }
 
     func testTotalColors() throws {
-        let green = self.allLocos!.filter{ return $0.color == .green }
-        let red = self.allLocos!.filter{ return $0.color == .red }
-        let yellow = self.allLocos!.filter{ return $0.color == .yellow }
-        let blue = self.allLocos!.filter{ return $0.color == .blue }
+        let green = self.allLocos!.filter{ return $0.livery == .green }
+        let red = self.allLocos!.filter{ return $0.livery == .red }
+        let yellow = self.allLocos!.filter{ return $0.livery == .yellow }
+        let blue = self.allLocos!.filter{ return $0.livery == .blue }
         
         XCTAssertEqual(green.count, Constants.Green.totalGenerations)
         XCTAssertEqual(red.count, Constants.Red.totalGenerations)
         XCTAssertEqual(yellow.count, Constants.Yellow.totalGenerations)
         XCTAssertEqual(blue.count, Constants.Blue.totalGenerations)
+    }
+    
+    func testAddOrder() throws {
+        var firstLoco = self.allLocos!.first!
+        XCTAssertFalse(firstLoco.isFull)
+        let capacity = firstLoco.capacity
+        for _ in 0...(capacity - 1) {
+            firstLoco = firstLoco.execute(.addOrder(order: Die.roll))
+        }
+        XCTAssertTrue(firstLoco.orders.count == capacity)
+        XCTAssertTrue(firstLoco.isFull)
+        let _ = firstLoco.orders.map {
+            XCTAssertTrue($0.isD6)
+        }
+    }
+    
+    func testAddOrdersBeyondCapacity() throws {
+        var firstLoco = self.allLocos!.first!
+        XCTAssertFalse(firstLoco.isFull)
+        let capacity = firstLoco.capacity
+        for _ in 0...(capacity - 1) {
+            firstLoco = firstLoco.execute(.addOrder(order: Die.roll))
+        }
+        firstLoco = firstLoco.execute(.addOrder(order: Die.roll))
+        XCTAssertTrue(firstLoco.orders.count == capacity)
+        XCTAssertTrue(firstLoco.isFull)
+    }
+    
+    func testAddSale() throws {
+        var firstLoco = self.allLocos!.first!
+        XCTAssertFalse(firstLoco.isFull)
+        let capacity = firstLoco.capacity
+        for _ in 0...(capacity - 1) {
+            firstLoco = firstLoco.execute(.addSale(sale: Die.roll))
+        }
+        XCTAssertTrue(firstLoco.sales.count == capacity)
+        XCTAssertTrue(firstLoco.isFull)
+        let _ = firstLoco.sales.map {
+            XCTAssertTrue($0.isD6)
+        }
+        
+        // add beyond capacity
+        firstLoco = firstLoco.execute(.addSale(sale: Die.roll))
+        XCTAssertTrue(firstLoco.sales.count == capacity)
+        XCTAssertTrue(firstLoco.isFull)
+    }
+    
+    
+    func testReduceQtyBy1() throws {
+        var firstLoco = self.allLocos!.first!
+        let expected = (firstLoco.qty - 1)
+        firstLoco = firstLoco.execute(.subtractQtyBy1)
+        XCTAssertTrue(firstLoco.qty == expected)
+        XCTAssertTrue(firstLoco.qty >= 0)
+    }
+    
+    func testReduceQtyToZero() throws {
+        var firstLoco = self.allLocos!.first!
+        let qty = firstLoco.qty
+        for _ in 1...qty {
+            firstLoco = firstLoco.execute(.subtractQtyBy1)
+        }
+        XCTAssertTrue(firstLoco.qty == 0)
+        XCTAssertTrue(firstLoco.qty >= 0)
+        
+        // try to go beyond 0
+        firstLoco = firstLoco.execute(.subtractQtyBy1)
+        XCTAssertTrue(firstLoco.qty == 0)
+        XCTAssertTrue(firstLoco.qty >= 0)
+    }
+    
+    func testRustify() throws {
+        var firstLoco = self.allLocos!.first!
+        var newRust = firstLoco.rust
+        newRust.age()
+        firstLoco = firstLoco.execute(.rustify(rust: newRust))
+        XCTAssertTrue(firstLoco.rust == .new)
+
     }
 }

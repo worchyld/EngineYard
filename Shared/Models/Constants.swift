@@ -45,4 +45,8 @@ public struct Constants {
         public static let capacityPerGeneration = [1,2,0,0,0]
         public static let qtyPerGeneration = [1,2,0,0,0]
     }
+    public struct D6 {
+        public static let min = 1
+        public static let max = 6
+    }
 }
