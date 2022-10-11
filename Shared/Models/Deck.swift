@@ -10,10 +10,13 @@ import Foundation
 // Locomotive decks
 
 class Deck : GenericDeck<Card> {
-    private let loco: Locomotive
+    private var locomotive: Locomotive
+    public var loco: Locomotive {
+        return self.locomotive
+    }
     
     init(loco: Locomotive) {
-        self.loco = loco
+        self.locomotive = loco
         super.init(id: UUID(), cards: nil)
     }
 }
