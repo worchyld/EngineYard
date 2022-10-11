@@ -115,6 +115,7 @@ extension Locomotive {
     }
 }
 
+
 extension Locomotive {
     internal static func allLocos() -> [Locomotive] {
         let locos: [Locomotive] = [

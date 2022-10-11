@@ -10,6 +10,9 @@ import Foundation
 struct Card: Identifiable {
     let id: UUID
     private let locomotive: Locomotive?
+    public var loco: Locomotive? {
+        return self.locomotive
+    }
     let production: Production
     
     init(id: UUID, locomotive: Locomotive?) {
