@@ -10,7 +10,7 @@ import Foundation
 // Locomotive decks
 
 class Deck : GenericDeck<Card> {
-    private var locomotive: Locomotive
+    private let locomotive: Locomotive
     public var loco: Locomotive {
         return self.locomotive
     }
