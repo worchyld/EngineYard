@@ -10,14 +10,35 @@ import Foundation
 import GameplayKit
 
 struct Die: Equatable {
+    public static let minimumValue = 1
+    public static let maximumValue = 6
+    
     public static var roll: Int {
         if #available(iOS 9, *) {
             let d6 = GKRandomDistribution.d6()
             return (d6.nextInt())
         }
         else {
-            let d6 = 6
-            return Int.randomInt(withMax: d6)
+            return Int.randomInt(withMax: Die.maximumValue)
         }
+    }
+}
+
+extension Die {
+    static func increment(value: Int, by amount: Int) -> Int {
+        var value = value
+        guard ((value + amount) < Die.maximumValue) else {
+            return value
+        }
+        value += 1
+        return value
+    }
+    static func decrement(value: Int, by amount: Int) -> Int {
+        var value = value
+        guard ((value - amount) > Die.minimumValue) else {
+            return value
+        }
+        value -= 1
+        return value
     }
 }
