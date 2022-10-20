@@ -57,6 +57,29 @@ final class LocoTests: XCTestCase {
         XCTAssertEqual(blue.count, Constants.Blue.totalGenerations)
     }
     
+    func testRustify() throws {
+        let firstLoco = self.allLocos!.first!
+        XCTAssertTrue(firstLoco.rust == .notBuilt)
+        firstLoco.rustify()
+        XCTAssertTrue(firstLoco.rust == .new)
+        firstLoco.rustify()
+        XCTAssertTrue(firstLoco.rust == .rusting)
+        firstLoco.rustify()
+        XCTAssertTrue(firstLoco.rust == .rusted)
+        // try to exceed rusted state
+        firstLoco.rustify()
+        XCTAssertTrue(firstLoco.rust == .rusted)
+    }
+
+    
+    func testRustAvailability() throws {
+        let firstLoco = self.allLocos!.first!
+        XCTAssertFalse(firstLoco.isAvailable)
+        firstLoco.addOrder(order: Die.roll)
+        XCTAssertTrue(firstLoco.isAvailable)
+    }
+    
+    /*
     func testAddOrder() throws {
         var firstLoco = self.allLocos!.first!
         XCTAssertFalse(firstLoco.isFull)
@@ -126,25 +149,6 @@ final class LocoTests: XCTestCase {
         XCTAssertTrue(firstLoco.qty >= 0)
     }
     
-    func testRustify() throws {
-        var firstLoco = self.allLocos!.first!
-        XCTAssertTrue(firstLoco.rust == .notBuilt)
-        firstLoco = firstLoco.execute(.rustify)
-        XCTAssertTrue(firstLoco.rust == .new)
-        firstLoco = firstLoco.execute(.rustify)
-        XCTAssertTrue(firstLoco.rust == .rusting)
-        firstLoco = firstLoco.execute(.rustify)
-        XCTAssertTrue(firstLoco.rust == .rusted)
-        // try to exceed rusted state
-        firstLoco = firstLoco.execute(.rustify)
-        XCTAssertTrue(firstLoco.rust == .rusted)
-    }
-
-    
-    func testRustAvailability() throws {
-        var firstLoco = self.allLocos!.first!
-        XCTAssertFalse(firstLoco.isAvailable)
-        //firstLoco = firstLoco.execute(.addOrder(order: Die.roll))
-        //XCTAssertTrue(firstLoco.isAvailable)
-    }
+   
+     */
 }

@@ -35,7 +35,6 @@
 		4D613FC628D7429100811666 /* GameLogEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D613FC528D7429100811666 /* GameLogEntry.swift */; };
 		4D627CCB27D7078100170F26 /* RustTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D627CCA27D7078100170F26 /* RustTests.swift */; };
 		4D627CCD27D74D9B00170F26 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D627CCC27D74D9B00170F26 /* Player.swift */; };
-		4D6A80DF28F589F5004F9493 /* OrderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6A80DE28F589F5004F9493 /* OrderManager.swift */; };
 		4D6A80E128F592F5004F9493 /* Shift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6A80E028F592F5004F9493 /* Shift.swift */; };
 		4D75BFBF28D6BBCE002C44F0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D75BFBE28D6BBCE002C44F0 /* Constants.swift */; };
 		4D7671FB28F429370011F607 /* GenericDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7671FA28F429370011F607 /* GenericDeck.swift */; };
@@ -60,7 +59,6 @@
 		4D94DFB12567915A00E9DF74 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D94DFB02567915A00E9DF74 /* MainMenuView.swift */; };
 		4D9D103B28419E400045E759 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D103A28419E400045E759 /* Game.swift */; };
 		4D9E6B0B28E91EE30054F91D /* LocoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9E6B0A28E91EE30054F91D /* LocoTests.swift */; };
-		4D9E6B0D28E929680054F91D /* D6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9E6B0C28E929680054F91D /* D6.swift */; };
 		4DA2FEA2256749FD00F606AF /* TrainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA2FEA1256749FD00F606AF /* TrainListView.swift */; };
 		4DA2FEB425674D5100F606AF /* LocomotiveCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA2FEB325674D5100F606AF /* LocomotiveCellView.swift */; };
 		4DA7AC8428EF3FB70092DA6C /* Funds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA7AC8328EF3FB70092DA6C /* Funds.swift */; };
@@ -124,7 +122,6 @@
 		4D613FC528D7429100811666 /* GameLogEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogEntry.swift; sourceTree = "<group>"; };
 		4D627CCA27D7078100170F26 /* RustTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RustTests.swift; sourceTree = "<group>"; };
 		4D627CCC27D74D9B00170F26 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		4D6A80DE28F589F5004F9493 /* OrderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderManager.swift; sourceTree = "<group>"; };
 		4D6A80E028F592F5004F9493 /* Shift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shift.swift; sourceTree = "<group>"; };
 		4D75BFBE28D6BBCE002C44F0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4D7671FA28F429370011F607 /* GenericDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericDeck.swift; sourceTree = "<group>"; };
@@ -149,7 +146,6 @@
 		4D94DFB02567915A00E9DF74 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		4D9D103A28419E400045E759 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		4D9E6B0A28E91EE30054F91D /* LocoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocoTests.swift; sourceTree = "<group>"; };
-		4D9E6B0C28E929680054F91D /* D6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D6.swift; sourceTree = "<group>"; };
 		4DA2FEA1256749FD00F606AF /* TrainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainListView.swift; sourceTree = "<group>"; };
 		4DA2FEB325674D5100F606AF /* LocomotiveCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocomotiveCellView.swift; sourceTree = "<group>"; };
 		4DA7AC8328EF3FB70092DA6C /* Funds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Funds.swift; sourceTree = "<group>"; };
@@ -206,14 +202,12 @@
 				4D909E4027D216DF00A50180 /* ErrorCode.swift */,
 				4D5AC9122555DD5900E39048 /* GamePhase.swift */,
 				4D5AC9082555DD3300E39048 /* Die.swift */,
-				4D9E6B0C28E929680054F91D /* D6.swift */,
 				4D5AC91C2555DD9D00E39048 /* Tax.swift */,
 				4D9D103A28419E400045E759 /* Game.swift */,
 				4DE3A50428436D3A00CC0B49 /* Board.swift */,
 				4D7671FC28F429860011F607 /* Deck.swift */,
 				4D7671FE28F429C40011F607 /* Card.swift */,
 				4D76720028F42D060011F607 /* Locomotive.swift */,
-				4D6A80DE28F589F5004F9493 /* OrderManager.swift */,
 				4D8A2DB828F32EA40055C47E /* Production.swift */,
 				4D8A2DBC28F331A80055C47E /* ProductionManager.swift */,
 				4D6A80E028F592F5004F9493 /* Shift.swift */,
@@ -556,7 +550,6 @@
 				4DDEB2B72565FE5700715529 /* PlayerHUDHorizontalView.swift in Sources */,
 				4D613FC628D7429100811666 /* GameLogEntry.swift in Sources */,
 				4D5AC9412556091100E39048 /* DieView.swift in Sources */,
-				4D9E6B0D28E929680054F91D /* D6.swift in Sources */,
 				4D5AC91D2555DD9D00E39048 /* Tax.swift in Sources */,
 				4D909E4327D2180500A50180 /* EY+Notification.swift in Sources */,
 				4D75BFBF28D6BBCE002C44F0 /* Constants.swift in Sources */,
@@ -583,7 +576,6 @@
 				4D9D103B28419E400045E759 /* Game.swift in Sources */,
 				4D5AC8D32555C27700E39048 /* EY+Date.swift in Sources */,
 				4D6A80E128F592F5004F9493 /* Shift.swift in Sources */,
-				4D6A80DF28F589F5004F9493 /* OrderManager.swift in Sources */,
 				4D5AC9342555FF8D00E39048 /* ListOfPlayersHorizontalView.swift in Sources */,
 				4DCA01BF28DDDB0900558599 /* SalesOrder.swift in Sources */,
 			);
