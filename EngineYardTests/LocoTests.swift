@@ -79,6 +79,20 @@ final class LocoTests: XCTestCase {
         XCTAssertTrue(firstLoco.isAvailable)
     }
     
+    func testAddOrder() throws {
+        var firstLoco = self.allLocos!.first!
+        XCTAssertFalse(firstLoco.isFull)
+        let capacity = firstLoco.capacity
+        for _ in 0...(capacity - 1) {
+            firstLoco.addOrder(order: Die.roll)
+        }
+        XCTAssertTrue(firstLoco.orders.count == capacity)
+        XCTAssertTrue(firstLoco.isFull)
+        let _ = firstLoco.orders.map {
+            XCTAssertTrue($0.isD6)
+        }
+    }
+    
     /*
     func testAddOrder() throws {
         var firstLoco = self.allLocos!.first!

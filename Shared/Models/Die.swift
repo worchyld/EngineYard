@@ -9,6 +9,15 @@
 import Foundation
 import GameplayKit
 
+extension Int {
+    var isD6 : Bool {
+        guard self >= Die.minimumValue && self <= Die.maximumValue else {
+            return false
+        }
+        return true
+    }
+}
+
 struct Die: Equatable {
     public static let minimumValue = 1
     public static let maximumValue = 6
