@@ -80,7 +80,7 @@ final class LocoTests: XCTestCase {
     }
     
     func testAddOrder() throws {
-        var firstLoco = self.allLocos!.first!
+        let firstLoco = self.allLocos!.first!
         XCTAssertFalse(firstLoco.isFull)
         let capacity = firstLoco.capacity
         for _ in 0...(capacity - 1) {
@@ -94,7 +94,7 @@ final class LocoTests: XCTestCase {
     }
     
     func testAddOrdersBeyondCapacity() throws {
-        var firstLoco = self.allLocos!.first!
+        let firstLoco = self.allLocos!.first!
         XCTAssertFalse(firstLoco.isFull)
         let capacity = firstLoco.capacity
         for _ in 0...(capacity - 1) {
@@ -106,7 +106,7 @@ final class LocoTests: XCTestCase {
     }
     
     func testAddSale() throws {
-        var firstLoco = self.allLocos!.first!
+        let firstLoco = self.allLocos!.first!
         XCTAssertFalse(firstLoco.isFull)
         let capacity = firstLoco.capacity
         for _ in 0...(capacity - 1) {
