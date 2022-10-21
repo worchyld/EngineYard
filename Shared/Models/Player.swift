@@ -22,10 +22,10 @@ class Player: NSObject, GKGameModelPlayer {
     public var balance: Int {
         return self.cash
     }
-    var state : PlayerState = .waiting
-    var onTurn : Bool = false 
+    public private (set) var state : PlayerState = .waiting
+    public private (set) var onTurn : Bool = false 
     
-    var hand: [Card] = [Card]()
+    private var hand: [Card] = [Card]()
 }
 
 extension Player {
