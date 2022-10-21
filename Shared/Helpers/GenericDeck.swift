@@ -9,7 +9,7 @@ import Foundation
 
 protocol DeckDelegate: AnyObject {
     associatedtype Element
-    var size: Int { get }
+    var count: Int { get }
     var isEmpty: Bool { get }
     var cards:[Element] { get set }
     func push(_ element: Element)
@@ -19,9 +19,10 @@ protocol DeckDelegate: AnyObject {
 class GenericDeck<Element> : DeckDelegate, Identifiable {
     let id: UUID
     
-    var size: Int {
-        return cards.count
+    var count: Int {
+        return (cards.count)
     }
+    
     var isEmpty: Bool {
         return (cards.count == 0)
     }

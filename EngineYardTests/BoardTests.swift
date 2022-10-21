@@ -23,13 +23,53 @@ final class BoardTests: XCTestCase {
         board.prepare()
         XCTAssertTrue(board.decks.count == Constants.totalDecks, "Expected: \(Constants.totalDecks), Got: \(board.decks.count)")
         
+        let totalCards = board.decks.map {
+            return $0.cards.count
+        }.reduce(0, +)
+        
+        XCTAssertTrue(totalCards == Constants.totalCards)
       
-//        
-//        let totalCards = board.decks.map {
-//            return $0.cards.count
-//        }.count
-//        
-//        XCTAssertTrue(totalCards == Constants.totalCards, "Expected \(Constants.totalCards), Got: \(totalCards)")
+        let totalCapacity = board.decks.map {
+            return $0.loco.capacity
+        }.reduce(0, +)
+        
+        XCTAssertTrue(totalCapacity == Constants.totalCapacity)
+        
+        let greenGens = board.decks.filter {
+            return $0.loco.livery == .green
+        }
+        let redGens = board.decks.filter {
+            return $0.loco.livery == .red
+        }
+        let yellowGens = board.decks.filter {
+            return $0.loco.livery == .yellow
+        }
+        let blueGens = board.decks.filter {
+            return $0.loco.livery == .blue
+        }
+        
+        XCTAssertTrue(greenGens.count == Constants.Green.totalGenerations, "got: \(greenGens)")
+        XCTAssertTrue(redGens.count == Constants.Red.totalGenerations, "got: \(redGens)")
+        XCTAssertTrue(yellowGens.count == Constants.Yellow.totalGenerations, "got: \(yellowGens)")
+        XCTAssertTrue(blueGens.count == Constants.Blue.totalGenerations, "got: \(blueGens)")
+        
+        let greenCards = greenGens.map {
+            return $0.cards.count
+        }.reduce(0, +)
+        let redCards = redGens.map {
+            return $0.cards.count
+        }.reduce(0, +)
+        let yellowCards = yellowGens.map {
+            return $0.cards.count
+        }.reduce(0, +)
+        let blueCards = blueGens.map {
+            return $0.cards.count
+        }.reduce(0, +)
+        
+        XCTAssertTrue(greenCards == Constants.Green.totalCards, "got: \(greenCards)")
+        XCTAssertTrue(redCards == Constants.Red.totalCards, "got: \(redCards)")
+        XCTAssertTrue(yellowCards == Constants.Yellow.totalCards, "got: \(yellowCards)")
+        XCTAssertTrue(blueCards == Constants.Blue.totalCards, "got: \(blueCards)")
     }
 
 }
