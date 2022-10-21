@@ -22,8 +22,8 @@ extension FinanceError : LocalizedError {
 
 class Bank {
         
-    func canAffordLocomotive(_ loco: Locomotive, player: Player) -> Bool {
-        return canAfford(cost: loco.cost, balance: player.balance)
+    func canAffordLocomotive(_ loco: Locomotive, funds: Int) -> Bool {
+        return canAfford(cost: loco.cost, balance: funds)
     }
     
     func canAffordProduction(_ units: Int, loco: Locomotive, player: Player) -> Bool {
