@@ -7,17 +7,27 @@
 
 import Foundation
 
-struct Card: Identifiable {
+class Card: Identifiable, Codable {
     let id: UUID
     private let locomotive: Locomotive?
     public var loco: Locomotive? {
         return self.locomotive
     }
-    let production: Production
+    public private (set) var production: Production
     
-    init(id: UUID, locomotive: Locomotive?) {
+    init(id: UUID, locomotive: Locomotive?, production: Production = Production()) {
         self.id = UUID()
         self.locomotive = locomotive
-        self.production = Production()
+        self.production = production
+    }
+    
+    func changeProduction(_ production: Production) {
+        self.production = production
+    }
+}
+
+extension Card : Equatable {
+    static func == (lhs: Card, rhs: Card) -> Bool {
+        return lhs.id == rhs.id
     }
 }

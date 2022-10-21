@@ -32,8 +32,8 @@ class Locomotive : Identifiable, Codable {
         return false
     }
     var isAvailable: Bool {
-        let hasOrders = orders.count > 0
-        let hasSales = sales.count > 0
+        let hasOrders = orders.count >= 0
+        let hasSales = sales.count >= 0
         return ((hasOrders || hasSales) && rust.isActiveButNotRusted())
     }
     

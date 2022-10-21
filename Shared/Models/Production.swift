@@ -21,6 +21,7 @@ struct Production: Codable {
         case addProductionUnits(Int)
         case spendProductionUnits(Int)
         case resetProductionUnits
+        case reduceProductionUnits(Int) // not spend
     }
     
     func execute(_ change: Change) -> Self {
@@ -38,7 +39,13 @@ struct Production: Codable {
         
         case .resetProductionUnits:
             let newUnits = self.units + self.spent
-            return .init(units: newUnits, spent: 0)
+            return .init(units: newUnits, spent: self.spent)
+            
+        case .reduceProductionUnits(let subtractUnits):
+            var newUnits = self.units - subtractUnits
+            if (newUnits < 0) { newUnits = 0 }            
+            return .init(units: newUnits, spent: self.spent)
+            
         }
     }
 }
