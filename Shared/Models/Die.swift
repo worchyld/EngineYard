@@ -19,7 +19,7 @@ struct Die: Equatable {
             return (d6.nextInt())
         }
         else {
-            return Int.randomInt(withMax: Die.maximumValue)
+            return Int.random(in: 1...6)
         }
     }
 }
