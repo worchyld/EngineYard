@@ -8,16 +8,20 @@
 import Foundation
 
 class Board {
-    private var _decks: [Deck]?
+    private var _decks: [Deck]
     public var decks: [Deck] {
-        return self._decks ?? []
+        return self._decks
     }
     public var size: Int {
         return self.decks.count
     }
     
     init(decks: [Deck]? = nil) {
-        self._decks = decks
+        if let hasDecks = decks  {
+            self._decks = hasDecks
+            return
+        }
+        self._decks = [Deck]()
     }
 }
 
@@ -30,6 +34,8 @@ extension Board {
                 let card = Card(id: UUID(), locomotive: loco)
                 deck.cards.append(card)
             }
+            self._decks.append(deck)
         }
+        
     }
 }

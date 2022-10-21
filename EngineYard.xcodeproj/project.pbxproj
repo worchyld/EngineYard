@@ -73,6 +73,7 @@
 		4DCA01C128DDDB5700558599 /* SalesOrderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCA01C028DDDB5700558599 /* SalesOrderTests.swift */; };
 		4DDEB2B72565FE5700715529 /* PlayerHUDHorizontalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDEB2B62565FE5700715529 /* PlayerHUDHorizontalView.swift */; };
 		4DE3A50528436D3A00CC0B49 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3A50428436D3A00CC0B49 /* Board.swift */; };
+		4DE8BF5C29026FD6004CC3BE /* BoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE8BF5B29026FD6004CC3BE /* BoardTests.swift */; };
 		4DFEFE47256B965B0081DC10 /* LocomotiveProductionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEFE46256B965B0081DC10 /* LocomotiveProductionCellView.swift */; };
 /* End PBXBuildFile section */
 
@@ -166,6 +167,7 @@
 		4DCA01C028DDDB5700558599 /* SalesOrderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesOrderTests.swift; sourceTree = "<group>"; };
 		4DDEB2B62565FE5700715529 /* PlayerHUDHorizontalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerHUDHorizontalView.swift; sourceTree = "<group>"; };
 		4DE3A50428436D3A00CC0B49 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		4DE8BF5B29026FD6004CC3BE /* BoardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTests.swift; sourceTree = "<group>"; };
 		4DFEFE46256B965B0081DC10 /* LocomotiveProductionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocomotiveProductionCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -354,6 +356,7 @@
 				4DA7AC8528EF4C510092DA6C /* FundingTests.swift */,
 				4D627CCA27D7078100170F26 /* RustTests.swift */,
 				4D9E6B0A28E91EE30054F91D /* LocoTests.swift */,
+				4DE8BF5B29026FD6004CC3BE /* BoardTests.swift */,
 				4D8A2DBA28F32F000055C47E /* ProductionTests.swift */,
 				4DCA01C028DDDB5700558599 /* SalesOrderTests.swift */,
 				4DB92AF92555BDEF00B976A2 /* Info.plist */,
@@ -590,6 +593,7 @@
 				4D90BEC227D1F42B00C13550 /* TaxTests.swift in Sources */,
 				4DA7AC8628EF4C510092DA6C /* FundingTests.swift in Sources */,
 				4D05247027CF5034006BDACE /* RollDieTest.swift in Sources */,
+				4DE8BF5C29026FD6004CC3BE /* BoardTests.swift in Sources */,
 				4DCA01C128DDDB5700558599 /* SalesOrderTests.swift in Sources */,
 				4DB92AF82555BDEF00B976A2 /* EngineYardTests.swift in Sources */,
 				4D627CCB27D7078100170F26 /* RustTests.swift in Sources */,
