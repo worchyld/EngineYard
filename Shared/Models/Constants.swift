@@ -11,9 +11,13 @@ public struct Constants {
     public static let taxRate: Float = 0.10
     public static let winCondition = 300   // need >=300 after tax to trigger end of game
     
-    public struct ValidNumberOfPlayers {
+    public struct NumberOfPlayers {
         public static let min = 3
         public static let max = 5
+        
+        public static func isValid(_ playerCount: Int = NumberOfPlayers.min) -> Bool {
+            return (playerCount >= NumberOfPlayers.min && playerCount <= NumberOfPlayers.max)
+        }
     }
     
     public static let totalLocos = 14

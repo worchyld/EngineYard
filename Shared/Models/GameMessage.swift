@@ -12,10 +12,12 @@ public enum GameMessageCategory: Int {
 }
 
 struct GameMessage {
+    static let shared = GameMessage()
+
     let category: GameMessageCategory
     let message: String
     
-    init(message: String, category: GameMessageCategory = .status) {
+    private init(message: String = "", category: GameMessageCategory = .status) {
         self.message = message
         self.category = category
     }
