@@ -21,7 +21,7 @@ struct Production: Codable {
         case addProductionUnits(Int)
         case spendProductionUnits(Int)
         case resetProductionUnits
-        case reduceProductionUnits(Int) // not spend
+        case reduceProductionUnits(Int) // this is for shifting
     }
     
     func execute(_ change: Change) -> Self {
