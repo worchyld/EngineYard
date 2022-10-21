@@ -9,7 +9,7 @@ import Foundation
 
 public struct Constants {
     public static let taxRate: Float = 0.10
-    public static let winCondition = 300   // need >=300 after tax to trigger end of game
+    public static let cashNeededToTriggerGameEnd = 300   // need >=300 after tax to trigger end of game
     
     public struct NumberOfPlayers {
         public static let min = 3

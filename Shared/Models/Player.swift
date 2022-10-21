@@ -18,9 +18,19 @@ class Player: NSObject, GKGameModelPlayer {
     
     var name : String = ""
     var avatar : String = ""
-    var cash : Int = 0
+    private var cash : Int = 0
+    public var balance: Int {
+        return self.cash
+    }
     var state : PlayerState = .waiting
     var onTurn : Bool = false 
     
     var hand: [Card] = [Card]()
+}
+
+extension Player {
+    public func setCash(balance: Int = 0) {
+        guard (balance >= 0) else { return }
+        self.cash = balance
+    }
 }

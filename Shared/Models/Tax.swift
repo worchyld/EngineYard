@@ -32,7 +32,7 @@ struct Tax : TaxProtocol {
         return Int(amount - calculate(on: amount))
     }
 
-    // Used to add a "sales tax" on some items
+    // Used to add a "sales tax"
     static func add(on amount: Int) -> Int {
         guard (amount > 0) else { return 0 }
         let taxDue: Int = calculate(on: amount)
