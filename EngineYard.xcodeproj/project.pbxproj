@@ -32,7 +32,7 @@
 		4D5AC93C2556083700E39048 /* WinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC93B2556083700E39048 /* WinnerView.swift */; };
 		4D5AC9412556091100E39048 /* DieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC9402556091100E39048 /* DieView.swift */; };
 		4D613FC428D72CB300811666 /* ShiftProduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D613FC328D72CB300811666 /* ShiftProduction.swift */; };
-		4D613FC628D7429100811666 /* GameNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D613FC528D7429100811666 /* GameNotification.swift */; };
+		4D613FC628D7429100811666 /* GameMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D613FC528D7429100811666 /* GameMessage.swift */; };
 		4D627CCB27D7078100170F26 /* RustTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D627CCA27D7078100170F26 /* RustTests.swift */; };
 		4D627CCD27D74D9B00170F26 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D627CCC27D74D9B00170F26 /* Player.swift */; };
 		4D6A80E128F592F5004F9493 /* Shift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6A80E028F592F5004F9493 /* Shift.swift */; };
@@ -119,7 +119,7 @@
 		4D5AC93B2556083700E39048 /* WinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerView.swift; sourceTree = "<group>"; };
 		4D5AC9402556091100E39048 /* DieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DieView.swift; sourceTree = "<group>"; };
 		4D613FC328D72CB300811666 /* ShiftProduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftProduction.swift; sourceTree = "<group>"; };
-		4D613FC528D7429100811666 /* GameNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNotification.swift; sourceTree = "<group>"; };
+		4D613FC528D7429100811666 /* GameMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMessage.swift; sourceTree = "<group>"; };
 		4D627CCA27D7078100170F26 /* RustTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RustTests.swift; sourceTree = "<group>"; };
 		4D627CCC27D74D9B00170F26 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		4D6A80E028F592F5004F9493 /* Shift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shift.swift; sourceTree = "<group>"; };
@@ -216,7 +216,7 @@
 				4D5AC9172555DD8300E39048 /* Rust.swift */,
 				4DA7AC8328EF3FB70092DA6C /* Funds.swift */,
 				4D627CCC27D74D9B00170F26 /* Player.swift */,
-				4D613FC528D7429100811666 /* GameNotification.swift */,
+				4D613FC528D7429100811666 /* GameMessage.swift */,
 				4DCA01BE28DDDB0900558599 /* SalesOrder.swift */,
 			);
 			path = Models;
@@ -548,7 +548,7 @@
 				4DA7AC8428EF3FB70092DA6C /* Funds.swift in Sources */,
 				4D5AC8D22555C27700E39048 /* EY+Identifier.swift in Sources */,
 				4DDEB2B72565FE5700715529 /* PlayerHUDHorizontalView.swift in Sources */,
-				4D613FC628D7429100811666 /* GameNotification.swift in Sources */,
+				4D613FC628D7429100811666 /* GameMessage.swift in Sources */,
 				4D5AC9412556091100E39048 /* DieView.swift in Sources */,
 				4D5AC91D2555DD9D00E39048 /* Tax.swift in Sources */,
 				4D909E4327D2180500A50180 /* EY+Notification.swift in Sources */,
