@@ -8,6 +8,6 @@
 import Foundation
 
 // GamePhase
-enum GamePhase : NSInteger, CaseIterable, Codable {
-    case setup, mainMenu, pickPlayers, buyTrain, buyProduction, sellProduction, payTaxes, marketDemands, winnerDeclared
+public enum GamePhase : NSInteger, CaseIterable, Codable {
+    case setup, mainMenu, pickPlayers, buyTrain, buyProduction, sales, payTaxes, marketDemands, winnerDeclared
 }
