@@ -22,7 +22,7 @@ final class Portfolio {
         return self._hand
     }
     
-    init(_hand: [Card]) {
+    init(_hand: [Card] = [Card]()) {
         self._hand = _hand
     }
 }

@@ -12,7 +12,6 @@ public enum PlayerState: Int {
     case waiting = 0, thinking, done
 }
 
-// TBD
 class Player: NSObject, GKGameModelPlayer {
     var playerId: Int = 0
     
@@ -25,7 +24,10 @@ class Player: NSObject, GKGameModelPlayer {
     public private (set) var state : PlayerState = .waiting
     public private (set) var onTurn : Bool = false 
     
-    private var hand: [Card] = [Card]()
+    private var _portfolio = Portfolio()
+    public var hand: [Card] {
+        return self._portfolio.hand
+    }
 }
 
 extension Player {
