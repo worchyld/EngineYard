@@ -22,9 +22,14 @@ class Board {
 }
 
 extension Board {
-    func unlockNext() {
-//        let lockedDecks = self.decks.filter { deck in
-//            return deck.loco.rust < .rusted && deck.
-//        }
+    func prepare() {
+        let locos = Locomotive.allLocos()
+        for loco in locos {
+            let deck = Deck(loco: loco)
+            for _ in 1...loco.qty {
+                let card = Card(id: UUID(), locomotive: loco)
+                deck.cards.append(card)
+            }
+        }
     }
 }
