@@ -74,13 +74,14 @@ extension Locomotive {
     }
     func addOrder(order: Int) {
         guard (!self.isFull) else { return }
-        if (self.rust == .notBuilt) { self.rustify() }
+        guard (order.isD6) else { return }
+        if ((self.rust == .notBuilt) && (self.orders.count == 0)) { self.rustify() }
         self.orders.append(order)
     }
-    func addSale(order: Int, to locomotive: Locomotive) -> Locomotive {
-        guard (!locomotive.isFull) else { return locomotive }
-        locomotive.sales.append(order)
-        return locomotive
+    func addSale(order: Int) {
+        guard (!self.isFull) else { return }
+        guard (order.isD6) else { return }
+        self.sales.append(order)
     }
 }
 
