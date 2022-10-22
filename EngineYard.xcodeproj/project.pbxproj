@@ -241,8 +241,8 @@
 				4D5AC9172555DD8300E39048 /* Rust.swift */,
 				4DA7AC8328EF3FB70092DA6C /* Funds.swift */,
 				4DC33DBE290301E400A027B5 /* Bank.swift */,
-				4D627CCC27D74D9B00170F26 /* Player.swift */,
 				4DC33DC029031F1500A027B5 /* Portfolio.swift */,
+				4D627CCC27D74D9B00170F26 /* Player.swift */,
 				4D613FC528D7429100811666 /* GameMessage.swift */,
 				4DCA01BE28DDDB0900558599 /* SalesOrder.swift */,
 			);
