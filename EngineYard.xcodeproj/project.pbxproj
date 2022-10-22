@@ -18,6 +18,7 @@
 		4D2C26732903AFF40008D784 /* PlayerPortfolioListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2C26722903AFF40008D784 /* PlayerPortfolioListView.swift */; };
 		4D2C26752903B0B00008D784 /* BreadcrumbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2C26742903B0B00008D784 /* BreadcrumbView.swift */; };
 		4D2C26772903B1010008D784 /* GameMessageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2C26762903B1010008D784 /* GameMessageListView.swift */; };
+		4D2C26792903B1EA0008D784 /* GameSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2C26782903B1EA0008D784 /* GameSetting.swift */; };
 		4D5AC8CF2555C27700E39048 /* EY+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC8C62555C27700E39048 /* EY+Bundle.swift */; };
 		4D5AC8D02555C27700E39048 /* EY+FlatColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC8C72555C27700E39048 /* EY+FlatColor.swift */; };
 		4D5AC8D12555C27700E39048 /* EY+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC8C82555C27700E39048 /* EY+Array.swift */; };
@@ -117,6 +118,7 @@
 		4D2C26722903AFF40008D784 /* PlayerPortfolioListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPortfolioListView.swift; sourceTree = "<group>"; };
 		4D2C26742903B0B00008D784 /* BreadcrumbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreadcrumbView.swift; sourceTree = "<group>"; };
 		4D2C26762903B1010008D784 /* GameMessageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMessageListView.swift; sourceTree = "<group>"; };
+		4D2C26782903B1EA0008D784 /* GameSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetting.swift; sourceTree = "<group>"; };
 		4D5AC8C62555C27700E39048 /* EY+Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EY+Bundle.swift"; sourceTree = "<group>"; };
 		4D5AC8C72555C27700E39048 /* EY+FlatColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EY+FlatColor.swift"; sourceTree = "<group>"; };
 		4D5AC8C82555C27700E39048 /* EY+Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EY+Array.swift"; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				4D75BFBE28D6BBCE002C44F0 /* Constants.swift */,
 				4D909E4027D216DF00A50180 /* ErrorCode.swift */,
 				4D5AC9122555DD5900E39048 /* GamePhase.swift */,
+				4D2C26782903B1EA0008D784 /* GameSetting.swift */,
 				4D5AC9082555DD3300E39048 /* Die.swift */,
 				4D5AC91C2555DD9D00E39048 /* Tax.swift */,
 				4D9D103A28419E400045E759 /* Game.swift */,
@@ -609,6 +612,7 @@
 				4DB92AE82555BDEE00B976A2 /* ContentView.swift in Sources */,
 				4DC33DBF290301E400A027B5 /* Bank.swift in Sources */,
 				4D613FC428D72CB300811666 /* ShiftProduction.swift in Sources */,
+				4D2C26792903B1EA0008D784 /* GameSetting.swift in Sources */,
 				4DB92AE62555BDEE00B976A2 /* EngineYardApp.swift in Sources */,
 				4D94DFA225678B9E00E9DF74 /* oldPortfolioListView.swift in Sources */,
 				4DFEFE47256B965B0081DC10 /* LocomotiveProductionCellView.swift in Sources */,
