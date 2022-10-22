@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		4D05247027CF5034006BDACE /* RollDieTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D05246F27CF5034006BDACE /* RollDieTest.swift */; };
 		4D145CD527D6B72200E47522 /* LocomotiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D145CD427D6B72200E47522 /* LocomotiveViewModel.swift */; };
+		4D2C26672903AF320008D784 /* BuyLocomotiveListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2C26662903AF320008D784 /* BuyLocomotiveListView.swift */; };
+		4D2C26692903AF600008D784 /* SelectPlayersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2C26682903AF600008D784 /* SelectPlayersView.swift */; };
+		4D2C266B2903AF780008D784 /* SingleLocomotiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2C266A2903AF780008D784 /* SingleLocomotiveView.swift */; };
+		4D2C266D2903AF920008D784 /* BuyProductionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2C266C2903AF920008D784 /* BuyProductionView.swift */; };
+		4D2C266F2903AFB20008D784 /* SalesPhaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2C266E2903AFB20008D784 /* SalesPhaseView.swift */; };
+		4D2C26712903AFD80008D784 /* SalesReportListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2C26702903AFD80008D784 /* SalesReportListView.swift */; };
+		4D2C26732903AFF40008D784 /* PlayerPortfolioListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2C26722903AFF40008D784 /* PlayerPortfolioListView.swift */; };
 		4D5AC8CF2555C27700E39048 /* EY+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC8C62555C27700E39048 /* EY+Bundle.swift */; };
 		4D5AC8D02555C27700E39048 /* EY+FlatColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC8C72555C27700E39048 /* EY+FlatColor.swift */; };
 		4D5AC8D12555C27700E39048 /* EY+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC8C82555C27700E39048 /* EY+Array.swift */; };
@@ -52,7 +59,7 @@
 		4D909E4127D216DF00A50180 /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D909E4027D216DF00A50180 /* ErrorCode.swift */; };
 		4D909E4327D2180500A50180 /* EY+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D909E4227D2180500A50180 /* EY+Notification.swift */; };
 		4D90BEC227D1F42B00C13550 /* TaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D90BEC127D1F42B00C13550 /* TaxTests.swift */; };
-		4D94DFA225678B9E00E9DF74 /* PlayerPortfolioListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D94DFA125678B9E00E9DF74 /* PlayerPortfolioListView.swift */; };
+		4D94DFA225678B9E00E9DF74 /* oldPortfolioListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D94DFA125678B9E00E9DF74 /* oldPortfolioListView.swift */; };
 		4D94DFA72567902F00E9DF74 /* TaxPhaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D94DFA62567902F00E9DF74 /* TaxPhaseView.swift */; };
 		4D94DFAC2567906300E9DF74 /* NewTurnOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D94DFAB2567906300E9DF74 /* NewTurnOrderView.swift */; };
 		4D94DFB12567915A00E9DF74 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D94DFB02567915A00E9DF74 /* MainMenuView.swift */; };
@@ -99,6 +106,13 @@
 /* Begin PBXFileReference section */
 		4D05246F27CF5034006BDACE /* RollDieTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollDieTest.swift; sourceTree = "<group>"; };
 		4D145CD427D6B72200E47522 /* LocomotiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocomotiveViewModel.swift; sourceTree = "<group>"; };
+		4D2C26662903AF320008D784 /* BuyLocomotiveListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyLocomotiveListView.swift; sourceTree = "<group>"; };
+		4D2C26682903AF600008D784 /* SelectPlayersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlayersView.swift; sourceTree = "<group>"; };
+		4D2C266A2903AF780008D784 /* SingleLocomotiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLocomotiveView.swift; sourceTree = "<group>"; };
+		4D2C266C2903AF920008D784 /* BuyProductionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyProductionView.swift; sourceTree = "<group>"; };
+		4D2C266E2903AFB20008D784 /* SalesPhaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesPhaseView.swift; sourceTree = "<group>"; };
+		4D2C26702903AFD80008D784 /* SalesReportListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesReportListView.swift; sourceTree = "<group>"; };
+		4D2C26722903AFF40008D784 /* PlayerPortfolioListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPortfolioListView.swift; sourceTree = "<group>"; };
 		4D5AC8C62555C27700E39048 /* EY+Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EY+Bundle.swift"; sourceTree = "<group>"; };
 		4D5AC8C72555C27700E39048 /* EY+FlatColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EY+FlatColor.swift"; sourceTree = "<group>"; };
 		4D5AC8C82555C27700E39048 /* EY+Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EY+Array.swift"; sourceTree = "<group>"; };
@@ -142,7 +156,7 @@
 		4D909E4027D216DF00A50180 /* ErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCode.swift; sourceTree = "<group>"; };
 		4D909E4227D2180500A50180 /* EY+Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Notification.swift"; sourceTree = "<group>"; };
 		4D90BEC127D1F42B00C13550 /* TaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTests.swift; sourceTree = "<group>"; };
-		4D94DFA125678B9E00E9DF74 /* PlayerPortfolioListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPortfolioListView.swift; sourceTree = "<group>"; };
+		4D94DFA125678B9E00E9DF74 /* oldPortfolioListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = oldPortfolioListView.swift; sourceTree = "<group>"; };
 		4D94DFA62567902F00E9DF74 /* TaxPhaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxPhaseView.swift; sourceTree = "<group>"; };
 		4D94DFAB2567906300E9DF74 /* NewTurnOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTurnOrderView.swift; sourceTree = "<group>"; };
 		4D94DFB02567915A00E9DF74 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
@@ -338,6 +352,13 @@
 				4DFEFE3B256B95560081DC10 /* PlayerView */,
 				4DFEFE3C256B95740081DC10 /* TrainView */,
 				4D94DFB02567915A00E9DF74 /* MainMenuView.swift */,
+				4D2C26682903AF600008D784 /* SelectPlayersView.swift */,
+				4D2C26662903AF320008D784 /* BuyLocomotiveListView.swift */,
+				4D2C266A2903AF780008D784 /* SingleLocomotiveView.swift */,
+				4D2C26722903AFF40008D784 /* PlayerPortfolioListView.swift */,
+				4D2C266C2903AF920008D784 /* BuyProductionView.swift */,
+				4D2C266E2903AFB20008D784 /* SalesPhaseView.swift */,
+				4D2C26702903AFD80008D784 /* SalesReportListView.swift */,
 				4D94DFA62567902F00E9DF74 /* TaxPhaseView.swift */,
 				4D94DFAB2567906300E9DF74 /* NewTurnOrderView.swift */,
 				4D5AC93B2556083700E39048 /* WinnerView.swift */,
@@ -397,7 +418,7 @@
 				4DA2FEA1256749FD00F606AF /* TrainListView.swift */,
 				4DA2FEB325674D5100F606AF /* LocomotiveCellView.swift */,
 				4DFEFE46256B965B0081DC10 /* LocomotiveProductionCellView.swift */,
-				4D94DFA125678B9E00E9DF74 /* PlayerPortfolioListView.swift */,
+				4D94DFA125678B9E00E9DF74 /* oldPortfolioListView.swift */,
 			);
 			path = TrainView;
 			sourceTree = "<group>";
@@ -550,11 +571,13 @@
 				4DA2FEB425674D5100F606AF /* LocomotiveCellView.swift in Sources */,
 				4DC33DBD2902AF7400A027B5 /* OrderManager.swift in Sources */,
 				4D5AC9132555DD5900E39048 /* GamePhase.swift in Sources */,
+				4D2C26672903AF320008D784 /* BuyLocomotiveListView.swift in Sources */,
 				4D5AC8CF2555C27700E39048 /* EY+Bundle.swift in Sources */,
 				4D909E4127D216DF00A50180 /* ErrorCode.swift in Sources */,
 				4D5AC93C2556083700E39048 /* WinnerView.swift in Sources */,
 				4D5AC9222555DE3800E39048 /* AvatarView.swift in Sources */,
 				4D7671FB28F429370011F607 /* GenericDeck.swift in Sources */,
+				4D2C26712903AFD80008D784 /* SalesReportListView.swift in Sources */,
 				4DA7AC8428EF3FB70092DA6C /* Funds.swift in Sources */,
 				4D5AC8D22555C27700E39048 /* EY+Identifier.swift in Sources */,
 				4DDEB2B72565FE5700715529 /* PlayerHUDHorizontalView.swift in Sources */,
@@ -562,6 +585,8 @@
 				4D5AC9412556091100E39048 /* DieView.swift in Sources */,
 				4D5AC91D2555DD9D00E39048 /* Tax.swift in Sources */,
 				4D909E4327D2180500A50180 /* EY+Notification.swift in Sources */,
+				4D2C266F2903AFB20008D784 /* SalesPhaseView.swift in Sources */,
+				4D2C266B2903AF780008D784 /* SingleLocomotiveView.swift in Sources */,
 				4D75BFBF28D6BBCE002C44F0 /* Constants.swift in Sources */,
 				4D7671FF28F429C40011F607 /* Card.swift in Sources */,
 				4D5AC9042555DD0C00E39048 /* Generation.swift in Sources */,
@@ -570,6 +595,7 @@
 				4DE3A50528436D3A00CC0B49 /* Board.swift in Sources */,
 				4D5AC8FF2555DCE600E39048 /* Livery.swift in Sources */,
 				4D5AC8D02555C27700E39048 /* EY+FlatColor.swift in Sources */,
+				4D2C26692903AF600008D784 /* SelectPlayersView.swift in Sources */,
 				4DC33DC129031F1500A027B5 /* Portfolio.swift in Sources */,
 				4D5AC90B2555DD3300E39048 /* NumberFormatCache.swift in Sources */,
 				4D627CCD27D74D9B00170F26 /* Player.swift in Sources */,
@@ -577,13 +603,15 @@
 				4DC33DBF290301E400A027B5 /* Bank.swift in Sources */,
 				4D613FC428D72CB300811666 /* ShiftProduction.swift in Sources */,
 				4DB92AE62555BDEE00B976A2 /* EngineYardApp.swift in Sources */,
-				4D94DFA225678B9E00E9DF74 /* PlayerPortfolioListView.swift in Sources */,
+				4D94DFA225678B9E00E9DF74 /* oldPortfolioListView.swift in Sources */,
 				4DFEFE47256B965B0081DC10 /* LocomotiveProductionCellView.swift in Sources */,
 				4D5AC9272555DF0500E39048 /* PlayerHUDVerticalView.swift in Sources */,
 				4D5AC8D52555C27700E39048 /* EY+CaseIterable.swift in Sources */,
 				4D5AC8D42555C27700E39048 /* EY+Int.swift in Sources */,
+				4D2C266D2903AF920008D784 /* BuyProductionView.swift in Sources */,
 				4D5AC90A2555DD3300E39048 /* Die.swift in Sources */,
 				4D5AC92C2555FE3500E39048 /* PlayerViewModel.swift in Sources */,
+				4D2C26732903AFF40008D784 /* PlayerPortfolioListView.swift in Sources */,
 				4D76720128F42D060011F607 /* Locomotive.swift in Sources */,
 				4D9D103B28419E400045E759 /* Game.swift in Sources */,
 				4D5AC8D32555C27700E39048 /* EY+Date.swift in Sources */,

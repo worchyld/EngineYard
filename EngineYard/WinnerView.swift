@@ -14,7 +14,7 @@ struct WinnerView: View {
             List {
                 ForEach(players) { player in
                     
-                    if (player.cash >= 330) {
+                    if (player.cash >= Constants.cashNeededToTriggerGameEnd) {
                         Section(header: Text("Winner")) {
                             HStack(alignment: .center, spacing: nil, content: {
                                 Image("trophy")
