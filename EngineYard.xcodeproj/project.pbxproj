@@ -16,6 +16,7 @@
 		4D2C266F2903AFB20008D784 /* SalesPhaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2C266E2903AFB20008D784 /* SalesPhaseView.swift */; };
 		4D2C26712903AFD80008D784 /* SalesReportListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2C26702903AFD80008D784 /* SalesReportListView.swift */; };
 		4D2C26732903AFF40008D784 /* PlayerPortfolioListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2C26722903AFF40008D784 /* PlayerPortfolioListView.swift */; };
+		4D2C26752903B0B00008D784 /* BreadcrumbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2C26742903B0B00008D784 /* BreadcrumbView.swift */; };
 		4D5AC8CF2555C27700E39048 /* EY+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC8C62555C27700E39048 /* EY+Bundle.swift */; };
 		4D5AC8D02555C27700E39048 /* EY+FlatColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC8C72555C27700E39048 /* EY+FlatColor.swift */; };
 		4D5AC8D12555C27700E39048 /* EY+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC8C82555C27700E39048 /* EY+Array.swift */; };
@@ -113,6 +114,7 @@
 		4D2C266E2903AFB20008D784 /* SalesPhaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesPhaseView.swift; sourceTree = "<group>"; };
 		4D2C26702903AFD80008D784 /* SalesReportListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesReportListView.swift; sourceTree = "<group>"; };
 		4D2C26722903AFF40008D784 /* PlayerPortfolioListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPortfolioListView.swift; sourceTree = "<group>"; };
+		4D2C26742903B0B00008D784 /* BreadcrumbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreadcrumbView.swift; sourceTree = "<group>"; };
 		4D5AC8C62555C27700E39048 /* EY+Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EY+Bundle.swift"; sourceTree = "<group>"; };
 		4D5AC8C72555C27700E39048 /* EY+FlatColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EY+FlatColor.swift"; sourceTree = "<group>"; };
 		4D5AC8C82555C27700E39048 /* EY+Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EY+Array.swift"; sourceTree = "<group>"; };
@@ -362,6 +364,7 @@
 				4D94DFA62567902F00E9DF74 /* TaxPhaseView.swift */,
 				4D94DFAB2567906300E9DF74 /* NewTurnOrderView.swift */,
 				4D5AC93B2556083700E39048 /* WinnerView.swift */,
+				4D2C26742903B0B00008D784 /* BreadcrumbView.swift */,
 			);
 			path = EngineYard;
 			sourceTree = "<group>";
@@ -609,6 +612,7 @@
 				4D5AC8D52555C27700E39048 /* EY+CaseIterable.swift in Sources */,
 				4D5AC8D42555C27700E39048 /* EY+Int.swift in Sources */,
 				4D2C266D2903AF920008D784 /* BuyProductionView.swift in Sources */,
+				4D2C26752903B0B00008D784 /* BreadcrumbView.swift in Sources */,
 				4D5AC90A2555DD3300E39048 /* Die.swift in Sources */,
 				4D5AC92C2555FE3500E39048 /* PlayerViewModel.swift in Sources */,
 				4D2C26732903AFF40008D784 /* PlayerPortfolioListView.swift in Sources */,
