@@ -7,19 +7,6 @@
 
 import Foundation
 
-public enum FinanceError: Error {
-    case notEnoughFunds(funds: Int)
-}
-
-extension FinanceError : LocalizedError {
-    public var errorDescription: String? {
-        switch self {
-        case .notEnoughFunds(let funds):
-            return NSLocalizedString("You do not have enough funds. $\(funds)", comment: "Finance error - Not enough funds")
-        }
-    }
-}
-
 class Bank {
         
     func canAffordLocomotive(_ loco: Locomotive, funds: Int) -> Bool {

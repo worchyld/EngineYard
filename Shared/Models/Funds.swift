@@ -7,16 +7,27 @@
 
 import Foundation
 
-public enum FundingError: Error, Equatable {
+public enum FinanceError: Error, Equatable {
     case notEnough(funds: Int)
     case mustBePositive
 }
 
+extension FinanceError : LocalizedError {
+    public var errorDescription: String? {
+        switch self {
+        case .notEnough(let funds):
+            return NSLocalizedString("You do not have enough funds. $\(funds)", comment: "Finance error - Not enough funds")
+        case .mustBePositive:
+            return NSLocalizedString("Must a positive number", comment: "Finance error - Must be positive number")
+        }
+    }
+}
+
 public struct Funds {
-    static func credit(balance: Int, with amount: Int) -> Result<Int, FundingError> {
+    static func credit(balance: Int, with amount: Int) -> Result<Int, FinanceError> {
         return Transaction.make(.credit(balance: balance, withAmount: amount))
     }
-    static func debit(balance: Int, by amount: Int) -> Result<Int, FundingError> {
+    static func debit(balance: Int, by amount: Int) -> Result<Int, FinanceError> {
         return Transaction.make(.debit(balance: balance, byAmount: amount))
     }
 }
@@ -25,7 +36,7 @@ private enum Transaction {
     case credit(balance: Int, withAmount: Int)
     case debit(balance: Int, byAmount: Int)
     
-    static func make(_ t: Transaction) -> Result<Int, FundingError> {
+    static func make(_ t: Transaction) -> Result<Int, FinanceError> {
         do {
             let _ = try Transaction.validate(t)
                         
@@ -42,7 +53,7 @@ private enum Transaction {
             }
         }
         catch let err {
-            return .failure(err as! FundingError)
+            return .failure(err as! FinanceError)
         }
     }
     
@@ -54,22 +65,22 @@ extension Transaction {
             
         case .credit(_, let amount):
             guard amount > 0 else {
-                throw FundingError.mustBePositive
+                throw FinanceError.mustBePositive
             }
             
         case .debit(let balance, let amount):
             guard amount > 0 else {
-                throw FundingError.mustBePositive
+                throw FinanceError.mustBePositive
             }
             guard balance > 0 else {
-                throw FundingError.notEnough(funds: balance)
+                throw FinanceError.notEnough(funds: balance)
             }
             guard balance >= amount else {
-                throw FundingError.notEnough(funds: balance)
+                throw FinanceError.notEnough(funds: balance)
             }
             let sum = (balance - amount)
             guard sum >= 0 else {
-                throw FundingError.notEnough(funds: balance)
+                throw FinanceError.notEnough(funds: balance)
             }
         }
     }
