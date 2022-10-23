@@ -61,7 +61,7 @@ final class LocoTests: XCTestCase {
         let firstLoco = self.allLocos!.first!
         XCTAssertTrue(firstLoco.rust == .notBuilt)
         firstLoco.rustify()
-        XCTAssertTrue(firstLoco.rust == .new)
+        XCTAssertTrue(firstLoco.rust == .active)
         firstLoco.rustify()
         XCTAssertTrue(firstLoco.rust == .rusting)
         firstLoco.rustify()

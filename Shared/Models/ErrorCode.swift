@@ -11,14 +11,8 @@ public enum GameErrorDelegate: Error {
     case noGameObject, noBoardDefined, noPlayerFound, noGenerationFound, noLiveryFound
 }
 
-public enum NumericErrorDelegate: Error, Equatable {
+public enum NumberErrorDelegate: Error, Equatable {
     case cannotBeNegative
-    case notEnoughFunds
-    case cannotCover(_ amount: Int)
-}
-
-public enum DicePoolError: Error {
-    case poolIsFull
 }
 
 
@@ -42,24 +36,11 @@ extension GameErrorDelegate : LocalizedError {
 }
 
 
-extension NumericErrorDelegate : LocalizedError {
+extension NumberErrorDelegate : LocalizedError {
     public var errorDescription: String? {
         switch self {
         case .cannotBeNegative:
             return NSLocalizedString("Number cannot be negative", comment: "Numeric error")
-        case .notEnoughFunds:
-            return NSLocalizedString("Not enough funds", comment: "Numeric error")
-        case .cannotCover:
-            return NSLocalizedString("Cannot cover amount", comment: "Numeric error")
-        }
-    }
-}
-
-extension DicePoolError : LocalizedError {
-    public var errorDescription: String? {
-        switch self {
-        case .poolIsFull:
-            return NSLocalizedString("The dice pool is full", comment: "The dice pool for the train is full")
         }
     }
 }
