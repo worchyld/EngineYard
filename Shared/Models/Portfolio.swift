@@ -70,6 +70,12 @@ extension Portfolio {
     }
     
     
+    func canRemove(card: Card) {}
+    func remove(card: Card) {}
+    
+    // MARK: (Private) methods
+    
+    
     private func seek(card: Card) -> Card? {
         return self.hand.filter { item in
             return (card == item)
