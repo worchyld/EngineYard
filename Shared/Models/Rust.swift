@@ -15,7 +15,7 @@ protocol RustUseCases {
 }
 
 enum Rust : NSInteger, Codable, CaseIterable, Equatable {
-    case notBuilt = -1, new = 0, rusting, rusted
+    case notBuilt = -1, active = 0, rusting, rusted
 }
 
 // Stringify description
@@ -25,8 +25,8 @@ extension Rust: CustomStringConvertible {
             switch self {
             case .notBuilt:
                 return "notBuilt"
-            case .new:
-                return "new"
+            case .active:
+                return "active"
             case .rusting:
                 return "rusting"
             case .rusted: // obsolete
@@ -44,6 +44,6 @@ extension Rust : RustUseCases {
     
     public func isActiveButNotRusted() -> Bool {
         let rustValue = self.rawValue
-        return (rustValue >= Rust.new.rawValue && rustValue <= Rust.rusting.rawValue)
+        return (rustValue >= Rust.active.rawValue && rustValue <= Rust.rusting.rawValue)
     }
 }

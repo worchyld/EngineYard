@@ -1,5 +1,5 @@
 //
-//  PlayerPortfolioListView.swift
+//  oldPortfolioListView.swift
 //  EngineYard
 //
 //  Created by Amarjit on 20/11/2020.
@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/*
 struct PlayerPortfolioListView: View {
     let player: PlayerViewModel
     let locomotives: [LocomotiveViewModel]
@@ -30,7 +31,7 @@ struct PlayerPortfolioHeaderView: View {
         PlayerHUDHorizontalView(player: player).padding([.top, .bottom], 10.0)
     }
 }
-
+*/
 /*
 struct PlayerPortfolioListView_Previews: PreviewProvider {
     static var previews: some View {

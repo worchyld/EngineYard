@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Locomotive: Codable, Identifiable {
+class Locomotive : Identifiable, Codable {
     let id: UUID
     let name: String
     let livery: Livery
@@ -19,11 +19,12 @@ struct Locomotive: Codable, Identifiable {
     var income: Int {
         return Int(round(Double(self.productionCost) / 2))
     }
-    let qty: Int // how many exist
     let capacity: Int // for dice
-    let rust: Rust
-    let orders: [Int]
-    let sales: [Int]
+    var qty: Int // how many exist
+    var rust: Rust
+    var orders: [Int]
+    var sales: [Int]
+    
     var isFull: Bool {
         if ((orders.count + sales.count) == capacity) {
             return true
@@ -31,10 +32,9 @@ struct Locomotive: Codable, Identifiable {
         return false
     }
     var isAvailable: Bool {
-        let hasOrders = orders.count > 0
-        let hasSales = sales.count > 0
+        let hasOrders = orders.count >= 0
+        let hasSales = sales.count >= 0
         return ((hasOrders || hasSales) && rust.isActiveButNotRusted())
-                //(rustValue >= Rust.new.rawValue && rustValue <= Rust.rusting.rawValue))
     }
     
     init(id: UUID, name: String, livery: Livery, generation: Generation, cost: Int, qty: Int, capacity: Int, rust: Rust?, orders: [Int]?, sales: [Int]?) {
@@ -61,57 +61,45 @@ struct Locomotive: Codable, Identifiable {
             self.sales = [Int]()
         }
     }
+
 }
 
 extension Locomotive {
-    internal enum Change {
-        case subtractQtyBy1
-        case rustify
-        case addOrder(order: Int)
-        case addSale(sale: Int)
+    func reduceQtyBy1() {
+        guard qty > 0 else { return }
+        qty -= 1
     }
-    
-    internal func execute(_ change: Change) -> Self {
-        switch change {
-        case .subtractQtyBy1:
-            guard qty > 0 else {
-                return self
-            }
-            let qty = self.qty - 1
-            return .init(id: id, name: name, livery: livery, generation: generation, cost: cost, qty: qty, capacity: capacity, rust: rust, orders: orders, sales: sales)
-            
-        case .addOrder(let order):
-            guard order.isD6 else {
-                return self
-            }
-            guard !isFull else {
-                return self
-            }
-            var orders = self.orders
-            orders.append(order)
-            
-            return .init(id: id, name: name, livery: livery, generation: generation, cost: cost, qty: qty, capacity: capacity, rust: rust, orders: orders, sales: sales)
-            
-            
-        case .addSale(let sale):
-            guard sale.isD6 else {
-                return self
-            }
-            guard !isFull else {
-                return self
-            }
-            
-            var sales = self.sales
-            sales.append(sale)
-            return .init(id: id, name: name, livery: livery, generation: generation, cost: cost, qty: qty, capacity: capacity, rust: rust, orders: orders, sales: sales)
+    func rustify() {
+        self.rust.rustify()
+    }
+    func addOrder(order: Int) {
+        guard (!self.isFull) else { return }
+        guard (order.isD6) else { return }
+        if ((self.rust == .notBuilt) && (self.orders.count == 0)) { self.rustify() }
+        self.orders.append(order)
+    }
+    func addSale(order: Int) {
+        guard (!self.isFull) else { return }
+        guard (order.isD6) else { return }
+        self.sales.append(order)
+    }
+}
 
-            
-        case .rustify:
-            var newRust = self.rust
-            newRust.rustify()
-            return .init(id: id, name: name, livery: livery, generation: generation, cost: cost, qty: qty, capacity: capacity, rust: newRust, orders: orders, sales: sales)
-            
-        }
+extension Locomotive : Equatable {
+    static func == (lhs: Locomotive, rhs: Locomotive) -> Bool {
+        return (lhs.id == rhs.id)
+    }
+    static func isHigherGeneration(lhs: Locomotive, rhs: Locomotive) -> Bool {
+        return (lhs.generation > rhs.generation)
+    }
+    static func isLowerGeneration(lhs: Locomotive, rhs: Locomotive) -> Bool {
+        return (lhs.generation < rhs.generation)
+    }
+}
+
+extension Locomotive : CustomDebugStringConvertible {
+    var debugDescription: String {
+        return "Locomotive: \(self.name), Livery: \(self.livery), Generation: \(self.generation), $\(self.cost), Qty: \(self.qty), Capacity: \(self.capacity), Rust: \(self.rust)"
     }
 }
 
@@ -137,3 +125,5 @@ extension Locomotive {
         return locos
     }
 }
+
+

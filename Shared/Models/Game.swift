@@ -7,22 +7,26 @@
 
 import Foundation
 
-class Game {
-    var players: [Player]?
-    var gamePhase: GamePhase = .setup
-}
-
-extension Game {
-    func didEndTrigger(cash: Int) -> Bool {
-        return (cash >= Constants.winCondition)
+final class Game {
+    public private(set) var players: [Player]?
+    public private(set) var gamePhase: GamePhase = .setup
+    public private(set) var board: Board?
+    
+    init(players: [Player]? = nil, gamePhase: GamePhase = .setup, board: Board? = nil) {
+        self.players = players
+        self.gamePhase = gamePhase
+        self.board = board
     }
-    func winnersList() -> [Player]? {
-        guard let pl = players else {
-            return nil
+    
+    func preparePlayers(players: [Player]) {
+        self.players = players
+    }
+    
+    func prepareBoard() {
+        guard let players = self.players else {
+            return
         }
-        let sortedByMostCoins = pl.sorted(by: { p1, p2 in
-            return p1.cash > p2.cash
-        })
-        return sortedByMostCoins
+        self.board = Board()
+        self.board!.prepare(for: players.count)
     }
 }

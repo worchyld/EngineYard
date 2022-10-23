@@ -57,12 +57,34 @@ final class LocoTests: XCTestCase {
         XCTAssertEqual(blue.count, Constants.Blue.totalGenerations)
     }
     
+    func testRustify() throws {
+        let firstLoco = self.allLocos!.first!
+        XCTAssertTrue(firstLoco.rust == .notBuilt)
+        firstLoco.rustify()
+        XCTAssertTrue(firstLoco.rust == .active)
+        firstLoco.rustify()
+        XCTAssertTrue(firstLoco.rust == .rusting)
+        firstLoco.rustify()
+        XCTAssertTrue(firstLoco.rust == .rusted)
+        // try to exceed rusted state
+        firstLoco.rustify()
+        XCTAssertTrue(firstLoco.rust == .rusted)
+    }
+
+    
+    func testRustAvailability() throws {
+        let firstLoco = self.allLocos!.first!
+        XCTAssertFalse(firstLoco.isAvailable)
+        firstLoco.addOrder(order: Die.roll)
+        XCTAssertTrue(firstLoco.isAvailable)
+    }
+    
     func testAddOrder() throws {
-        var firstLoco = self.allLocos!.first!
+        let firstLoco = self.allLocos!.first!
         XCTAssertFalse(firstLoco.isFull)
         let capacity = firstLoco.capacity
         for _ in 0...(capacity - 1) {
-            firstLoco = firstLoco.execute(.addOrder(order: Die.roll))
+            firstLoco.addOrder(order: Die.roll)
         }
         XCTAssertTrue(firstLoco.orders.count == capacity)
         XCTAssertTrue(firstLoco.isFull)
@@ -72,23 +94,23 @@ final class LocoTests: XCTestCase {
     }
     
     func testAddOrdersBeyondCapacity() throws {
-        var firstLoco = self.allLocos!.first!
+        let firstLoco = self.allLocos!.first!
         XCTAssertFalse(firstLoco.isFull)
         let capacity = firstLoco.capacity
         for _ in 0...(capacity - 1) {
-            firstLoco = firstLoco.execute(.addOrder(order: Die.roll))
+            firstLoco.addOrder(order: Die.roll)
         }
-        firstLoco = firstLoco.execute(.addOrder(order: Die.roll))
+        firstLoco.addOrder(order: Die.roll)
         XCTAssertTrue(firstLoco.orders.count == capacity)
         XCTAssertTrue(firstLoco.isFull)
     }
     
     func testAddSale() throws {
-        var firstLoco = self.allLocos!.first!
+        let firstLoco = self.allLocos!.first!
         XCTAssertFalse(firstLoco.isFull)
         let capacity = firstLoco.capacity
         for _ in 0...(capacity - 1) {
-            firstLoco = firstLoco.execute(.addSale(sale: Die.roll))
+            firstLoco.addSale(order: Die.roll)
         }
         XCTAssertTrue(firstLoco.sales.count == capacity)
         XCTAssertTrue(firstLoco.isFull)
@@ -97,54 +119,18 @@ final class LocoTests: XCTestCase {
         }
         
         // add beyond capacity
-        firstLoco = firstLoco.execute(.addSale(sale: Die.roll))
+        firstLoco.addSale(order: Die.roll)
         XCTAssertTrue(firstLoco.sales.count == capacity)
         XCTAssertTrue(firstLoco.isFull)
     }
     
     
     func testReduceQtyBy1() throws {
-        var firstLoco = self.allLocos!.first!
+        let firstLoco = self.allLocos!.first!
         let expected = (firstLoco.qty - 1)
-        firstLoco = firstLoco.execute(.subtractQtyBy1)
+        firstLoco.reduceQtyBy1()
         XCTAssertTrue(firstLoco.qty == expected)
         XCTAssertTrue(firstLoco.qty >= 0)
     }
     
-    func testReduceQtyToZero() throws {
-        var firstLoco = self.allLocos!.first!
-        let qty = firstLoco.qty
-        for _ in 1...qty {
-            firstLoco = firstLoco.execute(.subtractQtyBy1)
-        }
-        XCTAssertTrue(firstLoco.qty == 0)
-        XCTAssertTrue(firstLoco.qty >= 0)
-        
-        // try to go beyond 0
-        firstLoco = firstLoco.execute(.subtractQtyBy1)
-        XCTAssertTrue(firstLoco.qty == 0)
-        XCTAssertTrue(firstLoco.qty >= 0)
-    }
-    
-    func testRustify() throws {
-        var firstLoco = self.allLocos!.first!
-        XCTAssertTrue(firstLoco.rust == .notBuilt)
-        firstLoco = firstLoco.execute(.rustify)
-        XCTAssertTrue(firstLoco.rust == .new)
-        firstLoco = firstLoco.execute(.rustify)
-        XCTAssertTrue(firstLoco.rust == .rusting)
-        firstLoco = firstLoco.execute(.rustify)
-        XCTAssertTrue(firstLoco.rust == .rusted)
-        // try to exceed rusted state
-        firstLoco = firstLoco.execute(.rustify)
-        XCTAssertTrue(firstLoco.rust == .rusted)
-    }
-
-    
-    func testRustAvailability() throws {
-        var firstLoco = self.allLocos!.first!
-        XCTAssertFalse(firstLoco.isAvailable)
-        //firstLoco = firstLoco.execute(.addOrder(order: Die.roll))
-        //XCTAssertTrue(firstLoco.isAvailable)
-    }
 }

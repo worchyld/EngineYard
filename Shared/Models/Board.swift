@@ -7,24 +7,32 @@
 
 import Foundation
 
+// Board has a number of decks (14)
 class Board {
-    private var _decks: [Deck]?
-    public var decks: [Deck] {
-        return self._decks ?? []
-    }
-    public var size: Int {
-        return self.decks.count
-    }
+    public private(set) var decks: [Deck] = [Deck]()
     
-    init(decks: [Deck]? = nil) {
-        self._decks = decks
+    init(_ decks: [Deck] = [Deck]()) {
+        self.decks = decks
     }
 }
 
 extension Board {
-    func unlockNext() {
-//        let lockedDecks = self.decks.filter { deck in
-//            return deck.loco.rust < .rusted && deck.
-//        }
+    func prepare(for playerCount: Int = 3) {
+        guard Constants.NumberOfPlayers.isValid(playerCount) else {
+            return
+        }
+        
+        let locos = Locomotive.allLocos()
+        
+        for loco in locos {
+            let deck: Deck = Deck(loco: loco)
+            
+            for _ in 1...loco.qty {
+                let card = Card(id: UUID(), locomotive: loco)
+                deck.push(card)
+            }
+            
+            self.decks.append(deck)
+        }
     }
 }

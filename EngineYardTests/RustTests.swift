@@ -13,7 +13,7 @@ class RustTests: XCTestCase {
 
     func testRustNotBuiltToNew() {
         var rust = Rust.notBuilt
-        let expected = Rust.new
+        let expected = Rust.active
         rust.rustify()
         XCTAssertEqual(rust, expected)
         print ("Rust: \(rust)")
