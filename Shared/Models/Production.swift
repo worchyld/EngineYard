@@ -39,7 +39,7 @@ struct Production: Codable {
         
         case .resetProductionUnits:
             let newUnits = self.units + self.spent
-            return .init(units: newUnits, spent: self.spent)
+            return .init(units: newUnits, spent: 0)
             
         case .reduceProductionUnits(let subtractUnits):
             var newUnits = self.units - subtractUnits

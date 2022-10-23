@@ -51,8 +51,8 @@ final class ProductionTests: XCTestCase {
         XCTAssertTrue(p.units == 1)
         XCTAssertTrue(p.spent == 3)
         p = p.execute(.resetProductionUnits)
-        XCTAssertTrue(p.units == 4)
-        XCTAssertTrue(p.spent == 0)
+        XCTAssertTrue(p.units == 4, "\(p.units)")
+        XCTAssertTrue(p.spent == 0, "\(p.spent)")
     }
     
     // MARK: Test production mgr
