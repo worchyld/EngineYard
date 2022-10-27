@@ -29,7 +29,7 @@ final class FundingTests: XCTestCase {
             case .success(let value):
                 XCTFail("Expected to be a failure but got a success with \(value)")
             case .failure(let error):
-                XCTAssertEqual(error, FundingError.mustBePositive)
+                XCTAssertEqual(error, FinanceError.mustBePositive)
             }
     }
     
@@ -40,7 +40,7 @@ final class FundingTests: XCTestCase {
             case .success(let value):
                 XCTFail("Expected to be a failure but got a success with \(value)")
             case .failure(let error):
-                XCTAssertEqual(error, FundingError.mustBePositive)
+                XCTAssertEqual(error, FinanceError.mustBePositive)
             }
     }
     
@@ -63,7 +63,7 @@ final class FundingTests: XCTestCase {
             case .success(let value):
                 XCTFail("Expected to be a failure but got a success with \(value)")
             case .failure(let error):
-                XCTAssertEqual(error, FundingError.mustBePositive)
+                XCTAssertEqual(error, FinanceError.mustBePositive)
             }
     }
     
@@ -74,7 +74,7 @@ final class FundingTests: XCTestCase {
             case .success(let value):
                 XCTFail("Expected to be a failure but got a success with \(value)")
             case .failure(let error):
-                XCTAssertEqual(error, FundingError.mustBePositive)
+                XCTAssertEqual(error, FinanceError.mustBePositive)
             }
     }
     
@@ -85,7 +85,7 @@ final class FundingTests: XCTestCase {
             case .success(let value):
                 XCTFail("Expected to be a failure but got a success with \(value)")
             case .failure(let error):
-                XCTAssertEqual(error, FundingError.notEnough(funds: 3))
+                XCTAssertEqual(error, FinanceError.notEnough(funds: 3))
             }
     }
 }

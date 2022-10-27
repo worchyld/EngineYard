@@ -9,9 +9,23 @@ import XCTest
 @testable import EngineYard
 
 final class BoardTests: XCTestCase {
+    
+    var board: Board?
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        var game = Game()
+        let gsm = GameSetupManager(game: game)
+        do {
+            game = try gsm.setup(for: [Player(), Player(), Player()])
+            guard let board = game.board else {
+                XCTFail("No game board")
+                return
+            }
+            self.board = board
+        } catch let err {
+            XCTFail(err.localizedDescription)
+        }
     }
 
     override func tearDownWithError() throws {
@@ -19,8 +33,11 @@ final class BoardTests: XCTestCase {
     }
 
     func testBoardDidPrepare() throws {
-        let board = Board()
-        board.prepare()
+        guard let board = self.board else {
+            XCTFail("No board")
+            return
+        }
+
         XCTAssertTrue(board.decks.count == Constants.totalDecks, "Expected: \(Constants.totalDecks), Got: \(board.decks.count)")
         
         let totalCards = board.decks.map {

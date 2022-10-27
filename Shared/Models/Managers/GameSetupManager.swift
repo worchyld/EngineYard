@@ -14,13 +14,33 @@ class GameSetupManager {
         self.game = game
     }
     
-    func setup(for players: [Player]) throws -> Game? {
-        guard Constants.NumberOfPlayers.isValid(players.count) else {
-            return nil
+    private func prepareBoard() -> Board {
+        var decks: [Deck] = [Deck]()
+        
+        // Prepare the board, decks, cards
+        let locos = Locomotive.allLocos()
+        
+        for loco in locos {
+            let deck: Deck = Deck(loco: loco)
+            
+            for _ in 1...loco.qty {
+                let card = Card(id: UUID(), locomotive: loco)
+                deck.push(card)
+            }
+            
+            decks.append(deck)
         }
         
-        let board = Board()
-        board.prepare()
+        let board = Board.init(with: decks)
+        return board
+    }
+    
+    func setup(for players: [Player]) throws -> Game {
+        guard Constants.NumberOfPlayers.isValid(players.count) else {
+            throw GameErrorDelegate.noPlayerFound
+        }
+        
+        let board = self.prepareBoard()
         
         switch (players.count) {
         case 3, 4:
@@ -75,9 +95,9 @@ class GameSetupManager {
             firstTrain.loco.addOrder(order: Die.roll)
             
             // set cash for 3-4 player game
-            let _ = players.map {
+            let _ = players.map {                
                 $0.setCash(balance: seedCash)
-            }            
+            }
             break
             
         default:

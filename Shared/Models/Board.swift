@@ -11,26 +11,8 @@ import Foundation
 class Board {
     public private(set) var decks: [Deck] = [Deck]()
     
-    init(_ decks: [Deck] = [Deck]()) {
+    init(with decks: [Deck] = [Deck]()) {
         self.decks = decks
     }
 }
 
-extension Board {
-    func prepare() {
-        
-        // Prepare the board, decks, cards
-        let locos = Locomotive.allLocos()
-        
-        for loco in locos {
-            let deck: Deck = Deck(loco: loco)
-            
-            for _ in 1...loco.qty {
-                let card = Card(id: UUID(), locomotive: loco)
-                deck.push(card)
-            }
-            
-            self.decks.append(deck)
-        }
-    }
-}

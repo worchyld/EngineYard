@@ -8,7 +8,7 @@
 import Foundation
 
 public enum GameErrorDelegate: Error {
-    case noGameObject, noBoardDefined, noTrainFound, notEnoughCardsInDeck, noPlayerFound, noGenerationFound, noLiveryFound
+    case noGameObject, noBoardDefined, noTrainFound, notEnoughCardsInDeck, noPlayerFound, playerCountIsInvalid, noGenerationFound, noLiveryFound
 }
 
 public enum NumberErrorDelegate: Error, Equatable {
@@ -31,6 +31,8 @@ extension GameErrorDelegate : LocalizedError {
             return NSLocalizedString("** Not enough cards in deck **", comment: "System-error: Not enough cards")
         case .noPlayerFound:
             return NSLocalizedString("** No player found **", comment: "System-error: No player found")
+        case .playerCountIsInvalid:
+            return NSLocalizedString("** Player count is invalid **", comment: "System-error: Player count invalid")
         case .noGenerationFound:
             return NSLocalizedString("** No train generation found **", comment: "System-error: No train generation found")
         case .noLiveryFound:
