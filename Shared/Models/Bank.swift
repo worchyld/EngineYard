@@ -11,10 +11,12 @@ class Bank {
     static func didTriggerEndOfGame(cash: Int) -> Bool {
         return (cash >= Constants.cashNeededToTriggerGameEnd)
     }
-        
+    
+    // #TODO
     // Buy a card
     // 1. check hand, card is valid
     // 2. check funds
+    // 3. add card to hand
     func buy(player: Player, card: Card) {
         guard let _ = card.loco else {
             return
@@ -45,17 +47,28 @@ class Bank {
             print ("fail -- \(err)")
         }
     }
-    
+
+    // #TODO
     // Buy production units
     // 1. Check production is valid
     // 2. Check card is valid
     // 3. Check funds
+    // 4. Update card production units
     func buy(player: Player, productionUnits: Int, card: Card) {
-        
-    }
-
-    private func canAffordProduction(_ units: Int, loco: Locomotive, player: Player) -> Int {
-        return  (units * loco.productionCost)
+        guard productionUnits.isPositive else {
+            return
+        }
+        let cost = (productionUnits * card.loco!.productionCost)
+        let balance = player.balance
+        let ok = Funds.debit(balance: balance, by: cost)
+        switch ok {
+        case .success(let newBalance):
+            player.setCash(balance: newBalance)
+        default:
+            return
+        }
+        let result = card.production.execute(.addProductionUnits(productionUnits))
+        card.setProduction(result)
     }
 
     func payTax(on players: [Player]) -> [Player] {

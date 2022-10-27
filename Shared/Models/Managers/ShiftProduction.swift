@@ -68,8 +68,8 @@ class ShiftProduction {
             let fromProduction = from.production.execute(.reduceProductionUnits(units))
             let toProduction = to.production.execute(.addProductionUnits(units))
             
-            from.changeProduction(fromProduction)
-            to.changeProduction(toProduction)
+            from.setProduction(fromProduction)
+            to.setProduction(toProduction)
             
             // if from.production is zero, notify hand manager to remove card
             

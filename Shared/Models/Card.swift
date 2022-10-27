@@ -21,7 +21,7 @@ class Card: Identifiable, Codable {
         self.production = production
     }
     
-    func changeProduction(_ production: Production) {
+    func setProduction(_ production: Production) {
         self.production = production
     }
 }

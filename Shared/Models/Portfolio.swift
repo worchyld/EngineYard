@@ -48,6 +48,8 @@ extension Portfolio {
         }
     }
     
+    // MARK: Private funcs
+    
     private func push(_ card: Card) -> Result<Bool, PortfolioError> {
         do {
             try validateAdd(card: card)
