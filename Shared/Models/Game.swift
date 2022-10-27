@@ -17,16 +17,16 @@ final class Game {
         self.gamePhase = gamePhase
         self.board = board
     }
-    
-    func preparePlayers(players: [Player]) {
+}
+
+extension Game {
+    func setGamePhase(_ phase: GamePhase) {
+        self.gamePhase = phase
+    }
+    func setPlayers(_ players: [Player]) {
         self.players = players
     }
-    
-    func prepareBoard() {
-        guard let players = self.players else {
-            return
-        }
-        self.board = Board()
-        self.board!.prepare(for: players.count)
+    func setBoard(_ board: Board) {
+        self.board = board
     }
 }

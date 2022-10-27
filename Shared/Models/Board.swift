@@ -17,11 +17,9 @@ class Board {
 }
 
 extension Board {
-    func prepare(for playerCount: Int = 3) {
-        guard Constants.NumberOfPlayers.isValid(playerCount) else {
-            return
-        }
+    func prepare() {
         
+        // Prepare the board, decks, cards
         let locos = Locomotive.allLocos()
         
         for loco in locos {

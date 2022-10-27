@@ -15,6 +15,9 @@ public struct Constants {
         public static let min = 3
         public static let max = 5
         
+        public static let seedCashThreeOrFourPlayer = 12
+        public static let seedCashFivePlayer = 14
+        
         public static func isValid(_ playerCount: Int = NumberOfPlayers.min) -> Bool {
             return (playerCount >= NumberOfPlayers.min && playerCount <= NumberOfPlayers.max)
         }
