@@ -12,6 +12,12 @@ public enum PlayerState: Int {
     case waiting = 0, thinking, done
 }
 
+enum CardAction {
+    case push(card: Card)
+    case pop(card: Card)
+    case seek(card: Card)
+}
+
 class Player: NSObject, GKGameModelPlayer {
     var playerId: Int = 0
     
@@ -34,5 +40,9 @@ extension Player {
     public func setCash(balance: Int = 0) {
         guard (balance >= 0) else { return }
         self.cash = balance
+    }
+    
+    public func handleCardAction(card: Card, action: CardAction) -> Result<Bool, PortfolioError> {
+        return self._portfolio.handleCardAction(action: action)
     }
 }

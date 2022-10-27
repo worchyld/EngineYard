@@ -29,27 +29,35 @@ final class Portfolio {
 }
 
 extension Portfolio {
-    func canAdd(card: Card) -> Result<Bool, PortfolioError> {
+    func handleCardAction(action: CardAction) -> Result<Bool, PortfolioError> {
+        switch action {
+        case .push(let card):
+            return push(card)
+            
+        case .pop(let card):
+            return pop(card)
+            
+        // #TODO
+        case .seek(let card):
+            if let needle = seek(card) {
+                print ("Found: \(needle)")
+                return .success(true)
+            } else {
+                return .failure(.cardNotFoundInPortfolio(card: card))
+            }
+        }
+    }
+    
+    private func push(_ card: Card) -> Result<Bool, PortfolioError> {
         do {
             try validateAdd(card: card)
+            self._hand.append(card)
             
             return .success(true)
         } catch let err {
             return .failure(err as! PortfolioError)
         }
     }
-    
-    func add(card: Card) -> Result<Bool, PortfolioError> {
-        switch canAdd(card: card) {
-        case .success(_):
-            self._hand.append(card)
-            return .success(true)
-            
-        case .failure(let err):
-            return .failure(err as PortfolioError)
-        }
-    }
-    
     
     private func validateAdd(card: Card) throws {
         guard let loco = card.loco else {
@@ -61,7 +69,7 @@ extension Portfolio {
         guard loco.rust != .active else {
             throw PortfolioError.locoCannotBeActive
         }
-        if let _ = seek(card: card) {
+        if let _ = seek(card) {
             throw PortfolioError.alreadyOwnThisCard(card: card)
         }
         if let _ = seekCardWithSameGeneration(as: card) {
@@ -69,14 +77,15 @@ extension Portfolio {
         }
     }
     
-    
-    func canRemove(card: Card) {}
-    func remove(card: Card) {}
+    // #TODO
+    private func pop(_ card: Card) -> Result<Bool, PortfolioError> {
+        return .success(true)
+    }
     
     // MARK: (Private) methods
     
     
-    private func seek(card: Card) -> Card? {
+    private func seek(_ card: Card) -> Card? {
         return self.hand.filter { item in
             return (card == item)
         }.first
