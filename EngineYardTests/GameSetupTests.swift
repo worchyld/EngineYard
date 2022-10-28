@@ -52,6 +52,7 @@ final class GameSetupTests: XCTestCase {
                 XCTAssertTrue(firstCard.loco!.rust == .active)
                 XCTAssertTrue(firstCard.loco!.isAvailable)
                 XCTAssertFalse(firstCard.loco!.isFull)
+                XCTAssertTrue(firstCard.loco!.qty == players.count)
             }
             
             
