@@ -75,7 +75,7 @@ extension Locomotive {
     func addOrder(order: Int) {
         guard (!self.isFull) else { return }
         guard (order.isD6) else { return }
-        if ((self.rust == .notBuilt) && (self.orders.count == 0)) { self.rustify() }
+        if ((self.rust == .notBuilt) && (self.orders.count == 0)) { self.rust = .active }
         self.orders.append(order)
     }
     func addSale(order: Int) {

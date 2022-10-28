@@ -72,6 +72,7 @@ class GameSetupManager {
                 item.setProduction(Production(units: 1))
                 
                 for p in players {
+                    print ("trying to push card \(item.loco?.debugDescription ?? "No train found")")
                     let result = p.handleCardAction(card: item, action: .push(card: item))
                     switch result {
                     case .success:

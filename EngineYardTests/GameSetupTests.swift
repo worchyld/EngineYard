@@ -19,6 +19,7 @@ final class GameSetupTests: XCTestCase {
     }
 
     func testSetupForThreePlayers() {
+        let seedCash = Constants.NumberOfPlayers.seedCashThreeOrFourPlayer
         let players = [Player(), Player(), Player()]
         var game = Game()
         let gsm = GameSetupManager(game: game)
@@ -33,6 +34,7 @@ final class GameSetupTests: XCTestCase {
             XCTAssertTrue(hasPlayers.count == 3, "Got \(hasPlayers.count)")
             
             for p in players {
+                XCTAssertTrue(p.balance == seedCash)
                 XCTAssertTrue(p.hand.count == 1)
                 guard let firstCard = p.hand.first else {
                     XCTAssertThrowsError("No card found")
@@ -47,6 +49,9 @@ final class GameSetupTests: XCTestCase {
                 XCTAssertTrue(firstLoco.generation == .first)
                 XCTAssertTrue(firstCard.production.units == 1)
                 XCTAssertTrue(firstCard.production.spent == 0)
+                XCTAssertTrue(firstCard.loco!.rust == .active)
+                XCTAssertTrue(firstCard.loco!.isAvailable)
+                XCTAssertFalse(firstCard.loco!.isFull)
             }
             
             

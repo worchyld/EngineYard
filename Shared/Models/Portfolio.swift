@@ -69,6 +69,7 @@ extension Portfolio {
             throw PortfolioError.locoHasRusted
         }
         guard loco.rust != .active else {
+            print ("Loco == \(loco.name), rust == \(loco.rust)")
             throw PortfolioError.locoCannotBeActive
         }
         if let _ = seek(card) {
