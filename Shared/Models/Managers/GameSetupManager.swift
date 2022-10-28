@@ -42,26 +42,28 @@ class GameSetupManager {
         
         let board = self.prepareBoard()
         
+        
         switch (players.count) {
-        case 3, 4:
+        case 3,4:
             // In a 3-4 player game, give each player 12 coins
             // Give each player 1x First Gen Green card, and add 1 production unit to each one
             // Add 3 orders to the first train, Add 1 order to the second train
-            let seedCash = Constants.NumberOfPlayers.seedCashThreeOrFourPlayer
             
             guard let firstTrain = board.decks.first else {
                 throw GameErrorDelegate.noTrainFound
             }
             
-            guard (firstTrain.cards.count == players.count) else {
-                throw GameErrorDelegate.notEnoughCardsInDeck
-            }
-            
-            // set cash for 3-4 player game
+            // Set seedCash = $12
+            let seedCash = Constants.NumberOfPlayers.seedCashThreeOrFourPlayer
             let _ = players.map {
                 $0.setCash(balance: seedCash)
             }
-            
+                        
+            if (players.count == 3) {
+                let _ = firstTrain.cards.popLast()
+                let _ = firstTrain.loco.reduceQtyBy1()
+            }
+                        
             for _ in 1...players.count {
                 firstTrain.loco.addOrder(order: Die.roll)
             }
@@ -86,22 +88,20 @@ class GameSetupManager {
             // In a 5 player game, give each player 14 coins
             // No-one has any cards
             // Add 1 order to the first train
-            let seedCash = Constants.NumberOfPlayers.seedCashFivePlayer
-            
             guard let firstTrain = board.decks.first else {
                 throw GameErrorDelegate.noTrainFound
             }
-            
             firstTrain.loco.addOrder(order: Die.roll)
             
-            // set cash for 3-4 player game
-            let _ = players.map {                
+            // Set seed cash: $14
+            let _ = players.map {
+                let seedCash = Constants.NumberOfPlayers.seedCashFivePlayer
                 $0.setCash(balance: seedCash)
             }
             break
             
         default:
-            throw GameErrorDelegate.noGameObject
+            throw GameErrorDelegate.playerCountIsInvalid
         }
         
         self.game.setGamePhase(.setup)

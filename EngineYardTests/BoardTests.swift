@@ -14,6 +14,13 @@ final class BoardTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+    }
+
+    override func tearDownWithError() throws {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    }
+
+    func testBoardDidPrepare() throws {
         var game = Game()
         let gsm = GameSetupManager(game: game)
         do {
@@ -24,15 +31,10 @@ final class BoardTests: XCTestCase {
             }
             self.board = board
         } catch let err {
-            XCTFail(err.localizedDescription)
+            throw err
         }
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testBoardDidPrepare() throws {
+        
+        
         guard let board = self.board else {
             XCTFail("No board")
             return
