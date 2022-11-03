@@ -20,14 +20,16 @@ class Card: Identifiable, Codable {
         self.locomotive = locomotive
         self.production = production
     }
-    
-    func setProduction(_ production: Production) {
-        self.production = production
-    }
 }
 
 extension Card : Equatable {
     static func == (lhs: Card, rhs: Card) -> Bool {
         return lhs.id == rhs.id
+    }
+}
+
+extension Card {
+    func setProduction(_ production: Production) {
+        self.production = production
     }
 }
