@@ -10,6 +10,7 @@ import Foundation
 class Player {
     var cash : Int
     var icon : String?
+    var onTurn: Bool = false
     
     init(cash: Int = 0, icon: String? = nil) {
         self.cash = cash
