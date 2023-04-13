@@ -26,10 +26,19 @@ struct D6 {
 extension D6 {
     static func increment(value: Int, by amount: Int) -> Int {
         var value = value
-        guard ((value + amount) < D6.maximumValue) else {
+        guard ((value + amount) <= D6.maximumValue) else {
             return value
         }
-        value += 1
+        value += amount
+        return value
+    }
+    
+    static func decrement(value: Int, by amount: Int) -> Int {
+        var value = value
+        guard ((value - amount) >= D6.minimumValue) else {
+            return value
+        }
+        value -= amount
         return value
     }
 }
