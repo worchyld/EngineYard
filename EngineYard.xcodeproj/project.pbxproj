@@ -30,6 +30,9 @@
 		4D9C8AA829E812CC006FA668 /* D6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C8AA729E812CC006FA668 /* D6.swift */; };
 		4D9C8AAA29E81356006FA668 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C8AA929E81356006FA668 /* Constants.swift */; };
 		4D9C8AAE29E81494006FA668 /* D6Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C8AAD29E81494006FA668 /* D6Tests.swift */; };
+		4D9C8AB029E82B52006FA668 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C8AAF29E82B52006FA668 /* Player.swift */; };
+		4D9C8AB229E82BAC006FA668 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C8AB129E82BAC006FA668 /* Board.swift */; };
+		4D9C8AB529E82BF8006FA668 /* Locomotive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C8AB329E82BBE006FA668 /* Locomotive.swift */; };
 		4DB92AE62555BDEE00B976A2 /* EngineYardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB92AE52555BDEE00B976A2 /* EngineYardApp.swift */; };
 		4DB92AE82555BDEE00B976A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB92AE72555BDEE00B976A2 /* ContentView.swift */; };
 		4DB92AEA2555BDEF00B976A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DB92AE92555BDEF00B976A2 /* Assets.xcassets */; };
@@ -79,6 +82,9 @@
 		4D9C8AA729E812CC006FA668 /* D6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D6.swift; sourceTree = "<group>"; };
 		4D9C8AA929E81356006FA668 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4D9C8AAD29E81494006FA668 /* D6Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D6Tests.swift; sourceTree = "<group>"; };
+		4D9C8AAF29E82B52006FA668 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		4D9C8AB129E82BAC006FA668 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		4D9C8AB329E82BBE006FA668 /* Locomotive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locomotive.swift; sourceTree = "<group>"; };
 		4DB92AE22555BDEE00B976A2 /* EngineYard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EngineYard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DB92AE52555BDEE00B976A2 /* EngineYardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineYardApp.swift; sourceTree = "<group>"; };
 		4DB92AE72555BDEE00B976A2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -125,6 +131,9 @@
 				4D9C8AA129E80DCD006FA668 /* Generations.swift */,
 				4D9C8AA329E80DF8006FA668 /* EngineColours.swift */,
 				4D9C8AA729E812CC006FA668 /* D6.swift */,
+				4D9C8AAF29E82B52006FA668 /* Player.swift */,
+				4D9C8AB129E82BAC006FA668 /* Board.swift */,
+				4D9C8AB329E82BBE006FA668 /* Locomotive.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -385,6 +394,7 @@
 				4D5AC8D12555C27700E39048 /* EY+Array.swift in Sources */,
 				4D5AC8D72555C27700E39048 /* EY+String.swift in Sources */,
 				4D5AC8CF2555C27700E39048 /* EY+Bundle.swift in Sources */,
+				4D9C8AB529E82BF8006FA668 /* Locomotive.swift in Sources */,
 				4D5AC8D22555C27700E39048 /* EY+Identifier.swift in Sources */,
 				4D9C8AA829E812CC006FA668 /* D6.swift in Sources */,
 				4D9C8AA229E80DCD006FA668 /* Generations.swift in Sources */,
@@ -406,7 +416,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D9C8AB029E82B52006FA668 /* Player.swift in Sources */,
 				4D9C8AAE29E81494006FA668 /* D6Tests.swift in Sources */,
+				4D9C8AB229E82BAC006FA668 /* Board.swift in Sources */,
 				4DB92AF82555BDEF00B976A2 /* EngineYardTests.swift in Sources */,
 				4D9C8AA629E80F3C006FA668 /* IntTests.swift in Sources */,
 			);
