@@ -26,6 +26,7 @@
 		4D909E4327D2180500A50180 /* EY+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D909E4227D2180500A50180 /* EY+Notification.swift */; };
 		4D9C8AA229E80DCD006FA668 /* Generations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C8AA129E80DCD006FA668 /* Generations.swift */; };
 		4D9C8AA429E80DF8006FA668 /* EngineColours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C8AA329E80DF8006FA668 /* EngineColours.swift */; };
+		4D9C8AA629E80F3C006FA668 /* IntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C8AA529E80F3C006FA668 /* IntTests.swift */; };
 		4DB92AE62555BDEE00B976A2 /* EngineYardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB92AE52555BDEE00B976A2 /* EngineYardApp.swift */; };
 		4DB92AE82555BDEE00B976A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB92AE72555BDEE00B976A2 /* ContentView.swift */; };
 		4DB92AEA2555BDEF00B976A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DB92AE92555BDEF00B976A2 /* Assets.xcassets */; };
@@ -71,6 +72,7 @@
 		4D909E4227D2180500A50180 /* EY+Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Notification.swift"; sourceTree = "<group>"; };
 		4D9C8AA129E80DCD006FA668 /* Generations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generations.swift; sourceTree = "<group>"; };
 		4D9C8AA329E80DF8006FA668 /* EngineColours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineColours.swift; sourceTree = "<group>"; };
+		4D9C8AA529E80F3C006FA668 /* IntTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntTests.swift; sourceTree = "<group>"; };
 		4DB92AE22555BDEE00B976A2 /* EngineYard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EngineYard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DB92AE52555BDEE00B976A2 /* EngineYardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineYardApp.swift; sourceTree = "<group>"; };
 		4DB92AE72555BDEE00B976A2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 			children = (
 				4DB92AF72555BDEF00B976A2 /* EngineYardTests.swift */,
 				4DB92AF92555BDEF00B976A2 /* Info.plist */,
+				4D9C8AA529E80F3C006FA668 /* IntTests.swift */,
 			);
 			path = EngineYardTests;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DB92AF82555BDEF00B976A2 /* EngineYardTests.swift in Sources */,
+				4D9C8AA629E80F3C006FA668 /* IntTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

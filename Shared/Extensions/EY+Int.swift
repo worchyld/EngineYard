@@ -38,3 +38,11 @@ extension Int {
         return self
     }
 }
+
+public extension Int {
+    var ordinalFormat: String? {
+        let number: NSNumber = NSNumber(integerLiteral: self)
+        let cache = NumberFormatCache.ordinalFormat
+        return cache.string(from: number)
+    }
+}
