@@ -19,12 +19,14 @@ enum Generation: Int, Codable, CaseIterable, Equatable {
 // Stringify
 extension Generation: CustomStringConvertible {
     var description: String {
-        switch self {
-        case .first: return "first"
-        case .second: return "second"
-        case .third: return "third"
-        case .fourth: return "fourth"
-        case .fifth: return "fifth"
+        get {
+            switch self {
+            case .first: return "first"
+            case .second: return "second"
+            case .third: return "third"
+            case .fourth: return "fourth"
+            case .fifth: return "fifth"
+            }
         }
     }
 }
