@@ -6,7 +6,7 @@
 //
 
 import XCTest
-import EngineYard
+@testable import EngineYard
 
 final class IntTests: XCTestCase {
 
