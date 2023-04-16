@@ -25,10 +25,22 @@ class Locomotive : Identifiable {
     }
     var trainPool: Int
     var maxDice: Int
-    var existingOrders: [Int]
-    var customerPool: [Int]
     var initialOrder: Int?
+    var existingOrders: [Int]
+    var customerBase: [Int]
     var rust: Rust
+    
+    var isDicePoolEmpty: Bool {
+        get {
+            return ((self.existingOrders.isEmpty) && (self.customerBase.isEmpty))
+        }
+    }
+    var isDicePoolFull: Bool {
+        get {
+            return ((self.existingOrders.count + self.customerBase.count) >= self.maxDice)
+        }
+    }
+    
     
     init(id: UUID = UUID(), name: String, generation: Generation, colour: EngineColor, cost: Int, trainPool: Int, maxDice: Int) {
         self.id = id
@@ -38,9 +50,15 @@ class Locomotive : Identifiable {
         self.cost = cost
         self.trainPool = trainPool
         self.maxDice = maxDice
-        self.existingOrders = [Int]()
-        self.customerPool = [Int]()
-        self.initialOrder = nil
         self.rust = .notBuilt
+        self.existingOrders = [Int]()
+        self.customerBase = [Int]()
+        self.initialOrder = nil
+    }
+}
+
+extension Locomotive {
+    func rustify() {
+        self.rust.rustify()
     }
 }
