@@ -8,5 +8,13 @@
 import Foundation
 
 class Board {
+    var spaces: [Space] = [Space]()
+}
+
+class Space {
+    private var loco: Locomotive 
     
+    init(loco: Locomotive) {
+        self.loco = loco
+    }
 }

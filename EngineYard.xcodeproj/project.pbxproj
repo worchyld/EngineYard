@@ -30,7 +30,6 @@
 		4D9C8AA829E812CC006FA668 /* D6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C8AA729E812CC006FA668 /* D6.swift */; };
 		4D9C8AAA29E81356006FA668 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C8AA929E81356006FA668 /* Constants.swift */; };
 		4D9C8AAE29E81494006FA668 /* D6Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C8AAD29E81494006FA668 /* D6Tests.swift */; };
-		4D9C8AB229E82BAC006FA668 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C8AB129E82BAC006FA668 /* Board.swift */; };
 		4D9C8AB529E82BF8006FA668 /* Locomotive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C8AB329E82BBE006FA668 /* Locomotive.swift */; };
 		4D9C8AB729E82CA2006FA668 /* Rust.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C8AB629E82CA2006FA668 /* Rust.swift */; };
 		4DB92AE62555BDEE00B976A2 /* EngineYardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB92AE52555BDEE00B976A2 /* EngineYardApp.swift */; };
@@ -42,6 +41,7 @@
 		4DEBF68329EBE63B00D3A6BF /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEBF68229EBE63B00D3A6BF /* Card.swift */; };
 		4DEBF68429EBE6A200D3A6BF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C8AAF29E82B52006FA668 /* Player.swift */; };
 		4DEBF68629EBE7D000D3A6BF /* OrderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEBF68529EBE7D000D3A6BF /* OrderManager.swift */; };
+		4DEBF68729EC88D000D3A6BF /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C8AB129E82BAC006FA668 /* Board.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -413,6 +413,7 @@
 				4D5AC8D02555C27700E39048 /* EY+FlatColor.swift in Sources */,
 				4D5AC90B2555DD3300E39048 /* NumberFormatCache.swift in Sources */,
 				4DB92AE82555BDEE00B976A2 /* ContentView.swift in Sources */,
+				4DEBF68729EC88D000D3A6BF /* Board.swift in Sources */,
 				4D9C8AA429E80DF8006FA668 /* EngineColours.swift in Sources */,
 				4DB92AE62555BDEE00B976A2 /* EngineYardApp.swift in Sources */,
 				4D9C8AB729E82CA2006FA668 /* Rust.swift in Sources */,
@@ -430,7 +431,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D9C8AAE29E81494006FA668 /* D6Tests.swift in Sources */,
-				4D9C8AB229E82BAC006FA668 /* Board.swift in Sources */,
 				4DB92AF82555BDEF00B976A2 /* EngineYardTests.swift in Sources */,
 				4D9C8AA629E80F3C006FA668 /* IntTests.swift in Sources */,
 			);
