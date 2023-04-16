@@ -24,6 +24,10 @@ struct D6 {
 }
 
 extension D6 {
+    static func isValid(_ value: Int) -> Bool {
+        return (value >= D6.minimumValue && value <= D6.maximumValue)
+    }
+    
     static func increment(value: Int, by amount: Int) -> Int {
         var value = value
         guard ((value + amount) <= D6.maximumValue) else {

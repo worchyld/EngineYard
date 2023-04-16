@@ -40,6 +40,11 @@ class Locomotive : Identifiable {
             return ((self.existingOrders.count + self.customerBase.count) >= self.maxDice)
         }
     }
+    var hasDice: Bool {
+        get {
+            return (self.existingOrders.count > 0 || self.customerBase.count > 0)
+        }
+    }
     
     
     init(id: UUID = UUID(), name: String, generation: Generation, colour: EngineColor, cost: Int, trainPool: Int, maxDice: Int) {
