@@ -15,7 +15,7 @@ protocol RustUseCases {
 }
 
 enum Rust: Int, Codable, CaseIterable, Equatable  {
-    case notBuilt, built, rusting, rusted
+    case notBuilt, hasInitialOrder, built, rusting, rusted
 }
 
 extension Rust : RustUseCases {

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Locomotive : Identifiable {
+class Locomotive : Identifiable {
     let id: UUID
     let name : String
     let generation : Generation
@@ -22,5 +22,25 @@ struct Locomotive : Identifiable {
         get {
             return Int(round(Double(self.productionCost) / 2))
         }
+    }
+    var trainPool: Int
+    var maxDice: Int
+    var existingOrders: [Int]
+    var customerPool: [Int]
+    var initialOrder: Int?
+    var rust: Rust
+    
+    init(id: UUID = UUID(), name: String, generation: Generation, colour: EngineColor, cost: Int, trainPool: Int, maxDice: Int) {
+        self.id = id
+        self.name = name
+        self.generation = generation
+        self.colour = colour
+        self.cost = cost
+        self.trainPool = trainPool
+        self.maxDice = maxDice
+        self.existingOrders = [Int]()
+        self.customerPool = [Int]()
+        self.initialOrder = nil
+        self.rust = .notBuilt
     }
 }
