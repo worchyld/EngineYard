@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Card {
+final class Card {
     var locomotive: Int?
     var productionUnits: Int = 0
     var spentUnits: Int = 0

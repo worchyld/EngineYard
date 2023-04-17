@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Locomotive : Identifiable {
+final class Locomotive : Identifiable {
     let id: UUID
     let name : String
     let generation : Generation

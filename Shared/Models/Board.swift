@@ -7,12 +7,12 @@
 
 import Foundation
 
-class Board {
+final class Board {
     var spaces: [Space] = [Space]()
 }
 
-class Space {
-    private var loco: Locomotive 
+final class Space {
+    private var loco: Locomotive
     
     init(loco: Locomotive) {
         self.loco = loco

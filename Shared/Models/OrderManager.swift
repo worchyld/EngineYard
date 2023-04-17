@@ -50,6 +50,8 @@ class OrderManager {
             orders.append(value)
         }
         sales.removeAll()
+        
+        applyToLoco()
     }
     
     func setInitialOrder() {
@@ -86,6 +88,8 @@ class OrderManager {
             throw OrderManagerError.notAValidD6
         }
         self.sales.append(value)
+        
+        self.applyToLoco()
     }
 
     internal func validateAddOrder() throws {
