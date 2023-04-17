@@ -1,5 +1,5 @@
 //
-//  Game.swift
+//  GameModel.swift
 //  EngineYard
 //
 //  Created by Amarjit on 17/04/2023.

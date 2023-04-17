@@ -42,7 +42,7 @@
 		4DEBF68429EBE6A200D3A6BF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C8AAF29E82B52006FA668 /* Player.swift */; };
 		4DEBF68629EBE7D000D3A6BF /* OrderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEBF68529EBE7D000D3A6BF /* OrderManager.swift */; };
 		4DEBF68729EC88D000D3A6BF /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C8AB129E82BAC006FA668 /* Board.swift */; };
-		4DEBF68929ED0A4200D3A6BF /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEBF68829ED0A4200D3A6BF /* Game.swift */; };
+		4DEBF68929ED0A4200D3A6BF /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEBF68829ED0A4200D3A6BF /* GameModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,7 +104,7 @@
 		4DB92B042555BDEF00B976A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DEBF68229EBE63B00D3A6BF /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		4DEBF68529EBE7D000D3A6BF /* OrderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderManager.swift; sourceTree = "<group>"; };
-		4DEBF68829ED0A4200D3A6BF /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		4DEBF68829ED0A4200D3A6BF /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +144,7 @@
 				4D9C8AB329E82BBE006FA668 /* Locomotive.swift */,
 				4DEBF68229EBE63B00D3A6BF /* Card.swift */,
 				4DEBF68529EBE7D000D3A6BF /* OrderManager.swift */,
-				4DEBF68829ED0A4200D3A6BF /* Game.swift */,
+				4DEBF68829ED0A4200D3A6BF /* GameModel.swift */,
 				4D9C8AAF29E82B52006FA668 /* Player.swift */,
 			);
 			path = Models;
@@ -418,7 +418,7 @@
 				4DB92AE82555BDEE00B976A2 /* ContentView.swift in Sources */,
 				4DEBF68729EC88D000D3A6BF /* Board.swift in Sources */,
 				4D9C8AA429E80DF8006FA668 /* EngineColours.swift in Sources */,
-				4DEBF68929ED0A4200D3A6BF /* Game.swift in Sources */,
+				4DEBF68929ED0A4200D3A6BF /* GameModel.swift in Sources */,
 				4DB92AE62555BDEE00B976A2 /* EngineYardApp.swift in Sources */,
 				4D9C8AB729E82CA2006FA668 /* Rust.swift in Sources */,
 				4DEBF68329EBE63B00D3A6BF /* Card.swift in Sources */,
