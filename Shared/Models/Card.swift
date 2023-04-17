@@ -7,8 +7,8 @@
 
 import Foundation
 
-final class Card {
-    var locomotive: Int?
-    var productionUnits: Int = 0
+struct Card {
+    let locomotive: Int?
+    var productionUnits: Int = 1
     var spentUnits: Int = 0
 }
