@@ -24,7 +24,7 @@ final class Locomotive : Identifiable {
         }
     }
     var trainPool: Int
-    var maxDice: Int
+    var capacity: Int
     var initialOrder: Int?
     var existingOrders: [Int]
     var customerBase: [Int]
@@ -37,7 +37,7 @@ final class Locomotive : Identifiable {
     }
     var isDicePoolFull: Bool {
         get {
-            return ((self.existingOrders.count + self.customerBase.count) >= self.maxDice)
+            return ((self.existingOrders.count + self.customerBase.count) >= self.capacity)
         }
     }
     var hasDice: Bool {
@@ -47,14 +47,14 @@ final class Locomotive : Identifiable {
     }
     
     
-    init(id: UUID = UUID(), name: String, generation: Generation, colour: EngineColor, cost: Int, trainPool: Int, maxDice: Int) {
+    init(id: UUID = UUID(), name: String, generation: Generation, colour: EngineColor, cost: Int, trainPool: Int, capacity: Int) {
         self.id = id
         self.name = name
         self.generation = generation
         self.colour = colour
         self.cost = cost
         self.trainPool = trainPool
-        self.maxDice = maxDice
+        self.capacity = capacity
         self.rust = .notBuilt
         self.existingOrders = [Int]()
         self.customerBase = [Int]()

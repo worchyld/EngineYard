@@ -9,100 +9,52 @@ import Foundation
 
 enum OrderManagerError : Error {
     case noLoco
-    case locoIsNotBuilt
-    case locoHasNoInitialOrder
-    case locoAlreadyHasInitialOrder
-    case locoHasOrdersOrSales
-    case locoLocoIsRusted
-    case locoDicePoolIsFull
-    case notAValidD6
-    case cannotReassignInitialOrder
+    case initialOrderError
 }
 
-class OrderManager {
+class OrderManager: Rollable {
     private weak var loco: Locomotive?
-    private var orders: [Int]
-    private var sales: [Int]
-    private var initialOrder: Int?
-
-    init(loco: Locomotive) {
+    
+    init(loco: Locomotive? = nil) {
         self.loco = loco
-        self.orders = loco.existingOrders
-        self.sales = loco.customerBase
     }
     
-    private func rollOrder() -> Int {
+    func roll() -> Int {
         return D6.roll
     }
     
-    private func applyToLoco() {
-        guard let hasLoco = self.loco else {
-            return
-        }
-        hasLoco.initialOrder = self.initialOrder
-        hasLoco.existingOrders = self.orders
-        hasLoco.customerBase = self.sales
-    }
-    
-    func transferAllToOrdersAndReroll() {
-        for _ in sales {
-            let value = rollOrder()
-            orders.append(value)
-        }
-        sales.removeAll()
-        
-        applyToLoco()
-    }
-    
-    func setInitialOrder() {
-        guard let _ = self.loco else {
-            return
-        }
-        let value = rollOrder()
-        self.initialOrder = value
-        
-        applyToLoco()
-    }
-    
-    internal func addToExistingOrder() throws {
-        guard let _ = self.loco else {
-            throw OrderManagerError.noLoco
-        }
+    func addInitialOrder() throws {
         do {
-            try self.validateAddOrder()
-            
-            let value = self.rollOrder()
-            self.orders.append(value)
-            
-            applyToLoco()
+            let loco = try locoIsNotNil()
+            try canSetInitialOrder(loco: loco)
+            loco.initialOrder = roll()
+            loco.rustify()
         } catch let err {
             throw err
         }
     }
     
-    internal func addToCustomerBase(value: Int) throws {
-        guard let _ = self.loco else {
-            throw OrderManagerError.noLoco
-        }
-        guard D6.isValid(value) else {
-            throw OrderManagerError.notAValidD6
-        }
-        self.sales.append(value)
-        
-        self.applyToLoco()
-    }
-
-    internal func validateAddOrder() throws {
-        guard let hasLoco = self.loco else {
-            throw OrderManagerError.noLoco
-        }
-        guard hasLoco.isDicePoolEmpty else {
-            throw OrderManagerError.locoDicePoolIsFull
-        }
-        let qty = (hasLoco.customerBase.count + hasLoco.existingOrders.count)
-        guard qty < hasLoco.maxDice else {
-            throw OrderManagerError.locoDicePoolIsFull
+    func addOrder() throws {
+        do {
+            let loco = try locoIsNotNil()
+            
+            print ("loco : \(loco)")
+            
+        } catch let err {
+            throw err
         }
     }
     
+    internal func locoIsNotNil() throws -> Locomotive {
+        guard let loco = self.loco else {
+            throw OrderManagerError.noLoco
+        }
+        return loco
+    }
+    
+    internal func canSetInitialOrder(loco: Locomotive) throws {
+        guard loco.rust == .notBuilt else {
+            throw OrderManagerError.initialOrderError
+        }
+    }
 }

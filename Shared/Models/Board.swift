@@ -8,7 +8,24 @@
 import Foundation
 
 final class Board {
+    var players: [Player] = [Player]()
+    var activePlayer: Player? = nil
+    var activePlayerIndex: Int = 0
+    
     var spaces: [Space] = [Space]()
+    
+    init(spaces: [Space]) {
+        self.spaces = spaces
+    }
+}
+
+extension Board {
+    func nextOnTurn() {
+        activePlayerIndex += 1
+        if (activePlayerIndex >= players.count) {
+            activePlayerIndex = 0
+        }
+    }
 }
 
 final class Space {

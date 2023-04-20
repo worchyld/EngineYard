@@ -8,6 +8,10 @@
 import Foundation
 import GameplayKit
 
+protocol Rollable {
+    func roll() -> Int
+}
+
 struct D6 {
     public static let minimumValue = 1
     public static let maximumValue = 6
