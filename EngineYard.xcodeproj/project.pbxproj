@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D0F967D29F4B904006DB45C /* NumericError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F967C29F4B904006DB45C /* NumericError.swift */; };
 		4D5AC8CF2555C27700E39048 /* EY+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC8C62555C27700E39048 /* EY+Bundle.swift */; };
 		4D5AC8D02555C27700E39048 /* EY+FlatColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC8C72555C27700E39048 /* EY+FlatColor.swift */; };
 		4D5AC8D12555C27700E39048 /* EY+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC8C82555C27700E39048 /* EY+Array.swift */; };
@@ -65,6 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D0F967C29F4B904006DB45C /* NumericError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericError.swift; sourceTree = "<group>"; };
 		4D5AC8C62555C27700E39048 /* EY+Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EY+Bundle.swift"; sourceTree = "<group>"; };
 		4D5AC8C72555C27700E39048 /* EY+FlatColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EY+FlatColor.swift"; sourceTree = "<group>"; };
 		4D5AC8C82555C27700E39048 /* EY+Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EY+Array.swift"; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 		4D5AC8F52555C30200E39048 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4D0F967C29F4B904006DB45C /* NumericError.swift */,
 				4D9C8AA929E81356006FA668 /* Constants.swift */,
 				4D9C8AA129E80DCD006FA668 /* Generations.swift */,
 				4D9C8AA329E80DF8006FA668 /* EngineColours.swift */,
@@ -426,6 +429,7 @@
 				4DEBF68F29ED2B3500D3A6BF /* Wallet.swift in Sources */,
 				4DEBF68729EC88D000D3A6BF /* Board.swift in Sources */,
 				4D9C8AA429E80DF8006FA668 /* EngineColours.swift in Sources */,
+				4D0F967D29F4B904006DB45C /* NumericError.swift in Sources */,
 				4DB92AE62555BDEE00B976A2 /* EngineYardApp.swift in Sources */,
 				4D9C8AB729E82CA2006FA668 /* Rust.swift in Sources */,
 				4DEBF68329EBE63B00D3A6BF /* Card.swift in Sources */,

@@ -12,3 +12,7 @@ struct Card {
     var productionUnits: Int = 1
     var spentUnits: Int = 0
 }
+
+extension Card {
+    
+}
