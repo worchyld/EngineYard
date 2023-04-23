@@ -8,7 +8,7 @@
 import Foundation
 import GameplayKit
 
-class Player {
+class Player: NSObject, GKGameModelPlayer {
     var playerId: Int
     var cash : Int
     var icon : String?
