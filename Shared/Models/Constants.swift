@@ -43,7 +43,6 @@ public struct Constants {
         public static var totalDiceCapacity: Int {
             return diceCapacityPerGeneration.reduce(0, +)
         }
-        public static let locosPerGeneration = [4,4,4,4,4]
     }
     public struct Red {
         public static let totalCards = 13
@@ -52,7 +51,6 @@ public struct Constants {
         public static var totalDiceCapacity: Int {
             return diceCapacityPerGeneration.reduce(0, +)
         }
-        public static let locosPerGeneration = [3,3,3,4,0]
     }
     public struct Yellow {
         public static let totalCards = 7
@@ -61,7 +59,6 @@ public struct Constants {
         public static var totalDiceCapacity: Int {
             return diceCapacityPerGeneration.reduce(0, +)
         }
-        public static let locosPerGeneration = [2,2,3,0,0]
     }
     public struct Blue {
         public static let totalCards = 3
@@ -70,6 +67,5 @@ public struct Constants {
         public static var totalDiceCapacity: Int {
             return diceCapacityPerGeneration.reduce(0, +)
         }
-        public static let locosPerGeneration = [1,2,0,0,0]
     }
 }
