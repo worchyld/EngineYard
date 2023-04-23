@@ -24,7 +24,7 @@ final class Locomotive : Identifiable {
         }
     }
     var trainPool: Int
-    var capacity: Int
+    var dicePoolCapacity: Int
     var initialOrder: Int?
     var existingOrders: [Int]
     var customerBase: [Int]
@@ -37,7 +37,7 @@ final class Locomotive : Identifiable {
     }
     var isDicePoolFull: Bool {
         get {
-            return ((self.existingOrders.count + self.customerBase.count) >= self.capacity)
+            return ((self.existingOrders.count + self.customerBase.count) >= self.dicePoolCapacity)
         }
     }
     var hasDice: Bool {
@@ -54,7 +54,7 @@ final class Locomotive : Identifiable {
         self.colour = colour
         self.cost = cost
         self.trainPool = trainPool
-        self.capacity = capacity
+        self.dicePoolCapacity = capacity
         self.rust = rust
         self.existingOrders = orders
         self.customerBase = sales
@@ -73,7 +73,6 @@ extension Locomotive {
     
     internal static func allLocos() -> [Locomotive] {
         let locos: [Locomotive] = [
-            //= UUID()
             
             Locomotive.init(id: UUID(), name: "", colour: .green, generation: .first, cost: 4, trainPool: 4, capacity: 3, rust: .notBuilt, orders: [Int](), sales: [Int](), initialOrder: nil),
             Locomotive.init(id: UUID(), name: "", colour: .red, generation: .first, cost: 8, trainPool: 3, capacity: 3, rust: .notBuilt, orders: [Int](), sales: [Int](), initialOrder: nil),

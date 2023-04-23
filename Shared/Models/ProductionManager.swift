@@ -37,7 +37,7 @@ class ProductionManager {
     
     func reset() {
         self.card.productionUnits = self.card.spentUnits
-        self.card.spentUnits = 0
+        //self.card.spentUnits = 0
     }
 }
 
