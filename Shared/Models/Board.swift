@@ -19,15 +19,6 @@ final class Board {
     }
 }
 
-extension Board {
-    func nextOnTurn() {
-        activePlayerIndex += 1
-        if (activePlayerIndex >= players.count) {
-            activePlayerIndex = 0
-        }
-    }
-}
-
 final class Space {
     private var loco: Locomotive
     

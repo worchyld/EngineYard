@@ -7,6 +7,8 @@
 
 import Foundation
 
+protocol
+
 class ProductionManager {
     private var card: Card
     
