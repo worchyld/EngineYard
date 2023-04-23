@@ -10,11 +10,11 @@
 		4D0F967D29F4B904006DB45C /* NumericError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F967C29F4B904006DB45C /* NumericError.swift */; };
 		4D0F967F29F4BB3F006DB45C /* SalesOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F967E29F4BB3F006DB45C /* SalesOrder.swift */; };
 		4D0F968129F4BB75006DB45C /* GameMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F968029F4BB75006DB45C /* GameMessage.swift */; };
-		4D0F968329F4BBE3006DB45C /* GamePhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F968229F4BBE3006DB45C /* GamePhase.swift */; };
 		4D0F968529F4BCAE006DB45C /* GameSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F968429F4BCAE006DB45C /* GameSetting.swift */; };
 		4D0F968729F4BDE3006DB45C /* Tax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F968629F4BDE3006DB45C /* Tax.swift */; };
 		4D0F968A29F4C4F2006DB45C /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D0F968929F4C4F2006DB45C /* data.json */; };
 		4D0F968C29F4C76C006DB45C /* LocoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F968B29F4C76C006DB45C /* LocoTests.swift */; };
+		4D4752A729F527EA00C6105A /* EngineYardGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4752A629F527EA00C6105A /* EngineYardGame.swift */; };
 		4D5AC8CF2555C27700E39048 /* EY+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC8C62555C27700E39048 /* EY+Bundle.swift */; };
 		4D5AC8D02555C27700E39048 /* EY+FlatColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC8C72555C27700E39048 /* EY+FlatColor.swift */; };
 		4D5AC8D12555C27700E39048 /* EY+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC8C82555C27700E39048 /* EY+Array.swift */; };
@@ -75,11 +75,11 @@
 		4D0F967C29F4B904006DB45C /* NumericError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericError.swift; sourceTree = "<group>"; };
 		4D0F967E29F4BB3F006DB45C /* SalesOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesOrder.swift; sourceTree = "<group>"; };
 		4D0F968029F4BB75006DB45C /* GameMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMessage.swift; sourceTree = "<group>"; };
-		4D0F968229F4BBE3006DB45C /* GamePhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePhase.swift; sourceTree = "<group>"; };
 		4D0F968429F4BCAE006DB45C /* GameSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetting.swift; sourceTree = "<group>"; };
 		4D0F968629F4BDE3006DB45C /* Tax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tax.swift; sourceTree = "<group>"; };
 		4D0F968929F4C4F2006DB45C /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		4D0F968B29F4C76C006DB45C /* LocoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocoTests.swift; sourceTree = "<group>"; };
+		4D4752A629F527EA00C6105A /* EngineYardGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineYardGame.swift; sourceTree = "<group>"; };
 		4D5AC8C62555C27700E39048 /* EY+Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EY+Bundle.swift"; sourceTree = "<group>"; };
 		4D5AC8C72555C27700E39048 /* EY+FlatColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EY+FlatColor.swift"; sourceTree = "<group>"; };
 		4D5AC8C82555C27700E39048 /* EY+Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EY+Array.swift"; sourceTree = "<group>"; };
@@ -163,12 +163,12 @@
 			children = (
 				4D0F967C29F4B904006DB45C /* NumericError.swift */,
 				4D9C8AA929E81356006FA668 /* Constants.swift */,
-				4D0F968229F4BBE3006DB45C /* GamePhase.swift */,
 				4D0F968429F4BCAE006DB45C /* GameSetting.swift */,
 				4D9C8AA129E80DCD006FA668 /* Generations.swift */,
 				4D9C8AA329E80DF8006FA668 /* EngineColours.swift */,
 				4D9C8AB629E82CA2006FA668 /* Rust.swift */,
 				4D9C8AA729E812CC006FA668 /* D6.swift */,
+				4D4752A629F527EA00C6105A /* EngineYardGame.swift */,
 				4D9C8AB129E82BAC006FA668 /* Board.swift */,
 				4D9C8AB329E82BBE006FA668 /* Locomotive.swift */,
 				4DEBF68229EBE63B00D3A6BF /* Card.swift */,
@@ -434,7 +434,6 @@
 				4D5AC8D12555C27700E39048 /* EY+Array.swift in Sources */,
 				4DEBF68D29ED2A8C00D3A6BF /* TurnOrderManager.swift in Sources */,
 				4D0F968529F4BCAE006DB45C /* GameSetting.swift in Sources */,
-				4D0F968329F4BBE3006DB45C /* GamePhase.swift in Sources */,
 				4D5AC8D72555C27700E39048 /* EY+String.swift in Sources */,
 				4D5AC8CF2555C27700E39048 /* EY+Bundle.swift in Sources */,
 				4D9C8AB529E82BF8006FA668 /* Locomotive.swift in Sources */,
@@ -444,6 +443,7 @@
 				4D9C8AA229E80DCD006FA668 /* Generations.swift in Sources */,
 				4D909E4327D2180500A50180 /* EY+Notification.swift in Sources */,
 				4D5AC8D62555C27700E39048 /* EY+FileManager.swift in Sources */,
+				4D4752A729F527EA00C6105A /* EngineYardGame.swift in Sources */,
 				4D5AC8D02555C27700E39048 /* EY+FlatColor.swift in Sources */,
 				4D5AC90B2555DD3300E39048 /* NumberFormatCache.swift in Sources */,
 				4DB92AE82555BDEE00B976A2 /* ContentView.swift in Sources */,
