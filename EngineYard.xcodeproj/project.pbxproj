@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4D0F967D29F4B904006DB45C /* NumericError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F967C29F4B904006DB45C /* NumericError.swift */; };
+		4D0F967F29F4BB3F006DB45C /* SalesOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F967E29F4BB3F006DB45C /* SalesOrder.swift */; };
+		4D0F968129F4BB75006DB45C /* GameMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F968029F4BB75006DB45C /* GameMessage.swift */; };
+		4D0F968329F4BBE3006DB45C /* GamePhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F968229F4BBE3006DB45C /* GamePhase.swift */; };
 		4D5AC8CF2555C27700E39048 /* EY+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC8C62555C27700E39048 /* EY+Bundle.swift */; };
 		4D5AC8D02555C27700E39048 /* EY+FlatColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC8C72555C27700E39048 /* EY+FlatColor.swift */; };
 		4D5AC8D12555C27700E39048 /* EY+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC8C82555C27700E39048 /* EY+Array.swift */; };
@@ -67,6 +70,9 @@
 
 /* Begin PBXFileReference section */
 		4D0F967C29F4B904006DB45C /* NumericError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericError.swift; sourceTree = "<group>"; };
+		4D0F967E29F4BB3F006DB45C /* SalesOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesOrder.swift; sourceTree = "<group>"; };
+		4D0F968029F4BB75006DB45C /* GameMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMessage.swift; sourceTree = "<group>"; };
+		4D0F968229F4BBE3006DB45C /* GamePhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePhase.swift; sourceTree = "<group>"; };
 		4D5AC8C62555C27700E39048 /* EY+Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EY+Bundle.swift"; sourceTree = "<group>"; };
 		4D5AC8C72555C27700E39048 /* EY+FlatColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EY+FlatColor.swift"; sourceTree = "<group>"; };
 		4D5AC8C82555C27700E39048 /* EY+Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EY+Array.swift"; sourceTree = "<group>"; };
@@ -143,6 +149,7 @@
 			children = (
 				4D0F967C29F4B904006DB45C /* NumericError.swift */,
 				4D9C8AA929E81356006FA668 /* Constants.swift */,
+				4D0F968229F4BBE3006DB45C /* GamePhase.swift */,
 				4D9C8AA129E80DCD006FA668 /* Generations.swift */,
 				4D9C8AA329E80DF8006FA668 /* EngineColours.swift */,
 				4D9C8AB629E82CA2006FA668 /* Rust.swift */,
@@ -155,6 +162,8 @@
 				4DEBF68529EBE7D000D3A6BF /* OrderManager.swift */,
 				4DEBF68A29ED182E00D3A6BF /* ProductionManager.swift */,
 				4DEBF68C29ED2A8C00D3A6BF /* TurnOrderManager.swift */,
+				4D0F967E29F4BB3F006DB45C /* SalesOrder.swift */,
+				4D0F968029F4BB75006DB45C /* GameMessage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -415,9 +424,11 @@
 				4D807BD32555C0940067ABD0 /* Sounds.swift in Sources */,
 				4D5AC8D12555C27700E39048 /* EY+Array.swift in Sources */,
 				4DEBF68D29ED2A8C00D3A6BF /* TurnOrderManager.swift in Sources */,
+				4D0F968329F4BBE3006DB45C /* GamePhase.swift in Sources */,
 				4D5AC8D72555C27700E39048 /* EY+String.swift in Sources */,
 				4D5AC8CF2555C27700E39048 /* EY+Bundle.swift in Sources */,
 				4D9C8AB529E82BF8006FA668 /* Locomotive.swift in Sources */,
+				4D0F968129F4BB75006DB45C /* GameMessage.swift in Sources */,
 				4D5AC8D22555C27700E39048 /* EY+Identifier.swift in Sources */,
 				4D9C8AA829E812CC006FA668 /* D6.swift in Sources */,
 				4D9C8AA229E80DCD006FA668 /* Generations.swift in Sources */,
@@ -426,6 +437,7 @@
 				4D5AC8D02555C27700E39048 /* EY+FlatColor.swift in Sources */,
 				4D5AC90B2555DD3300E39048 /* NumberFormatCache.swift in Sources */,
 				4DB92AE82555BDEE00B976A2 /* ContentView.swift in Sources */,
+				4D0F967F29F4BB3F006DB45C /* SalesOrder.swift in Sources */,
 				4DEBF68F29ED2B3500D3A6BF /* Wallet.swift in Sources */,
 				4DEBF68729EC88D000D3A6BF /* Board.swift in Sources */,
 				4D9C8AA429E80DF8006FA668 /* EngineColours.swift in Sources */,
