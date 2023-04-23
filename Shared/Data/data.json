@@ -1,0 +1,128 @@
+[
+  {
+    "id": 1,    
+    "name": "General I",
+    "cost": 4,
+    "engineColor": 1,
+    "generation": 1,
+    "trainPool": 4,
+    "capacity": 3
+  },
+  {
+    "id": 2,
+    "name": "Fast Freight I",
+    "cost": 8,
+    "engineColor": 1,
+    "generation": 1,
+    "trainPool": 1,
+    "capacity": 1
+  },
+  {
+    "id": 3,
+    "name": "Heavy I",
+    "cost": 12,
+    "engineColor": 1,
+    "generation": 1,
+    "trainPool": 1,
+    "capacity": 1
+  },
+  {
+    "id": 4,
+    "name": "Special I",
+    "cost": 16,
+    "engineColor": 1,
+    "generation": 1,
+    "trainPool": 1,
+    "capacity": 1
+  },
+  {
+    "id": 5,
+    "cost": 20,
+    "name": "General II",
+    "engineColor": 1,
+    "generation": 1,
+    "trainPool": 1,
+    "capacity": 1
+  },
+  {
+    "id": 6,
+    "cost": 24,
+    "name": "Fast Freight II",
+    "engineColor": 1,
+    "generation": 1,
+    "trainPool": 1,
+    "capacity": 1
+  },
+  {
+    "id": 7,
+    "cost": 28,
+    "name": "Heavy II",
+    "engineColor": 1,
+    "generation": 1,
+    "trainPool": 1,
+    "capacity": 1
+  },
+  {
+    "id": 8,
+    "name": "General III",
+    "cost": 32,    
+    "engineColor": 1,
+    "generation": 1,
+    "trainPool": 1,
+    "capacity": 1
+  },
+  {
+    "id": 9,
+    "name": "Special II",
+    "cost": 36,    
+    "engineColor": 1,
+    "generation": 1,
+    "trainPool": 1,
+    "capacity": 1
+  },
+  {
+    "id": 10,
+    "name": "Fast Freight III",
+    "cost": 40,    
+    "engineColor": 1,
+    "generation": 1,
+    "trainPool": 1,
+    "capacity": 1
+  },
+  {
+    "id": 11,
+    "name": "General IV",
+    "cost": 44,    
+    "engineColor": 1,
+    "generation": 1,
+    "trainPool": 1,
+    "capacity": 1
+  },
+  {
+    "id": 12,
+    "name": "Heavy III",
+    "cost": 48,    
+    "engineColor": 1,
+    "generation": 1,
+    "trainPool": 1,
+    "capacity": 1
+  },
+  {
+    "id": 13,    
+    "name": "Fast Freight IV",
+    "cost": 52,    
+    "engineColor": 1,
+    "generation": 1,
+    "trainPool": 1,
+    "capacity": 1
+  },
+  {
+    "id": 14,
+    "name": "General V",
+    "cost": 56,
+    "engineColor": 1,
+    "generation": 1,
+    "trainPool": 1,
+    "capacity": 1
+  }
+]

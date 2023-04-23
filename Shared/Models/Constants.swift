@@ -30,10 +30,11 @@ public struct Constants {
         }
     }
     
-    public static let totalLocos = 14
-    public static let totalDecks = 14
-    public static let totalCards = 43
-    public static let totalCapacity = 46 // for dice
+    public struct Trains {
+        public static let total = 14 // total number of decks in the game
+        public static let totalCards = 43 // total number of cards in the game
+        public static let totalDicePoolCapacity = 46 // for dice
+    }
     
     public struct Green {
         public static let totalCards = 20
