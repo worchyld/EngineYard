@@ -12,6 +12,18 @@ enum OrderManagerError : Error {
     case initialOrderError
 }
 
+extension OrderManagerError : LocalizedError {
+    public var errorDescription: String? {
+        switch self {
+        case .noLoco:
+            return NSLocalizedString("No locomotive found", comment: "Order error: No Loco")
+        case .initialOrderError:
+            return NSLocalizedString("Locomotive is missing initial order", comment: "Order error: No initial order")
+        }
+    }
+}
+
+
 class OrderManager: Rollable {
     private weak var loco: Locomotive?
     
