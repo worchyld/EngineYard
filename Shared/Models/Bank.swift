@@ -68,4 +68,16 @@ class Bank {
     func buyProduction() {
         
     }
+    
+    func payTax(players: [Player]) {
+        for p in players {
+            let cash = p.cash
+            let due = Tax.calculate(on: cash)
+            let sum = Tax.pay(on: cash)
+            
+            print ("Cash: $\(cash)")
+            print ("Due: $\(due)")
+            print ("Sum: $\(sum)\n\r")
+        }
+    }
 }
