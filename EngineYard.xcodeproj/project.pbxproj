@@ -46,6 +46,7 @@
 		4DB92AED2555BDEF00B976A2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DB92AEC2555BDEF00B976A2 /* Preview Assets.xcassets */; };
 		4DB92AF82555BDEF00B976A2 /* EngineYardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB92AF72555BDEF00B976A2 /* EngineYardTests.swift */; };
 		4DB92B032555BDEF00B976A2 /* EngineYardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB92B022555BDEF00B976A2 /* EngineYardUITests.swift */; };
+		4DC24E3F29FF58D8001DA318 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC24E3E29FF58D8001DA318 /* Deck.swift */; };
 		4DEBF68329EBE63B00D3A6BF /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEBF68229EBE63B00D3A6BF /* Card.swift */; };
 		4DEBF68429EBE6A200D3A6BF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C8AAF29E82B52006FA668 /* Player.swift */; };
 		4DEBF68629EBE7D000D3A6BF /* OrderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEBF68529EBE7D000D3A6BF /* OrderManager.swift */; };
@@ -120,6 +121,7 @@
 		4DB92AFE2555BDEF00B976A2 /* EngineYardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EngineYardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DB92B022555BDEF00B976A2 /* EngineYardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineYardUITests.swift; sourceTree = "<group>"; };
 		4DB92B042555BDEF00B976A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DC24E3E29FF58D8001DA318 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		4DEBF68229EBE63B00D3A6BF /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		4DEBF68529EBE7D000D3A6BF /* OrderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderManager.swift; sourceTree = "<group>"; };
 		4DEBF68A29ED182E00D3A6BF /* ProductionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionManager.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				4D9C8AB129E82BAC006FA668 /* Board.swift */,
 				4D9C8AB329E82BBE006FA668 /* Locomotive.swift */,
 				4DEBF68229EBE63B00D3A6BF /* Card.swift */,
+				4DC24E3E29FF58D8001DA318 /* Deck.swift */,
 				4D9C8AAF29E82B52006FA668 /* Player.swift */,
 				4DEBF68E29ED2B3500D3A6BF /* Wallet.swift */,
 				4D4752A829F5360200C6105A /* Bank.swift */,
@@ -440,6 +443,7 @@
 				4D0F968529F4BCAE006DB45C /* GameSetting.swift in Sources */,
 				4D5AC8D72555C27700E39048 /* EY+String.swift in Sources */,
 				4D5AC8CF2555C27700E39048 /* EY+Bundle.swift in Sources */,
+				4DC24E3F29FF58D8001DA318 /* Deck.swift in Sources */,
 				4D9C8AB529E82BF8006FA668 /* Locomotive.swift in Sources */,
 				4D0F968129F4BB75006DB45C /* GameMessage.swift in Sources */,
 				4D5AC8D22555C27700E39048 /* EY+Identifier.swift in Sources */,
