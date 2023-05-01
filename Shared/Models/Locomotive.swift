@@ -45,6 +45,11 @@ final class Locomotive : Identifiable {
             return (self.existingOrders.count > 0 || self.customerBase.count > 0)
         }
     }
+    var isActive: Bool {
+        get {
+            return ((self.rust == .built && self.hasDice) || (self.rust == .rusting && self.hasDice))
+        }
+    }
     
     
     init(id: UUID, name: String, colour: EngineColor, generation: Generation, cost: Int, trainPool: Int, capacity: Int, rust: Rust, orders: [Int], sales: [Int], initialOrder: Int?) {

@@ -17,6 +17,10 @@ final class Board {
     init(spaces: [Space]) {
         self.spaces = spaces
     }
+    
+    func unlockSpace() {
+        // TBD
+    }
 }
 
 final class Space {
