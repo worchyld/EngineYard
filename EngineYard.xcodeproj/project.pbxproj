@@ -26,6 +26,9 @@
 		4D5AC8D62555C27700E39048 /* EY+FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC8CD2555C27700E39048 /* EY+FileManager.swift */; };
 		4D5AC8D72555C27700E39048 /* EY+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC8CE2555C27700E39048 /* EY+String.swift */; };
 		4D5AC90B2555DD3300E39048 /* NumberFormatCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AC9092555DD3300E39048 /* NumberFormatCache.swift */; };
+		4D5C1DAB2A016985001D3AD6 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5C1DAA2A016985001D3AD6 /* CardViewModel.swift */; };
+		4D5C1DAD2A016A23001D3AD6 /* LocomotiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5C1DAC2A016A23001D3AD6 /* LocomotiveViewModel.swift */; };
+		4D5C1DB12A016E9F001D3AD6 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5C1DB02A016E9F001D3AD6 /* PlayerViewModel.swift */; };
 		4D807BD02555C0940067ABD0 /* cardSlide8.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D807BCB2555C0940067ABD0 /* cardSlide8.wav */; };
 		4D807BD12555C0940067ABD0 /* cardSlide1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D807BCC2555C0940067ABD0 /* cardSlide1.wav */; };
 		4D807BD22555C0940067ABD0 /* Birdy_Note5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D807BCD2555C0940067ABD0 /* Birdy_Note5.wav */; };
@@ -94,6 +97,9 @@
 		4D5AC8CD2555C27700E39048 /* EY+FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EY+FileManager.swift"; sourceTree = "<group>"; };
 		4D5AC8CE2555C27700E39048 /* EY+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EY+String.swift"; sourceTree = "<group>"; };
 		4D5AC9092555DD3300E39048 /* NumberFormatCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberFormatCache.swift; sourceTree = "<group>"; };
+		4D5C1DAA2A016985001D3AD6 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		4D5C1DAC2A016A23001D3AD6 /* LocomotiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocomotiveViewModel.swift; sourceTree = "<group>"; };
+		4D5C1DB02A016E9F001D3AD6 /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
 		4D807BCB2555C0940067ABD0 /* cardSlide8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardSlide8.wav; sourceTree = "<group>"; };
 		4D807BCC2555C0940067ABD0 /* cardSlide1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardSlide1.wav; sourceTree = "<group>"; };
 		4D807BCD2555C0940067ABD0 /* Birdy_Note5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Note5.wav; sourceTree = "<group>"; };
@@ -192,6 +198,16 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		4D5C1DA92A016962001D3AD6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4D5C1DAC2A016A23001D3AD6 /* LocomotiveViewModel.swift */,
+				4D5C1DAA2A016985001D3AD6 /* CardViewModel.swift */,
+				4D5C1DB02A016E9F001D3AD6 /* PlayerViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		4D807BC62555C03F0067ABD0 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +216,7 @@
 				4D807BC92555C0680067ABD0 /* Helpers */,
 				4D807BC82555C04B0067ABD0 /* Extensions */,
 				4D5AC8F52555C30200E39048 /* Models */,
+				4D5C1DA92A016962001D3AD6 /* ViewModels */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -447,7 +464,9 @@
 				4D5AC8D72555C27700E39048 /* EY+String.swift in Sources */,
 				4D5AC8CF2555C27700E39048 /* EY+Bundle.swift in Sources */,
 				4DC24E3F29FF58D8001DA318 /* Deck.swift in Sources */,
+				4D5C1DAB2A016985001D3AD6 /* CardViewModel.swift in Sources */,
 				4D9C8AB529E82BF8006FA668 /* Locomotive.swift in Sources */,
+				4D5C1DAD2A016A23001D3AD6 /* LocomotiveViewModel.swift in Sources */,
 				4D0F968129F4BB75006DB45C /* GameMessage.swift in Sources */,
 				4D5AC8D22555C27700E39048 /* EY+Identifier.swift in Sources */,
 				4D9C8AA829E812CC006FA668 /* D6.swift in Sources */,
@@ -466,6 +485,7 @@
 				4D0F967D29F4B904006DB45C /* NumericError.swift in Sources */,
 				4DB92AE62555BDEE00B976A2 /* EngineYardApp.swift in Sources */,
 				4D9C8AB729E82CA2006FA668 /* Rust.swift in Sources */,
+				4D5C1DB12A016E9F001D3AD6 /* PlayerViewModel.swift in Sources */,
 				4DEBF68329EBE63B00D3A6BF /* Card.swift in Sources */,
 				4D5AC8D52555C27700E39048 /* EY+CaseIterable.swift in Sources */,
 				4D0F968729F4BDE3006DB45C /* Tax.swift in Sources */,
