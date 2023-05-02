@@ -19,7 +19,7 @@ extension String {
         self = self.capitalizingFirstLetter()
     }
     
-    func cashFormatting(amount: Int) -> String {
+    func cashFormat(_ amount: Int) -> String {
         let number: NSNumber = NSNumber(integerLiteral: amount)
         let cache = NumberFormatCache.currencyRateFormatter
         return cache.string(from: number) ?? "$0"
