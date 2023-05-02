@@ -52,6 +52,7 @@
 		4DB92B032555BDEF00B976A2 /* EngineYardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB92B022555BDEF00B976A2 /* EngineYardUITests.swift */; };
 		4DC24E3F29FF58D8001DA318 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC24E3E29FF58D8001DA318 /* Deck.swift */; };
 		4DC24E4129FF5F89001DA318 /* TaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC24E4029FF5F89001DA318 /* TaxTests.swift */; };
+		4DE0B3752A01B209006F16C3 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE0B3742A01B209006F16C3 /* AvatarView.swift */; };
 		4DEBF68329EBE63B00D3A6BF /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEBF68229EBE63B00D3A6BF /* Card.swift */; };
 		4DEBF68429EBE6A200D3A6BF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C8AAF29E82B52006FA668 /* Player.swift */; };
 		4DEBF68629EBE7D000D3A6BF /* OrderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEBF68529EBE7D000D3A6BF /* OrderManager.swift */; };
@@ -132,6 +133,7 @@
 		4DB92B042555BDEF00B976A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DC24E3E29FF58D8001DA318 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		4DC24E4029FF5F89001DA318 /* TaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTests.swift; sourceTree = "<group>"; };
+		4DE0B3742A01B209006F16C3 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		4DEBF68229EBE63B00D3A6BF /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		4DEBF68529EBE7D000D3A6BF /* OrderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderManager.swift; sourceTree = "<group>"; };
 		4DEBF68A29ED182E00D3A6BF /* ProductionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionManager.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				4DB92AE52555BDEE00B976A2 /* EngineYardApp.swift */,
 				4DB92AE72555BDEE00B976A2 /* ContentView.swift */,
 				4D5C1DB22A016F20001D3AD6 /* PlayerHUDView.swift */,
+				4DE0B3742A01B209006F16C3 /* AvatarView.swift */,
 				4DB92AE92555BDEF00B976A2 /* Assets.xcassets */,
 				4DB92AEE2555BDEF00B976A2 /* Info.plist */,
 				4DB92AEB2555BDEF00B976A2 /* Preview Content */,
@@ -472,6 +475,7 @@
 				4D5C1DAD2A016A23001D3AD6 /* LocomotiveViewModel.swift in Sources */,
 				4D0F968129F4BB75006DB45C /* GameMessage.swift in Sources */,
 				4D5AC8D22555C27700E39048 /* EY+Identifier.swift in Sources */,
+				4DE0B3752A01B209006F16C3 /* AvatarView.swift in Sources */,
 				4D9C8AA829E812CC006FA668 /* D6.swift in Sources */,
 				4D9C8AA229E80DCD006FA668 /* Generations.swift in Sources */,
 				4D909E4327D2180500A50180 /* EY+Notification.swift in Sources */,
