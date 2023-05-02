@@ -13,9 +13,9 @@ struct PlayerViewModel: Equatable, Identifiable {
     let cash: Int
     let trains: Int
     let active: Bool
-    let hand: [Card]
+    let hand: [Card]?
     
-    init(id: UUID, avatar: String, cash: Int, trains: Int, active: Bool, hand: [Card]) {
+    init(id: UUID, avatar: String, cash: Int, trains: Int, active: Bool, hand: [Card]?) {
         self.id = id
         self.avatar = avatar
         self.cash = cash
