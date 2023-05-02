@@ -29,6 +29,7 @@
 		4D5C1DAB2A016985001D3AD6 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5C1DAA2A016985001D3AD6 /* CardViewModel.swift */; };
 		4D5C1DAD2A016A23001D3AD6 /* LocomotiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5C1DAC2A016A23001D3AD6 /* LocomotiveViewModel.swift */; };
 		4D5C1DB12A016E9F001D3AD6 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5C1DB02A016E9F001D3AD6 /* PlayerViewModel.swift */; };
+		4D5C1DB32A016F20001D3AD6 /* PlayerHUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5C1DB22A016F20001D3AD6 /* PlayerHUDView.swift */; };
 		4D807BD02555C0940067ABD0 /* cardSlide8.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D807BCB2555C0940067ABD0 /* cardSlide8.wav */; };
 		4D807BD12555C0940067ABD0 /* cardSlide1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D807BCC2555C0940067ABD0 /* cardSlide1.wav */; };
 		4D807BD22555C0940067ABD0 /* Birdy_Note5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D807BCD2555C0940067ABD0 /* Birdy_Note5.wav */; };
@@ -100,6 +101,7 @@
 		4D5C1DAA2A016985001D3AD6 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		4D5C1DAC2A016A23001D3AD6 /* LocomotiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocomotiveViewModel.swift; sourceTree = "<group>"; };
 		4D5C1DB02A016E9F001D3AD6 /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
+		4D5C1DB22A016F20001D3AD6 /* PlayerHUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerHUDView.swift; sourceTree = "<group>"; };
 		4D807BCB2555C0940067ABD0 /* cardSlide8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardSlide8.wav; sourceTree = "<group>"; };
 		4D807BCC2555C0940067ABD0 /* cardSlide1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardSlide1.wav; sourceTree = "<group>"; };
 		4D807BCD2555C0940067ABD0 /* Birdy_Note5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Note5.wav; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 			children = (
 				4DB92AE52555BDEE00B976A2 /* EngineYardApp.swift */,
 				4DB92AE72555BDEE00B976A2 /* ContentView.swift */,
+				4D5C1DB22A016F20001D3AD6 /* PlayerHUDView.swift */,
 				4DB92AE92555BDEF00B976A2 /* Assets.xcassets */,
 				4DB92AEE2555BDEF00B976A2 /* Info.plist */,
 				4DB92AEB2555BDEF00B976A2 /* Preview Content */,
@@ -476,6 +479,7 @@
 				4D4752A729F527EA00C6105A /* EngineYardGame.swift in Sources */,
 				4D4752A929F5360200C6105A /* Bank.swift in Sources */,
 				4D5AC8D02555C27700E39048 /* EY+FlatColor.swift in Sources */,
+				4D5C1DB32A016F20001D3AD6 /* PlayerHUDView.swift in Sources */,
 				4D5AC90B2555DD3300E39048 /* NumberFormatCache.swift in Sources */,
 				4DB92AE82555BDEE00B976A2 /* ContentView.swift in Sources */,
 				4D0F967F29F4BB3F006DB45C /* SalesOrder.swift in Sources */,

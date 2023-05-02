@@ -18,4 +18,10 @@ extension String {
     mutating func capitalizeFirstLetter() {
         self = self.capitalizingFirstLetter()
     }
+    
+    func cashFormatting(amount: Int) -> String {
+        let number: NSNumber = NSNumber(integerLiteral: amount)
+        let cache = NumberFormatCache.currencyRateFormatter
+        return cache.string(from: number) ?? "$0"
+    }
 }
