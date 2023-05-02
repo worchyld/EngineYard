@@ -53,6 +53,9 @@
 		4DC24E3F29FF58D8001DA318 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC24E3E29FF58D8001DA318 /* Deck.swift */; };
 		4DC24E4129FF5F89001DA318 /* TaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC24E4029FF5F89001DA318 /* TaxTests.swift */; };
 		4DE0B3752A01B209006F16C3 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE0B3742A01B209006F16C3 /* AvatarView.swift */; };
+		4DE0B3772A01B45D006F16C3 /* ListOfPlayersHorizontalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE0B3762A01B45D006F16C3 /* ListOfPlayersHorizontalView.swift */; };
+		4DE0B3792A01B4AB006F16C3 /* PlayerHUDHorizontalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE0B3782A01B4AB006F16C3 /* PlayerHUDHorizontalView.swift */; };
+		4DE0B37B2A01B54C006F16C3 /* PlayerHUDVerticalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE0B37A2A01B54C006F16C3 /* PlayerHUDVerticalView.swift */; };
 		4DEBF68329EBE63B00D3A6BF /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEBF68229EBE63B00D3A6BF /* Card.swift */; };
 		4DEBF68429EBE6A200D3A6BF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C8AAF29E82B52006FA668 /* Player.swift */; };
 		4DEBF68629EBE7D000D3A6BF /* OrderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEBF68529EBE7D000D3A6BF /* OrderManager.swift */; };
@@ -134,6 +137,9 @@
 		4DC24E3E29FF58D8001DA318 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		4DC24E4029FF5F89001DA318 /* TaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTests.swift; sourceTree = "<group>"; };
 		4DE0B3742A01B209006F16C3 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		4DE0B3762A01B45D006F16C3 /* ListOfPlayersHorizontalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfPlayersHorizontalView.swift; sourceTree = "<group>"; };
+		4DE0B3782A01B4AB006F16C3 /* PlayerHUDHorizontalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerHUDHorizontalView.swift; sourceTree = "<group>"; };
+		4DE0B37A2A01B54C006F16C3 /* PlayerHUDVerticalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerHUDVerticalView.swift; sourceTree = "<group>"; };
 		4DEBF68229EBE63B00D3A6BF /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		4DEBF68529EBE7D000D3A6BF /* OrderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderManager.swift; sourceTree = "<group>"; };
 		4DEBF68A29ED182E00D3A6BF /* ProductionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionManager.swift; sourceTree = "<group>"; };
@@ -289,6 +295,9 @@
 				4DB92AE52555BDEE00B976A2 /* EngineYardApp.swift */,
 				4DB92AE72555BDEE00B976A2 /* ContentView.swift */,
 				4D5C1DB22A016F20001D3AD6 /* PlayerHUDView.swift */,
+				4DE0B3762A01B45D006F16C3 /* ListOfPlayersHorizontalView.swift */,
+				4DE0B3782A01B4AB006F16C3 /* PlayerHUDHorizontalView.swift */,
+				4DE0B37A2A01B54C006F16C3 /* PlayerHUDVerticalView.swift */,
 				4DE0B3742A01B209006F16C3 /* AvatarView.swift */,
 				4DB92AE92555BDEF00B976A2 /* Assets.xcassets */,
 				4DB92AEE2555BDEF00B976A2 /* Info.plist */,
@@ -463,6 +472,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DEBF68429EBE6A200D3A6BF /* Player.swift in Sources */,
+				4DE0B3792A01B4AB006F16C3 /* PlayerHUDHorizontalView.swift in Sources */,
 				4D807BD32555C0940067ABD0 /* Sounds.swift in Sources */,
 				4D5AC8D12555C27700E39048 /* EY+Array.swift in Sources */,
 				4DEBF68D29ED2A8C00D3A6BF /* TurnOrderManager.swift in Sources */,
@@ -474,8 +484,10 @@
 				4D9C8AB529E82BF8006FA668 /* Locomotive.swift in Sources */,
 				4D5C1DAD2A016A23001D3AD6 /* LocomotiveViewModel.swift in Sources */,
 				4D0F968129F4BB75006DB45C /* GameMessage.swift in Sources */,
+				4DE0B37B2A01B54C006F16C3 /* PlayerHUDVerticalView.swift in Sources */,
 				4D5AC8D22555C27700E39048 /* EY+Identifier.swift in Sources */,
 				4DE0B3752A01B209006F16C3 /* AvatarView.swift in Sources */,
+				4DE0B3772A01B45D006F16C3 /* ListOfPlayersHorizontalView.swift in Sources */,
 				4D9C8AA829E812CC006FA668 /* D6.swift in Sources */,
 				4D9C8AA229E80DCD006FA668 /* Generations.swift in Sources */,
 				4D909E4327D2180500A50180 /* EY+Notification.swift in Sources */,

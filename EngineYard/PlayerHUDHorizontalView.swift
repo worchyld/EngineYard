@@ -1,0 +1,49 @@
+//
+//  PlayerHUDHorizontalView.swift
+//  EngineYard
+//
+//  Created by Amarjit on 02/05/2023.
+//
+
+import SwiftUI
+
+struct PlayerHUDHorizontalView: View {
+    let player: PlayerViewModel
+    
+    var body: some View {
+        HStack(alignment: .top, spacing: 3.0, content: {
+            
+            if (player.active) {
+                AvatarView(avatar: player.avatar)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8.0)
+                            .stroke(Color.blue, lineWidth: 3.0)
+                    )
+            } else {
+                AvatarView(avatar: player.avatar)
+            }
+            
+            VStack(alignment: .leading, spacing: 5.0, content: {
+                
+                Text(cashFormat(amount: player.cash))
+                    .font(.headline)
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.center)
+                    .padding(.top, 5)
+                
+                Text("🚂 \(player.trains)")
+                    .font(.caption)
+                    .fontWeight(.regular)
+                    .multilineTextAlignment(.center)
+            }).padding(.leading, 7.0)
+            
+        })
+        
+    }
+}
+
+struct PlayerHUDHorizontalView_Previews: PreviewProvider {
+    static var previews: some View {
+        PlayerHUDHorizontalView(player: PlayerViewModel(id: UUID(), avatar: "avt-1", cash: 330, trains: 14, active: true, hand: nil))
+    }
+}
