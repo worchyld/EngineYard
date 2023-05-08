@@ -20,6 +20,11 @@ struct LocomotiveViewModel : Identifiable, Equatable {
     let initialOrder: Int?
     let rust: Rust
     let trainPool: Int
+    var icon: String {
+        get {
+            return self.colour.icon
+        }
+    }
     
     init(with loco: Locomotive) {
         self.id = loco.id

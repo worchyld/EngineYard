@@ -12,6 +12,11 @@ final class Locomotive : Identifiable {
     let name : String
     let generation : Generation
     let colour : EngineColor
+    var icon: String {
+        get {
+            return self.colour.icon
+        }
+    }
     let cost : Int
     var productionCost: Int {
         get {

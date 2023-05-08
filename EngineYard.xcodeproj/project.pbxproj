@@ -35,9 +35,12 @@
 		4D807BD22555C0940067ABD0 /* Birdy_Note5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D807BCD2555C0940067ABD0 /* Birdy_Note5.wav */; };
 		4D807BD32555C0940067ABD0 /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D807BCE2555C0940067ABD0 /* Sounds.swift */; };
 		4D807BD42555C0940067ABD0 /* Birdy_Notification1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D807BCF2555C0940067ABD0 /* Birdy_Notification1.wav */; };
+		4D8422242A0980D800118C39 /* TrainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8422232A0980D800118C39 /* TrainListView.swift */; };
+		4D8422262A0981A000118C39 /* LocomotiveCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8422252A0981A000118C39 /* LocomotiveCellView.swift */; };
+		4D8422282A0985A600118C39 /* SingleDieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8422272A0985A600118C39 /* SingleDieView.swift */; };
 		4D909E4327D2180500A50180 /* EY+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D909E4227D2180500A50180 /* EY+Notification.swift */; };
 		4D9C8AA229E80DCD006FA668 /* Generations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C8AA129E80DCD006FA668 /* Generations.swift */; };
-		4D9C8AA429E80DF8006FA668 /* EngineColours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C8AA329E80DF8006FA668 /* EngineColours.swift */; };
+		4D9C8AA429E80DF8006FA668 /* EngineColour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C8AA329E80DF8006FA668 /* EngineColour.swift */; };
 		4D9C8AA629E80F3C006FA668 /* IntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C8AA529E80F3C006FA668 /* IntTests.swift */; };
 		4D9C8AA829E812CC006FA668 /* D6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C8AA729E812CC006FA668 /* D6.swift */; };
 		4D9C8AAA29E81356006FA668 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C8AA929E81356006FA668 /* Constants.swift */; };
@@ -112,9 +115,12 @@
 		4D807BCD2555C0940067ABD0 /* Birdy_Note5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Note5.wav; sourceTree = "<group>"; };
 		4D807BCE2555C0940067ABD0 /* Sounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
 		4D807BCF2555C0940067ABD0 /* Birdy_Notification1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Notification1.wav; sourceTree = "<group>"; };
+		4D8422232A0980D800118C39 /* TrainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainListView.swift; sourceTree = "<group>"; };
+		4D8422252A0981A000118C39 /* LocomotiveCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocomotiveCellView.swift; sourceTree = "<group>"; };
+		4D8422272A0985A600118C39 /* SingleDieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleDieView.swift; sourceTree = "<group>"; };
 		4D909E4227D2180500A50180 /* EY+Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Notification.swift"; sourceTree = "<group>"; };
 		4D9C8AA129E80DCD006FA668 /* Generations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generations.swift; sourceTree = "<group>"; };
-		4D9C8AA329E80DF8006FA668 /* EngineColours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineColours.swift; sourceTree = "<group>"; };
+		4D9C8AA329E80DF8006FA668 /* EngineColour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineColour.swift; sourceTree = "<group>"; };
 		4D9C8AA529E80F3C006FA668 /* IntTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntTests.swift; sourceTree = "<group>"; };
 		4D9C8AA729E812CC006FA668 /* D6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D6.swift; sourceTree = "<group>"; };
 		4D9C8AA929E81356006FA668 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -189,7 +195,7 @@
 				4D9C8AA929E81356006FA668 /* Constants.swift */,
 				4D0F968429F4BCAE006DB45C /* GameSetting.swift */,
 				4D9C8AA129E80DCD006FA668 /* Generations.swift */,
-				4D9C8AA329E80DF8006FA668 /* EngineColours.swift */,
+				4D9C8AA329E80DF8006FA668 /* EngineColour.swift */,
 				4D9C8AB629E82CA2006FA668 /* Rust.swift */,
 				4D9C8AA729E812CC006FA668 /* D6.swift */,
 				4D4752A629F527EA00C6105A /* EngineYardGame.swift */,
@@ -302,6 +308,9 @@
 				4DE0B37A2A01B54C006F16C3 /* PlayerHUDVerticalView.swift */,
 				4DE0B3742A01B209006F16C3 /* AvatarView.swift */,
 				4DE0B37C2A01B5FA006F16C3 /* WinnerView.swift */,
+				4D8422232A0980D800118C39 /* TrainListView.swift */,
+				4D8422252A0981A000118C39 /* LocomotiveCellView.swift */,
+				4D8422272A0985A600118C39 /* SingleDieView.swift */,
 				4DB92AE92555BDEF00B976A2 /* Assets.xcassets */,
 				4DB92AEE2555BDEF00B976A2 /* Info.plist */,
 				4DB92AEB2555BDEF00B976A2 /* Preview Content */,
@@ -478,6 +487,7 @@
 				4DE0B3792A01B4AB006F16C3 /* PlayerHUDHorizontalView.swift in Sources */,
 				4D807BD32555C0940067ABD0 /* Sounds.swift in Sources */,
 				4D5AC8D12555C27700E39048 /* EY+Array.swift in Sources */,
+				4D8422282A0985A600118C39 /* SingleDieView.swift in Sources */,
 				4DEBF68D29ED2A8C00D3A6BF /* TurnOrderManager.swift in Sources */,
 				4D0F968529F4BCAE006DB45C /* GameSetting.swift in Sources */,
 				4D5AC8D72555C27700E39048 /* EY+String.swift in Sources */,
@@ -495,6 +505,7 @@
 				4D9C8AA229E80DCD006FA668 /* Generations.swift in Sources */,
 				4D909E4327D2180500A50180 /* EY+Notification.swift in Sources */,
 				4D5AC8D62555C27700E39048 /* EY+FileManager.swift in Sources */,
+				4D8422242A0980D800118C39 /* TrainListView.swift in Sources */,
 				4D4752A729F527EA00C6105A /* EngineYardGame.swift in Sources */,
 				4D4752A929F5360200C6105A /* Bank.swift in Sources */,
 				4D5AC8D02555C27700E39048 /* EY+FlatColor.swift in Sources */,
@@ -502,9 +513,10 @@
 				4D5AC90B2555DD3300E39048 /* NumberFormatCache.swift in Sources */,
 				4DB92AE82555BDEE00B976A2 /* ContentView.swift in Sources */,
 				4D0F967F29F4BB3F006DB45C /* SalesOrder.swift in Sources */,
+				4D8422262A0981A000118C39 /* LocomotiveCellView.swift in Sources */,
 				4DEBF68F29ED2B3500D3A6BF /* Wallet.swift in Sources */,
 				4DEBF68729EC88D000D3A6BF /* Board.swift in Sources */,
-				4D9C8AA429E80DF8006FA668 /* EngineColours.swift in Sources */,
+				4D9C8AA429E80DF8006FA668 /* EngineColour.swift in Sources */,
 				4D0F967D29F4B904006DB45C /* NumericError.swift in Sources */,
 				4DB92AE62555BDEE00B976A2 /* EngineYardApp.swift in Sources */,
 				4DE0B37D2A01B5FA006F16C3 /* WinnerView.swift in Sources */,
