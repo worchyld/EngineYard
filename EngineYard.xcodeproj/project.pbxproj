@@ -38,6 +38,7 @@
 		4D8422242A0980D800118C39 /* TrainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8422232A0980D800118C39 /* TrainListView.swift */; };
 		4D8422262A0981A000118C39 /* LocomotiveCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8422252A0981A000118C39 /* LocomotiveCellView.swift */; };
 		4D8422282A0985A600118C39 /* SingleDieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8422272A0985A600118C39 /* SingleDieView.swift */; };
+		4D84222A2A0986DD00118C39 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8422292A0986DD00118C39 /* MainMenuView.swift */; };
 		4D909E4327D2180500A50180 /* EY+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D909E4227D2180500A50180 /* EY+Notification.swift */; };
 		4D9C8AA229E80DCD006FA668 /* Generations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C8AA129E80DCD006FA668 /* Generations.swift */; };
 		4D9C8AA429E80DF8006FA668 /* EngineColour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C8AA329E80DF8006FA668 /* EngineColour.swift */; };
@@ -118,6 +119,7 @@
 		4D8422232A0980D800118C39 /* TrainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainListView.swift; sourceTree = "<group>"; };
 		4D8422252A0981A000118C39 /* LocomotiveCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocomotiveCellView.swift; sourceTree = "<group>"; };
 		4D8422272A0985A600118C39 /* SingleDieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleDieView.swift; sourceTree = "<group>"; };
+		4D8422292A0986DD00118C39 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		4D909E4227D2180500A50180 /* EY+Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EY+Notification.swift"; sourceTree = "<group>"; };
 		4D9C8AA129E80DCD006FA668 /* Generations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generations.swift; sourceTree = "<group>"; };
 		4D9C8AA329E80DF8006FA668 /* EngineColour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineColour.swift; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 			children = (
 				4DB92AE52555BDEE00B976A2 /* EngineYardApp.swift */,
 				4DB92AE72555BDEE00B976A2 /* ContentView.swift */,
+				4D8422292A0986DD00118C39 /* MainMenuView.swift */,
 				4D5C1DB22A016F20001D3AD6 /* PlayerHUDView.swift */,
 				4DE0B3762A01B45D006F16C3 /* ListOfPlayersHorizontalView.swift */,
 				4DE0B3782A01B4AB006F16C3 /* PlayerHUDHorizontalView.swift */,
@@ -501,6 +504,7 @@
 				4D5AC8D22555C27700E39048 /* EY+Identifier.swift in Sources */,
 				4DE0B3752A01B209006F16C3 /* AvatarView.swift in Sources */,
 				4DE0B3772A01B45D006F16C3 /* ListOfPlayersHorizontalView.swift in Sources */,
+				4D84222A2A0986DD00118C39 /* MainMenuView.swift in Sources */,
 				4D9C8AA829E812CC006FA668 /* D6.swift in Sources */,
 				4D9C8AA229E80DCD006FA668 /* Generations.swift in Sources */,
 				4D909E4327D2180500A50180 /* EY+Notification.swift in Sources */,
