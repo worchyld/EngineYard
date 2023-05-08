@@ -12,6 +12,20 @@ struct LocomotiveCellView: View {
     
     var body: some View {
         HStack(alignment: .center, spacing: 1.0, content: {
+            
+            VStack(alignment: .center, content: {
+                HStack(alignment: .center, content: {
+                    Text(cashFormat(amount: locomotive.cost)).font(.largeTitle).bold()
+                    Text(cashFormat(amount:locomotive.productionCost)).font(.title)
+                    Text(cashFormat(amount:locomotive.income)).font(.title)
+                })
+                Text("\(locomotive.generation.rawValue)").font(.largeTitle).bold()
+                Image(locomotive.icon).resizable().frame(width: 35, height: 25, alignment: .center)
+            })
+            
+            
+            
+            /*
             Image(locomotive.icon).resizable().frame(width: 35, height: 25, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         VStack(alignment: .leading, spacing: 1.0, content: {
                             Text("\(locomotive.name)").font(.headline)
@@ -24,6 +38,7 @@ struct LocomotiveCellView: View {
                     Text(cashFormat(amount: locomotive.cost))
                         .font(.headline)
                         .fontWeight(.bold)
+             */
                 }).frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .center)
     }
 }
