@@ -85,8 +85,7 @@ extension Card {
         }
         guard to.loco.rust != .rusted else {
             throw CardError.cardIsRusted(card: to)
-        }
-        
+        }        
         guard let seekFromCard = find(card: from, in: deck) else {
             throw CardError.cardNotFound
         }
