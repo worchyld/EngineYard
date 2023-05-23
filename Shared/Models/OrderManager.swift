@@ -35,7 +35,13 @@ extension OrderManagerError : LocalizedError {
     }
 }
 
-
+/*
+ Handles order management
+ + Set the initial order only if its not built
+ + Add an order only if its active & not rusted
+ + Add a sales value only if its active & not rusted
+ + Transfer all sales -> orders only if its active & not rusted
+ */
 class OrderManager: Rollable {
     private var loco: Locomotive
     
@@ -86,7 +92,11 @@ class OrderManager: Rollable {
         self.loco.sales.append(value)
     }
 
-    func transferOrderToSale() {
+    func transferOrderToSale() throws {
+        guard self.loco.isActive else {
+            throw OrderManagerError.mustBeActive
+        }
+        
         // Find the item, move it to the sales array, then remove from orders array
         //self.loco.sales.append(value)
         //self.loco.orders.remove(at: index)
