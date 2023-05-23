@@ -24,6 +24,9 @@ extension Int {
     var isNegative: Bool {
         return (self < 0)
     }
+    var isD6: Bool {
+        return (self > 0 && self < 7)
+    }
 }
 
 extension Int {

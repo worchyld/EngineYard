@@ -15,7 +15,7 @@ protocol RustUseCases {
 }
 
 enum Rust: Int, Codable, CaseIterable, Equatable  {
-    case notBuilt, built, rusting, rusted
+    case notBuilt, hasInitialOrder, new, rusting, rusted
 }
 
 extension Rust : RustUseCases {
@@ -23,9 +23,12 @@ extension Rust : RustUseCases {
         // set rusted as the default if it can't be aged further
         self = Rust(rawValue: rawValue + 1) ?? .rusted
     }
-    
-    public func isActiveButNotRusted() -> Bool {
-        let rustValue = self.rawValue
-        return (rustValue >= Rust.built.rawValue && rustValue <= Rust.rusting.rawValue)
+}
+
+extension Rust {
+    var isActive: Bool {
+        get {
+            return (self == .new || self == .rusting)
+        }
     }
 }

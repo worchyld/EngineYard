@@ -34,8 +34,8 @@ struct LocomotiveViewModel : Identifiable, Equatable {
         self.cost = loco.cost
         self.productionCost = loco.productionCost
         self.income = loco.income
-        self.orders = loco.existingOrders
-        self.sales = loco.customerBase
+        self.orders = loco.orders
+        self.sales = loco.sales
         self.initialOrder = loco.initialOrder
         self.rust = loco.rust
         self.trainPool = loco.trainPool

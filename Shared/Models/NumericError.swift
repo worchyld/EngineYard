@@ -10,6 +10,7 @@ import Foundation
 enum NumericError : Error {
     case resultIsNegative
     case mustBeGreaterThanZero
+    case notAValidD6
     case notEnough(amount: Int)
 }
 
@@ -22,6 +23,8 @@ extension NumericError : LocalizedError {
             return NSLocalizedString("Must be a positive number", comment: "Numeric error: Must be greater than 0")
         case .notEnough(let amount):
             return NSLocalizedString("You do not have enough to do this \(amount)", comment: "Numeric error: Not enough to do action")
+        case .notAValidD6:
+            return NSLocalizedString("Must be a valid D6 value", comment: "Numeric error: Not a D6")
         }
     }
 }

@@ -31,28 +31,28 @@ final class Locomotive : Identifiable {
     var trainPool: Int
     var dicePoolCapacity: Int
     var initialOrder: Int?
-    var existingOrders: [Int]
-    var customerBase: [Int]
+    var orders: [Int] // existingOrders
+    var sales: [Int] //customerBase
     var rust: Rust
     
     var isDicePoolEmpty: Bool {
         get {
-            return ((self.existingOrders.isEmpty) && (self.customerBase.isEmpty))
+            return ((self.orders.isEmpty) && (self.sales.isEmpty))
         }
     }
     var isDicePoolFull: Bool {
         get {
-            return ((self.existingOrders.count + self.customerBase.count) >= self.dicePoolCapacity)
+            return ((self.orders.count + self.sales.count) >= self.dicePoolCapacity)
         }
     }
     var hasDice: Bool {
         get {
-            return (self.existingOrders.count > 0 || self.customerBase.count > 0)
+            return (self.orders.count > 0 || self.sales.count > 0)
         }
     }
     var isActive: Bool {
         get {
-            return ((self.rust == .built && self.hasDice) || (self.rust == .rusting && self.hasDice))
+            return (self.rust.isActive && self.hasDice)
         }
     }
     
@@ -66,8 +66,8 @@ final class Locomotive : Identifiable {
         self.trainPool = trainPool
         self.dicePoolCapacity = capacity
         self.rust = rust
-        self.existingOrders = orders
-        self.customerBase = sales
+        self.orders = orders
+        self.sales = sales
         self.initialOrder = initialOrder
     }
 }
@@ -77,6 +77,15 @@ extension Locomotive {
         self.rust.rustify()
     }
 }
+
+extension Locomotive: CustomDebugStringConvertible {
+    var debugDescription: String {
+        let initialOrderString = String(describing: self.initialOrder)
+        
+        return ("\nID: \(id), initialOrder: \(initialOrderString), orders: \(self.orders), sales: \(self.sales), state: \(self.rust)")
+    }
+}
+
 
 extension Locomotive {
     
