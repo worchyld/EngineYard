@@ -8,23 +8,29 @@
 import Foundation
 
 enum GamePhase: Int, Codable, CaseIterable, Equatable {
-    case mainMenu, playerSelect, buyTrainScreen, buyProductionScreen, sellScreen, marketUpdateScreen, taxScreen, endOfGameScreen
+    case setup, mainMenu, playerSelect, buyTrainScreen, buyProductionScreen, sellScreen, marketUpdateScreen, taxScreen, endOfGameScreen
 }
 
-enum GameState: Int, Codable, Equatable {
-    case setup, playing, paused, end
+public enum GameErrorDelegate: Error {
+    case noGameData, noGameObject, noBoardDefined, noPlayerFound, notAValidPlayerCount
 }
+
+typealias Game = EngineYardGame
+
 
 class EngineYardGame {
-    var board: Board
-    var gameState: GameState = .setup
-    var gamePhase: GamePhase = .mainMenu
-    var gameMessages: [GameMessage] = [GameMessage]()
+    public private(set) var board: Board
+    public private(set) var gamePhase: GamePhase = .mainMenu
     
-    init(board: Board, gameState: GameState, gamePhase: GamePhase, gameMessages: [GameMessage]) {
+    init(board: Board, gamePhase: GamePhase) {
         self.board = board
-        self.gameState = gameState
         self.gamePhase = gamePhase
-        self.gameMessages = gameMessages
+    }
+    
+    func setGamePhase(to phase: GamePhase) {
+        self.gamePhase = phase
+    }
+    func setBoard(to board: Board) {
+        self.board = board
     }
 }

@@ -60,6 +60,15 @@ class Bank {
         }
     }
 
+    func setCash(player: Player, transaction: Bank.Transaction) throws {
+        let result = Bank.Transaction.execute(transaction)
+        switch result {
+        case .failure(let err):
+            throw err
+        case .success(let newBalance):
+            player.setCash(amount: newBalance)
+        }
+    }
     
     func buyTrain() {
         

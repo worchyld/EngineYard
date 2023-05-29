@@ -64,8 +64,8 @@ class MarketDemandsManager {
     /* Determine how many generations of that locomotive type currently exist. A generation exists if there are dice in either the Existing Orders boxes or the Customer Base boxes or in both
      */
     func determineExistingGenerations() {
-        let existingGreen = self.locomotives.map { loco in
-            return ((loco.orders.count > 0 || loco.sales.count > 0) && (loco.colour == .green))
-        }
+//        let existingGreen = self.locomotives.map { loco in
+//            return ((loco.orders.count > 0 || loco.sales.count > 0) && (loco.colour == .green))
+//        }
     }
 }

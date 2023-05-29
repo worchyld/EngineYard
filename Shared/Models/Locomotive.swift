@@ -89,7 +89,6 @@ extension Locomotive: CustomDebugStringConvertible {
 
 extension Locomotive {
     
-    
     internal static func allLocos() -> [Locomotive] {
         let locos: [Locomotive] = [
             Locomotive.init(id: UUID(), name: "", colour: .green, generation: .first, cost: 4, trainPool: 4, capacity: 3, rust: .notBuilt, orders: [Int](), sales: [Int](), initialOrder: nil),

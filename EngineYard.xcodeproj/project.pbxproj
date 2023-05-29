@@ -62,13 +62,13 @@
 		4DE0B3792A01B4AB006F16C3 /* PlayerHUDHorizontalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE0B3782A01B4AB006F16C3 /* PlayerHUDHorizontalView.swift */; };
 		4DE0B37B2A01B54C006F16C3 /* PlayerHUDVerticalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE0B37A2A01B54C006F16C3 /* PlayerHUDVerticalView.swift */; };
 		4DE0B37D2A01B5FA006F16C3 /* WinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE0B37C2A01B5FA006F16C3 /* WinnerView.swift */; };
+		4DE690C02A2472F4009FC65F /* GameSetupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE690BF2A2472F4009FC65F /* GameSetupManager.swift */; };
 		4DEBF68329EBE63B00D3A6BF /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEBF68229EBE63B00D3A6BF /* Card.swift */; };
 		4DEBF68429EBE6A200D3A6BF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C8AAF29E82B52006FA668 /* Player.swift */; };
 		4DEBF68629EBE7D000D3A6BF /* OrderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEBF68529EBE7D000D3A6BF /* OrderManager.swift */; };
 		4DEBF68729EC88D000D3A6BF /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C8AB129E82BAC006FA668 /* Board.swift */; };
 		4DEBF68B29ED182E00D3A6BF /* ProductionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEBF68A29ED182E00D3A6BF /* ProductionManager.swift */; };
 		4DEBF68D29ED2A8C00D3A6BF /* TurnOrderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEBF68C29ED2A8C00D3A6BF /* TurnOrderManager.swift */; };
-		4DEBF68F29ED2B3500D3A6BF /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEBF68E29ED2B3500D3A6BF /* Wallet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,11 +152,11 @@
 		4DE0B3782A01B4AB006F16C3 /* PlayerHUDHorizontalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerHUDHorizontalView.swift; sourceTree = "<group>"; };
 		4DE0B37A2A01B54C006F16C3 /* PlayerHUDVerticalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerHUDVerticalView.swift; sourceTree = "<group>"; };
 		4DE0B37C2A01B5FA006F16C3 /* WinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerView.swift; sourceTree = "<group>"; };
+		4DE690BF2A2472F4009FC65F /* GameSetupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetupManager.swift; sourceTree = "<group>"; };
 		4DEBF68229EBE63B00D3A6BF /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		4DEBF68529EBE7D000D3A6BF /* OrderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderManager.swift; sourceTree = "<group>"; };
 		4DEBF68A29ED182E00D3A6BF /* ProductionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionManager.swift; sourceTree = "<group>"; };
 		4DEBF68C29ED2A8C00D3A6BF /* TurnOrderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnOrderManager.swift; sourceTree = "<group>"; };
-		4DEBF68E29ED2B3500D3A6BF /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,7 +208,6 @@
 				4DEBF68229EBE63B00D3A6BF /* Card.swift */,
 				4DC24E3E29FF58D8001DA318 /* Deck.swift */,
 				4D9C8AAF29E82B52006FA668 /* Player.swift */,
-				4DEBF68E29ED2B3500D3A6BF /* Wallet.swift */,
 				4D4752A829F5360200C6105A /* Bank.swift */,
 				4D0F968629F4BDE3006DB45C /* Tax.swift */,
 				4DEBF68529EBE7D000D3A6BF /* OrderManager.swift */,
@@ -217,6 +216,7 @@
 				4D0F967E29F4BB3F006DB45C /* SalesOrder.swift */,
 				4D0F968029F4BB75006DB45C /* GameMessage.swift */,
 				4DC19F0F2A1D88E100091AA5 /* MarketDemandsManager.swift */,
+				4DE690BF2A2472F4009FC65F /* GameSetupManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -521,11 +521,11 @@
 				4DB92AE82555BDEE00B976A2 /* ContentView.swift in Sources */,
 				4D0F967F29F4BB3F006DB45C /* SalesOrder.swift in Sources */,
 				4D8422262A0981A000118C39 /* LocomotiveCellView.swift in Sources */,
-				4DEBF68F29ED2B3500D3A6BF /* Wallet.swift in Sources */,
 				4DEBF68729EC88D000D3A6BF /* Board.swift in Sources */,
 				4D9C8AA429E80DF8006FA668 /* EngineColour.swift in Sources */,
 				4D0F967D29F4B904006DB45C /* NumericError.swift in Sources */,
 				4DB92AE62555BDEE00B976A2 /* EngineYardApp.swift in Sources */,
+				4DE690C02A2472F4009FC65F /* GameSetupManager.swift in Sources */,
 				4DE0B37D2A01B5FA006F16C3 /* WinnerView.swift in Sources */,
 				4DC19F102A1D88E100091AA5 /* MarketDemandsManager.swift in Sources */,
 				4D9C8AB729E82CA2006FA668 /* Rust.swift in Sources */,

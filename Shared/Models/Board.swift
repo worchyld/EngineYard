@@ -24,7 +24,7 @@ final class Board {
 }
 
 final class Space {
-    private var loco: Locomotive
+    public private (set) var loco: Locomotive
     
     init(loco: Locomotive) {
         self.loco = loco

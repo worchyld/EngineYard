@@ -17,7 +17,7 @@ public struct Constants {
         public static let min = 3
         public static let max = 5
         
-        func seedCash(players: Int) -> Int {
+        public static func seedCash(players: Int) -> Int {
             switch players {
             case 3,4: return 12
             case 5: return 14
