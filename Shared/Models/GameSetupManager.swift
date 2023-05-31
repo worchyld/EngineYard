@@ -48,12 +48,22 @@ class GameSetupManager {
     
     private func prepareBoard() -> Board {
         let allLocos = Locomotive.allLocos()
-        var spaces: [Space] = [Space]()
+        
         for loco in allLocos {
-            let space = Space.init(loco: loco)
-            spaces.append(space)
+            let deck: Deck<Locomotive> = Deck()
+            
+            for _ in 0...loco.trainPool {
+                let deck: Deck<Card> = Deck()
+                let card = Card(locomotive: loco, productionUnits: 0)
+                deck.push(card)
+            }
+            deck.push(loco)
+            
+            print (deck)
         }
-        let board = Board.init(spaces: spaces)
+        
+        let spaces = [Space]()
+        let board = Board(spaces: spaces)
         
         return board
     }
@@ -62,29 +72,29 @@ class GameSetupManager {
     // Give each player 1x First Gen Green card, and add 1 production unit to each one
     // Add 3 orders to the first train, Add 1 order to the second train
     private func setupThreePlayerGame(board: Board, players: [Player]) throws {
-        guard let firstSpace = board.spaces.first else {
-           throw GameErrorDelegate.noBoardDefined
-        }
-        let firstLoco = firstSpace.loco
-        
-        // Set seedCash of $12
-        let cash = Constants.NumberOfPlayers.seedCash(players: 3)
-        
-        let _ = players.map {
-            $0.setCash(amount: cash)            
-        }
-        
-        if (players.count == 3) {
-        }
-        for _ in 1...players.count {
-            let om = OrderManager.init(loco: firstLoco)
-            do {
-                try om.addInitialOrder()
-            }
-            catch let err {
-                throw err
-            }
-        }
+//        guard let firstSpace = board.spaces.first else {
+//           throw GameErrorDelegate.noBoardDefined
+//        }
+//        let firstLoco = firstSpace.loco
+//        
+//        // Set seedCash of $12
+//        let cash = Constants.NumberOfPlayers.seedCash(players: 3)
+//        
+//        let _ = players.map {
+//            $0.setCash(amount: cash)            
+//        }
+//        
+//        if (players.count == 3) {
+//        }
+//        for _ in 1...players.count {
+//            let om = OrderManager.init(loco: firstLoco)
+//            do {
+//                try om.addInitialOrder()
+//            }
+//            catch let err {
+//                throw err
+//            }
+//        }
         
         
     }

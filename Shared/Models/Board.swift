@@ -13,6 +13,7 @@ final class Board {
     var activePlayerIndex: Int = 0
     
     var spaces: [Space] = [Space]()
+//    var decks: Deck<Locomotive> = Deck<Locomotive>()
     
     init(spaces: [Space]) {
         self.spaces = spaces
@@ -23,10 +24,4 @@ final class Board {
     }
 }
 
-final class Space {
-    public private (set) var loco: Locomotive
-    
-    init(loco: Locomotive) {
-        self.loco = loco
-    }
-}
+final class Space {}
