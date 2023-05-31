@@ -35,6 +35,7 @@
 		4D807BD22555C0940067ABD0 /* Birdy_Note5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D807BCD2555C0940067ABD0 /* Birdy_Note5.wav */; };
 		4D807BD32555C0940067ABD0 /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D807BCE2555C0940067ABD0 /* Sounds.swift */; };
 		4D807BD42555C0940067ABD0 /* Birdy_Notification1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D807BCF2555C0940067ABD0 /* Birdy_Notification1.wav */; };
+		4D8273622A274E9700694E6D /* GameSetupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8273612A274E9700694E6D /* GameSetupTests.swift */; };
 		4D8422242A0980D800118C39 /* TrainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8422232A0980D800118C39 /* TrainListView.swift */; };
 		4D8422262A0981A000118C39 /* LocomotiveCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8422252A0981A000118C39 /* LocomotiveCellView.swift */; };
 		4D8422282A0985A600118C39 /* SingleDieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8422272A0985A600118C39 /* SingleDieView.swift */; };
@@ -117,6 +118,7 @@
 		4D807BCD2555C0940067ABD0 /* Birdy_Note5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Note5.wav; sourceTree = "<group>"; };
 		4D807BCE2555C0940067ABD0 /* Sounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
 		4D807BCF2555C0940067ABD0 /* Birdy_Notification1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Birdy_Notification1.wav; sourceTree = "<group>"; };
+		4D8273612A274E9700694E6D /* GameSetupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetupTests.swift; sourceTree = "<group>"; };
 		4D8422232A0980D800118C39 /* TrainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainListView.swift; sourceTree = "<group>"; };
 		4D8422252A0981A000118C39 /* LocomotiveCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocomotiveCellView.swift; sourceTree = "<group>"; };
 		4D8422272A0985A600118C39 /* SingleDieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleDieView.swift; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 				4D9C8AAD29E81494006FA668 /* D6Tests.swift */,
 				4D0F968B29F4C76C006DB45C /* LocoTests.swift */,
 				4DC24E4029FF5F89001DA318 /* TaxTests.swift */,
+				4D8273612A274E9700694E6D /* GameSetupTests.swift */,
 			);
 			path = EngineYardTests;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D9C8AAE29E81494006FA668 /* D6Tests.swift in Sources */,
+				4D8273622A274E9700694E6D /* GameSetupTests.swift in Sources */,
 				4DB92AF82555BDEF00B976A2 /* EngineYardTests.swift in Sources */,
 				4DC24E4129FF5F89001DA318 /* TaxTests.swift in Sources */,
 				4D0F968C29F4C76C006DB45C /* LocoTests.swift in Sources */,

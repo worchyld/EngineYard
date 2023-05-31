@@ -8,18 +8,13 @@
 import Foundation
 
 class GameSetupManager {
-    private var game: Game
-    
-    init(game: Game) {
-        self.game = game
-    }
-    
+        
     func setup(for players: [Player]) throws -> Game {
         guard Constants.NumberOfPlayers.isValid(players.count) else {
             throw GameErrorDelegate.notAValidPlayerCount
         }
         
-        let board = self.prepareBoard()
+        let board = prepareBoard()
         
         switch players.count {
         case 3,4:
@@ -39,27 +34,25 @@ class GameSetupManager {
         default:
             throw GameErrorDelegate.notAValidPlayerCount
         }
-
-        self.game.setBoard(to: board)
-        self.game.setGamePhase(to: .mainMenu)
-
-        return self.game
+        
+        let game = Game.init(board: board, gamePhase: .setup)
+        return game
     }
     
-    private func prepareBoard() -> Board {
+    internal func prepareBoard() -> Board {
         let allLocos = Locomotive.allLocos()
         
         for loco in allLocos {
-            let deck: Deck<Locomotive> = Deck()
+            let locoDeck: Deck<Locomotive> = Deck()
             
             for _ in 0...loco.trainPool {
                 let deck: Deck<Card> = Deck()
                 let card = Card(locomotive: loco, productionUnits: 0)
                 deck.push(card)
             }
-            deck.push(loco)
+            locoDeck.push(loco)
             
-            print (deck)
+            print (locoDeck)
         }
         
         let spaces = [Space]()
