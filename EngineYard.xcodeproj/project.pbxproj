@@ -56,7 +56,6 @@
 		4DB92AF82555BDEF00B976A2 /* EngineYardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB92AF72555BDEF00B976A2 /* EngineYardTests.swift */; };
 		4DB92B032555BDEF00B976A2 /* EngineYardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB92B022555BDEF00B976A2 /* EngineYardUITests.swift */; };
 		4DC19F102A1D88E100091AA5 /* MarketDemandsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC19F0F2A1D88E100091AA5 /* MarketDemandsManager.swift */; };
-		4DC24E3F29FF58D8001DA318 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC24E3E29FF58D8001DA318 /* Deck.swift */; };
 		4DC24E4129FF5F89001DA318 /* TaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC24E4029FF5F89001DA318 /* TaxTests.swift */; };
 		4DE0B3752A01B209006F16C3 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE0B3742A01B209006F16C3 /* AvatarView.swift */; };
 		4DE0B3772A01B45D006F16C3 /* ListOfPlayersHorizontalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE0B3762A01B45D006F16C3 /* ListOfPlayersHorizontalView.swift */; };
@@ -147,7 +146,6 @@
 		4DB92B022555BDEF00B976A2 /* EngineYardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineYardUITests.swift; sourceTree = "<group>"; };
 		4DB92B042555BDEF00B976A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DC19F0F2A1D88E100091AA5 /* MarketDemandsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDemandsManager.swift; sourceTree = "<group>"; };
-		4DC24E3E29FF58D8001DA318 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		4DC24E4029FF5F89001DA318 /* TaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTests.swift; sourceTree = "<group>"; };
 		4DE0B3742A01B209006F16C3 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		4DE0B3762A01B45D006F16C3 /* ListOfPlayersHorizontalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfPlayersHorizontalView.swift; sourceTree = "<group>"; };
@@ -208,7 +206,6 @@
 				4D9C8AB129E82BAC006FA668 /* Board.swift */,
 				4D9C8AB329E82BBE006FA668 /* Locomotive.swift */,
 				4DEBF68229EBE63B00D3A6BF /* Card.swift */,
-				4DC24E3E29FF58D8001DA318 /* Deck.swift */,
 				4D9C8AAF29E82B52006FA668 /* Player.swift */,
 				4D4752A829F5360200C6105A /* Bank.swift */,
 				4D0F968629F4BDE3006DB45C /* Tax.swift */,
@@ -501,7 +498,6 @@
 				4D0F968529F4BCAE006DB45C /* GameSetting.swift in Sources */,
 				4D5AC8D72555C27700E39048 /* EY+String.swift in Sources */,
 				4D5AC8CF2555C27700E39048 /* EY+Bundle.swift in Sources */,
-				4DC24E3F29FF58D8001DA318 /* Deck.swift in Sources */,
 				4D5C1DAB2A016985001D3AD6 /* CardViewModel.swift in Sources */,
 				4D9C8AB529E82BF8006FA668 /* Locomotive.swift in Sources */,
 				4D5C1DAD2A016A23001D3AD6 /* LocomotiveViewModel.swift in Sources */,
