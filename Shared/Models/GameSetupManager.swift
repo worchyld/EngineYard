@@ -9,58 +9,57 @@ import Foundation
 
 class GameSetupManager {
         
-    func setup(for players: [Player]) throws -> Game {
+    func setup(for players: [Player]) throws -> Game? {
         guard Constants.NumberOfPlayers.isValid(players.count) else {
             throw GameErrorDelegate.notAValidPlayerCount
         }
         
         let board = prepareBoard()
+//
+//        switch players.count {
+//        case 3,4:
+//            // setup 3-4 player game
+//            do {
+//                try self.setupThreePlayerGame(board: board, players: players)
+//            } catch let err {
+//                throw err
+//            }
+//        case 5:
+//            // setup 5 player game
+//            do {
+//                try self.setupFivePlayerGame(board: board, players: players)
+//            } catch let err {
+//                throw err
+//            }
+//        default:
+//            throw GameErrorDelegate.notAValidPlayerCount
+//        }
         
-        switch players.count {
-        case 3,4:
-            // setup 3-4 player game
-            do {
-                try self.setupThreePlayerGame(board: board, players: players)
-            } catch let err {
-                throw err
-            }
-        case 5:
-            // setup 5 player game
-            do {
-                try self.setupFivePlayerGame(board: board, players: players)
-            } catch let err {
-                throw err
-            }
-        default:
-            throw GameErrorDelegate.notAValidPlayerCount
-        }
-        
-        let game = Game.init(board: board, gamePhase: .setup)
-        return game
+        return nil
+//        let game = Game.init(board: board, gamePhase: .setup)
+//        return game
     }
     
-    internal func prepareBoard() -> Board {
+    internal func prepareBoard() {
         let allLocos = Locomotive.allLocos()
         
-        var decks: Deck<Locomotive>
+        var deckOfLocomotives: [Locomotive] = [Locomotive]()
             
         for loco in allLocos {
-            let deck: Deck<Locomotive> = Deck()
-
-            for _ in 0...loco.trainPool {
+            loco.cards = [Card]()
+            
+            for _ in 1...loco.trainPool {
                 let card = Card(locomotive: loco, productionUnits: 0)
-                deck.push(card)
+                loco.cards?.append(card)
             }
             
-            decks.push(deck)
+            deckOfLocomotives.append(loco)
         }
         
-        for loco in decks {
+        for loco in deckOfLocomotives {
             print (loco.debugDescription)
         }
         
-        let board = Board.init(decks: decks)        
-        return board
     }
     
     // In a 3-4 player game, give each player 12 coins

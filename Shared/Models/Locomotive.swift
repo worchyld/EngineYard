@@ -34,6 +34,7 @@ final class Locomotive : Identifiable {
     var orders: [Int] // existingOrders
     var sales: [Int] //customerBase
     var rust: Rust
+    var cards: [Card]?
     
     var isDicePoolEmpty: Bool {
         get {
@@ -82,7 +83,7 @@ extension Locomotive: CustomDebugStringConvertible {
     var debugDescription: String {
         let initialOrderString = String(describing: self.initialOrder)
         
-        return ("\nID: \(id), initialOrder: \(initialOrderString), orders: \(self.orders), sales: \(self.sales), state: \(self.rust)")
+        return ("\nID: \(id), initialOrder: \(initialOrderString), orders: \(self.orders), sales: \(self.sales), state: \(self.rust), cards: \(String(describing: cards?.count))")
     }
 }
 

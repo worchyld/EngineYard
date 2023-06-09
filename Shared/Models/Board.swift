@@ -14,13 +14,10 @@ final class Board {
     
     var decks: Deck<Locomotive> = Deck<Locomotive>()
     
-    init(decks: [Locomotive]) {
+    init(decks: Deck<Locomotive>) {
         self.decks = decks
     }
     
-    func unlock(deck: Deck, index: IndexPath) {
-        // TBD
-    }
 }
 
 extension Board {
