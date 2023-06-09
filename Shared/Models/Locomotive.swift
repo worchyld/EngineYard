@@ -86,6 +86,7 @@ extension Locomotive: CustomDebugStringConvertible {
     }
 }
 
+// MARK: Locomotive Data 
 
 extension Locomotive {
     
@@ -108,6 +109,4 @@ extension Locomotive {
         ]
         return locos
     }
-    
-    
 }

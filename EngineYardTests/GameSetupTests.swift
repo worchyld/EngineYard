@@ -23,6 +23,7 @@ final class GameSetupTests: XCTestCase {
         let gsm = GameSetupManager()
         do {
             let _ = try gsm.setup(for: dummyPlayers)
+            
         } catch let err {
             throw err
         }

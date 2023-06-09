@@ -42,22 +42,24 @@ class GameSetupManager {
     internal func prepareBoard() -> Board {
         let allLocos = Locomotive.allLocos()
         
-        for loco in allLocos {
-            let locoDeck: Deck<Locomotive> = Deck()
+        var decks: Deck<Locomotive>
             
+        for loco in allLocos {
+            let deck: Deck<Locomotive> = Deck()
+
             for _ in 0...loco.trainPool {
-                let deck: Deck<Card> = Deck()
                 let card = Card(locomotive: loco, productionUnits: 0)
                 deck.push(card)
             }
-            locoDeck.push(loco)
             
-            print (locoDeck)
+            decks.push(deck)
         }
         
-        let spaces = [Space]()
-        let board = Board(spaces: spaces)
+        for loco in decks {
+            print (loco.debugDescription)
+        }
         
+        let board = Board.init(decks: decks)        
         return board
     }
     

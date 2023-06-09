@@ -12,16 +12,17 @@ final class Board {
     var activePlayer: Player? = nil
     var activePlayerIndex: Int = 0
     
-    var spaces: [Space] = [Space]()
-//    var decks: Deck<Locomotive> = Deck<Locomotive>()
+    var decks: Deck<Locomotive> = Deck<Locomotive>()
     
-    init(spaces: [Space]) {
-        self.spaces = spaces
+    init(decks: [Locomotive]) {
+        self.decks = decks
     }
     
-    func unlockSpace() {
+    func unlock(deck: Deck, index: IndexPath) {
         // TBD
     }
 }
 
-final class Space {}
+extension Board {
+
+}
