@@ -203,9 +203,10 @@
 		4D1B91442A3B415C000FAD34 /* Partials */ = {
 			isa = PBXGroup;
 			children = (
-				4D8422272A0985A600118C39 /* SingleDieView.swift */,
 				4D8422252A0981A000118C39 /* LocomotiveCellView.swift */,
 				4DE0B3742A01B209006F16C3 /* AvatarView.swift */,
+				4D8422272A0985A600118C39 /* SingleDieView.swift */,
+				4D5C1DB22A016F20001D3AD6 /* PlayerHUDView.swift */,
 				4DE0B37A2A01B54C006F16C3 /* PlayerHUDVerticalView.swift */,
 				4DE0B3782A01B4AB006F16C3 /* PlayerHUDHorizontalView.swift */,
 			);
@@ -330,7 +331,6 @@
 				4DB92AE72555BDEE00B976A2 /* ContentView.swift */,
 				4D8422292A0986DD00118C39 /* MainMenuView.swift */,
 				4D1B91402A3B3D71000FAD34 /* CharacterSelectScreenView.swift */,
-				4D5C1DB22A016F20001D3AD6 /* PlayerHUDView.swift */,
 				4DE0B3762A01B45D006F16C3 /* ListOfPlayersHorizontalView.swift */,
 				4D1B91422A3B4131000FAD34 /* BuyLocomotiveView.swift */,
 				4DE0B37C2A01B5FA006F16C3 /* WinnerView.swift */,
