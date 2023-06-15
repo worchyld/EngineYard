@@ -105,7 +105,7 @@ class GameSetupManager {
             }
             
             for _ in players {
-                print ("Trying to add card to players hand: \(item.debugDescription ?? "No card found")")
+                print ("Trying to add card to players hand: \(item.debugDescription)")
                 
                 /*
                 let result = p.handleCardAction(card: item, action: .push(card: item))
