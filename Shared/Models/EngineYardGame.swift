@@ -20,11 +20,15 @@ typealias Game = EngineYardGame
 
 class EngineYardGame {
     public private(set) var board: Board
-    public private(set) var gamePhase: GamePhase = .mainMenu
+    public private(set) var gamePhase: GamePhase
+    var players: [Player] = [Player]()
+    var firstPlayer: Player?
+    var currentPlayer: Player?
     
-    init(board: Board, gamePhase: GamePhase) {
+    init(board: Board, players: [Player]) {
         self.board = board
-        self.gamePhase = gamePhase
+        self.players = players
+        self.gamePhase = .setup
     }
     
     func setGamePhase(to phase: GamePhase) {

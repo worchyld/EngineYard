@@ -15,7 +15,7 @@ class TurnOrderManager {
         self.players = players
         self.onTurnIndex = onTurnIndex
     }
-    
+        
     func sort() -> [Player] {
         return self.players.sorted { p1, p2 in
             return p1.cash < p2.cash

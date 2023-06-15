@@ -12,10 +12,10 @@ final class Board {
     var activePlayer: Player? = nil
     var activePlayerIndex: Int = 0
     
-    var decks: Deck<Locomotive> = Deck<Locomotive>()
+    var spaces: [Locomotive] = [Locomotive]()
     
-    init(decks: Deck<Locomotive>) {
-        self.decks = decks
+    init(spaces: [Locomotive]) {
+        self.spaces = spaces
     }
     
 }
