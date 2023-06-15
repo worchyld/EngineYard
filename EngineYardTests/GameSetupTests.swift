@@ -24,6 +24,18 @@ final class GameSetupTests: XCTestCase {
         
         XCTAssertTrue(board.spaces.count == 14)
     }
+    
+    func testInvalidPlayerCount() throws {
+        let dummyPlayers = [Player()]
+        
+        let gsm = GameSetupManager()
+        do {
+            let game = try gsm.setup(for: dummyPlayers)
+        } catch let err {
+            XCTAssertThrowsError()
+            //throw err
+        }
+    }
 
     func testThreePlayerSetup() throws {
         let dummyPlayers = [Player(), Player(), Player()]
@@ -32,6 +44,11 @@ final class GameSetupTests: XCTestCase {
             let game = try gsm.setup(for: dummyPlayers)
             
             XCTAssertTrue(game.players.count == 3, "Players - \(game.players.count)")
+            
+            for p in game.players {
+                XCTAssertTrue(p.cash == 12)
+            }
+
             
         } catch let err {
             throw err
@@ -46,6 +63,10 @@ final class GameSetupTests: XCTestCase {
             
             XCTAssertTrue(game.players.count == 4)
             
+            for p in game.players {
+                XCTAssertTrue(p.cash == 12)
+            }
+            
         } catch let err {
             throw err
         }
@@ -58,6 +79,11 @@ final class GameSetupTests: XCTestCase {
             let game = try gsm.setup(for: dummyPlayers)
             
             XCTAssertTrue(game.players.count == 5)
+            
+            for p in game.players {
+                XCTAssertTrue(p.cash == 14)
+            }
+
             
         } catch let err {
             throw err

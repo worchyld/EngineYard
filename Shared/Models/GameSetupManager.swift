@@ -20,7 +20,7 @@ class GameSetupManager {
         case 3,4:
             // setup 3-4 player game
             do {
-                try self.setupThreePlayerGame(board: board, players: players)
+                try self.setupThreeOrFourPlayerGame(board: board, players: players)
             } catch let err {
                 throw err
             }
@@ -61,7 +61,7 @@ class GameSetupManager {
     // In a 3-4 player game, give each player 12 coins
     // Give each player 1x First Gen Green card, and add 1 production unit to each one
     // Add 3 orders to the first train, Add 1 order to the second train
-    private func setupThreePlayerGame(board: Board, players: [Player]) throws {
+    private func setupThreeOrFourPlayerGame(board: Board, players: [Player]) throws {
         guard let firstLoco = board.spaces.first else {
            throw GameErrorDelegate.noBoardDefined
         }
@@ -94,7 +94,16 @@ class GameSetupManager {
     // No-one has any cards
     // Add 1 order to the first train
     private func setupFivePlayerGame(board: Board, players: [Player]) throws {
+        guard let firstLoco = board.spaces.first else {
+           throw GameErrorDelegate.noBoardDefined
+        }
         
+        // Set seedCash of $14
+        let cash = Constants.NumberOfPlayers.seedCash(players: 5)
+        
+        let _ = players.map {
+            $0.setCash(amount: cash)
+        }
     }
     
 
