@@ -104,7 +104,7 @@ class GameSetupManager {
                 throw err
             }
             
-            for p in players {
+            for _ in players {
                 print ("Trying to add card to players hand: \(item.debugDescription ?? "No card found")")
                 
                 /*

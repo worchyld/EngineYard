@@ -15,12 +15,6 @@ struct ListOfPlayersHorizontalView: View {
             ForEach(players) { p in
                 PlayerHUDVerticalView(player: p)
             }
-            /*
-            PlayerHUDVerticalView(player: PlayerViewModel(id: UUID(), avatar: "avt-1", cash: 330, trains: 14, active: true, hand: nil))
-            PlayerHUDVerticalView(player: PlayerViewModel(id: UUID(), avatar: "avt-2", cash: 330, trains: 14, active: false))
-            PlayerHUDVerticalView(player: PlayerViewModel(id: UUID(), avatar: "avt-3", cash: 330, trains: 14, active: false))
-            PlayerHUDVerticalView(player: PlayerViewModel(id: UUID(), avatar: "avt-4", cash: 330, trains: 14, active: false))
-            PlayerHUDVerticalView(player: PlayerViewModel(id: UUID(), avatar: "avt-5", cash: 330, trains: 14, active: false))*/
         })
     }
 
