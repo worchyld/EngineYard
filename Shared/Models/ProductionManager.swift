@@ -14,7 +14,33 @@ class ProductionManager {
         self.card = card
     }
     
-    func canAdd(units: Int) throws {
+    func add(units: Int) throws {
+        do {
+            try canAdd(units: units)
+            self.card.add(units: units)
+        } catch let err {
+            throw err
+        }
+    }
+    
+    func spend(units: Int) throws {
+        do {
+            try canSpend(units: units)
+            self.card.spend(units: units)
+        } catch let err {
+            throw err
+        }
+    }
+    
+    func reset() {
+        self.card.resetUnits()
+    }
+    
+    func transfer() {
+        // #MARK: TBD
+    }
+    
+    internal func canAdd(units: Int) throws {
         do {
             try validateNumberIsPositive(units)
         } catch let err {
@@ -22,7 +48,7 @@ class ProductionManager {
         }
     }
     
-    func canSpend(units: Int) throws {
+    internal func canSpend(units: Int) throws {
         do {
             try validateNumberIsPositive(units)
             try validateSubtract(units: self.card.productionUnits, amount: units)

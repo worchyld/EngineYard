@@ -77,6 +77,12 @@ extension Locomotive {
     func rustify() {
         self.rust.rustify()
     }
+    func reduceTrainPoolByOne() {
+        guard self.trainPool > 0 else {
+            return
+        }
+        self.trainPool -= 1
+    }
 }
 
 extension Locomotive: CustomDebugStringConvertible {

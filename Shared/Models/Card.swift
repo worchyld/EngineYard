@@ -33,17 +33,23 @@ class Card: Identifiable, Equatable {
     }
 }
 
+extension Card : CustomDebugStringConvertible {
+    var debugDescription: String {
+        return ("Card: \(self.id), units: \(productionUnits), spent: \(spentUnits)")
+    }
+}
+
 extension Card {
-    func add(units: Int) throws {
+    func add(units: Int) {
         self.productionUnits += units
     }
     
-    func spend(units: Int) throws {
+    func spend(units: Int) {
         self.spentUnits += units
         self.productionUnits -= units
     }
     
-    func reset() {
+    func resetUnits() {
         self.productionUnits = self.spentUnits
         self.spentUnits = 0
     }

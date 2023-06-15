@@ -29,11 +29,9 @@ final class GameSetupTests: XCTestCase {
         let dummyPlayers = [Player()]
         
         let gsm = GameSetupManager()
-        do {
-            let game = try gsm.setup(for: dummyPlayers)
-        } catch let err {
-            XCTAssertThrowsError()
-            //throw err
+        
+        XCTAssertThrowsError(try gsm.setup(for: dummyPlayers)) { error in
+            XCTAssertEqual(error as! GameErrorDelegate, GameErrorDelegate.invalidPlayerCount)
         }
     }
 

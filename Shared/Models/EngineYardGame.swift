@@ -12,7 +12,7 @@ enum GamePhase: Int, Codable, CaseIterable, Equatable {
 }
 
 public enum GameErrorDelegate: Error {
-    case noGameData, noGameObject, noBoardDefined, noPlayerFound, notAValidPlayerCount
+    case noGameData, noGameObject, noBoardDefined, invalidBoardData, noPlayerFound, invalidPlayerCount
 }
 
 typealias Game = EngineYardGame

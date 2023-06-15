@@ -8,14 +8,19 @@
 import Foundation
 
 class GameSetupManager {
+    internal var game: Game
+    
+    init(game: Game) {
+        self.game = game
+    }
         
-    func setup(for players: [Player]) throws -> Game {
+    func setup(for players: [Player]) throws -> Game? {
         guard Constants.NumberOfPlayers.isValid(players.count) else {
-            throw GameErrorDelegate.notAValidPlayerCount
+            throw GameErrorDelegate.invalidPlayerCount
         }
         
         let board = prepareBoard()
-
+        
         switch players.count {
         case 3,4:
             // setup 3-4 player game
@@ -32,12 +37,13 @@ class GameSetupManager {
                 throw err
             }
         default:
-            throw GameErrorDelegate.notAValidPlayerCount
+            throw GameErrorDelegate.invalidPlayerCount
         }
         
-        return Game(board: board, players: players)
+        let game = Game(board: board, players: players)
+        return game
     }
-    
+ 
     internal func prepareBoard() -> Board {
         let presetLocos = Locomotive.allLocos()
         
@@ -62,9 +68,13 @@ class GameSetupManager {
     // Give each player 1x First Gen Green card, and add 1 production unit to each one
     // Add 3 orders to the first train, Add 1 order to the second train
     private func setupThreeOrFourPlayerGame(board: Board, players: [Player]) throws {
-        guard let firstLoco = board.spaces.first else {
-           throw GameErrorDelegate.noBoardDefined
+        guard let firstTrain = board.spaces.first else {
+           throw GameErrorDelegate.invalidBoardData
         }
+        guard var cards = firstTrain.cards else {
+            throw GameErrorDelegate.invalidBoardData
+        }
+
         
         // Set seedCash of $12
         let cash = Constants.NumberOfPlayers.seedCash(players: 3)
@@ -73,28 +83,67 @@ class GameSetupManager {
             $0.setCash(amount: cash)
         }
         
-        print ("FIRST LOCO - \(firstLoco.debugDescription)")
-        
+        // In a 3-player game, remove the last card of the first deck; its not used.
         if (players.count == 3) {
+            let _ = cards.popLast()
         }
         
+        for _ in 1...players.count {
+            do {
+                let om = OrderManager(loco: firstTrain)
+                try om.addInitialOrder()
+            } catch let err {
+                throw err
+                break
+            }
+        }
         
-//        for _ in 1...players.count {
-//            let om = OrderManager.init(loco: firstLoco)
-//            do {
-//                try om.addInitialOrder()
-//            }
-//            catch let err {
-//                throw err
-//            }
-//        }
+        for item in cards {
+            let pm = ProductionManager(card: item)
+            do {
+                try pm.add(units: 1)
+            } catch let err {
+                throw err
+                break
+            }
+            
+            for p in players {
+                print ("Trying to add card to players hand: \(item.debugDescription ?? "No card found")")
+                
+                /*
+                let result = p.handleCardAction(card: item, action: .push(card: item))
+                switch result {
+                case .success:
+                    // Add to game log
+                    break
+                case .failure(let portErr):
+                    throw portErr as Error
+                }*/
+            }
+            
+            /*
+            item.setProduction(Production(units: 1))
+            
+            for p in players {
+                print ("trying to push card \(item.loco?.debugDescription ?? "No train found")")
+                let result = p.handleCardAction(card: item, action: .push(card: item))
+                switch result {
+                case .success:
+                    // Add to game log
+                    break
+                case .failure(let portErr):
+                    throw portErr as Error
+                }
+            }*/
+        }
+        
     }
     
     // In a 5 player game, give each player 14 coins
     // No-one has any cards
     // Add 1 order to the first train
     private func setupFivePlayerGame(board: Board, players: [Player]) throws {
-        guard let firstLoco = board.spaces.first else {
+        guard let _ = board.spaces.first else {
            throw GameErrorDelegate.noBoardDefined
         }
         
@@ -105,7 +154,4 @@ class GameSetupManager {
             $0.setCash(amount: cash)
         }
     }
-    
-
-    
 }
