@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CharacterSelectScreenView: View {
     let images: [String]
-    @State private var selectedButton: Int = 0
+    @State private var selectedButton: Int?
     
     var body: some View {
         HStack(alignment: .firstTextBaseline, spacing: 18, content: {
@@ -32,7 +32,7 @@ struct CharacterSelectScreenView: View {
                                 RoundedRectangle(cornerRadius: 10)
                                     .stroke(selectedButton == index ? Color.blue : Color.clear, lineWidth: 4)
                             )                            
-                        }
+                        }.buttonStyle(.plain)
                     }
                     
                     

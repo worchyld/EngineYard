@@ -104,19 +104,19 @@ class GameSetupManager {
                 throw err
             }
             
-            for _ in players {
-                print ("Trying to add card to players hand: \(item.debugDescription)")
-                
-                /*
-                let result = p.handleCardAction(card: item, action: .push(card: item))
-                switch result {
-                case .success:
-                    // Add to game log
-                    break
-                case .failure(let portErr):
-                    throw portErr as Error
-                }*/
-            }
+//            for _ in players {
+//                print ("Trying to add card to players hand: \(item.debugDescription)")
+//                
+//                /*
+//                let result = p.handleCardAction(card: item, action: .push(card: item))
+//                switch result {
+//                case .success:
+//                    // Add to game log
+//                    break
+//                case .failure(let portErr):
+//                    throw portErr as Error
+//                }*/
+//            }
             
         }
         
