@@ -13,13 +13,14 @@ class Player: NSObject, GKGameModelPlayer {
     public private (set) var cash : Int
     public private (set) var icon : String?
     public private (set) var turnOrder: Int
-    public private (set) var hand: [Card] = [Card]()
+    public private (set) var hand: [Card]
     
     init(cash: Int = 0, icon: String? = nil) {
         self.playerId = 0
         self.cash = cash
         self.icon = icon
         self.turnOrder = 0
+        self.hand = [Card]()
     }
 }
 

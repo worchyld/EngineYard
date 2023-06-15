@@ -93,9 +93,7 @@ class GameSetupManager {
                 let om = OrderManager(loco: firstTrain)
                 try om.addInitialOrder()
             } catch let err {
-                throw err
-                break
-            }
+                throw err            }
         }
         
         for item in cards {
@@ -104,7 +102,6 @@ class GameSetupManager {
                 try pm.add(units: 1)
             } catch let err {
                 throw err
-                break
             }
             
             for p in players {
@@ -121,20 +118,6 @@ class GameSetupManager {
                 }*/
             }
             
-            /*
-            item.setProduction(Production(units: 1))
-            
-            for p in players {
-                print ("trying to push card \(item.loco?.debugDescription ?? "No train found")")
-                let result = p.handleCardAction(card: item, action: .push(card: item))
-                switch result {
-                case .success:
-                    // Add to game log
-                    break
-                case .failure(let portErr):
-                    throw portErr as Error
-                }
-            }*/
         }
         
     }
@@ -152,6 +135,17 @@ class GameSetupManager {
         
         let _ = players.map {
             $0.setCash(amount: cash)
+        }
+                
+        guard let firstTrain = board.spaces.first else {
+            throw GameErrorDelegate.noGameObject
+        }
+        
+        let om = OrderManager(loco: firstTrain)
+        do {
+            try om.addInitialOrder()
+        } catch let err {
+            throw err
         }
     }
 }
